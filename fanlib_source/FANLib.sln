@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FANLib", "FANLib\FANLib.vcproj", "{593CB88F-E5C1-4B8F-953D-2A27DDCE4DCF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FANLibTest", "..\FANLibTest\FANLibTest\FANLibTest.vcproj", "{8796CADB-5212-450D-9320-7058B5E76057}"
+	ProjectSection(ProjectDependencies) = postProject
+		{593CB88F-E5C1-4B8F-953D-2A27DDCE4DCF} = {593CB88F-E5C1-4B8F-953D-2A27DDCE4DCF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{593CB88F-E5C1-4B8F-953D-2A27DDCE4DCF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{593CB88F-E5C1-4B8F-953D-2A27DDCE4DCF}.Debug|Win32.Build.0 = Debug|Win32
+		{593CB88F-E5C1-4B8F-953D-2A27DDCE4DCF}.Release|Win32.ActiveCfg = Release|Win32
+		{593CB88F-E5C1-4B8F-953D-2A27DDCE4DCF}.Release|Win32.Build.0 = Release|Win32
+		{8796CADB-5212-450D-9320-7058B5E76057}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8796CADB-5212-450D-9320-7058B5E76057}.Debug|Win32.Build.0 = Debug|Win32
+		{8796CADB-5212-450D-9320-7058B5E76057}.Release|Win32.ActiveCfg = Release|Win32
+		{8796CADB-5212-450D-9320-7058B5E76057}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

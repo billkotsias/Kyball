@@ -1,0 +1,49 @@
+// FANLib runtime error codes
+
+#pragma once
+#ifndef FANLIB_ERRORS_H
+#define FANLIB_ERRORS_H
+
+#include <core\FastStr.h>
+
+namespace FANLib {
+
+	namespace Error {
+
+		enum TYPE {
+
+			FANLIB_NO_ERROR = 0, /// make sure 0 is reserved, as it's considered a no-error
+
+			/// FSL error codes
+			FSL_CLASS_WRONG_REQ_TYPE,
+			FSL_CLASS_VAR_NOT_FOUND,
+			FSL_CLASS_WRONG_DEST_TYPE,
+
+			FSL_ARRAY_OUT_OF_BOUNDS,
+			FSL_ARRAY_WRONG_TYPE,
+
+			FSL_CLASSDEF_VAR_NAME_EXISTS,
+			FSL_CLASSDEF_VAR_IS_DEF,
+
+			FSL_INSTANCE_ENUM_EXISTS,
+			FSL_INSTANCE_DEF_EXISTS,
+
+			FSL_PARSER_CLASS_REDEF,
+			FSL_PARSER_ENUM_REDEF,
+			FSL_PARSER_FILE_IERROR,
+			FSL_PARSER_WRONG_DEF,
+			FSL_PARSER_ABRUPT_EOF,
+			FSL_PARSER_SYNTAX_ERROR,
+			FSL_PARSER_SUBFILE_ERROR,
+
+			FSL_ENUM_VALUE_NOT_FOUND,
+
+			FSL_CLASSDEFPTR_ASSIGN,
+
+			/// FastStr debug
+			FASTSTR_HASHED_VS_NONHASHED,
+		};
+	}
+}
+
+#endif
