@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "gui\MenuBox.h"
+#include "gui/MenuBox.h"
 
 #include "P3DWindow.h"
-#include "tween\TLinear.h"
-#include "hid\HIDBoss.h"
+#include "tween/TLinear.h"
+#include "hid/HIDBoss.h"
 
 namespace P3D {
 

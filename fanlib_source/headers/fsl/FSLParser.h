@@ -10,9 +10,12 @@
 
 #include <map>
 #include <stack>
-#include <core\FastStr.h>
+#include <core/FastStr.h>
 #include "FSLTypes.h"
 
+#if !defined(_MSC_VER)
+struct _CrtMemState { int unused; };
+#endif
 extern _CrtMemState s1, s2, result; /// REMOVE THIS DEBUG SHIT!
 
 namespace FANLib {

@@ -1,10 +1,10 @@
-#include <fsl\FSLClassDefPtr.h>
+#include <fsl/FSLClassDefPtr.h>
 
-#include <fsl\FSLClassDefinition.h>
+#include <fsl/FSLClassDefinition.h>
 // error-handling
 #ifdef _DEBUG
 	#include <FANLibErrors.h>
-	#include <core\Log.h>
+	#include <core/Log.h>
 #endif
 
 namespace FANLib {

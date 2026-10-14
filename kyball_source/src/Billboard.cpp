@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "visual\Billboard.h"
+#include "visual/Billboard.h"
 
 #include <OgreBillboard.h>
 #include <OgreBillboardSet.h>
-#include <game\GameplayCollection.h>
+#include <game/GameplayCollection.h>
 
 namespace P3D {
 

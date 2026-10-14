@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "game\form\SphereForm.h"
+#include "game/form/SphereForm.h"
 
 #include "OgreBuilder.h"
-#include "collision\Sphere.h"
-#include "game\GameplayBase.h"
+#include "collision/Sphere.h"
+#include "game/GameplayBase.h"
 
 namespace P3D {
 

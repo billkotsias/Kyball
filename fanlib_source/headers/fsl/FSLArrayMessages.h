@@ -4,7 +4,7 @@
 #ifndef FANLIB_FSLARRAYMESSAGES_H
 #define FANLIB_FSLARRAYMESSAGES_H
 
-#include <core\FastStr.h>
+#include <core/FastStr.h>
 
 namespace FANLib {
 

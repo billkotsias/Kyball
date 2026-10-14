@@ -4,7 +4,7 @@
 #include "SceneBaseCreator.h"
 #include "OgreBuilder.h"
 #include <OgreSceneManager.h>
-#include <core\Utils.h>
+#include <core/Utils.h>
 #include <OgreParticleSystem.h>
 #include "OgreDeflectorPlaneAffector.h" /// <!!!>
 #include "OgreLinearForceAffector.h" /// <!!!>
@@ -123,7 +123,7 @@ namespace P3D {
 			for (int j = sysType.size() - 1; j >= 0; --j) {
 				Ogre::ParticleSystem* system = sysType.at(j).first;
 				Ogre::SceneNode* parent = system->getParentSceneNode();
-				system->detatchFromParent();
+				system->detachFromParent();
 				sceneMan->destroyParticleSystem(system);	/// destroy system
 				OgreBuilder::destroySceneNode(parent);		/// destroy parent SceneNode
 			}
@@ -189,7 +189,7 @@ namespace P3D {
 			Ogre::SceneNode* parent = systemParent->getParentSceneNode();
 			if (parent) parent->removeChild( systemParent ); /// leave system's parent SceneNode alone
 		} else {
-			system->detatchFromParent();
+			system->detachFromParent();
 		}
 
 		/// mark as disabled

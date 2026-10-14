@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "visual\VisualBoss.h"
+#include "visual/VisualBoss.h"
 
-#include "visual\Visual.h"
+#include "visual/Visual.h"
 
 namespace P3D {
 

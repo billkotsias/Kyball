@@ -6,7 +6,7 @@
 #ifndef SubMap_H
 #define SubMap_H
 
-#include "menu\SubMenuMG.h"
+#include "menu/SubMenuMG.h"
 
 namespace P3D {
 

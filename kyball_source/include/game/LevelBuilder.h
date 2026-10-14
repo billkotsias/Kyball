@@ -6,7 +6,7 @@
 #ifndef LevelBuilder_H
 #define LevelBuilder_H
 
-#include "map\MapOptions.h"
+#include "map/MapOptions.h"
 #include <deque>
 
 namespace Ogre {

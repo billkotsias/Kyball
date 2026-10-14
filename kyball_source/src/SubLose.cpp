@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "gui\SubLose.h"
+#include "gui/SubLose.h"
 
 namespace P3D {
 

@@ -1,12 +1,12 @@
-#include <fsl\FSLInstance.h>
+#include <fsl/FSLInstance.h>
 
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLEnum.h>
-#include <fsl\FSLRuntime.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLEnum.h>
+#include <fsl/FSLRuntime.h>
 
-#include <core\Log.h>
+#include <core/Log.h>
 #include <FANLibErrors.h>
-#include <fsl\FSLInstanceMessages.h>
+#include <fsl/FSLInstanceMessages.h>
 
 namespace FANLib {
 

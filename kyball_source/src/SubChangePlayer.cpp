@@ -1,15 +1,15 @@
 #include "StdAfx.h"
-#include "menu\SubChangePlayer.h"
+#include "menu/SubChangePlayer.h"
 
-#include "menu\SubOKCancel.h"
-#include "menu\SubCreate.h"
-#include "menu\PlayerBoss.h"
-#include "menu\Player.h"
+#include "menu/SubOKCancel.h"
+#include "menu/SubCreate.h"
+#include "menu/PlayerBoss.h"
+#include "menu/Player.h"
 
-#include <core\Utils.h>
+#include <core/Utils.h>
 #include "P3DScripts.h"
-#include <fsl\FSLInstance.h>
-#include <fsl\FSLClassDefinition.h>
+#include <fsl/FSLInstance.h>
+#include <fsl/FSLClassDefinition.h>
 
 namespace P3D {
 
@@ -120,7 +120,7 @@ namespace P3D {
 
 	void SubChangePlayer::setPlayerCaption(unsigned int i, const std::string& name) {
 		MyGUI::Widget* widget = MyGUI::Gui::getInstancePtr()->findWidgetT(player + FANLib::Utils::toString(i));
-		widget->setCaption(name);
+		static_cast<MyGUI::StaticText*>(widget)->setCaption(name);
 	}
 
 	void SubChangePlayer::checkCreate() {

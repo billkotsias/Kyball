@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "game\net\HexNet.h"
+#include "game/net/HexNet.h"
 
-#include <math\Math.h>
+#include <math/Math.h>
 #include "OgreAddOns.h"
 
 namespace P3D {

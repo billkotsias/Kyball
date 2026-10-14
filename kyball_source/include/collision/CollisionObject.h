@@ -7,7 +7,7 @@
 #define CollisionObject_H
 
 #include <math.h>
-#include <math\Math.h>
+#include <math/Math.h>
 #include <OgreVector3.h>
 #include "CollisionParams.h"
 

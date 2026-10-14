@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "game\form\CylinderForm.h"
+#include "game/form/CylinderForm.h"
 
 #include "OgreBuilder.h"
-#include "collision\Cylinder.h"
+#include "collision/Cylinder.h"
 
 namespace P3D {
 

@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "visual\AnimatorElliptical.h"
-#include "visual\VisualBoss.h"
+#include "visual/AnimatorElliptical.h"
+#include "visual/VisualBoss.h"
 #include "OgreAddOns.h"
 
 namespace P3D {

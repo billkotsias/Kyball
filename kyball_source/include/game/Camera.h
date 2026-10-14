@@ -6,9 +6,10 @@
 #ifndef Camera_H
 #define Camera_H
 
-#include "hid\HIDListener.h"
-#include "tween\TPlayed.h"
-#include <logic\Enabled.h>
+#include "hid/HIDListener.h"
+#include "hid/HIDBoss.h"
+#include "tween/TPlayed.h"
+#include <logic/Enabled.h>
 
 namespace Ogre {
 	class Camera;

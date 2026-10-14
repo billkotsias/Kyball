@@ -5,13 +5,14 @@
 #include "P3DConfig.h"
 #include "P3DWindow.h"
 #include "OgreAddOns.h"
-#include "hid\HIDBoss.h"
+#include "hid/HIDBoss.h"
 
 #include <OgreSceneManager.h>
 #include <OgreRoot.h>
 #include <OgreRenderWindow.h>
+#include <OgreOverlaySystem.h>
 
-#include "core\Utils.h"
+#include "core/Utils.h"
 
 namespace P3D {
 
@@ -19,7 +20,7 @@ namespace P3D {
 
 	SceneBaseCreator* SceneBaseCreator::instance = 0;	/// singleton instance not created yet
 
-	SceneBaseCreator::SceneBaseCreator() : window(0), sceneManager(0), lastSceneManagerType(0), myGUI(0), myPlatform(0) {
+	SceneBaseCreator::SceneBaseCreator() : window(0), sceneManager(0), lastSceneManagerType(0), myGUI(0), myPlatform(0), overlaySystem(0) {
 		clearPointers();
 	}
 
@@ -91,7 +92,7 @@ namespace P3D {
 	}
 
 	void SceneBaseCreator::createSceneBase(unsigned char views, SceneBaseCreator::ViewAlign align, int order,
-										   Ogre::SceneType newType, char* camName
+										   Ogre::SceneType newType, const char* camName
 										   ) {
 
 		if (!window)			OGRE_EXCEPT(Ogre::Exception::ERR_INVALID_STATE,
@@ -111,6 +112,8 @@ namespace P3D {
 		if (!sceneManager || lastSceneManagerType != newType) {
 			shutdown(); /// <!!!>
 			sceneManager = ogreRoot->createSceneManager(newType, SCENEMANAGER_NAME);
+			if (!overlaySystem) overlaySystem = OGRE_NEW Ogre::OverlaySystem();
+			sceneManager->addRenderQueueListener(overlaySystem);
 
 			if (P3DConfig::gameQuality >= GameQuality::ADVANCED)
 			{
@@ -168,7 +171,7 @@ namespace P3D {
 
 			myPlatform = new MyGUI::OgrePlatform();
 			myPlatform->initialise(window, sceneManager, "General", "");
-			MyGUI::LogManager::setSTDOutputEnabled(false);
+			MyGUI::LogManager::getInstance().setSTDOutputEnabled(false);
 			myGUI = new MyGUI::Gui();
 			myGUI->initialise("core.xml", P3DApp::MYGUI_LOG_FILE);
 			myGUI->setVisiblePointer(false);
@@ -241,5 +244,9 @@ namespace P3D {
 
 		if (sceneManager) ogreRoot->destroySceneManager(sceneManager); /// destroy previous
 		sceneManager = 0;
+		if (overlaySystem) {
+			OGRE_DELETE overlaySystem;
+			overlaySystem = 0;
+		}
 	}
 }

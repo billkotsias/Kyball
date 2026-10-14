@@ -1,13 +1,13 @@
 #include "StdAfx.h"
-#include "gui\HintBox.h"
+#include "gui/HintBox.h"
 #include "Queue.h"
 
 #include "P3DWindow.h"
-#include "tween\TLinear.h"
-#include "hid\HIDBoss.h"
-#include "visual\VisualBoss.h"
-#include "core\String.h"
-#include "game\animal\Animal.h"
+#include "tween/TLinear.h"
+#include "hid/HIDBoss.h"
+#include "visual/VisualBoss.h"
+#include "core/String.h"
+#include "game/animal/Animal.h"
 
 namespace P3D {
 

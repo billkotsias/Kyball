@@ -6,9 +6,9 @@
 #ifndef LevelShow_H
 #define LevelShow_H
 
-#include "tween\TPlayed.h"
+#include "tween/TPlayed.h"
 #include "Queue.h"
-#include <gui\Widget.h>
+#include <gui/Widget.h>
 
 #include <vector>
 

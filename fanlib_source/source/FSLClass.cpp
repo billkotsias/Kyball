@@ -1,15 +1,15 @@
-#include <fsl\FSLClass.h>
+#include <fsl/FSLClass.h>
 
-#include <fsl\FSLTypes.h>
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLString.h>
-#include <fsl\FSLPointer.h>
-#include <fsl\FSLArray.h>
-#include <core\FastStr.h>
+#include <fsl/FSLTypes.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLString.h>
+#include <fsl/FSLPointer.h>
+#include <fsl/FSLArray.h>
+#include <core/FastStr.h>
 // error-handling
-#include <fsl\FSLClassMessages.h>
+#include <fsl/FSLClassMessages.h>
 #ifdef _DEBUG
-	#include <core\Log.h>
+	#include <core/Log.h>
 	#include <FANLibErrors.h>
 #endif
 

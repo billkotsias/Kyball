@@ -11,7 +11,7 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <tween\TPlayed.h>
+#include <tween/TPlayed.h>
 
 namespace Ogre {
 	class Entity;

@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "game\ai\DestroyAI.h"
-#include "game\action\DestroyAction.h"
+#include "game/ai/DestroyAI.h"
+#include "game/action/DestroyAction.h"
 
-#include <math\Math.h>
+#include <math/Math.h>
 
 namespace P3D {
 

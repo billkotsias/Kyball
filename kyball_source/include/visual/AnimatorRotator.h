@@ -6,7 +6,7 @@
 #ifndef AnimatorRotator_H
 #define AnimatorRotator_H
 
-#include "visual\Visual.h"
+#include "visual/Visual.h"
 
 namespace P3D {
 

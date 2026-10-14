@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "collision\CollisionParams.h"
+#include "collision/CollisionParams.h"
 
-#include "game\GameplayObject.h"
+#include "game/GameplayObject.h"
 
 namespace P3D {
 

@@ -1,24 +1,24 @@
 #include "StdAfx.h"
-#include "game\form\OpenCube.h"
+#include "game/form/OpenCube.h"
 
 #include "SceneBaseCreator.h"
 #include "OgreBuilder.h"
-#include "collision\Polygon.h"
-#include "collision\Complex.h"
-#include "game\GameplayBase.h"
-#include "game\ai\AI.h"
-#include "game\event\ShrinkEvent.h"
+#include "collision/Polygon.h"
+#include "collision/Complex.h"
+#include "game/GameplayBase.h"
+#include "game/ai/AI.h"
+#include "game/event/ShrinkEvent.h"
 
-#include "tween\TLinear.h"
-#include "tween\TCubeFX.h"
-#include "tween\TPlayer.h"
+#include "tween/TLinear.h"
+#include "tween/TCubeFX.h"
+#include "tween/TPlayer.h"
 
 #include "OgreAddOns.h"
 #include "BurstBoss.h"
 
 #include <OgreVector3.h>
 #include <OgreSceneNode.h>
-#include <core\Utils.h>
+#include <core/Utils.h>
 
 namespace P3D {
 

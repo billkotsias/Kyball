@@ -1,4 +1,4 @@
-#include "core\String.h"
+#include "core/String.h"
 
 namespace FANLib {
 

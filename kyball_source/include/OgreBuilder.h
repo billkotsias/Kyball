@@ -79,7 +79,7 @@ namespace P3D {
 		static void setFog(FANLib::FSLClass*, const Ogre::ColourValue&);
 
 		static void setFogToMaterials(const Ogre::ColourValue& backgroundColour, const Ogre::Real& expDensity);
-		static void setFogToMaterial(Ogre::MaterialPtr& material, const Ogre::ColourValue& backgroundColour, const Ogre::Real& expDensity);
+		static void setFogToMaterial(const Ogre::MaterialPtr& material, const Ogre::ColourValue& backgroundColour, const Ogre::Real& expDensity);
 		static void unsetFog(); /// remove previously set fog
 
 		static Visual* createAnimator(FANLib::FSLClass*, Ogre::SceneNode*);

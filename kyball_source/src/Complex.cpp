@@ -1,16 +1,16 @@
 #include "StdAfx.h"
-#include "collision\Complex.h"
+#include "collision/Complex.h"
 
 #include <OgreVector3.h>
 #include <OgreSceneNode.h>
 
-#include "collision\Sphere.h"
-#include "collision\Cylinder.h"
-#include "collision\Polygon.h"
-#include "collision\Point.h"
-#include "collision\Line.h"
+#include "collision/Sphere.h"
+#include "collision/Cylinder.h"
+#include "collision/Polygon.h"
+#include "collision/Point.h"
+#include "collision/Line.h"
 
-#include "math\Math.h"
+#include "math/Math.h"
 
 namespace P3D {
 

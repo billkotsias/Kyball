@@ -1,11 +1,11 @@
 #include "StdAfx.h"
 #include "AnimStruct.h"
 
-#include <fsl\FSLArray.h>
-#include <fsl\FSLEnum.h>
-#include <fsl\FSLClass.h>
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLInstance.h>
+#include <fsl/FSLArray.h>
+#include <fsl/FSLEnum.h>
+#include <fsl/FSLClass.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLInstance.h>
 
 #include <OgreEntity.h>
 

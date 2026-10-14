@@ -6,11 +6,11 @@
 
 #include <deque>
 #include <map>
-#include <core\FastStr.h>
+#include <core/FastStr.h>
 #include "FSLClass.h"
 #include "FSLTypes.h"
 // error-handling
-#include <core\Log.h>
+#include <core/Log.h>
 #include <FANLibErrors.h>
 
 namespace FANLib {

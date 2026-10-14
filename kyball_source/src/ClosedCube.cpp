@@ -1,17 +1,17 @@
 #include "StdAfx.h"
-#include "game\form\ClosedCube.h"
+#include "game/form/ClosedCube.h"
 
 #include "SceneBaseCreator.h"
 #include "OgreBuilder.h"
-#include "collision\Cylinder.h"
-#include "collision\Polygon.h"
-#include "collision\Sphere.h"
-#include "collision\Complex.h"
-#include "game\ai\AI.h"
+#include "collision/Cylinder.h"
+#include "collision/Polygon.h"
+#include "collision/Sphere.h"
+#include "collision/Complex.h"
+#include "game/ai/AI.h"
 
-#include "tween\TLinear.h"
-#include "tween\TCubeFX.h"
-#include "tween\TPlayer.h"
+#include "tween/TLinear.h"
+#include "tween/TCubeFX.h"
+#include "tween/TPlayer.h"
 
 #include "OgreAddOns.h"
 

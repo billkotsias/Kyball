@@ -6,8 +6,8 @@
 #ifndef Billboard_H
 #define Billboard_H
 
-#include "visual\Visual.h"
-#include <math\Math.h>
+#include "visual/Visual.h"
+#include <math/Math.h>
 
 namespace Ogre {
 	class Billboard;

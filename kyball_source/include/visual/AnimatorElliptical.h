@@ -6,7 +6,7 @@
 #ifndef AnimatorElliptical_H
 #define AnimatorElliptical_H
 
-#include "visual\Visual.h"
+#include "visual/Visual.h"
 #include <vector>
 #include <utility>
 

@@ -6,6 +6,7 @@
 #ifndef TextureShadowBuffer_H
 #define TextureShadowBuffer_H
 
+#include "MsInts.h"
 #include <OgreHardwarePixelBuffer.h>
 #include <string>
 
@@ -25,9 +26,9 @@ namespace P3D {
 	public:
 
 		// constructor
-		TextureShadowBuffer(Ogre::HardwarePixelBufferSharedPtr&);
+		TextureShadowBuffer(const Ogre::HardwarePixelBufferSharedPtr&);
 		TextureShadowBuffer(const std::string&);
-		void init(Ogre::HardwarePixelBufferSharedPtr&);
+		void init(const Ogre::HardwarePixelBufferSharedPtr&);
 		~TextureShadowBuffer();
 
 		inline FANLib::Surface* getSurface() { return surface; };

@@ -6,8 +6,8 @@
 #ifndef BallEditor_H
 #define BallEditor_H
 
-#include "hid\HIDListener.h"
-#include "game\form\BallState.h"
+#include "hid/HIDListener.h"
+#include "game/form/BallState.h"
 #include <string>
 #include <vector>
 

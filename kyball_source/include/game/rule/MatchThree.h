@@ -7,11 +7,11 @@
 #define MatchThree_H
 
 #include "Rule.h"
-#include "game\ai\AIPVListener.h"
-#include "game\event\EventListener.h"
-#include "tween\TPlayed.h"
+#include "game/ai/AIPVListener.h"
+#include "game/event/EventListener.h"
+#include "tween/TPlayed.h"
 
-#include <logic\Enabled.h>
+#include <logic/Enabled.h>
 #include <map>
 
 namespace P3D {

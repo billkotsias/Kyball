@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "game\net\BasicNet.h"
+#include "game/net/BasicNet.h"
 
-#include "collision\CollisionObject.h"
+#include "collision/CollisionObject.h"
 #include "OgreAddOns.h"
 #include "OgreBuilder.h"
 

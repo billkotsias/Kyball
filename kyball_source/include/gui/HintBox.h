@@ -7,11 +7,11 @@
 #define HintBox_H
 
 #include "OverlayBox.h"
-#include <hid\HIDListener.h>
-#include "visual\Visual.h"
+#include <hid/HIDListener.h>
+#include "visual/Visual.h"
 
 #include <string>
-#include <core\MCBSystem.h>
+#include <core/MCBSystem.h>
 
 namespace P3D {
 

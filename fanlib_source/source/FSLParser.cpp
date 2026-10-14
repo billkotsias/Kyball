@@ -1,20 +1,20 @@
-#include <fsl\FSLParser.h>
+#include <fsl/FSLParser.h>
 
-#include <fsl\FSLArray.h>
-#include <fsl\FSLRootArray.h>
-#include <fsl\FSLClass.h>
-#include <fsl\FSLEnum.h>
-#include <fsl\FSLString.h>
-#include <fsl\FSLPointer.h>
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLInstance.h>
+#include <fsl/FSLArray.h>
+#include <fsl/FSLRootArray.h>
+#include <fsl/FSLClass.h>
+#include <fsl/FSLEnum.h>
+#include <fsl/FSLString.h>
+#include <fsl/FSLPointer.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLInstance.h>
 #include <fstream>
-#include <core\Utils.h>
+#include <core/Utils.h>
 // error-handling
-#include <core\Log.h>
+#include <core/Log.h>
 #include <FANLibErrors.h>
-#include <fsl\FSLParserMessages.h>
-#include <math\Math.h>
+#include <fsl/FSLParserMessages.h>
+#include <math/Math.h>
 
 namespace FANLib {
 
@@ -65,7 +65,8 @@ namespace FANLib {
 		/* initialize parsing */;
 		clear();
 		fslInstance = new FSLInstance(); /// this will be filled with data from the parsed file
-		classDefParsed.push_back(newClassDef(FastStr(""))); /// root class has empty ("") id
+		FastStr emptyId("");
+		classDefParsed.push_back(newClassDef(emptyId)); /// root class has empty ("") id
 
 		/* get base filepath */;
 		FastStr path(filename, false);
@@ -73,7 +74,8 @@ namespace FANLib {
 		basePath.push_back(path); /// add path in base-paths
 
 		/* add main source file */;
-		addFile(FastStr((char*)(filename + path.size)), true); /// remove <absolute> path from file, will be added by base-paths
+				FastStr fileOnly((char*)(filename + path.size));
+				addFile(fileOnly, true); /// remove <absolute> path from file, will be added by base-paths
 
 		/* end parsing */;
 		basePath.pop_back(); /// remove path from base-paths; <note> : path.str is not deleted as it's an outsider!
@@ -174,7 +176,8 @@ namespace FANLib {
 		/// attempt to load file
 		std::ifstream streamfile(filename, std::ios::in|std::ios::binary|std::ios::ate); /// open file as binary and move stream pointer to end
 		if (!streamfile.is_open()) {
-			const FastStr* file_ierror[] = {&FastStr(filename), 0};
+			FastStr missingFile(filename);
+			const FastStr* file_ierror[] = {&missingFile, 0};
 			Log::internalLog(FSLParser::FILE_IERROR, file_ierror, true, FANLib::Error::FSL_PARSER_FILE_IERROR);
 		}
 		delete [] filename; /// filename is no more needed

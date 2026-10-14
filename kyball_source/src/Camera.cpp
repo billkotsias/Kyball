@@ -1,12 +1,12 @@
 #include "StdAfx.h"
-#include "game\Camera.h"
+#include "game/Camera.h"
 
 #include "P3DApp.h"
 #include "SceneBaseCreator.h"
-#include "hid\HIDBoss.h"
-#include "math\Math.h"
+#include "hid/HIDBoss.h"
+#include "math/Math.h"
 
-#include "tween\TLinear.h"
+#include "tween/TLinear.h"
 
 #include <OgreAddOns.h>
 #include <OgreSceneNode.h>

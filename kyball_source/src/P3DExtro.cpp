@@ -1,25 +1,26 @@
 #include "StdAfx.h"
 #include "P3DExtro.h"
+#include <stdint.h>
 
 #include "SceneBaseCreator.h"
 #include "OgreBuilder.h"
 #include "FSLToOgre.h"
 
-#include "game\GameplayCollection.h"
-#include "hid\HIDBoss.h"
+#include "game/GameplayCollection.h"
+#include "hid/HIDBoss.h"
 
 #include "P3DScripts.h"
-#include "fsl\FSLInstance.h"
-#include "fsl\FSLClassDefinition.h"
-#include "fsl\FSLArray.h"
+#include "fsl/FSLInstance.h"
+#include "fsl/FSLClassDefinition.h"
+#include "fsl/FSLArray.h"
 
-#include "tween\TSin.h"
-#include "tween\TCos.h"
-#include "tween\TLinear.h"
+#include "tween/TSin.h"
+#include "tween/TCos.h"
+#include "tween/TLinear.h"
 
-#include "gui\WiText.h"
-#include "sound\SoundBoss.h"
-#include "visual\VisualBoss.h"
+#include "gui/WiText.h"
+#include "sound/SoundBoss.h"
+#include "visual/VisualBoss.h"
 
 namespace P3D {
 
@@ -241,7 +242,7 @@ namespace P3D {
 		FANLib::FSLArray* fslCredit = fslCredits->getArray(currentCredit);
 		for (int i = 0; i < 2; ++i) {
 			MyGUI::Widget* const widget = widgets.at(i)->getWidget();
-			widget->setCaption( fslCredit->getCString(i) );
+			static_cast<MyGUI::StaticText*>(widget)->setCaption( fslCredit->getCString(i) );
 			registerTween( new TLinear<MyGUI::Widget, float>(
 				widget, 1., CREDIT_FADE, &MyGUI::Widget::getAlpha, &MyGUI::Widget::setAlpha, 0.25 * i + extraDelay)
 			)->add( new TLinear<MyGUI::Widget, float>(
@@ -290,7 +291,7 @@ namespace P3D {
 		wavePos += 0.75 * evt.timeSinceLastFrame;
 		for (AnimalCollections::iterator it = animalCollections.begin(); it != animalCollections.end(); ++it) {
 			Ogre::Node* animalNode = it->second.getNode()->getChild(0);
-			animalNode->setPosition(0, WAVING * Ogre::Math::Sin(wavePos+(int)animalNode), animalNode->getPosition().z);
+			animalNode->setPosition(0, WAVING * Ogre::Math::Sin(wavePos + (int)(intptr_t)animalNode), animalNode->getPosition().z);
 		}
 
 		return notFinished;
@@ -313,22 +314,22 @@ namespace P3D {
 	void P3DExtro::setRadialDistance(const double& value) {
 		sampleDist = value;
 		//std::cout << "sampleDist" << sampleDist << "\n";
-		if (!radialParams.isNull()) radialParams->setNamedConstant("sampleDist", value);
+		if (!radialParams.isNull()) radialParams->setNamedConstant("sampleDist", (Ogre::Real)value);
 	}
 	void P3DExtro::setRadialStrength(const double& value) {
 		sampleStrength = value;
 		//std::cout << "sampleStrength" << sampleStrength << "\n";
-		if (!radialParams.isNull()) radialParams->setNamedConstant("sampleStrength", value);
+		if (!radialParams.isNull()) radialParams->setNamedConstant("sampleStrength", (Ogre::Real)value);
 	}
 	void P3DExtro::setBloomWeight(const double& value) {
 		blurWeight = value;
 		//std::cout << "blurWeight" << blurWeight << "\n";
-		if (!bloomParams.isNull()) bloomParams->setNamedConstant("BlurWeight", value);
+		if (!bloomParams.isNull()) bloomParams->setNamedConstant("BlurWeight", (Ogre::Real)value);
 	}
 	void P3DExtro::setOriginalWeight(const double& value) {
 		originalImageWeight = value;
 		//std::cout << "originalImageWeight" << originalImageWeight << "\n";
-		if (!bloomParams.isNull()) bloomParams->setNamedConstant("OriginalImageWeight", value);
+		if (!bloomParams.isNull()) bloomParams->setNamedConstant("OriginalImageWeight", (Ogre::Real)value);
 	}
 
 	// Note to future Bill: make this notification bullshit into a CompositorParamsManager, passing BLOOM_IDs together and waiting for FragmentProgramParameters to be passed back!

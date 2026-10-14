@@ -1,24 +1,24 @@
 #include "StdAfx.h"
-#include "game\GameplayBase.h"
+#include "game/GameplayBase.h"
 
 #include "SceneBaseCreator.h"
-#include "game\rule\RuleManager.h"
-#include "game\cannon\Cannon.h"
-#include "game\Camera.h"
-#include "game\net\Net.h"
-#include "game\animal\Animal.h"
-#include "game\event\EventManager.h"
-#include "game\GameplayCollection.h"
-#include "game\GameplayObject.h"
-#include "game\form\Form.h"
-#include "game\ai\AI.h"
-#include "game\ai\AIPVAnimator.h"
+#include "game/rule/RuleManager.h"
+#include "game/cannon/Cannon.h"
+#include "game/Camera.h"
+#include "game/net/Net.h"
+#include "game/animal/Animal.h"
+#include "game/event/EventManager.h"
+#include "game/GameplayCollection.h"
+#include "game/GameplayObject.h"
+#include "game/form/Form.h"
+#include "game/ai/AI.h"
+#include "game/ai/AIPVAnimator.h"
 #include "ShadowManager.h"
 #include "BurstBoss.h"
-#include "visual\VisualBoss.h"
-#include "gui\SubScore.h"
+#include "visual/VisualBoss.h"
+#include "gui/SubScore.h"
 
-#include "core\Utils.h"
+#include "core/Utils.h"
 #include <OgreSceneNode.h>
 #include <OgreBillboardSet.h>
 
@@ -133,7 +133,7 @@ namespace P3D {
 
 	void GameplayBase::destroyBBSet(Ogre::BillboardSet* bbset) {
 		bbset->clear();				/// that's the must useful function here (if at all!)
-		bbset->detatchFromParent();	/// this is probably automatically done <!>
+		bbset->detachFromParent();	/// this is probably automatically done <!>
 		SceneBaseCreator::getSingletonPtr()->getSceneManager()->destroyBillboardSet(bbset);
 	}
 

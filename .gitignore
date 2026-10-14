@@ -1,0 +1,14 @@
+# Extracted commercial game data and local build trees
+/P3DData/
+/build/
+/out/
+/cmake-build-*/
+*.apk
+*.aab
+
+# Android
+/android/.gradle/
+/android/app/build/
+/android/app/.cxx/
+/android/local.properties
+/android/.idea/

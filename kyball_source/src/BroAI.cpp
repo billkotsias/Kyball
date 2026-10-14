@@ -1,15 +1,15 @@
 #include "StdAfx.h"
-#include "game\ai\BroAI.h"
+#include "game/ai/BroAI.h"
 
-#include "game\GameplayBase.h"
-#include "game\GameplayObject.h"
-#include "game\action\ReflectAction.h"
-#include "game\action\NoAction.h"
-#include "visual\VisualBoss.h"
-#include "visual\BallBoom.h"
+#include "game/GameplayBase.h"
+#include "game/GameplayObject.h"
+#include "game/action/ReflectAction.h"
+#include "game/action/NoAction.h"
+#include "visual/VisualBoss.h"
+#include "visual/BallBoom.h"
 #include "BurstBoss.h"
 
-#include "sound\Sound.h"
+#include "sound/Sound.h"
 
 namespace P3D {
 

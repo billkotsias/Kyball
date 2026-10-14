@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "visual\AnimationStatesList.h"
+#include "visual/AnimationStatesList.h"
 
-#include "visual\VisualBoss.h"
-#include "visual\AnimationStateWrapper.h"
+#include "visual/VisualBoss.h"
+#include "visual/AnimationStateWrapper.h"
 
 namespace P3D {
 

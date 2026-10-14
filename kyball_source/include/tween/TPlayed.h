@@ -6,7 +6,7 @@
 #ifndef TPlayed_H
 #define TPlayed_H
 
-#include "tween\TPlayer.h"
+#include "tween/TPlayer.h"
 
 namespace P3D {
 

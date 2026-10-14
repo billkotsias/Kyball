@@ -1,12 +1,12 @@
 #include "StdAfx.h"
-#include "game\form\BallForm.h"
+#include "game/form/BallForm.h"
 
 #include "P3DApp.h"
 #include "SceneBaseCreator.h"
-#include "game\GameplayBase.h"
-#include "game\form\FormState.h"
-#include "game\form\BallState.h"
-#include "collision\Sphere.h"
+#include "game/GameplayBase.h"
+#include "game/form/FormState.h"
+#include "game/form/BallState.h"
+#include "collision/Sphere.h"
 
 #include "OgreAddOns.h"
 

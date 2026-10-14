@@ -87,7 +87,7 @@ namespace P3D {
 
 	private:
 
-		template<class Manager, class ResourcePtr>
+		template<class Manager, class ResourcePtr, class Resource>
 		static void reloadAllResources(std::string group);
 	};
 

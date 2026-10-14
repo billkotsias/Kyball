@@ -6,11 +6,11 @@
 #ifndef GameplayObject_H
 #define GameplayObject_H
 
-#include "game\ai\AI.h"
-#include "game\action\NoAction.h"
-#include "game\form\Form.h"
-#include "collision\CollisionObject.h"
-#include "collision\CollisionParams.h"
+#include "game/ai/AI.h"
+#include "game/action/NoAction.h"
+#include "game/form/Form.h"
+#include "collision/CollisionObject.h"
+#include "collision/CollisionParams.h"
 
 #include <deque> /// support for many incoming actions!!!
 #include <OgreVector3.h>

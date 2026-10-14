@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "menu\PlayerBoss.h"
+#include "menu/PlayerBoss.h"
 
-#include "menu\Player.h"
+#include "menu/Player.h"
 
 #include <iostream>
 #include <fstream>

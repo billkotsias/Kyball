@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "game\form\Form.h"
-#include "game\form\GenericState.h"
+#include "game/form/Form.h"
+#include "game/form/GenericState.h"
 
 #include "SceneBaseCreator.h"
-#include "collision\CollisionObject.h"
+#include "collision/CollisionObject.h"
 #include "OgreBuilder.h"
 
 #include <OgreSceneNode.h>

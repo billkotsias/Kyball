@@ -7,7 +7,7 @@
 #define WallForm_H
 
 #include "Form.h"
-#include "game\GameplayCollection.h"
+#include "game/GameplayCollection.h"
 #include <string>
 
 namespace Ogre {

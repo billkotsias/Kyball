@@ -1,6 +1,6 @@
-#include <stdafx.h>
-#include "visual\CallEvery.h"
-#include "visual\VisualBoss.h"
+#include <StdAfx.h>
+#include "visual/CallEvery.h"
+#include "visual/VisualBoss.h"
 
 namespace P3D {
 

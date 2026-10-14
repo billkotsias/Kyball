@@ -1,15 +1,15 @@
 #include "StdAfx.h"
-#include "game\Game.h"
+#include "game/Game.h"
 
-#include "map\Map.h"
-#include "map\MapOptions.h"
-#include "menu\SubMainOptions.h"
-#include "game\CosmosCreator.h"
-#include "game\Gameplay.h"
-#include "game\GameplayBase.h"
+#include "map/Map.h"
+#include "map/MapOptions.h"
+#include "menu/SubMainOptions.h"
+#include "game/CosmosCreator.h"
+#include "game/Gameplay.h"
+#include "game/GameplayBase.h"
 
-#include "game\Camera.h"
-#include "sound\SoundBoss.h"
+#include "game/Camera.h"
+#include "sound/SoundBoss.h"
 
 #include <OgreResourceGroupManager.h>
 

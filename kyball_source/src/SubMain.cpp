@@ -1,22 +1,22 @@
 #include "StdAfx.h"
-#include "menu\SubMain.h"
+#include "menu/SubMain.h"
 
-#include "menu\SubMainOptions.h"
-#include "menu\SubChangePlayer.h"
-#include "menu\SubCreate.h"
-#include "menu\SubOptions.h"
+#include "menu/SubMainOptions.h"
+#include "menu/SubChangePlayer.h"
+#include "menu/SubCreate.h"
+#include "menu/SubOptions.h"
 
-#include "gui\MenuBox.h"
-#include "gui\SubScore.h"
+#include "gui/MenuBox.h"
+#include "gui/SubScore.h"
 #include "P3DWindow.h"
 
-#include "menu\PlayerBoss.h"
-#include "menu\Player.h"
+#include "menu/PlayerBoss.h"
+#include "menu/Player.h"
 #include "P3DScripts.h"
-#include "fsl\FSLInstance.h"
-#include "fsl\FSLClassDefinition.h"
+#include "fsl/FSLInstance.h"
+#include "fsl/FSLClassDefinition.h"
 
-#include "core\Utils.h"
+#include "core/Utils.h"
 
 namespace P3D {
 
@@ -141,9 +141,9 @@ namespace P3D {
 		/// NOT static, cause they are destroyed all the time!!!!!! Stupid, that!
 		MyGUI::Gui* myGUI = MyGUI::Gui::getInstancePtr();
 		MyGUI::StaticText* wPlayer = ((MyGUI::StaticText*)(myGUI->findWidgetT(this->player)));
-		MyGUI::Widget* wPercent = ((MyGUI::Edit*)(myGUI->findWidgetT(percent)));
+		MyGUI::Edit* wPercent = ((MyGUI::Edit*)(myGUI->findWidgetT(percent)));
 		MyGUI::StaticImage* wCloud = ((MyGUI::StaticImage*)(myGUI->findWidgetT(cloud)));
-		MyGUI::Widget* wTotalScore = ((MyGUI::Edit*)(myGUI->findWidgetT(totalScore)));
+		MyGUI::Edit* wTotalScore = ((MyGUI::Edit*)(myGUI->findWidgetT(totalScore)));
 
 		wCloud->setVisible(false);
 		wPlayer->setVisible(false);

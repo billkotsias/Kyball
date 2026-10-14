@@ -7,9 +7,9 @@
 #define MenuBox_H
 
 #include "OverlayBox.h"
-#include <hid\HIDListener.h>
+#include <hid/HIDListener.h>
 
-#include <core\MCBSystem.h>
+#include <core/MCBSystem.h>
 #include <string>
 
 namespace P3D {

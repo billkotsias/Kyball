@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "menu\SubMenuMG.h"
+#include "menu/SubMenuMG.h"
 
-#include "gui\WiText.h"
-#include "tween\TLinear.h"
+#include "gui/WiText.h"
+#include "tween/TLinear.h"
 
 namespace P3D {
 

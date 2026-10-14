@@ -7,7 +7,7 @@
 #include <OgreSceneManager.h>
 #include <OgreBuilder.h>
 #include <OgreStringInterface.h>
-#include <core\Utils.h>
+#include <core/Utils.h>
 
 namespace P3D {
 
@@ -61,7 +61,7 @@ namespace P3D {
 
 	//
 
-	Particles::Particles(const std::string& systemName, Ogre::SceneNode* parent, Ogre::Vector3& position, double scale, double fastForward, bool shadows)
+	Particles::Particles(const std::string& systemName, Ogre::SceneNode* parent, const Ogre::Vector3& position, double scale, double fastForward, bool shadows)
 	{
 		static unsigned systemNum = 0;
 

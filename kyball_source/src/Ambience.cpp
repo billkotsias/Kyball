@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "visual\Ambience.h"
+#include "visual/Ambience.h"
 
-#include "visual\VisualBoss.h"
+#include "visual/VisualBoss.h"
 #include "OgreBuilder.h"
-#include "sound\Sound.h"
+#include "sound/Sound.h"
 
 namespace P3D {
 

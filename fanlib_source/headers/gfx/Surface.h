@@ -4,6 +4,8 @@
 #ifndef FANLIB_Surface_H
 #define FANLIB_Surface_H
 
+#include "MsInts.h"
+
 namespace FANLib {
 
 	class Surface {

@@ -3,9 +3,9 @@
 #include "P3DWindow.h"
 #include "P3DApp.h"
 
-#include "hid\HIDBoss.h"
-#include "tween\TPlayer.h"
-#include "tween\TLinear.h"
+#include "hid/HIDBoss.h"
+#include "tween/TPlayer.h"
+#include "tween/TLinear.h"
 #include "SceneBaseCreator.h"
 #include "OgreBuilder.h"
 
@@ -14,7 +14,7 @@
 #include <algorithm>
 
 #include <time.h>
-#include <core\utils.h>
+#include <core/Utils.h>
 
 namespace P3D {
 

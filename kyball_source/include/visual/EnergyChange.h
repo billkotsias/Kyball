@@ -6,8 +6,8 @@
 #ifndef EnergyChange_H
 #define EnergyChange_H
 
-#include "visual\Visual.h"
-#include "tween\TPlayed.h"
+#include "visual/Visual.h"
+#include "tween/TPlayed.h"
 
 namespace P3D {
 

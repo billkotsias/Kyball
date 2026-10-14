@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "menu\SubConfig.h"
+#include "menu/SubConfig.h"
 
 namespace P3D {
 

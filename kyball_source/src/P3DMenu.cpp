@@ -1,20 +1,20 @@
 #include "StdAfx.h"
-#include "menu\P3DMenu.h"
+#include "menu/P3DMenu.h"
 
 #include "OgreRoot.h"
 #include "OgreRenderWindow.h"
 #include "P3DApp.h"
 #include "P3DWindow.h"
-#include "game\Game.h"
-#include "map\Map.h"
+#include "game/Game.h"
+#include "map/Map.h"
 
-#include "menu\SubMain.h"
-#include "menu\PlayerBoss.h"
-#include "menu\Player.h"
+#include "menu/SubMain.h"
+#include "menu/PlayerBoss.h"
+#include "menu/Player.h"
 
-#include "hid\HIDBoss.h"
-#include "tween\TPlayer.h"
-#include "core\Utils.h"
+#include "hid/HIDBoss.h"
+#include "tween/TPlayer.h"
+#include "core/Utils.h"
 
 #include "P3DExtro.h"
 

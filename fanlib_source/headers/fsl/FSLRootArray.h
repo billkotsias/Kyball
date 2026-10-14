@@ -4,7 +4,7 @@
 #ifndef FANLIB_FSLRootArray_H
 #define FANLIB_FSLRootArray_H
 
-#include <fsl\FSLArray.h>
+#include <fsl/FSLArray.h>
 
 namespace FANLib {
 

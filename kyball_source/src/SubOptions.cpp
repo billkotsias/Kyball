@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "menu\SubOptions.h"
+#include "menu/SubOptions.h"
 
-#include "gui\Widget.h"
-#include "menu\PlayerBoss.h"
-#include "menu\Player.h"
+#include "gui/Widget.h"
+#include "menu/PlayerBoss.h"
+#include "menu/Player.h"
 
 #include "P3DApp.h"
 //#include "P3DWindow.h"
@@ -58,7 +58,7 @@ namespace P3D {
 		}*/
 	}
 
-	void SubOptions::widgetScroll(MyGUI::VScroll* widget, size_t position) {
+	void SubOptions::widgetScroll(MyGUI::ScrollBar* widget, size_t position) {
 
 		Player* player = playerBoss->getActive();
 		if (!player) return;

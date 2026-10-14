@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "game\cannon\CannonSwarm.h"
+#include "game/cannon/CannonSwarm.h"
 
 #include "OgreBuilder.h"
 #include "OgreAddOns.h"
-#include "tween\TLinear.h"
+#include "tween/TLinear.h"
 
 namespace P3D {
 

@@ -7,14 +7,14 @@
 #define Gameplay_H
 
 #include "Queue.h"
-#include "hid\HIDListener.h"
+#include "hid/HIDListener.h"
 
-#include "map\MapOptions.h"
+#include "map/MapOptions.h"
 #include "OgreFrameListener.h"
-#include "collision\CollisionParams.h"
-#include "game\rule\Rule.h"
+#include "collision/CollisionParams.h"
+#include "game/rule/Rule.h"
 
-#include <logic\Enabled.h>
+#include <logic/Enabled.h>
 #include <deque>
 
 namespace FANLib {

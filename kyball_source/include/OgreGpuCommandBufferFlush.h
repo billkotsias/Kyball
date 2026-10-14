@@ -3,6 +3,7 @@
  
 #include "OgrePrerequisites.h"
 #include "OgreFrameListener.h"
+#include "OgreRenderSystem.h"
  
 namespace Ogre
 {

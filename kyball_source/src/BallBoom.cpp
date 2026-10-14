@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "visual\BallBoom.h"
+#include "visual/BallBoom.h"
 
-#include "game\GameplayBase.h"
+#include "game/GameplayBase.h"
 
-#include "tween\TLinear.h"
+#include "tween/TLinear.h"
 #include <OgreColourValue.h>
 
 namespace P3D {

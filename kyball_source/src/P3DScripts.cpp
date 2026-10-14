@@ -3,9 +3,9 @@
 
 #include <string>
 #include "P3DApp.h"
-#include <fsl\FSLParser.h>
-#include <fsl\FSLInstance.h>
-#include <fsl\FSLEnum.h>
+#include <fsl/FSLParser.h>
+#include <fsl/FSLInstance.h>
+#include <fsl/FSLEnum.h>
 
 namespace P3D {
 

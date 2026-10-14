@@ -6,10 +6,10 @@
 #ifndef BallBoom_H
 #define BallBoom_H
 
-#include "visual\Billboard.h"
-#include "tween\TPlayed.h"
+#include "visual/Billboard.h"
+#include "tween/TPlayed.h"
 
-#include "game\form\BallState.h"
+#include "game/form/BallState.h"
 #include <OgreColourValue.h>
 #include <vector>
 

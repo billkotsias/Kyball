@@ -1,10 +1,10 @@
 #include "StdAfx.h"
-#include "game\GameplayCollection.h"
+#include "game/GameplayCollection.h"
 
 // although seemingly lightweight, this class is in fact "heavy" in order to do full self-cleaning
-#include "game\GameplayObject.h"
-#include "visual\Visual.h"
-#include "visual\VisualBoss.h"
+#include "game/GameplayObject.h"
+#include "visual/Visual.h"
+#include "visual/VisualBoss.h"
 #include "SceneBaseCreator.h"
 
 #include <OgreSceneManager.h>

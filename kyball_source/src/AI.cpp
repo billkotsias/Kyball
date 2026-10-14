@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "game\ai\AI.h"
+#include "game/ai/AI.h"
 
-#include "collision\CollisionObject.h"
-#include "game\form\Form.h"
-#include "game\action\NoAction.h"
+#include "collision/CollisionObject.h"
+#include "game/form/Form.h"
+#include "game/action/NoAction.h"
 
 namespace P3D {
 

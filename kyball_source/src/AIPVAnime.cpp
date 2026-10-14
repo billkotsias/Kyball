@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "game\ai\AIPVAnime.h"
+#include "game/ai/AIPVAnime.h"
 
-#include "game\ai\AIPVAnimator.h"
+#include "game/ai/AIPVAnimator.h"
 
 namespace P3D {
 

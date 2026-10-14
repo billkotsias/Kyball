@@ -1,8 +1,8 @@
-#include <fsl\FSLRuntime.h>
-#include <fsl\FSLObject.h>
+#include <fsl/FSLRuntime.h>
+#include <fsl/FSLObject.h>
 
 #ifdef _DEBUG
-	#include <core\Log.h>
+	#include <core/Log.h>
 #endif
 
 namespace FANLib {

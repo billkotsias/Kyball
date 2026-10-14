@@ -1,10 +1,10 @@
 #include "StdAfx.h"
-#include "visual\PreviewLevel.h"
+#include "visual/PreviewLevel.h"
 
 #include "Queue.h"
-#include "visual\VisualBoss.h"
-#include "sound\SoundBoss.h"
-#include <hid\HIDBoss.h>
+#include "visual/VisualBoss.h"
+#include "sound/SoundBoss.h"
+#include <hid/HIDBoss.h>
 #include "P3DWindow.h"
 #include "SceneBaseCreator.h"
 

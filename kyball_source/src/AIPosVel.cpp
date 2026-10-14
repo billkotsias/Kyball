@@ -1,18 +1,18 @@
 #include "StdAfx.h"
-#include "game\ai\AIPosVel.h"
+#include "game/ai/AIPosVel.h"
 
-#include "game\GameplayObject.h"
-#include "game\GameplayBase.h"
-#include "game\ai\AIPVAnimator.h" /// needed for AIPVAnime clean-up
+#include "game/GameplayObject.h"
+#include "game/GameplayBase.h"
+#include "game/ai/AIPVAnimator.h" /// needed for AIPVAnime clean-up
 
 /// needed for "link"/"unlink" requests!
-#include "game\event\EventManager.h"
-#include "game\event\LinkEvent.h"
-#include "game\event\UnlinkEvent.h"
-#include "game\event\MoverEvent.h"
+#include "game/event/EventManager.h"
+#include "game/event/LinkEvent.h"
+#include "game/event/UnlinkEvent.h"
+#include "game/event/MoverEvent.h"
 
-#include "game\form\Form.h"
-#include "collision\CollisionObject.h"
+#include "game/form/Form.h"
+#include "collision/CollisionObject.h"
 #include "OgreBuilder.h"
 #include "P3DApp.h"
 

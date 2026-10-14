@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "game\ai\AIPVAnimator.h"
+#include "game/ai/AIPVAnimator.h"
 
 #include "P3DApp.h"
-#include "game\ai\AIPVAnime.h"
-#include "game\ai\AIPVListener.h"
+#include "game/ai/AIPVAnime.h"
+#include "game/ai/AIPVListener.h"
 
 namespace P3D {
 

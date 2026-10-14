@@ -1,15 +1,15 @@
 #include "StdAfx.h"
-#include "visual\EnergyChange.h"
-#include "visual\VisualBoss.h"
+#include "visual/EnergyChange.h"
+#include "visual/VisualBoss.h"
 
-#include "tween\TLinear.h"
-#include "tween\TSin.h"
-#include "tween\TCos.h"
+#include "tween/TLinear.h"
+#include "tween/TSin.h"
+#include "tween/TCos.h"
 #include "OgreBuilder.h"
 #include "OgreAddOns.h"
 
-#include "sound\Sound.h"
-#include "visual\CallEvery.h"
+#include "sound/Sound.h"
+#include "visual/CallEvery.h"
 
 namespace P3D {
 

@@ -6,8 +6,8 @@
 #ifndef SubWin_H
 #define SubWin_H
 
-#include "menu\SubMenuMG.h"
-#include <core\MCBSystem.h>
+#include "menu/SubMenuMG.h"
+#include <core/MCBSystem.h>
 
 namespace P3D {
 

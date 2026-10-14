@@ -1,10 +1,16 @@
-#include "core\HRTimer.h"
+#include "core/HRTimer.h"
+
+#if !defined(_WIN32)
+#include <time.h>
+#endif
 
 namespace FANLib {
 
 	HRTimer::HRTimer(void) {
 		frequency = 1.0 / this->getFrequency();
 	}
+
+#if defined(_WIN32)
 
 	double HRTimer::getFrequency(void)
 	{
@@ -36,5 +42,28 @@ namespace FANLib {
 		return ((stop.QuadPart - start.QuadPart) * frequency);
 
 	}
+
+#else
+
+	double HRTimer::getFrequency(void) {
+		return 1000000000.0;
+	}
+
+	static int64_t readClock() {
+		timespec ts;
+		clock_gettime(CLOCK_MONOTONIC, &ts);
+		return (int64_t)ts.tv_sec * 1000000000LL + (int64_t)ts.tv_nsec;
+	}
+
+	void HRTimer::startTimer(void) {
+		start = readClock();
+	}
+
+	double HRTimer::stopTimer(void) {
+		stop = readClock();
+		return (double)(stop - start) * frequency;
+	}
+
+#endif
 
 }

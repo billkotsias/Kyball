@@ -1,12 +1,12 @@
 #include "StdAfx.h"
-#include "map\MapOptions.h"
+#include "map/MapOptions.h"
 
 #include "P3DScripts.h"
-#include "fsl\FSLInstance.h"
-#include "fsl\FSLClassDefinition.h"
-#include "fsl\FSLArray.h"
+#include "fsl/FSLInstance.h"
+#include "fsl/FSLClassDefinition.h"
+#include "fsl/FSLArray.h"
 
-#include "core\Utils.h"
+#include "core/Utils.h"
 
 namespace P3D {
 

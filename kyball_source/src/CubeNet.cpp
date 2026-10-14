@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "game\net\CubeNet.h"
+#include "game/net/CubeNet.h"
 
-#include <math\Math.h>
+#include <math/Math.h>
 #include "OgreAddOns.h"
 
 namespace P3D {

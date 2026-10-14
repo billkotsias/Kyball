@@ -13,7 +13,7 @@ namespace FANLib {
 		template <class Class>
 		static Class& replaceAll(Class& string, const Class& toReplace, const Class& withThis)
 		{
-			Class::size_type n = 0;
+			typename Class::size_type n = 0;
 			while ( ( n = string.find( toReplace, n ) ) != Class::npos )
 			{
 				string.replace( n, toReplace.size(), withThis );
@@ -29,8 +29,8 @@ namespace FANLib {
 			int (*caseFunc)(int);
 			caseFunc = (upperCase) ? ::toupper : ::tolower;
 
-			Class::iterator i = string.begin();
-			const Class::iterator end = string.end();
+			typename Class::iterator i = string.begin();
+			const typename Class::iterator end = string.end();
 
 			while (i != end) {
 				*i = caseFunc((unsigned char)*i);

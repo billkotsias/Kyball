@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "gui\GameMenu.h"
+#include "gui/GameMenu.h"
 
 namespace P3D {
 

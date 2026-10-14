@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "menu\SubCreate.h"
+#include "menu/SubCreate.h"
 
-#include "menu\SubCancel.h"
-#include "menu\PlayerBoss.h"
-#include "menu\Player.h"
+#include "menu/SubCancel.h"
+#include "menu/PlayerBoss.h"
+#include "menu/Player.h"
 
 namespace P3D {
 

@@ -8,9 +8,9 @@
 #define P3DMenu_H
 
 #include "OgreFrameListener.h"
-#include "hid\HIDListener.h"
+#include "hid/HIDListener.h"
 
-#include "menu\SubMainOptions.h"
+#include "menu/SubMainOptions.h"
 
 #include <map>
 

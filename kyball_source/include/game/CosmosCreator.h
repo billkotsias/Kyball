@@ -6,7 +6,7 @@
 #ifndef CosmosCreator_H
 #define CosmosCreator_H
 
-#include "map\MapOptions.h"
+#include "map/MapOptions.h"
 #include <deque>
 #include <string>
 #include <OgreMaterial.h>

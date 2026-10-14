@@ -6,11 +6,11 @@
 #ifndef Map_H
 #define Map_H
 
-#include "menu\SubMainOptions.h"
-#include "map\MapOptions.h"
+#include "menu/SubMainOptions.h"
+#include "map/MapOptions.h"
 
-#include "hid\HIDListener.h"
-#include "tween\TPlayed.h"
+#include "hid/HIDListener.h"
+#include "tween/TPlayed.h"
 #include "OgreAddOns.h"
 
 #include <vector>

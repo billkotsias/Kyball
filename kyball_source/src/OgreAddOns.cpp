@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "OgreAddOns.h"
 
-#include "game\CosmosCreator.h"
+#include "game/CosmosCreator.h"
 
 #include <OgreSceneNode.h>
 
@@ -65,20 +65,21 @@ namespace P3D {
 	}
 
 	void OgreAddOns::reloadAllTextures(std::string group) {
-		reloadAllResources<Ogre::TextureManager, Ogre::TexturePtr>(group);
+		reloadAllResources<Ogre::TextureManager, Ogre::TexturePtr, Ogre::Texture>(group);
 	}
 
 	void OgreAddOns::reloadAllMeshes(std::string group) {
-		reloadAllResources<Ogre::MeshManager, Ogre::MeshPtr>(group);
+		reloadAllResources<Ogre::MeshManager, Ogre::MeshPtr, Ogre::Mesh>(group);
 	}
 
-	template<class Manager, class ResourcePtr>
+	template<class Manager, class ResourcePtr, class Resource>
 	void OgreAddOns::reloadAllResources(std::string group) {
 		Manager* man = Manager::getSingletonPtr();
 
 		Ogre::ResourceManager::ResourceMapIterator resourceMapIterator = man->getResourceIterator();
 		while (resourceMapIterator.hasMoreElements()) {
-			ResourcePtr resPtr = resourceMapIterator.getNext();
+			Ogre::ResourcePtr generic = resourceMapIterator.getNext();
+			ResourcePtr resPtr = generic.staticCast<Resource>();
 			if (resPtr->isReloadable() && (resPtr->getGroup() == group))
 			{
 				resPtr->reload();

@@ -2,7 +2,7 @@
 #ifndef AnimationStatesCombined_H
 #define AnimationStatesCombined_H
 
-#include "visual\Visual.h"
+#include "visual/Visual.h"
 #include <vector>
 
 namespace P3D {

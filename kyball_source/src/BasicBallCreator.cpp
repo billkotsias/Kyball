@@ -1,14 +1,14 @@
 #include "StdAfx.h"
-#include "game\cannon\BasicBallCreator.h"
+#include "game/cannon/BasicBallCreator.h"
 
-#include "game\GameplayBase.h"
-#include "game\GameplayObject.h"
-#include "game\ai\BallAI.h"
-#include "game\GameplayCollection.h"
-#include "game\form\BallForm.h"
-#include "tween\TLinear.h"
+#include "game/GameplayBase.h"
+#include "game/GameplayObject.h"
+#include "game/ai/BallAI.h"
+#include "game/GameplayCollection.h"
+#include "game/form/BallForm.h"
+#include "tween/TLinear.h"
 #include <OgreBillboard.h>
-#include "game\cannon\Cannon.h"
+#include "game/cannon/Cannon.h"
 
 namespace P3D {
 
