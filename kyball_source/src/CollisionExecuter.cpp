@@ -12,7 +12,7 @@
 #include <OgreVector3.h>
 #include <OgreQuaternion.h>
 #include <OgreSceneNode.h>
-#include <stdint.h>
+#include <cmath>
 
 namespace P3D {
 
@@ -149,26 +149,36 @@ namespace P3D {
 		return true;
 	}
 
+	/// 0 = x, 1 = y, 2 = z. Ogre::Real is float here, so component byte offsets are not doubles.
+	static double axisComponent(const Ogre::Vector3& v, int axis) {
+		if (axis == 0) return (double)v.x;
+		if (axis == 1) return (double)v.y;
+		return (double)v.z;
+	}
+
 	double CollisionExecuter::getLineSide(int xvar, int yvar, const Ogre::Vector3* p, const Ogre::Vector3* p0, const Ogre::Vector3* p1) {
-		double x = *(double*)((uintptr_t)p + (uintptr_t)xvar);
-		double y = *(double*)((uintptr_t)p + (uintptr_t)yvar);
-		double x0 = *(double*)((uintptr_t)p0 + (uintptr_t)xvar);
-		double y0 = *(double*)((uintptr_t)p0 + (uintptr_t)yvar);
-		double x1 = *(double*)((uintptr_t)p1 + (uintptr_t)xvar);
-		double y1 = *(double*)((uintptr_t)p1 + (uintptr_t)yvar);
+		double x = axisComponent(*p, xvar);
+		double y = axisComponent(*p, yvar);
+		double x0 = axisComponent(*p0, xvar);
+		double y0 = axisComponent(*p0, yvar);
+		double x1 = axisComponent(*p1, xvar);
+		double y1 = axisComponent(*p1, yvar);
 		return (y - y0) * (x1 - x0) - (x - x0) * (y1 - y0);
 	}
 
 	void CollisionExecuter::getBestPlaneAxis(const Ogre::Vector3& vector, int& xvar, int& yvar) {
-		if (abs(vector.x) > abs(vector.y) && abs(vector.x) > abs(vector.z)) {
-			xvar = (int)((uintptr_t)&(vector.y) - (uintptr_t)&vector);
-			yvar = (int)((uintptr_t)&(vector.z) - (uintptr_t)&vector);
-		} else if (abs(vector.y) > abs(vector.z)) {
-			xvar = (int)((uintptr_t)&(vector.x) - (uintptr_t)&vector);
-			yvar = (int)((uintptr_t)&(vector.z) - (uintptr_t)&vector);
+		const double ax = std::fabs((double)vector.x);
+		const double ay = std::fabs((double)vector.y);
+		const double az = std::fabs((double)vector.z);
+		if (ax > ay && ax > az) {
+			xvar = 1; /// y
+			yvar = 2; /// z
+		} else if (ay > az) {
+			xvar = 0; /// x
+			yvar = 2; /// z
 		} else {
-			xvar = (int)((uintptr_t)&(vector.x) - (uintptr_t)&vector);
-			yvar = (int)((uintptr_t)&(vector.y) - (uintptr_t)&vector);
+			xvar = 0; /// x
+			yvar = 1; /// y
 		}
 	}
 
@@ -337,7 +347,7 @@ namespace P3D {
 
 		/// Solution : http://mathworld.wolfram.com/Point-PlaneDistance.html
 
-		distance = abs(normal.dotProduct(x0 - points[0]));
+		distance = std::fabs((double)normal.dotProduct(x0 - points[0]));
 
 		/// - find point of perpendicular on polygon plane
 		Ogre::Vector3 p = normal * distance + x0;
