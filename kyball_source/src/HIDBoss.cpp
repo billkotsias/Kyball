@@ -104,8 +104,7 @@ namespace P3D {
 	}
 
 	static void noteClosedWindow() {
-		Ogre::RenderWindow* window = P3DWindow::getWindow();
-		if (window && !window->isClosed()) window->destroy();
+		P3DWindow::requestClose();
 	}
 
 	static void feedFingerEvent(const SDL_Event& event) {

@@ -271,7 +271,7 @@ namespace P3D {
 	bool Gameplay::frameRenderingQueued(const Ogre::FrameEvent& evt) {
 
 		/// TODO : is this the right place for this?
-		if(P3DWindow::getWindow()->isClosed()) {
+		if(P3DWindow::closeRequested()) {
 			exitStatus = END_APP;
 			return false;
 		}

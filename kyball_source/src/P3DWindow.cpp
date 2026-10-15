@@ -14,6 +14,9 @@
 #else
 #include <SDL.h>
 #include <SDL_syswm.h>
+#if !defined(__ANDROID__)
+#include <X11/Xlib.h>
+#endif
 #endif
 
 namespace P3D {
@@ -21,10 +24,30 @@ namespace P3D {
 	Ogre::RenderWindow* P3DWindow::window = 0;
 	int P3DWindow::windowHandle = 0;
 	double P3DWindow::pixelRatio = 1.;
+	static bool g_closeRequested = false;
+
+	void P3DWindow::requestClose() { g_closeRequested = true; }
+	bool P3DWindow::closeRequested() {
+		return g_closeRequested || (window && window->isClosed());
+	}
 
 #if !defined(_WIN32)
 	static SDL_Window* g_sdlWindow = 0;
 	static SDL_GLContext g_glContext = 0;
+
+#if !defined(__ANDROID__)
+	// Xlib's default handler prints the error and calls exit(). A stale window
+	// during close does that, so the menu vanishes with no C++ exception.
+	static int logXError(Display* display, XErrorEvent* event) {
+		char text[256];
+		text[0] = 0;
+		if (display && event) XGetErrorText(display, event->error_code, text, sizeof(text));
+		std::cerr << "X error (ignored): " << text << std::endl;
+		if (event && (event->error_code == BadWindow || event->error_code == BadDrawable))
+			g_closeRequested = true;
+		return 0;
+	}
+#endif
 
 	// Ogre renders into SDL's context. SDL has to present that buffer.
 	class ExternalBufferSwap : public Ogre::FrameListener {
@@ -108,6 +131,9 @@ namespace P3D {
 		Ogre::Root::getSingletonPtr()->addFrameListener(&swapper);
 		// SDL owns the real window; Ogre renders into the current GL context.
 		setWindow(Ogre::Root::getSingletonPtr()->createRenderWindow(P3DApp::WINDOW_NAME, windowX, windowY, false, &list));
+#if !defined(__ANDROID__)
+		XSetErrorHandler(logXError);
+#endif
 		if (fullScreen) {
 			pixelRatio = P3DConfig::MONITOR_ASPECT_RATIO * window->getHeight() / window->getWidth();
 		} else {

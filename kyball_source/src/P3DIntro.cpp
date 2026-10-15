@@ -179,7 +179,7 @@ namespace P3D {
 
 	bool P3DIntro::frameRenderingQueued(const Ogre::FrameEvent& evt) {
 
-		if (P3DWindow::getWindow()->isClosed()) return false; /// check if app was externally quit
+		if (P3DWindow::closeRequested()) return false;
 
 		int frames = P3DApp::CYCLES_PER_SEC * evt.timeSinceLastFrame; /// loop will run at least once
 		static const double frameTime = 1./P3DApp::CYCLES_PER_SEC;

@@ -109,8 +109,12 @@ extern "C" {
 		P3D::reportError(e.getFullDescription().c_str());
       } catch (const std::exception& e) {
 		std::cerr << "Kyball stopped: " << e.what() << std::endl;
+      } catch (const char* message) {
+		std::cerr << "Kyball stopped: " << (message ? message : "") << std::endl;
+      } catch (int code) {
+		std::cerr << "Kyball stopped: script error " << code << std::endl;
       } catch (...) {
-		std::cerr << "Kyball stopped. Game data was not found under P3DData/ (or KYBALL_DATA)." << std::endl;
+		std::cerr << "Kyball stopped: unknown error" << std::endl;
       }
 
 #ifndef _WIN32

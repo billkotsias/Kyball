@@ -297,7 +297,7 @@ namespace P3D {
 
 	bool P3DConfig::frameRenderingQueued(const Ogre::FrameEvent& evt) {
 
-		if (P3DWindow::getWindow()->isClosed()) {
+		if (P3DWindow::closeRequested()) {
 			doNotBegin = true;
 			return false; /// app was quit externally!
 		}
