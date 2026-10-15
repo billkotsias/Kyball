@@ -217,7 +217,7 @@ namespace P3D {
             Ogre::ConfigFile::SettingsMultiMap::iterator i;
 			for (i = settings->begin(); i != settings->end(); ++i) {
                 typeName = i->first;
-				archName = P3DApp::DATA_PATH + i->second; /// NOTE : "P3DData\" automatically added to all resource filenames
+				archName = resourceLocation(i->second); /// NOTE : "P3DData/" automatically added to all resource filenames
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
                 ResourceGroupManager::getSingleton().addResourceLocation(

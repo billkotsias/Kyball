@@ -118,12 +118,12 @@ namespace FANLib {
 
 	void FSLClass::changeInt(const FANLib::FastStr &fstr, int &value) {
 		int pos = change(fstr, FSL::INT, &WRONG_TYPE_INT);
-		data.at(pos) = *(FSL::real*)&value;
+		data.at(pos) = FSL::packSlot(value);
 	}
 
 	void FSLClass::changeReal(const FANLib::FastStr &fstr, FANLib::FSL::real &value) {
 		int pos = change(fstr, FSL::REAL, &WRONG_TYPE_REAL);
-		data.at(pos) = *(FSL::real*)&value;
+		data.at(pos) = FSL::packSlot(value);
 	}
 
 	void FSLClass::changeString(const FANLib::FastStr &fstr, FANLib::FSLString *value) {

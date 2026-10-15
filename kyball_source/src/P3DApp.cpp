@@ -62,10 +62,10 @@ namespace P3D {
 	std::string P3DApp::RESOURCES_FILE;
 	std::string P3DApp::SCRIPTS_PATH;
 	std::string P3DApp::SOUNDS_PATH;
-#if defined(_DEPLOY) || !defined(_DEBUG)
-	const std::string P3DApp::SOUNDS_EXT		= ".ogg";
-#else
+#if defined(_WIN32) && defined(_DEBUG) && !defined(_DEPLOY)
 	const std::string P3DApp::SOUNDS_EXT		= ".wav";
+#else
+	const std::string P3DApp::SOUNDS_EXT		= ".ogg";
 #endif
 	const std::string P3DApp::UNREF_RES_DIR		= "unref"; /// directory paths ending like this are assumed to have script-unreferenced resources (must be declared manually)
 	std::string P3DApp::OPTIONS_FILE;
@@ -236,11 +236,24 @@ namespace P3D {
 		return false;
 	}
 
+	// The shipped scripts define a few materials twice. Ogre 1.10 throws on that
+	// unless a loading listener keeps the first instance, which is what 1.6 did.
+	class KeepPreviousResource : public Ogre::ResourceLoadingListener {
+	public:
+		Ogre::DataStreamPtr resourceLoading(const Ogre::String&, const Ogre::String&, Ogre::Resource*) {
+			return Ogre::DataStreamPtr();
+		}
+		void resourceStreamOpened(const Ogre::String&, const Ogre::String&, Ogre::Resource*, Ogre::DataStreamPtr&) {}
+		bool resourceCollision(Ogre::Resource*, Ogre::ResourceManager*) { return false; }
+	};
+
 	/* Setup Ogre resources */;
 	void P3DApp::setupResources() {
 
         /// - load "resources" file
 		Ogre::ResourceGroupManager* resMan =  Ogre::ResourceGroupManager::getSingletonPtr();
+		static KeepPreviousResource keepPrevious;
+		resMan->setLoadingListener(&keepPrevious);
 		Ogre::ConfigFile cf;
         cf.load(RESOURCES_FILE);
 
@@ -257,7 +270,7 @@ namespace P3D {
             Ogre::ConfigFile::SettingsMultiMap::iterator i;
 			for (i = settings->begin(); i != settings->end(); ++i) {
                 typeName = i->first;
-				archName = DATA_PATH + i->second; /// NOTE : "P3DData\" automatically added to all resource filenames
+				archName = resourceLocation(i->second); /// NOTE : "P3DData/" automatically added to all resource filenames
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
                 ResourceGroupManager::getSingleton().addResourceLocation(

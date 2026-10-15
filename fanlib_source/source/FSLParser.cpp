@@ -539,28 +539,28 @@ namespace FANLib {
 				case FSL::INT: {
 					getNextKey(fstr, key1, false, false, true); /// key1 = variable value
 					int valueInt = (int)parseNumericExpression(key1);
-					fslClass->data.at(pos) = *(FSL::real*)&valueInt;
+					fslClass->data.at(pos) = FSL::packSlot(valueInt);
 					break; }
 				case FSL::REAL: {
 					getNextKey(fstr, key1, false, false, true); /// key1 = variable value
 					FSL::real valueReal = parseNumericExpression(key1);
-					fslClass->data.at(pos) = *(FSL::real*)&valueReal;
+					fslClass->data.at(pos) = FSL::packSlot(valueReal);
 					break; }
 				case FSL::STRING: {
 					getNextKey(fstr, key1, false, false, true); /// key1 = variable value
 					FSLString* str = new FSLString(key1.toCString());
-					fslClass->data.at(pos) = *(FSL::real*)&str; /// pointers of 'str' will be increased when "finalized"
+					fslClass->data.at(pos) = FSL::packSlot(str); /// pointers of 'str' will be increased when "finalized"
 					break; }
 				case FSL::ARRAY: {
 					FSLRootArray* newArray = new FSLRootArray((*(FSLRootArray**)&(fslClass->data.at(pos))));
 					parseArray(fstr, newArray);
-					fslClass->data.at(pos) = *(FSL::real*)&newArray; /// pointers of 'newArray' will be increased when "finalized"
+					fslClass->data.at(pos) = FSL::packSlot(newArray); /// pointers of 'newArray' will be increased when "finalized"
 					break; }
 				case FSL::CLASS: {
 					getNextKey(fstr, key1, false, true, true); /// key1 = variable value
 					FSLClassDefinition* classDef = (*(FSLClass**)&(fslClass->data.at(pos)))->definition.getPtr();
 					FSLClass* newClass = parseClassValue(fstr, classDef, key1, true);
-					fslClass->data.at(pos) = *(FSL::real*)&newClass; /// pointers of 'newClass' will be increased when "finalized"
+					fslClass->data.at(pos) = FSL::packSlot(newClass); /// pointers of 'newClass' will be increased when "finalized"
 					break; }
 			}
 

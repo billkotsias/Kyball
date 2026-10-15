@@ -95,7 +95,7 @@ namespace FANLib {
 				Log::internalLog(&ARRAY_WRONG_TYPE, true, FANLib::Error::FSL_ARRAY_WRONG_TYPE);
 			}
 #endif
-			data.push_back(*(FSL::real*)&p);
+			data.push_back(FSL::packSlot(p));
 		};
 
 		friend class FSLParser;

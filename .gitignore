@@ -1,6 +1,8 @@
 # Extracted commercial game data and local build trees
 /P3DData/
+/branding/
 /build/
+/build-host/
 /out/
 /cmake-build-*/
 *.apk

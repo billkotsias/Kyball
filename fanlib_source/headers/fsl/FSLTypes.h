@@ -4,13 +4,24 @@
 #ifndef FANLIB_FSLTypes_H
 #define FANLIB_FSLTypes_H
 
+#include <string.h>
+
 namespace FANLib {
 
 	namespace FSL {
 
-		// FSL data types
-		//
-		typedef float real; // real = float or double (double requires double RAM!)
+		// One script slot holds an int, a real, or a pointer. A float is wide
+		// enough for a pointer only in the original 32-bit build.
+		typedef double real;
+
+		template <class T>
+		inline real packSlot(const T& value) {
+			real slot = 0;
+			size_t bytes = sizeof(T);
+			if (bytes > sizeof(slot)) bytes = sizeof(slot);
+			memcpy(&slot, &value, bytes);
+			return slot;
+		}
 
 		/// VAR_TYPE can be contained within a byte
 		enum VAR_TYPE {
