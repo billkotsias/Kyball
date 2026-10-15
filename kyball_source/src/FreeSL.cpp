@@ -35,7 +35,10 @@ namespace {
 	bool ready = false;
 	bool silent = false;
 	float masterVolume = 1.f;
-	std::mutex mutex;
+	// SoundBoss holds this lock and then calls fsl* functions that lock again.
+	// The original FreeSL critical section was recursive; std::mutex deadlocks
+	// there, so Map::init never returns and the title frame stays on screen.
+	std::recursive_mutex mutex;
 	std::map<unsigned int, Voice> voices;
 	std::map<unsigned int, bool> buffers;
 	unsigned int nextFake = 1;
@@ -196,7 +199,7 @@ namespace {
 } // namespace
 
 	bool fslInit(int system) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (ready) return true;
 		if (system == FSL_SS_DIRECTSOUND3D || system == FSL_SS_DIRECTSOUND || system == FSL_SS_MMSYSTEM)
 			return false;
@@ -222,7 +225,7 @@ namespace {
 	}
 
 	void fslShutDown() {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (!silent) {
 			for (std::map<unsigned int, Voice>::iterator it = voices.begin(); it != voices.end(); ++it) {
 				if (it->second.source) {
@@ -258,7 +261,7 @@ namespace {
 	void fslLeaveCriticalSection() { mutex.unlock(); }
 
 	unsigned int fslCreateEmptySound() {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice voice;
 		voice.source = 0;
 		voice.streaming = false;
@@ -283,7 +286,7 @@ namespace {
 	unsigned int fslLoadBuffer(const char* path) {
 		std::vector<unsigned char> file;
 		if (!readFile(path, file)) return 0;
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		return decodeToBuffer(&file[0], (int)file.size());
 	}
 
@@ -291,7 +294,7 @@ namespace {
 		std::vector<unsigned char> zip, raw;
 		if (!readFile(zipPath, zip)) return 0;
 		if (!unzipEntry(zip, entryName, raw) || raw.empty()) return 0;
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		return decodeToBuffer(&raw[0], (int)raw.size());
 	}
 
@@ -299,21 +302,21 @@ namespace {
 		unsigned int buffer = fslLoadBuffer(path);
 		unsigned int sound = fslCreateEmptySound();
 		if (buffer) fslSetSoundBuffer(sound, buffer);
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (voice) voice->streaming = true;
 		return sound;
 	}
 
 	void fslSetSoundBuffer(FSLsound sound, unsigned int buffer) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (!voice || silent || !voice->source) return;
 		alSourcei(voice->source, AL_BUFFER, (ALint)buffer);
 	}
 
 	unsigned int fslGetBufferFromSound(FSLsound sound) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (!voice || silent || !voice->source) return 0;
 		ALint buffer = 0;
@@ -322,7 +325,7 @@ namespace {
 	}
 
 	void fslFreeSound(FSLsound sound, bool removeBuffer) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (!voice) return;
 		unsigned int buffer = 0;
@@ -344,7 +347,7 @@ namespace {
 	}
 
 	void fslFreeAllBuffers() {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (!silent) {
 			for (std::map<unsigned int, Voice>::iterator it = voices.begin(); it != voices.end(); ++it) {
 				if (it->second.source) alSourcei(it->second.source, AL_BUFFER, 0);
@@ -358,13 +361,13 @@ namespace {
 	}
 
 	void fslSoundStop(FSLsound sound) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (voice && !silent && voice->source) alSourceStop(voice->source);
 	}
 
 	void fslSoundStopAllSounds(bool stopStreams) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		for (std::map<unsigned int, Voice>::iterator it = voices.begin(); it != voices.end(); ++it) {
 			if (!stopStreams && it->second.streaming) continue;
 			if (!silent && it->second.source) alSourceStop(it->second.source);
@@ -372,7 +375,7 @@ namespace {
 	}
 
 	void fslSoundPlaySynch(unsigned int count, FSLsound* sounds) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (silent || !sounds) return;
 		std::vector<ALuint> sources;
 		sources.reserve(count);
@@ -384,7 +387,7 @@ namespace {
 	}
 
 	bool fslSoundIsInactive(FSLsound sound) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (!voice) return true;
 		if (silent || !voice->source) return true;
@@ -394,19 +397,19 @@ namespace {
 	}
 
 	bool fslSoundIsStreaming(FSLsound sound) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		return voice && voice->streaming;
 	}
 
 	void fslSoundSetLooping(FSLsound sound, bool loop) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (voice && !silent && voice->source) alSourcei(voice->source, AL_LOOPING, loop ? AL_TRUE : AL_FALSE);
 	}
 
 	void fslSoundSetGain(FSLsound sound, float gain, float multiplier) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (!voice) return;
 		voice->baseGain = gain;
@@ -415,13 +418,13 @@ namespace {
 	}
 
 	float fslSoundGetGain(FSLsound sound) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		return voice ? voice->baseGain : 0.f;
 	}
 
 	void fslSoundSetPitch(FSLsound sound, float pitch, float multiplier) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (!voice) return;
 		voice->basePitch = pitch;
@@ -430,37 +433,37 @@ namespace {
 	}
 
 	float fslSoundGetPitch(FSLsound sound) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		return voice ? voice->basePitch : 1.f;
 	}
 
 	void fslSoundSetPosition(FSLsound sound, float x, float y, float z) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (voice && !silent && voice->source) alSource3f(voice->source, AL_POSITION, x, y, z);
 	}
 
 	void fslSoundSetReferenceDistance(FSLsound sound, float distance) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (voice && !silent && voice->source) alSourcef(voice->source, AL_REFERENCE_DISTANCE, distance);
 	}
 
 	void fslSoundSetRolloff(FSLsound sound, float rolloff) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (voice && !silent && voice->source) alSourcef(voice->source, AL_ROLLOFF_FACTOR, rolloff);
 	}
 
 	void fslSoundSetMaxDistance(FSLsound sound, float distance) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		Voice* voice = voiceOf(sound);
 		if (voice && !silent && voice->source) alSourcef(voice->source, AL_MAX_DISTANCE, distance);
 	}
 
 	void fslSetListenerDistanceModel(FSLenum model) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (silent) return;
 		ALenum alModel = AL_INVERSE_DISTANCE;
 		switch (model) {
@@ -476,24 +479,24 @@ namespace {
 	}
 
 	void fslSetListenerPosition(float x, float y, float z) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (!silent) alListener3f(AL_POSITION, x, y, z);
 	}
 
 	void fslSetListenerOrientation(float atx, float aty, float atz, float upx, float upy, float upz) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (silent) return;
 		float ori[6] = { atx, aty, atz, upx, upy, upz };
 		alListenerfv(AL_ORIENTATION, ori);
 	}
 
 	void fslSetListenerVelocity(float x, float y, float z) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		if (!silent) alListener3f(AL_VELOCITY, x, y, z);
 	}
 
 	void fslSetVolume(float gain) {
-		std::lock_guard<std::mutex> lock(mutex);
+		std::lock_guard<std::recursive_mutex> lock(mutex);
 		masterVolume = gain;
 		if (!silent) alListenerf(AL_GAIN, masterVolume);
 	}

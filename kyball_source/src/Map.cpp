@@ -110,13 +110,18 @@ namespace P3D {
 		time = asin(rot.y / (YROT_MAX * 2. / 3.)) / POLAR_TIME;
 
 #ifndef _DEPLOY
-		FANLib::FSLClassDefinition* p3dLevels = P3DScripts::p3dLevels->getRoot();
-		try {
-			int cosmos = p3dLevels->getInt("currentCosmos");
-			int level = p3dLevels->getInt("currentLevel");
-			hacked = true; /// means don't build map (speeds up start-up process)
-			return;
-		} catch(...) {}
+		// P3DLevels.fsl ships the author's level bookmark. Honor it only when
+		// asked, otherwise startup skips the world map the way a debug build did.
+		const char* devLevel = std::getenv("KYBALL_DEV_LEVEL");
+		if (devLevel && devLevel[0] && devLevel[0] != '0') {
+			FANLib::FSLClassDefinition* p3dLevels = P3DScripts::p3dLevels->getRoot();
+			try {
+				int cosmos = p3dLevels->getInt("currentCosmos");
+				int level = p3dLevels->getInt("currentLevel");
+				hacked = true; /// means don't build map (speeds up start-up process)
+				return;
+			} catch(...) {}
+		}
 #endif
 
 		/// - create objects

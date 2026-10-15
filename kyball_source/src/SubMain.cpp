@@ -94,13 +94,17 @@ namespace P3D {
 		subOptions->delay = _delay;
 
 #ifndef _DEPLOY
-		// hack
-		FANLib::FSLClassDefinition* p3dLevels = P3DScripts::p3dLevels->getRoot();
-		try {
-			int cosmos = p3dLevels->getInt("currentCosmos");
-			int level = p3dLevels->getInt("currentLevel");
-			widgetClicked((FANLib::MCBSystem*)play);
-		} catch(...) {}
+		// Same bookmark as Map::init. Clicking Play here closes the menu before
+		// the first menu frame, so the title never gives way to the main menu.
+		const char* devLevel = std::getenv("KYBALL_DEV_LEVEL");
+		if (devLevel && devLevel[0] && devLevel[0] != '0') {
+			FANLib::FSLClassDefinition* p3dLevels = P3DScripts::p3dLevels->getRoot();
+			try {
+				int cosmos = p3dLevels->getInt("currentCosmos");
+				int level = p3dLevels->getInt("currentLevel");
+				widgetClicked((FANLib::MCBSystem*)play);
+			} catch(...) {}
+		}
 #endif
 	}
 
