@@ -131,6 +131,10 @@ FetchContent_GetProperties(mygui)
 if(NOT mygui_POPULATED)
 	FetchContent_Populate(mygui)
 endif()
+execute_process(
+	COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/patch-mygui-skins.cmake
+	WORKING_DIRECTORY ${mygui_SOURCE_DIR}
+)
 
 if(NOT ANDROID)
 	find_package(Freetype REQUIRED)

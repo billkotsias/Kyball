@@ -36,6 +36,10 @@ namespace P3D {
 	SceneBaseCreator::~SceneBaseCreator() {
 		instance = 0; /// putting this here allows someone to directly delete SceneBaseCreator*, bypassing the static 'destroy()' function (if friend class, that is)
 		shutdown();
+		if (overlaySystem) {
+			OGRE_DELETE overlaySystem;
+			overlaySystem = 0;
+		}
 	}
 
 	void SceneBaseCreator::clearPointers() {
@@ -49,6 +53,11 @@ namespace P3D {
 	void SceneBaseCreator::init(Ogre::RenderWindow* win) {
 		window = win;
 		ogreRoot = Ogre::Root::getSingletonPtr();
+		// *.overlay scripts are loaded with the resource groups. OverlayManager
+		// registers that script loader only when it is constructed, so this has
+		// to exist before setupResources(). Creating it later leaves menu
+		// overlays such as Overlay/MenuPlay missing.
+		if (!overlaySystem) overlaySystem = OGRE_NEW Ogre::OverlaySystem();
 	}
 
 	void SceneBaseCreator::setCamera(Ogre::Camera* newCamera, unsigned char i)
@@ -170,7 +179,8 @@ namespace P3D {
 			clock_t time = clock();
 
 			myPlatform = new MyGUI::OgrePlatform();
-			myPlatform->initialise(window, sceneManager, "General", "");
+			// The platform opens the log. Gui::initialise's log-file argument is ignored.
+			myPlatform->initialise(window, sceneManager, "General", P3DApp::MYGUI_LOG_FILE);
 			MyGUI::LogManager::getInstance().setSTDOutputEnabled(false);
 			myGUI = new MyGUI::Gui();
 			myGUI->initialise("core.xml", P3DApp::MYGUI_LOG_FILE);
@@ -242,11 +252,10 @@ namespace P3D {
 			myPlatform = 0;
 		}
 
-		if (sceneManager) ogreRoot->destroySceneManager(sceneManager); /// destroy previous
-		sceneManager = 0;
-		if (overlaySystem) {
-			OGRE_DELETE overlaySystem;
-			overlaySystem = 0;
+		if (sceneManager) {
+			if (overlaySystem) sceneManager->removeRenderQueueListener(overlaySystem);
+			ogreRoot->destroySceneManager(sceneManager); /// destroy previous
 		}
+		sceneManager = 0;
 	}
 }

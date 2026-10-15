@@ -116,7 +116,7 @@ namespace P3D {
 			acceptKeyEvents(true);
 			acceptMouseEvents(true);
 			notFinished = true;
-			std::cout << "P3DMenu rendering\n";
+			std::cout << "P3DMenu rendering" << std::endl;
 
 			{
 				/// run one frame before rendering starts
