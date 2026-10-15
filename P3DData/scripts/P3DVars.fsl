@@ -57,6 +57,15 @@ string MapTextIn "#ffa0a0Click#afffff to enter this area
 string Area "Area"
 string Difficulty "Difficulty"
 string Complete "Complete"
+
+string Arctic "Arctic"
+string Forest "Forest"
+string Underground "Underground"
+string CoralReef "Coral Reef"
+string Halloween "Halloween"
+string Savanna "Savanna"
+string Desert "Desert"
+string Tropical "Tropical"
 string areYouSure "Are you sure you want to delete"
 string empty "empty"
 
