@@ -50,6 +50,16 @@ array of string diffs [
 string completed "Completed"
 string totalScore "Total Score"
 
+string MapTextOut "#afffffMove the mouse and #ffa0a0click#afffff an active area
+#ffa0a0Right-click#afffff to go back"
+string MapTextIn "#ffa0a0Click#afffff to enter this area
+#ffa0a0Right-click#afffff to go back"
+string Area "Area"
+string Difficulty "Difficulty"
+string Complete "Complete"
+string areYouSure "Are you sure you want to delete"
+string empty "empty"
+
 string flyinSkip "Click to fast-forward
 Right-click to skip intro"
 string flyinStart "Click to start playing"
