@@ -33,6 +33,11 @@ namespace P3D {
 		//static Ogre::RenderWindow* recreate();
 
 		static bool focused();
+		// The window manager asked us to close. Do not destroy the GL window
+		// inside the frame that sees the event; the swap that follows would
+		// touch a dead drawable and kill the process.
+		static void requestClose();
+		static bool closeRequested();
 
 		static Ogre::Vector2 getSize();
 		static double getPixelRatio() { return pixelRatio; };

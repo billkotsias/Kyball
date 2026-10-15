@@ -123,11 +123,18 @@ namespace P3D {
 
 		// SUPER-FX
 		/// <NOTE> : Compositors are never destroyed directly! The viewport only gets destroyed!
-		Ogre::CompositorManager::getSingletonPtr()->addCompositor(sceneBase->getViewport(0), "Bloom")->addListener(this);
-		Ogre::CompositorManager::getSingletonPtr()->setCompositorEnabled(sceneBase->getViewport(0), "Bloom", true);
-
-		Ogre::CompositorManager::getSingletonPtr()->addCompositor(sceneBase->getViewport(0), "Radial Blur")->addListener(this);
-		Ogre::CompositorManager::getSingletonPtr()->setCompositorEnabled(sceneBase->getViewport(0), "Radial Blur", true);
+		Ogre::CompositorManager* compositors = Ogre::CompositorManager::getSingletonPtr();
+		Ogre::Viewport* viewport = sceneBase->getViewport(0);
+		Ogre::CompositorInstance* bloom = compositors->addCompositor(viewport, "Bloom");
+		if (bloom) {
+			bloom->addListener(this);
+			compositors->setCompositorEnabled(viewport, "Bloom", true);
+		}
+		Ogre::CompositorInstance* blur = compositors->addCompositor(viewport, "Radial Blur");
+		if (blur) {
+			blur->addListener(this);
+			compositors->setCompositorEnabled(viewport, "Radial Blur", true);
+		}
 
 		/// compositor playlists
 		static const double COMPO_INIT_DELAY = 4.;
