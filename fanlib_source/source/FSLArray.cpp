@@ -93,12 +93,12 @@ namespace FANLib {
 
 	void FSLArray::changeInt(const unsigned int &pos, int &value) {
 		change(pos, FSL::INT, &WRONG_TYPE_INT);
-		data.at(pos) = *(FSL::real*)&value;
+		data.at(pos) = FSL::packSlot(value);
 	}
 
 	void FSLArray::changeReal(const unsigned int &pos, FANLib::FSL::real &value) {
 		change(pos, FSL::REAL, &WRONG_TYPE_REAL);
-		data.at(pos) = *(FSL::real*)&value;
+		data.at(pos) = FSL::packSlot(value);
 	}
 
 	void FSLArray::changeString(const unsigned int &pos, FANLib::FSLString *value) {

@@ -1,0 +1,64 @@
+Obj3D "ExtroDragonSphere" {
+	mesh "ExtroDragonSphere.mesh"
+	material [ "ExtroDragonSphere" ]
+}
+Obj3D "ExtroDragon" {
+	mesh "ExtroDragon.mesh"
+	material [ "batcave_animal" ]
+}
+Obj3D "ExtroOwlSphere" {
+	mesh "ExtroOwlSphere.mesh"
+	material [ "ExtroOwlSphere" ]
+}
+Obj3D "ExtroOwl" {
+	mesh "ExtroOwl.mesh"
+	material [ "halloween_animal" ]
+}
+Obj3D "ExtroTucanSphere01" {
+	mesh "ExtroTucanSphere01.mesh"
+	material [ "ExtroTucanSphere" ]
+}
+Obj3D "ExtroTucan" {
+	mesh "ExtroTucan.mesh"
+	material [ "beach_animal" ]
+}
+Obj3D "ExtroWolf" {
+	mesh "ExtroWolf.mesh"
+	material [ "forest_animal" ]
+}
+Obj3D "ExtroWolfSphere" {
+	mesh "ExtroWolfSphere.mesh"
+	material [ "ExtroWolfSphere" ]
+}
+Obj3D "ExtroOryx" {
+	mesh "ExtroOryx.mesh"
+	material [ "desert_animal" "oryx_tail" ]
+}
+Obj3D "ExtroOryxSphere" {
+	mesh "ExtroOryxSphere.mesh"
+	material [ "ExtroOryxSphere" ]
+}
+Obj3D "ExtroHippo" {
+	mesh "ExtroHippo.mesh"
+	material [ "savanna_animal" ]
+}
+Obj3D "ExtroHippoSphere" {
+	mesh "ExtroHippoSphere.mesh"
+	material [ "ExtroHippoSphere" ]
+}
+Obj3D "ExtroWalrusSphere" {
+	mesh "ExtroWalrusSphere.mesh"
+	material [ "ExtroWalrusSphere" ]
+}
+Obj3D "ExtroWalrus" {
+	mesh "ExtroWalrus.mesh"
+	material [ "arctic_animal" ]
+}
+Obj3D "ExtroTurtle" {
+	mesh "ExtroTurtle.mesh"
+	material [ "reef_animal" ]
+}
+Obj3D "ExtroTurtleSphere" {
+	mesh "ExtroTurtleSphere.mesh"
+	material [ "ExtroTurtleSphere" ]
+}

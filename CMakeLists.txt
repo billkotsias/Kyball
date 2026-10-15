@@ -170,7 +170,7 @@ file(GLOB FANLIB_SRC CONFIGURE_DEPENDS fanlib_source/source/*.cpp)
 add_library(fanlib STATIC ${FANLIB_SRC})
 target_include_directories(fanlib PUBLIC fanlib_source/headers)
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-	target_compile_options(fanlib PRIVATE -fpermissive -Wno-narrowing)
+	target_compile_options(fanlib PRIVATE -fpermissive -Wno-narrowing -fno-strict-aliasing)
 endif()
 
 file(GLOB KYBALL_SRC CONFIGURE_DEPENDS kyball_source/src/*.cpp)
@@ -186,7 +186,7 @@ else()
 	add_executable(kyball ${KYBALL_SRC})
 endif()
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-	target_compile_options(kyball PRIVATE -fpermissive -Wno-narrowing)
+	target_compile_options(kyball PRIVATE -fpermissive -Wno-narrowing -fno-strict-aliasing)
 endif()
 if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 	# Game code takes the address of short-lived Vector3 temporaries and uses
@@ -245,8 +245,13 @@ if(ANDROID)
 endif()
 
 if(UNIX AND NOT ANDROID)
+	# $ORIGIN is relative to the executable. A container build otherwise bakes
+	# the mount path (/src/build/...) and the binary cannot find its libraries
+	# on the host. --disable-new-dtags keeps DT_RPATH so FreeImage and zziplib
+	# next to the executable are visible to OgreMain as well.
+	target_link_options(kyball PRIVATE "-Wl,--disable-new-dtags")
 	set_target_properties(kyball PROPERTIES
-		BUILD_RPATH "$<TARGET_FILE_DIR:OgreMain>;$<TARGET_FILE_DIR:SDL2>;$<TARGET_FILE_DIR:OpenAL>;$<TARGET_FILE_DIR:Plugin_ParticleFX>"
-		INSTALL_RPATH "$ORIGIN"
+		BUILD_RPATH "\$ORIGIN/_deps/ogre-build/lib;\$ORIGIN/_deps/sdl2-build;\$ORIGIN/_deps/openal-build;\$ORIGIN/syslibs"
+		INSTALL_RPATH "\$ORIGIN"
 	)
 endif()

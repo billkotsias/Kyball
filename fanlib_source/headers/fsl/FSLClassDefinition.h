@@ -68,7 +68,7 @@ namespace FANLib {
 			}
 			var[FastStr(fstr.toCString(), (unsigned int)fstr.size)] = data.size(); /// the created (copied) string must be deleted later
 			type.push_back((char)inType);
-			data.push_back(*(FSL::real*)&p);
+			data.push_back(FSL::packSlot(p));
 		}
 
 		bool defined();	/// is this a declaration or definition?

@@ -1,0 +1,4417 @@
+// BEACH
+Node beachMorning {
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 0 z 0 }
+			rot [ -0.312072 -0.691391 0.640642 -0.119028 ]
+			//rot [ 0 0 0 ]
+			lights [ { name "Omni01" type Light::directional diffuse RGB::grey9 } ]
+		}
+		//SEA_BEACH
+		{
+			pos { x 0.744 y -2.72099 z 328.554 }
+			entities [ { name "SEA_BEACH" obj "SEA_BEACH" } ]
+		}
+		//BASE_BEACH
+		{
+			pos { x -0.038329 y -0.0899757 z 5.78501 }
+			entities [ { name "BASE_BEACH" obj "BASE_BEACH" } ]
+		}
+	]
+}
+Node beachAfternoon {
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 0 z 0 }
+			//rot [ -0.646188 -0.262848 0.480612 -0.53138 ]
+			rot [ 90 0 0 ]
+			lights [ { name "Omni01" type Light::directional diffuse { r 0.84 g 0.81 b 0.98 } } ]
+		}
+		//SEA_BEACH
+		{
+			pos { x 0.744 y -2.72099 z 328.554 }
+			entities [ { name "SEA_BEACH" obj "SEA_AFTERNOON_BEACH" anims [ { n "anim" s 0.65 } ] } ]
+		}
+		//BASE_BEACH
+		{
+			pos { x -0.038329 y -0.0899757 z 5.78501 }
+			entities [ { name "BASE_BEACH" obj "BASE_AFTERNOON_BEACH" } ]
+		}
+	]
+}
+Node beachStars {
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 4 z 0 }
+			lights [ { name "Omni01" type Light::point diffuse RGB::grey9 attenuation { range 200 linear 0.022 quad 0.0019 } } ]
+		}
+		//SEA_BEACH
+		{
+			pos { x 0.744 y -2.72099 z 328.554 }
+			entities [ { name "SEA_BEACH" obj "SEA_NIGHT_BEACH" } ]
+		}
+		//BASE_BEACH
+		{
+			pos { x -0.038329 y -0.0899757 z 5.78501 }
+			entities [ { name "BASE_BEACH" obj "BASE_NIGHT_BEACH" } ]
+		}
+	]
+}
+Node beachTurtle {
+	animators [ { t Animator::ellipse elMa 70 elMi 100 elFi 180 elAngle 90 s 0.03 } ]
+	pos { x -0.626 y -1.352 z 170.956 }
+	nodes [
+		//turtlaki
+		{
+			animators [ { t Animator::oscillate osWi 0.3 s 2 } ]
+			pos { x 0 y -0.5 z -50 }
+			scale { x 1.5 w 3 }
+			rot [ 0 0.721221 -3.15256e-008 0.692705 ]
+			entities [ { name "turtlaki" obj "turtlaki" anims [ { n anim } ] } ]
+		}
+	]
+}
+Node SeagullNode {
+	pos { x 0 y 0 z 2 }
+	nodes [
+		{
+			animators [ { t Animator::oscillate osWi 1.5 s 2 } ]
+			scale { x 0.02 y 0.02 z 0.02 }
+			rot [ 0 0 180 ]
+			entities [ { obj "Seagull" anims [ { n "anim" s 1.5 } ] } ]
+		}
+	]
+}
+Node seagulls {
+	nodes [
+		{
+			animators [ { t Animator::ellipse elMa 100 elMi 100 elFi 180 elAngle 180 start -30 s -0.13 } ]
+			pos { x 0 y 10 z 10 }
+			nodes [ SeagullNode ]
+		}
+		{
+			animators [ { t Animator::ellipse elMa 120 elMi 80 elFi 180 elAngle 180 start -30 s -0.13 } ]
+			pos { x 0 y 10 z 10 }
+			nodes [ SeagullNode ]
+		}
+		{
+			animators [ { t Animator::ellipse elMa 80 elMi 120 elFi 180 elAngle 180 s -0.13 } ]
+			pos { x 0 y 10 z 10 }
+			nodes [ SeagullNode ]
+		}
+	]
+}
+Node beachIsland1Dry {
+	pos { x 467.126 y 147.786 z 3854.09 }
+	scale { x 0.0980165 y 0.0927896 z 0.100608 }
+	rot [ 0 0.98447 -4.30325e-008 -0.175554 ]
+	entities [ { name "ISLAND1_BEACH" obj "ISLAND_1_DRY_BEACH" } ]
+}
+Node beachIsland1 {
+	pos { x 467.126 y 147.786 z 3854.09 }
+	scale { x 0.0980165 y 0.0927896 z 0.100608 }
+	rot [ 0 0.98447 -4.30325e-008 -0.175554 ]
+	entities [ { name "ISLAND1_BEACH" obj "ISLAND1_BEACH" } ]
+}
+Node beachIsland2Dry {
+	// ISLAND_2_BEACH
+	pos { x -145.424 y 8.68397 z 447.417 }
+	rot [ 0 -8.74228e-008 3.82137e-015 1 ]
+	entities [ { name "ISLAND_2_BEACH" obj "ISLAND_2_DRY_BEACH" } ]
+}
+Node beachWaterfall {
+	nodes [
+		{
+			pos { x 456.808 y 176.398 z 3715.09 }
+			scale { x 0.109114 y 0.0698105 z 0.0656665 }
+			rot [ 0.0144555 0.992595 -0.0107542 -0.120125 ]
+			entities [ { name "WATERFALL_BEACH" obj "WATERFALL_BEACH" } ]
+		}
+		{
+			pos { x -145.424 y 8.68397 z 447.417 }
+			rot [ 0 -8.74228e-008 3.82137e-015 1 ]
+			entities [ { name "ISLAND_2_BEACH" obj "ISLAND_2_BEACH" } ]
+		}
+		{
+			pos { x -86.3134 y 6.67067 z 462.399 }
+			entities [ { name "ISLAND_TREES_BEACH" obj "ISLAND_TREES_BEACH" } ]
+		}
+	]
+}
+Node beachHiddenLeft {
+	pos { x 127.302 y 20.0402 z 66.5722 }
+	nodes [
+		//SMALL_PALM1_MANUAL
+		{
+			pos { x -101.24 y -20.225 z -84.28 }
+			rot [ 0 180 0 ]
+			entities [ { name "SMALL_PALM1_MANUAL" obj "SMALL_PALM1_BEACH" anims [ { n "anim" } ] } ]
+		}
+		//SMALL_PALM1_BEACH
+		{
+			pos { x -73.53 y -19.225 z -81.705 }
+			entities [ { name "SMALL_PALM1_BEACH" obj "SMALL_PALM1_BEACH" anims [ { n "anim" } ] } ]
+		}
+		//TREE_15_BEACH
+		{
+			pos { x -17.395 y -15.092 z -101.94 }
+			scale { x 0.0420408 y 0.0325466 z 0.0420408 }
+			rot [ -0.0794729 0.868434 0.0713251 0.484169 ]
+			entities [ { name "TREE_15_BEACH" obj "TREE_15_BEACH" } ]
+		}
+		//TREE_17_BEACH
+		{
+			pos { x 18.543 y -1.6786 z -156.56 }
+			rot [ 0 -0.825694 3.60922e-008 0.564118 ]
+			entities [ { name "TREE_17_BEACH" obj "TREE_17_BEACH" } ]
+		}
+		//GRASS_ANIM_CLOSE_L_BEACH
+		{
+			pos { x -117.047 y -19.5837 z -58.3952 }
+			rot [ 0 8.74228e-008 -3.82137e-015 1 ]
+			entities [ { name "GRASS_ANIM_CLOSE_L_BEACH" obj "GRASS_ANIM_CLOSE_L_BEACH" anims [ { n anim } ] } ]
+		}
+		//BILLBOARDS_LEFT_BEACH
+		{
+			pos { x 97.6571 y 13.0949 z -124.028 }
+			entities [ { name "BILLBOARDS_LEFT_BEACH" obj "BILLBOARDS_LEFT_BEACH" } ]
+		}
+		//TREE_30_BEACH
+		{
+			pos { x -43.0086 y -17.6814 z -61.2847 }
+			scale { x 0.030941 y 0.0239534 z 0.030941 }
+			rot [ 0 0.307908 -1.34591e-008 0.951416 ]
+			entities [ { name "TREE_30_BEACH" obj "TREE_30_BEACH" } ]
+		}
+		//TREE_29_BEACH
+		{
+			pos { x -43.675 y -20.7595 z 30.7207 }
+			scale { x 0.0102343 y 0.0360549 z 0.0102343 }
+			rot [ 0 -0.46123 2.0161e-008 0.887281 ]
+			entities [ { name "TREE_29_BEACH" obj "TREE_29_BEACH" } ]
+		}
+		//TREE_23_BEACH
+		{
+			pos { x -23.1454 y -18.1797 z -16.6035 }
+			scale { x 0.0267031 y 0.0206726 z 0.0267031 }
+			rot [ 0 0.531407 -2.32286e-008 0.847116 ]
+			entities [ { name "TREE_23_BEACH" obj "TREE_23_BEACH" } ]
+		}
+		//TREE_22_BEACH
+		{
+			pos { x -25.7585 y -19.2341 z -0.552688 }
+			scale { x 0.0235176 y 0.0182065 z 0.0235176 }
+			rot [ 0 0.743142 -3.24838e-008 0.669134 ]
+			entities [ { name "TREE_22_BEACH" obj "TREE_22_BEACH" } ]
+		}
+		//TREE_21_BEACH
+		{
+			pos { x -48.6279 y -19.8203 z 3.91606 }
+			scale { x 0.0292059 y 0.0226102 z 0.0292059 }
+			rot [ 0 -0.251299 1.09846e-008 0.96791 ]
+			entities [ { name "TREE_21_BEACH" obj "TREE_21_BEACH" } ]
+		}
+		//GRASS_LEFT_BEACH
+		{
+			pos { x -107.647 y -19.3799 z -116.867 }
+			rot [ 0 8.74228e-008 -3.82137e-015 1 ]
+			entities [ { name "GRASS_LEFT_BEACH" obj "GRASS_LEFT_BEACH" } ]
+		}
+	]
+}
+Node beachHiddenRight {
+	pos { x -143.81 y 30.4372 z 32.3552 }
+	nodes [
+		//GRASS_ANIM_CLOSE_R_BEACH
+		{
+			pos { x 126.8787 y -29.18935 z -63.0548 }
+			entities [ { name "GRASS_ANIM_CLOSE_R_BEACH" obj "GRASS_ANIM_CLOSE_R_BEACH" anims [ { n anim } ] } ]
+		}
+		//TREE_28_BEACH
+		{
+			pos { x -90.9828 y -24.6737 z -17.249 }
+			scale { x 0.0373214 y 0.028893 z 0.0373214 }
+			rot [ -0.0245452 -0.641704 -0.0710766 0.763257 ]
+			entities [ { name "TREE_28_BEACH" obj "TREE_28_BEACH" } ]
+		}
+		//TREE_27_BEACH
+		{
+			pos { x -53.1208 y -15.3967 z -42.7334 }
+			scale { x 0.044182 y 0.0342042 z 0.044182 }
+			rot [ 0 -0.675539 2.95287e-008 0.737325 ]
+			entities [ { name "TREE_27_BEACH" obj "TREE_27_BEACH" } ]
+		}
+		//TREE_31_BEACH
+		{
+			pos { x -0.0267639 y -30.9625 z 118.199 }
+			scale { x 0.0293964 y 0.0227577 z 0.0293964 }
+			rot [ 0 0.430893 -1.88349e-008 0.902403 ]
+			entities [ { name "TREE_31_BEACH" obj "TREE_31_BEACH" } ]
+		}
+		//TREE_26_BEACH
+		{
+			pos { x -19.3863 y -29.5397 z 68.1066 }
+			scale { x 0.0294351 y 0.0294351 z 0.0294351 }
+			rot [ 0 0.88306 -3.85998e-008 -0.469259 ]
+			entities [ { name "TREE_26_BEACH" obj "TREE_26_BEACH" } ]
+		}
+		//TREE_25_BEACH
+		{
+			pos { x 4.70941 y -27.4369 z 17.6308 }
+			scale { x 0.0355768 y 0.0275424 z 0.0355768 }
+			rot [ 0 0.941491 -4.11539e-008 -0.337039 ]
+			entities [ { name "TREE_25_BEACH" obj "TREE_25_BEACH" } ]
+		}
+		//TREE_24_BEACH
+		{
+			pos { x -40.2579 y -26.3681 z 39.5724 }
+			scale { x 0.0279934 y 0.0216716 z 0.0279934 }
+			rot [ 0 0.32584 -1.42429e-008 0.945425 ]
+			entities [ { name "TREE_24_BEACH" obj "TREE_24_BEACH" } ]
+		}
+		//GRASS_RIGHT_BEACH
+		{
+			pos { x 87.6044 y -29.6511 z -41.2989 }
+			entities [ { name "GRASS_RIGHT_BEACH" obj "GRASS_RIGHT_BEACH" } ]
+		}
+		//BILLBOARDS_RIGHT_BEACH
+		{
+			pos { x -62.2168 y -32.2511 z 75.3128 }
+			entities [ { name "BILLBOARDS_RIGHT_BEACH" obj "BILLBOARDS_RIGHT_BEACH" } ]
+		}
+	]
+}
+Node beachFinalReally {
+	nodes [
+		//shell1
+		{
+			pos { x 20.1685 y -0.598245 z 32.0214 }
+			scale { x 0.00997426 y 0.00997426 z 0.00997426 }
+			rot [ -0.00295107 0.820522 -0.0203619 0.571245 ]
+			entities [ { name "shell1" obj "shell1" } ]
+		}
+		//ShellsBack
+		{
+			pos { x -20.2599 y 0.269917 z -5.237 }
+			scale { x 0.00997426 y 0.00997426 z 0.00997426 }
+			rot [ -0.00295107 0.820522 -0.0203619 0.571245 ]
+			entities [ { name "ShellsBack" obj "ShellsBack" } ]
+		}
+		//SHELL3
+		{
+			pos { x -21.7469 y -0.545018 z 30.5073 }
+			rot [ 0 2.05815e-009 0.0470849 0.998891 ]
+			entities [ { name "SHELL3" obj "SHELL3" } ]
+		}
+		//SHELLS2
+		{
+			pos { x -20.8107 y 0.146508 z 13.2187 }
+			scale { x 0.00997426 y 0.00997425 z 0.00997425 }
+			rot [ 0.0230237 0.802992 -0.0234651 0.595083 ]
+			entities [ { name "SHELLS2" obj "SHELLS2" } ]
+		}
+		//STARFISH_SMALL
+		{
+			pos { x -55.6155 y 0.109224 z 52.9497 }
+			scale { x 0.0499185 y 0.0499185 z 0.0499186 }
+			rot [ -0.0355681 -0.626143 -0.0643145 0.776237 ]
+			entities [ { name "STARFISH_SMALL" obj "STARFISH_SMALL" } ]
+		}
+		//Starfish4
+		{
+			pos { x 19.0105 y -0.341575 z 6.61039 }
+			scale { x 0.0548299 y 0.0548299 z 0.0548299 }
+			rot [ 0.0119764 0.323442 0.00477158 0.94616 ]
+			entities [ { name "Starfish4" obj "STARFISH_SMALL" } ]
+		}
+		//STARFISH_3
+		{
+			pos { x -5.60706 y -0.196216 z 1.97629 }
+			scale { x 0.0343148 y 0.0343148 z 0.0343148 }
+			rot [ 0.0180733 0.896473 -0.00486911 0.442703 ]
+			entities [ { name "STARFISH_3" obj "STARFISH_SMALL" } ]
+		}
+		//STARFISH2
+		{
+			pos { x -7.43918 y -0.164724 z 2.72346 }
+			scale { x 0.0499186 y 0.0499185 z 0.0499185 }
+			rot [ 0.485902 -0.0302485 0.873403 0.0122959 ]
+			entities [ { name "STARFISH2" obj "STARFISH_SMALL" } ]
+		}
+		//STARFISH1
+		{
+			pos { x -6.14738 y 0.258369 z -4.91778 }
+			scale { x 0.0681463 y 0.0681463 z 0.0681463 }
+			rot [ 0.0581236 0.259299 0.0222301 0.96379 ]
+			entities [ { name "STARFISH1" obj "STARFISH_SMALL" } ]
+		}
+	]
+}
+
+// FOREST
+Node forestDay {
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 0 z 0 }
+			scale { x 1 y 1 z 1 }
+			rot [ -45 170 0 ]
+			lights [ { name "Omni01" type Light::directional } ]
+		}
+		//HILL_FORREST
+		{
+			pos { x 2.13144 y 1.84661 z -13.1578 }
+			entities [ { name "HILL_FORREST" obj "HILL_FORREST" } ]
+		}
+	]
+}
+Node forestNoon {
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 0 z 0 }
+			scale { x 1 y 1 z 1 }
+			rot [ 110 45 0 ]
+			// rot [ -90 270 0 ]
+			lights [ { name "Omni01" type Light::directional diffuse { r 0.5 g 0.5 b 0.5 } shadows true } ]
+		}
+		//HILL_FORREST
+		{
+			pos { x 2.13144 y 1.84661 z -13.1578 }
+			entities [ { name "HILL_FORREST" obj "HILL_NOON_FORREST" } ]
+		}
+	]
+}
+Node forestStars {
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 1 z 1 }
+			scale { x 1 y 1 z 1 }
+			rot [ -30 180 0 ]
+			lights [ { name "Omni01" type Light::point diffuse { r 1.5 g 1.5 b 1.5 } attenuation { range 325 linear 0.014 quad 0.0007 } } ]
+		}
+		//HILL_FORREST
+		{
+			pos { x 2.13144 y 1.84661 z -13.1578 }
+			entities [ { name "HILL_FORREST" obj "HILL_NIGHT_FORREST" } ]
+		}
+	]
+}
+Node swallowNode {
+	animators [ { t Animator::oscillate osWi 0.5 s 2 } ]
+	scale { w 0.05 }
+	rot [ -0.0149357 1.53445e-008 2.29205e-010 0.999888 ]
+	entities [ { obj "swallow" anims [ { n anim s 3 } ] } ]
+}
+Node swallows2 {
+	nodes [
+		{
+			animators [ { t Animator::ellipse elMa 50 elMi 50 elFi 0 elAngle 0 start 180 s 0.11 } ]
+			pos { x -0 y 2.2 z 45 }
+			nodes [ swallowNode ]
+		}
+		{
+			animators [ { t Animator::ellipse elMa 50 elMi 50 elFi 0 elAngle 0 start 220 s 0.11 } ]
+			pos { x -0 y 2.2 z 45 }
+			nodes [ swallowNode ]
+		}
+		{
+			animators [ { t Animator::ellipse elMa 32 elMi 50 elFi 0 elAngle 180 start 120 s -0.1 } ]
+			pos { x -0 y 2.2 z -50 }
+			nodes [ swallowNode ]
+		}
+	]
+}
+Node swallows {
+	nodes [
+		{
+			animators [ { t Animator::ellipse elMa 5 elMi 10 elFi 180 elAngle 0 s -0.6 } ]
+			pos { x -5 y 2.2 z 3 }
+			nodes [ swallowNode ]
+		}
+		{
+			animators [ { t Animator::ellipse elMa 6 elMi 8 elFi 180 elAngle 0 s -0.6 } ]
+			pos { x 5 y 2.2 z 0 }
+			nodes [ swallowNode ]
+		}
+		{
+			animators [ { t Animator::ellipse elMa 50 elMi 50 elFi 0 elAngle 0 s -0.1 } ]
+			pos { x -0 y 2.2 z 45 }
+			nodes [ swallowNode ]
+		}
+	]
+}
+Node newFlowers1 {
+	nodes [
+		//Cyclamen
+		{
+			pos { x -5.13702 y 1.32754 z -7.24017 }
+			entities [ { name "Cyclamen" obj "Cyclamen" } ]
+		}
+		//Cyclamen
+		{
+			pos { x 3.43953 y -0.061043 z -3.63943 }
+			entities [ { name "Cyclamen2" obj "Cyclamen" } ]
+			scale { x -1 }
+		}
+		//louloudi1
+		{
+			pos { x -1.52622 y 0.00759867 z 0.0741629 }
+			scale { x 0.250978 y 0.250978 z 0.250978 }
+			entities [ { name "louloudi1" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//louloudi02
+		{
+			pos { x 1.08767 y -0.104153 z 2.10002 }
+			scale { x 0.194634 y 0.194634 z 0.194634 }
+			rot [ 0.0419912 0.432954 -0.0869234 0.896232 ]
+			entities [ { name "louloudi02" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//louloudi03
+		{
+			pos { x 1.15673 y -0.134816 z 1.79042 }
+			scale { x 0.167143 y 0.167143 z 0.167143 }
+			rot [ -0.0727651 0.680675 -0.0929166 0.723017 ]
+			entities [ { name "louloudi03" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//louloudi04
+		{
+			pos { x 1.05335 y -0.1982 z -3.04436 }
+			scale { x 0.167143 y 0.167143 z 0.167143 }
+			rot [ -0.00987099 -0.214158 -0.161837 0.963249 ]
+			entities [ { name "louloudi04" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//louloudi05
+		{
+			pos { x 1.19466 y -0.164317 z -2.76037 }
+			scale { x 0.194634 y 0.194634 z 0.194634 }
+			rot [ 0.0504492 0.70574 -0.135313 0.693597 ]
+			entities [ { name "louloudi05" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//louloudi06
+		{
+			pos { x -2.40015 y 0.0398273 z 1.0135 }
+			scale { x 0.188854 y 0.188854 z 0.188854 }
+			rot [ 0 0.577567 -2.52462e-008 0.816344 ]
+			entities [ { name "louloudi06" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//louloudi13
+		{
+			pos { x 2.23948 y -0.209686 z 1.26136 }
+			scale { x 0.156623 y 0.156623 z 0.156623 }
+			rot [ 0 -2.63089e-009 -0.0601878 0.998187 ]
+			entities [ { name "louloudi13" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//louloudi15
+		{
+			pos { x 2.31582 y -0.237525 z -1.53334 }
+			scale { x 0.188854 y 0.188854 z 0.188854 }
+			rot [ 0.0305357 0.903843 -0.0339588 0.425421 ]
+			entities [ { name "louloudi15" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//louloudi16
+		{
+			pos { x 0.564986 y -0.0665663 z 3.01836 }
+			scale { x 0.167143 y 0.167143 z 0.167143 }
+			rot [ 0.0220825 0.97889 0.0274108 -0.201332 ]
+			entities [ { name "louloudi16" obj "louloudi1" anims [ { n "anim" } ] } ]
+		}
+		//farlouloudi16
+		{
+			pos { x -8.26178 y -0.0922638 z -2.7237 }
+			scale { x 0.250978 y 0.346844 z 0.346844 }
+			entities [ { name "farlouloudi16" obj "louloudi1" } ]
+		}
+		//farlouloudi16_2
+		{
+			pos { x 1.79734 y -0.164317 z -6.59592 }
+			scale { x 0.194634 y 0.194634 z 0.194634 }
+			rot [ 0.132617 -0.728068 0.0571619 0.670121 ]
+			entities [ { name "farlouloudi16_2" obj "louloudi1" } ]
+		}
+		//farlouloudi21_1
+		{
+			pos { x 12.6618 y -0.196108 z -7.76195 }
+			scale { x 0.167143 y 0.167143 z 0.167143 }
+			rot [ 0.0295065 -0.212345 0.0172614 0.976597 ]
+			entities [ { name "farlouloudi21_1" obj "louloudi1" } ]
+		}
+	]
+}
+Node newFlowers2 {
+	nodes [
+		//louloudi2
+		{
+			pos { x -0.660158 y -0.0432236 z 2.51574 }
+			scale { x 0.0849413 y 0.0849413 z 0.0849413 }
+			rot [ -0.0216622 0 0 0.999765 ]
+			entities [ { name "louloudi2" obj "louloudi2" anims [ { n "anim" } ] } ]
+		}
+		//louloudi08
+		{
+			pos { x 1.72547 y -0.163489 z 0.164907 }
+			scale { x 0.0909316 y 0.0909316 z 0.0909316 }
+			rot [ -0.000331813 0.372801 -0.0411596 0.926998 ]
+			entities [ { name "louloudi08" obj "louloudi2" anims [ { n "anim" } ] } ]
+		}
+		//louloudi09
+		{
+			pos { x 1.02467 y -0.113508 z -1.618 }
+			scale { x 0.0946821 y 0.0946821 z 0.0946821 }
+			rot [ 0.0525054 0.9136 0.0176836 -0.402822 ]
+			entities [ { name "louloudi09" obj "louloudi2" anims [ { n "anim" } ] } ]
+		}
+		//louloudi10
+		{
+			pos { x -1.42457 y -0.00809241 z -2.01123 }
+			scale { x 0.0750715 y 0.0750715 z 0.0750715 }
+			rot [ -0.0104035 -0.725492 0.0214994 0.687816 ]
+			entities [ { name "louloudi10" obj "louloudi2" anims [ { n "anim" } ] } ]
+		}
+		//louloudi11
+		{
+			pos { x -2.43586 y 0.0185331 z -0.366598 }
+			scale { x 0.0687435 y 0.0687434 z 0.0687435 }
+			rot [ -0.00798909 -0.725933 -0.000254967 0.687719 ]
+			entities [ { name "louloudi11" obj "louloudi2" anims [ { n "anim" } ] } ]
+		}
+		//louloudi12
+		{
+			pos { x 1.91156 y -0.179091 z 1.34618 }
+			scale { x 0.0909316 y 0.0909316 z 0.0909316 }
+			rot [ 0.0494948 0.743969 -0.0265047 0.665851 ]
+			entities [ { name "louloudi12" obj "louloudi2" anims [ { n "anim" } ] } ]
+		}
+		//louloudi14
+		{
+			pos { x 1.24836 y -0.142523 z -1.93506 }
+			scale { x 0.0946821 y 0.0946821 z 0.0946821 }
+			rot [ -0.0741963 -0.615506 -0.0158218 0.784472 ]
+			entities [ { name "louloudi14" obj "louloudi2" anims [ { n "anim" } ] } ]
+		}
+		//farlouloudi16_1
+		{
+			pos { x -4.6733 y -0.00809253 z -4.78893 }
+			scale { x 0.0866926 y 0.0866926 z 0.0866926 }
+			rot [ 0.0237066 0.971214 -0.00290694 0.237009 ]
+			entities [ { name "farlouloudi16_1" obj "louloudi2" } ]
+		}
+		//farlouloudi18
+		{
+			pos { x -3.05376 y 0.0421946 z -8.40565 }
+			scale { x 0.0866926 y 0.0866926 z 0.0866926 }
+			rot [ 0.0237066 0.971214 -0.00290694 0.237009 ]
+			entities [ { name "farlouloudi18" obj "louloudi2" } ]
+		}
+		//farlouloudi19
+		{
+			pos { x 0.219839 y 0.0609922 z -8.40565 }
+			scale { x 0.0866926 y 0.0866926 z 0.0866926 }
+			rot [ -0.00263471 0.993429 -0.0136679 -0.113597 ]
+			entities [ { name "farlouloudi19" obj "louloudi2" } ]
+		}
+		//farlouloudi20
+		{
+			pos { x 0.405143 y 0.0609922 z -8.16584 }
+			scale { x 0.0866926 y 0.0866926 z 0.0866926 }
+			rot [ 0.0122597 -0.539498 0.00659167 0.841872 ]
+			entities [ { name "farlouloudi20" obj "louloudi2" } ]
+		}
+		//farlouloudi21
+		{
+			pos { x 0.155506 y 0.0609922 z -8.13119 }
+			scale { x 0.0866926 y 0.0866926 z 0.0866926 }
+			rot [ 0.0133849 0.200078 -0.00382043 0.979681 ]
+			entities [ { name "farlouloudi21" obj "louloudi2" } ]
+		}
+		//farlouloudi19_1
+		{
+			pos { x -8.74507 y 0.26571 z 3.66912 }
+			scale { x 0.0687435 y 0.0687434 z 0.0687434 }
+			rot [ -0.004993 0.115326 0.00624184 0.993296 ]
+			entities [ { name "farlouloudi19_1" obj "louloudi2" } ]
+		}
+		//farlouloudi20_1
+		{
+			pos { x 11.5843 y -0.384715 z -1.49824 }
+			scale { x 0.0909316 y 0.0909316 z 0.0909316 }
+			rot [ -0.0651307 0.367068 0.120607 0.92004 ]
+			entities [ { name "farlouloudi20_1" obj "louloudi2" } ]
+		}
+		//farlouloudi22
+		{
+			pos { x 10.6189 y -0.529023 z 1.27829 }
+			scale { x 0.0909316 y 0.0909316 z 0.0909316 }
+			rot [ -0.013066 0.64163 -0.0390321 0.765909 ]
+			entities [ { name "farlouloudi22" obj "louloudi2" } ]
+		}
+	]
+}
+Node forestHidden3 {
+	pos { x 1.70678 y 2.96286 z -5.98151 }
+	nodes [
+		//FTERI3_FORREST
+		{
+			pos { x -9.95242 y -2.22598 z 8.45976 }
+			scale { x 0.752474 y 0.885459 z 0.752474 }
+			rot [ 3.81479e-005 -0.121626 0.000124224 0.992576 ]
+			entities [ { name "FTERI3_FORREST" obj "FTERI3_FORREST" anims [ { n "anim" s 0.75 } ] } ]
+		}
+		//PINEANIM1_FORREST
+		{
+			pos { x -11.2047 y -3.08365 z 4.60017 }
+			scale { x 0.71037 y 2.82876 z 0.71037 }
+			rot [ 0 0.795676 -3.47801e-008 0.605723 ]
+			entities [ { name "PINEANIM1_FORREST" obj "PINEANIM1_FORREST" anims [ { n "anim" } ] } ]
+		}
+		//OAK_LEAVES_LARGE_FOREST
+		{
+			pos { x -10.9066 y -0.273497 z 7.04865 }
+			entities [ { name "OAK_LEAVES_LARGE_FOREST" obj "OAK_LEAVES_LARGE_FOREST" } ]
+		}
+		//OAK_LEAVES_SHORT_FOREST
+		{
+			pos { x 11.9258 y 1.29438 z -9.67759 }
+			scale { x 0.85168 y 0.85168 z 0.85168 }
+			rot [ 0 0.958066 -4.18784e-008 -0.286547 ]
+			entities [ { name "OAK_LEAVES_SHORT_FOREST" obj "OAK_LEAVES_SHORT_FOREST" } ]
+		}
+	]
+}
+Node forestMoura {
+	pos { x 6.74811 y 0.407336 z -9.68922 }
+	nodes [
+		//MOURA1_FOREST
+		{
+			pos { x -7.3316 y 0.292463 z 0.817457 }
+			scale { x 1.1161 y 1.1161 z 1.1161 }
+			rot [ 0 8.4174e-010 -3.67936e-017 1 ]
+			entities [ { name "MOURA1_FOREST" obj "MOURA1_FOREST" } ]
+		}
+		//MOURA2_FOREST
+		{
+			pos { x 7.25929 y -0.278122 z -0.639829 }
+			scale { x 1.1161 y 1.1161 z 1.1161 }
+			rot [ 0 0.982178 -4.29324e-008 -0.187952 ]
+			entities [ { name "MOURA2_FOREST" obj "MOURA1_FOREST" } ]
+		}
+	]
+}
+Node forestNero {
+	pos { x 6.77395 y 0.221353 z -6.71456 }
+	nodes [
+		//WATER_FORREST
+		{
+			pos { x -0.435639 y -1.03654 z 8.6644 }
+			scale { x 0.742946 y 1.26122 z 2.28878 }
+			entities [ { name "WATER_FORREST" obj "WATER_FORREST" } ]
+		}
+		//WATERFALL_FORREST
+		{
+			pos { x -1.05017 y 1.68243 z -6.008 }
+			scale { x 0.309467 y 0.484153 z 0.34273 }
+			rot [ 0.186677 0.119167 -0.0228184 0.9749 ]
+			entities [ { name "WATERFALL_FORREST" obj "WATERFALL_FORREST" } ]
+		}
+		//FTERI1_FORREST
+		{
+			pos { x 2.87766 y -0.27523 z 4.67433 }
+			rot [ 4.37114e-008 -1.19249e-008 4.37114e-008 1 ]
+			entities [ { name "FTERI1_FORREST" obj "FTERI1_FORREST" anims [ { n "anim" s 0.75 } ] } ]
+		}
+		//Plant_1_FORREST
+		{
+			pos { x 2.79215 y -0.00525683 z -4.0631 }
+			entities [ { name "Plant_1_FORREST" obj "Plant_1_FORREST" } ]
+		}
+		//FTERI2_FORREST
+		{
+			pos { x -2.76209 y 0.215878 z -4.59794 }
+			scale { x 1.29993 y 1.29992 z 1.29993 }
+			rot [ 0.00291327 0.625655 0.00613103 0.78007 ]
+			entities [ { name "FTERI2_FORREST" obj "FTERI2_FORREST" anims [ { n "anim" s 0.75 } ] } ]
+		}
+	]
+}
+Node forestHidden4 {
+	pos { x 12.7957 y 2.19708 z 6.25249 }
+	nodes [
+		//TREES_ABOVE_FOREST
+		{
+			pos { x -8.42019 y 5.84803 z -29.4522 }
+			entities [ { name "TREES_ABOVE_FOREST" obj "TREES_ABOVE_FOREST" } ]
+		}
+		//TREES_DEXIA_FOREST
+		{
+			pos { x -0.351617 y -1.08951 z -11.3088 }
+			entities [ { name "TREES_DEXIA_FOREST" obj "TREES_DEXIA_FOREST" } ]
+		}
+		//PINE_LEAVES_DEXIA_FOREST
+		{
+			pos { x 1.26552 y -1.85902 z -5.59304 }
+			scale { x 0.355705 y 0.487191 z 0.355705 }
+			rot [ 0.0225494 0.861917 0.0206143 0.506129 ]
+			entities [ { name "PINE_LEAVES_DEXIA_FOREST" obj "PINE_LEAVES_DEXIA_FOREST" } ]
+		}
+	]
+}
+Node forestGroundDry {
+	nodes [
+		//Ground_Left_FORREST
+		{
+			pos { x -6.72847 y 0.0434692 z -0.00653372 }
+			entities [ { name "Ground_Left_FORREST" obj "Ground_Left_dry_FORREST" } ]
+		}
+		//Ground_Right_FORREST
+		{
+			pos { x 14.0915 y -0.586625 z -5.05133 }
+			entities [ { name "Ground_Right_FORREST" obj "Ground_Right_dry_FORREST" } ]
+		}
+		//GRASS_1_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_1_FORREST" obj "GRASS_1_dry_FORREST" } ]
+		}
+		//GRASS_2_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_2_FORREST" obj "GRASS_2_dry_FORREST" } ]
+		}
+		//GRASS_3_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_3_FORREST" obj "GRASS_3_dry_FORREST" } ]
+		}
+		//GRASS_4_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_4_FORREST" obj "GRASS_4_dry_FORREST" } ]
+		}
+		//GRASS_5_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_5_FORREST" obj "GRASS_5_dry_FORREST" } ]
+		}
+		//GRASS_6_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_6_FORREST" obj "GRASS_6_dry_FORREST" } ]
+		}
+		//GRASS_FORREST_1
+		{
+			entities [ { name "GRASS_FORREST_1" obj "GRASS_dry_FORREST_1" } ]
+		}
+		//GRASS_FORREST_2
+		{
+			entities [ { name "GRASS_FORREST_2" obj "GRASS_dry_FORREST_2" } ]
+		}
+		//GRASS_FORREST_3
+		{
+			entities [ { name "GRASS_FORREST_3" obj "GRASS_dry_FORREST_3" } ]
+		}
+		//GRASS_FORREST_4
+		{
+			entities [ { name "GRASS_FORREST_4" obj "GRASS_dry_FORREST_4" } ]
+		}
+		//GRASS_FORREST_5
+		{
+			entities [ { name "GRASS_FORREST_5" obj "GRASS_dry_FORREST_5" } ]
+		}
+	]
+}
+Node forestGround {
+	nodes [
+		//Ground_Left_FORREST
+		{
+			pos { x -6.72847 y 0.0434692 z -0.00653372 }
+			entities [ { name "Ground_Left_FORREST" obj "Ground_Left_FORREST" } ]
+		}
+		//Ground_Right_FORREST
+		{
+			pos { x 14.0915 y -0.586625 z -5.05133 }
+			entities [ { name "Ground_Right_FORREST" obj "Ground_Right_FORREST" } ]
+		}
+		//GRASS_1_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_1_FORREST" obj "GRASS_1_FORREST" } ]
+		}
+		//GRASS_2_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_2_FORREST" obj "GRASS_2_FORREST" } ]
+		}
+		//GRASS_3_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_3_FORREST" obj "GRASS_3_FORREST" } ]
+		}
+		//GRASS_4_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_4_FORREST" obj "GRASS_4_FORREST" } ]
+		}
+		//GRASS_5_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_5_FORREST" obj "GRASS_5_FORREST" } ]
+		}
+		//GRASS_6_FORREST
+		{
+			pos { x -1.34931 y 0.0369852 z -7.55896 }
+			entities [ { name "GRASS_6_FORREST" obj "GRASS_6_FORREST" } ]
+		}
+		//GRASS_FORREST_1
+		{
+			entities [ { name "GRASS_FORREST_1" obj "GRASS_FORREST_1" anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//GRASS_FORREST_2
+		{
+			entities [ { name "GRASS_FORREST_2" obj "GRASS_FORREST_2" anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//GRASS_FORREST_3
+		{
+			entities [ { name "GRASS_FORREST_3" obj "GRASS_FORREST_3" anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//GRASS_FORREST_4
+		{
+			entities [ { name "GRASS_FORREST_4" obj "GRASS_FORREST_4" anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//GRASS_FORREST_5
+		{
+			entities [ { name "GRASS_FORREST_5" obj "GRASS_FORREST_5" anims [ { n "anim" s 0.5 } ] } ]
+		}
+	]
+}
+
+// DESERT
+Node desertDay {
+	nodes [
+		//LIGHT
+		{
+			rot [ 120 45 0 ]
+			lights [ { name "Omni01" type Light::directional diffuse { r 1 g 1 b 1 } } ]
+		}
+		//BASE_SAHARA
+		{
+			pos { x -112.78 y 0.379382 z 402.889 }
+			entities [ { name "BASE_SAHARA" obj "BASE_SAHARA" } ]
+		}
+		//SPITIA_SAHARA
+		{
+			pos { x 1991.92 y 60.9664 z 8152.04 }
+			entities [ { name "SPITIA_SAHARA" obj "SPITIA_SAHARA" } ]
+		}
+	]
+}
+Node desertMist {
+	nodes [
+		//LIGHT
+		{
+			rot [ 100 45 0 ]
+			lights [ { name "Omni01" type Light::directional diffuse { r 0.33 g 0.33 b 0 } shadows true } ]
+		}
+		//BASE_SAHARA
+		{
+			pos { x -112.78 y 0.379382 z 402.889 }
+			entities [ { name "BASE_SAHARA" obj "BASE_SAHARA" } ]
+		}
+		//SPITIA_SAHARA
+		{
+			pos { x 1991.92 y 60.9664 z 8152.04 }
+			entities [ { name "SPITIA_SAHARA" obj "SPITIA_SAHARA" } ]
+		}
+	]
+}
+Node desertNoon {
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 0 z 0 }
+			scale { x 1 y 1 z 1 }
+			rot [ 150 45 0 ]
+			lights [ { name "Omni01" type Light::directional } ]
+			//lights [ { name "Omni01" type Light::directional diffuse { r 1 g 0.5 b 0.75 } } ]
+		}
+		//BASE_SAHARA
+		{
+			pos { x -112.78 y 0.379382 z 402.889 }
+			entities [ { name "BASE_SAHARA" obj "BASE_SAHARA" } ]
+		}
+		//SPITIA_SAHARA
+		{
+			pos { x 1991.92 y 60.9664 z 8152.04 }
+			entities [ { name "SPITIA_SAHARA" obj "SPITIA_SAHARA" } ]
+		}
+	]
+}
+Node desertStars {
+	nodes [
+		//LIGHT
+		{
+			pos { x -30 y 100 z 100 }
+			//lights [ { name "Omni01" type Light::point diffuse { r 2 g 2 b 2 } attenuation { range 10000 linear 0.00045 quad 0.0000004 } } ]
+			lights [ { name "Omni01" shadows false type Light::point diffuse { r 1.3 g 1.3 b 1.3 } attenuation { range 10000 linear 0.00045 quad 0.0000004 } } ]
+		}
+		//BASE_SAHARA
+		{
+			pos { x -112.78 y 0.379382 z 402.889 }
+			entities [ { name "BASE_SAHARA" obj "BASE_NIGHT_SAHARA" } ]
+		}
+		//SPITIA_SAHARA
+		{
+			pos { x 1991.92 y 60.9664 z 8152.04 }
+			entities [ { name "SPITIA_SAHARA" obj "SPITIA_NIGHT_SAHARA" } ]
+			lights [ { name "Omni02" shadows false type Light::point diffuse { r 1.3 g 1.0 b 0.7 } attenuation { range 10000 linear 0.00045 quad 0.0000004 } } ]
+		}
+	]
+}
+Node desertFoinikas {
+	pos { x -267.932 y 257.496 z 809.591 }
+	nodes [
+		//FOINIKOFYLLA_SAHARA
+		{
+			pos { x 0.221832 y 130.459 z 19.4626 }
+			entities [ { name "FOINIKOFYLLA_SAHARA" obj "FOINIKOFYLLA_SAHARA" asCommon { pos 0 } anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//FOINIKAS_SAHARA
+		{
+			pos { x -0.357361 y -52.8593 z 19.3348 }
+			entities [ { name "FOINIKAS_SAHARA" obj "FOINIKAS_SAHARA" asCommon { pos 0 } anims [ { n "anim" s 0.5 } ] } ]
+		}
+	]
+}
+Node desertWeedsHill {
+	nodes [
+		//WEEDS_A_SAHARA
+		{
+			pos { x 1475.59 y -152.839 z 392.599 }
+			entities [ { name "WEEDS_A_SAHARA" obj "WEEDS_A_SAHARA" } ]
+		}
+		{
+			pos { x 3247.23 y 99.8082 z 392.599 }
+			entities [ { name "WEEDS_B_SAHARA" obj "WEEDS_B_SAHARA" } ]
+		}
+	]
+}
+Node desertWeedsBase {
+	nodes [
+		//desertYellowFlower
+		{
+			pos { x -762.214 y 251.9 z 223.35 }
+			rot [ 0 -0.623113 2.72371e-008 0.782132 ]
+			scale { w 0.8 }
+			entities [ { name "desertYellowFlower" obj "desertYellowFlower" } ]
+		}
+		//GRASS_SAHARA
+		{
+			pos { x -654.295 y 142.647 z -234.699 }
+			rot [ 0.0308547 -0.640671 0.0369052 0.766308 ]
+			entities [ { name "GRASS_SAHARA" obj "GRASS_SAHARA" anims [ { n "anim" s 0.45 } ] } ]
+		}
+		//WEED_B_SAHARA
+		{
+			pos { x 357.447 y 66.8895 z 731.035 }
+			entities [ { name "WEED_B_SAHARA" obj "WEED_B_SAHARA" anims [ { n "anim" s 0.45 } ] } ]
+		}
+		//NEAXORTA_SAHARA
+		{
+			pos { x 357.447 y 66.8895 z 731.035 }
+			entities [ { name "NEAXORTA_SAHARA" obj "NEAXORTA_SAHARA" } ]
+		}
+		//WEED_B_FAR_SAHARA
+		{
+			pos { x -621.674 y 254.044 z 578.932 }
+			rot [ 0.173165 -0.452512 -0.0193276 0.874571 ]
+			entities [ { name "WEED_B_FAR_SAHARA" obj "WEED_B_FAR_SAHARA" anims [ { n "anim" s 0.45 } ] } ]
+		}
+	]
+}
+Node desertHidden3 {
+	nodes [
+		//DesertWater
+		{
+			pos { x 1071.06 y -237.91 z 2768.37 }
+			entities [ { name "DesertWater" obj "DesertWater" } ]
+		}
+		//TREES_SAHARA
+		{
+			pos { x 336.634 y 96.2119 z 5725.46 }
+			entities [ { name "TREES_SAHARA" obj "TREES_SAHARA" } ]
+		}
+		//PETOUNIES_DESERT
+		{
+			pos { x 542.434 y 23.1874 z 453.277 }
+			scale { x 0.780899 y 0.780899 z 0.780899 }
+			rot [ 0.0433943 0 0 0.999058 ]
+			nodes [
+				//PETOUNIA_STEMS_DESERT
+				{
+					pos { x 48.4365 y 2.16676 z 51.6408 }
+					rot [ 0.0796156 0.501343 -0.0915306 0.856702 ]
+					entities [ { name "PETOUNIA_STEMS_DESERT" obj "PETOUNIA_STEMS_DESERT" } ]
+				}
+				//PETOUNIA_LEAVES_DESERT
+				{
+					pos { x 78.2631 y 5.24244 z -28.2819 }
+					rot [ 0.0120937 -0.561521 -0.104204 0.820786 ]
+					entities [ { name "PETOUNIA_LEAVES_DESERT" obj "PETOUNIA_LEAVES_DESERT" } ]
+				}
+				//PETOUNIA_FLOWERS_DESERT
+				{
+					pos { x 3.13379 y 48.445 z -36.389 }
+					rot [ 0.0602756 -0.102686 -0.0858575 0.989167 ]
+					entities [ { name "PETOUNIA_FLOWERS_DESERT" obj "PETOUNIA_FLOWERS_DESERT" } ]
+				}
+			]
+		}
+	]
+}
+Node desertHidden4 {
+	//FOINIKES_SAHARA
+	pos { x -628.197 y 213.957 z 1482.66 }
+	nodes [
+		//FOINIKAS_SAHARA04
+		{
+			pos { x 460.5 y -140.493 z -519.838 }
+			scale { x 0.805109 z 0.805109 }
+			entities [ { name "FOINIKAS_SAHARA04" obj "FOINIKAS_SAHARA05" asCommon { pos 0.5 } anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//FOINIKOFYLLA_SAHARA04
+		{
+			pos { x 461.079 y 42.8256 z -519.71 }
+			scale { x 1.13545 y 1.13545 z 1.13545 }
+			entities [ { name "FOINIKOFYLLA_SAHARA04" obj "FOINIKOFYLLA_SAHARA05" asCommon { pos 0.5 } anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//FOINIKAS_SAHARA05
+		{
+			pos { x -15.9208 y -37.5065 z -519.838 }
+			scale { x 0.66 z 0.66 }
+			entities [ { name "FOINIKAS_SAHARA05" obj "FOINIKAS_SAHARA05" asCommon { pos 1.33 } anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//FOINIKOFYLLA_SAHARA05
+		{
+			pos { x -15.3414 y 145.812 z -519.71 }
+			scale { x 0.858999 y 0.858999 z 0.858999 }
+			entities [ { name "FOINIKOFYLLA_SAHARA05" obj "FOINIKOFYLLA_SAHARA05" asCommon { pos 1.33 } anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//FOINIKAS_SAHARA06
+		{
+			pos { x -91.147 y -48.0109 z 219.558 }
+			scale { x 1.27798 y 1.27798 z 1.27798 }
+			rot [ -0.00880291 0.224845 0.038117 0.973609 ]
+			entities [ { name "FOINIKAS_SAHARA06" obj "FOINIKAS_SAHARA" asCommon { pos 2 } anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//FOINIKOFYLLA_SAHARA06
+		{
+			pos { x -108.728 y 185.606 z 219.379 }
+			scale { x 1.27798 y 1.27798 z 1.27798 }
+			rot [ -0.00880291 0.224845 0.038117 0.973609 ]
+			entities [ { name "FOINIKOFYLLA_SAHARA06" obj "FOINIKOFYLLA_SAHARA" asCommon { pos 2 } anims [ { n "anim" s 0.5 } ] } ]
+		}
+		//TRUNK_DEXIA_SAHARA
+		{
+			pos { x -479.979 y -218.904 z 260.912 }
+			scale { x 0.601136 y 0.662494 z 0.601136 }
+			rot [ 0 1.4334e-009 0.0327924 0.999462 ]
+			entities [ { name "TRUNK_DEXIA_SAHARA" obj "TRUNK_DEXIA_SAHARA" } ]
+		}
+		//FOINIKAS_DEXIA_SAHARA
+		{
+			pos { x -493.252 y 81.512 z 266.757 }
+			scale { x 0.618851 y 0.618851 z 0.618851 }
+			rot [ 0 0.866547 -3.7878e-008 0.499095 ]
+			entities [ { name "FOINIKAS_DEXIA_SAHARA" obj "FOINIKAS_DEXIA_SAHARA" } ]
+		}
+		//TRUNK_FAR_SAHARA
+		{
+			pos { x -39.4332 y -301.924 z 481.043 }
+			scale { x 0.837872 y 0.87455 z 0.837872 }
+			rot [ -0.012213 -0.0040433 -0.0434897 0.998971 ]
+			entities [ { name "TRUNK_FAR_SAHARA" obj "TRUNK_FAR_SAHARA" } ]
+		}
+		//FOINIKAS_FAR_SAHARA
+		{
+			pos { x -15.083 y 83.7361 z 475.998 }
+			scale { x 0.763211 y 0.763212 z 0.763212 }
+			rot [ 0.0064539 -0.101131 -0.0633599 0.992833 ]
+			entities [ { name "FOINIKAS_FAR_SAHARA" obj "FOINIKAS_FAR_SAHARA" } ]
+		}
+	]
+}
+Node desertKrina {
+	nodes [
+		//krina1
+		{
+			pos { x -195.358 y 39.7174 z 331.322 }
+			scale { w 0.669 }
+			rot [ -0.0125274 -0.706996 0.706996 -0.0125274 ]
+			entities [ { name "krina1" obj "krina1" anims [ { n anim } ] } ]
+		}
+		//krina2
+		{
+			pos { x 431.128 y 11.4782 z 630.026 }
+			scale { w 0.93 }
+			rot [ 0.251104 -0.661019 0.66102 0.251104 ]
+			entities [ { name "krina2" obj "krina2" anims [ { n anim } ] } ]
+		}
+		//krina3
+		{
+			pos { x 222.508 y 44.3135 z -97.215 }
+			scale { w 0.75 }
+			rot [ 0.676744 -0.204983 0.204983 0.676744 ]
+			entities [ { name "krina3" obj "krina3" anims [ { n anim } ] } ]
+		}
+		//krina04
+		{
+			pos { x -297.038 y 39.7174 z 100.102 }
+			scale { w 0.669 }
+			rot [ -0.340335 -0.619816 0.619816 -0.340335 ]
+			entities [ { name "krina04" obj "krina1" anims [ { n anim } ] } ]
+		}
+		//krina05
+		{
+			pos { x -327.036 y 41.9417 z 87.6708 }
+			scale { w 0.73 }
+			rot [ 0.530896 0.467064 -0.467064 0.530896 ]
+			entities [ { name "krina05" obj "krina2" anims [ { n anim } ] } ]
+		}
+		//krina06
+		{
+			pos { x -292.828 y 37.8919 z 56.6807 }
+			scale { w 0.87 }
+			rot [ 0.707107 0 0 0.707107 ]
+			entities [ { name "krina06" obj "krina3" anims [ { n anim } ] } ]
+		}
+		//krina07
+		{
+			pos { x -305.756 y 37.8919 z 32.3401 }
+			scale { w 0.87 }
+			rot [ 0.413839 -0.573356 0.573356 0.413839 ]
+			entities [ { name "krina07" obj "krina3" anims [ { n anim } ] } ]
+		}
+		//krina08
+		{
+			pos { x -229.93 y 31.8447 z 8.93555 }
+			scale { w 0.669 }
+			rot [ 0.586117 0.395558 -0.395558 0.586117 ]
+			entities [ { name "krina08" obj "krina2" anims [ { n anim } ] } ]
+		}
+	]
+}
+NodeAnimKeys camelKeys {
+	k [
+		{ time 0 trans { x -7365.86 y -35.6616 z 2954.99 } }
+		{ time 0.2 trans { x -6821.8 y 122.215 z 2930.09 } }
+		{ time 0.4 trans { x -6332.74 y 331.656 z 2758.14 } }
+		{ time 0.6 trans { x -5874.78 y 332.196 z 2501.87 } }
+		{ time 0.8 trans { x -5334.78 y 343.371 z 2668.64 } }
+		{ time 1 trans { x -4813.92 y 397.156 z 2886.05 } }
+		{ time 1.2 trans { x -4305.47 y 520.282 z 3104.39 } }
+		{ time 1.39979 trans { x -3780.56 y 576.675 z 3269.6 } }
+		{ time 1.6 trans { x -3250.07 y 473.647 z 3377.19 } }
+		{ time 1.79979 trans { x -2823.82 y 441.531 z 3748.4 } }
+		{ time 2 trans { x -2387.85 y 361.854 z 4099.5 } }
+		{ time 2.2 trans { x -1909.04 y 220.224 z 4367.75 } }
+		{ time 2.4 trans { x -1434.53 y 114.716 z 4657.34 } }
+		{ time 2.59979 trans { x -924.605 y 70.5475 z 4887.63 } }
+		{ time 2.79979 trans { x -366.797 y 46.8391 z 4982.76 } }
+		{ time 3 trans { x 186.021 y 44.8863 z 5091.06 } }
+		{ time 3.2 trans { x 739.16 y -54.7844 z 5165.9 } }
+		{ time 3.4 trans { x 1298.85 y -108.459 z 5236.63 } }
+		{ time 3.59979 trans { x 1854.04 y -81.9487 z 5344.5 } }
+		{ time 3.79979 trans { x 2390.08 y -36.1484 z 5523.35 } }
+		{ time 4 trans { x 2921.7 y 0.000249913 z 5717.35 } }
+	]
+}
+Node camel { scale { x 1.4 w 0.5 } pos { y -30 } entities [ { obj "CAMEL_SAHARA" } ] }
+Node camels {
+	nodes [
+		{ naCommon { auto true start 15 } nanims [ { name "camelAnim1" length 4 timeScale 45 keys camelKeys } ] nodes [ camel ] }
+		{ naCommon { auto true start 10 } nanims [ { name "camelAnim2" length 4 timeScale 45 keys camelKeys } ] nodes [ camel ] }
+		{ naCommon { auto true start 7 } nanims [ { name "camelAnim3" length 4 timeScale 45 keys camelKeys } ] nodes [ camel ] }
+	]
+}
+Node snake {
+	naCommon { auto true start 5 }
+	nanims [
+		{ name "nanim" length 4 timeScale 15 keys { k [
+			{ time 0 trans { x 78.0818 y -168.662 z -1821.03 } rot [ -0.00811759 -0.7074 0.0289603 0.706174 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+			{ time 0.2 trans { x 678.93 y -148.009 z -1633.26 } rot [ 0.0223759 0.937766 -0.0158696 -0.346183 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 0.4 trans { x 1096.35 y -138.588 z -1120.77 } rot [ 0.0261663 0.958416 -0.0060474 -0.284109 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+			{ time 0.6 trans { x 1439.9 y -144.087 z -555.915 } rot [ 0.0298602 0.974646 0.00832978 -0.221595 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 0.8 trans { x 1702.57 y -166.685 z 49.6707 } rot [ 0.0312564 0.988732 0.0224124 -0.144673 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+			{ time 1 trans { x 1834.45 y -205.756 z 693.193 } rot [ 0.0283836 0.998765 0.0403456 -0.00593123 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 1.2 trans { x 1713.78 y -278.661 z 1326.97 } rot [ 0.007292 0.968265 0.0983087 0.229664 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 1.39979 trans { x 1312.18 y -256.572 z 1831.67 } rot [ 0.061031 0.887495 -0.0687549 0.451553 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 1.6 trans { x 744.044 y -146.343 z 2117.82 } rot [ 0.0586983 0.789482 -0.0363245 0.609879 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 1.79979 trans { x 117.77 y -40.5395 z 2255.42 } rot [ 0.088846 0.749634 -0.0681301 0.652314 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 2 trans { x -474.8 y 144.491 z 2341.85 } rot [ 0.122566 0.710666 -0.0979981 0.685804 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+			{ time 2.2 trans { x -1100.55 y 261.764 z 2298.62 } rot [ 0.0126765 0.571344 0.0239091 0.820264 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 2.4 trans { x -1658.48 y 184.795 z 1968.78 } rot [ -0.0314073 0.486083 0.0501514 0.871907 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 2.59979 trans { x -1953.17 y 76.7845 z 1430.3 } rot [ -0.139192 0.0683944 0.0407682 0.987059 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+			{ time 2.79979 trans { x -1973.73 y -45.6735 z 800.617 } rot [ -0.0340961 -0.0505976 0.0261922 0.997793 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 3 trans { x -1884.32 y -66.2796 z 146.319 } rot [ -0.0362036 -0.114985 0.0238936 0.99242 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 3.2 trans { x -1723.27 y -133.41 z -486.807 } rot [ -0.0709257 -0.165881 0.0174324 0.983437 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+			{ time 3.4 trans { x -1493.12 y -207.012 z -1096.49 } rot [ -0.0455801 -0.228874 0.0181722 0.972219 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+			{ time 3.59979 trans { x -1155.26 y -220.374 z -1662.32 } rot [ -0.0105226 -0.358635 0.0246479 0.933093 ] scale { x 1.26587 y 1.84914 z 1.85856 } }
+			{ time 3.79979 trans { x -577.363 y -206.144 z -1891.43 } rot [ -0.00267815 -0.746307 0.035817 0.664632 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+			{ time 4 trans { x 78.0818 y -168.662 z -1821.03 } rot [ -0.00811759 -0.7074 0.0289603 0.706174 ] scale { x 1.26587 y 1.84913 z 1.85856 } }
+		] } }
+	]
+	nodes [ { pos { y 0 } scale { w 2 } entities [ { name "SNAKE" obj "SNAKE" anims [ { n anim s 1.333 } ] } ] } ]
+}
+
+// ARCTIC
+Node seagullFloat {
+	pos { x -0.150951 y 21.1028 z -3.31659 }
+	entities [ { name "seagul" obj "seagul" anims [ { n float } ] } ]
+}
+Node seagullFly {
+	animators [ { t Animator::oscillate osWi 1.0 s 2 } ]
+	pos { x 0.198433 y -0.659863 z -0.58229 }
+	scale { w 0.15 }
+	rot [ 0 90 0 ]
+	entities [ { obj "Seagul_FLY" anims [ { n fly1 } ] } ]
+}
+Node seagullsFly {
+	nodes [
+		{ pos { x 0 y 0 z 10 } nodes [ seagullFly ] }
+		{ pos { x 10 y 5 z 15 } nodes [ seagullFly ] }
+		{ pos { x -10 y 5 z 5 } nodes [ seagullFly ] }
+		{ pos { x 5 y -5 z 20 } nodes [ seagullFly ] }
+		{ pos { x 15 y -2.5 z 25 } nodes [ seagullFly ] }
+		{ pos { x 15 y 7.5 z 0 } nodes [ seagullFly ] }
+	]
+}
+Node SeagullsGoRound {
+	nodes [
+		{
+			pos { x -6 y 45 z 26 }
+			animators [ { t Animator::ellipse elMa 150 elMi 100 elAngle -90 s 0.2 } ]
+			nodes [ { pos { z 100 } nodes [ seagullsFly ] } ]
+		}
+		{
+			pos { x -6 y 40 z 36 }
+			animators [ { t Animator::ellipse elMa 120 elMi 140 elAngle -90 s 0.185 } ]
+			nodes [ { pos { z 100 } scale { x -1 } nodes [ seagullsFly ] } ]
+		}
+	]
+}
+Node SeagullsFlyAll {
+	nodes [
+		//SeagullsFlyGroup4
+		{
+			pos { x -167.118 y 31.7168 z 70.6049 }
+			rot [ 0.00351074 0.453735 0.00689482 0.891103 ]
+			naCommon { auto true loop false start 0 } 
+			nanims [
+				{ name "SeagullsFlyGroup4" length 14 timeScale 2 keys { k [
+					{ time 0 trans { x -167.118 y 31.7168 z 70.6049 } rot [ 0.00823526 0.435966 0.0169962 0.899765 ] }
+					{ time 1.75 trans { x -111.971 y 35.0798 z 0.761839 } rot [ 0.00823434 0.435973 0.016994 0.899761 ] }
+					{ time 3.5 trans { x -56.8235 y 38.4427 z -69.0812 } rot [ 0.00823454 0.435993 0.0169935 0.899752 ] }
+					{ time 5.25 trans { x -1.67595 y 41.8056 z -138.924 } rot [ 0.00823429 0.435985 0.0169933 0.899756 ] }
+					{ time 7 trans { x 53.4716 y 45.1685 z -208.767 } rot [ -0.0169947 0.899757 0.00823486 -0.435983 ] }
+					{ time 14 trans { x 53.4716 y 45.1685 z -308.767 } rot [ -0.0169947 0.899757 0.00823486 -0.435983 ] }
+				] } }
+			]
+			nodes [ seagullsFly ]
+		}
+		//SeagullsFlyGroup3
+		{
+			pos { x -93.4382 y 19.8141 z 77.6502 }
+			rot [ -0.00423316 0.489742 -0.00753578 0.871825 ]
+			naCommon { auto true loop false start 0 } 
+			nanims [
+				{ name "SeagullsFlyGroup3" length 14 timeScale 2 keys { k [
+					{ time 0 trans { x -93.4382 y 19.8141 z 77.6502 } rot [ -0.00870738 0.50229 -0.0149869 0.864526 ] }
+					{ time 1.75 trans { x -50.9258 y 16.8372 z 3.0795 } rot [ -0.0087073 0.502295 -0.0149866 0.864523 ] }
+					{ time 3.5 trans { x -8.41344 y 13.8604 z -71.4912 } rot [ -0.00870738 0.50229 -0.0149869 0.864526 ] }
+					{ time 5.25 trans { x 34.0989 y 10.8835 z -146.062 } rot [ -0.00870692 0.502286 -0.0149863 0.864528 ] }
+					{ time 7 trans { x 76.6113 y 7.90666 z -220.633 } rot [ -0.0149865 -0.864528 0.0087071 0.502286 ] }
+					{ time 14 trans { x 76.6113 y 7.90666 z -320.633 } rot [ -0.0149865 -0.864528 0.0087071 0.502286 ] }
+				] } }
+			]
+			nodes [ seagullsFly ]
+		}
+		//SeagullsFlyGroup2
+		{
+			pos { x 36.4608 y 9.38745 z 83.1288 }
+			rot [ 0.00662756 0.770423 0.00548384 0.637475 ]
+			naCommon { auto true loop false start 0 } 
+			nanims [
+				{ name "SeagullsFlyGroup2" length 14 timeScale 2 keys { k [
+					{ time 0 trans { x 36.4608 y 9.38745 z 83.1288 } rot [ 0.0189553 0.782541 0.0150696 0.622128 ] }
+					{ time 1.75 trans { x 19.573 y 13.0183 z 10.153 } rot [ 0.0189553 0.782541 0.0150696 0.622128 ] }
+					{ time 3.5 trans { x 2.68512 y 16.6491 z -62.8228 } rot [ 0.0189551 0.782544 0.0150693 0.622124 ] }
+					{ time 5.25 trans { x -14.2027 y 20.2799 z -135.799 } rot [ 0.0189545 0.782542 0.0150689 0.622126 ] }
+					{ time 7 trans { x -31.0906 y 23.9107 z -208.774 } rot [ 0.0150693 -0.622128 -0.0189548 0.782541 ] }
+					{ time 14 trans { x -31.0906 y 23.9107 z -308.774 } rot [ 0.0150693 -0.622128 -0.0189548 0.782541 ] }
+				] } }
+			]
+			nodes [ seagullsFly ]
+		}
+		//SeagullsFlyGroup1
+		{
+			pos { x 85.0586 y 10.0117 z 80.5344 }
+			rot [ 0.0097036 0.758972 0.0083231 0.650998 ]
+			naCommon { auto true loop false start 0 } 
+			nanims [
+				{ name "SeagullsFlyGroup1" length 14 timeScale 2 keys { k [
+					{ time 0 trans { x 85.0586 y 10.0117 z 80.5344 } rot [ 0.0243046 0.821956 0.0168185 0.568784 ] }
+					{ time 1.75 trans { x 57.4447 y 14.6499 z 7.20114 } rot [ 0.0243046 0.821954 0.0168186 0.568786 ] }
+					{ time 3.5 trans { x 29.8308 y 19.2881 z -66.1321 } rot [ 0.0243046 0.821952 0.0168187 0.568789 ] }
+					{ time 5.25 trans { x 2.21681 y 23.9263 z -139.465 } rot [ 0.0243053 0.821955 0.016819 0.568785 ] }
+					{ time 7 trans { x -25.3971 y 28.5646 z -212.799 } rot [ 0.0168189 -0.568786 -0.0243049 0.821954 ] }
+					{ time 14 trans { x -25.3971 y 28.5646 z -312.799 } rot [ 0.0168189 -0.568786 -0.0243049 0.821954 ] }
+				] } }
+			]
+			nodes [ seagullsFly ]
+		}
+	]
+}
+Node seagullSit {
+	pos { x -0.150951 y 21.1028 z -3.31659 }
+	entities [ { obj "seagul" anims [ { n float s 2 } ] } ]
+}
+Node seagullsRocks {
+	nodes [
+		//SeagullFloatGroup20
+		{
+			pos { x -161.325 y 29 z 68.6157 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.258184 0.318668 -0.0147107 0.911907 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup21
+		{
+			pos { x -164.574 y 29.5 z 68.7096 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ 0.0355859 0.942823 -0.28924 0.161736 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup18
+		{
+			pos { x -159.934 y 33.1764 z 73.4374 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.112862 0.809278 -0.328545 0.473698 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup19
+		{
+			pos { x -163.084 y 32.2382 z 72.3285 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ 0.0451034 0.9263 -0.2651 -0.263924 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup22
+		{
+			pos { x -170.664 y 31.7209 z 70.5996 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.0374999 0.937871 -0.225172 -0.26132 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup23
+		{
+			pos { x -166.591 y 32.6844 z 72.9107 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.054775 -0.826295 0.164197 0.535981 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup17
+		{
+			pos { x -88.7198 y 19.447 z 79.6157 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.0338655 -0.244444 -0.153225 0.956882 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup16
+		{
+			pos { x -91.0366 y 19.1076 z 77.7648 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.0835584 -0.636913 -0.0597957 0.764057 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup15
+		{
+			pos { x -96.1455 y 19.6229 z 78.289 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.275824 -0.524297 0.124892 0.795887 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup14
+		{
+			pos { x -98.6198 y 21.0493 z 83.2022 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.132298 -0.799251 0.142274 0.568729 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup13
+		{
+			pos { x -93.7661 y 16.1709 z 74.4469 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.0392306 0.874693 -0.145769 0.460569 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup12
+		{
+			pos { x -87.7076 y 15.3031 z 73.0074 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ 0.170479 0.960096 -0.0335535 -0.219148 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup11
+		{
+			pos { x 89.9166 y 11.076 z 82.7888 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ 0.00883838 0.927525 0.0825054 0.364435 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup10
+		{
+			pos { x 86.8302 y 9.66123 z 77.5711 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.067518 0.457603 0.0649727 0.884205 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup09
+		{
+			pos { x 83.9599 y 9.1678 z 78.5799 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.0765687 0.99609 -0.043442 -0.00746164 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup08
+		{
+			pos { x 83.2652 y 9.61115 z 81.3808 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.093235 0.958375 0.015429 -0.26942 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup07
+		{
+			pos { x 83.4788 y 9.88385 z 84.1265 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ 0.13897 -0.738679 -0.0169631 0.659358 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup06
+		{
+			pos { x 86.571 y 10.1253 z 82.5633 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.053627 0.903723 0.0633196 -0.419999 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup05
+		{
+			pos { x 40.0952 y 9.95553 z 86.2764 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ 0 0.851755 -3.72314e-008 0.523941 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup04
+		{
+			pos { x 38.856 y 8.02747 z 80.5271 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.127534 0.30094 -0.0139598 0.944973 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup03
+		{
+			pos { x 35.7787 y 7.81 z 80.5271 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.0313633 0.977918 -0.130416 0.160265 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup02
+		{
+			pos { x 34.2203 y 8.7122 z 82.823 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ -0.0397747 0.991916 -0.063402 -0.102473 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup01
+		{
+			pos { x 33.4919 y 9.16912 z 85.4394 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ 0.0635428 -0.846607 0.0395492 0.52693 ]
+			nodes [ seagullSit ]
+		}
+		//SeagullFloatGroup
+		{
+			pos { x 36.9929 y 9.57479 z 84.9641 }
+			scale { x 0.0247462 y 0.0247462 z 0.0247462 }
+			rot [ 0 0.966913 -4.22651e-008 -0.255105 ]
+			nodes [ seagullSit ]
+		}
+	]
+}
+
+Node arcticIntroPisw {
+	nodes [
+		//IB_B3_REF_ARCTIC
+		{
+			pos { x -27.4864 y -6.13091 z -558.193 }
+			scale { x 2.90597 y 2.90597 z 2.90597 }
+			rot [ 0.17196 -0.523961 -0.108941 0.827059 ]
+			entities [ { name "IB_B3_LO_ARCTIC" obj "IB_B3_LO_ARCTIC" } ]
+		}
+		//LIGHT
+		{
+			pos { x -27.4864 y 10 z -545 }
+			lights [ { name "arcticIntroPiswOmni01" type Light::point specular RGB::grey4 attenuation { range 65 linear 0.07 quad 0.017 } } ]
+		}
+	]
+}
+Node arcticIntro {
+	nodes [
+		{
+			pos { x 11.7741 y -3.69 z 409.998 }
+			rot [ 0 8.74228e-008 -3.82137e-015 1 ]
+			entities [ { name "INTRO_ICES_ARCTIC" obj "INTRO_ICES_ARCTIC" } ]
+		}
+		//BILLBOARDS_ARCTIC
+		{
+			pos { y -1.61732e-006 z -37 }
+			entities [ { name "BILLBOARDS_ARCTIC" obj "BILLBOARDS_ARCTIC" } ]
+		}
+		//MEGALH3A_TROXIA_ARCTIC
+		{
+			animators [ arcticMedOsc ]
+			pos { x -34.8669 y -2.621 z -53.7429 }
+			entities [ { name "MEGALH3A_TROXIA_ARCTIC" obj "MEGALH3A_TROXIA_ARCTIC" } ]
+		}
+		//POLY_TROXIA_ARCTIC
+		{
+			pos { y -2.721 z -36.884 }
+			rot [ 0 0.00421141 -1.84087e-010 0.999991 ]
+			nodes [
+				//IB_A2_ARCTIC
+				{
+					animators [ arcticBigOsc arcticIntroBigRot ]
+					pos { x 96.9115 y -0.685868 z 18.9265 }
+					rot [ 0 0.437106 -1.91065e-008 0.89941 ]
+					entities [ { name "IB_A2_ARCTIC" obj "IB_A2_ARCTIC" } ]
+				}
+				//IB_A4_LO_ARCTIC
+				{
+					animators [ arcticBigOsc arcticIntroBigRot ]
+					pos { x -15.1585 y -0.631574 z 76.3554 }
+					rot [ 0 -0.156812 6.85446e-009 0.987629 ]
+					entities [ { name "IB_A4_LO_ARCTIC" obj "IB_A4_LO_ARCTIC" } ]
+				}
+				//IB_A3_ARCTIC
+				{
+					animators [ arcticBigOsc arcticIntroBigRot ]
+					pos { x -98.0245 y -0.782466 z 15.1248 }
+					entities [ { name "IB_A3_ARCTIC" obj "IB_A3_ARCTIC" } ]
+				}
+			]
+		}
+	]
+}
+Node arcticMegalaHidden {
+	nodes [
+		//POLY_TROXIA_ARCTIC
+		{
+			animators [ arcticBigEll ]
+			pos { y -2.721 z -36.884 }
+			rot [ 0 0.00421141 -1.84087e-010 0.999991 ]
+			nodes [
+				//IB_A2_ARCTIC
+				{
+					animators [ arcticBigOsc arcticBigRot ]
+					pos { x 96.9115 y -0.685868 z 18.9265 }
+					rot [ 0 0.437106 -1.91065e-008 0.89941 ]
+					entities [ { name "IB_A2_ARCTIC" obj "IB_A2_ARCTIC" } ]
+				}
+				//IB_A4_LO_ARCTIC
+				{
+					animators [ arcticBigOsc arcticBigRot ]
+					pos { x -15.1585 y -0.631574 z 76.3554 }
+					rot [ 0 -0.156812 6.85446e-009 0.987629 ]
+					entities [ { name "IB_A4_LO_ARCTIC" obj "IB_A4_LO_ARCTIC" } ]
+				}
+				//IB_A3_ARCTIC
+				{
+					animators [ arcticBigOsc arcticBigRot ]
+					pos { x -98.0245 y -0.782466 z 15.1248 }
+					entities [ { name "IB_A3_ARCTIC" obj "IB_A3_ARCTIC" } ]
+				}
+			]
+		}
+	]
+}
+Node arcticMegala {
+	nodes [
+		//POLY_TROXIA_ARCTIC
+		{
+			animators [ arcticBigEll ]
+			pos { y -3.221 z -36.884 }
+			rot [ 0 0.00421141 -1.84087e-010 0.999991 ]
+			nodes [
+				//HIDDEN2_ARCTIC
+				{
+					animators [ arcticBigOsc arcticBigRot ]
+					pos { x 23.4364 y 0.999997 z -67.21 }
+					rot [ 0 0.485247 -2.12108e-008 0.874377 ]
+					scale { w 2 }
+					entities [ { name "HIDDEN2_ARCTIC" obj "HIDDEN2_ARCTIC" } ]
+				}
+				//IB_A2_ARCTIC
+				{
+					animators [ arcticBigOsc arcticBigRot ]
+					pos { x 96.9115 y -0.685868 z 18.9265 }
+					rot [ 0 0.437106 -1.91065e-008 0.89941 ]
+					entities [ { name "IB_A2_ARCTIC" obj "IB_A2_ARCTIC" } ]
+				}
+				//IB_A4_LO_ARCTIC
+				{
+					animators [ arcticBigOsc arcticBigRot ]
+					pos { x -15.1585 y -0.631574 z 76.3554 }
+					rot [ 0 -0.156812 6.85446e-009 0.987629 ]
+					entities [ { name "IB_A4_LO_ARCTIC" obj "IB_A4_LO_ARCTIC" } ]
+				}
+				//IB_A3_ARCTIC
+				{
+					animators [ arcticBigOsc arcticBigRot ]
+					pos { x -98.0245 y -0.782466 z 15.1248 }
+					entities [ { name "IB_A3_ARCTIC" obj "IB_A3_ARCTIC" } ]
+				}
+			]
+		}
+	]
+}
+Node arcticHidden3 {
+	nodes [
+		//HIDDEN3A_ARCTIC
+		{
+			animators [ arcticMedEll ]
+			pos { y -2.221 z -36.884 }
+			nodes [
+				//MEGALH3A_TROXIA_ARCTIC
+				{
+					animators [ arcticMedOsc arcticMedRot ]
+					pos { x -34.8669 y -0.400001 z -16.8589 }
+					entities [ { name "MEGALH3A_TROXIA_ARCTIC" obj "MEGALH3A_TROXIA_ARCTIC" } ]
+				}
+				//IB_C2_LO_ARCTIC
+				{
+					animators [ arcticMedOsc arcticMedRot ]
+					pos { x 35.3601 y -0.900488 z -16.0077 }
+					entities [ { name "IB_C2_LO_ARCTIC" obj "IB_C2_LO_ARCTIC" } ]
+				}
+				//IB_B2_LO_ARCTIC
+				{
+					animators [ arcticMedOsc arcticMedRot ]
+					pos { x -1.046 y -0.919998 z 41.7514 }
+					entities [ { name "IB_B2_LO_ARCTIC" obj "IB_B2_LO_ARCTIC" } ]
+				}
+			]
+		}
+		//HIDDEN3B_ARCTIC
+		{
+			animators [ arcticMed2Ell ]
+			pos { y -2.521 z -36.884 }
+			nodes [
+				//IB_B3_LO_ARCTIC
+				{
+					animators [ arcticMedOsc arcticMedRot ]
+					pos { x 15.9193 y -0.542143 z 22.7781 }
+					entities [ { name "IB_B3_LO_ARCTIC" obj "IB_B3_LO_ARCTIC" } ]
+				}
+				//IB_C3_LO_ARCTIC
+				{
+					animators [ arcticMedOsc arcticMedRot ]
+					pos { x -17.761 y -0.569877 z 16.6554 }
+					entities [ { name "IB_C3_LO_ARCTIC" obj "IB_C3_LO_ARCTIC" } ]
+				}
+				//IB_C1_LO_ARCTIC
+				{
+					animators [ arcticMedOsc arcticMedRot ]
+					pos { x 17.5233 y -0.711634 z -25.7511 }
+					rot [ 0 0.00612032 -2.67528e-010 0.999981 ]
+					entities [ { name "IB_C1_LO_ARCTIC" obj "IB_C1_LO_ARCTIC" } ]
+				}
+			]
+		}
+	]
+}
+Node arcticHidden1 {
+	pos { x -1944.84 y 595.611 z 3238.08 }
+	rot [ 0 8.74228e-008 -3.82137e-015 1 ]
+	entities [ { name "HIDDEN1_ARCTIC" obj "HIDDEN1_ARCTIC" } ]
+}
+Node arcticHidden2 {
+	pos { y -2.221 z -36.884 }
+	rot [ 0 0.488925 -2.13716e-008 0.872326 ]
+	entities [ { name "HIDDEN2_ARCTIC" obj "HIDDEN2_ARCTIC" } ]
+}
+Node arcticDay {
+	nodes [
+		//LIGHT
+		{
+			//rot [ 0 270 120 ]
+			// rot [ -0.707107 -0 -0 -0.707107 ]
+			rot [ 0 20 120 ] // was 135
+			lights [ { name "Omni01" type Light::directional } ]
+		}
+		//SKALI_ARCTIC
+		{
+			pos { x -282.783 y 122.124 z 2060.93 }
+			entities [ { name "SKALI_ARCTIC" obj "SKALI_ARCTIC" } ]
+		}
+		//NERO_ARCTIC
+		{
+			pos { y -2.76723 z 1.20959e-007 }
+			entities [ { name "NERO_ARCTIC" obj "NERO_ARCTIC" } ]
+		}
+	]
+}
+Node arcticSnow {
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 0 z 0 }
+			scale { x 1 y 1 z 1 }
+			rot [ 90 45 0 ]
+			lights [ { name "Omni01" type Light::directional diffuse RGB::black } ]
+		}
+		//SKALI_ARCTIC
+		{
+			pos { x -282.783 y 122.124 z 2060.93 }
+			entities [ { name "SKALI_ARCTIC" obj "SKALI_FOG_ARCTIC" } ]
+		}
+		//nero_ARCTIC
+		{
+			pos { y -2.76723 z 1.20959e-007 }
+			entities [ { name "NERO_ARCTIC" obj "NERO_FOG_ARCTIC" } ]
+		}
+	]
+}
+Node arcticNight {
+	nodes [
+		//LIGHT
+		{
+			pos { x -2 y 3 z -35 }
+			scale { x 1 y 1 z 1 }
+			rot [ 90 45 0 ]
+			lights [ { name "Omni01" type Light::point diffuse RGB::grey8 attenuation { range 200 linear 0.022 quad 0.0019 } } ]
+		}
+		//SKALI_ARCTIC
+		{
+			pos { x -282.783 y 122.124 z 2060.93 }
+			entities [ { name "SKALI_ARCTIC" obj "SKALI_ARCTIC" } ]
+		}
+		//nero_ARCTIC
+		{
+			pos { y -2.76723 z 1.20959e-007 }
+			entities [ { name "NERO_ARCTIC" obj "NERO_NIGHT_ARCTIC" } ]
+		}
+	]
+}
+Node bearWalk {
+	pos { x 41.6684 y 0.324873 z 67.1854 }
+	rot [ 0.0503549 -0.848476 0.0666454 0.5226 ]
+	naCommon { auto true start NaN } 
+	nanims [
+		{ name "path" length 15 timeScale 13 keys { k [
+			{ time 0 trans { x 41.6684 y 0.324873 z 67.1854 } rot [ 0.0503549 -0.848476 0.0666454 0.5226 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 0.333333 trans { x 30.2514 y -1.05972 z 65.4734 } rot [ 0.0230505 -0.712604 0.0193623 0.700921 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 0.666667 trans { x 18.8232 y -1.2086 z 68.0152 } rot [ -0.00855105 -0.633138 -0.00573351 0.773971 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 1 trans { x 7.52477 y -0.86138 z 71.1558 } rot [ -0.0121254 -0.662969 -0.00883864 0.748497 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 1.33333 trans { x -4.0965 y -0.629998 z 72.6459 } rot [ -0.0025252 -0.728345 -0.002219 0.685202 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 1.66646 trans { x -15.7067 y -0.710794 z 71.5817 } rot [ 0.00397564 -0.850134 0.00523465 0.526526 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 2 trans { x -26.5578 y -0.852303 z 67.1152 } rot [ 0.00337988 -0.853113 0.00450302 0.521696 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 2.33313 trans { x -37.5597 y -0.971944 z 63.0362 } rot [ 0.00275344 -0.8402 0.00348862 0.542258 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 2.66667 trans { x -48.7791 y -1.05163 z 59.6034 } rot [ 0.00129818 -0.820544 0.00153036 0.57158 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 3 trans { x -60.2707 y -1.02989 z 57.2683 } rot [ -0.00405388 -0.778811 -0.00415578 0.627232 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 3.33313 trans { x -67.0332 y -0.17244 z 60.977 } rot [ -0.0450977 0.341434 0.0214461 0.938578 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 3.66667 trans { x -56.902 y 0.522265 z 66.6688 } rot [ -0.00925342 0.558566 0.00760134 0.829374 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 4 trans { x -45.2638 y 0.434041 z 67.7715 } rot [ 0.00455322 0.653409 -0.00475551 0.756976 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 4.33333 trans { x -34.0397 y 0.691791 z 70.8598 } rot [ -0.02155 0.47854 0.0145595 0.87768 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 4.66646 trans { x -25.1875 y 1.5685 z 78.3452 } rot [ -0.0443338 0.257874 0.0164912 0.96502 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 5 trans { x -21.6989 y 2.78581 z 89.2805 } rot [ -0.0525125 -0.0511563 0.00229887 0.997306 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 5.33333 trans { x -24.7634 y 3.89254 z 100.441 } rot [ -0.040752 -0.282684 -0.00791548 0.958314 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 5.66646 trans { x -30.9231 y 4.86375 z 110.376 } rot [ -0.0414081 -0.334452 -0.0104123 0.941445 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 6 trans { x -37.427 y 5.90107 z 120.089 } rot [ -0.0442247 -0.334737 -0.011137 0.941207 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 6.33333 trans { x -43.8695 y 6.99485 z 129.837 } rot [ -0.0461829 -0.330448 -0.0114083 0.942625 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 6.66646 trans { x -50.2194 y 8.12707 z 139.641 } rot [ -0.0475692 -0.326163 -0.0115229 0.944046 ] scale { x 0.0865284 y 0.0865284 z 0.0865283 } }
+			{ time 7 trans { x -56.4845 y 9.28691 z 149.496 } rot [ -0.0486034 -0.32242 -0.0115706 0.945277 ] scale { x 0.0865284 y 0.0865283 z 0.0865284 } }
+			{ time 7.33333 trans { x -62.5635 y 10.4795 z 159.462 } rot [ -0.0513772 -0.300277 -0.0109731 0.952404 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 7.66646 trans { x -67.4762 y 11.7927 z 170.017 } rot [ -0.060429 -0.20278 -0.00664847 0.977335 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 8 trans { x -67.8965 y 13.3379 z 181.442 } rot [ -0.0646319 0.108959 0.0133989 0.991852 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 8.33313 trans { x -60.9494 y 14.5441 z 190.595 } rot [ -0.0296815 0.399839 0.0164699 0.915957 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 8.66667 trans { x -50.6573 y 14.9475 z 196.135 } rot [ -0.00128892 0.525081 0.000975191 0.851051 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 9 trans { x -39.4227 y 14.6791 z 199.475 } rot [ 0.016703 0.587151 -0.0147304 0.809171 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 9.33313 trans { x -27.8779 y 13.987 z 201.435 } rot [ 0.0253894 0.626356 -0.0247369 0.778731 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 9.66667 trans { x -16.2199 y 13.0624 z 202.376 } rot [ 0.0293125 0.656446 -0.0309085 0.75317 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 10 trans { x -4.53335 y 12.0237 z 202.431 } rot [ 0.0298797 0.684273 -0.0339838 0.727821 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 10.3331 trans { x 7.11592 y 10.9606 z 201.54 } rot [ 0.0285619 0.716718 -0.0356372 0.695866 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 10.6667 trans { x 18.5594 y 9.85961 z 199.253 } rot [ 0.0272983 0.774224 -0.0408749 0.631 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 11 trans { x 28.4858 y 8.63363 z 193.437 } rot [ 0.0154061 0.924729 -0.0512589 0.376843 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 11.3331 trans { x 30.6038 y 7.64685 z 182.311 } rot [ -0.00374644 0.999117 -0.030011 -0.0291688 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 11.6667 trans { x 28.1286 y 6.99349 z 170.86 } rot [ -0.00442627 0.997388 -0.0271027 -0.0668031 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 12 trans { x 25.3997 y 6.34998 z 159.464 } rot [ -0.0045667 0.997005 -0.027021 -0.0723256 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 12.3331 trans { x 22.6016 y 5.70696 z 148.085 } rot [ -0.00457665 0.996987 -0.027041 -0.0725618 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 12.6667 trans { x 19.8804 y 5.06214 z 136.688 } rot [ -0.00439467 0.997502 -0.0272115 -0.0650402 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 13 trans { x 17.4628 y 4.41228 z 125.223 } rot [ -0.00388789 0.9986 -0.0275889 -0.0449606 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 13.3331 trans { x 15.745 y 3.75348 z 113.636 } rot [ -0.00274124 0.999597 -0.0281833 -0.00195167 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 13.6667 trans { x 15.5123 y 3.08483 z 101.938 } rot [ -0.00019198 0.995699 -0.0285575 0.0881342 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 14 trans { x 18.3384 y 2.43221 z 90.6329 } rot [ 0.00450623 0.964258 -0.0259565 0.263652 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 14.3331 trans { x 25.1232 y 1.86296 z 81.1443 } rot [ 0.00752201 0.9057 -0.021115 0.423327 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 14.6667 trans { x 34.233 y 1.34829 z 73.7963 } rot [ 0.00977516 0.858205 -0.0205718 0.512801 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+			{ time 15 trans { x 41.6683 y 0.324867 z 67.1854 } rot [ 0.0503546 -0.848476 0.0666451 0.5226 ] scale { x 0.0865284 y 0.0865284 z 0.0865284 } }
+		] } }
+	]
+	nodes [
+		//BEAR
+		{
+			pos { x 14.7326 y -12.2042 z 18.702 }
+			rot [ 7.45058e-009 0 -2.32831e-009 1 ]
+			scale { w 35 }
+			entities [ { name "BEAR" obj "BEAR" anims [ { n walk } ] } ]
+		}
+	]
+}
+
+// BATCAVE
+Node cave_entrance {
+	nodes [
+		//cave_entrance2
+		{
+			pos { x -18.6576 y 2.44639 z 59.4917 }
+			scale { x 0.269848 y 0.269848 z 0.399721 }
+			rot [ 0.498223 0.532337 0.497268 -0.47023 ]
+			entities [ { name "cave_entrance2" obj "cave_entrance2" } ]
+		}
+		//cave_entrance1
+		{
+			pos { x -100.863 y 7.36077 z 87.8079 }
+			rot [ -0.0991978 -0.619041 0.773799 -0.0904602 ]
+			entities [ { name "cave_entrance1" obj "cave_entrance2" } ]
+		}
+	]
+}
+Node cave_water {
+	nodes [
+		//WATER_BIG_BATCAVE
+		{
+			pos { x 7.73478 y -5.59444 z 21.6048 }
+			scale { x 14.5772 y 11.2015 z 14.7887 }
+			entities [ { name "WATER_BIG_BATCAVE" obj "WATER_BIG_BATCAVE" } ]
+		}
+		//WATER_SMALL_BATCAVE
+		{
+			pos { x 6.54811 y -5.70592 z 26.288 }
+			scale { x 11.8841 y 11.2015 z 11.2015 }
+			entities [ { name "WATER_SMALL_BATCAVE" obj "WATER_SMALL_BATCAVE" } ]
+		}
+		//RIVERBED_BATCAVE
+		{
+			pos { x 6.41592 y -5.96223 z 19.0865 }
+			entities [ { name "RIVERBED_BATCAVE" obj "RIVERBED_BATCAVE" } ]
+		}
+		//Crystal_Fallen
+		{
+			pos { x -10.684 y -4.48281 z 12.2068 }
+			entities [ { name "Crystal_Fallen" obj "Crystal_Fallen" } ]
+		}
+		//LIGHT
+		{
+			pos { x -6 y -4.4 z 26 }
+			lights [ { name "Omni01" type Light::point diffuse { r 1 g 1 b 1 } shadows false attenuation { range 40 linear 0.14 quad 0.07 } } ]
+		}
+	]
+}
+Node lavaNode {
+	pos { x 8.09367 y -5.88801 z -8.69579 }
+	scale { z 1.34607 }
+	entities [ { name "lava" obj "lava" asCommon { pos 0 } anims [ { n anim s 0.2  } ] } ]
+}
+Node lavaLight {
+	scale { y 0.75 }
+	nodes [
+		{
+			pos { x 2 y -5.17106 z 24.8836 }
+			rot [ 0.707107 0 0 0.707107 ]
+			naCommon { auto true loop true }
+			nanims [
+				{ name "light" length 2.66667 timeScale 5 keys { k [
+					{ time 0 trans { x 2 y -5.17106 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 0.140208 trans { x 2 y -4.93783 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 0.280417 trans { x 2 y -4.30848 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 0.420625 trans { x 2 y -3.3885 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 0.560833 trans { x 2 y -2.28338 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 0.700833 trans { x 2 y -1.09864 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 0.84125 trans { x 2 y 0.0602393 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 0.98125 trans { x 2 y 1.08776 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 1.12167 trans { x 2 y 1.87841 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 1.26188 trans { x 2 y 2.32671 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 1.40188 trans { x 2 y 2.3313 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 1.54208 trans { x 2 y 1.89065 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 1.6825 trans { x 2 y 1.10561 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 1.82271 trans { x 2 y 0.0816711 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 1.96271 trans { x 2 y -1.07567 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 2.10313 trans { x 2 y -2.26091 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 2.24333 trans { x 2 y -3.36856 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 2.38333 trans { x 2 y -4.29312 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 2.52375 trans { x 2 y -4.92909 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+					{ time 2.66667 trans { x 2 y -5.17106 z 24.8836 } rot [ 0.707107 0 0 0.707107 ] }
+				] } }
+			]
+			lights [ { name "Omni01" type Light::point diffuse { r 1.5 g 1 b 0.5 } attenuation { range 40 linear 0.14 quad 0.07 } } ]
+		}
+	]
+}
+
+Node Steams {
+	nodes [
+		//Steam06
+		{
+			pos { x 15.1315 y -2.11537 z 7.57518 }
+			rot [ 0 0 40 ]
+			n "Steam06"
+		}
+		//Steam05
+		{
+			pos { x 15.6983 y -1.44755 z 31.5287 }
+			rot [ -0.499156 0.499685 0.500844 0.500314 ]
+			n "Steam05"
+		}
+		//Steam04
+		{
+			pos { x -7.503 y 7.485 z 12.399 }
+			rot [ 0 0 180 ]
+			n "Steam04"
+		}
+		//Steam03
+		{
+			pos { x -15.053 y -4.74602 z -10.0846 }
+			rot [ 0 0 -90 ]
+			n "Steam03"
+		}
+		//Steam02
+		{
+			pos { x -17.257 y 2.056 z 34.578 }
+			rot [ 0 0 -130 ]
+			n "Steam02"
+		}
+		//Steam01
+		{
+			pos { x -14.5455 y -4.74601 z 17.8379 }
+			rot [ 0 0 -50 ]
+			n "Steam01"
+		}
+	]
+}
+Node CrystalsAll {
+	nodes [
+		//Crystal2
+		{
+			pos { x -3.87111 y -4.48281 z 22.5049 }
+			entities [ { name "Crystal2" obj "Crystal2" } ]
+		}
+		//Crystal1
+		{
+			pos { x -3.51956 y -4.48281 z 22.2861 }
+			entities [ { name "Crystal1" obj "Crystal1" } ]
+		}
+		//Crystal4
+		{
+			pos { x -3.20771 y -4.48281 z 22.0589 }
+			entities [ { name "Crystal4" obj "Crystal4" } ]
+		}
+		//Crystal3
+		{
+			pos { x -3.07633 y -4.48281 z 22.4954 }
+			entities [ { name "Crystal3" obj "Crystal3" } ]
+		}
+		//Crystal06
+		{
+			pos { x -7.3125 y -4.36898 z 17.4143 }
+			entities [ { name "Crystal06" obj "Crystal06" } ]
+		}
+		//Crystal07
+		{
+			pos { x -6.36806 y -4.30573 z 17.6203 }
+			rot [ 0 -1.89795e-011 -0.000434201 1 ]
+			entities [ { name "Crystal07" obj "Crystal07" } ]
+		}
+		//Crystal08
+		{
+			pos { x -6.72533 y -4.37046 z 17.54 }
+			rot [ 0.0823539 0.0213791 0.0871202 0.992558 ]
+			entities [ { name "Crystal08" obj "Crystal08" } ]
+		}
+		//Crystal09
+		{
+			pos { x -7.06887 y -4.33243 z 18.6153 }
+			rot [ 0.0892861 0.990276 -0.106151 0.0106112 ]
+			entities [ { name "Crystal09" obj "Crystal09" } ]
+		}
+		//CrystalCopy
+		{
+			pos { x -7.2449 y -4.38375 z 17.892 }
+			entities [ { name "CrystalCopy" obj "CrystalCopy" } ]
+		}
+		//CRYSTALS_BATCAVE
+		{
+			pos { x -10.684 y -4.48281 z 12.2068 }
+			entities [ { name "CRYSTALS_BATCAVE" obj "CRYSTALS_BATCAVE" } ]
+		}
+	]
+}
+Node BatgirlNode {
+	naCommon { auto true loop true }
+	nanims [
+		{ name "flight" length 10 timeScale 10 keys { k [
+			{ time 0 trans { x 4.51129 y 1.74617e-006 z 39.9478 } rot [ 0 0.747542 -3.26761e-008 0.664214 ] }
+			{ time 0.25 trans { x 4.50564 y 1.52765e-006 z 34.9487 } rot [ 0 0.655079 -2.86344e-008 0.755561 ] }
+			{ time 0.5 trans { x 6.09366 y 1.32284e-006 z 30.2631 } rot [ 0 0.500892 -2.18947e-008 0.86551 ] }
+			{ time 0.75 trans { x 9.19978 y 1.15549e-006 z 26.4344 } rot [ 0 0.379164 -1.65738e-008 0.925329 ] }
+			{ time 1 trans { x 12.3009 y 9.90854e-007 z 22.6681 } rot [ 0 0.570185 -2.49236e-008 0.821516 ] }
+			{ time 1.25 trans { x 10.9499 y -0.00404454 z 18.4063 } rot [ -0.00357755 0.96559 -0.000963511 0.260043 ] }
+			{ time 1.5 trans { x 6.27586 y -0.148345 z 17.0887 } rot [ -0.02301 0.995444 -0.00213827 0.0925024 ] }
+			{ time 1.75 trans { x 1.65521 y -0.406439 z 15.6823 } rot [ -0.0291514 0.957691 -0.00871131 0.286186 ] }
+			{ time 2 trans { x -1.47739 y -0.80952 z 12.0302 } rot [ -0.0422508 0.879933 -0.0226958 0.472671 ] }
+			{ time 2.25 trans { x -3.98257 y -1.27757 z 7.89865 } rot [ -0.0409485 0.862261 -0.0239462 0.504239 ] }
+			{ time 2.5 trans { x -6.23161 y -1.71377 z 3.61752 } rot [ -0.0352602 0.847274 -0.0220368 0.529526 ] }
+			{ time 2.75 trans { x -8.18221 y -2.05801 z -0.820644 } rot [ -0.0223386 0.823688 -0.0153608 0.566395 ] }
+			{ time 3 trans { x -9.60354 y -2.18489 z -5.4732 } rot [ 0.00353219 0.778864 0.00284425 0.627177 ] }
+			{ time 3.25 trans { x -10.1489 y -1.90481 z -10.3099 } rot [ 0.0389402 0.70723 0.0388087 0.704843 ] }
+			{ time 3.5 trans { x -9.64936 y -1.13134 z -15.1181 } rot [ 0.062097 0.627133 0.0765062 0.772655 ] }
+			{ time 3.75 trans { x -8.16292 y -0.0545994 z -19.6828 } rot [ 0.0632998 0.535591 0.0988374 0.836281 ] }
+			{ time 4 trans { x -5.49341 y 1.07647 z -23.6755 } rot [ 0.040101 0.378947 0.0972946 0.919416 ] }
+			{ time 4.25 trans { x -1.07165 y 1.96717 z -25.2442 } rot [ -0.00721403 -0.105607 0.0677681 0.99207 ] }
+			{ time 4.5 trans { x 3.09627 y 2.45794 z -22.5943 } rot [ -0.0132614 -0.383006 0.0319619 0.923098 ] }
+			{ time 4.75 trans { x 6.1097 y 2.6693 z -18.5446 } rot [ -0.00183204 -0.519283 0.00301504 0.854595 ] }
+			{ time 5 trans { x 6.72367 y 2.28354 z -13.6601 } rot [ 0.0752237 -0.82719 -0.0504325 0.554576 ] }
+			{ time 5.25 trans { x 3.41558 y 1.18228 z -9.91224 } rot [ -0.103007 0.93655 0.0366305 -0.333048 ] }
+			{ time 5.5 trans { x -0.243041 y 0.194383 z -6.34911 } rot [ -0.0569704 0.877549 0.0308428 -0.47509 ] }
+			{ time 5.75 trans { x -1.02348 y 0.588794 z -1.38088 } rot [ -0.0985415 -0.568322 0.139557 0.804875 ] }
+			{ time 6 trans { x 1.9227 y 3.14422 z 2.18887 } rot [ -0.0915112 -0.315045 0.263503 0.90716 ] }
+			{ time 6.25 trans { x 5.66896 y 6.04487 z 4.8236 } rot [ -0.0799684 -0.28452 0.258493 0.919693 ] }
+			{ time 6.5 trans { x 9.40421 y 8.56679 z 7.9305 } rot [ -0.0725275 -0.41597 0.155703 0.893009 ] }
+			{ time 6.75 trans { x 10.6287 y 8.62524 z 13.828 } rot [ -0.168725 0.870891 0.0877986 -0.45318 ] }
+			{ time 7 trans { x 1.9553 y 4.05153 z 16.4846 } rot [ -0.222472 0.969115 0.0238082 -0.103712 ] }
+			{ time 7.25 trans { x -5.3382 y 0.486024 z 22.9474 } rot [ 0.0455158 -0.799922 -0.0339927 0.597409 ] }
+			{ time 7.5 trans { x -6.96121 y 0.0630838 z 31.1686 } rot [ 0.00651407 -0.760052 -0.00556916 0.649805 ] }
+			{ time 7.75 trans { x -7.70311 y 0.0137922 z 35.9645 } rot [ 0.00194427 -0.759276 -0.00166637 0.650764 ] }
+			{ time 8 trans { x -8.36154 y 0.00184971 z 40.1397 } rot [ 0.000446357 -0.761332 -0.00038009 0.648361 ] }
+			{ time 8.25 trans { x -8.9737 y 2.96612e-005 z 43.8424 } rot [ 2.48285e-005 -0.763937 -2.0939e-005 0.645291 ] }
+			{ time 8.5 trans { x -8.91931 y 2.06048e-006 z 47.1382 } rot [ 0 -0.485637 2.12279e-008 0.87416 ] }
+			{ time 8.75 trans { x -6.1909 y 2.11299e-006 z 48.3395 } rot [ 0 -0.0133406 5.83136e-010 0.999911 ] }
+			{ time 9 trans { x -3.29652 y 2.09489e-006 z 47.9255 } rot [ 0 0.137353 -6.00388e-009 0.990522 ] }
+			{ time 9.25 trans { x -0.638224 y 2.04895e-006 z 46.8746 } rot [ 0 0.234438 -1.02476e-008 0.972131 ] }
+			{ time 9.5 trans { x 1.78249 y 1.98021e-006 z 45.302 } rot [ 0 0.337326 -1.4745e-008 0.941388 ] }
+			{ time 9.75 trans { x 3.7806 y 1.88199e-006 z 43.0548 } rot [ 0 0.494015 -2.15941e-008 0.869453 ] }
+			{ time 10 trans { x 4.51129 y 1.74617e-006 z 39.9478 } rot [ 0 0.744381 -3.25379e-008 0.667755 ] }
+		] } }
+	]
+	nodes [
+		{
+			animators [ { t Animator::oscillate osWi 0.2 s 4 } ]
+			rot [ 0 90 0 ]
+			scale { w 1.25 }
+			nodes [
+				{ //ExtroDragonSphere
+					pos { y 4.42717e-017 z 1.01282e-009 }
+					naCommon { auto true loop true }
+					nanims [
+						{ name "ExtroDragonSphereNodeAnim" length 0.8 keys { k [
+							{ time 0 trans { x 0 y 0.209497 z -0.0352546 } }
+							{ time 0.2 trans { x 0 y 0.199659 z -0.0278409 } }
+							{ time 0.4 trans { x 0 y 0.185886 z -0.0174617 } }
+							{ time 0.6 trans { x 0 y 0.1933 z -0.0230487 } }
+							{ time 0.8 trans { x 0 y 0.209497 z -0.0352546 } }
+						] } }
+					]
+					entities [ { name "ExtroDragonSphere" obj "ExtroDragonSphere" } ]
+				}
+				{
+					scale { x 1.3 }
+					pos { y 7.14877e-018 z 1.63545e-010 }
+					entities [ { obj Batgirl asCommon { loop ASLoopType::combined pos 0 } anims [ { n "anim" d 0.19 s 1.3 } { n "animM" s 1.3 } ] } ]
+				}
+			]
+		}
+	]
+}
+Node LizardGroup {
+	scale { w 0.08 }
+	nodes [
+		{
+			pos { x 0 y 0 z 6 }
+			rot [ 90 90 0 ]
+			entities [ { name "Lizard" obj "Lizard" anims [ { n anim } ] } ]
+		}
+	]
+}
+Node LizardWalk {
+	pos { x -13.2458 y 5.71179 z 13.547 }
+	naCommon { auto true loop true }
+	nanims [
+		{ name "walk" timeScale 10 length 10 keys { k [
+			{ time 0 trans { x -13.2458 y 5.71179 z 13.547 } rot [ 0.572038 -0.0107158 0.78787 0.227858 ] }
+			{ time 0.2 trans { x -13.2495 y 5.52284 z 15.5054 } rot [ 0.692977 -0.255992 0.671473 -0.0580909 ] }
+			{ time 0.4 trans { x -13.6098 y 4.49614 z 17.2292 } rot [ 0.577052 -0.3195 0.745348 -0.0968827 ] }
+			{ time 0.6 trans { x -14.3046 y 3.5525 z 18.92 } rot [ 0.553973 -0.281635 0.782791 -0.0321747 ] }
+			{ time 0.8 trans { x -14.8662 y 3.24601 z 20.8541 } rot [ 0.645683 -0.106681 0.741143 0.149732 ] }
+			{ time 1 trans { x -14.7457 y 3.80045 z 22.8184 } rot [ 0.700267 0.00805937 0.651968 0.290688 ] }
+			{ time 1.2 trans { x -14.6232 y 4.71346 z 24.6626 } rot [ 0.656461 0.0213381 0.698587 0.283865 ] }
+			{ time 1.39979 trans { x -15.0068 y 4.15442 z 26.0701 } rot [ 0.39377 -0.536768 0.60183 -0.441163 ] }
+			{ time 1.6 trans { x -15.9455 y 2.3422 z 25.8629 } rot [ 0.348481 -0.567447 0.592799 -0.45294 ] }
+			{ time 1.79979 trans { x -16.5432 y 0.414171 z 26.0934 } rot [ 0.548501 -0.426248 0.643354 -0.3218 ] }
+			{ time 2 trans { x -16.911 y -0.633295 z 27.6791 } rot [ 0.534332 -0.162941 0.823752 0.0968074 ] }
+			{ time 2.2 trans { x -17.5692 y 0.0413177 z 29.4645 } rot [ 0.559205 0.0866524 0.767913 0.300151 ] }
+			{ time 2.4 trans { x -17.4762 y 1.34474 z 31.046 } rot [ 0.648554 0.124868 0.643416 0.387041 ] }
+			{ time 2.59979 trans { x -17.0006 y 2.67694 z 32.5355 } rot [ 0.694848 0.10597 0.581387 0.409811 ] }
+			{ time 2.79979 trans { x -16.3745 y 3.80782 z 34.1352 } rot [ 0.711904 0.0312562 0.621093 0.32628 ] }
+			{ time 3 trans { x -16.3683 y 4.36676 z 36.0985 } rot [ 0.66338 -0.11143 0.725432 0.145805 ] }
+			{ time 3.2 trans { x -16.6319 y 4.151 z 38.124 } rot [ 0.648395 -0.206131 0.732102 0.0334879 ] }
+			{ time 3.4 trans { x -17.1539 y 3.50692 z 40.0021 } rot [ 0.565957 -0.292428 0.769111 -0.0514497 ] }
+			{ time 3.59979 trans { x -18.0098 y 2.38557 z 41.485 } rot [ 0.492457 -0.418861 0.736071 -0.200603 ] }
+			{ time 3.79979 trans { x -18.9274 y 0.667808 z 42.0575 } rot [ 0.363739 -0.557107 0.631052 -0.398873 ] }
+			{ time 4 trans { x -19.5872 y -1.23288 z 41.6872 } rot [ -0.290571 0.584397 -0.509195 0.561043 ] }
+			{ time 4.19979 trans { x -18.9031 y -2.75618 z 40.7137 } rot [ -0.123031 0.367202 -0.259188 0.884787 ] }
+			{ time 4.4 trans { x -18.0586 y -3.41197 z 39.0298 } rot [ 0.146558 0.654457 -0.105594 0.734204 ] }
+			{ time 4.59979 trans { x -18.6747 y -2.66335 z 37.33 } rot [ 0.229087 0.870056 0.177591 0.398726 ] }
+			{ time 4.8 trans { x -19.0306 y -1.34688 z 35.9548 } rot [ 0.301634 0.701119 0.165136 0.624644 ] }
+			{ time 5 trans { x -18.8243 y -0.622017 z 34.104 } rot [ 0.111164 0.660801 -0.145918 0.7278 ] }
+			{ time 5.19979 trans { x -18.8524 y -1.39694 z 32.2117 } rot [ -0.0394293 0.645246 -0.296861 0.702834 ] }
+			{ time 5.4 trans { x -18.2209 y -2.14414 z 30.4143 } rot [ 0.0628769 0.5044 -0.177779 0.842628 ] }
+			{ time 5.59979 trans { x -17.2609 y -2.4613 z 28.6204 } rot [ 0.134342 0.498435 -0.123352 0.847525 ] }
+			{ time 5.8 trans { x -16.418 y -2.47764 z 26.7638 } rot [ 0.156458 0.656571 -0.093881 0.731861 ] }
+			{ time 6 trans { x -16.2793 y -1.99587 z 24.7806 } rot [ 0.278519 0.657912 0.0784545 0.695287 ] }
+			{ time 6.19979 trans { x -16.1738 y -0.497838 z 23.402 } rot [ 0.365072 0.632316 0.263103 0.630615 ] }
+			{ time 6.4 trans { x -16.0337 y 0.398239 z 21.6329 } rot [ 0.173141 0.603333 -0.0797639 0.77437 ] }
+			{ time 6.59979 trans { x -15.3376 y 0.211383 z 19.7104 } rot [ 0.0584522 0.549189 -0.185436 0.812766 ] }
+			{ time 6.8 trans { x -14.652 y -0.504261 z 17.914 } rot [ -0.0214554 0.444676 -0.22516 0.866664 ] }
+			{ time 7 trans { x -13.973 y -1.48983 z 16.2733 } rot [ -0.0712372 0.596777 -0.303797 0.73925 ] }
+			{ time 7.19979 trans { x -14.4184 y -2.44527 z 14.5815 } rot [ 0.004054 0.605144 -0.241731 0.758519 ] }
+			{ time 7.4 trans { x -14.103 y -1.97997 z 12.8001 } rot [ 0.409242 0.55141 0.258965 0.679268 ] }
+			{ time 7.59979 trans { x -13.7953 y -0.0816646 z 12.1023 } rot [ 0.455996 0.513142 0.419575 0.593894 ] }
+			{ time 7.8 trans { x -13.7286 y 1.93191 z 11.7613 } rot [ 0.497372 0.451859 0.42837 0.604105 ] }
+			{ time 8 trans { x -13.1219 y 3.85078 z 11.6572 } rot [ 0.549963 0.37473 0.44035 0.602669 ] }
+			{ time 8.19979 trans { x -13.0662 y 5.55116 z 12.3147 } rot [ 0.592059 -0.0504965 0.779579 0.197923 ] }
+			{ time 8.39979 trans { x -12.9953 y 4.90539 z 14.2116 } rot [ 0.620722 -0.297887 0.719741 -0.0891116 ] }
+			{ time 8.6 trans { x -13.5809 y 3.79334 z 15.8386 } rot [ 0.530355 -0.36072 0.756042 -0.130405 ] }
+			{ time 8.8 trans { x -14.3939 y 2.47241 z 17.1751 } rot [ 0.603221 -0.380005 0.651857 -0.258464 ] }
+			{ time 9 trans { x -14.6313 y 0.577297 z 17.5947 } rot [ -0.298215 0.532344 -0.446719 0.654308 ] }
+			{ time 9.19979 trans { x -13.892 y -0.353349 z 16.0552 } rot [ 0.16033 0.554259 -0.0974374 0.810924 ] }
+			{ time 9.39979 trans { x -13.6638 y 0.550426 z 14.2949 } rot [ 0.320471 0.700774 0.228369 0.595031 ] }
+			{ time 9.6 trans { x -13.7887 y 2.24631 z 13.1482 } rot [ 0.393161 0.608238 0.364152 0.585546 ] }
+			{ time 9.8 trans { x -13.1391 y 4.08642 z 12.6646 } rot [ 0.532904 0.39952 0.438899 0.603129 ] }
+			{ time 10 trans { x -13.2458 y 5.71179 z 13.547 } rot [ 0.572038 -0.0107158 0.78787 0.227858 ] }
+		] } }
+	]
+	nodes [ LizardGroup ]
+}
+
+// SAVANNA
+Node CondorGroup {
+	scale { x 0.0236518 y 0.0236518 z 0.0236518 }
+	pos { y 25 z 10 }
+	nodes [
+		//condor_Fig
+		{
+			animators [ { t Animator::oscillate osWi 7 s 0.5 } ]
+			pos { x -3.57822 y -21.4984 z 7.15265 }
+			entities [ { name "condor_Fig" obj "condor_Fig" anims [ { n stay s 0.5 } { n fly } { n fly } { n fly } { n fly } ] } ]
+		}
+	]
+}
+Node CondorCircle {
+	pos { z -70 }
+	animators [ { t Animator::ellipse elMa 80 elMi 50 elFi 0 elAngle 0 s 0.1 } ]
+	nodes [ CondorGroup ]
+}
+Node CondorGroup2 {
+	scale { x 0.0236518 y 0.0236518 z 0.0236518 }
+	pos { z 10 }
+	nodes [
+		//condor_Fig
+		{
+			animators [ { t Animator::oscillate osWi 4 s 0.3 } ]
+			pos { x -3.57822 y -21.4984 z 7.15265 }
+			entities [ { obj "condor_Fig" anims [ { n stay s 0.2 } { n fly } { n fly } { n fly } ] } ]
+		}
+	]
+}
+Node CondorCircles {
+	nodes [
+		{
+			pos { y 25 z -80 }
+			animators [ { t Animator::ellipse elMa 50 elMi 40 elFi 0 elAngle 180 s -0.07 } ]
+			nodes [ CondorGroup2 ]
+		}
+		{
+			pos { y 35 z -120 }
+			animators [ { t Animator::ellipse elMa 30 elMi 30 elFi 0 elAngle 180 s -0.14 } ]
+			nodes [ CondorGroup2 ]
+		}
+		{
+			pos { y 60 z -160 }
+			animators [ { t Animator::ellipse elMa 25 elMi 25 elFi 0 elAngle 180 s -0.2 } ]
+			nodes [ CondorGroup2 ]
+		}
+	]
+}
+Node LionGroup {
+	// pos { x 0.595732 y -0.0652277 z -0.0366676 }
+	rot [ 0 180 0 ]
+	nodes [
+		//Lion001
+		{
+			animators [ { t Animator::oscillate osWi 0.04 s 7.575757575 } ]
+			pos { x -0.630865 y -0.00867098 z 0.0369204 }
+			scale { x 1.22253 y 1.22253 z 1.22253 }
+			rot [ 0.706434 -0.0308435 -0.0308437 0.706434 ]
+			entities [ { obj "Lion001" anims [ { n anim s 1.17 } ] } ]
+		}
+	]
+}
+Node lionPath {
+	pos { x -77.116 y 2.32453e-006 z 53.1791 }
+	rot [ 0 0.493887 -2.15885e-008 0.869526 ]
+	naCommon { auto true loop true start NaN }
+	nanims [
+		{ name "path" length 13 timeScale 15.3846 keys { k [
+			{ time 0 trans { x -77.116 y 2.32453e-006 z 53.1791 } rot [ 0 0.493887 -2.15885e-008 0.869526 ] }
+			{ time 0.333333 trans { x -67.8194 y 1.57334e-006 z 35.9938 } rot [ 0 0.528366 -2.30956e-008 0.849017 ] }
+			{ time 0.666667 trans { x -59.9853 y 7.91056e-007 z 18.0973 } rot [ 0 0.567077 -2.47877e-008 0.823664 ] }
+			{ time 1 trans { x -53.8691 y -2.00112e-008 z -0.457802 } rot [ 0 0.600081 -2.62304e-008 0.799939 ] }
+			{ time 1.33333 trans { x -45.7895 y -7.84459e-007 z -17.9463 } rot [ 0 0.343003 -1.49931e-008 0.939334 ] }
+			{ time 1.66646 trans { x -26.9257 y -8.98833e-007 z -20.5629 } rot [ 0 -0.0267836 1.17075e-009 0.999641 ] }
+			{ time 2 trans { x -7.43368 y -8.37674e-007 z -19.1637 } rot [ 0 -0.0439403 1.92069e-009 0.999034 ] }
+			{ time 2.33313 trans { x 12.0118 y -7.52535e-007 z -17.216 } rot [ 0 -0.0548418 2.39721e-009 0.998495 ] }
+			{ time 2.66667 trans { x 31.4307 y -6.5638e-007 z -15.0162 } rot [ 0 -0.05497 2.40281e-009 0.998488 ] }
+			{ time 3 trans { x 50.8793 y -5.72721e-007 z -13.1023 } rot [ 0 -0.0411819 1.80012e-009 0.999152 ] }
+			{ time 3.33313 trans { x 70.3861 y -5.22148e-007 z -11.9453 } rot [ 0 -0.0160564 7.01848e-010 0.999871 ] }
+			{ time 3.66667 trans { x 89.9241 y -5.25715e-007 z -12.027 } rot [ 0 0.0227169 -9.92987e-010 0.999742 ] }
+			{ time 4 trans { x 109.365 y -6.08481e-007 z -13.9204 } rot [ 0 0.0779057 -3.40537e-009 0.996961 ] }
+			{ time 4.33333 trans { x 128.334 y -8.09211e-007 z -18.5126 } rot [ 0 0.167611 -7.32651e-009 0.985853 ] }
+			{ time 4.66646 trans { x 145.43 y -1.2134e-006 z -27.7593 } rot [ 0 0.343989 -1.50363e-008 0.938974 ] }
+			{ time 5 trans { x 153.028 y -1.9459e-006 z -44.5169 } rot [ 0 0.819345 -3.58147e-008 0.5733 ] }
+			{ time 5.33333 trans { x 137.068 y -2.37885e-006 z -54.4218 } rot [ 0 0.994222 -4.34588e-008 0.107344 ] }
+			{ time 5.66646 trans { x 117.651 y -2.46414e-006 z -56.3731 } rot [ 0 0.999916 -4.37077e-008 0.0129667 ] }
+			{ time 6 trans { x 98.1115 y -2.45601e-006 z -56.1869 } rot [ 0 0.999834 -4.37041e-008 -0.0182188 ] }
+			{ time 6.33333 trans { x 78.5967 y -2.41056e-006 z -55.1471 } rot [ 0 0.999441 -4.3687e-008 -0.0334223 ] }
+			{ time 6.66646 trans { x 59.1101 y -2.34577e-006 z -53.665 } rot [ 0 0.999135 -4.36736e-008 -0.0415915 ] }
+			{ time 7 trans { x 39.6417 y -2.27114e-006 z -51.9576 } rot [ 0 0.998981 -4.36668e-008 -0.0451425 ] }
+			{ time 7.33333 trans { x 20.1777 y -2.19433e-006 z -50.2003 } rot [ 0 0.999036 -4.36692e-008 -0.0439089 ] }
+			{ time 7.66646 trans { x 0.697141 y -2.12623e-006 z -48.6425 } rot [ 0 0.999444 -4.36871e-008 -0.033342 ] }
+			{ time 8 trans { x -18.8289 y -2.09555e-006 z -47.9405 } rot [ 0 0.999989 -4.37109e-008 0.00471731 ] }
+			{ time 8.33313 trans { x -37.9113 y -2.23553e-006 z -51.1431 } rot [ 0 0.962698 -4.20809e-008 0.270577 ] }
+			{ time 8.66667 trans { x -46.3554 y -2.98731e-006 z -68.3417 } rot [ 0 0.831265 -3.63358e-008 0.555876 ] }
+			{ time 9 trans { x -58.46 y -3.64054e-006 z -83.2858 } rot [ 0 0.958691 -4.19057e-008 0.284449 ] }
+			{ time 9.33313 trans { x -77.0405 y -3.85342e-006 z -88.1559 } rot [ 0 0.999543 -4.36914e-008 -0.0302192 ] }
+			{ time 9.66667 trans { x -95.4603 y -3.59158e-006 z -82.1658 } rot [ 0 0.966205 -4.22342e-008 -0.257776 ] }
+			{ time 10 trans { x -110.801 y -3.06647e-006 z -70.1526 } rot [ 0 0.922787 -4.03363e-008 -0.385311 ] }
+			{ time 10.3331 trans { x -122.946 y -2.39917e-006 z -54.8866 } rot [ 0 0.877473 -3.83556e-008 -0.479626 ] }
+			{ time 10.6667 trans { x -131.917 y -1.64157e-006 z -37.5547 } rot [ 0 -0.830345 3.62955e-008 0.55725 ] }
+			{ time 11 trans { x -137.553 y -8.25289e-007 z -18.8804 } rot [ 0 -0.76561 3.34659e-008 0.643305 ] }
+			{ time 11.3331 trans { x -137.841 y 2.51353e-008 z 0.575029 } rot [ 0 -0.652927 2.85404e-008 0.757421 ] }
+			{ time 11.6667 trans { x -132.201 y 8.40205e-007 z 19.2216 } rot [ 0 -0.54255 2.37156e-008 0.840023 ] }
+			{ time 12 trans { x -122.456 y 1.57926e-006 z 36.1294 } rot [ 0 -0.461494 2.01725e-008 0.887143 ] }
+			{ time 12.3331 trans { x -109.814 y 2.22884e-006 z 50.99 } rot [ 0 -0.369153 1.61362e-008 0.929368 ] }
+			{ time 12.6667 trans { x -93.3475 y 2.67129e-006 z 61.1119 } rot [ 0 -0.111974 4.89455e-009 0.993711 ] }
+			{ time 13 trans { x -77.116 y 2.32453e-006 z 53.1791 } rot [ 0 0.493887 -2.15885e-008 0.869526 ] }
+		] } }
+	]
+	nodes [ LionGroup ]
+}
+Node lionPath2 {
+	pos { x -44.9948 y 1.4835e-006 z 33.9386 }
+	rot [ 0 0.0809817 -3.53982e-009 0.996716 ]
+	naCommon { auto true loop true start NaN }
+	nanims [
+		{ name "path2" length 7.06646 timeScale 15.3846 keys { k [
+			{ time 0 trans { x -44.9948 y 1.4835e-006 z 33.9386 } rot [ 0 0.0809822 -3.53984e-009 0.996716 ] }
+			{ time 0.164167 trans { x -36.3054 y 1.30273e-006 z 29.803 } rot [ 0 0.348715 -1.52428e-008 0.937229 ] }
+			{ time 0.328333 trans { x -30.2857 y 9.70008e-007 z 22.1912 } rot [ 0 0.499655 -2.18406e-008 0.866224 ] }
+			{ time 0.4925 trans { x -25.8818 y 5.89884e-007 z 13.495 } rot [ 0 0.522724 -2.2849e-008 0.852502 ] }
+			{ time 0.656667 trans { x -19.7271 y 2.76243e-007 z 6.31971 } rot [ 0 0.136733 -5.9768e-009 0.990608 ] }
+			{ time 0.820625 trans { x -10.2013 y 2.04361e-007 z 4.67523 } rot [ 0 0.245023 -1.07103e-008 0.969517 ] }
+			{ time 0.985 trans { x -2.928 y -7.69811e-008 z -1.76112 } rot [ 0 0.393972 -1.7221e-008 0.919123 ] }
+			{ time 1.14917 trans { x 4.97951 y -3.04823e-007 z -6.97354 } rot [ 0 0.027011 -1.18069e-009 0.999635 ] }
+			{ time 1.31333 trans { x 14.5798 y -2.38152e-007 z -5.44827 } rot [ 0 -0.119733 5.23369e-009 0.992806 ] }
+			{ time 1.47729 trans { x 24.0121 y -1.30301e-007 z -2.98094 } rot [ 0 -0.130599 5.70868e-009 0.991435 ] }
+			{ time 1.64146 trans { x 33.4428 y -2.21576e-008 z -0.506907 } rot [ 0 -0.123574 5.40158e-009 0.992335 ] }
+			{ time 1.80583 trans { x 42.9284 y 7.63158e-008 z 1.7459 } rot [ 0 -0.107555 4.70136e-009 0.994199 ] }
+			{ time 1.97 trans { x 52.5011 y 1.56887e-007 z 3.58916 } rot [ 0 -0.0797713 3.48691e-009 0.996813 ] }
+			{ time 2.13417 trans { x 62.1844 y 2.049e-007 z 4.68757 } rot [ 0 -0.0264256 1.1551e-009 0.999651 ] }
+			{ time 2.29833 trans { x 71.8828 y 1.78364e-007 z 4.08049 } rot [ 0 0.117167 -5.12155e-009 0.993112 ] }
+			{ time 2.4625 trans { x 80.0762 y -3.75769e-008 z -0.859659 } rot [ 0 0.43171 -1.88706e-008 0.902013 ] }
+			{ time 2.62667 trans { x 83.7702 y -4.27195e-007 z -9.77309 } rot [ 0 0.640535 -2.79987e-008 0.767929 ] }
+			{ time 2.88917 trans { x 84.5815 y -1.10733e-006 z -25.3327 } rot [ 0 0.713734 -3.11983e-008 0.700416 ] }
+			{ time 3.21021 trans { x 79.806 y -1.88698e-006 z -43.169 } rot [ 0 0.962082 -4.2054e-008 0.272759 ] }
+			{ time 3.53146 trans { x 60.978 y -1.94192e-006 z -44.4259 } rot [ 0 0.999676 -4.36972e-008 -0.0254675 ] }
+			{ time 3.85229 trans { x 41.9508 y -1.88853e-006 z -43.2046 } rot [ 0 0.999335 -4.36823e-008 -0.0364752 ] }
+			{ time 4.17333 trans { x 22.9428 y -1.82325e-006 z -41.711 } rot [ 0 0.999135 -4.36736e-008 -0.0415724 ] }
+			{ time 4.49438 trans { x 3.94868 y -1.75062e-006 z -40.0496 } rot [ 0 0.99896 -4.36659e-008 -0.0456037 ] }
+			{ time 4.81563 trans { x -15.0306 y -1.67097e-006 z -38.2272 } rot [ 0 0.998691 -4.36542e-008 -0.0511519 ] }
+			{ time 5.13667 trans { x -33.9559 y -1.57027e-006 z -35.9236 } rot [ 0 0.997238 -4.35907e-008 -0.0742704 ] }
+			{ time 5.45771 trans { x -52.6137 y -1.40156e-006 z -32.064 } rot [ 0 0.990026 -4.32754e-008 -0.140886 ] }
+			{ time 5.77854 trans { x -69.5005 y -1.03107e-006 z -23.5881 } rot [ 0 0.929426 -4.06265e-008 -0.369008 ] }
+			{ time 6.09958 trans { x -76.9266 y -2.85692e-007 z -6.53588 } rot [ 0 -0.72789 3.18171e-008 0.685694 ] }
+			{ time 6.42063 trans { x -73.6561 y 5.28409e-007 z 12.0886 } rot [ 0 -0.545034 2.38242e-008 0.838414 ] }
+			{ time 6.74188 trans { x -62.3325 y 1.19395e-006 z 27.3143 } rot [ 0 -0.372402 1.62782e-008 0.928072 ] }
+			{ time 7.06646 trans { x -44.9948 y 1.4835e-006 z 33.9386 } rot [ 0 0.0809811 -3.5398e-009 0.996716 ] }
+		] } }
+	]
+	nodes [ LionGroup ]
+}
+Node sava_dry {
+	// NO ANIMATIONS HERE
+	nodes [
+		//LIGHT
+		{
+			pos { x 0 y 0 z 0 }
+			scale { x 1 y 1 z 1 }
+			rot [ -0.225204 0.759157 -0.334675 -0.510839 ]
+			lights [ { name "Omni01" type Light::directional } ]
+		}
+		//GROUND_SAVANAH
+		{
+			pos { x -0.0995343 y -0.000993737 z -0.20071 }
+			entities [ { name "GROUND_SAVANAH" obj "GROUND_SAVANAH" } ]
+		}
+		//MUD_SAVANAH
+		{
+			pos { x 38.6224 y 0.0123669 z -30.5661 }
+			entities [ { name "MUD_SAVANAH" obj "MUD_SAVANAH" } ]
+		}
+		//FENCE_GRASS_SAVANAH
+		{
+			pos { x 3.0732 y 2.40096 z -29.6727 }
+			entities [ { name "FENCE_GRASS_SAVANAH" obj "FENCE_GRASS_SAVANAH" } ]
+		}
+		//FENCE_GRASS_FRONT_SAVANAH
+		{
+			pos { x 3.0732 y 2.40096 z -29.6727 }
+			entities [ { name "FENCE_GRASS_FRONT_SAVANAH" obj "FENCE_GRASS_FRONT_SAVANAH" } ]
+		}
+		//SHORT_GRASS3_SAVANAH
+		{
+			pos { x 6.82931 y -0.00103957 z -1.54159 }
+			entities [ { name "SHORT_GRASS3_SAVANAH" obj "SHORT_GRASS3_SAVANAH" } ]
+		}
+		//TALL_GRASS_SAVANAH
+		{
+			pos { x -0.81495 y -0.00103954 z -0.865916 }
+			entities [ { name "TALL_GRASS_SAVANAH" obj "TALL_GRASS_SAVANAH" } ]
+		}
+		//TALL_GRASS_ANIM_SAVANAH
+		{
+			pos { x -0.81495 y -0.00103954 z -0.865916 }
+			entities [ { name "TALL_GRASS_ANIM_SAVANAH" obj "TALL_GRASS_ANIM_SAVANAH" } ]
+		}
+		//TALL_GRASS_ANIM2_SAVANAH
+		{
+			pos { x -0.81495 y -0.00103954 z -0.865916 }
+			entities [ { name "TALL_GRASS_ANIM2_SAVANAH" obj "TALL_GRASS_ANIM2_SAVANAH" } ]
+		}
+	]
+}
+Node sava_green {
+	nodes [
+		//GROUND_GRASS_SAVANAH
+		{
+			pos { x -0.0995344 y -0.000993737 z -0.20071 }
+			entities [ { name "GROUND_GRASS_SAVANAH" obj "GROUND_GRASS_SAVANAH" } ]
+		}
+		//LAKE_SAVANAH
+		{
+			pos { x 38.6224 y 0.0123669 z -30.5661 }
+			entities [ { name "LAKE_SAVANAH" obj "LAKE_SAVANAH" } ]
+		}
+		//FENCE_GRASS_SAVANAH
+		{
+			pos { x 3.0732 y 2.40096 z -29.6727 }
+			entities [ { name "FENCE_GRASS_GR" obj "FENCE_GRASS_GR" anims [ { n anim s 0.5 } ] } ]
+		}
+		//FENCE_GRASS_FRONT_SAVANAH
+		{
+			pos { x 3.0732 y 2.40096 z -29.6727 }
+			entities [ { name "FENCE_GRASS_FRONT_GR" obj "FENCE_GRASS_FRONT_GR" anims [ { n anim s 0.5 } ] } ]
+		}
+		//SHORT_GRASS3_SAVANAH
+		{
+			pos { x 6.82931 y -0.00103957 z -1.54159 }
+			entities [ { name "SHORT_GRASS3_GR" obj "SHORT_GRASS3_GR" anims [ { n anim s 0.43 } ] } ]
+		}
+		//TALL_GRASS_SAVANAH
+		{
+			pos { x -0.81495 y -0.00103954 z -0.865916 }
+			entities [ { name "TALL_GRASS_SAVANAH" obj "TALL_GRASS_GR" } ]
+		}
+		//TALL_GRASS_ANIM_SAVANAH
+		{
+			pos { x -0.81495 y -0.00103954 z -0.865916 }
+			entities [ { name "TALL_GRASS_ANIM_SAVANAH" obj "TALL_GRASS_ANIM_GR" anims [ { n anim s 0.43 } ] } ]
+		}
+		//TALL_GRASS_ANIM2_SAVANAH
+		{
+			pos { x -0.81495 y -0.00103954 z -0.865916 }
+			entities [ { name "TALL_GRASS_ANIM2_SAVANAH" obj "TALL_GRASS_ANIM2_GR" anims [ { n anim s 0.43 } ] } ]
+		}
+	]
+}
+Node sava_light2 {
+	pos { x 1.0733 y 108.1 z 40.9276 }
+	rot [ -0.908565 -0 -0 -0.417745 ]
+	lights [ { name "Omni01" type Light::directional } ]
+}
+Node sava_light3 {
+	pos { x 0 y 4 z 12 }
+	lights [ { name "Omni01" type Light::point diffuse RGB::grey9 attenuation { range 100 linear 0.045 quad 0.0075 } } ]
+}
+// walking giraffs
+Node jirafWalk {
+	pos { x -11.9461 y -22.7604 z -8.21629 }
+	rot [ 1.49012e-008 -1.11759e-008 5.2154e-008 1 ]
+	entities [ { obj "jiraff" anims [ { n walk s 1.5 } ] } ]
+}
+Node walkJirafs {
+	animators [ { t Animator::ellipse elMa 105 elMi 105 elFi 180 elAngle 90 s 0.01125 } ]
+	nodes [
+		//JirafGroup02
+		{
+			pos { x 14.8648 y 6.57446 z -108.258 }
+			scale { w 0.0134861 z -1 }
+			rot [ 0 0.99992 -4.37079e-008 -0.0126239 ]
+			nodes [ jirafWalk ]
+		}
+		//JirafGroup01
+		{
+			pos { x 3.03652 y 5.81961 z -103.533 }
+			scale { w 0.0119377 z -1 }
+			rot [ 0 0.99992 -4.37079e-008 -0.0126239 ]
+			nodes [ jirafWalk ]
+		}
+	]
+}
+// eating giraff
+Node jirafEat {
+	pos { x -11.9461 y -22.7604 z -8.21629 }
+	rot [ 1.49012e-008 -1.11759e-008 5.2154e-008 1 ]
+	entities [ { name "jiraff" obj "jiraff" anims [ { n eat s 1 } ] } ]
+}
+Node eatJiraf1 {
+	pos { x -59.3753 y 5.83994 z -9.49552 }
+	scale { w 0.0119794 }
+	rot [ 0 -0.719361 3.14443e-008 0.694636 ]
+	nodes [ jirafEat ]
+}
+Node eatJiraf2 {
+	pos { x -17.0002 y 5.98192 z 0.842349 }
+	scale { x 0.0121097 y 0.0121097 z 0.0121097 }
+	rot [ 0 -0.0470789 2.05789e-009 0.998891 ]
+	nodes [ jirafEat ]
+}
+Node eatJiraf3 {
+	pos { x 23.4501 y 5.01509 z 3.23935 }
+	scale { x 0.0102874 y 0.0102874 z 0.0102874 }
+	rot [ 0 0.609909 -2.666e-008 0.792471 ]
+	nodes [ jirafEat ]
+}
+// rhino
+Node rhinoNode {
+	pos { x -0.0898848 y -0.564865 z -36.5601 }
+	scale { w 0.07 }
+	rot [ 0 0.426276 -1.86331e-008 0.904593 ]
+	nodes [
+		//rhino
+		{
+			pos { x -0.0849609 y 35.4692 z -6.93439 }
+			scale { x 1845.8 y 1845.8 z 1845.8 }
+			rot [ 0.00625212 -0.701291 0.712821 0.00608817 ]
+			entities [ { name "rhino" obj "rhino" anims [ { n anim s 0.5 } ] } ]
+		}
+	]
+}
+//zebras
+Node zebrasNode {
+	animators [ { t Animator::ellipse elMa 185 elMi 185 elFi 180 elAngle -90 start 140 s 0.12 } ]
+	nodes [
+		{
+			n zebras
+			pos { x 13.9335 y 0.114905 z -186.871 }
+			rot [ 0 -0.00169173 7.39479e-011 0.999999 ]
+			scale { y 0.7 w 1.25 }
+			entities [ { name "zebra" obj "zebra" } ]
+		}
+	]
+}
+//elephants
+Node elephantsNode {
+	nodes [
+		//ElephantGroup
+		{
+			pos { x 34.6238 y -1.81588e-006 z -41.5424 }
+			scale { w 0.07853 }
+			rot [ 0 0.710471 -3.10557e-008 0.703727 ]
+			nodes [
+				//elephant
+				{
+					pos { x -19.0887 y 53.6618 z -0.367587 }
+					scale { x 109.303 y 109.303 z 109.303 }
+					rot [ 0.474724 -0.522886 0.525636 0.474272 ]
+					entities [ { name "elephant" obj "elephant" anims [ { n idle s 0.83 } { n anim1 s 0.83 } { n idle s 0.83 } ] } ]
+				}
+			]
+		}
+		//ElephantGroup01
+		{
+			pos { x 26.5674 y -1.77026e-006 z -39.4989 }
+			scale { w 0.0400971 }
+			rot [ 0 0.710471 -3.10557e-008 0.703727 ]
+			nodes [
+				//elephant01
+				{
+					pos { x -19.0887 y 53.6618 z -0.367587 }
+					scale { x 109.303 y 109.303 z 109.303 }
+					rot [ 0.474724 -0.522886 0.525636 0.474272 ]
+					entities [ { obj "elephant" anims [ { n idle s 1 } { n idle s 1 } { n anim2 s 1 } ] } ]
+				}
+			]
+		}
+	]
+}
+// 
+Node sava_faketrees {
+	nodes [
+		//SavaTree4
+		{
+			pos { x -130.327 y -0.463455 z 37.4736 }
+			rot [ 4.37114e-008 -4.37114e-008 -4.37114e-008 1 ]
+			entities [ { name "SavaTree4" obj "SavaTree4" } ]
+		}
+		//SavaTree1
+		{
+			pos { x 3.57018 y 1.0625 z 37.1833 }
+			rot [ 4.37114e-008 -4.37114e-008 -4.37114e-008 1 ]
+			entities [ { name "SavaTree1" obj "SavaTree1" } ]
+		}
+		//SavaTree3
+		{
+			pos { x 15.4284 y 3.27323 z -13.9905 }
+			rot [ 4.37114e-008 -1.19249e-008 -4.37114e-008 1 ]
+			entities [ { name "SavaTree3" obj "SavaTree3" } ]
+		}
+		//SavaTree2
+		{
+			pos { x -20.8346 y 3.55503 z 18.9343 }
+			rot [ 4.37114e-008 -1.19249e-008 -4.37114e-008 1 ]
+			entities [ { name "SavaTree2" obj "SavaTree2" } ]
+		}
+		//SavaTree5
+		{
+			pos { x 9.16931 y -1.74101 z -10.3355 }
+			rot [ 4.37114e-008 -1.19249e-008 -4.37114e-008 1 ]
+			entities [ { name "SavaTree5" obj "SavaTree5" } ]
+		}
+		//SavaLow
+		{
+			pos { x -197.116 y 1.30402 z 111.493 }
+			rot [ 4.37114e-008 -4.37114e-008 -4.37114e-008 1 ]
+			entities [ { name "SavaLow" obj "SavaLow" } ]
+		}
+		//SavaTree6
+		{
+			pos { x -5.23184 y 5.69839 z -11.9568 }
+			rot [ 4.37114e-008 -1.19249e-008 -4.37114e-008 1 ]
+			entities [ { name "SavaTree6" obj "SavaTree6" } ]
+		}
+	]
+}
+
+//REEF
+Node waveCausticsReef {
+	pos { x 0.32203 y 0.015 z -14.5762 }
+	// scale { w 0.5 }
+	rot [ 0 0.290917 -1.27164e-008 0.956748 ]
+	entities [ { name "sand_NEW_REEF_waves" obj "sand_NEW_REEF_waves" } ]
+}
+Node waveCausticsReef2 {
+	pos { x 0.32203 y 0.015 z -14.5762 }
+	// scale { w 0.5 }
+	rot [ 0 0.290917 -1.27164e-008 0.956748 ]
+	entities [ { name "sand_NEW_REEF_waves2" obj "sand_NEW_REEF_waves2" } ]
+}
+Node sandNewReef {
+	nodes [
+		//sand_NEW_REEF
+		{
+			pos { x 0.32203 y 0.01 z -14.5762 }
+			// scale { w 2 }
+			rot [ 0 0.290917 -1.27164e-008 0.956748 ]
+			entities [ { name "sand_NEW_REEF" obj "sand_NEW_REEF" } ]
+		}
+	]
+}
+Node sandBadReef {
+	nodes [
+		//sand_NEW_REEF
+		{
+			pos { x 0.32203 y 0.01 z -14.5762 }
+			// scale { w 0.5 }
+			rot [ 0 0.290917 -1.27164e-008 0.956748 ]
+			entities [ { name "sand_BAD_REEF" obj "sand_BAD_REEF" } ]
+		}
+	]
+}
+Node newPlantsReef {
+	nodes [
+		//LEFT_FLOWER1_REEF
+		{
+			pos { x -8.32199 y 1.61197 z 3.01119 }
+			entities [ { name "LEFT_FLOWER1_REEF" obj "LEFT_FLOWER1_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+		//RIGHT_FLOWER1_REEF
+		{
+			pos { x 10.6376 y 0.821209 z -4.97811 }
+			rot [ 0 -8.74228e-008 3.82137e-015 1 ]
+			entities [ { name "RIGHT_FLOWER1_REEF" obj "RIGHT_FLOWER1_REEF" anims [ { n "anim" s 1.5 } ] } ]
+		}
+		//SEAWEED_ANIM_REEF
+		{
+			pos { x -6.45909 y 0.282051 z 11.8076 }
+			entities [ { name "SEAWEED_ANIM_REEF" obj "SEAWEED_ANIM_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+		//FLOWER_CENTER_REEF
+		{
+			pos { x 6.17524 y 0.356378 z -6.9744 }
+			entities [ { name "FLOWER_CENTER_REEF" obj "FLOWER_CENTER_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+		//NEAR_PLANTS_REEF
+		{
+			pos { x -6.45909 y 0.282051 z 11.8076 }
+			entities [ { name "NEAR_PLANTS_REEF" obj "NEAR_PLANTS_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+		//ALEPOU_REEF
+		{
+			pos { x -8.32199 y 1.61197 z 3.01119 }
+			entities [ { name "ALEPOU_REEF" obj "ALEPOU_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+		//NEAR_PLANT2_REEF
+		{
+			pos { x 6.17524 y 0.356378 z -6.9744 }
+			entities [ { name "NEAR_PLANT2_REEF" obj "NEAR_PLANT2_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+		//NEAR_PLANT_CENTRE_REEF
+		{
+			pos { x 6.17524 y 0.356378 z -6.9744 }
+			entities [ { name "NEAR_PLANT_CENTRE_REEF" obj "NEAR_PLANT_CENTRE_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+		//GRASIDIA_PANW_REEF
+		{
+			pos { x 10.6376 y 0.821209 z -4.97811 }
+			entities [ { name "GRASIDIA_PANW_REEF" obj "GRASIDIA_PANW_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+		//LAXANA_LEFT_REEF
+		{
+			pos { x -8.32199 y 1.61197 z 3.01119 }
+			entities [ { name "LAXANA_LEFT_REEF" obj "LAXANA_LEFT_REEF" anims [ { n "anim" s 1.5 } ] } ]
+		}
+		//ALEPOUDIES_JR_REEF
+		{
+			pos { x -8.93241 y 1.13908 z -2.85741 }
+			entities [ { name "ALEPOUDIES_JR_REEF" obj "ALEPOUDIES_JR_REEF" anims [ { n "anim" s 1 } ] } ]
+		}
+	]
+}
+Node unanimAllReef {
+	nodes [
+		//REEF_LEFT_REEF
+		{
+			pos { x -10.048 y 2.20872 z -0.566531 }
+			entities [ { name "REEF_LEFT_REEF" obj "REEF_LEFT_REEF" } ]
+		}
+		//REEF_RIGHT_REEF
+		{
+			pos { x 13.0353 y 2.26277 z -1.92841 }
+			scale { x 0.660621 y 0.536178 z 0.734771 }
+			rot [ 0.00953345 0.00412798 0.0178457 0.999787 ]
+			entities [ { name "REEF_RIGHT_REEF" obj "REEF_RIGHT_REEF" } ]
+		}
+		//REEF_FAR_REEF
+		{
+			pos { x -10.1403 y 3.65754 z -29.4661 }
+			entities [ { name "REEF_FAR_REEF" obj "REEF_FAR_REEF" } ]
+		}
+		//REEF_FAR_FLOWERS
+		{
+			pos { x -4.60447 y 4.32403 z -29.9815 }
+			entities [ { name "REEF_FAR_FLOWERS" obj "REEF_FAR_FLOWERS" } ]
+		}
+		//LEFT_FLOWER_REEF
+		{
+			pos { x -8.93241 y 1.13908 z -2.85741 }
+			entities [ { name "LEFT_FLOWER_REEF" obj "LEFT_FLOWER_REEF" } ]
+		}
+		//Asterias_REEF
+		{
+			pos { x 9.16267 y 1.21013 z -7.7144 }
+			entities [ { name "Asterias_REEF" obj "Asterias_REEF" } ]
+		}
+		//ASTERIAS_2_REEF
+		{
+			pos { x 15.7889 y 1.48055 z -30.0689 }
+			entities [ { name "ASTERIAS_2_REEF" obj "ASTERIAS_2_REEF" } ]
+		}
+		//Coral_Crater_REEF
+		{
+			pos { x 7.27127 y 0.615876 z -3.92747 }
+			entities [ { name "Coral_Crater_REEF" obj "Coral_Crater_REEF" } ]
+		}
+		//RIGHT_FLOWER_REEF
+		{
+			pos { x 13.7376 y 3.3476 z -8.57464 }
+			rot [ 0 8.74228e-008 -3.82137e-015 1 ]
+			entities [ { name "RIGHT_FLOWER_REEF" obj "RIGHT_FLOWER_REEF" } ]
+		}
+		//SFOUGAROS_REEF
+		{
+			pos { x -5.34467 y 0.794723 z -13.5939 }
+			entities [ { name "SFOUGAROS_REEF" obj "SFOUGAROS_REEF" } ]
+		}
+	]
+}
+NodeAnim DummyCurve1 { length 6 timeScale 22 keys { k [
+	{ time 0 trans { x -10.4748 y 1.35672 z 13.1024 } rot [ 0 -0.150735 6.58882e-009 0.988574 ] }
+	{ time 0.2 trans { x -6.05475 y 1.35672 z 10.9184 } rot [ 0 0.463749 -2.02711e-008 0.885966 ] }
+	{ time 0.4 trans { x -3.65999 y 1.35672 z 6.16901 } rot [ 0 0.557782 -2.43814e-008 0.829987 ] }
+	{ time 0.6 trans { x -1.77772 y 1.35672 z 1.18388 } rot [ 0 0.57581 -2.51695e-008 0.817583 ] }
+	{ time 0.8 trans { x 0.00108346 y 1.35672 z -3.83953 } rot [ 0 0.57549 -2.51555e-008 0.817809 ] }
+	{ time 1 trans { x 1.92466 y 1.35672 z -8.80825 } rot [ 0 0.547778 -2.39442e-008 0.836623 ] }
+	{ time 1.2 trans { x 4.43572 y 1.35672 z -13.5001 } rot [ 0 0.467957 -2.0455e-008 0.883751 ] }
+	{ time 1.39979 trans { x 8.17857 y 1.35672 z -17.234 } rot [ 0 0.267314 -1.16847e-008 0.96361 ] }
+	{ time 1.6 trans { x 13.2352 y 1.35672 z -18.7582 } rot [ 0 0.0214422 -9.37268e-010 0.99977 ] }
+	{ time 1.79979 trans { x 17.8036 y 1.35672 z -16.5367 } rot [ 0 -0.46285 2.02318e-008 0.886437 ] }
+	{ time 2 trans { x 19.6112 y 1.35672 z -11.5647 } rot [ 0 -0.638722 2.79194e-008 0.769438 ] }
+	{ time 2.2 trans { x 20.2327 y 1.35672 z -6.27509 } rot [ 0 -0.683241 2.98654e-008 0.730193 ] }
+	{ time 2.4 trans { x 20.4099 y 1.35672 z -0.949814 } rot [ 0 -0.705579 3.08419e-008 0.708631 ] }
+	{ time 2.59979 trans { x 20.2997 y 1.35672 z 4.37756 } rot [ 0 -0.723051 3.16056e-008 0.690794 ] }
+	{ time 2.79979 trans { x 19.89 y 1.35672 z 9.6897 } rot [ 0 -0.747989 3.26956e-008 0.663711 ] }
+	{ time 3 trans { x 18.2929 y 1.35672 z 14.6653 } rot [ 0 0.945829 -4.13435e-008 -0.324665 ] }
+	{ time 3.2 trans { x 13.2787 y 1.35672 z 13.8253 } rot [ 0 0.957278 -4.18439e-008 0.289171 ] }
+	{ time 3.4 trans { x 9.80526 y 1.35672 z 9.84529 } rot [ 0 0.865976 -3.7853e-008 0.500085 ] }
+	{ time 3.59979 trans { x 7.633 y 1.35672 z 4.98638 } rot [ 0 0.819741 -3.5832e-008 0.572735 ] }
+	{ time 3.79979 trans { x 5.94354 y 1.35672 z -0.067277 } rot [ 0 0.806163 -3.52385e-008 0.591694 ] }
+	{ time 4 trans { x 4.36343 y 1.35672 z -5.15668 } rot [ 0 0.806016 -3.52321e-008 0.591893 ] }
+	{ time 4.19979 trans { x 2.67444 y 1.35672 z -10.2105 } rot [ 0 0.820216 -3.58528e-008 0.572053 ] }
+	{ time 4.4 trans { x 0.415287 y 1.35672 z -15.0237 } rot [ 0 0.882416 -3.85716e-008 0.470469 ] }
+	{ time 4.59979 trans { x -3.96769 y 1.35672 z -17.4498 } rot [ 0 0.996794 -4.35712e-008 -0.0800168 ] }
+	{ time 4.8 trans { x -8.617 y 1.35672 z -14.9535 } rot [ 0 0.941524 -4.11553e-008 -0.336947 ] }
+	{ time 5 trans { x -12.1011 y 1.35672 z -10.953 } rot [ 0 0.874165 -3.82109e-008 -0.48563 ] }
+	{ time 5.19979 trans { x -14.2926 y 1.35672 z -6.11031 } rot [ 0 -0.807623 3.53023e-008 0.589699 ] }
+	{ time 5.4 trans { x -15.4195 y 1.35672 z -0.910029 } rot [ 0 -0.747437 3.26715e-008 0.664333 ] }
+	{ time 5.59979 trans { x -15.5031 y 1.35672 z 4.40874 } rot [ 0 -0.6742 2.94702e-008 0.738548 ] }
+	{ time 5.8 trans { x -14.2422 y 1.35672 z 9.5592 } rot [ 0 -0.53514 2.33917e-008 0.844763 ] }
+	{ time 6 trans { x -10.4748 y 1.35672 z 13.1024 } rot [ 0 -0.150734 6.58881e-009 0.988574 ] }
+] } }
+NodeAnim DummyCurve2 { length 6 timeScale 20 keys { k [
+	{ time 0 trans { x -20.4776 y 2.02407 z 14.3876 } rot [ 0 -0.292516 1.27863e-008 0.956261 ] }
+	{ time 0.2 trans { x -9.26778 y 2.02407 z 15.5958 } rot [ 0 0.242462 -1.05983e-008 0.970161 ] }
+	{ time 0.4 trans { x -5.54731 y 2.02407 z 12.6261 } rot [ 0 0.401205 -1.75372e-008 0.915988 ] }
+	{ time 0.6 trans { x -3.12663 y 2.02407 z 9.47625 } rot [ 0 0.479484 -2.09589e-008 0.877551 ] }
+	{ time 0.8 trans { x -1.47951 y 2.02407 z 6.32723 } rot [ 0 0.558559 -2.44154e-008 0.829465 ] }
+	{ time 1 trans { x -0.540074 y 2.02407 z 3.21807 } rot [ 0 0.628928 -2.74913e-008 0.777463 ] }
+	{ time 1.2 trans { x 0.0654726 y 2.02407 z 0.221227 } rot [ 0 0.621321 -2.71588e-008 0.783557 ] }
+	{ time 1.39979 trans { x 1.20152 y 2.02407 z -2.47537 } rot [ 0 0.281455 -1.23028e-008 0.959574 ] }
+	{ time 1.6 trans { x 3.83596 y 2.02407 z -1.47116 } rot [ 0 -0.510947 2.23342e-008 0.859612 ] }
+	{ time 1.79979 trans { x 4.98732 y 2.02407 z 2.66333 } rot [ 0 -0.627023 2.74081e-008 0.779001 ] }
+	{ time 2 trans { x 7.18569 y 2.02407 z 8.79785 } rot [ 0 -0.492323 2.15201e-008 0.870412 ] }
+	{ time 2.2 trans { x 12.93 y 2.02407 z 13.9756 } rot [ 0 -0.212114 9.27181e-009 0.977245 ] }
+	{ time 2.4 trans { x 19.4625 y 2.02407 z 10.9952 } rot [ 0 0.574986 -2.51334e-008 0.818163 ] }
+	{ time 2.59979 trans { x 21.0229 y 2.02407 z 2.47503 } rot [ 0 0.675081 -2.95087e-008 0.737743 ] }
+	{ time 2.79979 trans { x 21.2574 y 2.02407 z -5.94553 } rot [ 0 0.721162 -3.1523e-008 0.692766 ] }
+	{ time 3 trans { x 19.8734 y 2.02407 z -13.496 } rot [ 0 0.849111 -3.71158e-008 0.528214 ] }
+	{ time 3.2 trans { x 14.4834 y 2.02407 z -16.515 } rot [ 0 0.99975 -4.37004e-008 0.0223802 ] }
+	{ time 3.4 trans { x 9.41729 y 2.02407 z -16.3901 } rot [ 0 0.998975 -4.36666e-008 -0.045277 ] }
+	{ time 3.59979 trans { x 5.64698 y 2.02407 z -15.9686 } rot [ 0 0.99805 -4.36261e-008 -0.0624229 ] }
+	{ time 3.79979 trans { x 2.72476 y 2.02407 z -15.5838 } rot [ 0 0.997683 -4.36101e-008 -0.0680327 ] }
+	{ time 4 trans { x 0.216752 y 2.02407 z -15.23 } rot [ 0 0.997409 -4.35981e-008 -0.0719447 ] }
+	{ time 4.19979 trans { x -2.30552 y 2.02407 z -14.8539 } rot [ 0 0.997102 -4.35847e-008 -0.0760783 ] }
+	{ time 4.4 trans { x -5.26739 y 2.02407 z -14.3808 } rot [ 0 0.996578 -4.35618e-008 -0.0826568 ] }
+	{ time 4.59979 trans { x -8.95759 y 2.02407 z -13.6457 } rot [ 0 0.990166 -4.32815e-008 -0.139898 ] }
+	{ time 4.8 trans { x -11.9069 y 2.02407 z -11.9284 } rot [ 0 0.916151 -4.00462e-008 -0.400834 ] }
+	{ time 5 trans { x -13.5389 y 2.02407 z -9.2628 } rot [ 0 -0.836086 3.65465e-008 0.548598 ] }
+	{ time 5.19979 trans { x -14.6272 y 2.02407 z -6.17762 } rot [ 0 -0.804573 3.5169e-008 0.593853 ] }
+	{ time 5.4 trans { x -15.8271 y 2.02407 z -2.51113 } rot [ 0 -0.820314 3.5857e-008 0.571914 ] }
+	{ time 5.59979 trans { x -17.879 y 2.02407 z 1.92693 } rot [ 0 0.866141 -3.78602e-008 -0.4998 ] }
+	{ time 5.8 trans { x -21.4561 y 2.02407 z 7.21235 } rot [ 0 0.874461 -3.82239e-008 -0.485097 ] }
+	{ time 6 trans { x -20.4776 y 2.02407 z 14.3876 } rot [ 0 -0.292518 1.27864e-008 0.95626 ] }
+] } }
+NodeAnim DummyCurveClown { length 6 timeScale 15 keys { k [
+	{ time 0 trans { x 6.17291 y 1.02769 z -9.93246 } rot [ -0.0182265 0.9915 -0.00236776 0.128801 ] }
+	{ time 0.2 trans { x 5.23497 y 0.991977 z -10.178 } rot [ -0.0182898 0.991822 -0.00232894 0.126291 ] }
+	{ time 0.4 trans { x 2.41814 y 0.885121 z -10.8709 } rot [ -0.0181333 0.99352 -0.00204749 0.112179 ] }
+	{ time 0.6 trans { x -1.55676 y 0.749767 z -11.5479 } rot [ -0.0132158 0.999387 -0.000428744 0.0324185 ] }
+	{ time 0.8 trans { x -4.54219 y 0.788716 z -10.5193 } rot [ 0.0338969 0.875452 -0.0186532 -0.481753 ] }
+	{ time 1 trans { x -5.03026 y 0.907418 z -9.34584 } rot [ -0.0413101 -0.799211 0.0309527 0.598829 ] }
+	{ time 1.2 trans { x -5.0999 y 0.934525 z -9.09731 } rot [ -0.042011 -0.792609 0.0321958 0.607428 ] }
+	{ time 1.39979 trans { x -5.40711 y 1.079 z -7.83379 } rot [ -0.0447977 -0.782387 0.0355092 0.620164 ] }
+	{ time 1.6 trans { x -6.1777 y 1.43811 z -4.88025 } rot [ -0.045761 -0.795682 0.0346789 0.602988 ] }
+	{ time 1.79979 trans { x -7.15531 y 1.80389 z -1.42751 } rot [ -0.0323076 -0.795005 0.024596 0.605242 ] }
+	{ time 2 trans { x -7.84266 y 1.92816 z 1.33047 } rot [ 0.00729747 -0.773495 -0.00597885 0.633732 ] }
+	{ time 2.2 trans { x -7.99978 y 1.84432 z 2.37298 } rot [ 0.0633801 -0.729253 -0.0589902 0.678743 ] }
+	{ time 2.4 trans { x -8.00799 y 1.80978 z 2.54267 } rot [ 0.082699 -0.709624 -0.0809954 0.695007 ] }
+	{ time 2.59979 trans { x -7.70854 y 1.34087 z 3.23854 } rot [ 0.0343339 -0.0923883 -0.346653 0.932801 ] }
+	{ time 2.79979 trans { x -6.09651 y 0.750517 z 2.34256 } rot [ -0.0190788 0.337152 -0.0531789 0.939754 ] }
+	{ time 3 trans { x -4.08283 y 0.612691 z 0.551148 } rot [ -0.00277321 0.361413 -0.00715434 0.932374 ] }
+	{ time 3.2 trans { x -1.68058 y 0.601368 z -1.55405 } rot [ 0 0.336458 -1.47071e-008 0.941698 ] }
+	{ time 3.4 trans { x 1.13337 y 0.601368 z -3.60715 } rot [ 0 0.277066 -1.2111e-008 0.960851 ] }
+	{ time 3.59979 trans { x 4.35783 y 0.601368 z -5.11512 } rot [ 0 0.128976 -5.63773e-009 0.991648 ] }
+	{ time 3.79979 trans { x 7.72452 y 0.601368 z -4.84735 } rot [ 0 -0.244197 1.06742e-008 0.969726 ] }
+	{ time 4 trans { x 9.08651 y 0.601368 z -2.16603 } rot [ 0 -0.62284 2.72252e-008 0.782349 ] }
+	{ time 4.19979 trans { x 10.1051 y 0.601368 z 0.177402 } rot [ 0 -0.237738 1.03919e-008 0.971329 ] }
+	{ time 4.4 trans { x 11.3339 y 0.601368 z -0.889331 } rot [ 0 0.633443 -2.76887e-008 0.77379 ] }
+	{ time 4.59979 trans { x 11.3656 y 0.60137 z -1.77637 } rot [ 3.18739e-005 0.747584 2.82847e-005 0.664168 ] }
+	{ time 4.8 trans { x 11.3418 y 0.601423 z -1.9405 } rot [ 0.000260258 0.76432 0.00021954 0.644837 ] }
+	{ time 5 trans { x 11.2854 y 0.601873 z -2.20844 } rot [ 0.00112824 0.787881 0.000881826 0.615826 ] }
+	{ time 5.19979 trans { x 10.7765 y 0.621967 z -3.46584 } rot [ 0.0134407 0.860307 0.00796053 0.509538 ] }
+	{ time 5.4 trans { x 8.22778 y 0.966048 z -6.20437 } rot [ 0.0407443 0.953695 0.0127199 0.297732 ] }
+	{ time 5.59979 trans { x 6.27941 y 1.05412 z -8.6723 } rot [ -0.00184943 0.614361 -0.00237524 0.789019 ] }
+	{ time 5.8 trans { x 6.27727 y 1.03203 z -9.88744 } rot [ -0.0185444 0.958099 -0.00553146 0.285782 ] }
+	{ time 6 trans { x 6.17291 y 1.02769 z -9.93246 } rot [ -0.0183998 0.988809 -0.00275441 0.148021 ] }
+] } }
+NodeAnim DummyCurve4 { length 6 timeScale 10 keys { k [
+	{ time 0 trans { x -14.3816 y -2.00073e-007 z -4.57713 } rot [ -0.00709851 -0.775925 0.0057705 0.630759 ] }
+	{ time 0.2 trans { x -12.9728 y 1.99592 z -3.06828 } rot [ -0.0364048 -0.0985501 0.3446 0.932852 ] }
+	{ time 0.4 trans { x -10.0913 y 2.5353 z -2.44921 } rot [ 0.0216549 -0.10519 -0.20047 0.973796 ] }
+	{ time 0.6 trans { x -7.50978 y 0.87774 z -2.69315 } rot [ -0.0258084 0.23155 -0.107725 0.966496 ] }
+	{ time 0.8 trans { x -4.75625 y 0.403507 z -4.23585 } rot [ -0.0101045 0.263312 -0.0369913 0.963948 ] }
+	{ time 1 trans { x -1.94512 y 0.36328 z -5.74495 } rot [ 0.00375147 0.200652 0.0183128 0.979484 ] }
+	{ time 1.2 trans { x 1.141 y 0.515884 z -6.49938 } rot [ 0.00101823 0.0414606 0.0245304 0.998838 ] }
+	{ time 1.39979 trans { x 4.32118 y 0.642458 z -6.34683 } rot [ -0.00103354 -0.0859346 0.0119817 0.996228 ] }
+	{ time 1.6 trans { x 7.36798 y 0.65337 z -5.41361 } rot [ -0.00188573 -0.205657 0.00897291 0.978581 ] }
+	{ time 1.79979 trans { x 10.1664 y 1.25577 z -4.05184 } rot [ -0.0461637 -0.209319 0.210361 0.953836 ] }
+	{ time 2 trans { x 12.6275 y 3.07969 z -3.18551 } rot [ -0.0387493 -0.11166 0.325551 0.938108 ] }
+	{ time 2.2 trans { x 15.3539 y 4.6455 z -2.85231 } rot [ -0.000159226 -0.00155708 0.101728 0.994811 ] }
+	{ time 2.4 trans { x 18.2777 y 3.73655 z -3.25786 } rot [ -0.0469041 0.145517 -0.303177 0.940589 ] }
+	{ time 2.59979 trans { x 20.2857 y 1.63245 z -4.50915 } rot [ -0.155757 0.410205 -0.318979 0.840074 ] }
+	{ time 2.79979 trans { x 20.7721 y 0.240895 z -7.21041 } rot [ -0.0646114 0.748501 -0.0567589 0.657533 ] }
+	{ time 3 trans { x 20.0474 y 0.138743 z -10.3106 } rot [ 0.0223809 0.797349 0.0169219 0.602865 ] }
+	{ time 3.2 trans { x 19.166 y 0.422783 z -13.3679 } rot [ 0.0448132 0.807089 0.0326384 0.587821 ] }
+	{ time 3.4 trans { x 17.8635 y 0.79359 z -16.2508 } rot [ 0.0492656 0.879203 0.0265127 0.473151 ] }
+	{ time 3.59979 trans { x 15.5629 y 1.06551 z -18.4057 } rot [ 0.0257387 0.965793 0.0068742 0.257942 ] }
+	{ time 3.79979 trans { x 12.5909 y 1.16321 z -19.5439 } rot [ 0.00622379 0.993117 0.000732936 0.11696 ] }
+	{ time 4 trans { x 9.42637 y 1.1638 z -19.9296 } rot [ -0.0052533 0.999986 -5.88575e-006 0.00111206 ] }
+	{ time 4.19979 trans { x 6.28136 y 1.10264 z -19.4485 } rot [ -0.0129931 0.989116 0.00192502 -0.146548 ] }
+	{ time 4.4 trans { x 3.23187 y 1.0209 z -18.5047 } rot [ -0.00989785 0.994378 0.00104929 -0.10542 ] }
+	{ time 4.59979 trans { x 0.0541944 y 0.963466 z -18.2253 } rot [ -0.0130901 0.999777 0.000216951 -0.0165733 ] }
+	{ time 4.8 trans { x -3.13013 y 0.818051 z -18.027 } rot [ -0.0335496 0.997845 0.00189474 -0.0563553 ] }
+	{ time 5 trans { x -6.25121 y 0.533337 z -17.4274 } rot [ -0.0522193 0.987938 0.00769459 -0.145575 ] }
+	{ time 5.19979 trans { x -9.04843 y 0.226874 z -15.9608 } rot [ -0.0358305 0.940436 0.0128713 -0.337831 ] }
+	{ time 5.4 trans { x -11.1015 y 0.0675681 z -13.537 } rot [ -0.0121407 0.874224 0.00673982 -0.485324 ] }
+	{ time 5.59979 trans { x -12.5345 y 0.0152532 z -10.686 } rot [ 0.00344744 -0.830868 -0.00230881 0.556455 ] }
+	{ time 5.8 trans { x -13.5882 y 0.00154026 z -7.67129 } rot [ 0.000617119 -0.801489 -0.000460412 0.598009 ] }
+	{ time 6 trans { x -14.3816 y -2.00073e-007 z -4.57713 } rot [ -0.00709906 -0.775924 0.00577097 0.63076 ] }
+] } }
+NodeAnim DummyCurveNight { length 6 timeScale 30 keys { k [
+	{ time 0 trans { x 7.17624 y 1.80055 z -15.3691 } rot [ 0 0.458797 -2.00547e-008 0.888541 ] }
+	{ time 0.2 trans { x 7.69001 y 1.80055 z -17.7931 } rot [ 0 0.862547 -3.77031e-008 0.505977 ] }
+	{ time 0.4 trans { x 5.37586 y 1.80055 z -18.7379 } rot [ 0 0.999878 -4.37061e-008 0.0155967 ] }
+	{ time 0.6 trans { x 2.76619 y 1.80055 z -18.6189 } rot [ 0 0.999 -4.36677e-008 -0.044708 ] }
+	{ time 0.8 trans { x 0.173213 y 1.80055 z -18.2947 } rot [ 0 0.996741 -4.35689e-008 -0.0806727 ] }
+	{ time 1 trans { x -2.37797 y 1.80055 z -17.7348 } rot [ 0 0.989233 -4.32407e-008 -0.146352 ] }
+	{ time 1.2 trans { x -4.36223 y 1.80055 z -16.2643 } rot [ 0 -0.722073 3.15628e-008 0.691817 ] }
+	{ time 1.39979 trans { x -2.81356 y 1.80055 z -14.2542 } rot [ 0 -0.352453 1.54062e-008 0.93583 ] }
+	{ time 1.6 trans { x -1.78233 y 1.80055 z -12.0776 } rot [ 0 -0.823404 3.59921e-008 0.567456 ] }
+	{ time 1.79979 trans { x -2.87648 y 1.80055 z -9.7085 } rot [ 0 -0.804227 3.51539e-008 0.594322 ] }
+	{ time 2 trans { x -3.29088 y 1.80055 z -7.13239 } rot [ 0 -0.738777 3.2293e-008 0.67395 ] }
+	{ time 2.2 trans { x -3.55955 y 1.80055 z -4.53286 } rot [ 0 -0.755487 3.30234e-008 0.655164 ] }
+	{ time 2.4 trans { x -4.10185 y 1.80055 z -1.97756 } rot [ 0 -0.789311 3.45019e-008 0.613994 ] }
+	{ time 2.59979 trans { x -4.64741 y 1.80055 z 0.577007 } rot [ 0 -0.752849 3.29081e-008 0.658193 ] }
+	{ time 2.79979 trans { x -4.63223 y 1.80055 z 3.18081 } rot [ 0 -0.648408 2.83428e-008 0.761293 ] }
+	{ time 3 trans { x -3.88032 y 1.80055 z 5.67663 } rot [ 0 -0.54533 2.38371e-008 0.838222 ] }
+	{ time 3.2 trans { x -2.5268 y 1.80055 z 7.90339 } rot [ 0 -0.427068 1.86677e-008 0.90422 ] }
+	{ time 3.4 trans { x -0.518853 y 1.80055 z 9.54522 } rot [ 0 -0.227525 9.94543e-009 0.973772 ] }
+	{ time 3.59979 trans { x 2.01048 y 1.80055 z 10.0895 } rot [ 0 0.0162846 -7.11822e-010 0.999867 ] }
+	{ time 3.79979 trans { x 4.51733 y 1.80055 z 9.42753 } rot [ 0 0.232665 -1.01701e-008 0.972557 ] }
+	{ time 4 trans { x 6.60833 y 1.80055 z 7.87747 } rot [ 0 0.383098 -1.67458e-008 0.923708 ] }
+	{ time 4.19979 trans { x 8.2131 y 1.80055 z 5.82201 } rot [ 0 0.488963 -2.13733e-008 0.872304 ] }
+	{ time 4.4 trans { x 9.33181 y 1.80055 z 3.46507 } rot [ 0 0.577409 -2.52394e-008 0.816455 ] }
+	{ time 4.59979 trans { x 9.93957 y 1.80055 z 0.928057 } rot [ 0 0.661019 -2.8894e-008 0.75037 ] }
+	{ time 4.8 trans { x 9.94107 y 1.80055 z -1.6781 } rot [ 0 0.753263 -3.29262e-008 0.65772 ] }
+	{ time 5 trans { x 9.25104 y 1.80055 z -4.19161 } rot [ 0 0.831136 -3.63301e-008 0.556069 ] }
+	{ time 5.19979 trans { x 8.02201 y 1.80055 z -6.49416 } rot [ 0 0.878434 -3.83976e-008 0.477863 ] }
+	{ time 5.4 trans { x 6.51685 y 1.80055 z -8.63054 } rot [ 0 0.890475 -3.89239e-008 0.455033 ] }
+	{ time 5.59979 trans { x 5.13658 y 1.80055 z -10.8442 } rot [ 0 0.831481 -3.63452e-008 0.555553 ] }
+	{ time 5.8 trans { x 5.62136 y 1.80055 z -13.2683 } rot [ 0 0.460535 -2.01306e-008 0.887641 ] }
+	{ time 6 trans { x 7.17624 y 1.80055 z -15.3691 } rot [ 0 0.4588 -2.00548e-008 0.888539 ] }
+] } }
+Node Fish1Node {
+	animators [ { t Animator::oscillate osWi 0.05 osLocal true s 8 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	scale { w 0.1 }
+	rot [ 0 90 0 ]
+	entities [ { obj Fish1 anims [ { n anim s 3 } ] } ]
+}
+Node FishCNode {
+	animators [ { t Animator::oscillate osWi 0.03 osLocal true s 6 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	scale { w 0.15 }
+	rot [ 0 -90 0 ]
+	entities [ { obj Fish_C anims [ { n anim s 2.2 } ] } ]
+}
+Node FishDNode {
+	animators [ { t Animator::oscillate osWi 0.04 osLocal true s 7 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	pos { y -1 }
+	scale { w 0.12 }
+	rot [ 0 90 0 ]
+	entities [ { obj Fish_D anims [ { n anim s 2.4 } ] } ]
+}
+Node FishFNode {
+	animators [ { t Animator::oscillate osWi 0.03 osLocal true s 7.5 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	pos { y -1 }
+	scale { w 0.07 }
+	rot [ 0 -90 0 ]
+	entities [ { obj Fish_F anims [ { n anim s 2.8 } ] } ]
+}
+Node FishGNode {
+	animators [ { t Animator::oscillate osWi 0.02 osLocal true s 9 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	scale { w 0.17 }
+	rot [ 0 -90 0 ]
+	entities [ { obj Fish_G anims [ { n anim s 3.2 } ] } ]
+}
+Node FishENode {
+	animators [ { t Animator::oscillate osWi 0.10 osLocal true s 4.5 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	pos { y 0.05 }
+	scale { x 2 w 0.12 }
+	rot [ 0 90 0 ]
+	entities [ { obj Fish_E anims [ { n anim s 2 } ] } ]
+}
+
+Node RunGNode {
+	nanims [ DummyCurve4 ]
+	naCommon { loop true auto true start NaN speed -1.1 }
+	nodes [
+		{ pos { x 0.6 y 0.65 z 1.5 } nodes [ FishGNode ] }
+		{ pos { x -0.62 y 0.85 z 1.2 } nodes [ FishGNode ] }
+		{ pos { x 0.38 y 0.95 z 2.5 } nodes [ FishGNode ] }
+		{ pos { x -0.1 y 1.15 z 3.2 } nodes [ FishGNode ] }
+	]
+}
+Node RunENode {
+	nanims [ DummyCurve4 ]
+	naCommon { loop true auto true start NaN speed 0.75 }
+	nodes [
+		FishENode
+		{ pos { x 1.38 y 0.15 z -0.5 } nodes [ FishENode ] }
+		{ pos { x -1.12 y 0.35 z 0.2 } nodes [ FishENode ] }
+	]
+}
+Node RunFNode {
+	nanims [ DummyCurve2 ]
+	naCommon { loop true auto true start NaN speed -1 }
+	nodes [
+		{ pos { x -0.5 y 1.0 z -0.1 } nodes [ FishFNode ] }
+		{ pos { x 1.38 y 0.85 z -0.5 } nodes [ FishFNode ] }
+		{ pos { x 0.04 y 1.85 z 0.2 } nodes [ FishFNode ] }
+		{ pos { x 0.26 y 1.25 z 0.4 } nodes [ FishFNode ] }
+	]
+}
+Node RunDNode {
+	nanims [ DummyCurve2 ]
+	naCommon { loop true auto true start NaN }
+	nodes [
+		FishDNode
+		{ pos { x 0.08 y 0.2 z -0.6 } nodes [ FishDNode ] }
+		{ pos { x -0.02 y 0.4 z 0.3 } nodes [ FishDNode ] }
+		{ pos { x -0.06 y -0.3 z 0.4 } nodes [ FishDNode ] }
+	]
+}
+Node Run1Node {
+	nanims [ DummyCurve1 ]
+	naCommon { loop true auto true start NaN speed 0.9 }
+	nodes [
+		Fish1Node
+		{ pos { x -0.08 y 0.2 z 1 } nodes [ Fish1Node ] }
+		{ pos { x 0.05 y -0.3 z -0.5 } nodes [ Fish1Node ] }
+	]
+}
+Node RunCNode {
+	nanims [ DummyCurve1 ]
+	naCommon { loop true auto true start NaN speed -1.05 }
+	nodes [
+		{ pos { x 0.0 y -0.2 z 0.0 } nodes [ FishCNode ] }
+		{ pos { x -0.08 y -0.6 z 0.6 } nodes [ FishCNode ] }
+		{ pos { x 0.06 y -0.8 z -0.4 } nodes [ FishCNode ] }
+	]
+}
+
+Node FishBNode {
+	// CLOWN
+	animators [ { t Animator::oscillate osWi 0.05 osLocal true s 8 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	scale { x 3 w 0.1 }
+	rot [ 0 90 0 ]
+	entities [ { obj Fish_B anims [ { n anim s 3 } ] } ]
+}
+Node RunBNode {
+	nanims [ DummyCurveClown ]
+	naCommon { loop true auto true start NaN }
+	nodes [ FishBNode ]
+}
+
+Node SardelaNode {
+	animators [ { t Animator::oscillate osWi 0.035 osLocal true s 10 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	scale { y 2 w 0.1 }
+	rot [ 90 0 0 ]
+	entities [ { obj Sardela anims [ { n anim s 4 } ] } ]
+}
+Node RunSardela {
+	pos { z 20 }
+	nodes [
+		SardelaNode
+		{ pos { x -0.2 y 0.3 z 1.2 } nodes [ SardelaNode ] }
+		{ pos { x 0.4 y 0.2 z -1.0 } nodes [ SardelaNode ] }
+		{ pos { x -0.6 y 0.1 z 0.8 } nodes [ SardelaNode ] }
+		{ pos { x 0.8 y -0.1 z -0.6 } nodes [ SardelaNode ] }
+		{ pos { x -1.0 y -0.2 z 0.4 } nodes [ SardelaNode ] }
+		{ pos { x 1.2 y -0.3 z -0.2 } nodes [ SardelaNode ] }
+	]
+}
+Node AllSardela {
+	nodes [
+		{
+			pos { x 2 y 4 z -4 }
+			animators [ { t Animator::ellipse elMa 18 elMi 22 elFi 0 elAngle 90 s 0.10 } ]
+			nodes [ RunSardela ]
+		}
+		{
+			pos { x 2 y 6 z -2 }
+			scale { x -1 }
+			animators [ { t Animator::ellipse elMa 19 elMi 23 elFi 0 elAngle 90 s -0.08 } ]
+			nodes [ RunSardela ]
+		}
+		{
+			pos { x 2 y 9 z -6 }
+			scale { y -1 }
+			animators [ { t Animator::ellipse elMa 20 elMi 24 elFi 0 elAngle 90 s 0.07 } ]
+			nodes [ RunSardela ]
+		}
+	]
+}
+
+Node FishHNode {
+	animators [ { t Animator::oscillate osWi 0.10 osLocal true s 3 osAx { x 0.2 y 0.4 z 0.5 } } ]
+	scale { x 1.75 w 0.3 }
+	rot [ 0 90 0 ]
+	entities [ { obj Fish_H anims [ { n anim s 1 } ] } ]
+}
+Node RunHNode {
+	nanims [ DummyCurveNight ]
+	naCommon { loop true auto true start NaN }
+	nodes [ FishHNode ]
+}
+
+// HALLOWEEN
+NodeAnim RatPath4 { length 6.66646 timeScale 15 keys { k [
+	{ time 0 trans { x 25.6163 y 1.76535e-006 z 40.3865 } rot [ 0.706356 -0.0325713 0.0325713 0.706356 ] }
+	{ time 0.0666667 trans { x 25.9117 y 1.62559e-006 z 37.1891 } rot [ 0.706249 -0.034825 0.034825 0.706249 ] }
+	{ time 0.133333 trans { x 26.3545 y 1.48658e-006 z 34.0091 } rot [ 0.704545 -0.0601329 0.0601329 0.704545 ] }
+	{ time 0.2 trans { x 27.0197 y 1.34929e-006 z 30.8682 } rot [ 0.701451 -0.0892531 0.0892531 0.701451 ] }
+	{ time 0.266667 trans { x 28.0003 y 1.21573e-006 z 27.8127 } rot [ 0.694661 -0.132084 0.132084 0.694661 ] }
+	{ time 0.333333 trans { x 29.4325 y 1.09034e-006 z 24.944 } rot [ 0.679778 -0.194686 0.194686 0.679777 ] }
+	{ time 0.4 trans { x 31.3997 y 9.79676e-007 z 22.4124 } rot [ 0.659372 -0.2554 0.2554 0.659372 ] }
+	{ time 0.466667 trans { x 33.5322 y 8.7483e-007 z 20.0138 } rot [ 0.668811 -0.229546 0.229546 0.668811 ] }
+	{ time 0.533333 trans { x 35.1873 y 7.54952e-007 z 17.2713 } rot [ 0.691704 -0.146785 0.146785 0.691704 ] }
+	{ time 0.6 trans { x 36.0723 y 6.20513e-007 z 14.1957 } rot [ 0.705431 -0.0486498 0.0486498 0.705431 ] }
+	{ time 0.666667 trans { x 36.0589 y 4.80617e-007 z 10.9952 } rot [ 0.70534 0.0499602 -0.0499603 0.70534 ] }
+	{ time 0.733333 trans { x 35.2776 y 3.44683e-007 z 7.88542 } rot [ 0.698176 0.112031 -0.112031 0.698176 ] }
+	{ time 0.8 trans { x 34.113 y 2.13929e-007 z 4.89413 } rot [ 0.692857 0.141241 -0.141241 0.692857 ] }
+	{ time 0.866667 trans { x 32.8185 y 0.00129303 z 1.95567 } rot [ 0.692111 0.146043 -0.146154 0.691587 ] }
+	{ time 0.933333 trans { x 31.5894 y 0.00486478 z -1.01031 } rot [ 0.696511 0.127129 -0.12748 0.694593 ] }
+	{ time 1 trans { x 30.617 y 0.0220388 z -4.06881 } rot [ 0.703628 0.0873795 -0.0878728 0.699679 ] }
+	{ time 1.06667 trans { x 30.0371 y 0.0402422 z -7.22451 } rot [ 0.708018 0.039247 -0.0394712 0.703998 ] }
+	{ time 1.13312 trans { x 29.8664 y 0.0622035 z -10.4288 } rot [ 0.712064 -0.00305347 0.00309678 0.702101 ] }
+	{ time 1.2 trans { x 30.0429 y 0.112569 z -13.6334 } rot [ 0.71174 -0.0315549 0.0320382 0.701002 ] }
+	{ time 1.26646 trans { x 30.418 y 0.160296 z -16.8219 } rot [ 0.71079 -0.0462536 0.0469458 0.70031 ] }
+	{ time 1.33333 trans { x 30.8485 y 0.204263 z -20.0036 } rot [ 0.706725 -0.0458978 0.0460431 0.704495 ] }
+	{ time 1.39979 trans { x 31.2372 y 0.17339 z -23.1905 } rot [ 0.698532 -0.0369603 0.0361744 0.713707 ] }
+	{ time 1.46667 trans { x 31.5171 y 0.0447 z -26.3825 } rot [ 0.641748 -0.0217499 0.0182126 0.766391 ] }
+	{ time 1.53313 trans { x 31.6344 y -0.681975 z -29.5044 } rot [ 0.612323 -0.000565882 0.000438281 0.790607 ] }
+	{ time 1.6 trans { x 31.5465 y -1.09267 z -32.6638 } rot [ 0.704644 0.0199034 -0.019781 0.709006 ] }
+	{ time 1.66646 trans { x 31.231 y -1.11019 z -35.8585 } rot [ 0.70415 0.0436301 -0.0434312 0.707377 ] }
+	{ time 1.73333 trans { x 30.6824 y -1.11407 z -39.0211 } rot [ 0.703071 0.072548 -0.0724847 0.703686 ] }
+	{ time 1.79979 trans { x 29.8744 y -1.11747 z -42.127 } rot [ 0.698808 0.105522 -0.105404 0.699587 ] }
+	{ time 1.86667 trans { x 28.7587 y -1.12123 z -45.1352 } rot [ 0.692772 0.144687 -0.144962 0.691461 ] }
+	{ time 1.93313 trans { x 27.2718 y -1.11115 z -47.9768 } rot [ 0.680535 0.19717 -0.198109 0.67731 ] }
+	{ time 2 trans { x 25.2923 y -0.968827 z -50.4931 } rot [ 0.66715 0.261596 -0.271678 0.642393 ] }
+	{ time 2.06646 trans { x 22.8152 y -0.838847 z -52.5218 } rot [ 0.634816 0.329676 -0.344099 0.608209 ] }
+	{ time 2.13333 trans { x 20.0413 y -0.261707 z -53.9753 } rot [ 0.667204 0.331346 -0.444036 0.497877 ] }
+	{ time 2.2 trans { x 17.1838 y 0.826093 z -54.9428 } rot [ 0.66203 0.336234 -0.502173 0.443267 ] }
+	{ time 2.26646 trans { x 14.2211 y 1.8431 z -55.6262 } rot [ 0.60744 0.391896 -0.506457 0.470038 ] }
+	{ time 2.33313 trans { x 11.1229 y 2.51646 z -56.1177 } rot [ 0.563855 0.43614 -0.497507 0.494304 ] }
+	{ time 2.4 trans { x 7.94143 y 2.76399 z -56.4531 } rot [ 0.531368 0.468285 -0.485833 0.512175 ] }
+	{ time 2.46667 trans { x 4.73857 y 2.86445 z -56.6492 } rot [ 0.511766 0.48821 -0.496393 0.503329 ] }
+	{ time 2.53312 trans { x 1.52937 y 2.83324 z -56.6872 } rot [ 0.489573 0.510346 -0.493501 0.506284 ] }
+	{ time 2.59979 trans { x -1.67268 y 2.71193 z -56.5039 } rot [ 0.470561 0.528799 -0.517037 0.481266 ] }
+	{ time 2.66667 trans { x -4.83924 y 2.5998 z -56.0055 } rot [ 0.425276 0.570304 -0.541671 0.447756 ] }
+	{ time 2.73333 trans { x -7.73969 y 2.0763 z -54.7991 } rot [ 0.27859 0.701427 -0.55256 0.353646 ] }
+	{ time 2.79979 trans { x -8.96368 y 1.19133 z -52.1273 } rot [ -0.0238195 0.791911 -0.609386 -0.030954 ] }
+	{ time 2.86646 trans { x -7.87143 y 0.778487 z -49.1742 } rot [ -0.182886 0.702759 -0.659303 -0.19494 ] }
+	{ time 2.93333 trans { x -5.94074 y 0.522639 z -46.6289 } rot [ -0.247606 0.685049 -0.630008 -0.269239 ] }
+	{ time 3 trans { x -3.65305 y 0.318127 z -44.3908 } rot [ 0.297699 -0.639885 0.643695 0.295937 ] }
+	{ time 3.06646 trans { x -1.11554 y 0.298033 z -42.43 } rot [ -0.319329 0.647263 -0.60051 -0.344191 ] }
+	{ time 3.13333 trans { x 1.6229 y 0.053536 z -40.7754 } rot [ -0.349569 0.628177 -0.5851 -0.375305 ] }
+	{ time 3.2 trans { x 4.50525 y -0.163818 z -39.3792 } rot [ -0.362485 0.626132 -0.557536 -0.407083 ] }
+	{ time 3.26646 trans { x 7.40717 y -0.743392 z -38.1364 } rot [ -0.357973 0.634095 -0.543413 -0.41771 ] }
+	{ time 3.33313 trans { x 10.251 y -1.12685 z -36.7058 } rot [ -0.320734 0.64923 -0.593878 -0.350627 ] }
+	{ time 3.4 trans { x 12.1507 y -1.10445 z -34.2367 } rot [ 0.0521069 -0.70102 0.709369 0.0514936 ] }
+	{ time 3.46667 trans { x 10.899 y -1.07415 z -31.4154 } rot [ -0.278671 -0.648093 0.652453 -0.276809 ] }
+	{ time 3.53312 trans { x 8.26726 y -0.704653 z -29.6414 } rot [ -0.391682 -0.564144 0.639474 -0.345542 ] }
+	{ time 3.59979 trans { x 5.3227 y -0.380756 z -28.4094 } rot [ -0.42125 -0.555974 0.601548 -0.389335 ] }
+	{ time 3.66667 trans { x 2.27292 y -0.163579 z -27.4317 } rot [ -0.440295 -0.546044 0.579559 -0.414834 ] }
+	{ time 3.73333 trans { x -0.826258 y 0.00419703 z -26.61 } rot [ -0.444569 -0.545001 0.5695 -0.425444 ] }
+	{ time 3.79979 trans { x -3.95226 y 0.0458379 z -25.8802 } rot [ 0.442851 0.551387 -0.550645 0.443448 ] }
+	{ time 3.86646 trans { x -7.0968 y 0.0261895 z -25.2308 } rot [ 0.44819 0.547555 -0.543603 0.451448 ] }
+	{ time 3.93333 trans { x -10.2519 y 0.0106835 z -24.6347 } rot [ 0.45294 0.543103 -0.542401 0.453527 ] }
+	{ time 4 trans { x -13.415 y 0.00640786 z -24.0826 } rot [ 0.455876 0.540639 -0.539906 0.456495 ] }
+	{ time 4.06646 trans { x -16.5846 y 0.00192133 z -23.5683 } rot [ 0.459418 0.537604 -0.537026 0.459913 ] }
+	{ time 4.13312 trans { x -19.76 y 0.00036796 z -23.092 } rot [ 0.463154 0.534319 -0.534256 0.463208 ] }
+	{ time 4.19979 trans { x -22.9399 y 0.000212951 z -22.6462 } rot [ -0.465124 -0.532595 0.532619 -0.465102 ] }
+	{ time 4.26667 trans { x -26.1236 y 0.000516826 z -22.2284 } rot [ -0.467534 -0.530478 0.530523 -0.467494 ] }
+	{ time 4.33333 trans { x -29.3112 y 0.00044553 z -21.8412 } rot [ 0.469868 0.528426 -0.528339 0.469945 ] }
+	{ time 4.4 trans { x -32.5013 y -9.38724e-007 z -21.4755 } rot [ 0.471582 0.526891 -0.526861 0.471608 ] }
+	{ time 4.46667 trans { x -35.6936 y -9.23584e-007 z -21.1292 } rot [ -0.472638 -0.52594 0.52594 -0.472638 ] }
+	{ time 4.53312 trans { x -38.8864 y 0.0338978 z -20.7901 } rot [ -0.477615 -0.520399 0.531037 -0.468047 ] }
+	{ time 4.59979 trans { x -42.0779 y 0.100319 z -20.4437 } rot [ -0.476358 -0.521434 0.532699 -0.466284 ] }
+	{ time 4.66646 trans { x -45.2651 y 0.0497356 z -20.0633 } rot [ 0.459189 0.539704 -0.521895 0.474858 ] }
+	{ time 4.73313 trans { x -48.4398 y 0.00238039 z -19.5882 } rot [ -0.453881 -0.54221 0.542212 -0.45388 ] }
+	{ time 4.8 trans { x -51.5703 y 0.00239283 z -18.8801 } rot [ -0.428551 -0.562444 0.562446 -0.42855 ] }
+	{ time 4.86667 trans { x -54.5682 y 0.00227505 z -17.7441 } rot [ 0.369948 0.602651 -0.602518 0.37003 ] }
+	{ time 4.93333 trans { x -57.1906 y 0.0352685 z -15.9128 } rot [ -0.286662 -0.63075 0.668438 -0.2705 ] }
+	{ time 5 trans { x -59.0983 y 0.250304 z -13.3601 } rot [ -0.163467 -0.662731 0.714915 -0.151535 ] }
+	{ time 5.06646 trans { x -59.5786 y 0.512173 z -10.2579 } rot [ 0.0845095 -0.67298 0.730683 0.0778357 ] }
+	{ time 5.13312 trans { x -57.611 y 0.669184 z -7.84763 } rot [ 0.358065 -0.604385 0.620324 0.348864 ] }
+	{ time 5.19979 trans { x -54.6636 y 0.735728 z -6.58517 } rot [ 0.410126 -0.573117 0.584465 0.402163 ] }
+	{ time 5.26667 trans { x -51.6606 y 0.818927 z -5.45252 } rot [ 0.401269 -0.577515 0.594622 0.389724 ] }
+	{ time 5.33333 trans { x -48.8042 y 1.02308 z -4.01394 } rot [ 0.356772 -0.586856 0.652089 0.321082 ] }
+	{ time 5.4 trans { x -46.41 y 1.38016 z -1.92576 } rot [ 0.249524 -0.626501 0.704244 0.221978 ] }
+	{ time 5.46667 trans { x -44.892 y 1.31739 z 0.867717 } rot [ -0.119951 0.731127 -0.658267 -0.133228 ] }
+	{ time 5.53312 trans { x -43.8146 y 0.812754 z 3.84815 } rot [ -0.115502 0.763682 -0.618984 -0.142503 ] }
+	{ time 5.59979 trans { x -42.6136 y 0.376852 z 6.77625 } rot [ -0.148961 0.692903 -0.689406 -0.149717 ] }
+	{ time 5.66646 trans { x -41.2079 y 0.354428 z 9.66123 } rot [ -0.171107 0.68917 -0.682585 -0.172758 ] }
+	{ time 5.73313 trans { x -39.6448 y 0.276018 z 12.4634 } rot [ -0.190525 0.691612 -0.668195 -0.197202 ] }
+	{ time 5.8 trans { x -37.9523 y 0.169234 z 15.19 } rot [ -0.190732 0.690915 -0.668914 -0.197005 ] }
+	{ time 5.86667 trans { x -36.1253 y 0.1525 z 17.8292 } rot [ -0.211573 0.680624 -0.667409 -0.215762 ] }
+	{ time 5.93333 trans { x -34.2598 y 0.089828 z 20.4414 } rot [ -0.228678 0.674634 -0.66202 -0.233035 ] }
+	{ time 6 trans { x -32.2782 y 0.029224 z 22.9673 } rot [ -0.228679 0.674634 -0.662019 -0.233037 ] }
+	{ time 6.06646 trans { x -30.2943 y 1.11428e-006 z 25.4918 } rot [ -0.239636 0.665376 -0.665116 -0.23973 ] }
+	{ time 6.13312 trans { x -28.2028 y 1.22078e-006 z 27.9283 } rot [ 0.24557 -0.663095 0.663095 0.24557 ] }
+	{ time 6.19979 trans { x -26.1114 y 1.32728e-006 z 30.3647 } rot [ 0.245571 -0.663095 0.663095 0.245571 ] }
+	{ time 6.26667 trans { x -23.9745 y 1.43202e-006 z 32.7607 } rot [ 0.258077 -0.658328 0.658328 0.258077 ] }
+	{ time 6.33333 trans { x -21.7923 y 1.53498e-006 z 35.1163 } rot [ 0.258076 -0.658329 0.658329 0.258076 ] }
+	{ time 6.4 trans { x -19.6101 y 1.63794e-006 z 37.4718 } rot [ 0.258076 -0.658329 0.658329 0.258076 ] }
+	{ time 6.46667 trans { x -17.3895 y 1.7393e-006 z 39.7906 } rot [ 0.26872 -0.654056 0.654056 0.26872 ] }
+	{ time 6.53312 trans { x -15.132 y 1.83912e-006 z 42.0741 } rot [ 0.268722 -0.654055 0.654055 0.268722 ] }
+	{ time 6.59979 trans { x -12.8746 y 1.93893e-006 z 44.3576 } rot [ 0.26872 -0.654056 0.654056 0.26872 ] }
+	{ time 6.66646 trans { x -10.6171 y 2.03875e-006 z 46.6412 } rot [ 0.268721 -0.654056 0.654056 0.268721 ] }
+	] }
+}
+NodeAnim RatPath3 { length 6.66646 timeScale 12 keys { k [
+	{ time 0 trans { x -0.96458 y 1.7986e-006 z 41.1472 } rot [ 0.640216 0.300208 -0.300209 0.640213 ] }
+	{ time 0.0666667 trans { x -2.78012 y -1.368e-006 z 39.637 } rot [ 0.640215 0.300208 -0.300208 0.640216 ] }
+	{ time 0.133333 trans { x -4.59566 y 1.66658e-006 z 38.1268 } rot [ 0.640214 0.30021 -0.30021 0.640214 ] }
+	{ time 0.2 trans { x -6.40066 y 1.60002e-006 z 36.6041 } rot [ 0.64166 0.297107 -0.297107 0.64166 ] }
+	{ time 0.266667 trans { x -8.20149 y 1.53324e-006 z 35.0764 } rot [ 0.64166 0.297106 -0.297106 0.64166 ] }
+	{ time 0.333333 trans { x -9.99249 y 1.46596e-006 z 33.5372 } rot [ 0.643262 0.293623 -0.293624 0.643261 ] }
+	{ time 0.4 trans { x -11.7767 y 1.39833e-006 z 31.99 } rot [ 0.643262 0.293623 -0.293623 0.643261 ] }
+	{ time 0.466667 trans { x -13.5491 y 1.33012e-006 z 30.4296 } rot [ 0.64504 0.289695 -0.289696 0.645039 ] }
+	{ time 0.533333 trans { x -15.3143 y 1.26155e-006 z 28.8608 } rot [ 0.64504 0.289696 -0.289697 0.645039 ] }
+	{ time 0.6 trans { x -17.0623 y -1.90845e-006 z 27.2729 } rot [ 0.647022 0.285241 -0.285241 0.647022 ] }
+	{ time 0.666667 trans { x -18.8031 y -1.74811e-005 z 25.6772 } rot [ 0.649211 0.280178 -0.280157 0.649259 ] }
+	{ time 0.733333 trans { x -20.5213 y -0.00127019 z 24.0571 } rot [ 0.647371 0.280972 -0.279366 0.651092 ] }
+	{ time 0.8 trans { x -22.2233 y -0.0175173 z 22.4203 } rot [ 0.649453 0.275295 -0.273393 0.653973 ] }
+	{ time 0.866667 trans { x -23.9077 y -0.00105639 z 20.7654 } rot [ 0.664331 0.263549 -0.271648 0.644525 ] }
+	{ time 0.933333 trans { x -25.5615 y 0.0704058 z 19.0812 } rot [ 0.664335 0.263543 -0.271642 0.644527 ] }
+	{ time 1 trans { x -27.1818 y 0.129261 z 17.3643 } rot [ 0.665556 0.256643 -0.262929 0.649645 ] }
+	{ time 1.06667 trans { x -28.7621 y 0.240634 z 15.6137 } rot [ 0.680511 0.243106 -0.257974 0.641291 ] }
+	{ time 1.13312 trans { x -30.2839 y 0.486238 z 13.8272 } rot [ 0.70881 0.222987 -0.25554 0.618517 ] }
+	{ time 1.2 trans { x -31.7375 y 0.742011 z 11.985 } rot [ 0.699732 0.216264 -0.237088 0.638274 ] }
+	{ time 1.26646 trans { x -33.1031 y 0.692457 z 10.0654 } rot [ 0.660501 0.207598 -0.197584 0.693976 ] }
+	{ time 1.33333 trans { x -34.3082 y 0.60237 z 8.03731 } rot [ 0.676333 0.171548 -0.166529 0.696716 ] }
+	{ time 1.39979 trans { x -35.2376 y 0.39193 z 5.88149 } rot [ 0.660666 0.115844 -0.104224 0.734329 ] }
+	{ time 1.46667 trans { x -35.6263 y 0.184643 z 3.57245 } rot [ 0.684154 -0.0065199 0.00611644 0.729282 ] }
+	{ time 1.53313 trans { x -34.9818 y 0.12531 z 1.33279 } rot [ 0.685591 -0.192855 0.196168 0.674011 ] }
+	{ time 1.6 trans { x -33.3328 y -0.0422548 z -0.321959 } rot [ 0.598707 -0.341345 0.312643 0.653673 ] }
+	{ time 1.66646 trans { x -31.2715 y -0.172141 z -1.45948 } rot [ 0.586095 -0.387907 0.376812 0.603352 ] }
+	{ time 1.73333 trans { x -29.0915 y -0.241551 z -2.36388 } rot [ 0.574776 -0.405344 0.393568 0.591974 ] }
+	{ time 1.79979 trans { x -26.8723 y -0.242726 z -3.16926 } rot [ 0.581274 -0.406694 0.414994 0.569649 ] }
+	{ time 1.86667 trans { x -24.6311 y -0.18832 z -3.9112 } rot [ 0.582624 -0.408461 0.425743 0.558973 ] }
+	{ time 1.93313 trans { x -22.3812 y -0.0230407 z -4.60944 } rot [ 0.588449 -0.405322 0.435824 0.547266 ] }
+	{ time 2 trans { x -20.1293 y 0.184007 z -5.28975 } rot [ 0.59322 -0.401722 0.440518 0.540975 ] }
+	{ time 2.06646 trans { x -17.884 y 0.400949 z -5.9878 } rot [ 0.599097 -0.394515 0.432999 0.545851 ] }
+	{ time 2.13333 trans { x -15.6834 y 0.435443 z -6.82478 } rot [ 0.569084 -0.399967 0.369367 0.616229 ] }
+	{ time 2.2 trans { x -13.6342 y 0.235855 z -7.97341 } rot [ 0.6189 -0.330683 0.322025 0.63554 ] }
+	{ time 2.26646 trans { x -11.8545 y 0.52567 z -9.47612 } rot [ 0.746809 -0.225188 0.309091 0.544085 ] }
+	{ time 2.33313 trans { x -10.42 y 1.54601 z -11.001 } rot [ 0.747296 -0.215188 0.287669 0.559008 ] }
+	{ time 2.4 trans { x -8.84352 y 1.47112 z -12.7377 } rot [ 0.615797 -0.275752 0.243743 0.696666 ] }
+	{ time 2.46667 trans { x -7.16065 y 1.17492 z -14.3653 } rot [ 0.594447 -0.321533 0.280407 0.681631 ] }
+	{ time 2.53312 trans { x -5.21417 y 0.858375 z -15.65 } rot [ 0.55771 -0.404915 0.35871 0.629548 ] }
+	{ time 2.59979 trans { x -2.96004 y 0.589542 z -16.2654 } rot [ 0.506454 -0.488018 0.447415 0.552415 ] }
+	{ time 2.66667 trans { x -0.608484 y 0.416402 z -16.3254 } rot [ 0.474144 -0.525811 0.494593 0.504072 ] }
+	{ time 2.73333 trans { x 1.74075 y 0.282075 z -16.1301 } rot [ -0.460015 0.539732 -0.509656 -0.487162 ] }
+	{ time 2.79979 trans { x 4.08582 y 0.139213 z -15.8919 } rot [ -0.462379 0.537386 -0.509436 -0.487747 ] }
+	{ time 2.86646 trans { x 6.43459 y 0.0372405 z -15.6707 } rot [ -0.469534 0.529973 -0.514788 -0.483384 ] }
+	{ time 2.93333 trans { x 8.78503 y -0.0344637 z -15.4543 } rot [ -0.471849 0.527475 -0.517596 -0.480856 ] }
+	{ time 3 trans { x 11.1358 y -0.0611628 z -15.2318 } rot [ 0.476237 -0.522506 0.524527 0.474402 ] }
+	{ time 3.06646 trans { x 13.4852 y -0.024734 z -14.9958 } rot [ 0.480777 -0.516923 0.533565 0.465781 ] }
+	{ time 3.13333 trans { x 15.8304 y 0.0851415 z -14.7416 } rot [ 0.482711 -0.513983 0.54038 0.459131 ] }
+	{ time 3.2 trans { x 18.1661 y 0.291808 z -14.4739 } rot [ 0.492 -0.502877 0.55052 0.449421 ] }
+	{ time 3.26646 trans { x 20.5113 y 0.338897 z -14.2241 } rot [ -0.469195 0.530146 -0.517224 -0.480917 ] }
+	{ time 3.33313 trans { x 22.8646 y 0.295495 z -14.0343 } rot [ -0.478275 0.521457 -0.511095 -0.487972 ] }
+	{ time 3.4 trans { x 25.2236 y 0.233328 z -13.9544 } rot [ 0.491206 -0.508753 0.495422 0.504424 ] }
+	{ time 3.46667 trans { x 27.5811 y 0.172767 z -14.0593 } rot [ 0.518725 -0.479222 0.467588 0.531631 ] }
+	{ time 3.53312 trans { x 29.8973 y 0.128671 z -14.4993 } rot [ 0.565904 -0.422675 0.419491 0.570198 ] }
+	{ time 3.59979 trans { x 32.0043 y 0.118587 z -15.5389 } rot [ 0.631194 -0.31846 0.318269 0.631572 ] }
+	{ time 3.66667 trans { x 33.662 y 0.124993 z -17.2098 } rot [ 0.671866 -0.225394 0.226648 0.66815 ] }
+	{ time 3.73333 trans { x 35.0022 y 0.125892 z -19.1532 } rot [ 0.675403 -0.202201 0.200784 0.68017 ] }
+	{ time 3.79979 trans { x 36.3465 y 0.106203 z -21.0938 } rot [ 0.664268 -0.230415 0.227141 0.673843 ] }
+	{ time 3.86646 trans { x 38.0099 y 0.062389 z -22.7599 } rot [ 0.62594 -0.319872 0.313647 0.638362 ] }
+	{ time 3.93333 trans { x 40.0878 y 0.0399128 z -23.864 } rot [ 0.578324 -0.405816 0.403807 0.581201 ] }
+	{ time 4 trans { x 42.3757 y 0.0279879 z -24.4314 } rot [ 0.533129 -0.464123 0.461764 0.535852 ] }
+	{ time 4.06646 trans { x 44.7308 y 0.0159886 z -24.5557 } rot [ -0.489896 0.509991 -0.507428 -0.49237 ] }
+	{ time 4.13312 trans { x 47.0708 y 0.00431806 z -24.2623 } rot [ -0.44177 0.552593 -0.549938 -0.443902 ] }
+	{ time 4.19979 trans { x 49.3074 y 0.00154926 z -23.5187 } rot [ 0.381062 -0.595584 0.595787 0.380932 ] }
+	{ time 4.26667 trans { x 51.2909 y 0.00277405 z -22.2516 } rot [ 0.294256 -0.642802 0.643232 0.294059 ] }
+	{ time 4.33333 trans { x 52.8256 y 0.00226253 z -20.4679 } rot [ -0.197287 0.679119 -0.678918 -0.197346 ] }
+	{ time 4.4 trans { x 53.8087 y 0.00171692 z -18.3283 } rot [ -0.106035 0.699167 -0.699053 -0.106052 ] }
+	{ time 4.46667 trans { x 54.2372 y 0.000430282 z -16.0113 } rot [ -0.0250305 0.70676 -0.706567 -0.0250373 ] }
+	{ time 4.53312 trans { x 54.163 y -5.96873e-007 z -13.6549 } rot [ 0.0456461 0.705634 -0.70563 0.0456464 ] }
+	{ time 4.59979 trans { x 53.6523 y -4.96224e-007 z -11.3523 } rot [ -0.106615 -0.699023 0.699023 -0.106615 ] }
+	{ time 4.66646 trans { x 52.7861 y -4.00288e-007 z -9.15753 } rot [ -0.155058 -0.689896 0.689897 -0.155058 ] }
+	{ time 4.73313 trans { x 51.6792 y -3.09174e-007 z -7.07309 } rot [ -0.189854 -0.681142 0.681143 -0.189854 ] }
+	{ time 4.8 trans { x 50.39 y -3.32332e-006 z -5.09555 } rot [ 0.218024 0.672656 -0.672654 0.218025 ] }
+	{ time 4.86667 trans { x 48.9608 y -1.40585e-007 z -3.2162 } rot [ 0.238622 0.665628 -0.665627 0.238622 ] }
+	{ time 4.93333 trans { x 47.416 y -6.25237e-008 z -1.43037 } rot [ 0.254508 0.659717 -0.659716 0.254509 ] }
+	{ time 5 trans { x 45.7739 y 1.16426e-008 z 0.266353 } rot [ -0.271399 -0.652949 0.652949 -0.271399 ] }
+	{ time 5.06646 trans { x 44.0474 y 8.20426e-008 z 1.87691 } rot [ -0.289317 -0.645209 0.645211 -0.289316 ] }
+	{ time 5.13312 trans { x 42.2407 y 1.48488e-007 z 3.397 } rot [ -0.306855 -0.637055 0.637057 -0.306854 ] }
+	{ time 5.19979 trans { x 40.353 y 2.10477e-007 z 4.81516 } rot [ -0.325156 -0.627912 0.627913 -0.325155 ] }
+	{ time 5.26667 trans { x 38.379 y 2.67091e-007 z 6.11033 } rot [ -0.344498 -0.617512 0.617512 -0.344498 ] }
+	{ time 5.33333 trans { x 36.3251 y 3.18004e-007 z 7.27509 } rot [ 0.364976 0.605634 -0.605633 0.364977 ] }
+	{ time 5.4 trans { x 34.222 y 3.64948e-007 z 8.34903 } rot [ -0.371998 -0.601346 0.601348 -0.371996 ] }
+	{ time 5.46667 trans { x 32.1136 y 4.11439e-007 z 9.41263 } rot [ 0.366216 0.604885 -0.604884 0.366217 ] }
+	{ time 5.53312 trans { x 30.0438 y 4.61111e-007 z 10.549 } rot [ -0.353364 -0.612481 0.612483 -0.353363 ] }
+	{ time 5.59979 trans { x 28.0461 y 5.16127e-007 z 11.8076 } rot [ -0.330626 -0.625049 0.625049 -0.330626 ] }
+	{ time 5.66646 trans { x 26.1421 y -2.52342e-006 z 13.2039 } rot [ -0.309 -0.636017 0.636019 -0.309 ] }
+	{ time 5.73313 trans { x 24.3256 y 6.43108e-007 z 14.7126 } rot [ 0.293985 0.643097 -0.643096 0.293985 ] }
+	{ time 5.8 trans { x 22.585 y 7.12857e-007 z 16.3083 } rot [ -0.279088 -0.649699 0.6497 -0.279088 ] }
+	{ time 5.86667 trans { x 20.91 y 7.85604e-007 z 17.9725 } rot [ 0.263604 0.656136 -0.656133 0.263605 ] }
+	{ time 5.93333 trans { x 19.2973 y 8.61006e-007 z 19.6975 } rot [ -0.256144 -0.659083 0.659083 -0.256144 ] }
+	{ time 6 trans { x 17.7471 y 9.38865e-007 z 21.4787 } rot [ 0.24146 0.664604 -0.664602 0.241461 ] }
+	{ time 6.06646 trans { x 16.2536 y 1.01882e-006 z 23.3079 } rot [ 0.234152 0.667213 -0.667212 0.234152 ] }
+	{ time 6.13312 trans { x 14.8205 y 1.10086e-006 z 25.1846 } rot [ 0.219358 0.672222 -0.672221 0.219358 ] }
+	{ time 6.19979 trans { x 13.4473 y 1.18483e-006 z 27.1057 } rot [ -0.211802 -0.67464 0.674641 -0.211802 ] }
+	{ time 6.26667 trans { x 12.1306 y 1.27052e-006 z 29.066 } rot [ -0.199872 -0.678271 0.678271 -0.199872 ] }
+	{ time 6.33333 trans { x 10.8847 y 1.3582e-006 z 31.072 } rot [ 0.188029 0.68165 -0.681648 0.188029 ] }
+	{ time 6.4 trans { x 9.70056 y 1.4475e-006 z 33.115 } rot [ -0.179621 -0.683912 0.683913 -0.179621 ] }
+	{ time 6.46667 trans { x 8.58279 y 1.53843e-006 z 35.1951 } rot [ -0.165105 -0.687561 0.687562 -0.165105 ] }
+	{ time 6.53312 trans { x 7.54629 y 1.63117e-006 z 37.3168 } rot [ 0.152437 0.690481 -0.69048 0.152438 ] }
+	{ time 6.59979 trans { x 6.58374 y 1.72542e-006 z 39.473 } rot [ -0.142601 -0.692578 0.692579 -0.142601 ] }
+	{ time 6.66646 trans { x 5.69994 y 1.82114e-006 z 41.6628 } rot [ -0.132316 -0.694617 0.694617 -0.132316 ] }
+	] }
+}
+NodeAnim RatPath2 { length 6.66646 timeScale 11 keys { k [
+	{ time 0 trans { x -10.3004 y 1.67188e-006 z 38.2481 } rot [ 0.693641 -0.137342 0.137342 0.693641 ] }
+	{ time 0.0666667 trans { x -9.49291 y 1.58624e-006 z 36.2889 } rot [ 0.693641 -0.137341 0.137341 0.693641 ] }
+	{ time 0.133333 trans { x -8.62751 y 1.50174e-006 z 34.3559 } rot [ 0.688836 -0.159704 0.159704 0.688836 ] }
+	{ time 0.2 trans { x -7.68935 y 1.41869e-006 z 32.4559 } rot [ 0.685991 -0.171514 0.171514 0.68599 ] }
+	{ time 0.266667 trans { x -6.63249 y 1.33842e-006 z 30.6196 } rot [ 0.680486 -0.192195 0.192195 0.680486 ] }
+	{ time 0.333333 trans { x -5.46717 y 1.26108e-006 z 28.8502 } rot [ 0.673932 -0.214046 0.214046 0.673932 ] }
+	{ time 0.4 trans { x -4.1858 y 1.18733e-006 z 27.163 } rot [ 0.665862 -0.237967 0.237967 0.665862 ] }
+	{ time 0.466667 trans { x -2.78492 y 1.11787e-006 z 25.5738 } rot [ 0.656432 -0.262864 0.262864 0.656432 ] }
+	{ time 0.533333 trans { x -1.26067 y 2.27576e-005 z 24.1024 } rot [ 0.649072 -0.280555 0.28056 0.649062 ] }
+	{ time 0.6 trans { x 0.35888 y 0.000134319 z 22.7369 } rot [ 0.634739 -0.311648 0.311666 0.634702 ] }
+	{ time 0.666667 trans { x 2.0679 y 0.000255187 z 21.4844 } rot [ 0.626745 -0.327423 0.327441 0.626711 ] }
+	{ time 0.733333 trans { x 3.81728 y 0.000366756 z 20.2887 } rot [ 0.624781 -0.331154 0.331171 0.624749 ] }
+	{ time 0.8 trans { x 5.54378 y 0.000428714 z 19.0608 } rot [ 0.633018 -0.315091 0.315084 0.633031 ] }
+	{ time 0.866667 trans { x 7.12933 y 0.000313931 z 17.6602 } rot [ 0.658954 -0.256432 0.256416 0.658995 ] }
+	{ time 0.933333 trans { x 8.36655 y 0.000208436 z 15.9458 } rot [ 0.684149 -0.178667 0.17866 0.684177 ] }
+	{ time 1 trans { x 9.20926 y 0.000130837 z 14.0052 } rot [ 0.69831 -0.111133 0.11113 0.698328 ] }
+	{ time 1.06667 trans { x 9.70007 y 0.000140049 z 11.9463 } rot [ 0.704881 -0.0563884 0.0563927 0.704828 ] }
+	{ time 1.13312 trans { x 9.93517 y 0.000301187 z 9.84175 } rot [ 0.706874 -0.0192214 0.019223 0.706817 ] }
+	{ time 1.2 trans { x 9.9796 y 0.000508834 z 7.72383 } rot [ 0.707143 0.00563776 -0.00563871 0.707026 ] }
+	{ time 1.26646 trans { x 9.90186 y -0.00627844 z 5.60644 } rot [ 0.704343 0.0192695 -0.0191338 0.70934 ] }
+	{ time 1.33333 trans { x 9.77838 y -0.0103248 z 3.49102 } rot [ 0.708614 0.0184677 -0.0185594 0.705111 ] }
+	{ time 1.39979 trans { x 9.70681 y -0.0656424 z 1.37469 } rot [ 0.697039 0.00206846 -0.00201082 0.717028 ] }
+	{ time 1.46667 trans { x 9.81559 y -0.122055 z -0.738987 } rot [ 0.69255 -0.0500501 0.0482753 0.71801 ] }
+	{ time 1.53313 trans { x 10.5089 y -0.186271 z -2.71804 } rot [ 0.67112 -0.213656 0.211606 0.677622 ] }
+	{ time 1.6 trans { x 12.0872 y -0.158214 z -4.11078 } rot [ 0.633304 -0.33006 0.342359 0.610554 ] }
+	{ time 1.66646 trans { x 13.8234 y -0.0108957 z -5.3099 } rot [ 0.686308 -0.265719 0.300619 0.606632 ] }
+	{ time 1.73333 trans { x 14.5377 y 0.154046 z -7.19474 } rot [ 0.699278 0.0665214 -0.0656357 0.708715 ] }
+	{ time 1.79979 trans { x 13.355 y 0.0365524 z -8.8936 } rot [ 0.613035 0.318902 -0.296572 0.659192 ] }
+	{ time 1.86667 trans { x 11.5804 y -0.125174 z -10.0367 } rot [ 0.587837 0.366945 -0.338996 0.636302 ] }
+	{ time 1.93313 trans { x 9.77313 y -0.155179 z -11.1344 } rot [ 0.638613 0.32166 -0.334689 0.613752 ] }
+	{ time 2 trans { x 8.31697 y -0.0813103 z -12.6437 } rot [ 0.691331 0.171242 -0.17409 0.680022 ] }
+	{ time 2.06646 trans { x 8.181 y -0.048252 z -14.6758 } rot [ 0.685633 -0.178263 0.179029 0.682699 ] }
+	{ time 2.13333 trans { x 9.91999 y -0.0348761 z -15.8284 } rot [ 0.59385 -0.384921 0.386487 0.591444 ] }
+	{ time 2.2 trans { x 11.8724 y 0.0527836 z -16.6455 } rot [ 0.604528 -0.38203 0.405761 0.569172 ] }
+	{ time 2.26646 trans { x 13.8275 y 0.173089 z -17.454 } rot [ 0.605456 -0.380069 0.402367 0.571902 ] }
+	{ time 2.33313 trans { x 15.7655 y 0.319074 z -18.2982 } rot [ 0.613017 -0.370458 0.394547 0.57559 ] }
+	{ time 2.4 trans { x 17.6787 y 0.376925 z -19.2052 } rot [ 0.600955 -0.372325 0.371946 0.601568 ] }
+	{ time 2.46667 trans { x 19.5514 y 0.358464 z -20.196 } rot [ 0.606178 -0.360311 0.356298 0.613006 ] }
+	{ time 2.53312 trans { x 21.3554 y 0.336614 z -21.3064 } rot [ 0.621327 -0.331833 0.327357 0.629823 ] }
+	{ time 2.59979 trans { x 23.0313 y 0.302604 z -22.5998 } rot [ 0.638071 -0.2951 0.289956 0.64939 ] }
+	{ time 2.66667 trans { x 24.4808 y 0.254247 z -24.1399 } rot [ 0.659336 -0.2332 0.226841 0.677818 ] }
+	{ time 2.73333 trans { x 25.5971 y 0.189122 z -25.9343 } rot [ 0.675292 -0.163772 0.15762 0.701652 ] }
+	{ time 2.79979 trans { x 26.2889 y -0.223805 z -27.8796 } rot [ 0.60163 -0.0934676 0.0711729 0.790088 ] }
+	{ time 2.86646 trans { x 26.5683 y -0.777715 z -29.9028 } rot [ 0.606779 -0.0166946 0.0127486 0.794593 ] }
+	{ time 2.93333 trans { x 26.4972 y -1.07277 z -31.9792 } rot [ 0.703833 0.0400137 -0.0397714 0.708121 ] }
+	{ time 3 trans { x 26.0529 y -1.08491 z -34.0478 } rot [ 0.69746 0.104739 -0.104176 0.701232 ] }
+	{ time 3.06646 trans { x 25.2641 y -1.10145 z -36.0121 } rot [ 0.686508 0.156138 -0.154649 0.693117 ] }
+	{ time 3.13333 trans { x 24.2261 y -1.0988 z -37.8577 } rot [ 0.68443 0.198644 -0.202422 0.671656 ] }
+	{ time 3.2 trans { x 23.0151 y -1.05854 z -39.5953 } rot [ 0.676186 0.223838 -0.228 0.663841 ] }
+	{ time 3.26646 trans { x 21.6909 y -1.02027 z -41.2488 } rot [ 0.669521 0.241777 -0.246077 0.657823 ] }
+	{ time 3.33313 trans { x 20.306 y -0.983191 z -42.8522 } rot [ 0.66742 0.247063 -0.251367 0.655991 ] }
+	{ time 3.4 trans { x 18.9155 y -0.808033 z -44.4326 } rot [ 0.718507 0.22577 -0.270514 0.599664 ] }
+	{ time 3.46667 trans { x 17.5572 y -0.407363 z -46.0088 } rot [ 0.726004 0.216492 -0.263123 0.597341 ] }
+	{ time 3.53312 trans { x 16.2413 y 0.00156061 z -47.6185 } rot [ 0.729095 0.209786 -0.255173 0.599414 ] }
+	{ time 3.59979 trans { x 14.9951 y 0.457263 z -49.27 } rot [ 0.751345 0.184665 -0.235982 0.587956 ] }
+	{ time 3.66667 trans { x 13.8516 y 0.963694 z -50.9801 } rot [ 0.75532 0.172187 -0.219286 0.59309 ] }
+	{ time 3.73333 trans { x 12.8443 y 1.57084 z -52.7407 } rot [ 0.788763 0.132218 -0.18234 0.571947 ] }
+	{ time 3.79979 trans { x 12.0039 y 2.18627 z -54.5828 } rot [ 0.757124 0.117778 -0.142309 0.62661 ] }
+	{ time 3.86646 trans { x 11.3745 y 2.53325 z -56.5738 } rot [ 0.743226 0.0783867 -0.0884703 0.658516 ] }
+	{ time 3.93333 trans { x 11.0368 y 2.77275 z -58.6498 } rot [ 0.742645 0.0278743 -0.0309711 0.668387 ] }
+	{ time 4 trans { x 11.0248 y 2.97628 z -60.7569 } rot [ 0.736307 -0.023679 0.0258013 0.675741 ] }
+	{ time 4.06646 trans { x 11.32 y 3.12685 z -62.8482 } rot [ 0.723404 -0.0707344 0.0749528 0.68269 ] }
+	{ time 4.13312 trans { x 11.8559 y 2.86554 z -64.8343 } rot [ 0.511643 -0.134647 0.0815616 0.844653 ] }
+	{ time 4.19979 trans { x 12.5274 y 1.94037 z -66.6108 } rot [ 0.458351 -0.18657 0.0990552 0.863304 ] }
+	{ time 4.26667 trans { x 13.2549 y 0.757179 z -68.2107 } rot [ 0.489409 -0.198367 0.115393 0.841317 ] }
+	{ time 4.33333 trans { x 14.1453 y -0.184528 z -69.8873 } rot [ 0.518463 -0.207036 0.131023 0.819247 ] }
+	{ time 4.4 trans { x 15.1947 y -0.639676 z -71.6436 } rot [ 0.67052 -0.192379 0.186454 0.691829 ] }
+	{ time 4.46667 trans { x 16.3574 y -0.714567 z -73.4132 } rot [ 0.66429 -0.208999 0.20157 0.688773 ] }
+	{ time 4.53312 trans { x 17.5805 y -0.795313 z -75.1413 } rot [ 0.660526 -0.222661 0.21501 0.684031 ] }
+	{ time 4.59979 trans { x 18.8502 y -0.86746 z -76.8359 } rot [ 0.656269 -0.234577 0.226217 0.680522 ] }
+	{ time 4.66646 trans { x 20.1541 y -0.993164 z -78.5013 } rot [ 0.642467 -0.244215 0.227448 0.689828 ] }
+	{ time 4.73313 trans { x 21.5051 y -1.147 z -80.1265 } rot [ 0.641054 -0.248678 0.23166 0.688145 ] }
+	{ time 4.8 trans { x 22.8796 y -1.22787 z -81.7358 } rot [ 0.661377 -0.24916 0.248829 0.662257 ] }
+	{ time 4.86667 trans { x 24.2762 y -1.20349 z -83.3293 } rot [ 0.665921 -0.247438 0.250535 0.657689 ] }
+	{ time 4.93333 trans { x 25.7076 y -1.17709 z -84.8915 } rot [ 0.662764 -0.255593 0.258799 0.654553 ] }
+	{ time 5 trans { x 27.1494 y -1.15267 z -86.4442 } rot [ 0.65759 -0.264399 0.26612 0.653337 ] }
+	{ time 5.06646 trans { x 28.6231 y -1.13216 z -87.9667 } rot [ 0.659381 -0.263664 0.266841 0.651532 ] }
+	{ time 5.13312 trans { x 30.1091 y -1.1103 z -89.477 } rot [ 0.655155 -0.272087 0.274628 0.649092 ] }
+	{ time 5.19979 trans { x 31.62 y -1.0906 z -90.9626 } rot [ 0.655159 -0.272075 0.274616 0.649098 ] }
+	{ time 5.26667 trans { x 33.1469 y -1.07088 z -92.4316 } rot [ 0.65161 -0.280338 0.282965 0.645559 ] }
+	{ time 5.33333 trans { x 34.6953 y -1.04928 z -93.8782 } rot [ 0.652272 -0.280042 0.283245 0.644895 ] }
+	{ time 5.4 trans { x 36.2601 y -0.993643 z -95.3053 } rot [ 0.661083 -0.282744 0.297614 0.628053 ] }
+	{ time 5.46667 trans { x 37.8421 y -0.835755 z -96.7062 } rot [ 0.671197 -0.277871 0.302164 0.617235 ] }
+	{ time 5.53312 trans { x 39.4234 y -0.504225 z -98.074 } rot [ 0.702749 -0.267179 0.328382 0.571773 ] }
+	{ time 5.59979 trans { x 41.0152 y -0.0747626 z -99.4053 } rot [ 0.70216 -0.267524 0.328122 0.572484 ] }
+	{ time 5.66646 trans { x 42.6283 y 0.290592 z -100.729 } rot [ 0.687641 -0.281704 0.334098 0.579803 ] }
+	{ time 5.73313 trans { x 44.27 y 0.650263 z -102.02 } rot [ 0.688625 -0.281133 0.334571 0.578638 ] }
+	{ time 5.8 trans { x 45.9174 y 1.0194 z -103.3 } rot [ 0.684733 -0.289547 0.346631 0.57197 ] }
+	{ time 5.86667 trans { x 47.5939 y 1.41777 z -104.532 } rot [ 0.714088 -0.270768 0.361495 0.534868 ] }
+	{ time 5.93333 trans { x 49.2215 y 2.05855 z -105.727 } rot [ 0.700458 -0.2821 0.361162 0.54712 ] }
+	{ time 6 trans { x 50.9561 y 2.34008 z -106.91 } rot [ 0.664263 -0.308466 0.35131 0.583253 ] }
+	{ time 6.06646 trans { x 52.6957 y 2.58418 z -108.095 } rot [ 0.65298 -0.31513 0.345336 0.595864 ] }
+	{ time 6.13312 trans { x 54.381 y 1.97068 z -109.164 } rot [ 0.493384 -0.400255 0.273434 0.72222 ] }
+	{ time 6.19979 trans { x 56.0549 y 1.20019 z -110.211 } rot [ 0.493404 -0.400228 0.273425 0.722225 ] }
+	{ time 6.26667 trans { x 57.8207 y 0.935938 z -111.255 } rot [ 0.640163 -0.338156 0.373102 0.580204 ] }
+	{ time 6.33333 trans { x 59.5979 y 1.43651 z -112.261 } rot [ 0.714365 -0.283213 0.416359 0.48592 ] }
+	{ time 6.4 trans { x 61.2785 y 2.34332 z -113.177 } rot [ 0.723504 -0.276489 0.445374 0.449152 ] }
+	{ time 6.46667 trans { x 63.0077 y 3.09425 z -114.05 } rot [ 0.581644 -0.382877 0.35802 0.622027 ] }
+	{ time 6.53312 trans { x 64.8952 y 2.88141 z -114.986 } rot [ 0.566038 -0.402941 0.369733 0.616877 ] }
+	{ time 6.59979 trans { x 66.8083 y 2.55241 z -115.826 } rot [ 0.504931 -0.436217 0.329821 0.667815 ] }
+	{ time 6.66646 trans { x 68.6694 y 1.95278 z -116.643 } rot [ 0.501293 -0.438 0.327441 0.670554 ] }
+	] }
+}
+NodeAnim RatPath1 { length 6.66646 timeScale 10 keys { k [
+	{ time 0 trans { x 12.3304 y 1.61932e-006 z 37.0457 } rot [ 0.635943 0.309154 -0.309154 0.635943 ] }
+	{ time 0.0666667 trans { x 10.8263 y 1.56768e-006 z 35.8643 } rot [ 0.635941 0.309159 -0.309159 0.635941 ] }
+	{ time 0.133333 trans { x 9.32223 y 1.51604e-006 z 34.683 } rot [ 0.635941 0.30916 -0.30916 0.635941 ] }
+	{ time 0.2 trans { x 7.85222 y 1.46257e-006 z 33.4598 } rot [ 0.64149 0.297474 -0.297474 0.64149 ] }
+	{ time 0.266667 trans { x 6.39235 y 1.40856e-006 z 32.2242 } rot [ 0.64149 0.297474 -0.297474 0.64149 ] }
+	{ time 0.333333 trans { x 4.97016 y 1.35269e-006 z 30.9459 } rot [ 0.647412 0.284354 -0.284354 0.647412 ] }
+	{ time 0.4 trans { x 3.5618 y 1.29612e-006 z 29.6519 } rot [ 0.647414 0.28435 -0.28435 0.647414 ] }
+	{ time 0.466667 trans { x 2.20577 y 1.23718e-006 z 28.3035 } rot [ 0.653696 0.269595 -0.269595 0.653696 ] }
+	{ time 0.533333 trans { x 0.869814 y 1.17738e-006 z 26.9353 } rot [ 0.660294 0.253006 -0.253006 0.660294 ] }
+	{ time 0.6 trans { x -0.40822 y 1.11519e-006 z 25.5125 } rot [ 0.660295 0.253004 -0.253004 0.660295 ] }
+	{ time 0.666667 trans { x -1.63449 y 1.96546e-005 z 24.0457 } rot [ 0.667143 0.23437 -0.234376 0.667127 ] }
+	{ time 0.733333 trans { x -2.80875 y 0.000156014 z 22.5369 } rot [ 0.67412 0.213525 -0.213542 0.674069 ] }
+	{ time 0.8 trans { x -3.90993 y 0.000301674 z 20.9731 } rot [ 0.67527 0.209871 -0.209889 0.675212 ] }
+	{ time 0.866667 trans { x -4.91564 y 0.000608561 z 19.3468 } rot [ 0.683281 0.182225 -0.182258 0.683157 ] }
+	{ time 0.933333 trans { x -5.8108 y 0.000946451 z 17.6572 } rot [ 0.689237 0.158207 -0.158234 0.689119 ] }
+	{ time 1 trans { x -6.5738 y 0.00201608 z 15.904 } rot [ 0.695417 0.129572 -0.129682 0.69483 ] }
+	{ time 1.06667 trans { x -7.17803 y 0.0036345 z 14.0902 } rot [ 0.700794 0.0963972 -0.0964783 0.700205 ] }
+	{ time 1.13312 trans { x -7.59459 y 0.0114913 z 12.2246 } rot [ 0.707529 0.0582147 -0.0586873 0.701833 ] }
+	{ time 1.2 trans { x -7.79833 y 0.0274065 z 10.324 } rot [ 0.709929 0.0163885 -0.0165291 0.703889 ] }
+	{ time 1.26646 trans { x -7.77498 y 0.0440659 z 8.41283 } rot [ 0.709781 -0.0248293 0.0250496 0.703539 ] }
+	{ time 1.33333 trans { x -7.52319 y 0.100314 z 6.51944 } rot [ 0.713042 -0.0646396 0.0663196 0.694978 ] }
+	{ time 1.39979 trans { x -7.09723 y 0.139065 z 4.65629 } rot [ 0.713288 -0.09584 0.0994897 0.687122 ] }
+	{ time 1.46667 trans { x -6.53916 y 0.215137 z 2.82871 } rot [ 0.705555 -0.109806 0.112109 0.691062 ] }
+	{ time 1.53313 trans { x -5.92451 y 0.228451 z 1.01779 } rot [ 0.691024 -0.120727 0.118717 0.702721 ] }
+	{ time 1.6 trans { x -5.26397 y 0.183986 z -0.776393 } rot [ 0.692326 -0.129406 0.128319 0.698193 ] }
+	{ time 1.66646 trans { x -4.54635 y 0.345207 z -2.53962 } rot [ 0.737408 -0.13286 0.151995 0.644574 ] }
+	{ time 1.73333 trans { x -3.74422 y 0.506372 z -4.26655 } rot [ 0.702608 -0.160004 0.167061 0.672928 ] }
+	{ time 1.79979 trans { x -2.82164 y 0.650614 z -5.93282 } rot [ 0.728702 -0.176255 0.204023 0.629526 ] }
+	{ time 1.86667 trans { x -1.90028 y 0.952453 z -7.57108 } rot [ 0.719805 -0.108418 0.115466 0.675865 ] }
+	{ time 1.93313 trans { x -1.85908 y 1.13634 z -9.46042 } rot [ 0.739513 0.0261732 -0.028802 0.672016 ] }
+	{ time 2 trans { x -2.04121 y 1.17347 z -11.3625 } rot [ 0.691741 0.0393416 -0.0377932 0.720082 ] }
+	{ time 2.06646 trans { x -2.26667 y 1.01041 z -13.2542 } rot [ 0.66459 0.0471268 -0.0420667 0.744533 ] }
+	{ time 2.13333 trans { x -2.51788 y 0.745064 z -15.1313 } rot [ 0.64921 0.0528014 -0.0452576 0.757424 ] }
+	{ time 2.2 trans { x -2.78857 y 0.465825 z -17.0038 } rot [ 0.659881 0.055532 -0.0490089 0.747711 ] }
+	{ time 2.26646 trans { x -3.08087 y 0.24648 z -18.88 } rot [ 0.679566 0.0594043 -0.055368 0.729106 ] }
+	{ time 2.33313 trans { x -3.40349 y 0.126946 z -20.7607 } rot [ 0.688291 0.0646103 -0.0617728 0.719907 ] }
+	{ time 2.4 trans { x -3.76479 y 0.0713125 z -22.6371 } rot [ 0.703728 0.0711187 -0.071161 0.70331 ] }
+	{ time 2.46667 trans { x -4.16998 y 0.0661933 z -24.5062 } rot [ 0.699533 0.080017 -0.079322 0.705662 ] }
+	{ time 2.53312 trans { x -4.62919 y 0.00491328 z -26.3603 } rot [ 0.652602 0.098339 -0.0859861 0.746356 ] }
+	{ time 2.59979 trans { x -5.14414 y -0.301908 z -28.1711 } rot [ 0.675738 0.106986 -0.10007 0.722439 ] }
+	{ time 2.66667 trans { x -5.7425 y -0.322592 z -29.9867 } rot [ 0.697235 0.121239 -0.121454 0.695998 ] }
+	{ time 2.73333 trans { x -6.43578 y -0.186021 z -31.7601 } rot [ 0.74402 0.129399 -0.150927 0.637895 ] }
+	{ time 2.79979 trans { x -7.21704 y 0.10709 z -33.4808 } rot [ 0.736037 0.146809 -0.169153 0.638814 ] }
+	{ time 2.86646 trans { x -8.08006 y 0.237057 z -35.1753 } rot [ 0.661252 0.176059 -0.16384 0.710567 ] }
+	{ time 2.93333 trans { x -8.99322 y 0.154321 z -36.8535 } rot [ 0.671301 0.180744 -0.17397 0.697439 ] }
+	{ time 3 trans { x -9.92328 y 0.12813 z -38.524 } rot [ 0.689372 0.175704 -0.178174 0.679815 ] }
+	{ time 3.06646 trans { x -10.8355 y 0.154135 z -40.2048 } rot [ 0.690693 0.169623 -0.171877 0.681637 ] }
+	{ time 3.13333 trans { x -11.695 y 0.1271 z -41.912 } rot [ 0.665095 0.160674 -0.149725 0.713733 ] }
+	{ time 3.2 trans { x -12.4676 y -0.011657 z -43.6557 } rot [ 0.669328 0.139436 -0.129966 0.718099 ] }
+	{ time 3.26646 trans { x -13.1224 y 0.0119818 z -45.4485 } rot [ 0.719336 0.109522 -0.116543 0.676001 ] }
+	{ time 3.33313 trans { x -13.6508 y 0.143648 z -47.2814 } rot [ 0.726684 0.0812039 -0.0872205 0.676556 ] }
+	{ time 3.4 trans { x -14.0514 y 0.285007 z -49.1458 } rot [ 0.731308 0.0621931 -0.067295 0.675864 ] }
+	{ time 3.46667 trans { x -14.3329 y 0.52085 z -51.022 } rot [ 0.767315 0.0380191 -0.0456887 0.638509 ] }
+	{ time 3.53312 trans { x -14.5007 y 0.961406 z -52.8752 } rot [ 0.784727 0.0188991 -0.0239556 0.61909 ] }
+	{ time 3.59979 trans { x -14.5761 y 1.40805 z -54.7332 } rot [ 0.785624 0.00424717 -0.00539339 0.618667 ] }
+	{ time 3.66667 trans { x -14.5708 y 1.82758 z -56.5988 } rot [ 0.772309 -0.00755151 0.00918238 0.635136 ] }
+	{ time 3.73333 trans { x -14.4913 y 2.18087 z -58.4767 } rot [ 0.770596 -0.0168555 0.0203977 0.636775 ] }
+	{ time 3.79979 trans { x -14.3503 y 2.56685 z -60.3435 } rot [ 0.789109 -0.0274512 0.0353595 0.61262 ] }
+	{ time 3.86646 trans { x -14.1588 y 2.98497 z -62.1994 } rot [ 0.767909 -0.0387506 0.0466643 0.63768 ] }
+	{ time 3.93333 trans { x -13.914 y 3.3323 z -64.0641 } rot [ 0.767184 -0.0447003 0.0537847 0.637603 ] }
+	{ time 4 trans { x -13.6238 y 3.68609 z -65.921 } rot [ 0.767651 -0.0555484 0.0671614 0.634914 ] }
+	{ time 4.06646 trans { x -13.2845 y 4.06502 z -67.7645 } rot [ 0.775171 -0.0603125 0.0748767 0.624392 ] }
+	{ time 4.13312 trans { x -12.9056 y 4.53605 z -69.5785 } rot [ 0.774746 -0.0689042 0.0857382 0.622631 ] }
+	{ time 4.19979 trans { x -12.4636 y 4.84768 z -71.4128 } rot [ 0.756089 -0.081175 0.0955486 0.642348 ] }
+	{ time 4.26667 trans { x -11.9717 y 5.15511 z -73.2352 } rot [ 0.754517 -0.0882062 0.103663 0.642011 ] }
+	{ time 4.33333 trans { x -11.4219 y 5.45782 z -75.0417 } rot [ 0.750831 -0.103553 0.121306 0.640948 ] }
+	{ time 4.4 trans { x -10.8084 y 5.75691 z -76.8281 } rot [ 0.748752 -0.111981 0.130998 0.640055 ] }
+	{ time 4.46667 trans { x -10.1331 y 6.05221 z -78.5928 } rot [ 0.744733 -0.124528 0.145043 0.639396 ] }
+	{ time 4.53312 trans { x -9.37608 y 6.33193 z -80.3265 } rot [ 0.738537 -0.14159 0.163771 0.63851 ] }
+	{ time 4.59979 trans { x -8.54283 y 6.60565 z -82.0258 } rot [ 0.734769 -0.152915 0.17642 0.636873 ] }
+	{ time 4.66646 trans { x -7.61651 y 6.87096 z -83.6774 } rot [ 0.724792 -0.178624 0.204455 0.63322 ] }
+	{ time 4.73313 trans { x -6.58994 y 7.11975 z -85.2712 } rot [ 0.717427 -0.193573 0.219701 0.632107 ] }
+	{ time 4.8 trans { x -5.45317 y 7.3532 z -86.7906 } rot [ 0.703915 -0.22383 0.252003 0.625219 ] }
+	{ time 4.86667 trans { x -4.2157 y 7.5748 z -88.2314 } rot [ 0.697317 -0.23721 0.265985 0.621879 ] }
+	{ time 4.93333 trans { x -2.89407 y 7.80297 z -89.5941 } rot [ 0.696564 -0.254129 0.293332 0.603468 ] }
+	{ time 5 trans { x -1.52738 y 8.15702 z -90.8826 } rot [ 0.709453 -0.256153 0.315675 0.575683 ] }
+	{ time 5.06646 trans { x -0.117503 y 8.54529 z -92.1152 } rot [ 0.70413 -0.264042 0.323834 0.57412 ] }
+	{ time 5.13312 trans { x 1.31776 y 8.92611 z -93.3205 } rot [ 0.700391 -0.269356 0.329112 0.573223 ] }
+	{ time 5.19979 trans { x 2.76098 y 9.29633 z -94.5193 } rot [ 0.687351 -0.275236 0.32008 0.591051 ] }
+	{ time 5.26667 trans { x 4.20215 y 9.54122 z -95.7522 } rot [ 0.683656 -0.271384 0.307292 0.603769 ] }
+	{ time 5.33333 trans { x 5.58666 y 9.80078 z -97.0455 } rot [ 0.699341 -0.249526 0.288723 0.604398 ] }
+	{ time 5.4 trans { x 6.8519 y 10.1006 z -98.4469 } rot [ 0.728133 -0.211008 0.256189 0.599721 ] }
+	{ time 5.46667 trans { x 7.87013 y 10.6349 z -99.9709 } rot [ 0.788959 -0.141501 0.197853 0.564248 ] }
+	{ time 5.53312 trans { x 8.52282 y 11.173 z -101.671 } rot [ 0.763318 -0.0734526 0.0881919 0.635746 ] }
+	{ time 5.59979 trans { x 8.66283 y 11.6884 z -103.495 } rot [ 0.820518 0.0225708 -0.0324766 0.570251 ] }
+	{ time 5.66646 trans { x 8.27137 y 12.3707 z -105.233 } rot [ 0.811845 0.0997823 -0.145549 0.556566 ] }
+	{ time 5.73313 trans { x 7.46343 y 13.0112 z -106.836 } rot [ 0.743596 0.177025 -0.216778 0.607234 ] }
+	{ time 5.8 trans { x 6.33226 y 13.3962 z -108.327 } rot [ 0.725101 0.223378 -0.274095 0.590933 ] }
+	{ time 5.86667 trans { x 5.00769 y 13.7806 z -109.65 } rot [ 0.706759 0.258696 -0.316716 0.577285 ] }
+	{ time 5.93333 trans { x 3.56809 y 14.1483 z -110.853 } rot [ 0.692355 0.279049 -0.336578 0.574014 ] }
+	{ time 6 trans { x 2.04599 y 14.4987 z -111.956 } rot [ 0.682055 0.295168 -0.354957 0.56717 ] }
+	{ time 6.06646 trans { x 0.44384 y 14.4731 z -112.985 } rot [ 0.602246 0.350537 -0.332076 0.635727 ] }
+	{ time 6.13312 trans { x -1.20482 y 14.3265 z -113.942 } rot [ 0.575659 0.374272 -0.333525 0.645987 ] }
+	{ time 6.19979 trans { x -2.87695 y 14.0737 z -114.831 } rot [ 0.541901 0.400499 -0.327733 0.662219 ] }
+	{ time 6.26667 trans { x -4.44771 y 13.3515 z -115.609 } rot [ 0.379509 0.475348 -0.238267 0.75713 ] }
+	{ time 6.33333 trans { x -5.62998 y 11.9871 z -116.173 } rot [ 0.20322 0.528101 -0.131861 0.813894 ] }
+	{ time 6.4 trans { x -6.451 y 10.299 z -116.539 } rot [ 0.20321 0.528128 -0.131864 0.813879 ] }
+	{ time 6.46667 trans { x -7.45685 y 8.73909 z -116.988 } rot [ 0.263742 0.516711 -0.17113 0.796344 ] }
+	{ time 6.53312 trans { x -8.42063 y 7.13984 z -117.396 } rot [ 0.229008 0.534053 -0.153006 0.799332 ] }
+	{ time 6.59979 trans { x -9.33723 y 5.50503 z -117.776 } rot [ 0.216558 0.536297 -0.14466 0.802846 ] }
+	{ time 6.66646 trans { x -10.2257 y 3.85188 z -118.144 } rot [ 0.216547 0.536326 -0.144663 0.802829 ] }
+	] }
+}
+Node RatGroup {
+	scale { w 0.1 }
+	nodes [
+		//RAT
+		{
+			rot [ -90 180 0 ]
+			entities [ { obj "RAT" anims [ { n run s 1 } ] } ]
+		}
+	]
+}
+Node Rat1Node {
+	nanims [ RatPath1 ]
+	naCommon { auto true start NaN }
+	nodes [ RatGroup ]
+}
+Node Rats1 {
+	pos { y 0.2 }
+	nodes [ Rat1Node Rat1Node Rat1Node ]
+}
+Node Rat2Node {
+	nanims [ RatPath2 ]
+	naCommon { auto true start NaN }
+	nodes [ RatGroup ]
+}
+Node Rats2 {
+	pos { y 0.2 }
+	nodes [ Rat2Node Rat2Node Rat2Node ]
+}
+Node Rat3Node {
+	nanims [ RatPath3 ]
+	naCommon { auto true start NaN }
+	nodes [ RatGroup ]
+}
+Node Rats3 {
+	pos { y 0.2 }
+	nodes [ Rat3Node Rat3Node Rat3Node ]
+}
+Node Rat4Node {
+	nanims [ RatPath4 ]
+	naCommon { auto true start NaN }
+	nodes [ RatGroup ]
+}
+Node Rats4 {
+	pos { y 0.2 }
+	nodes [ Rat4Node Rat4Node Rat4Node ]
+}
+
+Node CloudGroup_HAL
+{
+	animators [ { t Animator::rotate s -0.01 } ]
+	pos { x -7.15407 y 329.794 z 0.977288 }
+	nodes [
+		//Cloud_HAL05
+		{
+			pos { x -1582.28 y 4.69044e-005 z 1073.05 }
+			rot [ 0 -0.469102 2.05051e-008 0.883144 ]
+			entities [ { name "Cloud_HAL05" obj "Cloud_HAL02" } ]
+		}
+		//Cloud_HAL04
+		{
+			pos { x -1705.66 y -3.77991e-005 z -864.742 }
+			rot [ 0 -0.851551 3.72225e-008 0.524271 ]
+			entities [ { name "Cloud_HAL04" obj "Cloud_HAL02" } ]
+		}
+		//Cloud_HAL03
+		{
+			pos { x -74.14 y -8.38184e-005 z -1917.54 }
+			rot [ 0 0.999775 -4.37016e-008 -0.0211937 ]
+			entities [ { name "Cloud_HAL03" obj "Cloud_HAL02" } ]
+		}
+		//Cloud_HAL02
+		{
+			pos { x 1640.67 y -4.40034e-005 z -1006.68 }
+			rot [ 0 0.873004 -3.81602e-008 0.487713 ]
+			entities [ { name "Cloud_HAL02" obj "Cloud_HAL02" } ]
+		}
+		//Cloud_HAL01
+		{
+			pos { x 1681.83 y 4.08525e-005 z 934.596 }
+			rot [ 0 0.506106 -2.21226e-008 0.862471 ]
+			entities [ { name "Cloud_HAL01" obj "Cloud_HAL02" } ]
+		}
+		//Cloud_HAL
+		{
+			pos { x 7.15506 y 8.38083e-005 z 1917.31 }
+			entities [ { name "Cloud_HAL" obj "Cloud_HAL02" } ]
+		}
+	]
+}
+Node CloudGroup_HAL01
+{
+	animators [ { t Animator::rotate s -0.023 } ]
+	pos { x -5.67232 y 570.341 z 0.774872 }
+	scale { x 0.79288 y 0.79288 z 0.79288 }
+	nodes [
+		//Cloud_HAL11
+		{
+			pos { x -1582.28 y 4.69044e-005 z 1073.05 }
+			rot [ 0 -0.469102 2.05051e-008 0.883144 ]
+			entities [ { name "Cloud_HAL11" obj "Cloud_HAL11" } ]
+		}
+		//Cloud_HAL10
+		{
+			pos { x -1705.66 y -3.77991e-005 z -864.742 }
+			rot [ 0 -0.851551 3.72225e-008 0.524271 ]
+			entities [ { name "Cloud_HAL10" obj "Cloud_HAL11" } ]
+		}
+		//Cloud_HAL09
+		{
+			pos { x -74.14 y -8.38184e-005 z -1917.54 }
+			rot [ 0 0.999775 -4.37016e-008 -0.0211937 ]
+			entities [ { name "Cloud_HAL09" obj "Cloud_HAL11" } ]
+		}
+		//Cloud_HAL08
+		{
+			pos { x 1640.67 y -4.40034e-005 z -1006.68 }
+			rot [ 0 0.873004 -3.81602e-008 0.487713 ]
+			entities [ { name "Cloud_HAL08" obj "Cloud_HAL11" } ]
+		}
+		//Cloud_HAL07
+		{
+			pos { x 1681.83 y 4.08525e-005 z 934.596 }
+			rot [ 0 0.506106 -2.21226e-008 0.862471 ]
+			entities [ { name "Cloud_HAL07" obj "Cloud_HAL11" } ]
+		}
+		//Cloud_HAL06
+		{
+			pos { x 7.15506 y 8.38083e-005 z 1917.31 }
+			entities [ { name "Cloud_HAL06" obj "Cloud_HAL11" } ]
+		}
+	]
+}
+Node CloudGroup_HAL02
+{
+	animators [ { t Animator::rotate s -0.037 } ]
+	pos { x -4.49747 y 244.765 z 0.61438 }
+	scale { x 0.628659 y 0.628659 z 0.628659 }
+	nodes [
+		//Cloud_HAL17
+		{
+			pos { x -1582.28 y 4.69045e-005 z 1073.05 }
+			rot [ 0 -0.469102 2.05051e-008 0.883144 ]
+			entities [ { name "Cloud_HAL17" obj "Cloud_HAL17" } ]
+		}
+		//Cloud_HAL16
+		{
+			pos { x -1705.66 y -3.77991e-005 z -864.742 }
+			rot [ 0 -0.851551 3.72225e-008 0.524271 ]
+			entities [ { name "Cloud_HAL16" obj "Cloud_HAL17" } ]
+		}
+		//Cloud_HAL15
+		{
+			pos { x -74.14 y -8.38184e-005 z -1917.54 }
+			rot [ 0 0.999775 -4.37016e-008 -0.0211937 ]
+			entities [ { name "Cloud_HAL15" obj "Cloud_HAL17" } ]
+		}
+		//Cloud_HAL14
+		{
+			pos { x 1640.67 y -4.40034e-005 z -1006.68 }
+			rot [ 0 0.873004 -3.81602e-008 0.487713 ]
+			entities [ { name "Cloud_HAL14" obj "Cloud_HAL17" } ]
+		}
+		//Cloud_HAL13
+		{
+			pos { x 1681.83 y 4.08525e-005 z 934.596 }
+			rot [ 0 0.506106 -2.21226e-008 0.862471 ]
+			entities [ { name "Cloud_HAL13" obj "Cloud_HAL17" } ]
+		}
+		//Cloud_HAL12
+		{
+			pos { x 7.15506 y 8.38083e-005 z 1917.31 }
+			entities [ { name "Cloud_HAL12" obj "Cloud_HAL17" } ]
+		}
+	]
+}
+
+Node LIGHT1_HAL
+{
+	rot [ -0.225204 0.759157 -0.334675 -0.510839 ]
+	lights [ { name "Omni01" type Light::directional shadows false } ]
+}
+Node LIGHT12_HAL
+{
+	rot [ -0.225204 0.759157 -0.334675 -0.510839 ]
+	lights [ { name "Omni01" type Light::directional diffuse RGB::grey7 } ]
+}
+Node LIGHT13_HAL
+{
+	rot [ -0.225204 0.759157 -0.334675 -0.510839 ]
+	lights [ { name "Omni01" type Light::directional diffuse RGB::grey4 } ]
+}
+Node LIGHT2_HAL
+{
+	pos { x 2.5 y 3 z 0 }
+	lights [ { name "Omni01" type Light::point diffuse RGB::grey9 attenuation { range 50 linear 0.09 quad 0.032 } } ]
+}
+Node LIGHT3_HAL
+{
+	rot [ 20 45 0 ]
+	lights [ { name "Omni01" type Light::directional diffuse { r 1 g 0.6 b 0.2 } } ]
+}
+Node LIGHT32_HAL
+{
+	rot [ 20 35 0 ]
+	lights [ { name "Omni01" type Light::directional diffuse { r 1.1 g 0.75 b 0.3 } } ]
+}
+
+Node MOON_NODE
+{
+	animators [ { t Animator::rotate roAx { x 0.27 y 0.91 } s 0.12 } ]
+	pos { x 355.43 y 493.294 z -2724.61 }
+	entities [ { name "MOON_BURTON" obj "MOON_BURTON" } ]
+}
+Node MOON_SKY1 { animators [ { t Animator::rotate roAx { x 1 y 0.4 } start 20 s -0.001 } ] nodes [ MOON_NODE ] }
+Node MOON_SKY2 { animators [ { t Animator::rotate roAx { x 1 y 0.4 } start 10 s -0.001 } ] nodes [ MOON_NODE ] }
+Node MOON_SKY3 { animators [ { t Animator::rotate roAx { x 1 y 0.4 } start 0 s -0.001 } ] nodes [ MOON_NODE ] }
+Node MOON_SKY4 { animators [ { t Animator::rotate roAx { x 1 y 0.4 } start -10 s -0.001 } ] nodes [ MOON_NODE ] }
+Node MOON_SKY5 { animators [ { t Animator::rotate roAx { x 1 y 0.4 } start -20 s -0.001 } ] nodes [ MOON_NODE ] }
+
+Node CrowAnim
+{
+	scale { w 0.0042 }
+	nodes [ {
+		pos { x -0.0286881 y 108.482 z -53.2505 }
+		entities [ { obj "crow" anims [ { n idle1 s 0.66 } { n idle1 s 0.66 } { n idle1 s 1 } { n idle2 s 0.66 } ] } ]
+	} ]
+}
+Node CrowsTrees {
+	nodes [
+		//CrowGroup20
+		{
+			pos { x 10.0503 y 6.16297 z -0.452427 }
+			rot [ -0.00983416 -0.158674 0.00710998 0.987257 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup19
+		{
+			pos { x 12.2795 y 7.32177 z 3.17354 }
+			rot [ 0.0112583 0.919836 0.00452918 -0.392114 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup18
+		{
+			pos { x 9.68477 y 7.27957 z -1.7361 }
+			rot [ -0.0118064 -0.524402 0.00280541 0.851384 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup17
+		{
+			pos { x 16.4305 y 5.4905 z -8.61853 }
+			rot [ -0.0141139 -0.280622 0.00750418 0.959685 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup16
+		{
+			pos { x 14.9144 y 5.83103 z -9.59167 }
+			rot [ -0.013124 -0.393293 -0.0121322 0.919239 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup15
+		{
+			pos { x 13.8651 y 5.86041 z -10.4522 }
+			rot [ -0.0139833 -0.264145 0.0077448 0.964351 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup14
+		{
+			pos { x 10.6021 y 7.13951 z -12.5556 }
+			rot [ 0.00568169 -0.165485 -0.0969007 0.981424 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup13
+		{
+			pos { x 8.94716 y 2.60546 z -18.8694 }
+			rot [ -0.0167809 0.247865 0.0654288 0.966437 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup12
+		{
+			pos { x 7.05808 y 4.89621 z -15.7865 }
+			rot [ 0 -0.497751 2.17574e-008 0.86732 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup11
+		{
+			pos { x 6.83663 y 5.15739 z -20.6287 }
+			rot [ 0 -0.163039 7.12667e-009 0.98662 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup10
+		{
+			pos { x 2.38979 y 4.25288 z -20.4984 }
+			rot [ 0.0695548 -0.451953 -0.0825657 0.885485 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup09
+		{
+			pos { x 3.8869 y 2.9938 z -20.4803 }
+			rot [ 0 -0.0945254 4.13184e-009 0.995522 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup08
+		{
+			pos { x -9.94255 y 5.57752 z 1.48827 }
+			rot [ 0 0.965686 -4.22115e-008 0.259714 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup07
+		{
+			pos { x -11.9705 y 5.35006 z 0.697072 }
+			rot [ 0 -0.853309 3.72993e-008 0.521405 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup06
+		{
+			pos { x -10.3552 y 3.17376 z -1.04872 }
+			rot [ 0 0.743261 -3.24889e-008 0.669002 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup05
+		{
+			pos { x -8.78296 y 2.74958 z -0.238098 }
+			rot [ 0 0.899275 -3.93086e-008 0.437384 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup04
+		{
+			pos { x -7.42685 y 1.39455 z -0.328205 }
+			rot [ 0 0.827329 -3.61637e-008 0.561717 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup03
+		{
+			pos { x -4.13195 y 7.35708 z -9.61905 }
+			rot [ 0 -0.0945254 4.13184e-009 0.995522 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup02
+		{
+			pos { x -5.32584 y 5.85689 z -9.46072 }
+			rot [ 0 0.319831 -1.39802e-008 0.947475 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup01
+		{
+			pos { x -6.6159 y 7.03848 z -9.11915 }
+			rot [ 0 0.223823 -9.7836e-009 0.97463 ]
+			nodes [ CrowAnim ]
+		}
+		//CrowGroup
+		{
+			pos { x -5.92835 y 5.24297 z -7.78508 }
+			rot [ 0 0.70208 -3.06889e-008 0.712099 ]
+			nodes [ CrowAnim ]
+		}
+	]
+}
+
+Node CrowFly
+{
+	scale { w 0.0042 }
+	nodes [ {
+		pos { x -0.0286881 y 108.482 z -53.2505 }
+		entities [ { obj "crow" anims [ { n fly s 1 } ] } ]
+	} ]
+}
+Node CrowsTakeOff
+{
+	naCommon { loop false auto true }
+	nanims [
+		{ name "takeOff" length 7.16646 timeScale 1.5 keys { k [
+			{ time 0 trans { x 0 y 0 z 0 } }
+			{ time 0.477708 trans { x -0.0090603 y 0.063593 z 0.738854 } }
+			{ time 0.955417 trans { x -0.0350096 y 0.251898 z 2.85297 } }
+			{ time 1.43313 trans { x -0.0760203 y 0.568378 z 6.18796 } }
+			{ time 1.91083 trans { x -0.130281 y 1.02342 z 10.5885 } }
+			{ time 2.38854 trans { x -0.195985 y 1.63141 z 15.8985 } }
+			{ time 2.86625 trans { x -0.271322 y 2.40811 z 21.9609 } }
+			{ time 3.34396 trans { x -0.354465 y 3.3682 z 28.6178 } }
+			{ time 3.82167 trans { x -0.443567 y 4.52276 z 35.7107 } }
+			{ time 4.29938 trans { x -0.536753 y 5.87686 z 43.0805 } }
+			{ time 4.77708 trans { x -0.632114 y 7.42688 z 50.5685 } }
+			{ time 5.25479 trans { x -0.72771 y 9.15801 z 58.017 } }
+			{ time 5.7325 trans { x -0.821573 y 11.0418 z 65.2701 } }
+			{ time 6.21021 trans { x -0.911715 y 13.034 z 72.1757 } }
+			{ time 6.68792 trans { x -0.996138 y 15.0736 z 78.5862 } }
+			{ time 7.16646 trans { x -1.07301 y 17.0865 z 84.3725 } }
+		] } }
+	]
+	nodes [
+		//CrowGroup20
+		{
+			pos { x 10.0503 y 6.16297 z -0.452427 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup19
+		{
+			pos { x 12.2795 y 7.32177 z 3.17354 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup18
+		{
+			pos { x 9.68477 y 7.27957 z -1.7361 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup17
+		{
+			pos { x 16.4305 y 5.4905 z -8.61853 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup16
+		{
+			pos { x 14.9144 y 5.83103 z -9.59167 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup15
+		{
+			pos { x 13.8651 y 5.86041 z -10.4522 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup14
+		{
+			pos { x 10.6021 y 7.13951 z -12.5556 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup13
+		{
+			pos { x 8.94716 y 2.60546 z -18.8694 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup12
+		{
+			pos { x 7.05808 y 4.89621 z -15.7865 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup11
+		{
+			pos { x 6.83663 y 5.15739 z -20.6287 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup10
+		{
+			pos { x 2.38979 y 4.25288 z -20.4984 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup09
+		{
+			pos { x 3.8869 y 2.9938 z -20.4803 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup08
+		{
+			pos { x -9.94255 y 5.57752 z 1.48827 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup07
+		{
+			pos { x -11.9705 y 5.35006 z 0.697072 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup06
+		{
+			pos { x -10.3552 y 3.17376 z -1.04872 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup05
+		{
+			pos { x -8.78296 y 2.74958 z -0.238098 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup04
+		{
+			pos { x -7.42685 y 1.39455 z -0.328205 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup03
+		{
+			pos { x -4.13195 y 7.35708 z -9.61905 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup02
+		{
+			pos { x -5.32584 y 5.85689 z -9.46072 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup01
+		{
+			pos { x -6.6159 y 7.03848 z -9.11915 }
+			nodes [ CrowFly ]
+		}
+		//CrowGroup
+		{
+			pos { x -5.92835 y 5.24297 z -7.78508 }
+			nodes [ CrowFly ]
+		}
+	]
+}
+Node CrowsFlyNodes {
+	animators [ { t Animator::ellipse elMa 100 elMi 70 elAngle 0 s 0.1 start 90 } ]
+	pos { y 10 z 50 }
+	// animators [ { t Animator::rotate s 0.1 start 0 } ]
+	// nodes [
+		// {
+			// pos { y 10 z -20 }
+			// rot [ 0 90 0 ]
+			nodes [
+				{ nodes [ CrowFly ] pos { x 1 y 0 z 0 } }
+				{ nodes [ CrowFly ] pos { x -3 y 2 z 5 } }
+				{ nodes [ CrowFly ] pos { x 2 y 4 z 10 } }
+				{ nodes [ CrowFly ] pos { x -4 y 1 z 15 } }
+				{ nodes [ CrowFly ] pos { x 3 y 3 z 20 } }
+				{ nodes [ CrowFly ] pos { x -1 y 7 z 25 } }
+				{ nodes [ CrowFly ] pos { x 5 y 1.5 z 30 } }
+				{ nodes [ CrowFly ] pos { x 4 y -3 z 35 } }
+				{ nodes [ CrowFly ] pos { x 2 y 5 z 40 } }
+				{ nodes [ CrowFly ] pos { x -5 y 6 z 45 } }
+				{ nodes [ CrowFly ] pos { x -2 y -3 z 50 } }
+				{ nodes [ CrowFly ] pos { x 3 y 1 z -5 } }
+				{ nodes [ CrowFly ] pos { x 1 y -1.5 z -10 } }
+				{ nodes [ CrowFly ] pos { x 4 y -2 z -15 } }
+				{ nodes [ CrowFly ] pos { x -5 y 4.5 z -20 } }
+				{ nodes [ CrowFly ] pos { x 7 y 2.5 z -25 } }
+				{ nodes [ CrowFly ] pos { x -6 y 3.5 z -30 } }
+				{ nodes [ CrowFly ] pos { x 2 y -1 z -35 } }
+				{ nodes [ CrowFly ] pos { x 3 y -2.5 z -40 } }
+				{ nodes [ CrowFly ] pos { x 1 y -0.5 z -45 } }
+				{ nodes [ CrowFly ] pos { x -4 y 3 z -50 } }
+			]
+		// }
+	// ]
+}
+
+Node BurtonTrees {
+	nodes [
+		//TREE_A_BURTON
+		{
+			pos { x -5.1799 y 4.11542 z -8.01386 }
+			entities [ { name "TREE_A_BURTON" obj "TREE_A_BURTON" } ]
+		}
+		//TREE_B_BURTON
+		{
+			pos { x 12.617 y -0.251206 z -11.8918 }
+			entities [ { name "TREE_B_BURTON" obj "TREE_B_BURTON" } ]
+		}
+		//TREE_C_BURTON
+		{
+			pos { x 12.5805 y 4.06172 z 0.983548 }
+			entities [ { name "TREE_C_BURTON" obj "TREE_C_BURTON" } ]
+		}
+		//Tree_D_BURTON
+		{
+			pos { x 5.21379 y 3.82577 z -20.233 }
+			entities [ { name "Tree_D_BURTON" obj "Tree_D_BURTON" } ]
+		}
+		//TREE_E_BURTON
+		{
+			pos { x 0.470426 y 19.3755 z -101.546 }
+			rot [ 0 8.74228e-008 -3.82137e-015 1 ]
+			entities [ { name "TREE_E_BURTON" obj "TREE_E_BURTON" } ]
+		}
+		//TREE_E01_BURTON
+		{
+			pos { x -10.7826 y 3.2403 z -0.29997 }
+			entities [ { name "TREE_E01_BURTON" obj "TREE_E01_BURTON" } ]
+		}
+		//SMALL_TREE_A03_BURTON
+		{
+			pos { x -19.0989 y -0.131189 z 8.55791 }
+			entities [ { name "SMALL_TREE_A03_BURTON" obj "SMALL_TREE_A03_BURTON" } ]
+		}
+		//SMALL_TREE_B18_BURTON
+		{
+			pos { x -40.1308 y 0.224156 z -23.6536 }
+			entities [ { name "SMALL_TREE_B18_BURTON" obj "SMALL_TREE_B18_BURTON" } ]
+		}
+		//SMALL_TREE_A23_BURTON
+		{
+			pos { x -35.249 y -1.12805 z -48.1857 }
+			rot [ 0 8.74228e-008 -3.82137e-015 1 ]
+			entities [ { name "SMALL_TREE_A23_BURTON" obj "SMALL_TREE_A23_BURTON" } ]
+		}
+		//SMALL_TREE_A10_BURTON
+		{
+			pos { x 17.1503 y -1.10262 z -31.5777 }
+			rot [ 0 8.74228e-008 -3.82137e-015 1 ]
+			entities [ { name "SMALL_TREE_A10_BURTON" obj "SMALL_TREE_A10_BURTON" } ]
+		}
+		//SMALL_TREE_A27_BURTON
+		{
+			pos { x 20.7681 y -0.0794668 z 26.2935 }
+			entities [ { name "SMALL_TREE_A27_BURTON" obj "SMALL_TREE_A27_BURTON" } ]
+		}
+	]
+}
+
+Node Hal2Group
+{
+	nodes [
+		//polySurface1686
+		{
+			pos { x 0.0062017 y 0.233909 z 0.00937015 }
+			rot [ 0 7.45058e-009 -3.25675e-016 1 ]
+			entities [ { obj "polySurface1664" } ]
+		}
+		//polySurface1685
+		{
+			pos { x 0.0789564 y 0.520936 z -0.00937484 }
+			rot [ 0 7.45058e-009 -3.25675e-016 1 ]
+			entities [ { obj "polySurface1663" } ]
+		}
+		//pCube09
+		{
+			pos { x 0.00633755 y 0.31141 z 0.0142972 }
+			rot [ 0 7.45058e-009 -3.25675e-016 1 ]
+			entities [ { obj "pCube5" } ]
+		}
+		//polySurface1684
+		{
+			pos { x 0.0316603 y 0.55038 z 0.0187682 }
+			rot [ 0 7.45058e-009 -3.25675e-016 1 ]
+			entities [ { obj "polySurface1662" } ]
+		}
+	]
+}
+Node Hal5Group
+{
+	nodes [
+		//polySurface1674
+		{
+			pos { x -0.00692664 y 0.400459 z -0.0542537 }
+			entities [ { obj "polySurface1674" } ]
+		}
+		//polySurface1673
+		{
+			pos { x 0.0460355 y 0.384864 z 0.0121861 }
+			entities [ { obj "polySurface1673" } ]
+		}
+		//polySurface1672
+		{
+			pos { x -0.0140267 y 0.244752 z -0.0282956 }
+			entities [ { obj "polySurface1672" } ]
+		}
+	]
+}
+
+Node HalFinalNode {
+	nodes [
+		//Hal1Group
+		{
+			pos { x -6.74386 y 1.985 z -7.70272 }
+			scale { x 17.8309 y 17.7252 z 13.6975 w 0.9 }
+			rot [ 0 0.302193 -1.32093e-008 0.953247 ]
+			nodes [
+				//polySurface1661
+				{
+					pos { x -0.00499732 y 0.341739 z -0.0682942 }
+					entities [ { name "polySurface1661" obj "polySurface1661" } ]
+				}
+				//polySurface1660
+				{
+					pos { x 0.000237025 y 0.134964 z -0.0667876 }
+					entities [ { name "polySurface1660" obj "polySurface1660" } ]
+				}
+				//polySurface1659
+				{
+					pos { x -0.000223073 y 0.12982 z 0.0115847 }
+					entities [ { name "polySurface1659" obj "polySurface1659" } ]
+				}
+			]
+		}
+		//Hal3Group
+		{
+			pos { x 12.9508 y 5.29093e-008 z 1.21042 }
+			scale { x 11.507 y 16.2141 z 16.2141 }
+			rot [ 0 0.967527 -4.2292e-008 0.252767 ]
+			nodes [
+				//polySurface1669
+				{
+					pos { x -0.0312392 y 0.223418 z -0.0677173 }
+					entities [ { name "polySurface1669" obj "polySurface1669" } ]
+				}
+				//polySurface1668
+				{
+					pos { x -0.0466489 y 0.222909 z 0.0340078 }
+					entities [ { name "polySurface1668" obj "polySurface1668" } ]
+				}
+				//polySurface1667
+				{
+					pos { x -0.0533143 y 0.414041 z -0.0129014 }
+					entities [ { name "polySurface1667" obj "polySurface1667" } ]
+				}
+				//polySurface1666
+				{
+					pos { x -0.0883826 y 0.386433 z -0.08479 }
+					entities [ { name "polySurface1666" obj "polySurface1666" } ]
+				}
+			]
+		}
+		//Hal4Group
+		{
+			pos { x 12.5013 y -0.123457 z -11.7006 }
+			scale { x 13.9608 y 13.9608 z 13.9608 }
+			rot [ 0 0.951507 -4.15917e-008 -0.307626 ]
+			nodes [
+				//polySurface1671
+				{
+					pos { x 0.0705656 y 0.574082 z 0.00768342 }
+					entities [ { name "polySurface1671" obj "polySurface1671" } ]
+				}
+				//pCube6
+				{
+					pos { x 0.0957946 y 0.270381 z -0.0050732 }
+					entities [ { name "pCube6" obj "pCube6" } ]
+				}
+				//polySurface1670
+				{
+					pos { x 0.0332174 y 0.263757 z -0.0094177 }
+					entities [ { name "polySurface1670" obj "polySurface1670" } ]
+				}
+			]
+		}
+		//Hal5Group
+		{
+			pos { x -10.7342 y 0.459806 z -0.121091 }
+			scale { x 9.51252 y 9.51252 z 17.2445 }
+			rot [ 0 -0.476421 2.0825e-008 0.879217 ]
+			nodes [ Hal5Group ]
+		}
+		//Hal5Group01
+		{
+			pos { x 6.29901 y -0.00151003 z -18.7729 }
+			scale { x 14.3994 y 13.2843 z 19.9464 }
+			rot [ -1.47613e-015 0.798727 -3.49135e-008 0.601694 ]
+			nodes [ Hal5Group ]
+		}
+		//Hal5Group02
+		{
+			pos { x -3.24969 y 11.5921 z -102.952 }
+			scale { x 24.0121 y 22.1525 z 33.2622 }
+			rot [ 0 -0.596849 2.60891e-008 0.802353 ]
+			nodes [ Hal5Group ]
+		}
+		//Hal2Group
+		{
+			pos { x -21.856 y -0.571804 z -13.0815 }
+			scale { x 10.1931 y 10.6058 z 10.1835 }
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group01
+		{
+			pos { x 34.4002 y -0.571804 z -6.41702 }
+			scale { x 10.1931 y 10.6058 z 10.1835 }
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group02
+		{
+			pos { x 30.082 y -0.571803 z 18.5478 }
+			scale { x 13.5244 y 10.6058 z 10.1859 }
+			rot [ 1.02567e-015 -0.500132 2.18615e-008 0.865949 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group03
+		{
+			pos { x -19.7701 y -0.571803 z 8.71994 }
+			scale { x 8.90134 y 9.26169 z 8.89293 }
+			rot [ 0 -0.149997 6.55658e-009 0.988686 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group04
+		{
+			pos { x -42.9224 y -0.571803 z 24.6708 }
+			scale { x 10.1931 y 10.6058 z 10.1835 }
+			rot [ 0 0.0657342 -2.87333e-009 0.997837 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group05
+		{
+			pos { x -54.4846 y -0.571804 z -3.98877 }
+			scale { x 11.5749 y 10.6058 z 11.5639 }
+			rot [ 2.31831e-016 0.287478 -1.2566e-008 0.957787 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group06
+		{
+			pos { x -50.4374 y -0.571805 z -19.2357 }
+			scale { x 12.4508 y 11.0162 z 12.439 }
+			rot [ 0 -0.489222 2.13846e-008 0.872159 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group07
+		{
+			pos { x -16.0856 y -0.571805 z -30.4614 }
+			scale { x 10.1931 y 10.6058 z 10.1835 }
+			rot [ 0 0.985146 -4.30621e-008 0.171719 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group08
+		{
+			pos { x -2.92721 y -0.342323 z -35.7086 }
+			scale { x 10.1931 y 10.6058 z 10.1835 }
+			rot [ 0 0.985146 -4.30621e-008 0.171719 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group09
+		{
+			pos { x -16.0856 y -0.571806 z -53.1497 }
+			scale { x 9.37667 y 9.75627 z 9.36782 }
+			rot [ 0 0.939413 -4.1063e-008 -0.342788 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group10
+		{
+			pos { x 17.1324 y -0.571805 z -30.4614 }
+			scale { x 10.1931 y 10.6058 z 10.1835 }
+			rot [ 0 0.995151 -4.34994e-008 -0.0983576 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group11
+		{
+			pos { x 41.1224 y -0.571805 z -29.7391 }
+			scale { x 10.1931 y 10.6058 z 10.1835 }
+			rot [ 0 0.995151 -4.34994e-008 -0.0983576 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group12
+		{
+			pos { x 46.602 y -0.571803 z 10.6622 }
+			scale { x 11.9683 y 12.4528 z 11.957 }
+			rot [ 0 -0.711901 3.11182e-008 0.702279 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group13
+		{
+			pos { x 33.687 y -0.571802 z 32.8473 }
+			scale { x 9.80207 y 8.28206 z 7.38734 }
+			rot [ -1.35053e-015 -0.753321 3.29287e-008 0.657654 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group14
+		{
+			pos { x 47.9864 y -0.571805 z -19.4249 }
+			scale { x 10.1931 y 10.6058 z 10.1835 }
+			rot [ 0 -0.672075 2.93773e-008 0.740483 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group15
+		{
+			pos { x -27.6918 y -0.571803 z 25.2328 }
+			scale { x 11.4524 y 10.6058 z 11.4416 }
+			rot [ 0 -0.472003 2.06319e-008 0.881597 ]
+			nodes [ Hal2Group ]
+		}
+		//Hal2Group16
+		{
+			pos { x -54.8796 y -0.571806 z -54.9461 }
+			scale { x 9.09909 y 9.13453 z 9.0905 }
+			rot [ 6.77627e-021 0.00123471 -5.39709e-011 0.999999 ]
+			nodes [ Hal2Group ]
+		}
+	]
+}
+Node HalWebs {
+	nodes [
+		//WebLeft
+		{
+			pos { x -7.91788 y 3.74087 z -5.3364 }
+			scale { x 0.560148 }
+			rot [ -0.183896 -0.183895 0.682775 0.682776 ]
+			entities [ { name "WebLeft" obj "WebLeft" anims [ { n anim s 0.5 } ] } ]
+		}
+		//WebTop
+		{
+			pos { x 9.30635 y 4.88081 z -19.2094 }
+			scale { x 1.19422 y 2.13197 z 2.13197 }
+			rot [ -0.260065 0.00109884 0.965582 -0.00407888 ]
+			entities [ { name "WebTop" obj "WebTop" anims [ { n anim s 0.5 } ] } ]
+		}
+		//WebRight
+		{
+			pos { x 12.8994 y 4.88081 z 1.25578 }
+			scale { x 1.19422 y 2.13197 z 2.13197 }
+			rot [ -0.707107 0.707107 -8.03309e-008 4.94223e-008 ]
+			entities [ { name "WebRight" obj "WebRight" anims [ { n anim s 0.8 } ] } ]
+		}
+	]
+}

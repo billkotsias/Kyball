@@ -10,6 +10,9 @@
 #include <sys/types.h>
 #include <errno.h>
 #include <string.h>
+#if !defined(_WIN32)
+#include <unistd.h>
+#endif
 
 #if defined(_WIN32)
 #include <windows.h>
@@ -30,6 +33,16 @@
 #endif
 
 namespace P3D {
+
+	std::string resourceLocation(const std::string& relative) {
+		std::string path = P3DApp::DATA_PATH + relative;
+#if !defined(_WIN32)
+		for (size_t i = 0; i < path.size(); ++i) {
+			if (path[i] == '\\') path[i] = '/';
+		}
+#endif
+		return path;
+	}
 
 	void makeDirectory(const std::string& path) {
 		if (path.empty()) return;
@@ -61,6 +74,26 @@ namespace P3D {
 #endif
 	}
 
+	static std::string pluginFolder() {
+		std::string baked = KYBALL_PLUGIN_DIR;
+#if !defined(_WIN32)
+		struct stat st;
+		if (!(stat(baked.c_str(), &st) == 0 && S_ISDIR(st.st_mode))) {
+			char buf[4096];
+			ssize_t n = ::readlink("/proc/self/exe", buf, sizeof(buf) - 1);
+			if (n > 0) {
+				buf[n] = 0;
+				std::string dir(buf);
+				std::string::size_type slash = dir.find_last_of('/');
+				if (slash != std::string::npos) dir.resize(slash);
+				std::string candidate = dir + "/_deps/ogre-build/lib";
+				if (stat(candidate.c_str(), &st) == 0 && S_ISDIR(st.st_mode)) return candidate;
+			}
+		}
+#endif
+		return baked;
+	}
+
 	static void writePluginsFile() {
 #if defined(KYBALL_STATIC_PLUGINS)
 		return;
@@ -71,7 +104,7 @@ namespace P3D {
 		std::ofstream out(P3DApp::PLUGINS_FILE.c_str());
 		if (!out) return;
 		out << "# Generated for Ogre 1.10\n";
-		out << "PluginFolder=" << KYBALL_PLUGIN_DIR << "\n";
+		out << "PluginFolder=" << pluginFolder() << "\n";
 #if defined(__ANDROID__)
 		out << "Plugin=RenderSystem_GLES2\n";
 #else

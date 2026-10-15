@@ -26,7 +26,7 @@ namespace P3D {
 	static SDL_Window* g_sdlWindow = 0;
 	static SDL_GLContext g_glContext = 0;
 
-#if defined(__ANDROID__)
+	// Ogre renders into SDL's context. SDL has to present that buffer.
 	class ExternalBufferSwap : public Ogre::FrameListener {
 	public:
 		bool frameEnded(const Ogre::FrameEvent&) {
@@ -34,7 +34,6 @@ namespace P3D {
 			return true;
 		}
 	};
-#endif
 #endif
 
 	Ogre::RenderWindow* P3DWindow::create() {
@@ -67,13 +66,12 @@ namespace P3D {
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
-		list["externalGLControl"] = "Yes";
 #else
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
-		list["externalGLControl"] = "No";
 #endif
+		list["externalGLControl"] = "Yes";
 		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 		SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
@@ -106,10 +104,8 @@ namespace P3D {
 			windowHandle = (int)info.info.x11.window;
 #endif
 		}
-#if defined(__ANDROID__)
 		static ExternalBufferSwap swapper;
 		Ogre::Root::getSingletonPtr()->addFrameListener(&swapper);
-#endif
 		// SDL owns the real window; Ogre renders into the current GL context.
 		setWindow(Ogre::Root::getSingletonPtr()->createRenderWindow(P3DApp::WINDOW_NAME, windowX, windowY, false, &list));
 		if (fullScreen) {

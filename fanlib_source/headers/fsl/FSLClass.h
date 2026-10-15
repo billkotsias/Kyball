@@ -19,7 +19,7 @@ namespace FANLib {
 	class FSLClass : public FSLObject {
 	protected:
 
-		std::deque<FSL::real> data; /// 'real' is enough to contain int, real and pointer data
+		std::deque<FSL::real> data; /// wide enough for an int, a real, or a pointer
 
 		void gcClass(); /// empties <data>
 		virtual void gc();

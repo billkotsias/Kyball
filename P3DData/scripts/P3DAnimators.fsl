@@ -1,0 +1,39 @@
+// ARCTIC
+Animator arcticBase { t Animator::oscillate osWi 10 osAx { x 1 y 1 z 1 } s 1 }
+
+Animator arcticSmallEll {
+	t Animator::ellipse elMa 18.5 elMi 16.5 elFi 0 s -0.02
+}
+Animator arcticSmallOsc {
+	t Animator::oscillate osWi 0.15 s 1
+}
+Animator arcticSmallRot {
+	t Animator::rotate s 0.025
+}
+
+Animator arcticBigEll {
+	t Animator::ellipse elMa 97 elMi 70 elFi 0 s -0.005
+}
+Animator arcticBigOsc {
+	t Animator::oscillate osWi 0.4 s 0.4
+}
+Animator arcticIntroBigRot {
+	t Animator::rotate s 0.008 start 0
+}
+Animator arcticBigRot {
+	t Animator::rotate s 0.008
+}
+
+Animator arcticMedEll {
+	t Animator::ellipse elMa 45 elMi 42 elFi 0 s -0.010
+}
+Animator arcticMedOsc {
+	t Animator::oscillate osWi 0.25 s 0.6
+}
+Animator arcticMedRot {
+	t Animator::rotate s 0.015
+}
+
+Animator arcticMed2Ell {
+	t Animator::ellipse elMa 30 elMi 30 elFi 0 s -0.014
+}

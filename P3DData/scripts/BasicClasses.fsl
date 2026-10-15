@@ -1,0 +1,45 @@
+class RGB {
+	real r 1
+	real g 1
+	real b 1
+}
+
+RGB RGB::red { r 1 g 0 b 0 }
+RGB RGB::green { r 0 g 1 b 0 }
+RGB RGB::blue { r 0 g 0 b 1 }
+RGB RGB::black { r 0 g 0 b 0 }
+RGB RGB::grey1 { r 0.1 g 0.1 b 0.1 }
+RGB RGB::grey2 { r 0.2 g 0.2 b 0.2 }
+RGB RGB::grey3 { r 0.3 g 0.3 b 0.3 }
+RGB RGB::grey4 { r 0.4 g 0.4 b 0.4 }
+RGB RGB::grey5 { r 0.5 g 0.5 b 0.5 }
+RGB RGB::grey6 { r 0.6 g 0.6 b 0.6 }
+RGB RGB::grey7 { r 0.7 g 0.7 b 0.7 }
+RGB RGB::grey8 { r 0.8 g 0.8 b 0.8 }
+RGB RGB::grey9 { r 0.9 g 0.9 b 0.9 }
+
+class Vector2 {
+	real x 0
+	real y 0
+}
+
+class Vector3 {
+	real x 0
+	real y 0
+	real z 0
+}
+
+class Vector4 {
+	real x 0
+	real y 0
+	real z 0
+	real w 1
+}
+
+/// "special" scale vector
+class Vector3S {
+	real x 1
+	real y 1
+	real z 1
+	real w 1
+}

@@ -1,0 +1,74 @@
+#include "BasicClasses.fsl"
+#include "Entity.fsl"
+#include "Camera.fsl"
+#include "Light.fsl"
+
+class NodeAnimKey {
+	real time 0
+	Vector3 trans					/// translation
+	Vector4 scale { x 1 y 1 z 1 }	/// (w 1) final entity scaling : x *= w, y *= w, z *=w
+	array of real rot [ 0 0 0 1 ]	/// rotation : can either have 3 values (Euler) or 4 (quaternion)
+}
+class NodeAnimKeys {
+	array of NodeAnimKey k [ ]
+}
+
+class NodeAnim {
+	string name ""
+	real length 0
+	real timeScale 1
+	NodeAnimKeys keys	// cause it's currently not possible to directly reference an array!
+	real delay 0		// initial delay
+}
+class NACommon {
+	int auto false		// build NOW Ogre::AnimationState -> P3d::AnimationStateWrapper -> P3D::AnimationStatesXXX -> VisualBoss ? (if not, it's for "FlyIn" usage probably...)
+	int loop ASLoopType::loop
+	real start 0		// time-position at start (NaN=randomized)
+	real speed 1		// cause "speed" CAN be negative too!
+}
+
+enum Animator {
+	ellipse		/// x-z plane
+	oscillate	/// y axis
+	rotate
+}
+
+class Animator {
+	// Class contains parameters of all different types, interpreter decides with params to use... UGLY!
+	
+	/// ellipse
+	real elMa 1 /// major axis
+	real elMi 1 /// minor axis
+	real elFi 0 /// angle between major and x-axis (DEGREES)
+	real elAngle NaN /// rotate children according to current position in ellipse + enAngle!
+	
+	/// oscillate
+	real osWi 1				/// width
+	Vector3 osAx { y 1 }	/// oscillation axis
+	int osLocal false		/// apply locally or globally
+
+	/// rotate
+	Vector3 roAx { y 1 }	/// rotation axis
+	
+	/// ... common & default attributes
+	int t Animator::ellipse	/// type
+	real s 0.01				/// speed
+	real start NaN			/// start with this angle value, if not set then randomize it!
+}
+
+class Node {
+	string n ""						// node name
+	Vector3 pos						// position
+	Vector3S scale					// final entity scaling : x *= w, y *= w, z *=w
+	array of real rot [ 0 0 0 1 ]	// rotation : can either have 3 values (Euler) or 4 (quaternion)
+	int visible true				/// is it visible?  
+	
+	array of Entity entities [ ]	// attached Entities
+	array of Camera cameras [ ]		// attached Cameras
+	array of Light lights [ ]		// attached Lights
+	array of Node nodes [ ]			// may recursively contain other nodes with Entities etc...
+	array of Animator animators [ ]
+	
+	array of NodeAnim nanims [ ]	// prescripted animations for this node
+	NACommon naCommon				// only used if there is at least 1 "nanim"!	
+}

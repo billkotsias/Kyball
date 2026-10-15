@@ -1,0 +1,73 @@
+#include "Cosmos.fsl"
+#include "Level.fsl"
+
+IntroAnimal iaforest { i "#ffffffHau, I am #ff8888Kyiyu#ffffff. The whisper of my cherished forest is dying out and I can no longer harken its secrets. Restore the contact with the forest and become a part of a world which will go on living.\nI will stand by your quest." }
+IntroAnimal iabatcave { i "#ffffffI hope your journey to here wasn't too hard. My name is #ff8888Long#ffffff. I live deep inside the earth but the temperature isn't as high as it should be.\nThe flames have been extinguished and the moisture has become excessive. Help me and I'll be your friend for ever." }
+IntroAnimal iareef { i "#ffffffWooy! I'm #ff8888Wajarrgi#ffffff. I love to flip in the water and watch the corals and the sea creatures; but it's a long time since I have seen either. I miss my friends.\nPlease, can you help me to bring them back?" }
+IntroAnimal iahalloween { i "#ffffffKalispera, I am #ff8888Persephone#ffffff. Do you know when it will be dawn? I need to go to sleep but it seems like daylight is not coming back. I am longing for the day that I will be able to dream again." }
+IntroAnimal iasavanna { i "#ffffffUnjani? I'm #ff8888Imvubu#ffffff, I love to dance and do acrobatic feats. However, lately I have been feeling below par. Something is going on all over the place and is worrying me.\nWill you help me calm down and find my beat?" }
+IntroAnimal iadesert { i "#ffffffMarhaban! I am #ff8888Mariat#ffffff, the #ff8888Oryx#ffffff. I grew up listening to the birds in the oases and observing the long camel caravans. Today, everywhere is silent.\nWhen the liquid of life comes back, you will behold the beauty of the desert." }
+IntroAnimal iaarctic { i "#ffffffAi! Welcome to my icy world. I am #ff8888Aiviq#ffffff, the Walrus. In recent times everything feels awry. The snow is melting and I am feeling hot. My home is changing and each new day seems harder for me to survive. Please help me bring the cold and the snow back." }
+IntroAnimal iabeach { i "#ffffffWelcome to my world. I am #ff8888Tupi#ffffff the #ff8888Toucan#ffffff. Here, the plants are withering and the critters are going away. Will you help us restore the balance?\nI will be your #ff8888guide#ffffff and supporter.\nGo for it and good luck!" }
+
+Hint a0 { h "Beware of the #00fffficy balls#ffffff: they cannot be popped directly.\n\n\nInstead, make them #ff0000fall on the ground#ffffff to break them up!" }
+Hint d0 { h "It may not seem like it, but these pillars are actually\n'#ffa0ffhung by a thread#ffffff'..." }
+Hint f4 { h "Try to shoot the balls at the #88ff88back#ffffff to achieve #88ff88higher scores#ffffff." }
+Hint 0 { h "#ffffffShoot and match\n#ff00003 #ffffffballs of the #ff0000same color !\n\n\n#ffffffRelax! There is no time limit.\n\n\nClick #00ffffleft mouse button #ffffffto start!" }
+Hint 1 { h "#ffffffThe balls #ff0000stick #ffffffat the #ff0000back side #ffffffof the #ff00ffCube#ffffff.\n\nFirst shoot the balls #ff0000at the back #ffffffand see what happens!" }
+Hint 2 { h "Shoot the #ffff00yellow #ffffffballs #ff0000on #ffffffthe #0000ffblue #ffffffballs.\n\nWhen the #0000ffblue #ffffffballs explode, the #ffff00yellow #ffffffones will fall!" }
+Hint 3 { h "You can #ff0000rotate #ffffffaround the #ff00ffCube #ffffff:\n#ff0000hold down #ffffffthe #00ffffright mouse button #ffffffand #ff0000move the mouse #ffffff(up-down/left-right).\n\n\n#ffffffBy the way, have you noticed that every #ff00008 shots #ffffffthe #ff00ffCube #ff00ffshrinks #ffffffa bit?" }
+Hint 4 { h "Again, shoot first the balls #ff0000at the back #ffffffto quickly clear the level." }
+Hint 5 { h "Have you noticed that the world around you is slowly #fffffftransforming?\n\nThe energy released through the #ff00ffCube #ffffffhelps to #ff0000rebalance #ffffffthe world and bring life back in it." }
+Hint 6 { h "Have you learned how to rotate around the #ff00ffCube #ffffffalready?\n\n( #ff0000hold down #ffffffthe #00ffffright mouse button #ffffffand #ff0000move the mouse  #ffffffup-down and left-right )" }
+Hint 7 { h "#ff0000Hint : #ffffffplace the 'unfitting' #0000ffblue #ffffffand #ffff00yellow #ffffffballs #00ffffon #ffffffthe #ff0000red #ffffffballs." }
+Hint 8 { h "#ffffffSee the metallic flat object in the front side of the #ff00ffCube#ffffff?\n\nThat's the #00ff00Base#ffffff : it creates and shoots the #ff00ffballs#ffffff. \n\nIf you examine it closely, you'll see that it shows the #ff0000c#00ff00o#ff0000l#0088ffo#ffff00u#ff0000r of the #ff0000subsequent#ffffff ball, too.\n\nThat way, you can plan your moves ahead! Isn't that great?" }
+Hint 10 { h "#ffffffTry to bounce the balls off the #ff0000side walls." }
+Hint 12 { h "Can you hit the #ff0000red ball #ffffff?" }
+Hint 13 { h "Can you hit the #ffff00yellow balls #ffffff?" }
+Hint 15 { h "The #ff00ffCube's#ffffff initial #ff0000depth #ffffffmay vary!" }
+Hint 16 { h "#ff00ffThank you!#ffffff My world will continue to be, thanks to you!\n\nThis is the final challenge. Good luck in your quest! One day we'll meet again." }
+Hint s0 { h "#ffffffWhat's this? The #ff0000Cube#ffffff has increased to enormous size!\n\nAnd if that wasn't enough, balls #ff0000don't stick#ffffff at the back side of the #ff00ffCube#ffffff. But where do they stick..?" }
+Hint r0 { h "You'll have to bounce your shots off the walls to go around the #88ffffobstacles#ffffff and reach the balls at the back of the #ff00ffCube#ffffff." }
+Hint h0 { h "The #444444dark balls#ffffff will deflect your shots, but they will #ff88ffbreak#ffffff if they #ff88fffall#ffffff on the ground." }
+Hint h6 { h "Try to point at the distant targets by focusing through the center of your aim..." }
+Hint h7 { h "The #ff00ffCube#ffffff is malfunctioning! Its back side doesn't seem to work at all." }
+Hint h9 { h "Oh my! The #ff00ffCube#ffffff has ceased working altogether. From now on you will have to rely only on your shots." }
+
+// Generic vars used throughout the code
+
+array of string diffs [
+	"#ffa0a0Plain sailing"
+	"#a0a0ffPicnic"
+	"#ffa0a0Labyrinthine"
+	"#ff0000Deep"
+	"#ffa0a0Nightmare"
+	"#ffa0a0Heavy"
+	"#a0a0ffNo sweat"
+	"#a0ffa0Tutorial"
+]
+
+string completed "Completed"
+string totalScore "Total Score"
+
+string flyinSkip "Click to fast-forward
+Right-click to skip intro"
+string flyinStart "Click to start playing"
+
+array of string credits [	[ "3D Graphics & Animation" "Alex Tapanaris" ]
+							[ "Art Direction" "Anna Chrysidi" ]
+							[ "Concept, Design, Production, Programming" "Bill Kotsias" ]
+							[ "Music" "Steve Saunders" ]
+							[ "Sound Effects" "Somatone" ]
+							[ "Additional Animation" "Atle Hillmann" ]
+							[ "Additional Music" "Matthew Le Blanc" ]
+							[ "Additional Graphics" "Kostas MacFarlane" ]
+							[ "Trailer Music" "Jaden Walker" ]
+							[ "Special Thanks To"
+"Spiros Vergos
+Kostas Karaouzas
+Paraschos Chrysidis
+Krysta P." ]
+							[ ""
+"Thank you for playing" ]
+						]

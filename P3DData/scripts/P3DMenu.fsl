@@ -1,0 +1,15 @@
+class MenuBox {
+	real x 0	/// } position relative to center of screen
+	real y 0	/// } square aspect ratio assumed, i.e the left edge of a 16:9 screen is -(16./9./2.), but top is -0.5
+	real w 0.20	/// width
+	real h 0.02	/// height
+	real d 0	/// delay
+	string t ""	/// caption
+}
+
+// TRANSLATE TEXT IN QUOTES BELOW
+MenuBox menuPlay	{ x -0.45 y -0.1 d 0 t "#a0ffa0PLAY" }
+MenuBox menuChange	{ x 0.4 y -0.1 d 0.08 w 0.30 h 0.010 t "#a0ffa0Change Player" }
+MenuBox menuOptions	{ x -0.45 y 0.1 d 0.16 w 0.12 t "#b0efefOptions" }
+MenuBox menuQuit	{ x -0.45 y 0.3 d 0.24 w 0.12 t "#efd0d0Quit" }
+MenuBox menuCredits	{ x 0.4 y 0.3 d 0.24 t "#ffffffEnd Credits" }

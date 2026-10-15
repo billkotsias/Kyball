@@ -1,0 +1,97 @@
+#include "BasicClasses.fsl"
+#include "Node.fsl"
+#include "Skybox.fsl"
+#include "Camera.fsl"
+
+enum c {
+	r g b c m y w k bob bro
+}
+
+class AmbientSoundGroup {
+	array of string n [ ] // sound names
+	// pipe params
+	Vector3 c {}	// pipe base center
+	real i 0		// inner
+	real o 0		// outer
+	real h 0		// height
+	
+	real sInterval 3
+	real sRand 0.2	// interval randomization
+	int pause false // stop producing sounds when all played once
+}
+
+class EnergyChange {
+	Vector3 pos
+	Vector3S scale
+	real ttl 4
+	real rnd 0.0
+	array of real rot [ 0 0 0 1 ]
+}
+
+class Preview {
+	string cam ""	// preview-camera name!
+	real t 5		// enabled time
+}
+
+class Particles {
+	string name ""	// system name
+	string parent ""// empty string = attach to root
+	Vector3 pos		// offset
+	real ff 0		// fast forward? (seconds)
+	int shadows false	// very rare to need shadow-casting particles
+}
+
+// here, it would be great to have class inheritance
+enum ls {
+	cube cyl sph wall plan
+}
+enum lsai {
+	sticky bounce destroy
+}
+class LevelStruct {
+	int a lsai::sticky	/// object's ai
+	int t ls::wall		/// object's form
+	int l true			/// link object?
+	int m true			/// is it a 'mover' i.e moving towards cannon?
+	int v true			/// is it visible or just a collision object?
+	int x 0
+	int y 0
+	int z 0
+	int w 1		/// cube/plane = width, cylinder/sphere = diameter
+	int h 1		/// cube/plane/cylinder = height
+	int d 1		/// cube = depth
+	array of real rot [ 0 0 0 1 ] /// orientation, presumably needed by cylinder(?) at 90-degrees steps
+}
+
+class Hint { string h "" }
+class Level {
+
+	// decoration
+	RGB ambient
+	RGB background { r 0 g 0 b 0 }
+	Fog fog
+	Skyplane plane
+	Skybox skybox
+	array of Node nodes [ ]				/// level-specific decoration stuff
+	array of EnergyChange changes [ ]	/// mark scene changes !
+	array of Preview previews [ ]		/// level previews (for showing changes mainly)
+	
+	array of Particles particles [ ]	/// TODO KYBALL 2 : This is stupid, they should be inside Nodes (OgreBuilder) !!!
+
+	// sound ambience
+	array of AmbientSoundGroup sounds [ ]
+
+	// gameplay
+	
+	/// - actual level structure
+	int z 5							/// Cube depth, =5 --> default, <=0 --> no cube
+	array of int balls [ [ ] ]		/// balls
+	array of LevelStruct struct [ { t ls::wall a lsai::sticky } ] /// advanced structure objects
+
+	/// - misc
+	array of int incoming [ ]	/// specific balls incoming before randomization begins!
+	real maxCannonDeviation 1.0	/// max cannon deviation
+	Hint hint					/// a hint
+	int expert 10000			/// expert score for this level
+	int aimLength 40			/// aim aid in dots
+}

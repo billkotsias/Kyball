@@ -1,7 +1,10 @@
-# Extracted commercial game data and local build trees
-/P3DData/
+# Local build trees
 /build/
+/build-host/
 /out/
+
+# Written at runtime with a machine-specific PluginFolder
+/P3DData/plugins.cfg
 /cmake-build-*/
 *.apk
 *.aab

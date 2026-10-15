@@ -1,0 +1,41 @@
+#include "BasicClasses.fsl"
+
+class Attenuation {
+	// for correct values : http://www.ogre3d.org/tikiwiki/-Point+Light+Attenuation
+	real range 1000000
+	real constant 1
+	real linear 0.0
+	real quad 0.000
+}
+	// real range 325
+	// real constant 1
+	// real linear 0.014
+	// real quad 0.0007
+	
+class SpotRange {
+	real inner 25		// in degrees
+	real outer 45		// in degrees
+	real falloff 1		// 1 = linear fallof rate between the inner/outer cones
+}
+
+enum Light {
+	point
+	directional
+	spot
+}
+
+class Light {
+	string name	""			// unique name
+	int type Light::point	// 0 = point, 1 = directional, 2 = spot (enumeration)
+	
+	RGB diffuse			// colour
+	RGB specular		// specular colour
+	
+	SpotRange spotRange				// UNIMPLEMENTED : if type is 'spot'
+	Attenuation attenuation			// UNIMPLEMENTED : if type is 'point' or 'spot'
+	Vector3 direction { x -1 z 1 }	// if type is 'directional' or 'spot'
+	
+	int on true			// is it initially on (emitting light)?
+	int shadows true	// does it cast shadows?
+	// real power 1		// for HDR rendering
+}
