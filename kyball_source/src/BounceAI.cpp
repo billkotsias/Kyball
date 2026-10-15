@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "game\ai\BounceAI.h"
-#include "game\action\ReflectAction.h"
+#include "game/ai/BounceAI.h"
+#include "game/action/ReflectAction.h"
 
-#include <math\Math.h>
+#include <math/Math.h>
 
 namespace P3D {
 

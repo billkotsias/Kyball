@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "game\GameplayObject.h"
+#include "game/GameplayObject.h"
 
-#include "game\action\Action.h"
+#include "game/action/Action.h"
 
-#include "math\Math.h"
+#include "math/Math.h"
 #include <utility>
 
 namespace P3D {

@@ -1,35 +1,35 @@
 #include "StdAfx.h"
-#include "map\Map.h"
-#include "map\MapOptions.h"
-#include "menu\Player.h"
-#include "map\SubMap.h"
+#include "map/Map.h"
+#include "map/MapOptions.h"
+#include "menu/Player.h"
+#include "map/SubMap.h"
 
 #include "SceneBaseCreator.h"
 #include "OgreBuilder.h"
-#include "hid\HIDBoss.h"
-#include "math\Math.h"
-#include "game\GameplayCollection.h"
-#include "game\form\BallForm.h"
-#include "game\form\BallState.h"
-#include "gui\HintBox.h"
-#include "gui\MenuBox.h"
-#include "gui\SubBlack.h"
+#include "hid/HIDBoss.h"
+#include "math/Math.h"
+#include "game/GameplayCollection.h"
+#include "game/form/BallForm.h"
+#include "game/form/BallState.h"
+#include "gui/HintBox.h"
+#include "gui/MenuBox.h"
+#include "gui/SubBlack.h"
 #include "FSLToOgre.h"
 
-#include "sound\SoundBoss.h"
+#include "sound/SoundBoss.h"
 
 #include "P3DWindow.h"
 #include "P3DScripts.h"
-#include "fsl\FSLInstance.h"
-#include "fsl\FSLClassDefinition.h"
-#include "fsl\FSLArray.h"
+#include "fsl/FSLInstance.h"
+#include "fsl/FSLClassDefinition.h"
+#include "fsl/FSLArray.h"
 
-#include "tween\TLinear.h"
-#include "tween\TSin.h"
-#include "tween\TCos.h"
+#include "tween/TLinear.h"
+#include "tween/TSin.h"
+#include "tween/TCos.h"
 
 #include <algorithm>
-#include <core\Utils.h>
+#include <core/Utils.h>
 
 namespace P3D {
 
@@ -616,7 +616,7 @@ namespace P3D {
 		rot.x += xr * mouseSpeed;
 
 		rot.y += yr * mouseSpeed;
-		rot.y = FANLib::Math::bound(rot.y, YROT_MAX);
+		rot.y = (Ogre::Real)FANLib::Math::bound((double)rot.y, YROT_MAX);
 
 		/// set new orientation
 		OgreAddOns::setOrientationYXZ(mouseRot, rot.x, rot.y);

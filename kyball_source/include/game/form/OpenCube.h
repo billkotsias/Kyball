@@ -8,9 +8,9 @@
 
 #include "Form.h"
 #include "BallState.h"
-#include "game\GameplayCollection.h"
-#include "game\event\EventListener.h"
-#include "tween\TPlayed.h"
+#include "game/GameplayCollection.h"
+#include "game/event/EventListener.h"
+#include "tween/TPlayed.h"
 
 #include <string>
 #include <OgreColourValue.h>

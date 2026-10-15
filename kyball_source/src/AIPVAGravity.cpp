@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "game\ai\AIPVAGravity.h"
+#include "game/ai/AIPVAGravity.h"
 
-#include "game\ai\AIPosVel.h"
+#include "game/ai/AIPosVel.h"
 #include <OgreVector3.h>
 #include "P3DApp.h"
 

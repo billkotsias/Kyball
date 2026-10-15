@@ -4,7 +4,7 @@
 #ifndef FANLIB_ERRORS_H
 #define FANLIB_ERRORS_H
 
-#include <core\FastStr.h>
+#include <core/FastStr.h>
 
 namespace FANLib {
 

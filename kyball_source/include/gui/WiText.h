@@ -6,7 +6,7 @@
 #ifndef WiText_H
 #define WiText_H
 
-#include <gui\Widget.h>
+#include <gui/Widget.h>
 
 namespace P3D {
 

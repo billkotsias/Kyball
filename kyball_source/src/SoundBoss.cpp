@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "sound\SoundBoss.h"
+#include "sound/SoundBoss.h"
 
-#include "tween\TLinear.h"
+#include "tween/TLinear.h"
 
-#include <math\Math.h>
+#include <math/Math.h>
 
 namespace P3D {
 
@@ -266,7 +266,8 @@ namespace P3D {
 		const Ogre::Vector3& pos, const float& refDist, const float& rolloff, const float& maxDist, const float& vol, const float& pit) {
 
 		std::vector<FreeSL::FSLsound> voices = acquireVoices(streams, highPriority);
-		_setSoundStreams(_reference(voices), streams); /// --- here, 'voices' are <altered> !!!
+		std::vector<FreeSL::FSLsound*> voiceRefs = _reference(voices);
+		_setSoundStreams(voiceRefs, streams); /// --- here, 'voices' are <altered> !!!
 
 		/// register voices to respective priority group
 		if (highPriority) {

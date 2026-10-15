@@ -4,6 +4,8 @@
 #ifndef FANLIB_Blitter_H
 #define FANLIB_Blitter_H
 
+#include "MsInts.h"
+
 namespace FANLib {
 
 	class Surface;

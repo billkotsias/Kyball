@@ -7,7 +7,7 @@
 #define SubMenuMG_H
 
 #include "SubMenu.h"
-#include "tween\TPlayed.h"
+#include "tween/TPlayed.h"
 
 #include <string>
 
@@ -21,7 +21,7 @@ namespace P3D {
 
 		/// MyGUI
 		virtual void widgetClicked(MyGUI::Widget*) {};
-		virtual void widgetScroll(MyGUI::VScroll* widget, size_t position) {};
+		virtual void widgetScroll(MyGUI::ScrollBar* widget, size_t position) {};
 
 		std::vector<Widget*> widgets;
 		virtual void setActive();

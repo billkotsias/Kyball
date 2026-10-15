@@ -6,8 +6,8 @@
 #ifndef SubLose_H
 #define SubLose_H
 
-#include "menu\SubMenuMG.h"
-#include <core\MCBSystem.h>
+#include "menu/SubMenuMG.h"
+#include <core/MCBSystem.h>
 
 namespace P3D {
 

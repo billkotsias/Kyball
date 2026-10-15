@@ -6,7 +6,7 @@
 #define FANLIB_FSLInstance_H
 
 #include <map>
-#include <core\FastStr.h>
+#include <core/FastStr.h>
 
 namespace FANLib {
 
@@ -29,7 +29,7 @@ namespace FANLib {
 
 	public:
 
-		FSLInstance::~FSLInstance();
+		~FSLInstance();
 
 		// get a class definition
 		FSLClassDefinition* getClassDef(const FastStr&) const;

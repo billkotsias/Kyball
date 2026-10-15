@@ -1,10 +1,10 @@
-#include <fsl\FSLString.h>
+#include <fsl/FSLString.h>
 
-#include <fsl\FSLRuntime.h>
+#include <fsl/FSLRuntime.h>
 #ifdef _DEBUG
-	#include <core\Log.h>
-	#include <core\FastStr.h>
-	#include <core\Utils.h>
+	#include <core/Log.h>
+	#include <core/FastStr.h>
+	#include <core/Utils.h>
 #endif
 
 namespace FANLib {

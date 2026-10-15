@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "game\Gameplay.h"
+#include "game/Gameplay.h"
 
 #include "P3DApp.h"		/// have I forgoten anything else to include :(
 #include "P3DWindow.h"	/// yes, this one :(
@@ -7,34 +7,34 @@
 #include "SceneBaseCreator.h"
 #include "ShadowManager.h"
 #include "BurstBoss.h"
-#include "visual\VisualBoss.h"
-#include "visual\FlyIn.h"
-#include "tween\TPlayer.h"
+#include "visual/VisualBoss.h"
+#include "visual/FlyIn.h"
+#include "tween/TPlayer.h"
 
-#include "menu\Player.h"
-#include "game\cannon\Cannon.h"
-#include "game\Game.h"
-#include "game\CosmosCreator.h"
-#include "game\LevelBuilder.h"
-#include "game\GameplayBase.h"
-#include "game\GameplayObject.h"
-#include "game\GameplayCollection.h"
-#include "game\ai\AI.h"
-#include "game\ai\AIPVAnimator.h"
-#include "game\form\Form.h"
-#include "game\rule\RuleManager.h"
-#include "game\action\Action.h"
-#include "game\animal\Animal.h"
-#include "game\event\EventManager.h"
-#include "game\event\LostEvent.h"
-#include "game\event\WonEvent.h"
-#include "game\event\CosmosFinEvent.h"
-#include "collision\CollisionParams.h"
-#include "hid\HIDBoss.h"
-#include "sound\SoundBoss.h"
-#include "sound\Sound.h"
+#include "menu/Player.h"
+#include "game/cannon/Cannon.h"
+#include "game/Game.h"
+#include "game/CosmosCreator.h"
+#include "game/LevelBuilder.h"
+#include "game/GameplayBase.h"
+#include "game/GameplayObject.h"
+#include "game/GameplayCollection.h"
+#include "game/ai/AI.h"
+#include "game/ai/AIPVAnimator.h"
+#include "game/form/Form.h"
+#include "game/rule/RuleManager.h"
+#include "game/action/Action.h"
+#include "game/animal/Animal.h"
+#include "game/event/EventManager.h"
+#include "game/event/LostEvent.h"
+#include "game/event/WonEvent.h"
+#include "game/event/CosmosFinEvent.h"
+#include "collision/CollisionParams.h"
+#include "hid/HIDBoss.h"
+#include "sound/SoundBoss.h"
+#include "sound/Sound.h"
 
-#include "game\editor\BallEditor.h"
+#include "game/editor/BallEditor.h"
 
 #include <OgreRoot.h>
 #include <OgreRenderWindow.h>
@@ -42,27 +42,27 @@
 #include <OgreNode.h>
 
 #include <vector>
-#include <core\Utils.h>
+#include <core/Utils.h>
 
-#include "gui\HintBox.h"
-#include "gui\LevelShow.h"
-#include "gui\SubScore.h"
-#include "gui\GameMenu.h"
-#include "gui\SubPaused.h"
-#include "gui\SubWin.h"
-#include "gui\SubLose.h"
+#include "gui/HintBox.h"
+#include "gui/LevelShow.h"
+#include "gui/SubScore.h"
+#include "gui/GameMenu.h"
+#include "gui/SubPaused.h"
+#include "gui/SubWin.h"
+#include "gui/SubLose.h"
 
 // temp ??!??
 #include "P3DScripts.h"
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLInstance.h>
-#include <fsl\FSLArray.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLInstance.h>
+#include <fsl/FSLArray.h>
 
 // debug
-#include <OIS/OIS.h>
+#include "OIS.h"
 #include <OgreOverlayManager.h>
 #include <OgreOverlayElement.h>
-#include "game\Camera.h"
+#include "game/Camera.h"
 
 namespace P3D {
 

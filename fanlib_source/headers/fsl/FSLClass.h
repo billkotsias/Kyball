@@ -5,9 +5,9 @@
 #define FANLIB_FSLClass_H
 
 #include <deque>
-#include <fsl\FSLTypes.h>
-#include <fsl\FSLObject.h>
-#include <fsl\FSLClassDefPtr.h>
+#include <fsl/FSLTypes.h>
+#include <fsl/FSLObject.h>
+#include <fsl/FSLClassDefPtr.h>
 
 namespace FANLib {
 

@@ -6,7 +6,7 @@
 #ifndef Ambience_H
 #define Ambience_H
 
-#include "visual\Visual.h"
+#include "visual/Visual.h"
 #include <vector>
 
 namespace P3D {

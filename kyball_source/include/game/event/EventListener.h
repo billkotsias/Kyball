@@ -6,7 +6,7 @@
 #ifndef EventListener_H
 #define EventListener_H
 
-#include "game\event\Event.h"
+#include "game/event/Event.h"
 #include <map>
 
 namespace P3D {

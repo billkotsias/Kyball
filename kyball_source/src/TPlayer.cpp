@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "tween\ITween.h"
-#include "tween\TPlayer.h"
+#include "tween/ITween.h"
+#include "tween/TPlayer.h"
 
 namespace P3D {
 

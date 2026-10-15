@@ -4,13 +4,17 @@
 #include "P3DApp.h"
 #include "P3DWindow.h"
 #include <SceneBaseCreator.h>
-#include "hid\HIDBoss.h"
-#include "menu\SubConfig.h"
+#include "hid/HIDBoss.h"
+#include "menu/SubConfig.h"
 
-#include <core\Utils.h>
-#include <math\Math.h>
+#include <core/Utils.h>
+#include <math/Math.h>
+#include "KyballPlatform.h"
 #include <iostream>
 #include <fstream>
+#if !defined(_WIN32)
+#include <SDL.h>
+#endif
 
 namespace P3D {
 
@@ -22,7 +26,7 @@ namespace P3D {
 
 	double P3DConfig::MONITOR_ASPECT_RATIO = 4./3.;
 
-	const std::string P3DConfig::RESOURCES_FILE	= P3DApp::DATA_PATH + "configRes.cfg";
+	const std::string P3DConfig::RESOURCES_FILE	= "configRes.cfg";
 
 	P3DConfig::~P3DConfig() {
 		delete subConfig;
@@ -34,6 +38,7 @@ namespace P3D {
 
 	bool P3DConfig::begin() {
 
+		P3DApp::initPaths();
 		doNotBegin = false;
 		notFinished = true;
 		subConfig = 0;
@@ -43,9 +48,21 @@ namespace P3D {
 		/// "guess" monitor aspect ratio and max resolution by current desktop screen-mode
 		DEVMODEA modeInfo;
 		modeInfo.dmSize = sizeof(DEVMODEA);
-		modeInfo.dmDriverExtra = NULL;
+		modeInfo.dmDriverExtra = 0;
+#if defined(_WIN32)
 		EnumDisplaySettingsExA(0, ENUM_CURRENT_SETTINGS, &modeInfo, 0);
 		currentMode = modeInfo;
+#else
+		modeInfo.dmPelsWidth = 1280;
+		modeInfo.dmPelsHeight = 720;
+		modeInfo.dmBitsPerPel = 32;
+		SDL_DisplayMode desktop;
+		if (SDL_GetCurrentDisplayMode(0, &desktop) == 0 && desktop.w > 0 && desktop.h > 0) {
+			modeInfo.dmPelsWidth = (unsigned int)desktop.w;
+			modeInfo.dmPelsHeight = (unsigned int)desktop.h;
+		}
+		currentMode = modeInfo;
+#endif
 
 		MONITOR_ASPECT_RATIO = (double)currentMode.dmPelsWidth / (double)currentMode.dmPelsHeight; /// square-pixel assumed, or the user is plain crazy
 
@@ -78,21 +95,46 @@ namespace P3D {
 		} catch(...) {};
 
 		// enumerate all suitable screen modes
+#if defined(_WIN32)
 		int modeNum = -1;
 		while (EnumDisplaySettingsExA(0, ++modeNum, &modeInfo, 0)) {
 			if (modeInfo.dmBitsPerPel < 16) continue;
 			modes.push_back( modeInfo );
 		}
+#else
+		int displays = SDL_GetNumDisplayModes(0);
+		for (int modeNum = 0; modeNum < displays; ++modeNum) {
+			SDL_DisplayMode mode;
+			if (SDL_GetDisplayMode(0, modeNum, &mode) != 0) continue;
+			DEVMODEA listed;
+			listed.dmSize = sizeof(DEVMODEA);
+			listed.dmDriverExtra = 0;
+			listed.dmPelsWidth = (unsigned int)mode.w;
+			listed.dmPelsHeight = (unsigned int)mode.h;
+			listed.dmBitsPerPel = 32;
+			modes.push_back(listed);
+			listed.dmBitsPerPel = 16;
+			modes.push_back(listed);
+		}
+		if (modes.empty()) {
+			modes.push_back(currentMode);
+			DEVMODEA fallback = currentMode;
+			fallback.dmPelsWidth = 800;
+			fallback.dmPelsHeight = 600;
+			fallback.dmBitsPerPel = 32;
+			modes.push_back(fallback);
+		}
+#endif
 
 		// show config menu
-		ogreRoot = OGRE_NEW Ogre::Root(P3DApp::PLUGINS_FILE, P3DApp::OGRE_CONFIG_FILE, P3DApp::OGRE_LOG_FILE);
+		ogreRoot = createOgreRoot();
 
 		Ogre::RenderSystem* renderSystem = 0;
-		Ogre::RenderSystemList* renderSystems = ogreRoot->getAvailableRenderers();
+		const Ogre::RenderSystemList& renderSystems = ogreRoot->getAvailableRenderers();
 
 		// TODO : favourable/fallback rendering systems should be defined externally in a script
-		for (unsigned int i = 0; i < renderSystems->size(); ++i) {
-			Ogre::RenderSystem* availableSystem = renderSystems->at(i);
+		for (unsigned int i = 0; i < renderSystems.size(); ++i) {
+			Ogre::RenderSystem* availableSystem = renderSystems.at(i);
 			/// - <almost-worst> case : no DirectX 9 or OpenGL found; get whatever system is <first> available
 			if (i == 0) renderSystem = availableSystem;
 			/// - <best> case : DirectX 9 found
@@ -324,6 +366,7 @@ namespace P3D {
 
 		const DEVMODEA* min = getNearestMode(X_MIN, Y_MIN, 16);
 		if (!min) min = getNearestMode(X_MIN, Y_MIN, 32);
+		if (!min) return currentMode;
 		return *min;
 	}
 	const DEVMODEA& P3DConfig::getMedMode()
@@ -333,6 +376,7 @@ namespace P3D {
 
 		const DEVMODEA* min = getNearestMode(MONITOR_ASPECT_RATIO*Y_MIN, Y_MIN, 32);
 		if (!min) min = getNearestMode(MONITOR_ASPECT_RATIO*Y_MIN, Y_MIN, 16);
+		if (!min) return currentMode;
 		return *min;
 	}
 

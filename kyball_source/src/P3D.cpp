@@ -23,18 +23,18 @@ LGPL like the rest of the OGRE engine.
 
 #include "P3DConfig.h"
 #include "P3DApp.h"
+#include "hid/HIDBoss.h"
+#include "KyballPlatform.h"
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
 	#define WIN32_LEAN_AND_MEAN
 	#include "windows.h"
+	#include <io.h>
+	#include <fcntl.h>
 #endif
 #include "OgreException.h"
 
-/// console-window related headers
-//#ifdef _DEBUG
-#include <stdio.h>
-#include <io.h>
-#include <fcntl.h>
-//#endif
+#include <SDL.h>
+#include <string>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,23 +42,20 @@ extern "C" {
 
 
 	void openConsoleWindow() {
-#ifdef _DEBUG /// console window opens only in debug mode
+#if defined(_WIN32) && defined(_DEBUG)
 		AllocConsole();
 
 		HANDLE handle_out = GetStdHandle(STD_OUTPUT_HANDLE);
-		int hCrt = _open_osfhandle((long) handle_out, _O_TEXT);
+		int hCrt = _open_osfhandle((intptr_t) handle_out, _O_TEXT);
 		FILE* hf_out = _fdopen(hCrt, "w");
 		setvbuf(hf_out, NULL, _IONBF, 1);
 		*stdout = *hf_out;
 
 		HANDLE handle_in = GetStdHandle(STD_INPUT_HANDLE);
-		hCrt = _open_osfhandle((long) handle_in, _O_TEXT);
+		hCrt = _open_osfhandle((intptr_t) handle_in, _O_TEXT);
 		FILE* hf_in = _fdopen(hCrt, "r");
 		setvbuf(hf_in, NULL, _IONBF, 128);
 		*stdin = *hf_in;
-
-		HWND hwndMyWnd = GetConsoleWindow();
-		//SetWindowPos(hwndMyWnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_DRAWFRAME | SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW); // ALWAYS ON TOP
 #endif
 	}
 
@@ -68,6 +65,20 @@ extern "C" {
 	int main(int argc, char *argv[])
 #endif
 	{
+#ifndef _WIN32
+		bool touchInput = false;
+		for (int i = 1; argv && i < argc; ++i) {
+			if (std::string(argv[i]) == "--touch") touchInput = true;
+		}
+#ifdef __ANDROID__
+		touchInput = true;
+#endif
+		SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
+		SDL_SetHint(SDL_HINT_MOUSE_TOUCH_EVENTS, "0");
+		SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
+		P3D::HIDBoss::setTouchInput(touchInput);
+		P3D::P3DApp::initPaths();
+#endif
 	// USEFUL STUFF TO CONSIDER, MAY COME ACROSS IN THE FUTURE AGAIN 5/7/09
 	// - get exe full path
 	///STARTUPINFO StartupInfo;
@@ -95,13 +106,16 @@ extern "C" {
 
 	} catch( Ogre::Exception& e ) {
 
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-		MessageBox( NULL, e.getFullDescription().c_str(), "An exception has occured!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
-#else
-		std::cerr << "An exception has occured: " << e.getFullDescription().c_str() << std::endl;
-#endif
+		P3D::reportError(e.getFullDescription().c_str());
+      } catch (const std::exception& e) {
+		std::cerr << "Kyball stopped: " << e.what() << std::endl;
+      } catch (...) {
+		std::cerr << "Kyball stopped. Game data was not found under P3DData/ (or KYBALL_DATA)." << std::endl;
       }
 
+#ifndef _WIN32
+		SDL_Quit();
+#endif
       return 0;
    }
 

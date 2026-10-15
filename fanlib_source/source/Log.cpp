@@ -1,4 +1,4 @@
-#include "core\Log.h"
+#include "core/Log.h"
 
 #include <stdio.h>
 #include <time.h>
@@ -44,7 +44,11 @@ namespace FANLib {
 
 		if (tStamp) {
 			time(&rawtime);
+#if defined(_WIN32)
 			localtime_s(&timeinfo, &rawtime);
+#else
+			localtime_r(&rawtime, &timeinfo);
+#endif
 			strftime(timeBuffer, 18, "%d/%m %H:%M:%S > ", &timeinfo);
 		}
 

@@ -1,9 +1,9 @@
 #include "StdAfx.h"
 #include "FSLToOgre.h"
 
-#include <core\FastStr.h>
-#include <fsl\FSLClass.h>
-#include <fsl\FSLArray.h>
+#include <core/FastStr.h>
+#include <fsl/FSLClass.h>
+#include <fsl/FSLArray.h>
 
 #include <OgreMatrix3.h>
 

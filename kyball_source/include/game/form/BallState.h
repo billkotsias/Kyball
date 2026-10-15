@@ -57,7 +57,7 @@ namespace P3D {
 		static const std::vector<Ogre::ColourValue> initBallColours(double, double, double, double);
 
 		// constructor
-		BallState::BallState(BallType type, bool count = false, double inRad = BALL_RADIUS) : FormState(FormState::BALL), ballType(type), radius(inRad), countForScore(count) {
+		BallState(BallType type, bool count = false, double inRad = BALL_RADIUS) : FormState(FormState::BALL), ballType(type), radius(inRad), countForScore(count) {
 		};
 
 		inline void setBallType(BallState::BallType inType)	{ ballType = inType; };

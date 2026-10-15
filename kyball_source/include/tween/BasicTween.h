@@ -7,6 +7,7 @@
 #define BasicTween_H
 
 #include "AbstractTween.h"
+#include <functional>
 
 namespace P3D {
 
@@ -19,24 +20,30 @@ namespace P3D {
 		Var startValue;	/// starting value to "tween"
 		Var endValue;	/// end value of "tween"
 
-		const Var& (Object::*get)() const;	/// function getting the object's value
+		std::function<Var()> read;	/// function getting the object's value
 
 	public:
 
-		// constructor
 		BasicTween(Object* obj, Var endV, double endT, const Var& (Object::*getMember)() const, void (Object::*setMember)(const Var&), double _delay = 0) :
-		  AbstractTween(obj, endT, setMember, _delay), endValue(endV), get(getMember) {
+		  AbstractTween<Object, Var>(obj, endT, setMember, _delay), endValue(endV) {
+			read = [obj, getMember]() -> Var { return (obj->*getMember)(); };
+		};
+
+		template <class Getter, class Setter>
+		BasicTween(Object* obj, Var endV, double endT, Getter getMember, Setter setMember, double _delay = 0) :
+		  AbstractTween<Object, Var>(obj, endT, setMember, _delay), endValue(endV) {
+			read = [obj, getMember]() -> Var { return (obj->*getMember)(); };
 		};
 
 		virtual ~BasicTween() {
-			(object->*set)(endValue); /// set <final value> to tweened object!
+			this->apply(endValue); /// set <final value> to tweened object!
 		};
 
 		// overrides
 		/// - get object's original state
 		virtual void start() {
-			time = 0;
-			startValue = (object->*get)();
+			this->time = 0;
+			startValue = read();
 		};
 
 	};

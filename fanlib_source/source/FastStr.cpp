@@ -3,9 +3,9 @@
 
 #ifdef _DEBUG
 	// error-handling
-	#include <core\Log.h>
+	#include <core/Log.h>
 	#include <FANLibErrors.h>
-	#include <core\FastStrMessages.h>
+	#include <core/FastStrMessages.h>
 #endif
 
 namespace FANLib {

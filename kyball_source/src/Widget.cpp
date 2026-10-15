@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "gui\Widget.h"
+#include "gui/Widget.h"
 
 #include "P3DWindow.h"
 #include "SceneBaseCreator.h"

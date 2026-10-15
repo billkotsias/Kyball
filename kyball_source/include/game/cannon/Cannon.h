@@ -6,12 +6,12 @@
 #ifndef Cannon_H
 #define Cannon_H
 
-#include "hid\HIDListener.h"
+#include "hid/HIDListener.h"
 #include <OgreMatrix3.h>
-#include "game\form\BallState.h"
-#include "tween\TPlayed.h" /// for the tube's shake
+#include "game/form/BallState.h"
+#include "tween/TPlayed.h" /// for the tube's shake
 
-#include <logic\Enabled.h>
+#include <logic/Enabled.h>
 #include <string>
 
 namespace Ogre {

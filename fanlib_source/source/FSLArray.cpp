@@ -1,8 +1,8 @@
-#include <fsl\FSLArray.h>
-#include <fsl\FSLString.h>
-#include <fsl\FSLArrayMessages.h>
-#include <fsl\FSLPointer.h>
-#include <fsl\FSLClass.h>
+#include <fsl/FSLArray.h>
+#include <fsl/FSLString.h>
+#include <fsl/FSLArrayMessages.h>
+#include <fsl/FSLPointer.h>
+#include <fsl/FSLClass.h>
 
 namespace FANLib {
 

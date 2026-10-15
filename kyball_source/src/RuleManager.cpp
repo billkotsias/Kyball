@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "game\rule\RuleManager.h"
-#include "game\rule\Rule.h"
+#include "game/rule/RuleManager.h"
+#include "game/rule/Rule.h"
 
 namespace P3D {
 

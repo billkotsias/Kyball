@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "game\ai\StickyAI.h"
-#include "game\action\StickAction.h"
+#include "game/ai/StickyAI.h"
+#include "game/action/StickAction.h"
 
-#include "math\Math.h"
+#include "math/Math.h"
 
 namespace P3D {
 

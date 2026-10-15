@@ -10,7 +10,7 @@
 #include <OgreVector3.h>
 #include <OgreColourValue.h>
 #include <map>
-#include "tween\TPlayed.h"
+#include "tween/TPlayed.h"
 
 namespace Ogre {
 	class SceneNode;

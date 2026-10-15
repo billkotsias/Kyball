@@ -7,8 +7,8 @@
 #define BallForm_H
 
 #include "ShadowCaster.h"
-#include "game\form\Form.h"
-#include "game\form\BallState.h"
+#include "game/form/Form.h"
+#include "game/form/BallState.h"
 
 namespace Ogre {
 	class BillboardSet;

@@ -10,7 +10,7 @@
 
 #include <string>
 #include <deque>
-#include "hid\HIDListener.h"
+#include "hid/HIDListener.h"
 #include "OgreGpuCommandBufferFlush.h"
 
 namespace FANLib {
@@ -39,22 +39,24 @@ namespace P3D {
 	class P3DApp {
 	public:
 
-		// file paths
-		static const std::string PATH_DELIMITER;
-		static const std::string APP_FOLDER;
-		static const std::string DATA_PATH;
-		static const std::string SOUNDS_PATH;
+		// file paths (filled by initPaths; '/' on Linux and Android)
+		static std::string PATH_DELIMITER;
+		static std::string APP_FOLDER;
+		static std::string DATA_PATH;
+		static std::string SOUNDS_PATH;
 		static const std::string SOUNDS_EXT;
-		static const std::string SCRIPTS_PATH;
-		static const std::string PLUGINS_FILE;
-		static const std::string OGRE_CONFIG_FILE;
-		static const std::string USER_PATH;
-		static const std::string OGRE_LOG_FILE;
-		static const std::string FANLIB_LOG_FILE;
-		static const std::string MYGUI_LOG_FILE;
-		static const std::string RESOURCES_FILE;
+		static std::string SCRIPTS_PATH;
+		static std::string PLUGINS_FILE;
+		static std::string OGRE_CONFIG_FILE;
+		static std::string USER_PATH;
+		static std::string OGRE_LOG_FILE;
+		static std::string FANLIB_LOG_FILE;
+		static std::string MYGUI_LOG_FILE;
+		static std::string RESOURCES_FILE;
 		static const std::string UNREF_RES_DIR;
-		static const std::string OPTIONS_FILE;
+		static std::string OPTIONS_FILE;
+
+		static void initPaths();
 
 		// application constants
 		static const char* const	WINDOW_NAME;	/// application's window name

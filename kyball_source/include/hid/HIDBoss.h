@@ -8,13 +8,6 @@
 
 #include <map>
 
-namespace OIS {
-	class InputManager;
-	class Mouse;
-	class Keyboard;
-	class JoyStick;
-}
-
 namespace Ogre {
 	class MovableObject;
 }
@@ -64,11 +57,8 @@ namespace P3D {
 		static HIDBoss* instance;
 		~HIDBoss();
 
-		///OIS Input devices
-		OIS::InputManager*	inputManager;
-		OIS::Mouse*			mouse;
-		OIS::Keyboard*		keyboard;
-		//TODO: OIS::JoyStick*		joystick;
+		bool mouseHidden;
+		bool mouseGrabbed;
 
 		/// track keyboard
 		char keyStates[512];	/// double-buffered
@@ -128,6 +118,10 @@ namespace P3D {
 		};
 
 		static int windowHandle; /// set this before calling HIDBoss for the first time
+		static void setSdlWindow(void* window);
+		static void setTouchInput(bool enabled);
+		static bool useTouchInput();
+		static bool applicationFocused();
 
 		static HIDBoss* getSingletonPtr();
 		static void destroy();

@@ -1,9 +1,9 @@
-#include "Stdafx.h"
+#include "StdAfx.h"
 #include "OgreGpuCommandBufferFlush.h"
 #include "OgreRoot.h"
 #include "OgreRenderSystem.h"
 #include "OgreHardwareOcclusionQuery.h"
-#include "core\Utils.h"
+#include "core/Utils.h"
 
 namespace Ogre
 {

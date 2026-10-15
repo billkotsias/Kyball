@@ -33,3 +33,7 @@ Puts *JSON* and *XML* to shame.
 C++03-era, now surpassed by C++11 std::functions
 ### Math extensions
 ### Enable-Disable logic
+
+## Linux and Android builds
+
+See [BUILD.md](BUILD.md) for the CMake/NDK build, the `--touch` gesture flag, `KYBALL_DATA`, and how to pack `P3DData` into the APK without committing it.

@@ -8,9 +8,9 @@
 
 #include <string>
 
-#include <hid\HIDListener.h>
+#include <hid/HIDListener.h>
 #include <OgreFrameListener.h>
-#include <tween\TPlayed.h>
+#include <tween/TPlayed.h>
 
 namespace P3D {
 

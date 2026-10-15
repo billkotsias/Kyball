@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "game\CosmosCreator.h"
+#include "game/CosmosCreator.h"
 
 #include "P3DScripts.h"
 #include "P3DConfig.h"
@@ -8,30 +8,30 @@
 #include "TextureShadowBuffer.h"
 #include "ShadowManager.h"
 #include "BurstBoss.h"
-#include "visual\VisualBoss.h"
+#include "visual/VisualBoss.h"
 
-#include "game\GameplayCollection.h"
-#include "game\GameplayBase.h"
-#include "game\GameplayObject.h"
-#include "game\Camera.h"
-#include "game\cannon\Cannon.h"
-#include "game\animal\Animal.h"
+#include "game/GameplayCollection.h"
+#include "game/GameplayBase.h"
+#include "game/GameplayObject.h"
+#include "game/Camera.h"
+#include "game/cannon/Cannon.h"
+#include "game/animal/Animal.h"
 
-#include "game\ai\AIPVAnimator.h"
-#include "game\form\BallForm.h"
-#include "game\form\BobForm.h"
-#include "game\form\BallState.h"
-#include "game\net\HexNet.h"
-#include "game\net\CubeNet.h"
+#include "game/ai/AIPVAnimator.h"
+#include "game/form/BallForm.h"
+#include "game/form/BobForm.h"
+#include "game/form/BallState.h"
+#include "game/net/HexNet.h"
+#include "game/net/CubeNet.h"
 
-#include "gui\SubScore.h"
+#include "gui/SubScore.h"
 
-#include <fsl\FSLEnum.h>
-#include <fsl\FSLArray.h>
-#include <fsl\FSLInstance.h>
-#include <fsl\FSLClassDefinition.h>
+#include <fsl/FSLEnum.h>
+#include <fsl/FSLArray.h>
+#include <fsl/FSLInstance.h>
+#include <fsl/FSLClassDefinition.h>
 
-#include "sound\SoundBoss.h"
+#include "sound/SoundBoss.h"
 #include "OgreAddOns.h"
 #include "FSLToOgre.h"
 
@@ -48,7 +48,7 @@
 #include <OgreTextureManager.h>
 #include <OgreHardwarePixelBuffer.h>
 
-#include "core\Utils.h"
+#include "core/Utils.h"
 #include <string>
 
 namespace P3D {
@@ -443,11 +443,11 @@ namespace P3D {
 
 	void BloomListener::setBloomWeight(const double& value) {
 		blurWeight = value;
-		if (!bloomParams.isNull()) bloomParams->setNamedConstant("BlurWeight", value);
+		if (!bloomParams.isNull()) bloomParams->setNamedConstant("BlurWeight", (Ogre::Real)value);
 	}
 	void BloomListener::setOriginalWeight(const double& value) {
 		originalImageWeight = value;
-		if (!bloomParams.isNull()) bloomParams->setNamedConstant("OriginalImageWeight", value);
+		if (!bloomParams.isNull()) bloomParams->setNamedConstant("OriginalImageWeight", (Ogre::Real)value);
 	}
 	BloomListener* BloomListener::notifyViewportSize(int width, int height)
 	{
@@ -529,7 +529,7 @@ namespace P3D {
 
 	void SharpenListener::setSharpen(const double& value) {
 		sharpen = value;
-		if (!bloomParams.isNull()) bloomParams->setNamedConstant("Sharpen", value);
+		if (!bloomParams.isNull()) bloomParams->setNamedConstant("Sharpen", (Ogre::Real)value);
 	}
 	void SharpenListener::notifyMaterialSetup(Ogre::uint32 pass_id, Ogre::MaterialPtr &mat) {
 		static const Ogre::uint32 SHARPEN_PASS_ID = 56565;

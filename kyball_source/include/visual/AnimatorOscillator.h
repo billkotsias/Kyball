@@ -6,7 +6,7 @@
 #ifndef AnimatorOscillator_H
 #define AnimatorOscillator_H
 
-#include "visual\Visual.h"
+#include "visual/Visual.h"
 
 namespace P3D {
 

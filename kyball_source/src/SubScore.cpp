@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "gui\SubScore.h"
+#include "gui/SubScore.h"
 
-#include "game\GameplayBase.h"
+#include "game/GameplayBase.h"
 
-#include <core\Utils.h>
+#include <core/Utils.h>
 #include <math.h>
 
 namespace P3D {

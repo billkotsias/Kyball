@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "visual\AnimatorOscillator.h"
-#include "visual\VisualBoss.h"
+#include "visual/AnimatorOscillator.h"
+#include "visual/VisualBoss.h"
 #include "OgreAddOns.h"
 
 namespace P3D {

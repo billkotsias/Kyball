@@ -1,22 +1,22 @@
 #include "StdAfx.h"
-#include "game\editor\BallEditor.h"
+#include "game/editor/BallEditor.h"
 
-#include "hid\HIDBoss.h"
-#include "game\GameplayBase.h"
-#include "game\GameplayObject.h"
-#include "game\GameplayCollection.h"
-#include "game\net\Net.h"
-#include "game\ai\BallAI.h"
-#include "game\ai\BobAI.h"
-#include "game\ai\BroAI.h"
-#include "game\form\BallForm.h"
-#include "game\form\BobForm.h"
-#include "game\cannon\BallCreator.h"
-#include "game\cannon\Cannon.h"
+#include "hid/HIDBoss.h"
+#include "game/GameplayBase.h"
+#include "game/GameplayObject.h"
+#include "game/GameplayCollection.h"
+#include "game/net/Net.h"
+#include "game/ai/BallAI.h"
+#include "game/ai/BobAI.h"
+#include "game/ai/BroAI.h"
+#include "game/form/BallForm.h"
+#include "game/form/BobForm.h"
+#include "game/cannon/BallCreator.h"
+#include "game/cannon/Cannon.h"
 #include "OgreBuilder.h"
 #include "OgreAddOns.h"
 
-#include <core\Utils.h>
+#include <core/Utils.h>
 #include <OgreSceneNode.h>
 #include <OgreVector3.h>
 
@@ -170,6 +170,7 @@ namespace P3D {
 		/// <save> produced text
 
 		/// - copy to clipboard
+#if defined(_WIN32)
 		HGLOBAL h;
 		LPTSTR arr;
 		int textSize = text.size() + 1;
@@ -183,6 +184,9 @@ namespace P3D {
 		EmptyClipboard();
 		SetClipboardData(CF_TEXT, h);
 		CloseClipboard();
+#else
+		std::cout << text;
+#endif
 	}
 
 }

@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "gui\LevelShow.h"
+#include "gui/LevelShow.h"
 
-#include "gui\WiText.h"
+#include "gui/WiText.h"
 #include "SceneBaseCreator.h"
-#include "tween\TLinear.h"
+#include "tween/TLinear.h"
 
 namespace P3D {
 

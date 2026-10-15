@@ -16,6 +16,7 @@ namespace Ogre {
 	class RenderWindow;
 	class Camera;
 	class Viewport;
+	class OverlaySystem;
 }
 
 namespace P3D {
@@ -57,7 +58,7 @@ namespace P3D {
 		/// <NOTE> : if the new SceneManager is of the same type as the last one created, it won't get recreated !! Saves much re-initialization and MyGUI loading !!
 		void createSceneBase(unsigned char = 1, ViewAlign = LEFT_TO_RIGHT, int = 0,
 							 Ogre::SceneType = Ogre::ST_GENERIC,
-							 char* = "BaseCam"
+							 const char* = "BaseCam"
 							 );
 		int lastSceneManagerType;
 
@@ -99,6 +100,7 @@ namespace P3D {
 
 		MyGUI::Gui* myGUI;
 		MyGUI::OgrePlatform* myPlatform;
+		Ogre::OverlaySystem* overlaySystem;
 
 		Ogre::Viewport* getViewport (unsigned char i = 0) { return viewport[i]; };
 

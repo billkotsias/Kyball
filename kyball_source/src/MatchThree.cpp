@@ -1,41 +1,41 @@
 #include "StdAfx.h"
-#include "game\rule\MatchThree.h"
+#include "game/rule/MatchThree.h"
 
-#include "game\event\BallKilledEvent.h"
-#include "game\event\GOEvent.h"
-#include "game\event\ShrinkEvent.h"
-#include "game\event\ShrinkIn2Event.h"
-#include "game\event\ShrinkIn1Event.h"
-#include "game\event\EventManager.h"
+#include "game/event/BallKilledEvent.h"
+#include "game/event/GOEvent.h"
+#include "game/event/ShrinkEvent.h"
+#include "game/event/ShrinkIn2Event.h"
+#include "game/event/ShrinkIn1Event.h"
+#include "game/event/EventManager.h"
 
-#include "game\GameplayBase.h"
-#include "game\GameplayObject.h"
-#include "game\net\Net.h"
+#include "game/GameplayBase.h"
+#include "game/GameplayObject.h"
+#include "game/net/Net.h"
 
-#include "game\ai\AIPosVel.h"
-#include "game\ai\AIPVAnime.h"
-#include "game\ai\AIPVALinear.h"
-#include "game\ai\AIPVAnimator.h"
-#include "game\form\Form.h"
-#include "game\form\BallState.h"
+#include "game/ai/AIPosVel.h"
+#include "game/ai/AIPVAnime.h"
+#include "game/ai/AIPVALinear.h"
+#include "game/ai/AIPVAnimator.h"
+#include "game/form/Form.h"
+#include "game/form/BallState.h"
 
-#include "game\action\FallAction.h"
-#include "game\action\DestroyAction.h"
-#include "game\action\StickAction.h"
+#include "game/action/FallAction.h"
+#include "game/action/DestroyAction.h"
+#include "game/action/StickAction.h"
 
-#include "game\animal\Animal.h"
-#include "game\cannon\Cannon.h"
+#include "game/animal/Animal.h"
+#include "game/cannon/Cannon.h"
 
-#include "tween\TLinear.h"
-#include "sound\Sound.h"
+#include "tween/TLinear.h"
+#include "sound/Sound.h"
 
-#include <core\Utils.h>
+#include <core/Utils.h>
 #include <OgreVector3.h>
 #include <OgreSceneNode.h>
 #include <deque>
 #include <math.h>
 
-#include <core\Utils.h>
+#include <core/Utils.h>
 
 namespace P3D {
 

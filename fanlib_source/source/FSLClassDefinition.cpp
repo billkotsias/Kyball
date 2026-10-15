@@ -1,8 +1,8 @@
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLClassDefinitionMessages.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLClassDefinitionMessages.h>
 
 #ifdef _DEBUG
-	#include <core\Utils.h>
+	#include <core/Utils.h>
 #endif
 
 namespace FANLib {

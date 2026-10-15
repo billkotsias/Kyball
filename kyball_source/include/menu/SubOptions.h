@@ -17,7 +17,7 @@ namespace P3D {
 	protected:
 
 		virtual void widgetClicked(MyGUI::Widget*);
-		virtual void widgetScroll(MyGUI::VScroll*, size_t);
+		virtual void widgetScroll(MyGUI::ScrollBar*, size_t);
 
 	public:
 

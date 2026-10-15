@@ -25,7 +25,7 @@ namespace P3D {
 		static const std::string LINEAR_FORCE;
 		static void ScaleSystem(Ogre::ParticleSystem* system, double scale);
 
-		Particles(const std::string& systemName, Ogre::SceneNode* parent, Ogre::Vector3& position, double scale, double fastForward, bool shadows);
+		Particles(const std::string& systemName, Ogre::SceneNode* parent, const Ogre::Vector3& position, double scale, double fastForward, bool shadows);
 		~Particles();
 	};
 }

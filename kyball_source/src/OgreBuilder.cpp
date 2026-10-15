@@ -1,19 +1,19 @@
 #include "StdAfx.h"
 #include "OgreBuilder.h"
 
-#include "game\GameplayCollection.h"
-#include <fsl\FSLArray.h>
-#include <fsl\FSLEnum.h>
-#include <fsl\FSLClass.h>
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLInstance.h>
-#include "visual\ASWDelayed.h"
-#include "visual\AnimationStatesList.h"
-#include "visual\AnimationStatesCombined.h"
-#include "visual\AnimatorElliptical.h"
-#include "visual\AnimatorOscillator.h"
-#include "visual\AnimatorRotator.h"
-#include <core\Utils.h>
+#include "game/GameplayCollection.h"
+#include <fsl/FSLArray.h>
+#include <fsl/FSLEnum.h>
+#include <fsl/FSLClass.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLInstance.h>
+#include "visual/ASWDelayed.h"
+#include "visual/AnimationStatesList.h"
+#include "visual/AnimationStatesCombined.h"
+#include "visual/AnimatorElliptical.h"
+#include "visual/AnimatorOscillator.h"
+#include "visual/AnimatorRotator.h"
+#include <core/Utils.h>
 
 #include "FSLToOgre.h"
 #include "SceneBaseCreator.h"
@@ -78,7 +78,7 @@ namespace P3D {
 	}
 
 	void OgreBuilder::destroyMovable(Ogre::MovableObject *obj) {
-		obj->detatchFromParent();
+		obj->detachFromParent();
 		SceneBaseCreator::getSingletonPtr()->getSceneManager()->destroyMovableObject(obj);
 	}
 
@@ -173,7 +173,7 @@ namespace P3D {
 			setFogToMaterial( (*it), backgroundColour, expDensity );
 		}
 	}
-	void OgreBuilder::setFogToMaterial(Ogre::MaterialPtr& material, const Ogre::ColourValue &backgroundColour, const Ogre::Real &expDensity)
+	void OgreBuilder::setFogToMaterial(const Ogre::MaterialPtr& material, const Ogre::ColourValue &backgroundColour, const Ogre::Real &expDensity)
 	{
 		Ogre::ColourValue halfColour = backgroundColour / 2;
 

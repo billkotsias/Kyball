@@ -1,25 +1,25 @@
 #include "StdAfx.h"
-#include "visual\FlyIn.h"
+#include "visual/FlyIn.h"
 
-#include "game\GameplayBase.h"
-#include "game\animal\Animal.h"
+#include "game/GameplayBase.h"
+#include "game/animal/Animal.h"
 
 #include "Queue.h"
 #include "P3DWindow.h"
 #include "OgreAddOns.h"
 #include "SceneBaseCreator.h"
-#include "sound\SoundBoss.h"
-#include "visual\VisualBoss.h"
-#include "gui\HintBox.h"
-#include "gui\SubScore.h"
+#include "sound/SoundBoss.h"
+#include "visual/VisualBoss.h"
+#include "gui/HintBox.h"
+#include "gui/SubScore.h"
 
 #include "P3DScripts.h"
-#include <fsl\FSLClass.h>
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLInstance.h>
+#include <fsl/FSLClass.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLInstance.h>
 
-#include <hid\HIDBoss.h>
-#include "map\SubMap.h" /// should be generic, as it's oversimplistic
+#include <hid/HIDBoss.h>
+#include "map/SubMap.h" /// should be generic, as it's oversimplistic
 
 namespace P3D {
 

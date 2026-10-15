@@ -1,17 +1,18 @@
 #include "StdAfx.h"
-#include "collision\CollisionExecuter.h"
+#include "collision/CollisionExecuter.h"
 
-#include "collision\Sphere.h"
-#include "collision\Cylinder.h"
-#include "collision\Polygon.h"
-#include "collision\Point.h"
-#include "collision\Line.h"
+#include "collision/Sphere.h"
+#include "collision/Cylinder.h"
+#include "collision/Polygon.h"
+#include "collision/Point.h"
+#include "collision/Line.h"
 
 #include "OgreAddOns.h"
 
 #include <OgreVector3.h>
 #include <OgreQuaternion.h>
 #include <OgreSceneNode.h>
+#include <stdint.h>
 
 namespace P3D {
 
@@ -149,25 +150,25 @@ namespace P3D {
 	}
 
 	double CollisionExecuter::getLineSide(int xvar, int yvar, const Ogre::Vector3* p, const Ogre::Vector3* p0, const Ogre::Vector3* p1) {
-		double x = *(double*)((int)p + xvar);
-		double y = *(double*)((int)p + yvar);
-		double x0 = *(double*)((int)p0 + xvar);
-		double y0 = *(double*)((int)p0 + yvar);
-		double x1 = *(double*)((int)p1 + xvar);
-		double y1 = *(double*)((int)p1 + yvar);
+		double x = *(double*)((uintptr_t)p + (uintptr_t)xvar);
+		double y = *(double*)((uintptr_t)p + (uintptr_t)yvar);
+		double x0 = *(double*)((uintptr_t)p0 + (uintptr_t)xvar);
+		double y0 = *(double*)((uintptr_t)p0 + (uintptr_t)yvar);
+		double x1 = *(double*)((uintptr_t)p1 + (uintptr_t)xvar);
+		double y1 = *(double*)((uintptr_t)p1 + (uintptr_t)yvar);
 		return (y - y0) * (x1 - x0) - (x - x0) * (y1 - y0);
 	}
 
 	void CollisionExecuter::getBestPlaneAxis(const Ogre::Vector3& vector, int& xvar, int& yvar) {
 		if (abs(vector.x) > abs(vector.y) && abs(vector.x) > abs(vector.z)) {
-			xvar = (int)&(vector.y) - (int)&vector;
-			yvar = (int)&(vector.z) - (int)&vector;
+			xvar = (int)((uintptr_t)&(vector.y) - (uintptr_t)&vector);
+			yvar = (int)((uintptr_t)&(vector.z) - (uintptr_t)&vector);
 		} else if (abs(vector.y) > abs(vector.z)) {
-			xvar = (int)&(vector.x) - (int)&vector;
-			yvar = (int)&(vector.z) - (int)&vector;
+			xvar = (int)((uintptr_t)&(vector.x) - (uintptr_t)&vector);
+			yvar = (int)((uintptr_t)&(vector.z) - (uintptr_t)&vector);
 		} else {
-			xvar = (int)&(vector.x) - (int)&vector;
-			yvar = (int)&(vector.y) - (int)&vector;
+			xvar = (int)((uintptr_t)&(vector.x) - (uintptr_t)&vector);
+			yvar = (int)((uintptr_t)&(vector.y) - (uintptr_t)&vector);
 		}
 	}
 

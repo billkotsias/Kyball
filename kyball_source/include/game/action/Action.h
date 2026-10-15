@@ -6,7 +6,7 @@
 #ifndef Action_H
 #define Action_H
 
-#include "collision\CollisionParams.h"
+#include "collision/CollisionParams.h"
 
 namespace P3D {
 

@@ -5,7 +5,7 @@
 #define FANLIB_FSLEnum_H
 
 #include <map>
-#include <core\FastStr.h>
+#include <core/FastStr.h>
 
 namespace FANLib {
 

@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "game\form\WallForm.h"
+#include "game/form/WallForm.h"
 
 #include "OgreBuilder.h"
-#include "collision\Polygon.h"
+#include "collision/Polygon.h"
 
 namespace P3D {
 

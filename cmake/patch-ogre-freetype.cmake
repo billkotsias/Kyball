@@ -1,0 +1,35 @@
+# Applied from the Ogre source root. Lets a nested Android build use the
+# freetype target instead of a host FreeType.
+file(READ CMake/Dependencies.cmake text)
+if(NOT text MATCHES "KYBALL_FREETYPE")
+	string(REPLACE "find_package(Freetype)"
+"if(ANDROID AND TARGET freetype)
+  set(FREETYPE_FOUND TRUE)
+  set(FREETYPE_INCLUDE_DIRS \"\${freetype_SOURCE_DIR}/include\")
+  set(FREETYPE_LIBRARIES freetype)
+else()
+  find_package(Freetype)
+endif()
+# KYBALL_FREETYPE"
+		text "${text}")
+	file(WRITE CMake/Dependencies.cmake "${text}")
+endif()
+
+# NDK r26+ (API 24) already defines pthread_barrier_t. Ogre 1.10's fallback
+# struct and functions clash with it. Keep the fallback for older Android and Apple.
+file(READ OgreMain/include/Threading/OgreBarrier.h barrier_h)
+if(NOT barrier_h MATCHES "KYBALL_BARRIER")
+	string(REPLACE
+		"#if defined(ANDROID) || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS"
+		"#if (defined(ANDROID) && __ANDROID_API__ < 24) || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS /* KYBALL_BARRIER */"
+		barrier_h "${barrier_h}")
+	file(WRITE OgreMain/include/Threading/OgreBarrier.h "${barrier_h}")
+endif()
+file(READ OgreMain/src/Threading/OgreBarrierPThreads.cpp barrier_cpp)
+if(NOT barrier_cpp MATCHES "KYBALL_BARRIER")
+	string(REPLACE
+		"#if defined(ANDROID) || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS"
+		"#if (defined(ANDROID) && __ANDROID_API__ < 24) || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS /* KYBALL_BARRIER */"
+		barrier_cpp "${barrier_cpp}")
+	file(WRITE OgreMain/src/Threading/OgreBarrierPThreads.cpp "${barrier_cpp}")
+endif()

@@ -4,7 +4,7 @@
 #define FANLIB_Log_H
 
 #include <fstream>
-#include <core\FastStr.h>
+#include <core/FastStr.h>
 
 namespace FANLib {
 
@@ -47,15 +47,16 @@ namespace FANLib {
 		void log(const FastStr*, bool, int, bool);
 
 		/// => short version : fstr, nl = true, throwExc = 0, stamp timeStamp
-		inline void Log::log(const FastStr* const fstr, bool nl = true, int throwExc = 0) {
+		inline void log(const FastStr* const fstr, bool nl = true, int throwExc = 0) {
 			log(fstr, nl, throwExc, timeStamp);
 		};
 		/// => char* version
-		inline void Log::log(const char* const str, bool nl, int throwExc, bool tStamp) {
-			log(&FastStr(str, false), nl, throwExc, tStamp);
+		inline void log(const char* const str, bool nl, int throwExc, bool tStamp) {
+			FastStr temp(str, false);
+			log(&temp, nl, throwExc, tStamp);
 		};
 		/// => short char* version
-		inline void Log::log(const char* const str, bool nl = true, int throwExc = 0) {
+		inline void log(const char* const str, bool nl = true, int throwExc = 0) {
 			log(str, nl, throwExc, timeStamp);
 		};
 
@@ -67,7 +68,7 @@ namespace FANLib {
 		void log(const char* const [], const FastStr* const [], bool = true, int = 0);
 
 		// for internal FANLib usage
-		inline static void Log::internalLog(const FastStr* const fstr, bool nl = true, int throwExc = 0, int stamp = 0) {
+		inline static void internalLog(const FastStr* const fstr, bool nl = true, int throwExc = 0, int stamp = 0) {
 			if (!LOG_INTERNAL) {
 				/// internal Log not enabled : at least report exception if present
 				if (throwExc) throw throwExc;
@@ -77,10 +78,11 @@ namespace FANLib {
 			bool tStamp = (stamp) ? (stamp > 0 ? true : false) : LOG_INTERNAL->timeStamp;
 			LOG_INTERNAL->log(fstr, nl, throwExc, tStamp);
 		}
-		inline static void Log::internalLog(const char* const str, bool nl = true, int throwExc = 0, int stamp = 0) {
-			Log::internalLog(&FastStr(str), nl, throwExc, stamp);
+		inline static void internalLog(const char* const str, bool nl = true, int throwExc = 0, int stamp = 0) {
+			FastStr temp(str);
+			internalLog(&temp, nl, throwExc, stamp);
 		}
-		inline static void Log::internalLog(const char* const str[], const FastStr* fstr[], bool nl = true, int throwExc = 0) {
+		inline static void internalLog(const char* const str[], const FastStr* fstr[], bool nl = true, int throwExc = 0) {
 			if (!LOG_INTERNAL) {
 				/// internal Log not enabled : at least report exception if present
 				if (throwExc) throw throwExc;

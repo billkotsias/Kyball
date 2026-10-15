@@ -6,8 +6,8 @@
 #ifndef FlyIn_H
 #define FlyIn_H
 
-#include "visual\Visual.h"
-#include "hid\HIDListener.h"
+#include "visual/Visual.h"
+#include "hid/HIDListener.h"
 
 namespace P3D {
 

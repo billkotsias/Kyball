@@ -6,8 +6,10 @@
 #ifndef OverlayBox_H
 #define OverlayBox_H
 
-#include "tween\TPlayed.h"
+#include "tween/TPlayed.h"
 
+#include <OgreOverlay.h>
+#include <OgreBorderPanelOverlayElement.h>
 #include <string>
 
 namespace Ogre {

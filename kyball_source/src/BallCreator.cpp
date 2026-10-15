@@ -1,12 +1,12 @@
 #include "StdAfx.h"
-#include "game\cannon\BallCreator.h"
+#include "game/cannon/BallCreator.h"
 
-#include "game\ai\BallAI.h"
-#include "game\form\BallForm.h"
-#include "game\GameplayObject.h"
-#include "game\GameplayBase.h"
+#include "game/ai/BallAI.h"
+#include "game/form/BallForm.h"
+#include "game/GameplayObject.h"
+#include "game/GameplayBase.h"
 
-#include "fsl\FSLArray.h"
+#include "fsl/FSLArray.h"
 
 namespace P3D {
 

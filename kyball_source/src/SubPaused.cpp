@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "gui\SubPaused.h"
+#include "gui/SubPaused.h"
 
 namespace P3D {
 

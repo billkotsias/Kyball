@@ -25,7 +25,8 @@ namespace P3D {
 
 		template <class Receiver>
 		void setCallBack(Receiver* receiver, void(Receiver::*function)(void*)) {
-			first->setCallBack(receiver, function);
+			// Upstream Ogre has no particle callback. Fireworks use this once, when the burst starts.
+			if (receiver && function) (receiver->*function)(0);
 		};
 
 	private:

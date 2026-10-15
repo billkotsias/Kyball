@@ -1,55 +1,55 @@
 #include "StdAfx.h"
-#include "game\LevelBuilder.h"
+#include "game/LevelBuilder.h"
 
-#include "menu\Player.h"
+#include "menu/Player.h"
 
 #include "SceneBaseCreator.h"
 #include "OgreBuilder.h"
 
-#include <fsl\FSLArray.h>
-#include <fsl\FSLEnum.h>
-#include <fsl\FSLClass.h>
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLInstance.h>
+#include <fsl/FSLArray.h>
+#include <fsl/FSLEnum.h>
+#include <fsl/FSLClass.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLInstance.h>
 #include "P3DScripts.h"
 #include "FSLToOgre.h"
 
-#include "game\GameplayBase.h"
-#include "game\GameplayObject.h"
-#include "game\Level.h"
-#include "game\cannon\Aim.h"
-#include "game\cannon\BasicBallCreator.h"
-#include "game\cannon\Cannon.h"
-#include "game\Camera.h"
-#include "game\form\BallState.h"
-#include "game\form\BallForm.h"
-#include "game\form\BobForm.h"
-#include "game\form\WallForm.h"
-#include "game\form\SphereForm.h"
-#include "game\form\CylinderForm.h"
-#include "game\form\ClosedCube.h"
-#include "game\form\OpenCube.h"
-#include "game\ai\BounceAI.h"
-#include "game\ai\BallAI.h"
-#include "game\ai\BobAI.h"
-#include "game\ai\BroAI.h"
-#include "game\ai\StickyAI.h"
-#include "game\ai\DestroyAI.h"
-#include "game\event\EventManager.h"
-#include "game\rule\RuleManager.h"
-#include "game\rule\MatchThree.h"
+#include "game/GameplayBase.h"
+#include "game/GameplayObject.h"
+#include "game/Level.h"
+#include "game/cannon/Aim.h"
+#include "game/cannon/BasicBallCreator.h"
+#include "game/cannon/Cannon.h"
+#include "game/Camera.h"
+#include "game/form/BallState.h"
+#include "game/form/BallForm.h"
+#include "game/form/BobForm.h"
+#include "game/form/WallForm.h"
+#include "game/form/SphereForm.h"
+#include "game/form/CylinderForm.h"
+#include "game/form/ClosedCube.h"
+#include "game/form/OpenCube.h"
+#include "game/ai/BounceAI.h"
+#include "game/ai/BallAI.h"
+#include "game/ai/BobAI.h"
+#include "game/ai/BroAI.h"
+#include "game/ai/StickyAI.h"
+#include "game/ai/DestroyAI.h"
+#include "game/event/EventManager.h"
+#include "game/rule/RuleManager.h"
+#include "game/rule/MatchThree.h"
 
-#include "visual\Ambience.h"
-#include "visual\EnergyChange.h"
-#include "visual\PreviewLevel.h"
+#include "visual/Ambience.h"
+#include "visual/EnergyChange.h"
+#include "visual/PreviewLevel.h"
 
-#include "gui\HintBox.h"
+#include "gui/HintBox.h"
 
 #include "OgreAddOns.h"
 #include "Queue.h"
 #include "Particles.h"
 
-#include <stdLib.h>
+#include <stdlib.h>
 
 //#include <OgreColourValue.h>
 #include <OgreSceneManager.h>
@@ -60,14 +60,14 @@
 #include <OgreVector3.h>
 #include <OgreCamera.h>
 
-#include <core\Utils.h>
+#include <core/Utils.h>
 
 //#ifdef _DEBUG
-//	#include <core\Log.h>
-//	#include <core\Utils.h>
+//	#include <core/Log.h>
+//	#include <core/Utils.h>
 //#endif
 
-#include "game\net\Net.h"
+#include "game/net/Net.h"
 
 namespace P3D {
 

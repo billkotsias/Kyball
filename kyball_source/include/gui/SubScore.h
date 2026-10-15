@@ -6,7 +6,7 @@
 #ifndef SubScore_H
 #define SubScore_H
 
-#include "menu\SubMenuMG.h"
+#include "menu/SubMenuMG.h"
 
 namespace P3D {
 

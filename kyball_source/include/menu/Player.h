@@ -6,7 +6,7 @@
 #ifndef Player_H
 #define Player_H
 
-#include "map\MapOptions.h"
+#include "map/MapOptions.h"
 
 #include <string>
 #include <deque>

@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "game\event\EventManager.h"
-#include "game\event\EventListener.h"
+#include "game/event/EventManager.h"
+#include "game/event/EventListener.h"
 
 namespace P3D {
 

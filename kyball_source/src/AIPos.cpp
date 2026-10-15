@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "game\ai\AIPos.h"
+#include "game/ai/AIPos.h"
 
-#include "game\form\Form.h"
-#include "collision\CollisionObject.h"
+#include "game/form/Form.h"
+#include "collision/CollisionObject.h"
 #include "OgreAddOns.h"
 #include "OgreBuilder.h"
 

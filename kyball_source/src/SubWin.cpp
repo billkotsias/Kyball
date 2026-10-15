@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "gui\SubWin.h"
-#include "gui\SubScore.h"
+#include "gui/SubWin.h"
+#include "gui/SubScore.h"
 
-#include <core\Utils.h>
-#include "tween\TLinear.h"
+#include <core/Utils.h>
+#include "tween/TLinear.h"
 
 namespace P3D {
 

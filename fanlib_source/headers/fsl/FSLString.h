@@ -4,7 +4,7 @@
 #ifndef FANLIB_FSLString_H
 #define FANLIB_FSLString_H
 
-#include <fsl\FSLObject.h>
+#include <fsl/FSLObject.h>
 
 namespace FANLib {
 

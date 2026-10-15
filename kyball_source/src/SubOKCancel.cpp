@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "menu\SubOKCancel.h"
+#include "menu/SubOKCancel.h"
 
 namespace P3D {
 

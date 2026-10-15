@@ -1,12 +1,12 @@
 #include "StdAfx.h"
-#include "gui\OverlayBox.h"
+#include "gui/OverlayBox.h"
 
 #include "P3DWindow.h"
 #include "SceneBaseCreator.h"
 #include <OgreBorderPanelOverlayElement.h>
 
-#include "math\Math.h"
-#include "core\String.h"
+#include "math/Math.h"
+#include "core/String.h"
 
 namespace P3D {
 

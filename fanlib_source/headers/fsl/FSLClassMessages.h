@@ -4,7 +4,7 @@
 #ifndef FANLIB_FSLCLASSMESSAGES_H
 #define FANLIB_FSLCLASSMESSAGES_H
 
-#include <core\FastStr.h>
+#include <core/FastStr.h>
 
 namespace FANLib {
 

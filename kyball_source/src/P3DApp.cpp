@@ -7,30 +7,29 @@
 #include <OgreResourceGroupManager.h>
 #include <OgreRenderSystem.h>
 #include <OgreStringVector.h>
-#include <windows.h>
 #include <vector>
 
 #include "P3DWindow.h"
 #include "P3DScripts.h"
 #include "P3DIntro.h"
-#include "menu\P3DMenu.h"
+#include "menu/P3DMenu.h"
 
 // singletons
 #include "SceneBaseCreator.h"
-#include "visual\VisualBoss.h"
-#include "hid\HIDBoss.h"
-#include "tween\TPlayer.h"
-#include "sound\SoundBoss.h"
-#include "sound\Sound.h"
+#include "visual/VisualBoss.h"
+#include "hid/HIDBoss.h"
+#include "tween/TPlayer.h"
+#include "sound/SoundBoss.h"
+#include "sound/Sound.h"
 
-#include <core\Log.h>
-#include <fsl\FSLParser.h>
-#include <fsl\FSLClass.h>
+#include <core/Log.h>
+#include <fsl/FSLParser.h>
+#include <fsl/FSLClass.h>
 
-#include <OgreD3D9RenderSystem.h>
+#include "KyballPlatform.h"
 
 #include <time.h>
-#include <core\utils.h>
+#include <core/Utils.h>
 
 // temp!
 #include <P3DExtro.h>
@@ -40,39 +39,36 @@ namespace P3D {
 	const char* const	P3DApp::WINDOW_NAME		= "Kyball";
 	const int			P3DApp::CYCLES_PER_SEC	= 60; /// NOTE : Define gameplay values <relatively> to this variable, as it may increase!
 
-	const char* const P3DApp::RS_BEST = "Direct3D9";	/// Direct3D9
-	const char* const P3DApp::RS_ALTER = "OpenGL";		/// OpenGL
+#if defined(__ANDROID__)
+	const char* const P3DApp::RS_BEST = "OpenGL ES 2";
+	const char* const P3DApp::RS_ALTER = "OpenGL ES 2";
+#elif defined(_WIN32)
+	const char* const P3DApp::RS_BEST = "Direct3D9";
+	const char* const P3DApp::RS_ALTER = "OpenGL";
+#else
+	const char* const P3DApp::RS_BEST = "OpenGL";
+	const char* const P3DApp::RS_ALTER = "OpenGL";
+#endif
 
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-	const std::string P3DApp::PATH_DELIMITER	= "\\"; /// < \ >
-	const std::string P3DApp::USER_PATH			= std::getenv("APPDATA") + P3DApp::PATH_DELIMITER;
-#endif
-#ifdef _DEMO
-	const std::string P3DApp::APP_FOLDER		= USER_PATH + "KYBALL_DEMO" + P3DApp::PATH_DELIMITER;
-#else
-	const std::string P3DApp::APP_FOLDER		= USER_PATH + "KYBALL" + P3DApp::PATH_DELIMITER;
-#endif
-#if defined(_DEPLOY) || !defined(_DEBUG)
-//#if defined(_DEPLOY)
-	const std::string P3DApp::DATA_PATH			= "P3DData" + P3DApp::PATH_DELIMITER;
-#else
-	const std::string P3DApp::DATA_PATH			= "..\\P3DData" + P3DApp::PATH_DELIMITER;
-#endif
-	const std::string P3DApp::PLUGINS_FILE		= "P3DData\\plugins.cfg";
-	const std::string P3DApp::OGRE_CONFIG_FILE	= APP_FOLDER + "ogre.cfg";
-	const std::string P3DApp::OGRE_LOG_FILE		= APP_FOLDER + "ogre.log";
-	const std::string P3DApp::FANLIB_LOG_FILE	= APP_FOLDER + "fanlib.log";
-	const std::string P3DApp::MYGUI_LOG_FILE	= APP_FOLDER + "mygui.log";
-	const std::string P3DApp::RESOURCES_FILE	= DATA_PATH + "resources.cfg";
-	const std::string P3DApp::SCRIPTS_PATH		= DATA_PATH + "scripts" + P3DApp::PATH_DELIMITER;
-	const std::string P3DApp::SOUNDS_PATH		= DATA_PATH + "snd" + P3DApp::PATH_DELIMITER;
+	std::string P3DApp::PATH_DELIMITER;
+	std::string P3DApp::USER_PATH;
+	std::string P3DApp::APP_FOLDER;
+	std::string P3DApp::DATA_PATH;
+	std::string P3DApp::PLUGINS_FILE;
+	std::string P3DApp::OGRE_CONFIG_FILE;
+	std::string P3DApp::OGRE_LOG_FILE;
+	std::string P3DApp::FANLIB_LOG_FILE;
+	std::string P3DApp::MYGUI_LOG_FILE;
+	std::string P3DApp::RESOURCES_FILE;
+	std::string P3DApp::SCRIPTS_PATH;
+	std::string P3DApp::SOUNDS_PATH;
 #if defined(_DEPLOY) || !defined(_DEBUG)
 	const std::string P3DApp::SOUNDS_EXT		= ".ogg";
 #else
 	const std::string P3DApp::SOUNDS_EXT		= ".wav";
 #endif
 	const std::string P3DApp::UNREF_RES_DIR		= "unref"; /// directory paths ending like this are assumed to have script-unreferenced resources (must be declared manually)
-	const std::string P3DApp::OPTIONS_FILE		= APP_FOLDER + "options2.txt";
+	std::string P3DApp::OPTIONS_FILE;
 
 	P3DApp::P3DApp() {
 		doNotBegin = false;
@@ -140,8 +136,7 @@ namespace P3D {
 			} while (showEndCredits);
 
 		} catch( Ogre::Exception& e ) {
-			MessageBox( NULL, e.getFullDescription().c_str(),
-						"An exception has occured!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
+			reportError(e.getFullDescription().c_str());
 		}
 	}
 
@@ -152,7 +147,7 @@ namespace P3D {
 	/* Init Ogre */;
 	void P3DApp::initOgre() {
 
-		ogreRoot = OGRE_NEW Ogre::Root(PLUGINS_FILE, OGRE_CONFIG_FILE, OGRE_LOG_FILE);
+		ogreRoot = createOgreRoot();
 
 		// Show default Ogre window :
 		//if (!ogreRoot->showConfigDialog()) {
@@ -166,11 +161,11 @@ namespace P3D {
 
 			/// restoring last gfx settings failed : attempt to manually configure render system
 			Ogre::RenderSystem* renderSystem = 0;
-			Ogre::RenderSystemList* renderSystems = ogreRoot->getAvailableRenderers();
+			const Ogre::RenderSystemList& renderSystems = ogreRoot->getAvailableRenderers();
 
 			// TODO : favourable/fallback rendering systems should be defined externally in a script
-			for (unsigned int i = 0; i < renderSystems->size(); ++i) {
-				Ogre::RenderSystem* availableSystem = renderSystems->at(i);
+			for (unsigned int i = 0; i < renderSystems.size(); ++i) {
+				Ogre::RenderSystem* availableSystem = renderSystems.at(i);
 				/// - <almost-worst> case : no DirectX 9 or OpenGL found; get whatever system is <first> available
 				if (i == 0) renderSystem = availableSystem;
 				/// - <best> case : DirectX 9 found
@@ -354,7 +349,9 @@ namespace P3D {
 	}
 
 	void P3DApp::checkCreateFolders() {
-		CreateDirectoryA(P3DApp::APP_FOLDER.c_str(), 0);
+		initPaths();
+		makeDirectory(P3DApp::APP_FOLDER);
+		makeDirectory(P3DApp::DATA_PATH);
 	}
 
 }

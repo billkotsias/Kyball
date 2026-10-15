@@ -1,8 +1,8 @@
-#include <fsl\FSLPointer.h>
-#include <fsl\FSLObject.h>
+#include <fsl/FSLPointer.h>
+#include <fsl/FSLObject.h>
 // error-handling
 #ifdef _DEBUG
-	#include <core\Log.h>
+	#include <core/Log.h>
 #endif
 
 namespace FANLib {

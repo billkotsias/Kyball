@@ -6,7 +6,7 @@
 #ifndef Net_H
 #define Net_H
 
-#include <math\Math.h>
+#include <math/Math.h>
 #include <OgreVector3.h>
 #include <utility>
 

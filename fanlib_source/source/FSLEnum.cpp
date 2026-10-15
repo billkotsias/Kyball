@@ -1,7 +1,7 @@
-#include <fsl\FSLEnum.h>
+#include <fsl/FSLEnum.h>
 
-#include <fsl\FSLEnumMessages.h>
-#include <core\Log.h>
+#include <fsl/FSLEnumMessages.h>
+#include <core/Log.h>
 #include <FANLibErrors.h>
 
 namespace FANLib {

@@ -7,7 +7,8 @@
 #define CollisionParams_H
 
 #include <OgreVector3.h>
-#include <math\math.h>
+#include <math/Math.h>
+#include <stdint.h>
 
 namespace P3D {
 
@@ -74,7 +75,7 @@ namespace P3D {
 			if (temp2 != temp2) temp2 = Infinite;
 
 			if (temp1 != temp2) return (temp1 < temp2);
-			return ((int)this < (int)(&other)); /// if they are equal in time, sort them "arbitrarily" by memory address
+			return ((intptr_t)this < (intptr_t)(&other)); /// if they are equal in time, sort them "arbitrarily" by memory address
 		};
 
 		inline bool operator==(const CollisionParams &other) const {

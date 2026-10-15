@@ -1,7 +1,7 @@
-#include "gfx\Blitter.h"
+#include "gfx/Blitter.h"
 
-#include "gfx\Surface.h"
-#include "gfx\Area.h"
+#include "gfx/Surface.h"
+#include "gfx/Area.h"
 #include <math.h>
 
 namespace FANLib {

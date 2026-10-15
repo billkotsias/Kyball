@@ -1,9 +1,9 @@
 #include "StdAfx.h"
 #include "ShadowManager.h"
 
-#include "gfx\Blitter.h"
-#include "gfx\Area.h"
-#include "gfx\Surface.h"
+#include "gfx/Blitter.h"
+#include "gfx/Area.h"
+#include "gfx/Surface.h"
 #include "TextureShadowBuffer.h"
 
 #include <OgreVector2.h>

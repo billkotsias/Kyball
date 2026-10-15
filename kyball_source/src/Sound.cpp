@@ -1,11 +1,11 @@
 #include "StdAfx.h"
-#include "sound\Sound.h"
+#include "sound/Sound.h"
 
-#include "sound\SoundBoss.h"
+#include "sound/SoundBoss.h"
 #include "P3DScripts.h"
-#include "fsl\FSLArray.h"
-#include "fsl\FSLInstance.h"
-#include "fsl\FSLClassDefinition.h"
+#include "fsl/FSLArray.h"
+#include "fsl/FSLInstance.h"
+#include "fsl/FSLClassDefinition.h"
 
 namespace P3D {
 

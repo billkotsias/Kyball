@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "game\net\Net.h"
+#include "game/net/Net.h"
 
 #include <utility>
 

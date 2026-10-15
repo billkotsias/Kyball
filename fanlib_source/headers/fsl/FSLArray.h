@@ -5,11 +5,11 @@
 #define FANLIB_FSLArray_H
 
 #include <deque>
-#include <fsl\FSLTypes.h>
-#include <fsl\FSLObject.h>
+#include <fsl/FSLTypes.h>
+#include <fsl/FSLObject.h>
 // error-handling
 #ifdef _DEBUG
-	#include <core\Log.h>
+	#include <core/Log.h>
 	#include <FANLibErrors.h>
 #endif
 

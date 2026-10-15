@@ -4,7 +4,7 @@
 #ifndef FANLIB_FSLClassDefPtr_H
 #define FANLIB_FSLClassDefPtr_H
 
-#include <fsl\FSLPointer.h>
+#include <fsl/FSLPointer.h>
 
 namespace FANLib {
 

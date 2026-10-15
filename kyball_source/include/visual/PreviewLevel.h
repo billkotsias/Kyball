@@ -6,8 +6,8 @@
 #ifndef PreviewLevel_H
 #define PreviewLevel_H
 
-#include "visual\Visual.h"
-#include <hid\HIDListener.h>
+#include "visual/Visual.h"
+#include <hid/HIDListener.h>
 
 #include <string>
 

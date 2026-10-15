@@ -1,20 +1,20 @@
 #include "StdAfx.h"
-#include "game\animal\Animal.h"
+#include "game/animal/Animal.h"
 
-#include <fsl\FSLArray.h>
-#include <fsl\FSLEnum.h>
-#include <fsl\FSLClass.h>
-#include <fsl\FSLClassDefinition.h>
-#include <fsl\FSLInstance.h>
+#include <fsl/FSLArray.h>
+#include <fsl/FSLEnum.h>
+#include <fsl/FSLClass.h>
+#include <fsl/FSLClassDefinition.h>
+#include <fsl/FSLInstance.h>
 #include "P3DScripts.h"
-#include "sound\Sound.h"
+#include "sound/Sound.h"
 
 #include "SceneBaseCreator.h"
 #include <OgreEntity.h>
-#include "tween\TLinear.h"
-#include "tween\TSin.h"
-#include "tween\TCos.h"
-#include "gui\HintBox.h"
+#include "tween/TLinear.h"
+#include "tween/TSin.h"
+#include "tween/TCos.h"
+#include "gui/HintBox.h"
 
 #include "BurstBoss.h"
 #include "OgreTagPoint.h"

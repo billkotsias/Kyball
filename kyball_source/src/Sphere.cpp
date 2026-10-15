@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "collision\Sphere.h"
+#include "collision/Sphere.h"
 
 namespace P3D {
 

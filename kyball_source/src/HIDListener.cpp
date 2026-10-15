@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "hid\HIDListener.h"
+#include "hid/HIDListener.h"
 
-#include "hid\HIDBoss.h"
+#include "hid/HIDBoss.h"
 
 namespace P3D {
 

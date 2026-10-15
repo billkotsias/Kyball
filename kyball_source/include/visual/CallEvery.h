@@ -6,8 +6,8 @@
 #ifndef CallEvery_H
 #define CallEvery_H
 
-#include "visual\Visual.h"
-#include "visual\VisualBoss.h"
+#include "visual/Visual.h"
+#include "visual/VisualBoss.h"
 
 namespace P3D {
 

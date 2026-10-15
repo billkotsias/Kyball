@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "game\ai\AIPVALinear.h"
+#include "game/ai/AIPVALinear.h"
 
-#include "game\ai\AIPosVel.h"
+#include "game/ai/AIPosVel.h"
 #include "P3DApp.h"
 
 namespace P3D {

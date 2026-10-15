@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "collision\Polygon.h"
+#include "collision/Polygon.h"
 
 #include <OgreVector3.h>
 #include <OgreSceneNode.h>

@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "TextureShadowBuffer.h"
 
-#include <gfx\Surface.h>
+#include <gfx/Surface.h>
 
 #include <OgreTextureManager.h>
 #include <OgreTexture.h>
@@ -9,7 +9,7 @@
 
 namespace P3D {
 
-	TextureShadowBuffer::TextureShadowBuffer(Ogre::HardwarePixelBufferSharedPtr &texBuffer) {
+	TextureShadowBuffer::TextureShadowBuffer(const Ogre::HardwarePixelBufferSharedPtr &texBuffer) {
 		init(texBuffer);
 	}
 
@@ -19,7 +19,7 @@ namespace P3D {
 		init(((Ogre::TexturePtr)(texMan->getByName(texName)))->getBuffer(0, 0));
 	}
 
-	void TextureShadowBuffer::init(Ogre::HardwarePixelBufferSharedPtr &texBuffer) {
+	void TextureShadowBuffer::init(const Ogre::HardwarePixelBufferSharedPtr &texBuffer) {
 
 		textureBuffer = texBuffer;
 

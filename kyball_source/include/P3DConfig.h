@@ -6,11 +6,23 @@
 #ifndef P3DConfig_H
 #define P3DConfig_H
 
-#include "hid\HIDListener.h"
+#include "hid/HIDListener.h"
 #include "GameQuality.h"
 
 #include <vector>
 #include <string>
+
+#if defined(_WIN32)
+#include <windows.h>
+#else
+struct DEVMODEA {
+	unsigned int dmPelsWidth;
+	unsigned int dmPelsHeight;
+	unsigned int dmBitsPerPel;
+	unsigned int dmSize;
+	void* dmDriverExtra;
+};
+#endif
 
 namespace P3D {
 

@@ -1,5 +1,5 @@
 #include <StdAfx.h>
-#include "gui\WiText.h"
+#include "gui/WiText.h"
 
 #include "P3DWindow.h"
 #include "MyGUI_ResourceManualFont.h"
