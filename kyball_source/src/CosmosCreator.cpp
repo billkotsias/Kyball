@@ -135,13 +135,21 @@ namespace P3D {
 			bloomListener->setBloomWeight( cosmos->getReal("bloomWeight") );
 			bloomListener->setOriginalWeight( cosmos->getReal("bloomOrig") );
 			bloomListener->notifyViewportSize(viewport->getActualWidth(),viewport->getActualHeight());
-			Ogre::CompositorManager::getSingletonPtr()->addCompositor(viewport, "BloomGame")->addListener(bloomListener);
-			Ogre::CompositorManager::getSingletonPtr()->setCompositorEnabled(viewport, "BloomGame", true);
-
+			// BloomGame and Sharpen Edges are HLSL/Cg. This GL build has neither,
+			// so addCompositor returns null. Dereferencing that was the level-entry crash.
+			Ogre::CompositorManager* compositors = Ogre::CompositorManager::getSingletonPtr();
+			Ogre::CompositorInstance* bloom = compositors->addCompositor(viewport, "BloomGame");
+			if (bloom) {
+				bloom->addListener(bloomListener);
+				compositors->setCompositorEnabled(viewport, "BloomGame", true);
+			}
 			sharpenListener = new SharpenListener();
 			sharpenListener->setSharpen( cosmos->getReal("sharpen") );
-			Ogre::CompositorManager::getSingletonPtr()->addCompositor(viewport, "Sharpen Edges")->addListener(sharpenListener);
-			Ogre::CompositorManager::getSingletonPtr()->setCompositorEnabled(viewport, "Sharpen Edges", true);
+			Ogre::CompositorInstance* sharpen = compositors->addCompositor(viewport, "Sharpen Edges");
+			if (sharpen) {
+				sharpen->addListener(sharpenListener);
+				compositors->setCompositorEnabled(viewport, "Sharpen Edges", true);
+			}
 			//hdrListener->notifyViewportSize(viewport->getActualWidth(), viewport->getActualHeight());
 			//hdrListener->notifyCompositor(hdrCompositor);
 		}
