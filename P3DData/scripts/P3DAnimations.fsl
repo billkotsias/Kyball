@@ -1,0 +1,101 @@
+#include "Animations.fsl"
+
+// animation id <-> animation string name
+class ANpair {
+	int a Animation::rest	/// animation id
+	string n "rest"			/// animation name
+}
+
+array of ANpair enumToString [
+	{} /// rest
+	{ a Animation::basic n "basic" }
+	{ a Animation::tick1 n "tick1" }
+	{ a Animation::tick2 n "tick2" }
+	{ a Animation::tick3 n "tick3" }
+	{ a Animation::look n "look" }
+	{ a Animation::happy1 n "happy1" }
+	{ a Animation::happy2 n "happy2" }
+	{ a Animation::happy3 n "happy3" }
+	{ a Animation::sad n "sad" }
+	{ a Animation::win n "win" }
+	{ a Animation::lose n "lose" }
+	{ a Animation::smiling n "smiling" }
+	{ a Animation::anxious n "anxious" }
+]
+
+// basic-loop animations : they are all volatile, too!
+class BasicLoopData {
+	int a Animation::basic	/// animation id
+	real p 0				/// probability
+	int r false				/// repeatability
+}
+
+array of BasicLoopData basicLoops [
+	{ a Animation::basic p 40 r true }
+	{ a Animation::look p 15 }
+	{ a Animation::tick1 p 15 }
+	{ a Animation::tick2 p 15 }
+	{ a Animation::tick3 p 15 }
+]
+
+// volatile animations (besides 'basicLoops')
+array of int volatile [
+	Animation::happy1 Animation::smiling Animation::anxious
+]
+
+// animation id <-> custom speed
+class ASpair {
+	int a Animation::basic	/// animation id
+	real s 100				/// speed; default = 100%
+	string particles ""		/// particles to emit
+	string partBone	""		/// attach to this animal bone
+	real partDelay 0		/// delay till particles commence
+}
+
+real fadeSpeed 5 /// animation fade; 1 / 0.05 = within 20 frames
+
+array of ASpair forest [
+	{ a Animation::tick3 particles "Wolf/Dust" partBone "Bip01 R Hand" partDelay 1.2 }
+	{ a Animation::lose s 150 }
+	{ a Animation::sad s 140 }
+]
+
+array of ASpair batcave [
+	{ a Animation::happy2 particles "Dragon/FireSmall" partBone "FIREBONE" partDelay 1.1 }
+	{ a Animation::happy3 particles "Dragon/Fire" partBone "FIREBONE" partDelay 2 }
+	{ a Animation::look particles "Dragon/Breathe" partBone "FIREBONE" partDelay 1.1 }
+	{ a Animation::sad particles "Dragon/Breathe" partBone "FIREBONE" partDelay 3.3 }
+]
+
+array of ASpair reef [
+	{ a Animation::win particles "Turtle/Bubbles/Back" partBone "Bip01 Spine1" partDelay 1.0 }
+	{ a Animation::happy3 s 90 particles "Turtle/Bubbles/Back" partBone "Bip01 Spine1" partDelay 1.111 }
+	{ a Animation::tick3 s 90 particles "Turtle/Bubbles" partBone "Bip01 Ponytail1" partDelay 0.9 }
+]
+
+array of ASpair halloween [
+	{ a Animation::win particles "Owl/Feathers" partBone "Bip01 Neck" partDelay 2.5 }
+]
+
+array of ASpair savanna [
+	{ a Animation::tick1 particles "Hippo/Grass" partBone "Bip01 Ponytail22" partDelay 2.8 }
+	{ a Animation::win particles "Hippo/Notes" partBone "Bip01 Ponytail22" partDelay 0.5 }
+	{ a Animation::sad s 150 }
+]
+
+array of ASpair desert [
+	{ a Animation::win particles "Oryx/Sand/Win" partBone "Bip01 L Hand" partDelay 0.766 }
+	{ a Animation::lose particles "Oryx/Sand" partBone "Bip01 Head" partDelay 0.7 }
+	{ a Animation::happy2 particles "Oryx/Sand" partBone "Bip01 L Hand" partDelay 1.133 }
+	{ a Animation::happy3 particles "Oryx/Sand" partBone "Bip01 L Hand" partDelay 3.766 }
+	{ a Animation::look particles "Oryx/Dust" partBone "Bip01 R Hand" partDelay 2.08 }
+]
+
+array of ASpair arctic [
+	{ a Animation::happy3 particles "Walrus/Snow" partBone "Bip01 Ponytail22" partDelay 3.18 }
+]
+
+array of ASpair beach [
+	{ a Animation::sad s 150 }
+	{ a Animation::win particles "Toucan/Feathers" partBone "Bip01 Neck" partDelay 0.5 }
+]

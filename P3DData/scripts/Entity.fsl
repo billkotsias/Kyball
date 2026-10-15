@@ -1,0 +1,44 @@
+class AnimationState {
+	string n ""	// animation name
+	real s 1	// speed
+	real d 0	// initial delay
+}
+
+enum ASLoopType {
+	none
+	loop
+	random
+	combined	// not inserted yet, but exists as a separate "AnimationStatesCombined.h"!
+}
+
+class ASCommon {
+	int loop ASLoopType::loop
+	real pos NaN	// time-position at start (default=randomized)
+}
+
+class Obj3D {
+	string mesh ""					// corresponding mesh name
+	array of string material [ ]	// override mesh default if set (one material for each subentity, or just one for the whole entity)
+	int buildTanVec false			// build tangent vectors?
+	int shadow false				// cast shadows?
+}
+
+// class Entity {}
+// class BoneAttachment {
+	// string bone ""					/// bone parent name
+	// Vector3 pos						/// position
+	// Vector3S scale					/// final entity scaling : x *= w, y *= w, z *=w
+	// array of real rot [ 0 0 0 1 ]	/// rotation : can either have 3 values (Euler) or 4 (quaternion)
+	// array of Entity boneEntities [ ]/// attached Entities
+// }
+
+// the same Entity reference may exist in several clones with different names
+// eg. we have 3 black bears and 2 white ones in a scene, and all must have unique names
+
+class Entity {
+	string name ""	/// maybe this should be unique, but in practice it doesn't matter if you have same names in different levels
+	Obj3D obj		/// this should be a reference, not instance
+	array of AnimationState anims [ ]
+	ASCommon asCommon /// only needed if there is at least 1 AnimationState
+	// array of BoneAttachments attachments [ ]
+}

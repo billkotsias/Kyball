@@ -1,0 +1,24 @@
+class Skybox {
+	string name "" /// empty name = disabled
+	int drawFirst true
+	array of real rot [ 0 0 0 ]
+}
+
+class Skyplane {
+	string mat "" /// empty name = disabled
+	Vector3 norm { y 1 }
+	real dist 12
+	real scale 8
+	real tile 100
+	real bow 0
+	real xseg 8
+	real yseg 8
+}
+
+class Fog {
+	int set false
+	real exp 0.08 // 0.025
+	//RGB col  { r 0 g 0.4 b 0.55 }
+	// real l1 0
+	// real l2 20
+}

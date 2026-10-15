@@ -1,0 +1,62 @@
+#include "Node.fsl"
+#include "Camera.fsl"
+#include "BasicClasses.fsl"
+#include "Animations.fsl"
+
+enum Net {
+	cube
+	hex
+}
+
+class Base {
+	string nodeContainer ""	/// if empty, attach gameplay node to root, else here!
+	Vector3 position
+	Vector3 rotation
+	real cannonHeight	0
+	
+	Vector3 animalPos
+	Vector3 animalRot
+	real animalScale	1
+	
+	Vector3 talkPos
+	real talkScale		1
+	RGB talkColour
+}
+class IntroAnimal { string i "#ffffffHelp us restore the balance of our planet.\n\nRelease the power contained in the #ff0000energy balls#ffffff to bring life back to each world." }
+class Cosmos
+{
+	/// effects
+	real sharpen 0.25
+	real bloomOrig 1.0
+	real bloomWeight 0.75
+	
+	/// shadows properties
+	array of string shadowMaterials [ ]	
+	Vector3 frustumOffset { y 10 }
+	real frustumSize	4		/// the less, the better shadow resolution
+	real shadowAlpha	0.5
+	real shadowDepthBias 0.45
+	
+	/// properties common for all Bases
+	real scale			1
+	real shadowFar		58
+	int shadowLISPSM	false
+	
+	Vector3 cubeSize
+	int net Net::cube
+	Vector3 netOff
+	real cannonDelay	0.6
+	
+	real cameraDistance 9		/// } game camera parameters
+	real cameraMinHeight 0.65	/// } distance = max camera distance, height = min camera height (1 = cube ground level, 0 = half cube height)
+	Camera camera				/// Ogre Camera parameters
+	
+	int aim				10		/// aim length
+
+	array of Base bases [ ]
+
+	array of Node nodes [ ]
+	
+	IntroAnimal introAnimal
+	int introAnim Animation::happy2
+}

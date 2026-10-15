@@ -1,0 +1,363 @@
+#include "Node.fsl"
+#include "P3DObjects.fsl"
+#include "Camera.fsl"
+#include "Skybox.fsl"
+
+RGB ambient { r 0.333333 g 0.333333 b 0.333333 }
+RGB background { r 0 g 0 b 0 }
+Skybox skybox { name "space2" }
+Camera camera { fov 60 farPlane 200 }
+Camera cameraExtro { fov 60 nearPlane 2 farPlane 450 }
+real minimumDistance 150 /// squared distance, that is!
+array of Vector2 chapterCamPos [ { x 530 y -15 } { x 310 y -38 } { x 473 y 40 } { x 179 y -8 } { x 0 y 0 } ]
+
+array of Node nodes [
+	{
+		n IB_A1_LO_MAP
+		pos { x 1.26604 y 47.7974 z 3.83689 }
+		entities [ { name "IB_A1_LO_MAP" obj "IB_A1_LO_MAP" } ]
+	}
+	{
+		n IB_A2_LO_MAP
+		pos { x -1.83308 y 48.331 z -1.26824 }
+		entities [ { name "IB_A2_LO_MAP" obj "IB_A2_LO_MAP" } ]
+	}
+	{
+		n ICE_SMALL_1_MAP
+		pos { x 4.28638 y 46.5997 z 0.650911 }
+		entities [ { name "ICE_SMALL_1_MAP" obj "ICE_SMALL_1_MAP" } ]
+	}
+	{
+		n PUMPKIN13_MAP
+		pos { x -40.3269 y 16.9774 z -16.5987 }
+		rot [ 0.144688 0.15072 0.0664015 0.975674 ]
+		entities [ { name "PUMPKIN13_MAP" obj "PUMPKIN13_MAP" } ]
+	}
+	{
+		n TREE_B_MAP
+		pos { x -42.8167 y 17.0543 z -19.7022 }
+		rot [ -0.0398247 -0.0414859 -0.0182767 0.998178 ]
+		entities [ { name "TREE_B_MAP" obj "TREE_B_MAP" } ]
+	}
+	{
+		n HALLO_SMALLTREEA_MAP
+		pos { x -42.4977 y 12.0713 z -23.0591 }
+		rot [ 0.0799017 -0.00982391 0.0816149 0.993407 ]
+		entities [ { name "HALLO_SMALLTREEA_MAP" obj "HALLO_SMALLTREEA_MAP" } ]
+	}
+	{
+		n EARTH_MAP
+		entities [ { name "EARTH_MAP" obj "EARTH_MAP" } ]
+	}
+	{
+		n SAHARA_MAP
+		pos { x -0.925877 y 14.228 z 43.5406 }
+		rot [ 0.0149465 -0.0671743 -0.251332 0.965452 ]
+		entities [ { name "SAHARA_MAP" obj "SAHARA_MAP" } ]
+	}
+	{
+		n BEACH_SMALL_PALM2_MAP
+		pos { x -4.97102 y 0.413586 z -47.8735 }
+		entities [ { name "BEACH_SMALL_PALM2_MAP" obj "BEACH_SMALL_PALM2_MAP" } ]
+	}
+	{
+		n beach_palm_trunks_MAP
+		pos { x -2.87747 y 3.17142 z -47.9066 }
+		scale { x 0.0900257 y 0.0900257 z 0.0900256 }
+		rot [ -0.0214219 -0.0516028 -0.0247703 0.998131 ]
+		entities [ { name "beach_palm_trunks_MAP" obj "beach_palm_trunks_MAP" } ]
+	}
+	{
+		n forest_pinetrunkheavy_MAP
+		pos { x -19.3478 y 39.6363 z -17.5783 }
+		rot [ 0 -8.74228e-008 3.82137e-015 1 ]
+		entities [ { name "forest_pinetrunkheavy_MAP" obj "forest_pinetrunkheavy_MAP" } ]
+	}
+	{
+		n FOREST_PINE_MAP
+		pos { x -17.0627 y 39.8537 z -20.0179 }
+		entities [ { name "FOREST_PINE_MAP" obj "FOREST_PINE_MAP" } ]
+	}
+	{
+		n forest_pinetrunk_MAP
+		pos { x -20.5789 y 38.4624 z -15.8029 }
+		scale { x 0.0129348 y 0.0515077 z 0.0129348 }
+		rot [ -0.290662 0.843801 -0.0804296 0.443899 ]
+		entities [ { name "forest_pinetrunk_MAP" obj "forest_pinetrunk_MAP" } ]
+	}
+	{
+		n FOREST_FTERI2_MAP
+		pos { x -24.4718 y 35.3506 z -19.6031 }
+		rot [ 0.0220188 0.0336655 0.0185978 0.999017 ]
+		entities [ { name "FOREST_FTERI2_MAP" obj "FOREST_FTERI2_MAP" } ]
+	}
+	{
+		n DRAGON_CAVE_MAP
+		pos { x 35.9463 y 20.6857 z -21.2796 }
+		rot [ 4.37114e-008 4.37114e-008 -4.37114e-008 1 ]
+		entities [ { name "DRAGON_CAVE_MAP" obj "DRAGON_CAVE_MAP" } ]
+	}
+	{
+		n Nisia_MAP
+		pos { x 3.66663 y -20.2373 z -41.8035 }
+		rot [ -4.37114e-008 4.37114e-008 -4.37114e-008 1 ]
+		entities [ { name "Nisia_MAP" obj "Nisia_MAP" } ]
+	}
+	{
+		n 6DENTRO_SAVANAH_MAP
+		pos { x 28.9337 y -26.2776 z 30.5348 }
+		entities [ { name "6DENTRO_SAVANAH_MAP" obj "6DENTRO_SAVANAH_MAP" } ]
+	}
+	{
+		n 10DENTRO_SAVANAH_MAP
+		pos { x 25.7329 y -28.4961 z 32.9077 }
+		rot [ 8.74228e-008 0 0 1 ]
+		entities [ { name "10DENTRO_SAVANAH_MAP" obj "10DENTRO_SAVANAH_MAP" } ]
+	}
+	{
+		n 7DENTRO_SAVANAH_MAP
+		pos { x 31.3005 y -28.8866 z 26.6056 }
+		rot [ 8.74228e-008 0 0 1 ]
+		entities [ { name "7DENTRO_SAVANAH_MAP" obj "7DENTRO_SAVANAH_MAP" } ]
+	}
+	{
+		n GRASS_FOREST_MAP
+		pos { x -19.7408 y 36.9736 z -21.5983 }
+		entities [ { name "GRASS_FOREST_MAP" obj "GRASS_FOREST_MAP" } ]
+	}
+	{
+		n GRASS_CAVE_MAP
+		pos { x 37.6666 y 19.4835 z -20.799 }
+		entities [ { name "GRASS_CAVE_MAP" obj "GRASS_CAVE_MAP" } ]
+	}
+	{
+		n KILI_MAP
+		pos { x 30.8702 y -17.3884 z 29.4422 }
+		entities [ { name "KILI_MAP" obj "KILI_MAP" } ]
+	}
+	{
+		n SPITIA_DES_MAP
+		pos { x -2.54122 y 17.7043 z 44.3375 }
+		scale { x 0.00371945 y 0.00371945 z 0.00371945 }
+		rot [ -0.207842 0.814527 0.464816 -0.278017 ]
+		entities [ { name "SPITIA_DES_MAP" obj "SPITIA_DES_MAP" } ]
+	}
+	{
+		n 6DENTRO_SAVANAH01_MAP
+		pos { x 33.9427 y -24.6514 z 25.0326 }
+		scale { x 0.706202 y 0.706202 z 0.706202 }
+		rot [ -0.536607 0.385651 -0.488293 0.569997 ]
+		entities [ { name "6DENTRO_SAVANAH01_MAP" obj "6DENTRO_SAVANAH_MAP" } ]
+	}
+	{
+		n HALLO_SMALLTREEB_MAP
+		pos { x -39.6565 y 15.4855 z -20.0789 }
+		rot [ 4.37114e-008 -4.37114e-008 4.37114e-008 1 ]
+		entities [ { name "HALLO_SMALLTREEB_MAP" obj "HALLO_SMALLTREEB_MAP" } ]
+	}
+	{
+		n Cam_halloween
+		pos { x -49.499 y 7.14402 z -23.0496 }
+		rot [ 0.199755 -0.782012 0.311461 0.501544 ]
+		cameras [ { name "Cam_halloween" fov 1.18773 } ]
+	}
+	{
+		n Cam_halloween.Target
+		pos { x -42.2593 y 14.6854 z -19.7271 }
+		rot [ 0.5016 -0.334302 0.769511 0.210931 ]
+	}
+	{
+		n ICE_SMALL_304_MAP
+		pos { x -0.0721595 y 46.6692 z -2.979 }
+		scale { x 0.130445 y 0.130445 z 0.130445 }
+		rot [ 0.0106835 0.476942 0.103998 0.872695 ]
+		entities [ { name "ICE_SMALL_304_MAP" obj "ICE_SMALL_304_MAP" } ]
+	}
+	{
+		n Cam_arctic
+		pos { x 4.23031 y 54.0756 z 13.0991 }
+		scale { x 0.999971 y 0.999965 z 0.999966 }
+		rot [ -0.224118 0.132578 0.0307904 0.965011 ]
+		cameras [ { name "Cam_arctic" fov 1.18773 } ]
+	}
+	{
+		n Cam_arctic.Target
+		pos { x 0.398868 y 47.1002 z -0.581972 }
+		scale { x 0.999971 y 0.999965 z 0.999966 }
+		rot [ 0.522976 0.105285 -0.0783394 0.842184 ]
+	}
+	{
+		n Cam_beach
+		pos { x -12.316 y 7.12672 z -50.3068 }
+		rot [ -0.614748 -0.48252 0.337367 0.524826 ]
+		cameras [ { name "Cam_beach" fov 1.18773 } ]
+	}
+	{
+		n Cam_beach.Target
+		pos { x -4.64124 y 4.46341 z -48.4617 }
+		rot [ -0.0775643 -0.0831569 0.578043 0.808044 ]
+	}
+	{
+		n beach_DENTRO_MAP
+		pos { x -2.2675 y 1.20088 z -48.8989 }
+		nodes [
+			{
+				n beach_karydes_map
+				pos { x -0.188406 y -2.79814 z -0.760879 }
+				entities [ { name "beach_karydes_map" obj "beach_karydes_map" } ]
+			}
+		]
+	}
+	{
+		n Cam_batcave
+		pos { x 48.6896 y 12.7816 z -21.8848 }
+		rot [ -0.160879 -0.802818 0.249878 -0.516877 ]
+		cameras [ { name "Cam_batcave" fov 1.18773 } ]
+	}
+	{
+		n Cam_batcave.Target
+		pos { x 37.8241 y 21.0087 z -16.9443 }
+		rot [ -0.481111 -0.391617 0.743165 -0.250749 ]
+	}
+	{
+		n Cam_reef
+		pos { x 6.92266 y -34.1183 z -51.1834 }
+		rot [ -0.0103826 -0.954236 0.297008 -0.0333575 ]
+		cameras [ { name "Cam_reef" fov 0.602557 } ]
+	}
+	{
+		n Cam_reef.Target
+		pos { x 6.07462 y -25.7475 z -39.0687 }
+		rot [ -0.0267654 -0.464649 0.884898 -0.0184322 ]
+	}
+	{
+		n grass_savanna_MAP
+		pos { x 25.63 y -23.0613 z 30.7109 }
+		scale { x 0.303677 y 0.303677 z 0.303677 }
+		rot [ 0.753873 0.111555 -0.565003 0.316231 ]
+		entities [ { name "grass_savanna_MAP" obj "grass_savanna_MAP" } ]
+	}
+	{
+		n xamoklado_sav_MAP
+		pos { x 30.4679 y -26.8626 z 23.5584 }
+		rot [ 0.915322 -0.230588 -0.188206 -0.271282 ]
+		entities [ { name "xamoklado_sav_MAP" obj "xamoklado_sav_MAP" } ]
+	}
+	{
+		n energy_reef
+		pos { x 5.08199 y -24.8746 z -37.4348 }
+		rot [ 0.452089 0.15969 0.14146 0.866085 ]
+		entities [ { name "energy_reef" obj "energy_reef" } ]
+	}
+	{
+		n energy_beach
+		pos { x -2.939 y 2.07 z -45.124 }
+		rot [ 0.706194 0.18334 0.157968 0.665374 ]
+		entities [ { name "energy_beach" obj "energy_reef" } ]
+	}
+	{
+		n energy_savanna
+		pos { x 27.929 y -21.567 z 27.59 }
+		rot [ -0.346441 -0.0490357 0.378452 0.856941 ]
+		entities [ { name "energy_savanna" obj "energy_reef" } ]
+	}
+	{
+		n energy_desert
+		pos { x -2.188 y 14.308 z 42.73 }
+		rot [ -0.810529 -0.0206547 -0.0105795 0.585239 ]
+		entities [ { name "energy_desert" obj "energy_reef" } ]
+	}
+	{
+		n energy_arctic
+		pos { x 0.42 y 45.312 z 0.749998 }
+		rot [ 0.99905 -0.00391695 0.042067 -0.010698 ]
+		entities [ { name "energy_arctic" obj "energy_reef" } ]
+	}
+	{
+		n energy_forest
+		pos { x -20.124 y 35.777 z -18.445 }
+		rot [ 0.947447 0.210157 -0.0810586 0.227175 ]
+		entities [ { name "energy_forest" obj "energy_reef" } ]
+	}
+	{
+		n energy_halloween
+		pos { x -39.576 y 13.259 z -17.541 }
+		rot [ 0.796743 0.507986 -0.104199 0.310311 ]
+		entities [ { name "energy_halloween" obj "energy_reef" } ]
+	}
+	{
+		n energy_batcave
+		pos { x 37.1384 y 19.4594 z -16.9152 }
+		rot [ 0.827157 -0.521058 -0.18384 0.102533 ]
+		entities [ { name "energy_batcave" obj "energy_reef" } ]
+	}
+	{
+		n Cam_desert
+		pos { x -0.207577 y 6.7594 z 53.7366 }
+		rot [ 0.365505 0.0313489 0.0704697 0.927608 ]
+		cameras [ { name "Cam_desert" fov 1.18773 } ]
+	}
+	{
+		n Cam_desert.Target
+		pos { x -4.72134 y 34.4854 z 23.6575 }
+		rot [ 0.910937 0.0635726 0.0255332 0.406817 ]
+	}
+	{
+		n forest_pineheavy_MAP
+		pos { x -19.3478 y 39.6363 z -17.5783 }
+		entities [ { name "forest_pineheavy_MAP" obj "forest_pineheavy_MAP" } ]
+	}
+	{
+		n Cam_forest
+		pos { x -29.093 y 35.2356 z -23.669 }
+		rot [ 0.0586213 -0.884773 0.115888 0.447559 ]
+		cameras [ { name "Cam_forest" fov 1.18773 } ]
+	}
+	{
+		n Cam_forest.Target
+		pos { x -4.79108 y 43.2762 z -5.79441 }
+		rot [ 0.339279 -0.536299 0.716701 0.289159 ]
+	}
+	{
+		n Cam_savanna
+		pos { x 28.5188 y -37.1597 z 25.3738 }
+		rot [ 0.693805 0.284988 -0.233528 0.618774 ]
+		cameras [ { name "Cam_savanna" fov 1.18773 } ]
+	}
+	{
+		n Cam_savanna.Target
+		pos { x 27.3816 y 2.21823 z 30.3438 }
+		rot [ 0.92388 0.0369918 -0.377236 -0.0526354 ]
+	}
+	{
+		n DESERT_GRASS_MAP
+		pos { x 2.85424 y 14.9313 z 44.4228 }
+		scale { x 0.00902667 y 0.00902667 z 0.00902667 }
+		rot [ 0.506235 0.181046 0.232026 0.810625 ]
+		entities [ { name "DESERT_GRASS_MAP" obj "DESERT_GRASS_MAP" } ]
+	}
+	{
+		n FOREST_OAK_LEAVES_MAP
+		pos { x -22.7418 y 36.0662 z -22.4762 }
+		scale { x 0.873377 y 0.873377 z 0.873377 }
+		entities [ { name "FOREST_OAK_LEAVES_MAP" obj "FOREST_OAK_LEAVES_MAP" } ]
+	}
+	{
+		n FOREST_OAKTRUNK_MAP
+		pos { x -22.454 y 35.002 z -21.104 }
+		scale { x 0.873377 y 0.873377 z 0.873377 }
+		entities [ { name "FOREST_OAKTRUNK_MAP" obj "FOREST_OAKTRUNK_MAP" } ]
+	}
+	{
+		n DESERT_PALMTRUNK_MAP
+		pos { x 1.90937 y 15.8679 z 45.9068 }
+		rot [ 0.0083508 -0.0452245 0.0070668 0.998917 ]
+		entities [ { name "DESERT_PALMTRUNK_MAP" obj "DESERT_PALMTRUNK_MAP" } ]
+	}
+	{
+		n DESERT_PALMLEAVES_MAP
+		pos { x 1.83698 y 16.3392 z 47.3945 }
+		rot [ 0.0083508 -0.0452245 0.0070668 0.998917 ]
+		entities [ { name "DESERT_PALMLEAVES_MAP" obj "DESERT_PALMLEAVES_MAP" } ]
+	}
+]

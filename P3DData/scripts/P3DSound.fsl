@@ -1,0 +1,276 @@
+// default values for all sounds
+class Sound {
+	string name	""			/// name = file path
+	int priority true		/// true = high priority, false = low priority
+	int streamed false		/// true = streamed, false = buffered
+	real refDistance 3.5	/// maximum volume when source's distance is <= refDistance
+	real rolloff 1.05		/// (was:1.75) amount of sound attenuation relative to distance (0 = no attenuation)
+	real maxDistance 100000	/// sound isn't attenuated after this distance (don't touch)
+	real volume 1			/// default sound volume (min = 0, max = 1)
+	real pitch 1			/// default sound pitch (min = 0, max = oo)
+	int loop false
+}
+// TODO KYBALL2 : allow different file source to name (so different, or even RANDOM(!) pitches can be used!)
+// for better explanation see http://connect.creativelabs.com/openal/Documentation/OpenAL%201.1%20Specification.htm#_Toc199835864
+// NOTE : Stereo sounds are NOT played in 3D!
+
+// instances of class 'Sound' : if we need to change the default values for a sound, we simply declare it
+array of Sound sounds [
+
+	// default-values holders; don't initialize as they don't correspond to any sound files!
+	{	name "<ambience>"
+		priority false
+		streamed false // set in code too
+	}
+	
+	// ambience
+	// - beach
+	{	name "beach\beach_morning"
+		streamed true
+		loop true
+	}
+	{	name "beach\beach_afternoon"
+		streamed true
+		loop true
+	}
+	{	name "beach\beach_night"
+		streamed true
+		loop true
+	}
+	{	name "beach\coconut_drop"
+		volume 1.5
+	}
+	{	name "beach\YN"
+		volume 1
+		streamed true
+	}
+	{	name "beach\night_YC"
+		volume 1
+		streamed true
+	}
+	
+	// - arctic
+	{	name "arctic\arctic_night"
+		volume 0.1
+		streamed true
+		loop true
+	}
+	{	name "arctic\arctic_morning"
+		volume 0.2
+		streamed true
+		loop true
+	}
+	{	name "arctic\arctic_afternoon"
+		volume 0.1
+		streamed true
+		loop true
+	}
+	{	name "arctic\arctic_snow_wind"
+		volume 0.4
+		streamed true
+		loop true
+	}
+	{	name "arctic\glacier_night"
+		volume 3
+		rolloff 0.1
+		streamed true
+		loop false
+	}
+	
+	// - savanna
+	{	name "savanna\savanna_morning"
+		volume 0.33
+		streamed true
+		loop true
+	}
+	{	name "savanna\giraf1"
+		rolloff 0.5
+	}
+	{	name "savanna\giraf2"
+		rolloff 0.5
+	}
+	{	name "savanna\rain_1"
+		volume 0.06
+		streamed true
+		loop true
+	}
+	{	name "savanna\rain_2"
+		volume 0.5
+		streamed false
+		loop true
+	}
+
+
+	// - forest
+	{	name "forest\forest_night"
+		volume 0.01
+		streamed true
+		loop true
+	}
+	{	name "forest\forest_afternoon"
+		volume 0.01
+		streamed true
+		loop true
+	}
+	{	name "forest\forest_morning"
+		volume 0.01
+		streamed true
+		loop true
+	}
+	{	name "forest\rain_1"
+		volume 0.06
+		streamed true
+		loop true
+	}
+	{	name "forest\rain_2"
+		volume 0.5
+		streamed false
+		loop true
+	}
+	{	name "forest\waterfall_2"
+		volume 0.8
+		streamed false
+		loop true
+	}
+	{	name "forest\river_running"
+		volume 0.4
+		streamed false
+		loop true
+	}
+	{	name "desert\desert_morning"
+		volume 0.05
+		streamed true
+		loop true
+	}
+	{	name "desert\desert_windLittle"
+		volume 0.2
+		streamed true
+		loop true
+	}
+	{	name "desert\desert_windMuch"
+		volume 0.4
+		streamed true
+		loop true
+	}
+	{	name "desert\desert_night"
+		volume 0.01
+		streamed true
+		loop true
+	}
+	{	name "desert\desert_night"
+		volume 0.01
+		streamed true
+		loop true
+	}
+	{	name "desert\mouse_2"
+		volume 0.3
+	}
+	{	name "desert\mouse_3"
+		volume 0.3
+	}
+	
+	// reef
+	{	name "reef\coral_reef"
+		volume 0.1
+		streamed true
+		loop true
+	}
+	
+	// batcave
+	{	name "batcave\cave0"
+		streamed true
+		loop true
+		volume 0.2
+	}
+	{	name "batcave\cave1"
+		streamed true
+		loop true
+		volume 0.1
+	}
+	{	name "batcave\lava"
+		streamed true
+		loop true
+		volume 1
+		rolloff 0.20
+	}
+	{	name "batcave\sclolex_water_dripping_in_cave"
+		streamed true
+		loop true
+		volume 0.15
+	}
+	
+	// halloween
+	{	name "halloween\halloween_night"
+		streamed true
+		loop true
+		volume 0.1
+	}
+	{	name "halloween\halloween_day"
+		streamed true
+		loop true
+		volume 0.05
+	}
+	{	name "halloween\nightingaleXN"
+		streamed true
+		loop true
+		volume 0.75
+	}
+	
+	// gameplay sounds
+	{	name "gameplay\ballSmallPop"
+		// e.g if we wanted to make this sound a bit quieter we would write :
+		// volume 0.5
+	}
+	{	name "gameplay\ballBigPop"
+		priority false			// change parameter from default (true) to 'false'
+		volume 1
+	}
+	{	name "gameplay\ballFire"
+		// rolloff 0.5
+		volume 0.9
+	}
+	{	name "gameplay\ballBounce"
+		volume 1
+	}
+	{	name "gameplay\bzzzt"
+		priority false
+		volume 0.4
+	}
+	{	name "gameplay\lose"
+		volume 0.75
+	}
+	{	name "gameplay\win"
+		volume 0.7
+	}
+	{	name "gameplay\shrinkIn2"
+		rolloff 1
+		volume 0.75
+	}
+	{	name "gameplay\shrinkIn1"
+		rolloff 1
+		volume 0.75
+	}
+	{	name "gameplay\shrink"
+		rolloff 1
+		volume 0.75
+	}
+	{	name "gameplay\winGreat"
+		rolloff 1
+		volume 1
+	}
+	{	name "gameplay\changeEnergy"
+		rolloff 0.025
+		refDistance 30
+		priority true
+		// maxDistance 5 /// doesn't do shit!
+		volume 0.9
+	}
+	{	name "gameplay\firework2"
+		volume 1
+	}
+	
+	// animal sounds
+	{	name "forest\tick3"
+		volume 0.3
+	}
+]

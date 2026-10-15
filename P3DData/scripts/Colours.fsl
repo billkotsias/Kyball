@@ -1,0 +1,6 @@
+#include "BasicClasses.fsl"
+
+RGB yellow { r 0 g 1 b 1 }
+RGB red { r 1 g 0 b 0 }
+RGB black { r 0 g 0 b 0 }
+RGB white // same as default RGB

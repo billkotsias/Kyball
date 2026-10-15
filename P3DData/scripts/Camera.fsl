@@ -1,0 +1,11 @@
+#include "BasicClasses.fsl"
+
+class Camera {
+	string name	""	/// no other way to get a camera from 'SceneManager' but by name?
+	
+	real fov 66			/// field-of-view
+	real nearPlane 0.1	/// clipping planes : default = -1 => don't override cosmos settings; usually = 5
+	real farPlane 10000	/// clipping planes : default = -1 => don't override cosmos settings; usually = 3000
+	
+	/// position and direction are derived from the node to which this camera is attached
+}

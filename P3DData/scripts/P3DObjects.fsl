@@ -1,0 +1,2043 @@
+// MAP
+Obj3D "BEACH_SMALL_PALM2_MAP" {
+	mesh "BEACH_SMALL_PALM2_MAP.mesh"
+	material [ "PALM_LEAVES_BEACH" ]
+	shadow false
+}
+Obj3D "beach_palm_trunks_MAP" {
+	mesh "beach_palm_trunks_MAP.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM1_BEACH" ]
+	shadow false
+}
+Obj3D "beach_karydes_map" {
+	mesh "beach_karydes_map.mesh"
+	material [ "PALM_LEAVES_BEACH" "Island_MAP" "PALM_LEAVES2_BEACH" ]
+	shadow false
+}
+Obj3D "IB_A1_LO_MAP" {
+	mesh "IB_A1_LO_MAP.mesh"
+	material [ "IB_A1_ARCTIC" ]
+}
+Obj3D "IB_A2_LO_MAP" {
+	mesh "IB_A2_LO_MAP.mesh"
+	material [ "IB_A2_ARCTIC" ]
+}
+Obj3D "ICE_SMALL_1_MAP" {
+	mesh "ICE_SMALL_1_MAP.mesh"
+	material [ "SMALL_ARCTIC" ]
+}
+Obj3D "PUMPKIN13_MAP" {
+	mesh "PUMPKIN13_MAP.mesh"
+	material [ "PUMPKIN_MAP" ]
+}
+Obj3D "TREE_B_MAP" {
+	mesh "TREE_B_MAP.mesh"
+	material [ "TREE_B_BURTON" ]
+}
+Obj3D "HALLO_SMALLTREEA_MAP" {
+	mesh "HALLO_SMALLTREEA_MAP.mesh"
+	material [ "SMALL_TREE_A_BURTON" ]
+}
+Obj3D "EARTH_MAP" {
+	mesh "EARTH_MAP.mesh"
+	material [ "MAP_MAP" ]
+}
+Obj3D "SAHARA_MAP" {
+	mesh "SAHARA_MAP.mesh"
+	material [ "desert_MAP" ]
+}
+Obj3D "DRAGON_CAVE_MAP" {
+	mesh "DRAGON_CAVE_MAP.mesh"
+	material [ "ROCKS_BURTON" ]
+}
+Obj3D "Nisia_MAP" {
+	mesh "Nisia_MAP.mesh"
+	material [ "REEF_ISLE_MAP" ]
+}
+Obj3D "6DENTRO_SAVANAH_MAP" {
+	mesh "6DENTRO_SAVANAH_MAP.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+}
+Obj3D "10DENTRO_SAVANAH_MAP" {
+	mesh "10DENTRO_SAVANAH_MAP.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+}
+Obj3D "7DENTRO_SAVANAH_MAP" {
+	mesh "7DENTRO_SAVANAH_MAP.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+}
+Obj3D "GRASS_CAVE_MAP" {
+	mesh "GRASS_CAVE_MAP.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "KILI_MAP" {
+	mesh "KILI_MAP.mesh"
+	material [ "KILI_MAP" ]
+}
+Obj3D "SPITIA_DES_MAP" {
+	mesh "SPITIA_DES_MAP.mesh"
+	material [ "BRICKS_DES_MAP" "WINDOWS_DES_MAP" ]
+}
+Obj3D "HALLO_SMALLTREEB_MAP" {
+	mesh "HALLO_SMALLTREEB_MAP.mesh"
+	material [ "SMALL_TREE_B_BURTON" ]
+}
+Obj3D "ICE_SMALL_304_MAP" {
+	mesh "ICE_SMALL_304_MAP.mesh"
+	material [ "ICE_SMALL2_ARCTIC" ]
+}
+Obj3D "grass_savanna_MAP" {
+	mesh "grass_savanna_MAP.mesh"
+	material [ "fencegrass_SAVANAH" ]
+}
+Obj3D "xamoklado_sav_MAP" {
+	mesh "xamoklado_sav_MAP.mesh"
+	material [ "TRUNK_SAVANAH" ]
+}
+Obj3D "energy_reef" {
+	mesh "energy_reef.mesh"
+	material [ "energy_map" ]
+}
+Obj3D "DESERT_GRASS_MAP" {
+	mesh "DESERT_GRASS_MAP.mesh"
+	material [ "GRASS_SAHARA" ]
+}
+Obj3D "DESERT_PALMTRUNK_MAP" {
+	mesh "DESERT_PALMTRUNK_MAP.mesh"
+	material [ "PALM_TRUNK_SAHARA" ]
+}
+Obj3D "DESERT_PALMLEAVES_MAP" {
+	mesh "DESERT_PALMLEAVES_MAP.mesh"
+	material [ "PALM_LEAVES_SAHARA" ]
+}
+
+// FOREST
+Obj3D "swallow" {
+	mesh "swallow.mesh"
+	material [ "NewMaterial__SWALOWTEXTURE" ]
+	shadow true
+}
+Obj3D "Cyclamen" {
+	mesh "Cyclamen.mesh"
+	material [ "Cyclamen_Leaves_FORREST" "Cyclamen_Flower_FORREST" ]
+	shadow true
+}
+Obj3D "louloudi2" {
+	mesh "louloudi2.mesh"
+	material [ "louloudi2" ]
+	shadow true
+}
+Obj3D "louloudi1" {
+	mesh "louloudi1.mesh"
+	material [ "louloudi1" ]
+	shadow true
+}
+Obj3D "GRASS_FOREST_MAP" {
+	mesh "GRASS_FOREST_MAP.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "forest_pineheavy_MAP" {
+	mesh "forest_pineheavy_MAP.mesh"
+	material [ "PINE_LEAVES_FORREST" ]
+}
+Obj3D "FOREST_OAK_LEAVES_MAP" {
+	mesh "FOREST_OAK_LEAVES_MAP.mesh"
+	material [ "Oak_Leaves_FORREST" ]
+}
+Obj3D "FOREST_OAKTRUNK_MAP" {
+	mesh "FOREST_OAKTRUNK_MAP.mesh"
+	material [ "OAK_FORREST" ]
+}
+Obj3D "forest_pinetrunkheavy_MAP" {
+	mesh "forest_pinetrunkheavy_MAP.mesh"
+	material [ "PINE_TRUNK_FORREST" ]
+}
+Obj3D "FOREST_PINE_MAP" {
+	mesh "FOREST_PINE_MAP.mesh"
+	material [ "PINE_BRANCHES_FORREST" "PINE_LEAVES_HI_FORREST" ]
+}
+Obj3D "forest_pinetrunk_MAP" {
+	mesh "forest_pinetrunk_MAP.mesh"
+	material [ "PINE2_TRUNK_FORREST" ]
+}
+Obj3D "FOREST_FTERI2_MAP" {
+	mesh "FOREST_FTERI2_MAP.mesh"
+	material [ "Plant_3_FORREST" ]
+}
+Obj3D "Ground_Left_FORREST" {
+	mesh "Ground_Left_FORREST.mesh"
+	material [ "Ground_FORREST_SHADOW" ]
+}
+Obj3D "Ground_Right_FORREST" {
+	mesh "Ground_Right_FORREST.mesh"
+	material [ "Ground_FORREST" ]
+}
+Obj3D "GRASS_1_FORREST" {
+	mesh "GRASS_1_FORREST.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_2_FORREST" {
+	mesh "GRASS_2_FORREST.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_3_FORREST" {
+	mesh "GRASS_3_FORREST.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_4_FORREST" {
+	mesh "GRASS_4_FORREST.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_5_FORREST" {
+	mesh "GRASS_5_FORREST.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_6_FORREST" {
+	mesh "GRASS_6_FORREST.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_FORREST_1" {
+	mesh "GRASS_FORREST_1.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_FORREST_2" {
+	mesh "GRASS_FORREST_2.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_FORREST_3" {
+	mesh "GRASS_FORREST_3.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_FORREST_4" {
+	mesh "GRASS_FORREST_4.mesh"
+	material [ "short_grass_FORREST" ]
+}
+Obj3D "GRASS_FORREST_5" {
+	mesh "GRASS_FORREST_5.mesh"
+	material [ "short_grass_FORREST" ]
+}
+
+Obj3D "Ground_Left_dry_FORREST" {
+	mesh "Ground_Left_FORREST.mesh"
+	material [ "Ground_dry_FORREST_SHADOW" ]
+}
+Obj3D "Ground_Right_dry_FORREST" {
+	mesh "Ground_Right_FORREST.mesh"
+	material [ "Ground_dry_FORREST" ]
+}
+Obj3D "GRASS_1_dry_FORREST" {
+	mesh "GRASS_1_FORREST.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_2_dry_FORREST" {
+	mesh "GRASS_2_FORREST.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_3_dry_FORREST" {
+	mesh "GRASS_3_FORREST.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_4_dry_FORREST" {
+	mesh "GRASS_4_FORREST.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_5_dry_FORREST" {
+	mesh "GRASS_5_FORREST.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_6_dry_FORREST" {
+	mesh "GRASS_6_FORREST.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_dry_FORREST_1" {
+	mesh "GRASS_FORREST_1.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_dry_FORREST_2" {
+	mesh "GRASS_FORREST_2.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_dry_FORREST_3" {
+	mesh "GRASS_FORREST_3.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_dry_FORREST_4" {
+	mesh "GRASS_FORREST_4.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+Obj3D "GRASS_dry_FORREST_5" {
+	mesh "GRASS_FORREST_5.mesh"
+	material [ "short_grass_dry_FORREST" ]
+}
+
+Obj3D "ROCK_FORREST" {
+	mesh "ROCK_FORREST.mesh"
+	material [ "ROCK_FORREST" ]
+	shadow false
+}
+Obj3D "River_Bank_FORREST" {
+	mesh "River_Bank_FORREST.mesh"
+	material [ "River_Bank_FORREST" ]
+}
+Obj3D "Rock_Small_FORREST" {
+	mesh "Rock_Small_FORREST.mesh"
+	material [ "ROCK2_FORREST" ]
+	shadow false
+}
+Obj3D "KISSOS_FORREST" {
+	mesh "KISSOS_FORREST.mesh"
+	material [ "Plant_2_FORREST" ]
+	shadow true
+}
+Obj3D "HILL_FORREST" {
+	mesh "HILL_FORREST.mesh"
+	material [ "HILL_FORREST" ]
+}
+Obj3D "HILL_NOON_FORREST" {
+	mesh "HILL_FORREST.mesh"
+	material [ "HILL_NOON_FORREST" ]
+}
+Obj3D "HILL_NIGHT_FORREST" {
+	mesh "HILL_FORREST.mesh"
+	material [ "HILL_NIGHT_FORREST" ]
+}
+Obj3D "Plant_06_FORREST" {
+	mesh "Plant_06_FORREST.mesh"
+	material [ "Plant4_FORREST" ]
+	shadow true
+}
+Obj3D "FTERRI500_FORREST" {
+	mesh "FTERRI500_FORREST.mesh"
+	material [ "Plant_3_FORREST" ]
+	shadow true
+}
+Obj3D "Rocks_Small_FORREST" {
+	mesh "Rocks_Small_FORREST.mesh"
+	material [ "ROCK2_FORREST" ]
+	shadow true
+}
+Obj3D "PINES2_FAKE_FORREST" {
+	mesh "PINES2_FAKE_FORREST.mesh"
+	material [ "PINE2_FAKE_FORREST" ]
+	shadow true
+}
+Obj3D "FAKE_PINES_FORREST" {
+	mesh "FAKE_PINES_FORREST.mesh"
+	material [ "PINE2D_FORREST" ]
+	shadow true
+}
+Obj3D "OAKS_FORREST" {
+	mesh "OAKS_FORREST.mesh"
+	material [ "OAK_FORREST" "Oak_Leaves_FORREST" ]
+	shadow true
+}
+Obj3D "PINE_HI_RIGHT_FORREST" {
+	mesh "PINE_HI_RIGHT_FORREST.mesh"
+	material [ "PINE_LEAVES_FORREST" "PINE_TRUNK2_FORREST" ]
+	shadow true
+}
+Obj3D "PINE_HI_LEFT_FORREST" {
+	mesh "PINE_HI_LEFT_FORREST.mesh"
+	material [ "PINE_LEAVES_FORREST" "PINE_TRUNK2_FORREST" ]
+	shadow true
+}
+Obj3D "PINE_HI_FRONT_FORREST" {
+	mesh "PINE_HI_FRONT_FORREST.mesh"
+	material [ "PINE_LEAVES_FORREST" "PINE_TRUNK2_FORREST" ]
+	shadow true
+}
+Obj3D "PINES_MED_1_FORREST" {
+	mesh "PINES_MED_1_FORREST.mesh"
+	material [ "PINE_LEAVES_FORREST" "PINE_TRUNK_FORREST" ]
+	shadow true
+}
+Obj3D "PINES_MED_2_FORREST" {
+	mesh "PINES_MED_2_FORREST.mesh"
+	material [ "PINE_LEAVES_FORREST" "PINE_TRUNK_FORREST" ]
+	shadow true
+}
+Obj3D "PINE_LOW_1_FORREST" {
+	mesh "PINE_LOW_1_FORREST.mesh"
+	material [ "PINE_BRANCHES_FORREST" "PINE_LEAVES_HI_FORREST" "PINE2_TRUNK_FORREST" "PINE2_TRUNK_FORREST" ]
+	shadow true
+}
+Obj3D "PINE_LOW_2_FORREST" {
+	mesh "PINE_LOW_2_FORREST.mesh"
+	material [ "PINE_LEAVES_HI_FORREST" "PINE2_TRUNK_FORREST" ]
+	shadow true
+}
+Obj3D "OAK_BIG_FORREST" {
+	mesh "OAK_BIG_FORREST.mesh"
+	material [ "OAK_FORREST" "Oak_Leaves_FORREST" ]
+	shadow true
+}
+Obj3D "PINEANIM2_FORREST" {
+	mesh "PINEANIM2_FORREST.mesh"
+	material [ "Pine2_TRUNK_S_FORREST" "PINE_BRANCHES_FORREST" "PINE_LEAVES_HI_FORREST" ]
+	shadow true
+}
+Obj3D "PINE_LOW_3_FORREST" {
+	mesh "PINE_LOW_3_FORREST.mesh"
+	material [ "PINE_LEAVES_HI_FORREST" "PINE2_TRUNK_FORREST" ]
+	shadow true
+}
+Obj3D "FTERI3_FORREST" {
+	mesh "FTERI3_FORREST.mesh"
+	material [ "Plant_3_FORREST" ]
+	shadow true
+}
+Obj3D "PINEANIM1_FORREST" {
+	mesh "PINEANIM1_FORREST.mesh"
+	material [ "PINE2_TRUNK_FORREST" "PINE_LEAVES_HI_FORREST" ]
+	shadow true
+}
+Obj3D "OAK_LEAVES_LARGE_FOREST" {
+	mesh "OAK_LEAVES_LARGE_FOREST.mesh"
+	material [ "Oak_Leaves_FORREST" ]
+	shadow true
+}
+Obj3D "OAK_LEAVES_SHORT_FOREST" {
+	mesh "OAK_LEAVES_SHORT_FOREST.mesh"
+	material [ "Oak_Leaves_FORREST" ]
+	shadow true
+}
+Obj3D "MOURA1_FOREST" {
+	mesh "MOURA1_FOREST.mesh"
+	material [ "Plant4_FORREST" ]
+	shadow true
+}
+Obj3D "WATER_FORREST" {
+	mesh "WATER_FORREST.mesh"
+	material [ "WATER_FORREST" ]
+}
+Obj3D "WATERFALL_FORREST" {
+	mesh "WATERFALL_FORREST.mesh"
+	material [ "WATERFALL_FORREST" ]
+}
+Obj3D "FTERI1_FORREST" {
+	mesh "FTERI1_FORREST.mesh"
+	material [ "Plant_3_FORREST" ]
+	shadow true
+}
+Obj3D "Plant_1_FORREST" {
+	mesh "Plant_1_FORREST.mesh"
+	material [ "Plant_1_FORREST" ]
+	shadow true
+}
+Obj3D "FTERI2_FORREST" {
+	mesh "FTERI2_FORREST.mesh"
+	material [ "Plant_3_FORREST" ]
+	shadow true
+}
+Obj3D "KORMOS_2_FOREST" {
+	mesh "KORMOS_2_FOREST.mesh"
+	material [ "PINE_TRUNK2_FORREST" ]
+	shadow true
+}
+Obj3D "KORMOS_1_FOREST" {
+	mesh "KORMOS_1_FOREST.mesh"
+	material [ "PINE_TRUNK_FORREST" ]
+	shadow true
+}
+Obj3D "TREES_ABOVE_FOREST" {
+	mesh "TREES_ABOVE_FOREST.mesh"
+	material [ "PINE2D_FORREST" "PINE2_FAKE_FORREST" "PINE_BRANCHES_FORREST" "PINE_LEAVES_HI_FORREST" "PINE_TRUNK2_FORREST" ]
+	shadow true
+}
+Obj3D "TREES_DEXIA_FOREST" {
+	mesh "TREES_DEXIA_FOREST.mesh"
+	material [ "PINE_TRUNK2_FORREST" "PINE_BRANCHES_FORREST" "PINE_LEAVES_HI_FORREST" ]
+	shadow true
+}
+Obj3D "PINE_LEAVES_DEXIA_FOREST" {
+	mesh "PINE_LEAVES_DEXIA_FOREST.mesh"
+	material [ "PINE_LEAVES_FORREST" "PINE_LEAVES_FORREST" ]
+	shadow true
+}
+
+// BATCAVE
+Obj3D "Lizard" {
+	mesh "Lizard.mesh"
+	material [ "lizard" ]
+	shadow true
+}
+Obj3D "ExtroDragonSphere" {
+	mesh "ExtroDragonSphere.mesh"
+	material [ "ExtroDragonSphere2" ]
+	shadow true
+}
+Obj3D "Batgirl" {
+	mesh "ExtroDragon.mesh"
+	material [ "batgirl" ]
+	shadow true
+}
+Obj3D "lava" {
+	mesh "lava.mesh"
+	material [ "lava" ]
+}
+Obj3D "cave_entrance2" {
+	mesh "cave_entrance2.mesh"
+	material [ "cave_entrance" ]
+}
+Obj3D "WATER_BIG_BATCAVE" {
+	mesh "WATER_BIG_BATCAVE.mesh"
+	material [ "WATER_BIG_BATCAVE" ]
+}
+Obj3D "WATER_SMALL_BATCAVE" {
+	mesh "WATER_SMALL_BATCAVE.mesh"
+	material [ "WATER_SMALL_BATCAVE" ]
+}
+Obj3D "ROCKS_BATCAVE" {
+	mesh "ROCKS_BATCAVE.mesh"
+	material [ "ROCK1_BATCAVE" "Small_Rocks_BATCAVE" ]
+	shadow true
+}
+Obj3D "COLUMN_BATCAVE" {
+	mesh "COLUMN_BATCAVE.mesh"
+	material [ "Column_BATCAVE" ]
+	shadow false
+}
+Obj3D "RIVERBED_BATCAVE" {
+	mesh "RIVERBED_BATCAVE.mesh"
+	material [ "RIVER_BED_BATCAVE" ]
+	shadow false
+}
+Obj3D "COLUMN2_BATCAVE" {
+	mesh "COLUMN2_BATCAVE.mesh"
+	material [ "Column2_BATCAVE" ]
+	shadow false
+}
+Obj3D "SHELL_BATCAVE" {
+	mesh "SHELL_BATCAVE.mesh"
+	material [ "WALL_RIGHT_BATCAVE" "ROOF_BATCAVE" "CAVE_END_BATCAVE" "Rock_Big_BATCAVE" "Left_Wall_BATCAVE" "CaveFLOOR_BATCAVE_SHADOW" ]
+}
+Obj3D "Crystal_Fallen" {
+	mesh "Crystal_Fallen.mesh"
+	material [ "CrystalsBlue" ]
+}
+Obj3D "Crystal2" {
+	mesh "Crystal2.mesh"
+	material [ "CrystalsPurple" ]
+	shadow false
+}
+Obj3D "Crystal1" {
+	mesh "Crystal1.mesh"
+	material [ "CrystalsPurple" ]
+	shadow false
+}
+Obj3D "Crystal4" {
+	mesh "Crystal4.mesh"
+	material [ "CrystalsPurple" ]
+	shadow false
+}
+Obj3D "Crystal3" {
+	mesh "Crystal3.mesh"
+	material [ "CrystalsPurple" ]
+	shadow false
+}
+Obj3D "Crystal06" {
+	mesh "Crystal06.mesh"
+	material [ "CrystalsBlue" ]
+	shadow false
+}
+Obj3D "Crystal07" {
+	mesh "Crystal07.mesh"
+	material [ "CrystalsBlue" ]
+	shadow false
+}
+Obj3D "Crystal08" {
+	mesh "Crystal08.mesh"
+	material [ "CrystalsBlue" ]
+	shadow false
+}
+Obj3D "Crystal09" {
+	mesh "Crystal09.mesh"
+	material [ "CrystalsBlue" ]
+	shadow false
+}
+Obj3D "CrystalCopy" {
+	mesh "CrystalCopy.mesh"
+	material [ "CrystalsBlue" ]
+	shadow false
+}
+Obj3D "CRYSTALS_BATCAVE" {
+	mesh "CRYSTALS_BATCAVE.mesh"
+	material [ "CrystalsBlue" ]
+	shadow false
+}
+
+// REEF
+Obj3D "Fish_B" {
+	mesh "Fish_B.mesh"
+	material [ "Fish_B_REEF" ]
+	shadow true
+}
+Obj3D "Fish1" {
+	mesh "Fish1.mesh"
+	material [ "Fish1_REEF" ]
+	shadow true
+}
+Obj3D "Fish_E" {
+	mesh "Fish_E.mesh"
+	material [ "Fish_E_REEF" ]
+	shadow true
+}
+Obj3D "Fish_F" {
+	mesh "Fish_F.mesh"
+	material [ "Fish_F_REEF" ]
+	shadow true
+}
+Obj3D "Fish_G" {
+	mesh "Fish_G.mesh"
+	material [ "Fish_G_REEF" ]
+	shadow true
+}
+Obj3D "Fish_H" {
+	mesh "Fish_H.mesh"
+	material [ "Fish_H_REEF" ]
+	shadow true
+}
+Obj3D "Sardela" {
+	mesh "Sardela.mesh"
+	material [ "Sardela_REEF" ]
+	shadow true
+}
+Obj3D "Fish_C" {
+	mesh "Fish_C.mesh"
+	material [ "Fish_C_REEF" ]
+	shadow true
+}
+Obj3D "Fish_D" {
+	mesh "Fish_D.mesh"
+	material [ "Fish_D_REEF" ]
+	shadow true
+}
+Obj3D "sand_BAD_REEF" {
+	mesh "sand_NEW_REEF.mesh"
+	material [ "sand_bad_reef_SHADOW" ]
+}
+Obj3D "sand_NEW_REEF" {
+	mesh "sand_NEW_REEFbiguv.mesh"
+	material [ "sand_new_reef_SHADOW" ]
+}
+Obj3D "sand_NEW_REEF_waves" {
+	mesh "sand_NEW_REEF.mesh"
+	material [ "WavyWaterCaustics" ]
+}
+Obj3D "sand_NEW_REEF_waves2" {
+	mesh "sand_NEW_REEF.mesh"
+	material [ "WavyWaterCaustics2" ]
+}
+Obj3D "REEF_LEFT_REEF" {
+	mesh "REEF_LEFT_REEF.mesh"
+	material [ "CORAL_2_REEF" "MANITARI_REEF" "CORAL_1_REEF" ]
+	shadow true
+}
+Obj3D "REEF_RIGHT_REEF" {
+	mesh "REEF_RIGHT_REEF.mesh"
+	material [ "CORAL_2_REEF" "CORAL_1_REEF" "CORAL5_REEF" "CORAL_1b_REEF" "MANITARI_REEF" ]
+	shadow true
+}
+Obj3D "REEF_FAR_REEF" {
+	mesh "REEF_FAR_REEF.mesh"
+	material [ "MANITARI_REEF" "CORAL_2_REEF" "CORAL5_REEF" "CORAL_1b_REEF" ]
+	shadow true
+}
+Obj3D "REEF_FAR_FLOWERS" {
+	mesh "REEF_FAR_FLOWERS.mesh"
+	material [ "CORAL_2D_B_REEF" "Coral_4_REEF" "Coral_3_Base_REEF" "Coral_3_ALPHA_REEF" "seaweed_REEF" "seaweed2_REEF" "seaweed_B_REEF" "seaweed_B2_REEF" "CORAL_2d_A_REEF" ]
+	shadow true
+}
+Obj3D "REEF_BACKGROUND_REEF" {
+	mesh "REEF_BACKGROUND_REEF.mesh"
+	material [ "RIGHT_REEF" "ROCK2_REEF" "Seaweed_C_REEF" ]
+}
+Obj3D "LEFT_FLOWER_REEF" {
+	mesh "LEFT_FLOWER_REEF.mesh"
+	material [ "CORAL_2d_A_REEF" "Coral_3_Base_REEF" "Coral_3_ALPHA_REEF" "Coral_4_REEF" "CORAL_2D_A2_REEF" ]
+	shadow true
+}
+Obj3D "Asterias_REEF" {
+	mesh "Asterias_REEF.mesh"
+	material [ "ASTERIAS_REEF" ]
+}
+Obj3D "ASTERIAS_2_REEF" {
+	mesh "ASTERIAS_2_REEF.mesh"
+	material [ "ASTERIAS_REEF" ]
+}
+Obj3D "Coral_Crater_REEF" {
+	mesh "Coral_Crater_REEF.mesh"
+	material [ "Crater_REEF" ]
+	shadow true
+}
+Obj3D "RIGHT_FLOWER_REEF" {
+	mesh "RIGHT_FLOWER_REEF.mesh"
+	material [ "CORAL_2d_A_REEF" "CORAL_2D_A2_REEF" "Coral_3_Base_REEF" "Coral_3_ALPHA_REEF" "Coral_4_REEF" "CORAL3B_ALPHA_REEF" "seaweed_B_REEF" "seaweed_B2_REEF" "Seaweed_C_REEF" ]
+	shadow true
+}
+Obj3D "LEFT_ROCK_REEF" {
+	mesh "LEFT_ROCK_REEF.mesh"
+	material [ "REEF_LEFT_REEF" "ROCK2_REEF" ]
+}
+Obj3D "CENTRE_ROCKS_REEF" {
+	mesh "CENTRE_ROCKS_REEF.mesh"
+	material [ "REEF_LEFT_REEF" "CORAL_2_REEF" ]
+}
+Obj3D "SFOUGAROS_REEF" {
+	mesh "SFOUGAROS_REEF.mesh"
+	material [ "MEANDER_REEF" ]
+}
+Obj3D "RIGHT_ROCK_REEF" {
+	mesh "RIGHT_ROCK_REEF.mesh"
+	material [ "RIGHT_REEF" "ROCK_1_REEF" ]
+}
+Obj3D "FAR_ROCK_REEF" {
+	mesh "FAR_ROCK_REEF.mesh"
+	material [ "REEF_FAR_REEF" ]
+}
+Obj3D "LEFT_FLOWER1_REEF" {
+	mesh "LEFT_FLOWER1_REEF.mesh"
+	material [ "seaweed_REEF" "seaweed2_REEF" ]
+	shadow true
+}
+Obj3D "RIGHT_FLOWER1_REEF" {
+	mesh "RIGHT_FLOWER1_REEF.mesh"
+	material [ "CORAL_2D_C_REEF" "CORAL_2D_B_REEF" ]
+	shadow true
+}
+Obj3D "SEAWEED_ANIM_REEF" {
+	mesh "SEAWEED_ANIM_REEF.mesh"
+	material [ "seaweed2_REEF" "seaweed_REEF" ]
+	shadow true
+}
+Obj3D "FLOWER_CENTER_REEF" {
+	mesh "FLOWER_CENTER_REEF.mesh"
+	material [ "seaweed_REEF" "seaweed2_REEF" ]
+	shadow true
+}
+Obj3D "NEAR_PLANTS_REEF" {
+	mesh "NEAR_PLANTS_REEF.mesh"
+	material [ "Seaweed_C_REEF" ]
+	shadow true
+}
+Obj3D "ALEPOU_REEF" {
+	mesh "ALEPOU_REEF.mesh"
+	material [ "CORAL3B_ALPHA_REEF" ]
+	shadow true
+}
+Obj3D "NEAR_PLANT2_REEF" {
+	mesh "NEAR_PLANT2_REEF.mesh"
+	material [ "Seaweed_C_REEF" ]
+	shadow true
+}
+Obj3D "NEAR_PLANT_CENTRE_REEF" {
+	mesh "NEAR_PLANT_CENTRE_REEF.mesh"
+	material [ "Seaweed_C_REEF" ]
+	shadow true
+}
+Obj3D "GRASIDIA_PANW_REEF" {
+	mesh "GRASIDIA_PANW_REEF.mesh"
+	material [ "seaweed2_REEF" "seaweed_REEF" ]
+	shadow true
+}
+Obj3D "LAXANA_LEFT_REEF" {
+	mesh "LAXANA_LEFT_REEF.mesh"
+	material [ "CORAL_2D_B_REEF" "CORAL_2D_C_REEF" ]
+	shadow true
+}
+Obj3D "ALEPOUDIES_JR_REEF" {
+	mesh "ALEPOUDIES_JR_REEF.mesh"
+	material [ "Coral_3_Base_REEF" "Coral_3_ALPHA_REEF" ]
+	shadow true
+}
+
+// HALLOWEEN
+Obj3D "WebRight" {
+	mesh "WebRight.mesh"
+	material [ "HalWeb" ]
+	shadow true
+}
+Obj3D "WebTop" {
+	mesh "WebTop.mesh"
+	material [ "HalWeb" ]
+	shadow true
+}
+Obj3D "WebLeft" {
+	mesh "WebLeft.mesh"
+	material [ "HalWeb" ]
+	shadow true
+}
+Obj3D "polySurface1659" {
+	mesh "polySurface1659.mesh"
+	material [ "Hal1Hub" ]
+	shadow true
+}
+Obj3D "polySurface1660" {
+	mesh "polySurface1660.mesh"
+	material [ "Hal1Trunk" ]
+	shadow true
+}
+Obj3D "polySurface1661" {
+	mesh "polySurface1661.mesh"
+	material [ "Hal1Leaves" ]
+	shadow true
+}
+Obj3D "polySurface1664" {
+	mesh "polySurface1664.mesh"
+	material [ "Hal2Trunk" ]
+	shadow true
+}
+Obj3D "polySurface1663" {
+	mesh "polySurface1663.mesh"
+	material [ "Hal2Leaves2" ]
+	shadow true
+}
+Obj3D "polySurface1662" {
+	mesh "polySurface1662.mesh"
+	material [ "Hal2Leaves" ]
+	shadow true
+}
+Obj3D "pCube5" {
+	mesh "pCube5.mesh"
+	material [ "Hal2Trunk" ]
+	shadow true
+}
+Obj3D "polySurface1669" {
+	mesh "polySurface1669.mesh"
+	material [ "Hal3Trunk" ]
+	shadow true
+}
+Obj3D "polySurface1668" {
+	mesh "polySurface1668.mesh"
+	material [ "Hal3Hub" ]
+	shadow true
+}
+Obj3D "polySurface1667" {
+	mesh "polySurface1667.mesh"
+	material [ "Hal3Leaves2" ]
+	shadow true
+}
+Obj3D "polySurface1666" {
+	mesh "polySurface1666.mesh"
+	material [ "Hal3Leaves" ]
+	shadow true
+}
+Obj3D "polySurface1671" {
+	mesh "polySurface1671.mesh"
+	material [ "Hal4Leaves" ]
+	shadow true
+}
+Obj3D "pCube6" {
+	mesh "pCube6.mesh"
+	material [ "Hal4Trunk" ]
+	shadow true
+}
+Obj3D "polySurface1670" {
+	mesh "polySurface1670.mesh"
+	material [ "Hal4Hub" ]
+	shadow true
+}
+Obj3D "polySurface1674" {
+	mesh "polySurface1674.mesh"
+	material [ "Hal5Leaves2" ]
+	shadow true
+}
+Obj3D "polySurface1673" {
+	mesh "polySurface1673.mesh"
+	material [ "Hal5Leaves" ]
+	shadow true
+}
+Obj3D "polySurface1672" {
+	mesh "polySurface1672.mesh"
+	material [ "Hal5Trunk" ]
+	shadow true
+}
+Obj3D "crow" {
+	mesh "crow.mesh"
+	material [ "chayika" ]
+	shadow true
+}
+Obj3D "Cloud_HAL02" {
+	mesh "Cloud_HAL02.mesh"
+	material [ "CLOUD_BILL" ]
+}
+Obj3D "Cloud_HAL11" {
+	mesh "Cloud_HAL02.mesh"
+	material [ "CLOUD_BILL2" ]
+}
+Obj3D "Cloud_HAL17" {
+	mesh "Cloud_HAL02.mesh"
+	material [ "CLOUD_BILL3" ]
+}
+Obj3D "RAT" {
+	mesh "RAT.mesh"
+	material [ "RatMat" ]
+	shadow true
+}
+Obj3D "OWLS_TREE" {
+	mesh "OWLS_TREE.mesh"
+	material [ "SMALL_TREE_A_BURTON" ]
+	shadow true
+}
+Obj3D "ROCK_BIG6_BURTON" {
+	mesh "ROCK_BIG6_BURTON.mesh"
+	material [ "ROCKS_BURTON" "Rock_SMALL_BURTON" ]
+	shadow false
+}
+Obj3D "GROUND_BURTON" {
+	mesh "GROUND_BURTON.mesh"
+	material [ "GROUND_BURTON_SHADOW" ]
+}
+Obj3D "TREE_A_BURTON" {
+	mesh "TREE_A_BURTON.mesh"
+	material [ "TREE_A_BURTON" ]
+	shadow true
+}
+Obj3D "PUMPKINS_BURTON" {
+	mesh "PUMPKINS_BURTON.mesh"
+	material [ "PUMPKIN_BURTON" ]
+	shadow true
+}
+Obj3D "TREE_B_BURTON" {
+	mesh "TREE_B_BURTON.mesh"
+	material [ "TREE_B_BURTON" ]
+	shadow true
+}
+Obj3D "TREE_C_BURTON" {
+	mesh "TREE_C_BURTON.mesh"
+	material [ "TREE_C_BURTON" ]
+	shadow true
+}
+Obj3D "Tree_D_BURTON" {
+	mesh "Tree_D_BURTON.mesh"
+	material [ "TREE_D_BURTON" "Rock_SMALL_BURTON" ]
+	shadow true
+}
+Obj3D "TREE_E_BURTON" {
+	mesh "TREE_E_BURTON.mesh"
+	material [ "TREE_E_BURTON" ]
+	shadow true
+}
+Obj3D "TREE_E01_BURTON" {
+	mesh "TREE_E01_BURTON.mesh"
+	material [ "TREE_E_BURTON" ]
+	shadow true
+}
+Obj3D "MOON_BURTON" {
+	mesh "MOON_BURTON.mesh"
+	material [ "MOON_BURTON" ]
+}
+Obj3D "SMALL_TREE_A03_BURTON" {
+	mesh "SMALL_TREE_A03_BURTON.mesh"
+	material [ "SMALL_TREE_A_BURTON" "SMALL_TREE_B_BURTON" ]
+	shadow true
+}
+Obj3D "SMALL_TREE_A10_BURTON" {
+	mesh "SMALL_TREE_A10_BURTON.mesh"
+	material [ "SMALL_TREE_A_BURTON" "SMALL_TREE_B_BURTON" ]
+	shadow true
+}
+Obj3D "SMALL_TREE_B18_BURTON" {
+	mesh "SMALL_TREE_B18_BURTON.mesh"
+	material [ "SMALL_TREE_B_BURTON" "SMALL_TREE_A_BURTON" ]
+	shadow true
+}
+Obj3D "SMALL_TREE_A23_BURTON" {
+	mesh "SMALL_TREE_A23_BURTON.mesh"
+	material [ "SMALL_TREE_A_BURTON" "SMALL_TREE_B_BURTON" ]
+	shadow true
+}
+Obj3D "SMALL_TREE_A27_BURTON" {
+	mesh "SMALL_TREE_A27_BURTON.mesh"
+	material [ "SMALL_TREE_A_BURTON" "SMALL_TREE_B_BURTON" ]
+	shadow true
+}
+Obj3D "GRASS_RIGHT_BURTON" {
+	mesh "GRASS_RIGHT_BURTON.mesh"
+	material [ "GRASS_BURTON" ]
+	shadow true
+}
+Obj3D "ROCK_N_PUMPKIN_BURTON" {
+	mesh "ROCK_N_PUMPKIN_BURTON.mesh"
+	material [ "Rock_SMALL_BURTON" "PUMPKIN_BURTON" ]
+	shadow false
+}
+Obj3D "ROCK_SMALL05_BURTON" {
+	mesh "ROCK_SMALL05_BURTON.mesh"
+	material [ "Rock_SMALL_BURTON" ]
+	shadow false
+}
+Obj3D "PLANT_WITH_PUMPKIN_BURTON" {
+	mesh "PLANT_WITH_PUMPKIN_BURTON.mesh"
+	material [ "PUMPKIN_FLOWER_BURTON" "PUMPKIN_LEAVES_BURTON" "PUMKIN_SLICE_BURTON" ]
+	shadow true
+}
+Obj3D "PLANT_1_BURTON" {
+	mesh "PLANT_1_BURTON.mesh"
+	material [ "PUMPKIN_LEAVES_BURTON" "PUMPKIN_FLOWER_BURTON" ]
+	shadow true
+}
+Obj3D "GRASS_LEFT_BURTON" {
+	mesh "GRASS_LEFT_BURTON.mesh"
+	material [ "GRASS_BURTON" ]
+	shadow true
+}
+Obj3D "GRASS_FRONT_BURTON" {
+	mesh "GRASS_FRONT_BURTON.mesh"
+	material [ "GRASS_BURTON" ]
+	shadow true
+}
+Obj3D "GRASS_ANIM_1_BURTON" {
+	mesh "GRASS_ANIM_1_BURTON.mesh"
+	material [ "GRASS_BURTON" ]
+	shadow true
+}
+Obj3D "GRASS_ANIM_4_BURTON" {
+	mesh "GRASS_ANIM_4_BURTON.mesh"
+	material [ "GRASS_BURTON" ]
+	shadow true
+}
+Obj3D "GRASS_ANIM_3_BURTON" {
+	mesh "GRASS_ANIM_3_BURTON.mesh"
+	material [ "GRASS_BURTON" ]
+	shadow true
+}
+Obj3D "GRASS_ANIM_2_BURTON" {
+	mesh "GRASS_ANIM_2_BURTON.mesh"
+	material [ "GRASS_BURTON" ]
+	shadow true
+}
+Obj3D "GRASS_ANIM_5_BURTON" {
+	mesh "GRASS_ANIM_5_BURTON.mesh"
+	material [ "GRASS_BURTON" ]
+	shadow true
+}
+Obj3D "MIST2_BURTON" {
+	mesh "MIST2_BURTON.mesh"
+	material [ "MIST_BURTON" ]
+}
+Obj3D "MIST1_BURTON" {
+	mesh "MIST1_BURTON.mesh"
+	material [ "MIST_BURTON" ]
+}
+Obj3D "MIST7_BURTON" {
+	mesh "MIST7_BURTON.mesh"
+	material [ "MIST_BURTON" ]
+}
+Obj3D "MIST3_BURTON" {
+	mesh "MIST3_BURTON.mesh"
+	material [ "MIST_BURTON" ]
+}
+Obj3D "MIST4_BURTON" {
+	mesh "MIST4_BURTON.mesh"
+	material [ "MIST_BURTON" ]
+}
+Obj3D "MIST5_BURTON" {
+	mesh "MIST5_BURTON.mesh"
+	material [ "MIST_BURTON" ]
+}
+Obj3D "MIST6_BURTON" {
+	mesh "MIST6_BURTON.mesh"
+	material [ "MIST_BURTON" ]
+}
+
+// SAVANNA
+Obj3D "condor_Fig" {
+	mesh "condor_Fig.mesh"
+	material [ "Condor" ]
+	shadow true
+}
+Obj3D "Lion001" {
+	mesh "Lion001.mesh"
+	material [ "Lion" ]
+	shadow true
+}
+Obj3D "zebra" {
+	mesh "zebra.mesh"
+	material [ "zebra" ]
+	shadow true
+}
+Obj3D "jiraff" {
+	mesh "jiraff.mesh"
+	material [ "jiraf" ]
+	shadow true
+}
+Obj3D "rhino" {
+	mesh "rhino.mesh"
+	material [ "rhino" ]
+	shadow true
+}
+Obj3D "elephant" {
+	mesh "elephant.mesh"
+	material [ "elephant" ]
+	shadow true
+}
+Obj3D "SavaTree4" {
+	mesh "SavaTree4.mesh"
+	material [ "SavaTree4" ]
+	shadow true
+}
+Obj3D "SavaTree1" {
+	mesh "SavaTree1.mesh"
+	material [ "SavaTree1" ]
+	shadow true
+}
+Obj3D "SavaTree3" {
+	mesh "SavaTree3.mesh"
+	material [ "SavaTree3" ]
+	shadow true
+}
+Obj3D "SavaTree2" {
+	mesh "SavaTree2.mesh"
+	material [ "SavaTree2" ]
+	shadow true
+}
+Obj3D "SavaTree5" {
+	mesh "SavaTree5.mesh"
+	material [ "SavaTree5" ]
+	shadow true
+}
+Obj3D "SavaLow" {
+	mesh "SavaLow.mesh"
+	material [ "SavaLow" ]
+	shadow true
+}
+Obj3D "SavaTree6" {
+	mesh "SavaTree6.mesh"
+	material [ "SavaTree6" ]
+	shadow true
+}
+Obj3D "SavaBoughtLeaves" {
+	mesh "SavaBoughtLeaves.mesh"
+	material [ "BushBoughtLeaves" ]
+	shadow true
+}
+Obj3D "SavaBoughtWood" {
+	mesh "SavaBoughtWood.mesh"
+	material [ "BushBoughtWood" ]
+	shadow true
+}
+Obj3D "ROCKS_SAVANAH" {
+	mesh "ROCKS_SAVANAH.mesh"
+	material [ "ROCKS_SAVANAH" ]
+}
+Obj3D "23DENTRO_SAVANAH" {
+	mesh "23DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "24DENTRO_SAVANAH" {
+	mesh "24DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "16DENTRO_SAVANAH" {
+	mesh "16DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "20DENTRO_SAVANAH" {
+	mesh "20DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "17DENTRO_SAVANAH" {
+	mesh "17DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "18DENTRO_SAVANAH" {
+	mesh "18DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "22DENTRO_SAVANAH" {
+	mesh "22DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "31DENTRO_SAVANAH" {
+	mesh "31DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "21DENTRO_SAVANAH" {
+	mesh "21DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "25DENTRO_SAVANAH" {
+	mesh "25DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "30DENTRO_SAVANAH" {
+	mesh "30DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "14DENTRO_SAVANAH" {
+	mesh "14DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "MUD_SAVANAH" {
+	mesh "LAKE_SAVANAH.mesh"
+	material [ "mud_SAVANAH" ]
+}
+Obj3D "LAKE_SAVANAH" {
+	mesh "LAKE_SAVANAH.mesh"
+	material [ "water_SAVANAH" ]
+}
+Obj3D "SHORT_GRASS3_SAVANAH" {
+	mesh "SHORT_GRASS3_SAVANAH.mesh"
+	material [ "SHORT_GRASS_SAVANAH" ]
+	shadow true
+}
+Obj3D "SHORT_GRASS3_GR" {
+	mesh "SHORT_GRASS3_SAVANAH.mesh"
+	material [ "SHORT_GRASS_GR" ]
+	shadow true
+}
+Obj3D "PESMENODENTRO_SAVANAH" {
+	mesh "PESMENODENTRO_SAVANAH.mesh"
+	material [ "TRUNK_SAVANAH" ]
+	shadow true
+}
+Obj3D "5DENTRO_SAVANAH" {
+	mesh "5DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "13DENTRO_SAVANAH" {
+	mesh "13DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "12DENTRO_SAVANAH" {
+	mesh "12DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "6DENTRO_SAVANAH" {
+	mesh "6DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "4DENTRO_SAVANAH" {
+	mesh "4DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "3DENTRO_SAVANAH" {
+	mesh "3DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "8DENTRO_SAVANAH" {
+	mesh "8DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "9DENTRO_SAVANAH" {
+	mesh "9DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "19DENTRO_SAVANAH" {
+	mesh "19DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "28DENTRO_SAVANAH" {
+	mesh "28DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "27DENTRO_SAVANAH" {
+	mesh "27DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "27DENTRO_SAVANAH_1" {
+	mesh "27DENTRO_SAVANAH_1.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "1DENTRO_SAVANAH" {
+	mesh "1DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "2DENTRO_SAVANAH" {
+	mesh "2DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "10DENTRO_SAVANAH" {
+	mesh "10DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "26DENTRO_SAVANAH" {
+	mesh "26DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "11DENTRO_SAVANAH" {
+	mesh "11DENTRO_SAVANAH.mesh"
+	material [ "TREE1_SAVANAH" "LEAVES_SAVANAH" ]
+	shadow true
+}
+Obj3D "GROUND_SAVANAH" {
+	mesh "GROUND_SAVANAH.mesh"
+	material [ "GROUND_SAVANAH_SHADOW" ]
+}
+Obj3D "GROUND_GRASS_SAVANAH" {
+	mesh "GROUND_SAVANAH.mesh"
+	material [ "GROUND_GRASS_SAVANAH_SHADOW" ]
+}
+Obj3D "FENCE_GRASS_SAVANAH" {
+	mesh "FENCE_GRASS_SAVANAH.mesh"
+	material [ "fencegrass_SAVANAH" ]
+	shadow true
+}
+Obj3D "FENCE_GRASS_GR" {
+	mesh "FENCE_GRASS_SAVANAH.mesh"
+	material [ "fencegrass_GR" ]
+	shadow true
+}
+Obj3D "FENCE_GRASS_FRONT_SAVANAH" {
+	mesh "FENCE_GRASS_FRONT_SAVANAH.mesh"
+	material [ "fencegrass_SAVANAH" ]
+	shadow true
+}
+Obj3D "FENCE_GRASS_FRONT_GR" {
+	mesh "FENCE_GRASS_FRONT_SAVANAH.mesh"
+	material [ "fencegrass_GR" ]
+	shadow true
+}
+Obj3D "TALL_GRASS_SAVANAH" {
+	mesh "TALL_GRASS_SAVANAH.mesh"
+	material [ "HIGH_GRASS_SAVANAH" ]
+	shadow true
+}
+Obj3D "TALL_GRASS_ANIM_SAVANAH" {
+	mesh "TALL_GRASS_ANIM_SAVANAH.mesh"
+	material [ "HIGH_GRASS_SAVANAH" ]
+	shadow true
+}
+Obj3D "TALL_GRASS_ANIM2_SAVANAH" {
+	mesh "TALL_GRASS_ANIM2_SAVANAH.mesh"
+	material [ "HIGH_GRASS_SAVANAH" ]
+	shadow true
+}
+Obj3D "TALL_GRASS_GR" {
+	mesh "TALL_GRASS_SAVANAH.mesh"
+	material [ "HIGH_GRASS_GR" ]
+	shadow true
+}
+Obj3D "TALL_GRASS_ANIM_GR" {
+	mesh "TALL_GRASS_ANIM_SAVANAH.mesh"
+	material [ "HIGH_GRASS_GR" ]
+	shadow true
+}
+Obj3D "TALL_GRASS_ANIM2_GR" {
+	mesh "TALL_GRASS_ANIM2_SAVANAH.mesh"
+	material [ "HIGH_GRASS_GR" ]
+	shadow true
+}
+
+// DESERT
+Obj3D "SNAKE" {
+	mesh "SNAKE.mesh"
+	material [ "SNAKE" ]
+	shadow true
+}
+Obj3D "DesertWater" {
+	mesh "DesertWater.mesh"
+	material [ "DESERT_WATER" ]
+}
+Obj3D "CAMEL_SAHARA" {
+	mesh "CAMEL_SAHARA.mesh"
+	material [ "CAMEL_SAHARA" ]
+	shadow true
+}
+Obj3D "krina3" {
+	mesh "krina3.mesh"
+	material [ "krina" ]
+	shadow true
+}
+Obj3D "krina2" {
+	mesh "krina2.mesh"
+	material [ "krina" ]
+	shadow true
+}
+Obj3D "krina1" {
+	mesh "krina1.mesh"
+	material [ "krina" ]
+	shadow true
+}
+Obj3D "desertYellowFlower" {
+	mesh "desertYellowFlower.mesh"
+	material [ "desertYellowFlower" "desertYellowFlower2" ]
+	shadow true
+}
+Obj3D "BASE_SAHARA" {
+	mesh "BASE_SAHARA.mesh"
+	material [ "BASE_SAHARA_SHADOW" ]
+}
+Obj3D "BASE_NIGHT_SAHARA" {
+	mesh "BASE_SAHARA.mesh"
+	material [ "BASE_NIGHT_SAHARA_SHADOW" ]
+}
+Obj3D "FOINIKAS_SAHARA" {
+	mesh "FOINIKAS_SAHARA.mesh"
+	material [ "PALM_TRUNK_SAHARA" ]
+	shadow true
+}
+Obj3D "DESERT_SAHARA" {
+	mesh "DESERT_SAHARA.mesh"
+	material [ "DESERT_SAHARA" ]
+}
+Obj3D "TREES_SAHARA" {
+	mesh "TREES_SAHARA.mesh"
+	material [ "DENTRA_SAHARA" ]
+	shadow false
+}
+Obj3D "TREES_LOW_SAHARA" {
+	mesh "TREES_LOW_SAHARA.mesh"
+	material [ "DENTRA_SAHARA" ]
+	shadow false
+}
+Obj3D "FOINIKOFYLLA_SAHARA" {
+	mesh "FOINIKOFYLLA_SAHARA.mesh"
+	material [ "PALM_LEAVES_SAHARA" ]
+	shadow true
+}
+Obj3D "GRASS_SAHARA" {
+	mesh "GRASS_SAHARA.mesh"
+	material [ "GRASS_SAHARA" ]
+	shadow true
+}
+Obj3D "WEED_B_SAHARA" {
+	mesh "WEED_B_SAHARA.mesh"
+	material [ "WEED_B_SAHARA" "GRASS_SAHARA" ]
+	shadow true
+}
+Obj3D "NEAXORTA_SAHARA" {
+	mesh "NEAXORTA_SAHARA.mesh"
+	material [ "GRASS_SAHARA" ]
+	shadow true
+}
+Obj3D "WEED_B_FAR_SAHARA" {
+	mesh "WEED_B_FAR_SAHARA.mesh"
+	material [ "WEED_B_SAHARA" ]
+	shadow true
+}
+Obj3D "SPITIA_SAHARA" {
+	mesh "SPITIA_SAHARA.mesh"
+	material [ "WINDOWS_SAHARA" "WINDOWS_SAHARA" "BRICKS_SAHARA" ]
+	shadow false
+}
+Obj3D "SPITIA_NIGHT_SAHARA" {
+	mesh "SPITIA_SAHARA.mesh"
+	material [ "WINDOWS_SAHARA" "WINDOWS_NIGHT_SAHARA" "BRICKS_SAHARA" ]
+	shadow false
+}
+Obj3D "BACKGROUND_SAHARA" {
+	mesh "BACKGROUND_SAHARA.mesh"
+	material [ "BACKGROUND_SAHARA" ]
+}
+Obj3D "WEEDS_A_SAHARA" {
+	mesh "WEEDS_A_SAHARA.mesh"
+	material [ "WEED_A_SAHARA" ]
+	shadow true
+}
+Obj3D "WEEDS_B_SAHARA" {
+	mesh "WEEDS_B_SAHARA.mesh"
+	material [ "WEED_A_SAHARA" "WEED_B_SAHARA" "GRASS_SAHARA" ]
+	shadow true
+}
+Obj3D "PETOUNIA_FLOWERS_DESERT" {
+	mesh "PETOUNIA_FLOWERS_DESERT.mesh"
+	material [ "PETOUNIA1_DESERT" "PETOUNIA2_DESERT" ]
+	shadow true
+}
+Obj3D "PETOUNIA_LEAVES_DESERT" {
+	mesh "PETOUNIA_LEAVES_DESERT.mesh"
+	material [ "PETOUNIA_LEAF_DESERT" ]
+	shadow true
+}
+Obj3D "PETOUNIA_STEMS_DESERT" {
+	mesh "PETOUNIA_STEMS_DESERT.mesh"
+	material [ "PETOUNIA_STEM_DESERT" ]
+	shadow true
+}
+
+Obj3D "FOINIKOFYLLA_SAHARA05" {
+	mesh "FOINIKOFYLLA_SAHARA05.mesh"
+	material [ "PALM2_LEAVES_SAHARA" ]
+	shadow true
+}
+Obj3D "FOINIKAS_DEXIA_SAHARA" {
+	mesh "FOINIKAS_DEXIA_SAHARA.mesh"
+	material [ "PALM2_LEAVES_SAHARA" ]
+	shadow true
+}
+Obj3D "TRUNK_FAR_SAHARA" {
+	mesh "TRUNK_FAR_SAHARA.mesh"
+	material [ "PALM2_TRUNK_SAHARA" ]
+	shadow true
+}
+Obj3D "FOINIKAS_FAR_SAHARA" {
+	mesh "FOINIKAS_FAR_SAHARA.mesh"
+	material [ "PALM2_LEAVES_SAHARA" ]
+	shadow true
+}
+Obj3D "TRUNK_DEXIA_SAHARA" {
+	mesh "TRUNK_DEXIA_SAHARA.mesh"
+	material [ "PALM2_TRUNK_SAHARA" ]
+	shadow true
+}
+Obj3D "FOINIKAS_SAHARA05" {
+	mesh "FOINIKAS_SAHARA.mesh"
+	material [ "PALM2_TRUNK_SAHARA" ]
+	shadow true
+}
+
+// ARCTIC
+Obj3D "seagul" {
+	mesh "seagul.mesh"
+	material [ "seagullArctic" ]
+	shadow false
+}
+Obj3D "Seagul_FLY" {
+	mesh "Seagul_FLY.mesh"
+	material [ "seagullArctic" ]
+	shadow true
+}
+Obj3D "BEAR" {
+	mesh "BEAR.mesh"
+	material [ "BEAR" ]
+	shadow true
+}
+Obj3D "ICE_BASE_ARCTIC" {
+	mesh "ICE_BASE_ARCTIC.mesh"
+	material [ "ICE_BASE_ARCTIC_SHADOW" ]
+}
+Obj3D "NERO_ARCTIC" {
+	mesh "NERO_ARCTIC.mesh"
+	material [ "NERO_ARCTIC" ]
+}
+Obj3D "NERO_FOG_ARCTIC" {
+	mesh "NERO_ARCTIC.mesh"
+	material [ "NERO_FOG_ARCTIC" ]
+}
+Obj3D "NERO_NIGHT_ARCTIC" {
+	mesh "nero_ARCTIC.mesh"
+	material [ "NERO_NIGHT_ARCTIC" ]
+}
+Obj3D "SKALI_ARCTIC" {
+	mesh "SKALI_ARCTIC.mesh"
+	material [ "SKALA_ARCTIC" "SKALA_UW_ARCTIC" ]
+}
+Obj3D "SKALI_FOG_ARCTIC" {
+	mesh "SKALI_ARCTIC.mesh"
+	material [ "SKALA_ARCTIC" "SKALA_UW_FOG_ARCTIC" ]
+}
+Obj3D "BILLBOARDS_ARCTIC" {
+	mesh "BILLBOARDS_ARCTIC.mesh"
+	material [ "BILL4_ARCTIC" "BILL5_ARCTIC" "BILL2_ARCTIC" "BILL3_ARCTIC" "BILL1_ARCTIC" ]
+}
+Obj3D "HIDDEN1_ARCTIC" {
+	mesh "HIDDEN1_ARCTIC.mesh"
+	material [ "PAGETOS_SMALL_ARCTIC" "PAGETOS_LARGE_ARCTIC" ]
+}
+Obj3D "AKTI_ARCTIC" {
+	mesh "AKTI_ARCTIC.mesh"
+	material [ "AKTI_ARCTIC" "ROCK2_ARCTIC" "ROCK3_ARCTIC" ]
+}
+Obj3D "SMALL_2_ARCTIC" {
+	mesh "SMALL_2_ARCTIC.mesh"
+	material [ "ICE_SMALL2_ARCTIC" ]
+	shadow false
+}
+Obj3D "SMALL_1_ARCTIC02" {
+	mesh "SMALL_1_ARCTIC02.mesh"
+	material [ "SMALL_ARCTIC" ]
+	shadow false
+}
+Obj3D "SMALL_1_ARCTIC01" {
+	mesh "SMALL_1_ARCTIC01.mesh"
+	material [ "SMALL_ARCTIC" ]
+	shadow false
+}
+Obj3D "IB_B3_LO_ARCTIC" {
+	mesh "IB_B3_LO_ARCTIC.mesh"
+	material [ "IB_B3_ARCTIC" ]
+	shadow true
+}
+Obj3D "IB_C3_LO_ARCTIC" {
+	mesh "IB_C3_LO_ARCTIC.mesh"
+	material [ "IB_C3_ARCTIC" ]
+	shadow true
+}
+Obj3D "IB_C1_LO_ARCTIC" {
+	mesh "IB_C1_LO_ARCTIC.mesh"
+	material [ "IB_C1_ARCTIC" ]
+	shadow true
+}
+Obj3D "IB_A2_ARCTIC" {
+	mesh "IB_A2_ARCTIC.mesh"
+	material [ "IB_A2_ARCTIC" ]
+	shadow true
+}
+Obj3D "IB_A4_LO_ARCTIC" {
+	mesh "IB_A4_LO_ARCTIC.mesh"
+	material [ "IB_A4_ARCTIC" ]
+	shadow true
+}
+Obj3D "IB_A3_ARCTIC" {
+	mesh "IB_A3_ARCTIC.mesh"
+	material [ "IB_A3_ARCTIC" ]
+	shadow true
+}
+Obj3D "INTRO_ICES_ARCTIC" {
+	mesh "INTRO_ICES_ARCTIC.mesh"
+	material [ "SMALL_ARCTIC" "ICE_SMALL2_ARCTIC" "IB_C3_ARCTIC" ]
+	shadow true
+}
+Obj3D "MEGALH3A_TROXIA_ARCTIC" {
+	mesh "MEGALH3A_TROXIA_ARCTIC.mesh"
+	material [ "IB_B1_ARCTIC" ]
+	shadow true
+}
+Obj3D "HIDDEN2_ARCTIC" {
+	mesh "HIDDEN2_ARCTIC.mesh"
+	material [ "IB_A1_ARCTIC" ]
+	shadow true
+}
+Obj3D "IB_C2_LO_ARCTIC" {
+	mesh "IB_C2_LO_ARCTIC.mesh"
+	material [ "IB_C2_ARCTIC" ]
+	shadow true
+}
+Obj3D "IB_B2_LO_ARCTIC" {
+	mesh "IB_B2_LO_ARCTIC.mesh"
+	material [ "IB_B2_ARCTIC" ]
+	shadow true
+}
+
+// BEACH
+Obj3D "TRUNK_BEACH" {
+	mesh "TRUNK_BEACH.mesh"
+	material [ "TRUNK_BEACH" ]
+	shadow true
+}
+Obj3D "shell1" {
+	mesh "shell1.mesh"
+	material [ "SHELL" ]
+	shadow false
+}
+Obj3D "ShellsBack" {
+	mesh "ShellsBack.mesh"
+	material [ "SHELL" ]
+	shadow false
+}
+Obj3D "SHELL3" {
+	mesh "SHELL3.mesh"
+	material [ "SHELL" ]
+	shadow false
+}
+Obj3D "SHELLS2" {
+	mesh "SHELLS2.mesh"
+	material [ "SHELL" ]
+	shadow false
+}
+Obj3D "STARFISH_SMALL" {
+	mesh "STARFISH_SMALL.mesh"
+	material [ "STARFISH" ]
+	shadow false
+}
+Obj3D "Seagull" {
+	mesh "Seagull.mesh"
+	material [ "Seagull" ]
+	shadow true
+}
+Obj3D "turtlaki" {
+	mesh "turtlaki.mesh"
+	material [ "turtlaki#3" "turtlaki#2" "turtlaki#1" "turtlaki#4" "turtlaki#5" "turtlaki#6" ]
+	shadow true
+}
+Obj3D "BASE_BEACH" {
+	mesh "BASE_BEACH.mesh"
+	material [ "BASE_BEACH_SHADOW" ]
+	shadow false
+}
+Obj3D "BASE_AFTERNOON_BEACH" {
+	mesh "BASE_BEACH.mesh"
+	material [ "BASE_AFTERNOON_BEACH_SHADOW" ]
+	shadow false
+}
+Obj3D "BASE_NIGHT_BEACH" {
+	mesh "BASE_BEACH.mesh"
+	material [ "BASE_AFTERNOON_BEACH_SHADOW" ]
+	shadow true
+}
+Obj3D "BITHOS_BEACH" {
+	mesh "BITHOS_BEACH.mesh"
+	material [ "BITHOS_BEACH" ]
+	shadow false
+}
+Obj3D "SEA_BEACH" {
+	mesh "SEA_BEACH.mesh"
+	material [ "SEA_BEACH" ] // "SEA2_BEACH" ]
+	shadow false
+}
+Obj3D "SEA_AFTERNOON_BEACH" {
+	mesh "SEA_BEACH.mesh"
+	material [ "SEA_AFTERNOON_BEACH" ] // "SEA2_BEACH" ]
+	shadow false
+}
+Obj3D "SEA_NIGHT_BEACH" {
+	mesh "SEA_BEACH.mesh"
+	material [ "SEA_NIGHT_BEACH" ] // "SEA2_BEACH" ]
+	shadow false
+}
+Obj3D "SHACK_BEACH" {
+	mesh "SHACK_BEACH.mesh"
+	material [ "SHACK_BEACH" "ROPES_SHACK_BEACH" ]
+	shadow true
+}
+Obj3D "AEORA_BEACH" {
+	mesh "AEORA_BEACH.mesh"
+	material [ "AEORA_BEACH" ]
+	shadow true
+}
+Obj3D "ISLAND1_BEACH" {
+	mesh "ISLAND1_BEACH.mesh"
+	material [ "ISLAND_1_BEACH" ]
+	shadow false
+}
+Obj3D "ISLAND_1_DRY_BEACH" {
+	mesh "ISLAND1_BEACH.mesh"
+	material [ "ISLAND_1_DRY_BEACH" ]
+	shadow false
+}
+Obj3D "WATERFALL_BEACH" {
+	mesh "WATERFALL_BEACH.mesh"
+	material [ "WATERFALL_BEACH" ]
+	shadow false
+}
+Obj3D "beachbackground_BEACH" {
+	mesh "beachbackground_BEACH.mesh"
+	material [ "BASE_BEACH" ]
+	shadow false
+}
+Obj3D "ISLAND_TREES_BEACH" {
+	mesh "ISLAND_TREES_BEACH.mesh"
+	material [ "ISLAND_TREES_BEACH" ]
+	shadow true
+}
+Obj3D "ISLAND_2_BEACH" {
+	mesh "ISLAND_2_BEACH.mesh"
+	material [ "ISLAND_2_BEACH" ]
+	shadow true
+}
+Obj3D "ISLAND_2_DRY_BEACH" {
+	mesh "ISLAND_2_BEACH.mesh"
+	material [ "ISLAND_2_DRY_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_ISLAND_BEACH" {
+	mesh "SMALL_ISLAND_BEACH.mesh"
+	material [ "SMALL_ISLAND_BEACH" "PSEUDO_ISLE_BEACH" ]
+	shadow false
+}
+Obj3D "GRASS_CENTRE_BEACH" {
+	mesh "GRASS_CENTRE_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "SANDHILL_BEACH" {
+	mesh "SANDHILL_BEACH.mesh"
+	material [ "SAND_HILL_BEACH" ]
+	shadow false
+}
+Obj3D "GRASS_ANIM_LEFT_2_BEACH" {
+	mesh "GRASS_ANIM_LEFT_2_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "GRASS_ANIM_LEFT_1_BEACH" {
+	mesh "GRASS_ANIM_LEFT_1_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "GRASS_ANIM_LEFT_3_BEACH" {
+	mesh "GRASS_ANIM_LEFT_3_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "GRASS_ANIM_RIGHT_2_BEACH" {
+	mesh "GRASS_ANIM_RIGHT_2_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "GRASS_ANIM_RIGHT_1_BEACH" {
+	mesh "GRASS_ANIM_RIGHT_1_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "GRASS_ANIM_RIGHT_3_BEACH" {
+	mesh "GRASS_ANIM_RIGHT_3_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "SMALL_PALM4_BEACH" {
+	mesh "SMALL_PALM4_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM3_BEACH" {
+	mesh "SMALL_PALM3_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_01_BEACH" {
+	mesh "TREE_01_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_04_BEACH" {
+	mesh "TREE_04_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_02_BEACH" {
+	mesh "TREE_02_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_07_BEACH" {
+	mesh "TREE_07_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_05_BEACH" {
+	mesh "TREE_05_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_12_BEACH" {
+	mesh "TREE_12_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM1_BEACH" {
+	mesh "SMALL_PALM1_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_08_BEACH" {
+	mesh "TREE_08_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_03_BEACH" {
+	mesh "TREE_03_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_11_BEACH" {
+	mesh "TREE_11_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_15_BEACH" {
+	mesh "TREE_15_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_16_BEACH" {
+	mesh "TREE_16_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_09_BEACH" {
+	mesh "TREE_09_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_20_BEACH" {
+	mesh "TREE_20_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM10_BEACH" {
+	mesh "SMALL_PALM10_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM7_BEACH" {
+	mesh "SMALL_PALM7_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_10_BEACH" {
+	mesh "TREE_10_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_06_BEACH" {
+	mesh "TREE_06_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM6_BEACH" {
+	mesh "SMALL_PALM6_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM2_BEACH" {
+	mesh "SMALL_PALM2_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM5_BEACH" {
+	mesh "SMALL_PALM5_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_13_BEACH" {
+	mesh "TREE_13_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM9_BEACH" {
+	mesh "SMALL_PALM9_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "COCONUT_BEACH" {
+	mesh "COCONUT_BEACH.mesh"
+	material [ "PALM_LEAVES2_BEACH" ]
+	shadow false
+}
+Obj3D "GRASS_FAR_RIGHT_BEACH" {
+	mesh "GRASS_FAR_RIGHT_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "TREE_14_BEACH" {
+	mesh "TREE_14_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_18_BEACH" {
+	mesh "TREE_18_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_19_BEACH" {
+	mesh "TREE_19_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "SMALL_PALM8_BEACH" {
+	mesh "SMALL_PALM8_BEACH.mesh"
+	material [ "PALM_SMALL_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_17_BEACH" {
+	mesh "TREE_17_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+///hidden
+Obj3D "GRASS_ANIM_CLOSE_R_BEACH" {
+	mesh "GRASS_ANIM_CLOSE_R_BEACH.mesh"
+	material [ "GRASS_BEACH2" ]
+	shadow false
+}
+Obj3D "GRASS_ANIM_CLOSE_L_BEACH" {
+	mesh "GRASS_ANIM_CLOSE_L_BEACH.mesh"
+	material [ "GRASS_BEACH2" ]
+	shadow false
+}
+Obj3D "BILLBOARDS_LEFT_BEACH" {
+	mesh "BILLBOARDS_LEFT_BEACH.mesh"
+	material [ "BILLBOARD_2_BEACH" "BILLBOARD_3_BEACH" "BILLBOARD_1_BEACH" ]
+	shadow false
+}
+Obj3D "TREE_30_BEACH" {
+	mesh "TREE_30_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_29_BEACH" {
+	mesh "TREE_29_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_23_BEACH" {
+	mesh "TREE_23_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_22_BEACH" {
+	mesh "TREE_22_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_21_BEACH" {
+	mesh "TREE_21_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "GRASS_LEFT_BEACH" {
+	mesh "GRASS_LEFT_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "TREE_28_BEACH" {
+	mesh "TREE_28_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_27_BEACH" {
+	mesh "TREE_27_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_31_BEACH" {
+	mesh "TREE_31_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_26_BEACH" {
+	mesh "TREE_26_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_25_BEACH" {
+	mesh "TREE_25_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES_BEACH" ]
+	shadow true
+}
+Obj3D "TREE_24_BEACH" {
+	mesh "TREE_24_BEACH.mesh"
+	material [ "PALM1_BEACH" "PALM_LEAVES2_BEACH" ]
+	shadow true
+}
+Obj3D "GRASS_RIGHT_BEACH" {
+	mesh "GRASS_RIGHT_BEACH.mesh"
+	material [ "GRASS_BEACH" ]
+	shadow false
+}
+Obj3D "BILLBOARDS_RIGHT_BEACH" {
+	mesh "BILLBOARDS_RIGHT_BEACH.mesh"
+	material [ "BILLBOARD_1_BEACH" "BILLBOARD_3_BEACH" "BILLBOARD_2_BEACH" "BILLBOARD_5_BEACH" ]
+	shadow false
+}

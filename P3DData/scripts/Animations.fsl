@@ -1,0 +1,17 @@
+// all available Animal animations :
+enum Animation {
+	rest
+	basic
+	tick1
+	tick2
+	tick3
+	look
+	happy1
+	happy2
+	happy3
+	sad
+	win
+	lose
+	smiling
+	anxious
+}

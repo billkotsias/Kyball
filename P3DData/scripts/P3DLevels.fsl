@@ -1,0 +1,7606 @@
+#include "Level.fsl"
+#include "P3DObjects.fsl"
+#include "P3DAnimators.fsl"
+#include "P3DLevDecor.fsl"
+#include "P3DVars.fsl"
+
+// cheat stuff
+enum CosmosID {
+	ARCTIC
+	FOREST
+	BATCAVE
+	REEF
+	HALLOWEEN
+	SAVANNA
+	DESERT
+	BEACH
+}
+int currentCosmos CosmosID::FOREST
+int currentLevel 5
+// // cheat stuff
+
+array of int chapters [
+	[ CosmosID::BEACH ]
+	[ CosmosID::ARCTIC CosmosID::FOREST CosmosID::DESERT ]
+	[ CosmosID::SAVANNA CosmosID::REEF CosmosID::BATCAVE CosmosID::HALLOWEEN ]
+]
+
+// ARCTIC
+array of Level arctic [
+	//a0
+	{
+		skybox { name "arctic_after" }
+		nodes [ arcticDay arcticIntro arcticIntroPisw ]
+		hint a0
+		// sounds should ALSO be part of Node!!!!!!
+		sounds [
+			{ sInterval 0 n [ arctic_afternoon ] }
+			{ sInterval 30 sRand 0.4 c { x -2 y -0.15 z 130 } i 50 o 150 n [ glacier_night ] }
+			{ sInterval 3 sRand 0.6 c { x -2 y -0.15 z -37 } i 5 o 30 n [ creaky_ice_2 creaky_ice_3 ice_crack_1 ice_crack_2 ] }
+		]
+
+		expert 86000
+		z 5
+		balls [
+			[ 0 2 4 c::bob ]
+			[ 1 2 5 c::b ]
+			[ 0 2 5 c::c ]
+			[ -1 2 5 c::b ]
+			[ -1 2 4 c::c ]
+			[ 1 2 4 c::c ]
+			[ 0 2 3 c::c ]
+		]
+	}
+	//a1
+	{
+		skybox { name "arctic_after" }
+		nodes [ arcticDay arcticHidden3 arcticMegalaHidden ]
+		changes [ { pos { x -3.76701e-005 y -2.753 z -36.295 } scale { y 0.7 w 16 } } ]
+		sounds [
+			{ sInterval 0 n [ arctic_afternoon ] }
+			{ sInterval 60 sRand 0.4 c { x -2 y -0.15 z 130 } i 50 o 150 n [ glacier_night ] }
+			{ sInterval 3 sRand 0.6 c { x -2 y -0.15 z -37 } i 5 o 30 n [ creaky_ice_2 creaky_ice_3 ice_crack_1 ice_crack_2 ] }
+		]
+
+		expert 100000
+		z 5
+		balls [
+			[ 0 2 5 c::c ]
+			[ 0 2 4 c::b ]
+			[ 0 2 3 c::c ]
+			[ 1 2 2 c::bob ]
+			[ 0 2 2 c::bob ]
+			[ -1 2 2 c::bob ]
+			[ 0 3 2 c::bob ]
+			[ 0 1 2 c::bob ]
+		]
+	}
+	//a2
+	{
+		skybox { name "arctic_after" }
+		nodes [ arcticDay arcticHidden3 arcticHidden1 arcticMegalaHidden seagullsRocks ]
+		changes [ { pos { x -1861.1 y 360.963 z 3603.5 } scale { y 0.7 w 667 } } ]
+		sounds [
+			{ sInterval 0 n [ arctic_afternoon ] }
+			{ sInterval 60 sRand 0.4 c { x -2 y -0.15 z 130 } i 50 o 150 n [ glacier_night ] }
+			{ sInterval 3 sRand 0.6 c { x -2 y -0.15 z -37 } i 5 o 30 n [ creaky_ice_2 creaky_ice_3 ice_crack_1 ice_crack_2 ] }
+			{ sInterval 30 sRand 1 c { x -2.4 y -3.4 z 77 } i 50 o 100 n [ seagull1 seagull2 seagull3 ] }
+		]
+		
+		expert 85000
+		z 5
+		balls [
+			[ 1 2 3 c::w ]
+			[ 1 4 3 c::m ]
+			[ -1 4 3 c::k ]
+			[ -1 2 3 c::r ]
+			[ 1 3 5 c::y ]
+			[ -1 3 4 c::bob ]
+			[ -1 1 4 c::bob ]
+			[ 1 1 4 c::bob ]
+			[ 1 3 4 c::bob ]
+			[ 2 3 5 c::y ]
+			[ 0 3 5 c::r ]
+			[ -1 3 5 c::r ]
+			[ -1 1 5 c::b ]
+			[ 0 1 5 c::b ]
+			[ 1 1 5 c::c ]
+			[ 2 1 5 c::c ]
+			[ 1 3 3 c::m ]
+			[ -1 3 3 c::k ]
+			[ 1 1 3 c::w ]
+			[ -1 1 3 c::r ]
+			[ 1 1 2 c::bob ]
+			[ 1 3 2 c::bob ]
+			[ -1 3 2 c::bob ]
+			[ -1 1 2 c::bob ]
+		]
+	}
+	//a3
+	{
+		skybox { name "arctic_after" }
+		nodes [ arcticDay arcticHidden3 arcticHidden1 arcticMegalaHidden seagullsRocks ]
+		sounds [
+			{ sInterval 0 n [ arctic_afternoon ] }
+			{ sInterval 60 sRand 0.4 c { x -2 y -0.15 z 130 } i 50 o 150 n [ glacier_night ] }
+			{ sInterval 3 sRand 0.6 c { x -2 y -0.15 z -37 } i 5 o 30 n [ creaky_ice_2 creaky_ice_3 ice_crack_1 ice_crack_2 ] }
+			{ sInterval 30 sRand 1 c { x -2.4 y -3.4 z 77 } i 50 o 100 n [ seagull1 seagull2 seagull3 ] }
+		]
+
+		expert 78000
+		z 5
+		balls [
+			[ 2 0 4 c::bob ]
+			[ 2 1 4 c::bob ]
+			[ 1 1 4 c::bob ]
+			[ 1 0 4 c::bob ]
+			[ 2 0 5 c::b ]
+			[ -1 3 4 c::bob ]
+			[ -2 3 4 c::bob ]
+			[ -2 4 4 c::bob ]
+			[ -1 4 4 c::bob ]
+			[ -2 4 5 c::c ]
+		]
+	}
+	//a4
+	{
+		skybox { name "arctic_after" }
+		nodes [ arcticDay arcticHidden3 arcticHidden1 arcticMegalaHidden SeagullsFlyAll bearWalk ]
+		sounds [
+			{ sInterval 0 n [ arctic_afternoon ] }
+			{ sInterval 3 sRand 0.6 c { x -2 y -0.15 z -37 } i 5 o 30 n [ creaky_ice_2 creaky_ice_3 ice_crack_1 ice_crack_2 ] }
+			{ sInterval 30 sRand 0.5 c { x -2 y -0.15 z -47 } i 5 o 30 n [ polar_bear_1 polar_bear_2 ] }
+		]
+
+		expert 65000
+		z 6
+		balls [
+			[ 1 3 6 c::r ]
+			[ 1 3 5 c::r ]
+			[ 2 3 5 c::bob ]
+			[ 1 4 5 c::bob ]
+			[ 0 3 5 c::bob ]
+			[ 1 2 5 c::bob ]
+			[ 1 3 4 c::bob ]
+			[ 0 3 6 c::c ]
+			[ 0 4 6 c::b ]
+			[ 1 4 6 c::c ]
+			[ 2 4 6 c::b ]
+			[ 2 3 6 c::c ]
+			[ 2 2 6 c::b ]
+			[ 1 2 6 c::c ]
+			[ 0 2 6 c::b ]
+		]
+	}
+	//a5
+	{
+		skybox { name "arctic_snowy" }
+		fog { set true exp 0.01 }
+		background RGB::grey5
+		nodes [ arcticSnow arcticHidden3 arcticHidden1 arcticMegalaHidden bearWalk SeagullsGoRound ]
+		sounds [
+			{ sInterval 0 n [ arctic_morning ] }
+			{ sInterval 10 sRand 1 c { x -2.4 y -3.4 z 77 } i 50 o 100 n [ seagull1 seagull2 seagull3 seagull_4 ] }
+			{ sInterval 30 sRand 0.5 c { x -2 y -0.15 z -47 } i 5 o 30 n [ polar_bear_1 polar_bear_2 ] }
+			{ sInterval 5 sRand 1 c { x -6 y -4.4 z 26 } i 5 o 100 n [ seagull1 seagull2 seagull3 ] }
+		]
+		
+		expert 150000
+		z 6
+		balls [
+			[ 2 4 5 c::bob ]
+			[ 2 4 4 c::bob ]
+			[ 2 3 4 c::bob ]
+			[ 2 2 4 c::bob ]
+			[ 2 1 4 c::bob ]
+			[ 2 0 4 c::bob ]
+			[ 2 0 3 c::bob ]
+			[ 2 0 2 c::bob ]
+			[ 2 1 2 c::bob ]
+			[ 2 2 2 c::bob ]
+			[ 2 3 2 c::bob ]
+			[ 2 4 2 c::bob ]
+			[ 1 2 2 c::bob ]
+			[ 1 3 2 c::bob ]
+			[ -2 0 6 c::b ]
+			[ -2 0 5 c::bob ]
+			[ -2 0 4 c::bob ]
+			[ -2 1 4 c::bob ]
+			[ -2 2 4 c::bob ]
+			[ -2 3 4 c::bob ]
+			[ -2 4 4 c::bob ]
+			[ -2 4 3 c::bob ]
+			[ -2 4 2 c::bob ]
+			[ -2 3 2 c::bob ]
+			[ -2 2 2 c::bob ]
+			[ -2 1 2 c::bob ]
+			[ -2 0 2 c::bob ]
+			[ -1 1 2 c::bob ]
+			[ -1 2 2 c::bob ]
+			[ 0 2 2 c::bob ]
+			[ -1 0 6 c::r ]
+			[ -1 1 6 c::b ]
+			[ 0 1 6 c::r ]
+			[ 0 2 6 c::b ]
+			[ 1 2 6 c::r ]
+			[ 1 3 6 c::b ]
+			[ 2 3 6 c::r ]
+			[ 2 4 6 c::b ]
+			[ 1 4 6 c::r ]
+			[ 0 3 6 c::r ]
+			[ -1 2 6 c::r ]
+			[ -2 1 6 c::r ]
+		]
+	}
+	//a6
+	{
+		skybox { name "arctic_snowy" }
+		background RGB::grey5
+		nodes [ arcticSnow arcticHidden3 arcticHidden1 arcticMegalaHidden bearWalk ]
+		fog { set true exp 0.01 }
+		particles [ { name "Ambient/Snow" pos { x -2 y -0.15 z -37 } ff 50 } ]
+		sounds [
+			{ sInterval 0 n [ arctic_morning ] }
+			{ sInterval 30 sRand 0.5 c { x -2 y -0.15 z -47 } i 5 o 30 n [ polar_bear_1 polar_bear_2 ] }
+		]
+		
+		expert 50000
+		z 7
+		balls [
+			[ 0 0 7 c::r ]
+			[ 0 1 7 c::g ]
+			[ 0 2 7 c::b ]
+			[ 0 3 7 c::y ]
+			[ 0 4 7 c::r ]
+			[ 0 4 6 c::bob ]
+			[ 0 3 6 c::bob ]
+			[ 0 2 6 c::bob ]
+			[ 0 1 6 c::bob ]
+			[ 0 0 6 c::bob ]
+			[ 0 0 5 c::bob ]
+			[ 0 4 5 c::bob ]
+			[ 0 4 4 c::bob ]
+			[ 0 0 4 c::bob ]
+			[ -1 2 7 c::r ]
+			[ -1 3 7 c::g ]
+			[ -1 4 7 c::b ]
+			[ -1 1 7 c::y ]
+			[ -1 0 7 c::b ]
+			[ 1 0 7 c::c ]
+			[ 1 1 7 c::y ]
+			[ 1 2 7 c::r ]
+			[ 1 3 7 c::g ]
+			[ 1 4 7 c::b ]
+			[ 0 4 3 c::bob ]
+			[ 0 0 3 c::bob ]
+			[ 0 1 4 c::bob ]
+			[ 0 3 4 c::bob ]
+			[ 0 2 5 c::bob ]
+		]
+	}
+	//a7
+	{
+		skybox { name "arctic_snowy" }
+		fog { set true exp 0.03 }
+		background RGB::grey5
+		nodes [ arcticSnow arcticHidden3 arcticHidden1 arcticMegala ]
+		particles [ { name "Ambient/Snowstorm" pos { x -2 y -0.15 z -37 } ff 50 } ]
+		changes [ { pos { x 0 y -2.753 z -26.295 } scale { y 1.2 w 16 } } ]
+		sounds [
+			{ sInterval 0 n [ arctic_morning ] }
+			{ sInterval 6 sRand 0.5 c { x -2 y -0.15 z -37 } i 20 o 50 n [ cold_wind_1_after cold_wind_2_after ] }
+		]
+		
+		expert 300000
+		z 8
+		balls [
+			[ 2 0 5 c::g ]
+			[ 1 0 5 c::c ]
+			[ 0 0 5 c::y ]
+			[ -1 0 5 c::b ]
+			[ -2 1 5 c::r ]
+			[ -1 1 5 c::g ]
+			[ 1 1 5 c::g ]
+			[ 2 1 5 c::b ]
+			[ 2 2 5 c::c ]
+			[ 1 2 5 c::r ]
+			[ 0 2 5 c::g ]
+			[ -1 2 5 c::b ]
+			[ -2 2 5 c::g ]
+			[ -2 3 5 c::g ]
+			[ -1 3 5 c::r ]
+			[ 1 3 5 c::b ]
+			[ 2 3 5 c::y ]
+			[ 2 4 5 c::c ]
+			[ 1 4 5 c::y ]
+			[ 0 4 5 c::r ]
+			[ -1 4 5 c::g ]
+			[ -2 4 5 c::y ]
+			[ -2 0 5 c::y ]
+			[ 2 0 4 c::r ]
+			[ 1 0 4 c::y ]
+			[ 0 0 4 c::g ]
+			[ -1 0 4 c::c ]
+			[ -2 0 4 c::b ]
+			[ -2 1 4 c::g ]
+			[ 0 1 4 c::y ]
+			[ 2 1 4 c::y ]
+			[ 2 2 4 c::r ]
+			[ 1 2 4 c::c ]
+			[ -1 2 4 c::c ]
+			[ -2 2 4 c::r ]
+			[ -2 3 4 c::b ]
+			[ 0 3 4 c::g ]
+			[ 2 3 4 c::c ]
+			[ 0 2 4 c::b ]
+			[ 2 4 4 c::g ]
+			[ 1 4 4 c::b ]
+			[ 0 4 4 c::c ]
+			[ -1 4 4 c::r ]
+			[ -2 4 4 c::c ]
+			[ 2 0 8 c::g ]
+			[ 2 1 8 c::b ]
+			[ 2 2 8 c::c ]
+			[ 2 3 8 c::y ]
+			[ 2 4 8 c::c ]
+			[ 1 4 8 c::y ]
+			[ 1 3 8 c::b ]
+			[ 1 1 8 c::g ]
+			[ 1 2 8 c::r ]
+			[ 0 1 8 c::c ]
+			[ 0 2 8 c::g ]
+			[ 0 3 8 c::y ]
+			[ 0 4 8 c::r ]
+			[ -1 4 8 c::g ]
+			[ -1 3 8 c::r ]
+			[ -1 2 8 c::b ]
+			[ -1 1 8 c::g ]
+			[ -2 0 8 c::c ]
+			[ -2 1 8 c::r ]
+			[ -2 2 8 c::g ]
+			[ -2 3 8 c::b ]
+			[ -2 4 8 c::y ]
+			[ 1 0 8 c::c ]
+			[ 1 0 7 c::r ]
+			[ -1 0 8 c::b ]
+			[ -1 0 7 c::r ]
+			[ 0 0 8 c::y ]
+			[ 1 0 6 c::bob ]
+			[ 2 0 6 c::bob ]
+			[ -1 0 6 c::bob ]
+			[ -2 0 6 c::bob ]
+			[ -2 1 6 c::bob ]
+			[ -1 1 6 c::bob ]
+			[ 0 1 6 c::bob ]
+			[ 1 1 6 c::bob ]
+			[ 2 1 6 c::bob ]
+			[ 2 2 6 c::bob ]
+			[ 1 2 6 c::bob ]
+			[ 0 2 6 c::bob ]
+			[ -1 2 6 c::bob ]
+			[ -2 2 6 c::bob ]
+			[ -2 3 6 c::bob ]
+			[ -1 3 6 c::bob ]
+			[ 0 3 6 c::bob ]
+			[ 1 3 6 c::bob ]
+			[ 2 3 6 c::bob ]
+			[ 2 4 6 c::bob ]
+			[ 1 4 6 c::bob ]
+			[ 0 4 6 c::bob ]
+			[ -1 4 6 c::bob ]
+			[ -2 4 6 c::bob ]
+			[ 0 0 7 c::r ]
+		]
+	}
+	//a8
+	{
+		skybox { name "arctic_snowy" }
+		fog { set true exp 0.05 }
+		background RGB::grey5
+		nodes [ arcticSnow arcticHidden3 arcticHidden1 arcticMegala ]
+		particles [ { name "Ambient/Snowstorm2" pos { x -2 y -0.15 z -37 } ff 50 } ]
+		sounds [
+			{ sInterval 0 n [ arctic_morning ] }
+			{ sInterval 0 n [ arctic_snow_wind ] }
+			{ sInterval 2 sRand 0.5 c { x -2 y -0.15 z -37 } i 3 o 12 n [ cold_wind_1_after cold_wind_2_after ] }
+		]
+		
+		expert 85000
+		z 8
+		balls [
+			[ 0 0 8 c::c ]
+			[ 0 1 8 c::b ]
+			[ 0 3 8 c::b ]
+			[ 0 4 8 c::c ]
+			[ 0 4 7 c::bob ]
+			[ 0 3 7 c::bob ]
+			[ 0 2 7 c::bob ]
+			[ 0 1 7 c::bob ]
+			[ 0 0 7 c::bob ]
+			[ 0 0 6 c::bob ]
+			[ 0 0 5 c::bob ]
+			[ 0 0 4 c::bob ]
+			[ 0 0 3 c::bob ]
+			[ 1 0 3 c::bob ]
+			[ 1 1 3 c::bob ]
+			[ 1 2 3 c::bob ]
+			[ 1 3 3 c::bob ]
+			[ 1 4 3 c::bob ]
+			[ 0 2 8 c::c ]
+			[ -1 0 5 c::bob ]
+			[ -1 1 5 c::bob ]
+			[ -1 2 5 c::bob ]
+			[ -1 3 5 c::bob ]
+		]
+	}
+	//a9
+	{
+		skybox { name "stars" rot [ -160 0 180 ] }
+		ambient { r 0.45 g 0.45 b 0.45 }
+		nodes [ arcticNight arcticHidden3 arcticHidden1 arcticMegala seagullsRocks ]
+		particles [ { name "Ambient/Snow2" pos { x -2 y -0.15 z -37 } ff 50 } ]
+		sounds [
+			{ sInterval 0 n [ arctic_morning ] }
+			{ sInterval 30 sRand 1 c { x -2.4 y -3.4 z 77 } i 50 o 100 n [ seagull1 seagull2 seagull3 seagull4 ] }
+		]
+		
+		expert 185000
+		z 7
+		balls [
+			[ -2 3 3 c::bob ]
+			[ 2 1 3 c::bob ]
+			[ -2 1 5 c::bob ]
+			[ 2 3 5 c::bob ]
+			[ -1 0 4 c::bob ]
+			[ -2 0 4 c::bob ]
+			[ -2 1 4 c::bob ]
+			[ -2 2 4 c::bob ]
+			[ -2 3 4 c::bob ]
+			[ -2 4 4 c::bob ]
+			[ -1 4 4 c::bob ]
+			[ 1 0 4 c::bob ]
+			[ 2 0 4 c::bob ]
+			[ 2 1 4 c::bob ]
+			[ 2 2 4 c::bob ]
+			[ 2 3 4 c::bob ]
+			[ 2 4 4 c::bob ]
+			[ 1 4 4 c::bob ]
+			[ 0 0 6 c::bob ]
+			[ 0 0 5 c::bob ]
+			[ 0 0 4 c::bob ]
+			[ 0 0 3 c::bob ]
+			[ 0 0 2 c::bob ]
+			[ 0 1 2 c::bob ]
+			[ 0 2 2 c::bob ]
+			[ 0 3 2 c::bob ]
+			[ 0 4 2 c::bob ]
+			[ 0 4 3 c::bob ]
+			[ 0 4 4 c::bob ]
+			[ 0 4 5 c::bob ]
+			[ 0 4 6 c::bob ]
+			[ 0 3 6 c::bob ]
+			[ 0 2 6 c::bob ]
+			[ 0 1 6 c::bob ]
+			[ 0 0 7 c::r ]
+			[ 0 4 7 c::r ]
+			[ 0 2 7 c::y ]
+		]
+	}
+	//a10
+	{
+		skybox { name "stars" rot [ -160 0 180 ] }
+		ambient { r 0.45 g 0.45 b 0.45 }
+		nodes [ arcticNight arcticHidden3 arcticHidden1 arcticMegala bearWalk seagullsRocks ]
+		sounds [
+			{ sInterval 0 n [ arctic_night ] }
+			{ sInterval 30 sRand 1 c { x -2.4 y -3.4 z 77 } i 50 o 100 n [ seagull1 seagull2 seagull3 seagull4 ] }
+		]
+
+		expert 36000
+		z 5
+		balls [
+			[ 1 3 3 c::bob ]
+			[ 1 2 3 c::b ]
+			[ 1 1 3 c::bob ]
+			[ 0 1 3 c::b ]
+			[ 0 3 3 c::b ]
+			[ -1 3 3 c::bob ]
+			[ -1 2 3 c::b ]
+			[ -1 1 3 c::bob ]
+			[ 0 2 3 c::w ]
+			[ 0 2 5 c::r ]
+			[ 1 2 4 c::b ]
+			[ -1 2 4 c::b ]
+			[ 0 1 4 c::w ]
+			[ 1 1 5 c::w ]
+			[ -1 1 5 c::w ]
+			[ 1 3 5 c::r ]
+			[ 1 3 4 c::g ]
+			[ 0 3 5 c::w ]
+			[ 0 3 4 c::k ]
+			[ -1 3 5 c::r ]
+			[ -1 3 4 c::g ]
+			[ 1 1 4 c::k ]
+			[ -1 1 4 c::k ]
+			[ 0 2 4 c::k ]
+			[ 0 1 5 c::r ]
+			[ 1 2 5 c::w ]
+			[ -1 2 5 c::w ]
+		]
+	}
+	//a11
+	{
+		skybox { name "stars" rot [ -160 0 180 ] }
+		ambient { r 0.45 g 0.45 b 0.45 }
+		nodes [ arcticNight arcticHidden3 arcticHidden1 arcticMegala seagullsRocks ]
+		sounds [
+			{ sInterval 0 n [ arctic_night ] }
+			{ sInterval 30 sRand 1 c { x -2.4 y -3.4 z 77 } i 50 o 100 n [ seagull1 seagull2 seagull3 seagull4 ] }
+		]
+
+		expert 50000
+		z 5
+		balls [
+			[ -2 0 5 c::c ]
+			[ -2 1 5 c::b ]
+			[ -2 2 5 c::c ]
+			[ -2 3 5 c::b ]
+			[ -2 4 5 c::c ]
+			[ -1 4 5 c::y ]
+			[ -1 2 5 c::y ]
+			[ -1 3 5 c::r ]
+			[ -1 1 5 c::r ]
+			[ -1 0 5 c::y ]
+			[ -2 4 3 c::bob ]
+			[ -2 2 3 c::bob ]
+			[ -2 0 3 c::bob ]
+			[ -1 2 3 c::bob ]
+			[ -1 3 3 c::bob ]
+			[ -1 1 3 c::bob ]
+			[ -1 0 3 c::bob ]
+			[ -1 4 3 c::bob ]
+			[ -2 0 4 c::b ]
+			[ -2 1 4 c::c ]
+			[ -2 2 4 c::b ]
+			[ -2 3 4 c::c ]
+			[ -2 4 4 c::b ]
+		]
+	}
+	//a12
+	{
+		skybox { name "stars" rot [ -160 0 180 ] }
+		ambient { r 0.45 g 0.45 b 0.45 }
+		nodes [ arcticNight arcticHidden3 arcticHidden1 arcticMegala seagullsRocks ]
+		sounds [
+			{ sInterval 0 n [ arctic_night ] }
+			{ sInterval 30 sRand 1 c { x -2.4 y -3.4 z 77 } i 50 o 100 n [ seagull1 seagull2 seagull3 seagull4 ] }
+		]
+
+		expert 170000
+		z 8
+		balls [
+			[ 2 2 8 c::c ]
+			[ 2 4 8 c::k ]
+			[ 2 4 7 c::k ]
+			[ 2 2 7 c::c ]
+			[ 1 0 7 c::bob ]
+			[ 1 4 7 c::bob ]
+			[ 1 0 6 c::bob ]
+			[ 1 2 6 c::bob ]
+			[ 1 3 5 c::bob ]
+			[ 1 0 4 c::bob ]
+			[ 1 0 5 c::bob ]
+			[ 1 1 3 c::bob ]
+			[ 1 4 3 c::bob ]
+			[ 1 4 4 c::bob ]
+			[ 1 1 4 c::bob ]
+			[ 1 0 2 c::bob ]
+			[ 1 4 2 c::bob ]
+			[ 1 2 5 c::bob ]
+			[ 1 4 1 c::bob ]
+			[ 1 3 1 c::bob ]
+			[ 2 4 6 c::k ]
+			[ 1 3 4 c::bob ]
+			[ 1 4 6 c::bob ]
+			[ 2 4 5 c::k ]
+			[ 1 0 3 c::bob ]
+			[ 1 0 1 c::bob ]
+			[ 2 2 6 c::c ]
+			[ 1 3 6 c::bob ]
+			[ 1 1 6 c::bob ]
+			[ 0 0 3 c::bob ]
+			[ -1 0 3 c::bob ]
+			[ -2 0 3 c::bob ]
+			[ -2 1 3 c::bob ]
+			[ -2 2 3 c::bob ]
+			[ 1 1 5 c::bob ]
+			[ 0 3 6 c::bob ]
+			[ 1 3 7 c::bob ]
+			[ 2 1 8 c::b ]
+			[ 2 1 7 c::b ]
+			[ 2 1 6 c::b ]
+			[ 2 0 5 c::y ]
+			[ 2 0 6 c::y ]
+			[ 2 0 7 c::y ]
+			[ 2 0 8 c::y ]
+			[ 2 0 3 c::bob ]
+			[ 2 0 4 c::y ]
+		]
+	}
+]
+
+// DESERT
+array of Level desert [
+	//d0
+	{
+		skybox { name "sahara_day" rot [ 0 120 0 ] }
+		background { r 1.5 g 1.4 b 1.2 }
+		fog { set true exp 0.00008 }
+		nodes [ desertDay ]
+		sounds [
+			{ sInterval 0 n [ desert_morning ] }
+		]
+		hint d0
+
+		expert 60000
+		balls [
+			[ -1 5 5 c::m ]
+			[ -1 5 4 c::r ]
+			[ -1 4 4 c::k ]
+			[ -1 3 4 c::y ]
+			[ -1 2 4 c::k ]
+			[ -1 1 4 c::y ]
+			[ -1 0 4 c::k ]
+			[ 2 4 5 c::r ]
+			[ 0 4 5 c::m ]
+			[ -1 4 5 c::r ]
+			[ -3 4 5 c::m ]
+			[ -3 5 5 c::r ]
+			[ -3 5 4 c::m ]
+			[ -3 4 4 c::y ]
+			[ -3 3 4 c::k ]
+			[ -3 2 4 c::y ]
+			[ -3 1 4 c::k ]
+			[ -3 0 4 c::y ]
+			[ 2 0 4 c::k ]
+			[ 2 1 4 c::y ]
+			[ 2 2 4 c::k ]
+			[ 2 3 4 c::y ]
+			[ 2 4 4 c::k ]
+			[ 2 5 4 c::r ]
+			[ 2 5 5 c::m ]
+			[ 0 0 4 c::y ]
+			[ 0 1 4 c::k ]
+			[ 0 2 4 c::y ]
+			[ 0 3 4 c::k ]
+			[ 0 4 4 c::y ]
+			[ 0 5 4 c::m ]
+			[ 0 5 5 c::r ]
+		]
+	}
+	//d1
+	{
+		skybox { name "sahara_day" rot [ 0 120 0 ] }
+		background { r 1.5 g 1.4 b 1.2 }
+		fog { set true exp 0.00008 }
+		nodes [ desertDay ]
+		sounds [
+			{ sInterval 0 n [ desert_morning ] }
+		]
+		incoming [ c::g c::y c::b c::r c::y c::y c::r c::g ]
+		expert 110000
+		z 6
+		balls [
+			[ 0 3 6 c::g ]
+			[ 0 3 5 c::b ]
+			[ 0 3 4 c::y ]
+			[ 1 3 5 c::r ]
+			[ 1 4 5 c::r ]
+			[ 0 4 5 c::r ]
+			[ -1 4 5 c::r ]
+			[ -1 3 5 c::r ]
+			[ -1 2 5 c::r ]
+			[ 0 2 5 c::r ]
+			[ 1 2 5 c::r ]
+			[ 2 2 5 c::m ]
+			[ 2 3 5 c::m ]
+			[ 2 4 5 c::m ]
+			[ 2 5 5 c::m ]
+			[ 1 5 5 c::m ]
+			[ 0 5 5 c::m ]
+			[ -1 5 5 c::m ]
+			[ -2 5 5 c::m ]
+			[ -2 4 5 c::m ]
+			[ -2 3 5 c::m ]
+			[ -2 2 5 c::m ]
+			[ -2 1 5 c::m ]
+			[ -1 1 5 c::m ]
+			[ 0 1 5 c::m ]
+			[ 1 1 5 c::m ]
+			[ 2 1 5 c::m ]
+			[ 0 3 3 c::g ]
+			[ -1 3 3 c::c ]
+			[ -1 3 2 c::b ]
+			[ 0 3 2 c::r ]
+			[ 0 4 2 c::r ]
+			[ -1 4 2 c::r ]
+			[ -2 4 2 c::r ]
+			[ -2 3 2 c::r ]
+			[ -2 2 2 c::r ]
+			[ -1 2 2 c::r ]
+			[ 0 2 2 c::r ]
+			[ 1 2 2 c::m ]
+			[ 1 3 2 c::m ]
+			[ 1 4 2 c::m ]
+			[ 1 5 2 c::m ]
+			[ 0 5 2 c::m ]
+			[ -1 5 2 c::m ]
+			[ -2 5 2 c::m ]
+			[ -3 5 2 c::m ]
+			[ -3 4 2 c::m ]
+			[ -3 3 2 c::m ]
+			[ -3 2 2 c::m ]
+			[ -3 1 2 c::m ]
+			[ -2 1 2 c::m ]
+			[ -1 1 2 c::m ]
+			[ 0 1 2 c::m ]
+			[ 1 1 2 c::m ]
+		]
+	}
+	//d2
+	{
+		// skybox { name "sahara_day" rot [ 0 120 0 ] }
+		background { r 0.75 g 0.59 b 0.2 } // changed!
+		fog { set true exp 0.0005 }
+		nodes [ desertMist desertWeedsHill ]
+		changes [ { pos { x 3132.281 y -119.639 z 737.343 } scale { y 0.7 w 1262 } } ]
+		sounds [
+			{ sInterval 0 n [ desert_windLittle ] }
+		]
+
+		expert 25000
+		z 7
+		balls [
+			[ 1 0 7 c::g ]
+			[ 1 1 7 c::b ]
+			[ 2 1 7 c::y ]
+			[ 2 2 7 c::r ]
+			[ 2 3 7 c::b ]
+			[ 1 3 7 c::g ]
+			[ 2 4 7 c::y ]
+			[ 1 4 7 c::r ]
+			[ 2 3 6 c::g ]
+			[ 1 2 7 c::y ]
+			[ 1 1 6 c::r ]
+			[ 2 0 7 c::b ]
+			[ 2 0 6 c::r ]
+			[ 1 0 6 c::y ]
+			[ 2 1 6 c::g ]
+			[ 1 3 6 c::y ]
+			[ 1 4 6 c::b ]
+			[ 2 4 6 c::r ]
+			[ -2 4 7 c::b ]
+			[ -1 3 6 c::b ]
+			[ -3 2 5 c::b ]
+			[ -1 3 7 c::m ]
+			[ -2 3 7 c::y ]
+			[ -3 3 7 c::m ]
+			[ -1 2 7 c::y ]
+			[ -2 2 7 c::m ]
+			[ -3 2 7 c::y ]
+			[ -3 2 6 c::m ]
+			[ -2 2 6 c::y ]
+			[ -1 2 6 c::m ]
+			[ -1 2 5 c::k ]
+			[ -2 3 6 c::k ]
+			[ -3 4 7 c::k ]
+			[ -1 4 7 c::w ]
+			[ -3 3 6 c::w ]
+			[ -2 2 5 c::w ]
+		]
+	}
+	//d3
+	{
+		// skybox { name "sahara_day" rot [ 0 120 0 ] }
+		background { r 0.75 g 0.59 b 0.2 } // changed!
+		particles [ { name "Ambient/Sandstorm" pos { x -30 y 40 z 0 } ff 0 } ]
+		fog { set true exp 0.0005 }
+		nodes [ desertMist desertWeedsHill ]
+		sounds [
+			{ sInterval 0 n [ desert_windMuch ] }
+		]
+
+		expert 140000
+		z 7
+		incoming [ c::y c::r c::b c::m c::y ]
+		balls [
+			[ 2 5 7 c::y ]
+			[ 1 5 6 c::r ]
+			[ 1 4 6 c::b ]
+			[ 1 4 5 c::c ]
+			[ 0 4 6 c::m ]
+			[ 0 4 5 c::g ]
+			[ 0 4 4 c::b ]
+			[ 0 3 6 c::c ]
+			[ 0 3 5 c::k ]
+			[ 0 3 4 c::r ]
+			[ 0 3 3 c::m ]
+			[ -1 3 6 c::b ]
+			[ -1 3 5 c::m ]
+			[ -1 3 4 c::c ]
+			[ -1 3 3 c::g ]
+			[ 1 0 6 c::r ]
+			[ 1 1 6 c::b ]
+			[ 1 1 5 c::c ]
+			[ 0 1 6 c::m ]
+			[ 0 1 5 c::g ]
+			[ 0 1 4 c::b ]
+			[ 0 2 6 c::r ]
+			[ 0 2 5 c::w ]
+			[ 0 2 4 c::c ]
+			[ 0 2 3 c::k ]
+			[ 2 5 6 c::k ]
+		]
+	}
+	//d4
+	{
+		// skybox { name "sahara_day" rot [ 0 120 0 ] }
+		background { r 0.75 g 0.59 b 0.2 } // changed!
+		particles [ { name "Ambient/Sandstorm" pos { x -30 y 40 z 0 } ff 5 } ]
+		fog { set true exp 0.0005 }
+		nodes [ desertMist desertWeedsHill desertWeedsBase desertFoinikas ]
+		changes [
+			{ pos { x 46.404 y 1.456 z 694.121 } scale { y 0.5 w 261 } }
+			{ pos { x -664.13 y 162.805 z 92.244 } scale { y 0.5 w 261 } rot [ -0.0111181 0.0664393 -0.164673 0.984045 ] }
+		]
+		sounds [
+			{ sInterval 0 n [ desert_windMuch ] }
+			{ sInterval 2 sRand 1 c { x -30 y 40 z 0 } i 0 o 100 n [ wind_4 wind_5 ] }
+		]
+
+		expert 50000
+		z 7
+		balls [
+			[ 2 5 7 c::r ]
+			[ 1 4 7 c::r ]
+			[ 0 3 7 c::r ]
+			[ -1 2 7 c::r ]
+			[ -2 1 7 c::r ]
+			[ -3 0 7 c::r ]
+			[ 2 0 7 c::y ]
+			[ 1 1 7 c::y ]
+			[ 0 2 7 c::y ]
+			[ -1 3 7 c::y ]
+			[ -2 4 7 c::y ]
+			[ -3 5 7 c::y ]
+			[ 2 5 6 c::b ]
+			[ 1 4 6 c::b ]
+			[ 0 3 6 c::b ]
+			[ -1 2 6 c::b ]
+			[ -2 1 6 c::b ]
+			[ -3 0 6 c::b ]
+			[ 2 0 6 c::m ]
+			[ 1 1 6 c::m ]
+			[ 0 2 6 c::m ]
+			[ -1 3 6 c::m ]
+			[ -2 4 6 c::m ]
+			[ -3 5 6 c::m ]
+			[ 2 5 5 c::g ]
+			[ 1 4 5 c::g ]
+			[ 0 3 5 c::g ]
+			[ -1 2 5 c::g ]
+			[ -2 1 5 c::g ]
+			[ -3 0 5 c::g ]
+			[ 2 0 5 c::c ]
+			[ 1 1 5 c::c ]
+			[ 0 2 5 c::c ]
+			[ -1 3 5 c::c ]
+			[ -2 4 5 c::c ]
+			[ -3 5 5 c::c ]
+			[ 2 0 4 c::w ]
+			[ 1 1 4 c::w ]
+			[ 0 2 4 c::w ]
+			[ -1 3 4 c::w ]
+			[ -2 4 4 c::w ]
+			[ -3 5 4 c::w ]
+			[ -3 0 4 c::k ]
+			[ -2 1 4 c::k ]
+			[ -1 2 4 c::k ]
+			[ 0 3 4 c::k ]
+			[ 1 4 4 c::k ]
+			[ 2 5 4 c::k ]
+		]
+	}
+	//d5
+	{
+		ambient { r 1 g 0.8 b 0.9 }
+		skybox { name "sahara_noon" rot [ 0 180 0 ] } /// -60 moires gia apogeyma !!!!
+		nodes [ desertNoon desertWeedsHill desertWeedsBase desertFoinikas ]
+		sounds [
+			{ sInterval 0 n [ desert_morning ] }
+			{ sInterval 12 sRand 0.5 c { x -30 y 40 z 0 } i 0 o 100 n [ wind_4 wind_5 ] }
+		]
+
+		expert 200000
+		z 7
+		balls [
+			[ -3 0 1 c::k ]
+			[ -2 0 1 c::y ]
+			[ -1 0 1 c::k ]
+			[ 0 0 1 c::y ]
+			[ 1 0 1 c::k ]
+			[ 2 0 1 c::y ]
+			[ 2 0 7 c::y ]
+			[ 2 0 6 c::k ]
+			[ 2 0 5 c::y ]
+			[ 2 0 4 c::k ]
+			[ 2 0 3 c::y ]
+			[ 2 0 2 c::k ]
+			[ 1 0 2 c::y ]
+			[ 0 0 2 c::k ]
+			[ -1 0 2 c::y ]
+			[ -2 0 2 c::k ]
+			[ -3 0 2 c::y ]
+			[ -3 0 3 c::k ]
+			[ -3 0 4 c::y ]
+			[ -3 0 5 c::k ]
+			[ -3 0 6 c::y ]
+			[ -3 0 7 c::k ]
+			[ -2 0 7 c::y ]
+			[ -1 0 7 c::k ]
+			[ 0 0 7 c::y ]
+			[ 1 0 7 c::k ]
+			[ 1 0 6 c::y ]
+			[ 1 0 5 c::k ]
+			[ 1 0 4 c::y ]
+			[ 1 0 3 c::k ]
+			[ 0 0 3 c::y ]
+			[ -1 0 3 c::k ]
+			[ -2 0 3 c::y ]
+			[ -2 0 4 c::k ]
+			[ -2 0 5 c::y ]
+			[ -2 0 6 c::k ]
+			[ -1 0 6 c::y ]
+			[ 0 0 6 c::k ]
+			[ 0 0 5 c::y ]
+			[ 0 0 4 c::k ]
+			[ -1 0 4 c::y ]
+			[ -1 0 5 c::k ]
+		]
+	}
+	//d6
+	{
+		ambient { r 1 g 0.8 b 0.9 }
+		skybox { name "sahara_noon" rot [ 0 180 0 ] }
+		nodes [ desertNoon desertWeedsHill desertWeedsBase desertHidden3 desertFoinikas snake ]
+		changes [
+			{ pos { x 370.797 y -27.133 z 5712.199 } scale { y 1.33 w 261 } rnd 0.5 }
+			{ pos { x 542.434 y -3.5 z 453.277 } scale { y 0.66 w 100 } }
+		]
+		sounds [
+			{ sInterval 0 n [ desert_morning ] }
+			{ sInterval 6 sRand 0.5 c { x -30 y 40 z 0 } i 250 o 500 n [ crawling_in_sand_1_snake crawling_in_sand_3 ] }
+		]
+
+		expert 25000
+		z 7
+		balls [
+			[ 2 0 7 c::y ]
+			[ 2 1 7 c::k ]
+			[ 2 2 7 c::y ]
+			[ 2 3 7 c::k ]
+			[ 2 4 7 c::y ]
+			[ 2 5 7 c::k ]
+			[ 1 5 7 c::y ]
+			[ 1 4 7 c::k ]
+			[ 1 3 7 c::y ]
+			[ 1 2 7 c::k ]
+			[ 1 1 7 c::y ]
+			[ 1 0 7 c::k ]
+			[ 0 0 7 c::y ]
+			[ 0 1 7 c::k ]
+			[ 0 4 7 c::y ]
+			[ 0 5 7 c::k ]
+			[ -1 5 7 c::y ]
+			[ -1 4 7 c::k ]
+			[ -1 1 7 c::y ]
+			[ -1 0 7 c::k ]
+			[ -2 0 7 c::y ]
+			[ -2 1 7 c::k ]
+			[ -2 2 7 c::y ]
+			[ -2 3 7 c::k ]
+			[ -2 4 7 c::y ]
+			[ -2 5 7 c::k ]
+			[ -3 5 7 c::y ]
+			[ -3 4 7 c::k ]
+			[ -3 3 7 c::y ]
+			[ -3 2 7 c::k ]
+			[ -3 1 7 c::y ]
+			[ -3 0 7 c::k ]
+			[ 1 4 6 c::y ]
+			[ 1 3 6 c::k ]
+			[ 1 2 6 c::y ]
+			[ 1 1 6 c::k ]
+			[ 0 1 6 c::y ]
+			[ -1 1 6 c::k ]
+			[ -2 1 6 c::y ]
+			[ -2 2 6 c::k ]
+			[ -2 3 6 c::y ]
+			[ -2 4 6 c::k ]
+			[ -1 4 6 c::y ]
+			[ 0 4 6 c::k ]
+			[ 0 3 7 c::r ]
+			[ -1 3 7 c::r ]
+			[ -1 2 7 c::r ]
+			[ 0 2 7 c::r ]
+			[ 0 2 6 c::k ]
+			[ 0 3 6 c::y ]
+			[ -1 3 6 c::k ]
+			[ -1 2 6 c::y ]
+			[ 1 1 5 c::y ]
+			[ 1 2 5 c::k ]
+			[ 1 3 5 c::y ]
+			[ 1 4 5 c::k ]
+			[ 0 4 5 c::y ]
+			[ -1 4 5 c::k ]
+			[ -2 4 5 c::y ]
+			[ -2 3 5 c::k ]
+			[ -2 2 5 c::y ]
+			[ -2 1 5 c::k ]
+			[ -1 1 5 c::y ]
+			[ 0 1 5 c::k ]
+			[ 0 2 5 c::y ]
+			[ 0 3 5 c::k ]
+			[ -1 3 5 c::y ]
+			[ -1 2 5 c::k ]
+			[ 1 2 4 c::y ]
+			[ 1 3 4 c::k ]
+			[ 0 4 4 c::k ]
+			[ -1 4 4 c::y ]
+			[ -2 3 4 c::y ]
+			[ -2 2 4 c::k ]
+			[ -1 1 4 c::k ]
+			[ 0 1 4 c::y ]
+			[ 0 2 4 c::k ]
+			[ 0 3 4 c::y ]
+			[ -1 3 4 c::k ]
+			[ -1 2 4 c::y ]
+			[ -1 2 3 c::k ]
+			[ 0 2 3 c::y ]
+			[ 0 3 3 c::k ]
+			[ -1 3 3 c::y ]
+			[ -1 3 2 c::k ]
+		]
+	}
+	//d7
+	{
+		ambient { r 1 g 0.8 b 0.9 }
+		skybox { name "sahara_noon" rot [ 0 180 0 ] }
+		nodes [ desertNoon desertWeedsHill desertWeedsBase desertHidden3 desertHidden4 desertFoinikas camels snake ]
+		changes [ { pos { x -500 y -70 z 1350 } scale { w 400 } } ]
+		sounds [
+			{ sInterval 0 n [ desert_morning ] }
+			{ sInterval 10 sRand 0.5 c { x -1000 y 40 z 1500 } i 1500 o 2500 n [ camel_1 camel_2 ] }
+			{ sInterval 6 sRand 0.5 c { x -30 y 40 z 0 } i 250 o 500 n [ crawling_in_sand_1_snake crawling_in_sand_3 ] }
+		]
+
+		expert 70000
+		z 5
+		balls [
+			[ 1 1 5 c::r ]
+			[ 2 0 4 c::c ]
+			[ 1 0 4 c::m ]
+			[ 0 0 4 c::c ]
+			[ 0 1 4 c::m ]
+			[ 1 1 4 c::c ]
+			[ 2 1 4 c::m ]
+			[ 2 2 4 c::c ]
+			[ 1 2 4 c::m ]
+			[ 0 2 4 c::c ]
+			[ -2 4 5 c::r ]
+			[ 1 4 5 c::r ]
+			[ -2 1 5 c::r ]
+			[ -1 0 4 c::b ]
+			[ -2 0 4 c::w ]
+			[ -3 0 4 c::b ]
+			[ -3 1 4 c::w ]
+			[ -2 1 4 c::b ]
+			[ -1 1 4 c::w ]
+			[ -1 2 4 c::b ]
+			[ -2 2 4 c::w ]
+			[ -3 2 4 c::b ]
+			[ -1 3 4 c::y ]
+			[ -2 3 4 c::k ]
+			[ -3 3 4 c::y ]
+			[ -3 4 4 c::k ]
+			[ -2 4 4 c::y ]
+			[ -1 4 4 c::k ]
+			[ -1 5 4 c::y ]
+			[ -2 5 4 c::k ]
+			[ -3 5 4 c::y ]
+			[ 2 5 4 c::w ]
+			[ 1 5 4 c::g ]
+			[ 0 5 4 c::w ]
+			[ 0 4 4 c::g ]
+			[ 1 4 4 c::w ]
+			[ 2 4 4 c::g ]
+			[ 2 3 4 c::w ]
+			[ 1 3 4 c::g ]
+			[ 0 3 4 c::w ]
+		]
+	}
+	//d8
+	{
+		ambient { r 1 g 0.8 b 0.9 }
+		skybox { name "sahara_noon" rot [ 0 180 0 ] }
+		nodes [ desertNoon desertWeedsHill desertWeedsBase desertHidden3 desertHidden4 desertFoinikas camels snake ]
+		sounds [
+			{ sInterval 0 n [ desert_morning ] }
+			{ sInterval 10 sRand 0.5 c { x -1000 y 40 z 1500 } i 1500 o 2500 n [ camel_1 camel_2 ] }
+			{ sInterval 6 sRand 0.5 c { x -30 y 40 z 0 } i 250 o 500 n [ crawling_in_sand_1_snake crawling_in_sand_3 ] }
+		]
+
+		expert 420000
+		z 6
+		incoming [ c::r c::g c::m c::y ]
+		balls [
+			[ -1 4 2 c::r ]
+			[ -3 2 2 c::b ]
+			[ -3 3 3 c::b ]
+			[ -3 4 3 c::g ]
+			[ 1 2 2 c::w ]
+			[ -1 0 2 c::r ]
+			[ 2 0 6 c::y ]
+			[ 1 0 6 c::y ]
+			[ 2 0 5 c::r ]
+			[ 1 0 5 c::g ]
+			[ 1 0 4 c::b ]
+			[ 2 0 4 c::c ]
+			[ 2 0 3 c::r ]
+			[ 1 0 3 c::g ]
+			[ 1 0 2 c::b ]
+			[ 2 0 2 c::c ]
+			[ 0 0 2 c::m ]
+			[ -2 0 2 c::c ]
+			[ -3 0 2 c::b ]
+			[ 0 0 3 c::w ]
+			[ -2 0 3 c::r ]
+			[ -3 0 3 c::g ]
+			[ -1 0 3 c::k ]
+			[ 2 1 2 c::w ]
+			[ 1 1 2 c::k ]
+			[ 0 1 2 c::r ]
+			[ -1 1 2 c::g ]
+			[ -2 1 2 c::w ]
+			[ -3 1 2 c::k ]
+			[ 2 1 3 c::m ]
+			[ 1 1 3 c::y ]
+			[ 0 1 3 c::c ]
+			[ -1 1 3 c::b ]
+			[ -2 1 3 c::m ]
+			[ -3 1 3 c::y ]
+			[ 2 2 3 c::r ]
+			[ 1 2 3 c::g ]
+			[ 0 2 3 c::w ]
+			[ -2 2 3 c::r ]
+			[ -3 2 3 c::g ]
+			[ 2 3 3 c::m ]
+			[ 1 3 3 c::y ]
+			[ 0 3 3 c::c ]
+			[ -1 2 3 c::k ]
+			[ -2 3 3 c::m ]
+			[ 2 4 3 c::r ]
+			[ 1 4 3 c::g ]
+			[ 0 4 3 c::w ]
+			[ 2 4 2 c::c ]
+			[ 1 4 2 c::b ]
+			[ 0 4 2 c::m ]
+			[ 2 2 2 c::m ]
+			[ 0 2 2 c::c ]
+			[ -1 2 2 c::b ]
+			[ -2 2 2 c::m ]
+			[ 2 3 2 c::r ]
+			[ 1 3 2 c::g ]
+			[ 0 3 2 c::w ]
+			[ -1 3 2 c::k ]
+			[ -2 3 2 c::r ]
+			[ -3 3 2 c::g ]
+			[ 2 5 2 c::w ]
+			[ 1 5 2 c::k ]
+			[ 0 5 2 c::r ]
+		]
+	}
+	//d9
+	{
+		skybox { name "stars" rot [ -20 0 0 ] }
+		ambient { r 0.14 g 0.14 b 0.14 }
+		nodes [ desertStars desertWeedsHill desertWeedsBase desertHidden3 desertHidden4 desertFoinikas ]
+		particles [ { name "Ambient/Stars" pos { x -30 y 40 z 0 } ff 0 } ]
+		sounds [
+			{ sInterval 0 n [ desert_night ] }
+			{ sInterval 6 sRand 0.5 c { x -30 y 40 z 0 } i 250 o 500 n [ mouse_2 mouse_3 critter_scurry_1 critter_scurry_2 crawling_in_sand_2_scorpius ] }
+		]
+
+		expert 40000
+		z 7
+		balls [
+			[ 0 3 4 c::r ]
+			[ -1 3 4 c::m ]
+			[ -2 3 4 c::y ]
+			[ 0 1 4 c::r ]
+			[ 0 0 6 c::r ]
+			[ -1 0 6 c::m ]
+			[ -3 0 6 c::c ]
+			[ -3 3 4 c::c ]
+			[ -2 0 6 c::y ]
+			[ 2 4 6 c::c ]
+			[ 1 4 6 c::g ]
+			[ 0 4 6 c::r ]
+			[ -2 4 6 c::y ]
+			[ -3 4 6 c::c ]
+			[ 1 3 4 c::g ]
+			[ 2 3 4 c::c ]
+			[ -1 4 6 c::m ]
+			[ 2 2 2 c::c ]
+			[ 1 2 2 c::g ]
+			[ 0 2 2 c::r ]
+			[ -1 2 2 c::m ]
+			[ -2 2 2 c::y ]
+			[ -3 2 2 c::c ]
+			[ 1 4 7 c::k ]
+			[ 1 3 7 c::k ]
+			[ -2 4 7 c::k ]
+			[ -2 3 7 c::k ]
+			[ -3 4 5 c::k ]
+			[ -3 3 5 c::k ]
+			[ 2 3 5 c::k ]
+			[ 2 4 5 c::k ]
+			[ 2 1 4 c::c ]
+			[ 1 1 4 c::g ]
+			[ -1 1 4 c::m ]
+			[ -2 1 4 c::y ]
+			[ -3 1 4 c::c ]
+			[ -2 1 5 c::k ]
+			[ -2 0 5 c::k ]
+			[ 1 1 5 c::k ]
+			[ 1 0 5 c::k ]
+			[ 2 0 6 c::c ]
+			[ 1 0 6 c::g ]
+			[ -3 0 7 c::k ]
+			[ -3 1 7 c::k ]
+			[ 2 0 7 c::k ]
+			[ 2 1 7 c::k ]
+			[ 2 2 3 c::k ]
+			[ 2 3 3 c::k ]
+			[ -3 2 3 c::k ]
+			[ -3 3 3 c::k ]
+			[ 0 2 3 c::k ]
+			[ 0 2 4 c::k ]
+			[ -1 2 4 c::k ]
+			[ -1 2 3 c::k ]
+		]
+	}
+	//d10
+	{
+		skybox { name "stars" rot [ -20 0 0 ] }
+		ambient { r 0.14 g 0.14 b 0.14 }
+		nodes [ desertStars desertWeedsHill desertWeedsBase desertHidden3 desertHidden4 desertFoinikas desertKrina ]
+		particles [ { name "Ambient/Stars" pos { x -30 y 40 z 0 } ff 10 } ]
+		changes [ { pos { x -30 y 40 z 0 } scale { y 0.5 w 300 } } ]
+		sounds [
+			{ sInterval 0 n [ desert_night ] }
+			{ sInterval 6 sRand 0.5 c { x -30 y 40 z 0 } i 250 o 500 n [ mouse_2 mouse_3 critter_scurry_1 critter_scurry_2 crawling_in_sand_2_scorpius ] }
+		]
+		
+		expert 30000
+		z 5
+		balls [
+			[ -3 0 5 c::g ]
+			[ -3 1 5 c::k ]
+			[ -3 2 5 c::g ]
+			[ -3 3 5 c::k ]
+			[ -3 4 5 c::g ]
+			[ -3 4 1 c::g ]
+			[ -3 3 1 c::k ]
+			[ -3 2 1 c::g ]
+			[ -3 1 1 c::k ]
+			[ -3 0 1 c::g ]
+			[ -3 0 2 c::k ]
+			[ -3 0 3 c::g ]
+			[ -3 0 4 c::k ]
+			[ -3 4 2 c::k ]
+			[ -3 4 3 c::g ]
+			[ -3 4 4 c::k ]
+			[ -3 3 4 c::g ]
+			[ -3 3 3 c::k ]
+			[ -3 3 2 c::g ]
+			[ -3 2 2 c::k ]
+			[ -3 2 3 c::g ]
+			[ -3 2 4 c::k ]
+			[ -3 1 4 c::g ]
+			[ -3 1 3 c::k ]
+			[ -3 1 2 c::g ]
+			[ 2 0 1 c::g ]
+			[ 2 0 2 c::k ]
+			[ 2 0 3 c::g ]
+			[ 2 0 4 c::k ]
+			[ 2 0 5 c::g ]
+			[ 2 1 5 c::k ]
+			[ 2 2 5 c::g ]
+			[ 2 3 5 c::k ]
+			[ 2 4 5 c::g ]
+			[ 2 4 4 c::k ]
+			[ 2 4 3 c::g ]
+			[ 2 4 2 c::k ]
+			[ 2 4 1 c::g ]
+			[ 2 3 1 c::k ]
+			[ 2 2 1 c::g ]
+			[ 2 1 1 c::k ]
+			[ 2 1 2 c::g ]
+			[ 2 1 3 c::k ]
+			[ 2 1 4 c::g ]
+			[ 2 2 4 c::k ]
+			[ 2 3 4 c::g ]
+			[ 2 3 3 c::k ]
+			[ 2 3 2 c::g ]
+			[ 2 2 2 c::k ]
+			[ 2 2 3 c::g ]
+			[ 1 2 3 c::k ]
+			[ 0 2 3 c::g ]
+			[ -2 2 3 c::k ]
+			[ -1 2 3 c::g ]
+			[ 1 2 2 c::g ]
+			[ 1 3 2 c::k ]
+			[ 1 3 3 c::g ]
+			[ 1 3 4 c::k ]
+			[ 1 2 4 c::g ]
+			[ 1 1 4 c::k ]
+			[ 1 1 3 c::g ]
+			[ 1 1 2 c::k ]
+			[ -2 1 2 c::k ]
+			[ -2 2 2 c::g ]
+			[ -2 3 2 c::k ]
+			[ -2 3 3 c::g ]
+			[ -2 3 4 c::k ]
+			[ -2 2 4 c::g ]
+			[ -2 1 4 c::k ]
+			[ -2 1 3 c::g ]
+		]
+	}
+	//d11
+	{
+		skybox { name "stars" rot [ -20 0 0 ] }
+		ambient { r 0.14 g 0.14 b 0.14 }
+		nodes [ desertStars desertWeedsHill desertWeedsBase desertHidden3 desertHidden4 desertFoinikas desertKrina ]
+		particles [ { name "Ambient/Stars" pos { x -30 y 40 z 0 } ff 10 } ]
+		sounds [
+			{ sInterval 0 n [ desert_night ] }
+			{ sInterval 6 sRand 0.5 c { x -30 y 40 z 0 } i 250 o 500 n [ mouse_2 mouse_3 critter_scurry_1 critter_scurry_2 crawling_in_sand_2_scorpius ] }
+		]
+
+		expert 22000
+		z 7
+		balls [
+			[ -1 3 7 c::r ]
+			[ 0 3 7 c::w ]
+			[ 0 2 7 c::g ]
+			[ -1 2 7 c::w ]
+			[ -2 1 6 c::r ]
+			[ -1 1 6 c::w ]
+			[ 0 1 6 c::g ]
+			[ 1 1 6 c::c ]
+			[ 1 2 6 c::r ]
+			[ 0 2 6 c::w ]
+			[ -1 2 6 c::g ]
+			[ -2 2 6 c::c ]
+			[ -2 3 6 c::w ]
+			[ -1 3 6 c::r ]
+			[ 0 3 6 c::g ]
+			[ 1 3 6 c::c ]
+			[ 1 4 6 c::r ]
+			[ 0 4 6 c::w ]
+			[ -1 4 6 c::c ]
+			[ -2 4 6 c::g ]
+			[ -1 2 5 c::c ]
+			[ 0 2 5 c::r ]
+			[ 1 2 5 c::w ]
+			[ -2 2 5 c::g ]
+			[ -2 3 5 c::r ]
+			[ -1 3 5 c::w ]
+			[ 0 3 5 c::c ]
+			[ 1 3 5 c::g ]
+			[ 1 4 5 c::w ]
+			[ 0 4 5 c::r ]
+			[ -1 4 5 c::g ]
+			[ -2 4 5 c::c ]
+			[ -2 1 5 c::w ]
+			[ 0 1 5 c::c ]
+			[ 1 1 5 c::g ]
+			[ -1 1 5 c::r ]
+			[ -2 1 4 c::r ]
+			[ -1 1 4 c::w ]
+			[ 0 1 4 c::g ]
+			[ 1 1 4 c::c ]
+			[ 1 2 4 c::r ]
+			[ 0 2 4 c::w ]
+			[ -1 2 4 c::g ]
+			[ -2 2 4 c::c ]
+			[ -2 3 4 c::w ]
+			[ -1 3 4 c::r ]
+			[ 0 3 4 c::g ]
+			[ 1 3 4 c::c ]
+			[ 1 4 4 c::r ]
+			[ 0 4 4 c::w ]
+			[ -1 4 4 c::c ]
+			[ -2 4 4 c::g ]
+			[ 0 2 3 c::r ]
+			[ 0 3 3 c::c ]
+			[ -1 3 3 c::w ]
+			[ -1 2 3 c::c ]
+		]
+	}
+]
+
+// FOREST
+array of Level forest [
+	//f0
+	{
+		skybox { name "forest_day" rot [ 0 75 0 ] }
+		nodes [ forestDay forestGroundDry ]
+		
+		expert 50000
+		balls [
+			[ 0 4 5 c::m ]
+			[ 0 3 5 c::y ]
+			[ 0 2 5 c::m ]
+			[ 1 2 5 c::b ]
+			[ 0 1 5 c::y ]
+			[ 2 2 5 c::m ]
+			[ 0 0 5 c::m ]
+			[ -2 2 5 c::m ]
+			[ -1 2 5 c::b ]
+			[ 1 3 5 c::r ]
+			[ -1 1 5 c::r ]
+			[ -1 3 5 c::c ]
+			[ 1 1 5 c::c ]
+		]
+	}
+	//f1
+	{
+		skybox { name "forest_day" rot [ 0 75 0 ] }
+		nodes [ forestDay forestGroundDry ]
+		expert 65000
+		balls [
+			[ 1 3 5 c::r ]
+			[ -1 3 5 c::b ]
+			[ 0 3 5 c::y ]
+			[ 1 2 5 c::g ]
+			[ 0 2 5 c::r ]
+			[ -1 2 5 c::y ]
+			[ -1 1 5 c::b ]
+			[ 0 1 5 c::g ]
+			[ 1 1 5 c::r ]
+			[ 0 2 4 c::b ]
+			[ -1 2 4 c::y ]
+			[ 0 3 4 c::r ]
+			[ 1 3 4 c::g ]
+			[ 1 1 4 c::y ]
+			[ 1 2 4 c::b ]
+			[ 0 1 4 c::r ]
+			[ -1 1 4 c::g ]
+			[ -1 3 4 c::r ]
+		]
+	}
+	//f2
+	{
+		skybox { name "forest_day" rot [ 0 75 0 ] }
+		nodes [ forestDay forestGround forestMoura ]
+		changes [
+			{ pos { x 0 y 0 z 0 } scale { y 1 w 3.333 } }
+			{ pos { x 14.147 y -0.15 z -9.778 } scale { y 1 w 1 } rnd 0.5 }
+			{ pos { x -0.667 y -0.15 z -9.159 } scale { y 1 w 1 } rnd 0.5 }
+		]
+		sounds [
+			{ sInterval 0 n [ forest_afternoon ] }
+			{ sInterval 15 sRand 0.4 c { x 0 y -0.02 z 2.0 } i 10 o 50 n [ birds_1_day ] }
+		]
+		expert 70000
+		balls [
+			[ -2 0 5 c::y ]
+			[ 2 4 5 c::y ]
+			[ 1 3 5 c::y ]
+			[ -1 1 5 c::y ]
+			[ -1 3 5 c::r ]
+			[ -2 4 5 c::r ]
+			[ 1 1 5 c::r ]
+			[ 2 0 5 c::r ]
+			[ 0 2 5 c::m ]
+			[ 1 3 4 c::m ]
+			[ 1 1 4 c::m ]
+			[ -1 1 4 c::m ]
+			[ -1 3 4 c::m ]
+			[ -2 4 4 c::g ]
+			[ -2 0 4 c::g ]
+			[ 2 0 4 c::g ]
+			[ 2 4 4 c::g ]
+			[ 1 3 3 c::m ]
+			[ 1 1 3 c::m ]
+			[ -1 1 3 c::m ]
+			[ -1 3 3 c::m ]
+		]
+		incoming [ c::r c::r ]
+	}
+	//f3
+	{
+		skybox { name "forest_day" rot [ 0 75 0 ] }
+		nodes [ forestDay forestGround forestMoura forestHidden3 newFlowers2 swallows ]
+		sounds [
+			{ sInterval 0 n [ forest_afternoon ] }
+			{ sInterval 5 sRand 0.4 c { x 0 y -0.02 z 2.0 } i 10 o 50 n [ birds_1_day birds_4_day birds_5_day ] }
+		]
+		changes [
+			{ pos { x -10.019 y -0.155 z 1.448 } scale { y 1 w 4.5 } rnd 0.5 }
+			{ pos { x 13.896 y 1.296 z -14.985 } scale { y 1 w 2.5 } rnd 0.5 }
+		]
+		expert 70000
+		z 7
+		balls [
+			[ 1 3 5 c::g ]
+			[ -1 3 5 c::g ]
+			[ 0 2 6 c::y ]
+			[ 0 2 7 c::g ]
+			[ 0 3 6 c::g ]
+			[ 0 3 5 c::c ]
+			[ 0 4 5 c::g ]
+			[ 1 2 5 c::c ]
+			[ 2 2 5 c::g ]
+			[ -1 2 5 c::c ]
+			[ -2 2 5 c::g ]
+			[ 0 2 5 c::m ]
+			[ 0 2 4 c::y ]
+			[ 1 2 4 c::g ]
+			[ -1 2 4 c::g ]
+			[ 0 2 3 c::g ]
+			[ 0 3 4 c::g ]
+			[ 0 1 5 c::y ]
+			[ 0 0 5 c::m ]
+		]
+	}
+	//f4
+	{
+		skybox { name "forest_noon" rot [ 0 20 0 ] }
+		ambient RGB::grey8
+		background RGB::grey3
+		fog { set true exp 0.04 }
+		sounds [
+			{ sInterval 0 n [ forest_morning ] }
+			{ sInterval 5 sRand 0.4 c { x 0 y -0.02 z 2.0 } i 10 o 40 n [ birds_2_after birds_6_after ] }
+		]
+		nodes [ forestNoon forestGround forestMoura forestHidden3 newFlowers2 swallows2 ]
+		hint f4
+		expert 40000
+		z 8
+		balls [
+			[ 2 4 8 c::r ]
+			[ 0 2 8 c::g ]
+			[ -1 0 8 c::y ]
+			[ -2 4 8 c::b ]
+			[ 2 4 7 c::g ]
+			[ 2 4 6 c::b ]
+			[ 1 4 6 c::c ]
+			[ 1 4 5 c::c ]
+			[ 1 4 4 c::g ]
+			[ 1 3 4 c::b ]
+			[ 2 3 4 c::c ]
+			[ 2 3 3 c::c ]
+			[ 2 3 2 c::g ]
+			[ 0 2 7 c::y ]
+			[ 0 2 6 c::c ]
+			[ 0 2 5 c::c ]
+			[ -1 2 5 c::y ]
+			[ -1 2 4 c::r ]
+			[ -1 2 3 c::c ]
+			[ 0 2 3 c::b ]
+			[ -1 0 7 c::r ]
+			[ -1 0 6 c::c ]
+			[ 0 0 6 c::g ]
+			[ 1 0 6 c::y ]
+			[ 1 0 5 c::c ]
+			[ 1 0 4 c::c ]
+			[ 1 0 3 c::b ]
+			[ 0 0 3 c::c ]
+			[ -1 0 3 c::c ]
+			[ -2 4 7 c::y ]
+			[ -2 4 6 c::c ]
+			[ -2 4 5 c::c ]
+			[ -1 4 5 c::b ]
+			[ -1 4 4 c::r ]
+			[ -1 4 3 c::c ]
+			[ -2 4 3 c::y ]
+			[ -2 4 2 c::g ]
+		]
+	}
+	//f5
+	{
+		skybox { name "forest_noon" rot [ 0 20 0 ] }
+		ambient RGB::grey8
+		background RGB::grey3
+		fog { set true exp 0.04 }
+		sounds [
+			{ sInterval 0 n [ rain_1 ] }
+		]
+		particles [
+			{ name "Ambient/Rain" pos { x 0 y -0.02 z 2.0 } ff 2 }
+		]
+		nodes [ forestNoon forestGround forestMoura forestHidden3 newFlowers2 newFlowers1 ]
+		
+		expert 70000
+		z 8
+		balls [
+			[ 0 2 8 c::r ]
+			[ 0 2 7 c::b ]
+			[ 1 2 7 c::y ]
+			[ -1 2 7 c::g ]
+			[ 0 2 6 c::r ]
+			[ 1 2 6 c::c ]
+			[ 1 3 6 c::c ]
+			[ 0 3 6 c::c ]
+			[ -1 3 6 c::c ]
+			[ -1 2 6 c::c ]
+			[ -1 1 6 c::c ]
+			[ 0 1 6 c::c ]
+			[ 1 1 6 c::c ]
+			[ 1 2 5 c::b ]
+			[ -1 2 5 c::b ]
+			[ -1 3 5 c::b ]
+			[ 0 3 5 c::b ]
+			[ 1 3 5 c::b ]
+			[ 1 1 5 c::b ]
+			[ 0 1 5 c::b ]
+			[ -1 1 5 c::b ]
+			[ 0 2 5 c::g ]
+			[ 2 2 4 c::m ]
+			[ -2 2 4 c::m ]
+			[ 0 4 4 c::m ]
+			[ 0 0 4 c::m ]
+			[ 2 1 4 c::m ]
+			[ 2 3 4 c::m ]
+			[ -2 3 4 c::m ]
+			[ -2 1 4 c::m ]
+			[ 0 2 4 c::r ]
+			[ 1 1 4 c::m ]
+			[ 1 2 4 c::y ]
+			[ 1 3 4 c::m ]
+			[ 0 3 4 c::y ]
+			[ -1 3 4 c::m ]
+			[ -1 2 4 c::y ]
+			[ -1 1 4 c::m ]
+			[ 0 1 4 c::y ]
+			[ 1 4 4 c::y ]
+			[ -1 4 4 c::y ]
+			[ -1 0 4 c::y ]
+			[ 1 0 4 c::y ]
+			[ 1 0 3 c::w ]
+			[ 2 0 3 c::w ]
+			[ -1 0 3 c::w ]
+			[ -2 0 3 c::w ]
+			[ -2 4 3 c::w ]
+			[ -1 4 3 c::w ]
+			[ 2 4 3 c::w ]
+			[ 1 4 3 c::w ]
+			[ 2 3 3 c::w ]
+			[ 2 1 3 c::w ]
+			[ -2 1 3 c::w ]
+			[ -2 3 3 c::w ]
+		]
+	}
+	//f6
+	{
+		skybox { name "forest_noon" rot [ 0 20 0 ] }
+		ambient RGB::grey8
+		background RGB::grey3
+		fog { set true exp 0.04 }
+		particles [ { name "Ambient/RainStrong" pos { x 0 y -0.02 z 2.0 } ff 5 } ]
+		sounds [
+			{ sInterval 0 n [ rain_2 ] }
+		]
+		nodes [ forestNoon forestGround forestMoura forestHidden3 newFlowers2 newFlowers1 ]
+
+		expert 50000
+		balls [
+			[ 2 4 5 c::r ]
+			[ 1 4 5 c::g ]
+			[ 1 3 5 c::y ]
+			[ 2 3 5 c::b ]
+			[ 2 3 4 c::g ]
+			[ 1 3 4 c::r ]
+			[ 1 4 4 c::b ]
+			[ 2 4 4 c::y ]
+			[ -1 0 5 c::b ]
+			[ -2 0 5 c::y ]
+			[ -2 1 5 c::g ]
+			[ -1 1 5 c::r ]
+			[ -1 0 4 c::g ]
+			[ -2 0 4 c::r ]
+			[ -2 1 4 c::b ]
+			[ -1 1 4 c::y ]
+		]
+	}
+	//f7
+	{
+		skybox { name "forest_noon" rot [ 0 20 0 ] }
+		ambient RGB::grey8
+		background RGB::grey3
+		fog { set true exp 0.04 }
+		nodes [ forestNoon forestGround forestMoura forestHidden3 forestNero forestHidden4 newFlowers2 newFlowers1 ]
+		particles [
+			{ name "Forest/Watersparks" pos { x 5.3 y -0.6 z -12.2 } ff 10 }
+			{ name "Ambient/RainStrong" pos { x 0 y -0.02 z 2.0 } ff 5 }
+		]
+		sounds [
+			{ sInterval 0 n [ rain_2 ] }
+			{ sInterval 0 c { x 5.3 y -0.6 z -12.2 } n [ waterfall_2 ] }
+			{ sInterval 10 sRand 1 c { x 0 y -0.02 z 2.0 } i 10 o 50 n [ frog_1_after frog_2_after ] }
+		]
+		changes [
+			{ pos { x 6.272 y -1.166 z -12.303 } scale { y 1 w 4.5 } }
+			{ pos { x 14.775 y -1.166 z 0.631 } scale { y 1 w 6.0 } }
+			{ pos { x 9.183 y 5.652 z -22.799 } scale { y 1 w 5.1 } rot [ 0.261928 -0.0882774 0.0240672 0.96074 ] }
+		]
+		expert 50000
+		z 6
+		balls [
+			[ 2 4 6 c::r ]
+			[ 2 4 5 c::g ]
+			[ 2 4 4 c::y ]
+			[ 2 4 3 c::b ]
+			[ 2 4 2 c::r ]
+			[ -2 0 6 c::k ]
+			[ -2 0 5 c::b ]
+			[ -2 0 4 c::g ]
+			[ -2 0 3 c::r ]
+			[ -2 0 2 c::y ]
+			[ 1 1 6 c::r ]
+			[ 1 1 5 c::g ]
+			[ 1 1 4 c::b ]
+			[ 1 1 3 c::c ]
+			[ 1 1 2 c::y ]
+			[ -1 3 6 c::c ]
+			[ -1 3 5 c::m ]
+			[ -1 3 4 c::w ]
+			[ -1 3 3 c::r ]
+			[ -1 3 2 c::c ]
+		]
+	}
+	//f8
+	{
+		skybox { name "forest_noon" rot [ 0 20 0 ] }
+		ambient RGB::grey8
+		background RGB::grey3
+		fog { set true exp 0.04 }
+		nodes [ forestNoon forestGround forestMoura forestHidden3 forestNero forestHidden4 newFlowers2 newFlowers1 ]
+		sounds [
+			{ sInterval 0 n [ river_running ] }
+			{ sInterval 0 c { x 5.3 y -0.6 z -12.2 } n [ waterfall_2 ] }
+			{ sInterval 4 sRand 1 c { x 0 y -0.02 z 2.0 } i 10 o 40 n [ birds_2_after birds_6_after frog_1_after frog_2_after ] }
+		]
+		particles [
+			{ name "Forest/Watersparks" pos { x 5.3 y -0.6 z -12.2 } ff 10 }
+		]
+
+		expert 45000
+		balls [
+			[ 2 0 5 c::r ]
+			[ 2 1 5 c::g ]
+			[ 2 2 5 c::b ]
+			[ 2 4 5 c::c ]
+			[ 2 3 5 c::m ]
+			[ 0 0 5 c::w ]
+			[ 0 1 5 c::b ]
+			[ 0 2 5 c::c ]
+			[ 0 3 5 c::m ]
+			[ 0 4 5 c::r ]
+			[ -2 4 5 c::c ]
+			[ -2 3 5 c::m ]
+			[ -2 2 5 c::y ]
+			[ -2 1 5 c::r ]
+			[ -2 0 5 c::c ]
+			[ 1 3 5 c::g ]
+			[ -1 3 5 c::w ]
+		]
+	}
+	//f9
+	{
+		skybox { name "forest_stars" rot [ 0 20 0 ] }
+		ambient RGB::grey2
+		nodes [ forestStars forestGround forestMoura forestHidden3 forestNero forestHidden4 newFlowers2 newFlowers1 ]
+		sounds [
+			{ sInterval 0 n [ forest_night ] }
+			{ sInterval 0 n [ river_running ] }
+			{ sInterval 0 c { x 5.3 y -0.6 z -12.2 } n [ waterfall_2 ] }
+			{ sInterval 3 sRand 1 c { x 0 y -0.02 z 2.0 } i 10 o 40 n [ frog_1_after frog_2_after birds_7_night birds_8_night cricket_2_night distant_frogs_night splash_1_night splash_2 ] }
+		]
+		particles [
+			{ name "Forest/Watersparks" pos { x 5.3 y -0.6 z -12.2 } ff 10 }
+		]
+
+		expert 45000
+		z 6
+		balls [
+			[ 2 4 6 c::r ]
+			[ 2 4 5 c::g ]
+			[ 2 4 4 c::y ]
+			[ 1 2 6 c::c ]
+			[ 1 2 5 c::m ]
+			[ 1 2 4 c::y ]
+			[ 0 3 6 c::w ]
+			[ 0 3 5 c::r ]
+			[ 0 3 4 c::w ]
+			[ -1 1 6 c::k ]
+			[ -1 1 5 c::w ]
+			[ -1 1 4 c::c ]
+			[ -2 2 6 c::y ]
+			[ -2 2 5 c::g ]
+			[ -2 2 4 c::m ]
+			[ -2 4 6 c::b ]
+			[ -2 4 5 c::k ]
+			[ -2 4 4 c::b ]
+			[ 1 0 6 c::r ]
+			[ 1 0 5 c::k ]
+			[ 1 0 4 c::r ]
+		]
+	}
+	//f10
+	{
+		skybox { name "forest_stars" rot [ 0 20 0 ] }
+		ambient RGB::grey2
+		nodes [ forestStars forestGround forestMoura forestHidden3 forestNero forestHidden4 newFlowers2 newFlowers1 ]
+		sounds [
+			{ sInterval 0 n [ forest_night ] }
+			{ sInterval 0 n [ river_running ] }
+			{ sInterval 0 c { x 5.3 y -0.6 z -12.2 } n [ waterfall_2 ] }
+			{ sInterval 3 sRand 1 c { x 0 y -0.02 z 2.0 } i 10 o 40 n [ frog_1_after frog_2_after birds_7_night birds_8_night cricket_2_night distant_frogs_night splash_1_night splash_2 ] }
+		]
+		particles [
+			{ name "Forest/Watersparks" pos { x 5.3 y -0.6 z -12.2 } ff 10 }
+			{ name "Forest/Firefly" pos { x 0 y 0.3 z 2.0 } ff 0 }
+		]
+		expert 140000
+		z 8
+		balls [
+			[ 0 4 8 c::k ]
+			[ 0 4 7 c::k ]
+			[ 2 4 6 c::r ]
+			[ 1 4 6 c::g ]
+			[ 0 4 6 c::y ]
+			[ -1 4 6 c::b ]
+			[ -2 4 6 c::r ]
+			[ -1 4 5 c::g ]
+			[ 2 4 4 c::r ]
+			[ 1 4 4 c::g ]
+			[ 0 4 4 c::y ]
+			[ -1 4 4 c::b ]
+			[ -2 4 4 c::r ]
+			[ -1 4 3 c::g ]
+			[ 2 4 5 c::y ]
+			[ 1 4 5 c::b ]
+			[ 0 4 5 c::r ]
+			[ -2 4 5 c::y ]
+			[ 2 4 3 c::y ]
+			[ 1 4 3 c::b ]
+			[ 0 4 3 c::r ]
+			[ -2 4 3 c::y ]
+			[ 1 3 4 c::c ]
+			[ 1 2 4 c::m ]
+			[ 1 1 4 c::c ]
+			[ 1 0 4 c::m ]
+			[ 0 0 5 c::c ]
+			[ 0 1 5 c::m ]
+			[ 0 2 5 c::c ]
+			[ 0 3 5 c::m ]
+			[ -1 3 4 c::w ]
+			[ -1 2 4 c::k ]
+			[ -1 1 4 c::w ]
+			[ -1 0 4 c::k ]
+			[ -2 0 5 c::w ]
+			[ -2 1 5 c::k ]
+			[ -2 2 5 c::w ]
+			[ -2 3 5 c::k ]
+			[ 2 3 5 c::k ]
+			[ 2 2 5 c::w ]
+			[ 2 1 5 c::k ]
+			[ 2 0 5 c::w ]
+		]
+	}
+	//f11
+	{
+		skybox { name "forest_stars" rot [ 0 20 0 ] }
+		ambient RGB::grey2
+		nodes [ forestStars forestGround forestMoura forestHidden3 forestNero forestHidden4 newFlowers2 newFlowers1 ]
+		sounds [
+			{ sInterval 0 n [ forest_night ] }
+			{ sInterval 0 n [ river_running ] }
+			{ sInterval 0 c { x 5.3 y -0.6 z -12.2 } n [ waterfall_2 ] }
+			{ sInterval 3 sRand 1 c { x 0 y -0.02 z 2.0 } i 10 o 40 n [ frog_1_after frog_2_after birds_7_night birds_8_night cricket_2_night distant_frogs_night splash_1_night splash_2 ] }
+		]
+		particles [
+			{ name "Forest/Watersparks" pos { x 5.3 y -0.6 z -12.2 } ff 10 }
+			{ name "Forest/Firefly" pos { x 5.3 y -0.6 z -12.2 } ff 5 }
+		]
+		expert 40000
+		z 5
+		balls [
+			[ 2 0 5 c::g ]
+			[ 1 0 5 c::b ]
+			[ 0 0 5 c::m ]
+			[ -1 0 5 c::g ]
+			[ -2 0 5 c::b ]
+			[ 2 1 5 c::b ]
+			[ 1 1 5 c::m ]
+			[ -1 1 5 c::b ]
+			[ -2 1 5 c::m ]
+			[ 1 2 5 c::g ]
+			[ 0 2 5 c::b ]
+			[ -1 2 5 c::m ]
+			[ 2 3 5 c::g ]
+			[ 1 3 5 c::b ]
+			[ -1 3 5 c::g ]
+			[ -2 3 5 c::b ]
+			[ 2 4 5 c::b ]
+			[ 1 4 5 c::m ]
+			[ 0 4 5 c::g ]
+			[ -1 4 5 c::b ]
+			[ -2 4 5 c::m ]
+			[ 2 4 4 c::g ]
+			[ 1 3 4 c::m ]
+			[ 0 2 4 c::g ]
+			[ -1 3 4 c::b ]
+			[ -2 4 4 c::g ]
+			[ 2 0 4 c::b ]
+			[ 1 1 4 c::g ]
+			[ -1 1 4 c::m ]
+			[ -2 0 4 c::g ]
+			[ 2 4 3 c::b ]
+			[ 1 4 3 c::m ]
+			[ 0 4 3 c::g ]
+			[ -1 4 3 c::b ]
+			[ -2 4 3 c::m ]
+			[ 2 3 3 c::g ]
+			[ 1 3 3 c::b ]
+			[ -1 3 3 c::g ]
+			[ -2 3 3 c::b ]
+			[ 1 2 3 c::g ]
+			[ 0 2 3 c::b ]
+			[ -1 2 3 c::m ]
+			[ 2 1 3 c::b ]
+			[ 1 1 3 c::m ]
+			[ -1 1 3 c::b ]
+			[ -2 1 3 c::m ]
+			[ 2 0 3 c::g ]
+			[ 1 0 3 c::b ]
+			[ 0 0 3 c::m ]
+			[ -1 0 3 c::g ]
+			[ -2 0 3 c::b ]
+		]
+	}
+]
+
+// Beach
+array of Level beach [
+	// 0 - MORNING
+	{	
+		skybox { name "sea_morning" }
+		ambient RGB::grey8
+		nodes [ beachMorning beachIsland1Dry beachIsland2Dry ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_morning ] }
+			{ sInterval 10 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 50 n [ coconut_drop ] }
+		]
+		
+		expert 110000
+		hint 0
+		maxCannonDeviation 0.3
+		balls [
+			[ 2 4 5 c::r ]
+			[ 1 4 5 c::r ]
+			[ 1 3 5 c::r ]
+			[ 2 3 5 c::r ]
+			[ 1 1 5 c::r ]
+			[ -2 3 5 c::r ]
+			[ -1 3 5 c::r ]
+			[ -1 2 5 c::r ]
+		]		
+	}
+	// 1
+	{
+		skybox { name "sea_morning" }
+		ambient RGB::grey8
+		nodes [ beachMorning beachIsland1Dry beachIsland2Dry ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_morning ] }
+			{ sInterval 10 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 50 n [ coconut_drop ] }
+		]
+		
+		expert 110000
+		incoming [ c::r c::g c::r c::g ]
+		hint 1
+		maxCannonDeviation 0.5
+		balls [
+			[ 1 3 5 c::r ]
+			[ 1 4 5 c::r ]
+			[ 0 4 5 c::r ]
+			[ 0 3 5 c::r ]
+			[ 1 4 4 c::g ]
+			[ 1 4 3 c::g ]
+			[ -2 0 5 c::g ]
+			[ -1 0 5 c::g ]
+			[ -1 1 5 c::g ]
+			[ -2 1 5 c::g ]
+			[ -2 1 4 c::r ]
+			[ -2 2 4 c::r ]
+			[ -2 2 3 c::r ]
+			[ 2 4 3 c::g ]
+		]
+	}
+	// 2
+	{
+		skybox { name "sea_morning" }
+		ambient RGB::grey8
+		nodes [ beachMorning beachIsland1Dry beachIsland2Dry ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_morning ] }
+			{ sInterval 10 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 50 n [ coconut_drop ] }
+		]
+		
+		expert 105000
+		incoming [ c::y c::y c::b ]
+		hint 2
+		balls [
+			// [ 0 0 1 c::b ]
+			[ 1 2 5 c::b ]
+			[ 0 2 5 c::b ]
+			[ -1 2 5 c::b ]
+		]
+		// struct [ { t ls::sph a lsai::bounce x 0 y 3 z 4 }
+		// ]
+	}
+	// 3
+	{
+		skybox { name "sea_morning" }
+		ambient RGB::grey8
+		nodes [ beachMorning beachIsland1 beachIsland2Dry ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_morning ] }
+			{ sInterval 7 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 50 n [ coconut_drop birds_9 birds_9 ] }
+		]
+		
+		changes [ { pos { x 419.949 y 0 z 3836.0 } scale { y 0.77 w 395 } } ]
+		previews [ { cam "Preview1" t 2.5 } ]
+		
+		expert 93000
+		hint 3
+		balls [
+			[ -1 0 5 c::b ]
+			[ -2 0 5 c::b ]
+			[ -2 1 5 c::b ]
+			[ 2 0 5 c::r ]
+			[ 1 0 5 c::r ]
+			[ 2 4 5 c::b ]
+			[ -1 4 5 c::r ]
+			[ -2 4 5 c::r ]
+			[ -2 3 5 c::r ]
+			[ -1 3 5 c::r ]
+		]
+	}
+	// 4
+	{
+		skybox { name "sea_morning" }
+		ambient RGB::grey8
+		nodes [ beachMorning beachIsland1 beachIsland2Dry ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_morning ] }
+			{ sInterval 7 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 50 n [ coconut_drop birds_9 birds_9 ] }
+		]
+		
+		expert 120000
+		incoming [ c::r c::b c::r c::b ]
+		hint 4
+		balls [
+			[ 1 4 5 c::r ]
+			[ 0 4 5 c::r ]
+			[ -1 4 5 c::r ]
+			[ -2 4 5 c::r ]
+			[ -2 2 5 c::b ]
+			[ -1 2 5 c::b ]
+			[ 0 2 5 c::b ]
+			[ 1 2 5 c::b ]
+			[ 2 2 5 c::b ]
+			[ -2 4 4 c::b ]
+			[ -2 3 4 c::y ]
+			[ -2 1 4 c::y ]
+			[ -2 2 4 c::r ]
+			[ -1 4 4 c::y ]
+			[ -1 3 4 c::b ]
+			[ -1 2 4 c::y ]
+			[ -1 1 4 c::r ]
+			[ -1 3 3 c::y ]
+			[ -2 3 3 c::r ]
+			[ -1 2 3 c::b ]
+			[ -2 2 3 c::y ]
+			[ 2 4 5 c::r ]
+		]
+	}
+	// 5
+	{
+		skybox { name "sea_morning" }
+		ambient RGB::grey8
+		nodes [ beachMorning beachIsland1 beachWaterfall beachTurtle ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_morning ] }
+			{ sInterval 5 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 50 n [ coconut_drop birds_9 birds_10 parrot ] }
+		]
+		
+		changes [
+			{ pos { x 419.949 y 0 z 3836.0 } scale { y 0.77 w 395 } }
+			{ pos { x -145.424 y 0 z 447.857 } scale { y 0.37 w 85 } }
+		]
+		
+		expert 110000
+		incoming [ c::r c::b c::r c::b ]
+		// sounds [ { n birds_9 } { n monkey_3 } ]
+		
+		previews [ { cam "Preview4" t 2.5 } ]
+		hint 5
+		balls [
+			[ 1 4 5 c::r ]
+			[ 0 4 5 c::r ]
+			[ 0 3 5 c::r ]
+			[ 1 3 5 c::r ]
+			[ 2 3 5 c::r ]
+			[ -1 0 5 c::b ]
+			[ -2 0 5 c::b ]
+			[ -1 1 5 c::b ]
+			[ -1 2 5 c::b ]
+			[ -2 2 5 c::b ]
+			[ -2 1 5 c::b ]
+			[ 0 3 4 c::b ]
+			[ -1 3 4 c::g ]
+			[ -1 2 4 c::r ]
+			[ 0 2 4 c::g ]
+			[ 0 3 3 c::g ]
+			[ -1 2 3 c::g ]
+			[ 0 2 3 c::r ]
+			[ -1 3 3 c::b ]
+			[ 2 4 5 c::r ]
+		]
+	}
+	// 6
+	{
+		skybox { name "sea_morning" }
+		ambient RGB::grey8
+		nodes [ beachMorning beachIsland1 beachWaterfall beachTurtle ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_morning ] }
+			{ sInterval 5 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 50 n [ coconut_drop birds_9 birds_10 parrot ] }
+		]
+		
+		hint 6
+		expert 100000
+		balls [
+			[ 2 3 5 c::b ]
+			[ 2 4 5 c::b ]
+			[ 1 4 5 c::b ]
+			[ 1 3 5 c::b ]
+			[ 1 3 4 c::g ]
+			[ 0 2 4 c::g ]
+			[ 1 2 4 c::g ]
+			[ -1 3 4 c::g ]
+			[ -1 2 4 c::g ]
+			[ -1 3 5 c::r ]
+			[ -1 4 5 c::r ]
+			[ -2 4 5 c::r ]
+			[ -2 3 5 c::r ]
+			[ 0 2 5 c::y ]
+			[ 0 1 5 c::y ]
+			[ 1 1 5 c::y ]
+			[ -1 1 5 c::y ]
+			[ 0 0 5 c::y ]
+			[ 0 1 4 c::g ]
+		]
+	}
+	// 7
+	{
+		skybox { name "sea_morning" }
+		ambient RGB::grey8
+		nodes [ beachMorning beachIsland1 beachWaterfall beachHiddenRight beachTurtle ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_morning ] }
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop birds_9 birds_10 parrot monkey_2 ] }
+		]
+		changes [ { pos { x -230.932 y 0 z 43.107 } scale { y 0.77 w 147 } } ]
+		
+		incoming [ c::b c::y c::b c::y c::r c::b c::y ]
+		expert 100000
+		previews [ { cam "Preview3" t 2.0 } ]
+		hint 7
+		balls [
+			[ 1 2 4 c::r ]
+			[ 1 3 4 c::r ]
+			[ 1 4 4 c::r ]
+			[ 0 4 4 c::r ]
+			[ 0 3 4 c::r ]
+			[ 0 2 4 c::r ]
+			[ -1 2 4 c::r ]
+			[ -1 3 4 c::r ]
+			[ -1 4 4 c::r ]
+			[ 2 4 4 c::r ]
+			[ 2 3 4 c::r ]
+			[ 2 2 4 c::r ]
+			[ 1 3 5 c::y ]
+			[ -1 1 4 c::r ]
+			[ 0 1 4 c::r ]
+			[ 1 1 4 c::r ]
+			[ 2 1 4 c::r ]
+			[ 1 2 5 c::b ]
+			[ 0 3 5 c::y ]
+			[ 0 2 5 c::b ]
+		]
+	}
+	// 8 - AFTERNOON
+	{
+		skybox { name "sea_afternoon" rot [ 0 -80 0 ] }
+		ambient RGB::grey8
+		nodes [ beachAfternoon beachIsland1 beachWaterfall beachHiddenRight seagulls ]
+		
+		sounds [
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_afternoon ] }
+			{ sInterval 6 sRand 0.4 c { x 0 y -0.7 z 35 } o 35 n [ waves_crash_1 waves_crash_3 ] }
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop birds_9 birds_10 parrot monkey_2 tropical_bird ] }
+		]
+		
+		expert 120000
+		
+		hint 8
+		balls [
+			[ 2 0 3 c::g ]
+			[ 2 1 3 c::b ]
+			[ 2 2 3 c::g ]
+			[ 2 3 3 c::b ]
+			[ 2 4 3 c::g ]
+			[ 2 4 5 c::y ]
+			[ 2 3 5 c::y ]
+			[ 2 2 5 c::y ]
+			[ 2 1 5 c::y ]
+			[ 2 0 5 c::y ]
+			[ 2 4 4 c::y ]
+			[ 2 3 4 c::y ]
+			[ 2 2 4 c::y ]
+			[ 2 1 4 c::y ]
+			[ 2 0 4 c::y ]
+			[ 2 3 2 c::g ]
+			[ 2 4 2 c::b ]
+			[ 2 2 2 c::b ]
+			[ 2 1 2 c::g ]
+			[ 2 0 2 c::b ]
+			[ 1 0 2 c::g ]
+			[ 1 1 2 c::b ]
+			[ 1 2 2 c::g ]
+			[ 1 3 2 c::b ]
+			[ 1 4 2 c::g ]
+		]
+	}
+	// 9
+	{
+		skybox { name "sea_afternoon" rot [ 0 -80 0 ] }
+		ambient RGB::grey8
+		nodes [ beachAfternoon beachIsland1 beachWaterfall beachHiddenRight seagulls ]
+		
+		sounds [
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop birds_9 birds_10 parrot monkey_2 tropical_bird ] }
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_afternoon ] }
+			{ sInterval 6 sRand 0.4 c { x 0 y -0.7 z 35 } o 35 n [ waves_crash_1 waves_crash_3 ] }
+		]
+
+		expert 100000
+		incoming [ c::m c::c ]
+		balls [
+			[ 0 3 5 c::y ]
+			[ 0 3 4 c::y ]
+			[ 0 3 3 c::c ]
+			[ 0 3 2 c::m ]
+			[ -1 3 2 c::c ]
+			[ -1 3 3 c::r ]
+			[ -2 3 3 c::m ]
+			[ -2 3 2 c::w ]
+			[ -2 3 4 c::c ]
+			[ -1 3 4 c::w ]
+			[ -2 2 3 c::r ]
+			[ -1 2 3 c::m ]
+		]
+	}
+	// 10
+	{
+		skybox { name "sea_afternoon" rot [ 0 -80 0 ] }
+		ambient RGB::grey8
+		nodes [ beachAfternoon beachIsland1 beachWaterfall beachHiddenRight beachHiddenLeft seagulls ]
+		
+		sounds [
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop birds_9 birds_10 parrot monkey_2 tropical_bird ] }
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_afternoon ] }
+			{ sInterval 6 sRand 0.4 c { x 0 y -0.7 z 35 } o 35 n [ waves_crash_1 waves_crash_3 ] }
+			{ sInterval 20 sRand 0.4 c { x 0 y -0.7 z -5.5 } i 20 o 50 h 10 n [ YN ] }
+		]
+		changes [ { pos { x 225.683 y 0 z 36.691 } scale { y 0.77 w 147 } } ]
+
+		expert 88000
+		previews [ { cam "Preview2" t 2.0 } ]
+		hint 10
+		balls [
+			[ 0 2 5 c::r ]
+			[ 0 2 4 c::g ]
+			[ 0 2 3 c::b ]
+			[ 0 2 2 c::y ]
+		]
+	}
+	// 11
+	{
+		skybox { name "sea_afternoon" rot [ 0 -80 0 ] }
+		ambient RGB::grey8
+		nodes [ beachAfternoon beachIsland1 beachWaterfall beachHiddenRight beachHiddenLeft seagulls ]
+		
+		sounds [
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop birds_9 birds_10 parrot monkey_2 tropical_bird ] }
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_afternoon ] }
+			{ sInterval 6 sRand 0.4 c { x 0 y -0.7 z 35 } o 35 n [ waves_crash_1 waves_crash_3 ] }
+			{ sInterval 20 sRand 0.4 c { x 0 y -0.7 z -5.5 } i 20 o 50 h 10 n [ YN ] }
+		]
+
+		expert 71000
+		balls [
+			[ 0 2 5 c::b ]
+			[ -2 2 5 c::b ]
+			[ -2 3 5 c::y ]
+			[ -2 1 5 c::y ]
+			[ 1 1 5 c::b ]
+			[ 0 1 5 c::y ]
+			[ -1 1 5 c::b ]
+			[ -1 2 5 c::y ]
+			[ 1 2 5 c::y ]
+			[ 1 3 5 c::b ]
+			[ 0 3 5 c::y ]
+			[ -1 3 5 c::b ]
+		]
+	}
+	// 12
+	{
+		skybox { name "sea_afternoon" rot [ 0 -80 0 ] }
+		ambient RGB::grey8
+		changes [ { pos { x 0 y -0.7 z -5.5 } scale { y 1 w 20 } } ]
+		previews [ { cam "Preview5" t 4.0 } ]
+		nodes [ beachAfternoon beachIsland1 beachWaterfall beachHiddenRight beachHiddenLeft seagulls beachFinalReally ]
+		
+		sounds [
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop birds_9 birds_10 parrot monkey_2 tropical_bird ] }
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_afternoon ] }
+			{ sInterval 6 sRand 0.4 c { x 0 y -0.7 z 35 } o 35 n [ waves_crash_1 waves_crash_3 ] }
+			{ sInterval 20 sRand 0.4 c { x 0 y -0.7 z -5.5 } i 20 o 50 h 10 n [ YN ] }
+		]
+
+		expert 140000
+		incoming [ c::r ]
+		hint 12
+		balls [
+			[ 0 2 5 c::r ]
+			[ 1 2 5 c::r ]
+			[ -1 2 5 c::r ]
+			[ 1 2 4 c::b ]
+			[ -1 2 4 c::y ]
+			[ -1 3 4 c::b ]
+			[ 0 3 4 c::y ]
+			[ 1 3 4 c::g ]
+			[ 1 1 4 c::g ]
+			[ 0 1 4 c::y ]
+			[ -1 1 4 c::b ]
+			[ 2 3 4 c::y ]
+			[ 2 2 4 c::g ]
+			[ 2 1 4 c::b ]
+			[ -2 1 4 c::g ]
+			[ -2 2 4 c::b ]
+			[ -2 3 4 c::y ]
+			[ 2 4 4 c::b ]
+			[ -2 4 4 c::b ]
+		]
+	}
+	// 13 - NIGHT STARS
+	{
+		skybox { name "beach_stars" rot [ 0 180 0 ] }
+		ambient RGB::grey3
+		nodes [ beachStars beachIsland1 beachWaterfall beachHiddenRight beachHiddenLeft beachFinalReally ]
+		
+		sounds [
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop night_monkey_1 night_monkey_3 ] }
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_night ] }
+			{ sInterval 20 sRand 0.4 c { x 0 y -0.7 z -5.5 } i 20 o 50 n [ night_YC ] }
+		]
+
+		expert 130000
+		incoming [ c::y c::y ]
+		hint 13
+		balls [
+			[ -2 1 4 c::r ]
+			[ 2 3 4 c::r ]
+			[ 2 1 4 c::b ]
+			[ 1 1 4 c::r ]
+			[ -1 1 4 c::b ]
+			[ -2 0 5 c::y ]
+			[ -2 1 5 c::y ]
+			[ 2 3 5 c::y ]
+			[ 2 4 5 c::y ]
+			[ 0 0 4 c::b ]
+			[ -1 0 4 c::r ]
+			[ 0 1 4 c::w ]
+			[ 1 0 4 c::w ]
+			[ 1 3 4 c::w ]
+			[ 0 3 4 c::b ]
+			[ -1 3 4 c::r ]
+			[ -2 3 4 c::w ]
+			[ 1 4 4 c::r ]
+			[ 0 4 4 c::w ]
+			[ -1 4 4 c::b ]
+			[ 1 2 4 c::m ]
+			[ 0 2 4 c::m ]
+			[ -1 2 4 c::m ]
+		]
+	}
+	// 14
+	{
+		skybox { name "beach_stars" rot [ 0 180 0 ] }
+		ambient RGB::grey3
+		nodes [ beachStars beachIsland1 beachWaterfall beachHiddenRight beachHiddenLeft beachFinalReally ]
+		
+		sounds [
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop night_monkey_1 night_monkey_3 ] }
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_night ] }
+			{ sInterval 20 sRand 0.4 c { x 0 y -0.7 z -5.5 } i 20 o 50 n [ night_YC ] }
+		]
+
+		expert 85000
+		balls [
+			[ 1 4 5 c::r ]
+			[ 1 3 5 c::r ]
+			[ 2 3 5 c::r ]
+			[ -2 1 5 c::b ]
+			[ -2 0 5 c::b ]
+			[ -1 0 5 c::b ]
+			[ -1 1 5 c::b ]
+			[ 2 0 5 c::g ]
+			[ 1 0 5 c::g ]
+			[ 1 1 5 c::g ]
+			[ 2 1 5 c::g ]
+			[ 0 1 5 c::c ]
+			[ 0 0 5 c::c ]
+			[ 1 2 5 c::y ]
+			[ 2 2 5 c::y ]
+			[ 0 4 5 c::r ]
+			[ 0 3 5 c::r ]
+			[ -2 2 5 c::b ]
+			[ -1 2 5 c::b ]
+			[ 0 2 5 c::m ]
+			[ 2 4 5 c::r ]
+		]
+	}
+	// 15
+	{
+		skybox { name "beach_stars" rot [ 0 180 0 ] }
+		ambient RGB::grey3
+		nodes [ beachStars beachIsland1 beachWaterfall beachHiddenRight beachHiddenLeft beachFinalReally ]
+		
+		sounds [
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop night_monkey_1 night_monkey_3 ] }
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_night ] }
+			{ sInterval 20 sRand 0.4 c { x 0 y -0.7 z -5.5 } i 20 o 50 n [ night_YC ] }
+		]
+		particles [ { name "Beach/Plankton" pos { x 0 y -2 z 100 } } ]
+		changes [ { pos { x 0 y -2 z 100 } scale { y 0.77 w 50 } } ]
+		
+		expert 88000
+		z 7
+		hint 15
+		balls [
+			[ 1 4 7 c::r ]
+			[ 1 2 7 c::r ]
+			[ 2 3 7 c::r ]
+			[ 0 3 7 c::r ]
+			[ 0 1 7 c::g ]
+			[ -2 1 7 c::g ]
+			[ -1 2 7 c::g ]
+			[ -1 0 7 c::g ]
+			[ 1 0 7 c::y ]
+			[ 2 1 7 c::y ]
+			[ -1 4 7 c::b ]
+			[ -2 3 7 c::b ]
+		]
+	}
+	// 16
+	{
+		skybox { name "beach_stars" rot [ 0 180 0 ] }
+		ambient RGB::grey3
+		nodes [ beachStars beachIsland1 beachWaterfall beachHiddenRight beachHiddenLeft beachFinalReally ]
+		
+		sounds [
+			{ sInterval 4 sRand 0.4 c { x 0 y -0.7 z -5.5 } o 70 n [ coconut_drop night_monkey_1 night_monkey_3 ] }
+			{ sInterval 0 c { x 0 y -0.7 z 35 } n [ beach_night ] }
+			{ sInterval 20 sRand 0.4 c { x 0 y -0.7 z -5.5 } i 20 o 50 n [ night_YC ] }
+		]
+		particles [ { name "Beach/Plankton" pos { x 0 y -2 z 100 } ff 50 } ]
+
+		expert 120000
+		z 8
+		hint 16
+		balls [
+			[ 0 2 8 c::m ]
+			[ 0 4 8 c::m ]
+			[ 0 3 8 c::m ]
+			[ 0 4 7 c::m ]
+			[ 0 4 6 c::m ]
+			[ 0 4 5 c::r ]
+			[ 0 2 7 c::r ]
+			[ -1 2 7 c::r ]
+			[ -2 2 7 c::r ]
+			[ -2 2 6 c::r ]
+			[ -2 2 5 c::r ]
+			[ -2 2 4 c::c ]
+			[ -1 2 6 c::c ]
+			[ -1 1 6 c::c ]
+			[ 0 1 6 c::c ]
+			[ 1 1 6 c::c ]
+			[ 2 1 6 c::y ]
+			[ 0 2 6 c::m ]
+			[ 0 2 5 c::m ]
+			[ 0 2 4 c::y ]
+			[ 0 3 4 c::y ]
+			[ -1 3 4 c::y ]
+		]
+	}
+]
+
+
+// SAVANNA
+
+array of Level savanna [
+	//s0
+	{	z 7
+		expert 55000
+		ambient { r 0.5 g 0.45 b 0.33 }
+		background { r 1 g 0.90 b 0.66 } fog { set true exp 0.02 }
+		skybox { name "savanna_morning" rot [ 0 0 0 ] }
+		nodes [ sava_dry ]
+		sounds [
+			{ sInterval 0 n [ savanna_morning ] }
+		]
+		balls [
+			[ -3 3 4 c::g ]
+			[ -4 3 4 c::r ]
+			[ 3 3 4 c::g ]
+			[ 0 3 3 c::y ]
+			[ 0 3 5 c::y ]
+			[ 0 3 6 c::g ]
+			[ 0 3 2 c::g ]
+			[ 0 4 4 c::g ]
+			[ 0 2 4 c::g ]
+			[ 0 5 4 c::r ]
+			[ 0 1 4 c::r ]
+			[ 1 3 4 c::r ]
+			[ 2 3 4 c::y ]
+			[ -1 3 4 c::r ]
+			[ -2 3 4 c::y ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 } /// front & back walls!
+			{ t ls::sph a lsai::sticky x 0 y 3 z 4 }
+		]
+		hint s0
+	}
+	//s1
+	{	z 5
+		expert 80000
+		ambient { r 0.5 g 0.45 b 0.33 }
+		background { r 1 g 0.90 b 0.66 } fog { set true exp 0.02 }
+		skybox { name "savanna_morning" rot [ 0 30 0 ] }
+		nodes [ sava_dry CondorCircles ]
+		sounds [
+			{ sInterval 0 n [ savanna_morning ] }
+			{ sInterval 2 sRand 0.5 c { x 0 y 0 z -30 } i 5 o 10 n [ vulture1 vulture2 vulture3 vulture4 ] }
+		]
+		balls [
+			[ 3 5 4 c::g ]
+			[ -4 3 3 c::y ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::cube a lsai::sticky x 3 y 4 z 3 w 3 h 3 d 1 }
+			{ t ls::cube a lsai::sticky x -2 y 2 z 2 w 3 h 3 d 1 }
+		]
+	}
+	//s2
+	{	z 6
+		expert 100000
+		skybox { name "savanna_morning" rot [ 0 60 0 ] }
+		nodes [ sava_dry ]
+		particles [ { name Ambient/Rain } ]
+		sounds [
+			{ sInterval 0 n [ rain_1 ] }
+		]
+		balls [
+			[ -4 3 1 c::r ]
+			[ -4 0 1 c::c ]
+			[ -3 4 2 c::g ]
+			[ -4 4 2 c::r ]
+			[ -2 4 2 c::y ]
+			[ 2 6 4 c::r ]
+			[ 3 7 4 c::r ]
+			[ 3 6 4 c::g ]
+			[ 2 5 4 c::y ]
+			[ 1 5 4 c::b ]
+			[ 1 4 4 c::c ]
+			[ 2 4 4 c::r ]
+			[ 2 4 3 c::g ]
+			[ 3 4 4 c::b ]
+			[ 2 5 3 c::c ]
+			[ 1 5 3 c::g ]
+			[ -3 4 3 c::b ]
+			[ 1 3 4 c::y ]
+			[ 1 2 4 c::g ]
+			[ 2 2 4 c::b ]
+			[ 1 2 3 c::c ]
+			[ 0 2 3 c::r ]
+			[ 0 1 3 c::y ]
+			[ 0 0 3 c::b ]
+			[ 0 0 4 c::c ]
+			[ -1 0 4 c::r ]
+			[ -1 1 4 c::b ]
+			[ -1 2 4 c::y ]
+			[ -1 3 4 c::g ]
+			[ -1 3 5 c::r ]
+			[ -1 3 6 c::b ]
+			[ -1 4 6 c::c ]
+			[ -1 4 5 c::y ]
+			[ -2 4 6 c::g ]
+			[ -2 5 6 c::r ]
+			[ -3 5 6 c::y ]
+			[ -3 6 6 c::c ]
+			[ -2 6 6 c::b ]
+			[ -2 7 6 c::r ]
+			[ -1 7 6 c::y ]
+			[ -3 6 2 c::r ]
+			[ -3 6 1 c::g ]
+			[ -2 6 1 c::y ]
+			[ -2 5 1 c::g ]
+			[ -3 5 1 c::c ]
+			[ -2 5 2 c::b ]
+			[ -2 4 1 c::r ]
+			[ -3 4 1 c::b ]
+			[ -4 4 1 c::y ]
+			[ -3 3 1 c::g ]
+			[ -3 2 1 c::c ]
+			[ -3 2 2 c::r ]
+			[ -4 1 1 c::y ]
+			[ -4 2 1 c::b ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x -3 y 7 z 2 } 
+			{ t ls::sph a lsai::sticky x -1 y 7 z 5 } 
+			{ t ls::sph a lsai::sticky x 2 y 7 z 4 } 
+		]
+	}
+	//s3
+	{	z 6
+		expert 90000
+		skybox { name "savanna_morning" rot [ 0 90 0 ] }
+		particles [ { name Ambient/RainStrong } ]
+		nodes [ sava_dry eatJiraf1 ]
+		sounds [
+			{ sInterval 0 n [ rain_2 ] }
+			{ sInterval 20 sRand 0.4 c { x -59.3753 y 0 z -9.49552 } n [ giraf1 giraf2 ] }
+		]
+		changes [ { pos { x -59.3753 y 0 z -9.49552 } scale { y 0.7 w 16 } } ]
+		balls [
+			[ -4 3 3 c::r ]
+			[ -4 2 3 c::g ]
+			[ -4 1 3 c::y ]
+			[ -3 2 3 c::b ]
+			[ -3 3 3 c::y ]
+			[ -3 1 3 c::r ]
+			[ -2 2 3 c::g ]
+			[ -1 2 3 c::b ]
+			[ 0 2 3 c::g ]
+			[ 1 2 3 c::b ]
+			[ 2 2 3 c::g ]
+			[ 3 2 3 c::b ]
+			[ -2 3 3 c::r ]
+			[ -1 3 3 c::y ]
+			[ 0 3 3 c::r ]
+			[ 1 3 3 c::y ]
+			[ 2 3 3 c::r ]
+			[ 3 3 3 c::y ]
+			[ 3 1 3 c::r ]
+			[ 2 1 3 c::y ]
+			[ 1 1 3 c::r ]
+			[ 0 1 3 c::y ]
+			[ -1 1 3 c::r ]
+			[ -2 1 3 c::y ]
+			[ 3 5 5 c::y ]
+			[ 2 5 5 c::r ]
+			[ 1 5 5 c::y ]
+			[ 0 5 5 c::r ]
+			[ -1 5 5 c::y ]
+			[ -2 5 5 c::r ]
+			[ -3 5 5 c::y ]
+			[ -4 5 5 c::r ]
+			[ -4 6 5 c::b ]
+			[ -3 6 5 c::g ]
+			[ -2 6 5 c::b ]
+			[ -1 6 5 c::g ]
+			[ 0 6 5 c::b ]
+			[ 1 6 5 c::g ]
+			[ 2 6 5 c::b ]
+			[ 3 6 5 c::g ]
+			[ 3 4 5 c::g ]
+			[ 2 4 5 c::b ]
+			[ 1 4 5 c::g ]
+			[ 0 4 5 c::b ]
+			[ -1 4 5 c::g ]
+			[ -2 4 5 c::b ]
+			[ -3 4 5 c::g ]
+			[ -4 4 5 c::b ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x -4 y 5 z 6 } 
+			{ t ls::sph a lsai::sticky x 3 y 5 z 4 } 
+			{ t ls::sph a lsai::sticky x 3 y 2 z 4 } 
+			{ t ls::sph a lsai::sticky x -4 y 2 z 2 } 
+		]
+	}
+	//s4
+	{	z 6
+		expert 10000
+		skybox { name "savanna_main" rot [ 0 0 0 ] }
+		nodes [ sava_green sava_light2 eatJiraf2 ]
+		changes [ { pos { x 0 y 0 z 12 } scale { y 0.6 w 32 } } ]
+		sounds [
+			{ sInterval 0 n [ savanna_morning ] }
+			{ sInterval 30 sRand 0.4 c { x -13.0654 y 5.83994 z -2.31609 } n [ giraf1 giraf2 ] }
+		]
+		balls [
+			[ 0 4 4 c::r ]
+			[ 0 4 3 c::g ]
+			[ 0 5 3 c::r ]
+			[ 1 4 3 c::r ]
+			[ 2 3 3 c::r ]
+			[ 2 4 4 c::r ]
+			[ 2 5 5 c::r ]
+			[ 1 4 5 c::r ]
+			[ 0 3 5 c::r ]
+			[ 1 3 3 c::g ]
+			[ 2 4 3 c::g ]
+			[ 2 5 4 c::g ]
+			[ 0 5 4 c::g ]
+			[ 0 4 5 c::g ]
+			[ 1 3 5 c::g ]
+			[ 2 4 5 c::g ]
+			[ 1 5 3 c::g ]
+			[ 2 3 4 c::g ]
+			[ 0 3 4 c::g ]
+			[ 1 5 5 c::g ]
+			[ 2 5 3 c::y ]
+			[ 1 5 4 c::y ]
+			[ 0 5 5 c::y ]
+			[ 2 3 5 c::y ]
+			[ 0 3 3 c::y ]
+			[ 1 3 4 c::y ]
+			[ -1 2 3 c::r ]
+			[ -2 2 4 c::r ]
+			[ -3 2 3 c::r ]
+			[ -2 2 2 c::r ]
+			[ -1 1 2 c::y ]
+			[ -2 1 2 c::g ]
+			[ -3 1 2 c::y ]
+			[ -3 1 3 c::g ]
+			[ -3 1 4 c::y ]
+			[ -2 1 4 c::g ]
+			[ -1 1 4 c::y ]
+			[ -1 1 3 c::g ]
+			[ -2 1 3 c::r ]
+			[ -2 3 3 c::y ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x -2 y 2 z 3 }
+			{ t ls::sph a lsai::sticky x 1 y 4 z 4 }
+		]
+	}
+	//s5
+	{	z 8
+		expert 30000
+		skybox { name "savanna_main" rot [ 0 30 0 ] }
+		nodes [ sava_green sava_light2 walkJirafs eatJiraf3 ]
+		sounds [
+			{ sInterval 0 n [ savanna_morning ] }
+			{ sInterval 30 sRand 0.4 c { z 12 } i 80 o 100 n [ giraf1 giraf2 ] }
+		]
+		balls [
+			[ -2 5 3 c::b ]
+			[ -4 3 5 c::b ]
+			[ -2 5 5 c::b ]
+			[ -4 3 3 c::b ]
+			[ 1 5 3 c::y ]
+			[ 1 3 3 c::y ]
+			[ 1 6 4 c::b ]
+			[ 1 4 4 c::b ]
+			[ 1 2 3 c::c ]
+			[ 1 0 3 c::c ]
+			[ 1 2 4 c::b ]
+			[ 1 0 5 c::b ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::cyl a lsai::sticky x 2 y 0 z 2 w 1 h 8 }
+			{ t ls::cyl a lsai::sticky x 0 y 0 z 2 w 1 h 8 }
+			{ t ls::cyl a lsai::sticky x 2 y 0 z 3 w 1 h 8 }
+			{ t ls::cyl a lsai::sticky x 0 y 0 z 3 w 1 h 8 }
+			{ t ls::cyl a lsai::sticky x 3 y 3 z 4 w 1 h 8 rot [ 0 0 90 ] }
+			{ t ls::cyl a lsai::sticky x 3 y 5 z 4 w 1 h 8 rot [ 0 0 90 ] }
+			{ t ls::cyl a lsai::sticky x 2 y 0 z 5 w 1 h 8 }
+			{ t ls::cyl a lsai::sticky x 0 y 0 z 5 w 1 h 8 }
+		]
+		incoming [ c::y c::c c::y c::c c::b c::b c::y c::c c::b ] // NOTE: remove last red?
+	}
+	//s6
+	{	z 9
+		expert 150000
+		skybox { name "savanna_main" rot [ 0 60 0 ] }
+		nodes [ sava_green sava_light2 zebrasNode walkJirafs sava_faketrees ]
+		changes [ { pos { x 0 y 0 z 12 } scale { y 2 w 100 } } ]
+		particles [ { name Zebra/Dust parent zebras } ] // that's why particles should be part of node, not here!!!
+		sounds [
+			{ sInterval 0 n [ savanna_morning ] }
+			{ sInterval 30 sRand 0.4 c { z 12 } i 80 o 100 n [ giraf1 giraf2 ] }
+			{ sInterval 20 sRand 0.4 c { z 12 } i 10 o 20 n [ animal_runs_by running_1 ] }
+			{ sInterval 8 sRand 0.4 c { z 12 } i 5 o 20 n [ birds_1 birds_2 birds_3 birds_11 birds_12 ] }
+		]
+		balls [
+			[ -4 0 4 c::y ]
+			[ -4 7 3 c::b ]
+			[ 3 5 4 c::c ]
+			[ 3 0 2 c::c ]
+			[ 2 0 2 c::r ]
+			[ 1 0 2 c::b ]
+			[ 1 0 3 c::g ]
+			[ 3 0 3 c::y ]
+			[ 0 1 7 c::y ]
+			[ 0 1 6 c::g ]
+			[ 0 2 6 c::c ]
+			[ -1 2 6 c::b ]
+			[ -1 3 6 c::g ]
+			[ -1 4 6 c::c ]
+			[ -1 5 6 c::y ]
+			[ -1 5 5 c::r ]
+			[ -2 5 5 c::c ]
+			[ -3 5 5 c::b ]
+			[ -3 5 6 c::r ]
+			[ -3 5 7 c::g ]
+			[ -3 6 7 c::y ]
+			[ -3 7 7 c::c ]
+			[ -4 7 7 c::b ]
+			[ -4 7 8 c::g ]
+			[ -4 7 9 c::r ]
+			[ -3 7 9 c::y ]
+			[ 2 7 9 c::c ]
+			[ 2 6 9 c::y ]
+			[ 2 5 9 c::r ]
+			[ 1 5 9 c::g ]
+			[ 0 5 9 c::b ]
+			[ 0 5 8 c::c ]
+			[ 0 5 7 c::r ]
+			[ 0 5 6 c::g ]
+			[ 1 0 9 c::b ]
+			[ 1 0 8 c::r ]
+			[ 0 0 8 c::c ]
+			[ 0 1 8 c::g ]
+			[ 1 0 4 c::c ]
+			[ 1 1 4 c::r ]
+			[ 1 2 4 c::b ]
+			[ 0 2 4 c::y ]
+			[ 0 3 4 c::c ]
+			[ 0 4 6 c::b ]
+			[ 0 4 4 c::b ]
+			[ 0 4 5 c::y ]
+			[ -2 0 9 c::r ]
+			[ -2 0 8 c::c ]
+			[ -2 0 7 c::y ]
+			[ -3 0 7 c::b ]
+			[ -4 0 7 c::r ]
+			[ -4 1 7 c::c ]
+			[ -4 2 7 c::g ]
+			[ -4 2 6 c::y ]
+			[ -4 2 5 c::b ]
+			[ -3 2 5 c::r ]
+			[ -3 3 5 c::g ]
+			[ -2 3 5 c::c ]
+			[ -2 4 5 c::y ]
+			[ -4 7 2 c::g ]
+			[ -3 7 2 c::y ]
+			[ -2 7 2 c::b ]
+			[ -2 7 3 c::c ]
+			[ -2 7 4 c::r ]
+			[ -2 6 4 c::y ]
+			[ -1 6 4 c::c ]
+			[ -1 5 4 c::b ]
+			[ -4 0 3 c::r ]
+			[ -3 0 3 c::y ]
+			[ -2 0 3 c::c ]
+			[ -2 1 3 c::b ]
+			[ -2 2 3 c::g ]
+			[ -2 3 3 c::r ]
+			[ -1 3 3 c::c ]
+			[ -1 4 3 c::y ]
+			[ -1 5 3 c::g ]
+			[ 3 5 3 c::b ]
+			[ 3 4 3 c::y ]
+			[ 2 4 3 c::r ]
+			[ 1 4 3 c::g ]
+			[ 1 4 4 c::c ]
+		]
+		incoming [ c::y c::y c::r c::r c::c c::c c::b c::b c::b ]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x -4 y 7 z 4 }
+			{ t ls::sph a lsai::sticky x 3 y 6 z 4 }
+			{ t ls::sph a lsai::sticky x -3 y 6 z 9 }
+			{ t ls::sph a lsai::sticky x 1 y 7 z 9 }
+			{ t ls::sph a lsai::sticky x -4 y 1 z 4 }
+			{ t ls::sph a lsai::sticky x 3 y 0 z 4 }
+			{ t ls::sph a lsai::sticky x -3 y 0 z 9 }
+			{ t ls::sph a lsai::sticky x 1 y 1 z 9 }
+		]
+	}
+	//s7
+	{	z 8
+		expert 20000
+		skybox { name "savanna_main" rot [ 0 90 0 ] }
+		nodes [ sava_green sava_light2 zebrasNode walkJirafs sava_faketrees rhinoNode elephantsNode ]
+		particles [ { name Zebra/Dust parent zebras } ] // that's why particles should be part of node, not here!!!
+		sounds [
+			{ sInterval 0 n [ savanna_morning ] }
+			{ sInterval 20 sRand 0.4 c { z 12 } i 80 o 100 n [ elephantAfrican ] }
+			{ sInterval 20 sRand 0.4 c { z 12 } i 10 o 20 n [ animal_runs_by running_1 ] }
+			{ sInterval 8 sRand 0.4 c { z 12 } i 3 o 20 n [ birds_1 birds_2 birds_3 birds_11 birds_12 insect_fly_2 ] }
+			{ sInterval 8 sRand 0.4 c { x 38.6224 y 0.0123669 z -30.5661 } n [ elephant_1 elephantAfrican rhino1 rhino2 SarusCrane ] }
+		]
+		balls [
+			[ -1 2 5 c::b ]
+			[ -3 2 5 c::b ]
+			[ -2 2 4 c::k ]
+			[ -2 2 6 c::k ]
+			[ -2 5 6 c::k ]
+			[ -2 5 4 c::k ]
+			[ -1 5 5 c::b ]
+			[ -3 5 5 c::b ]
+			[ -3 4 5 c::bob ]
+			[ -3 3 5 c::bob ]
+			[ -1 3 5 c::bob ]
+			[ -1 4 5 c::bob ]
+			[ -2 3 6 c::bob ]
+			[ -2 4 6 c::bob ]
+			[ -2 4 4 c::bob ]
+			[ -2 3 4 c::bob ]
+			[ 2 5 3 c::y ]
+			[ 0 5 3 c::y ]
+			[ 1 5 4 c::g ]
+			[ 1 5 2 c::g ]
+			[ 2 2 3 c::y ]
+			[ 1 2 2 c::g ]
+			[ 1 2 4 c::g ]
+			[ 0 2 3 c::y ]
+			[ 1 3 2 c::bob ]
+			[ 1 4 2 c::bob ]
+			[ 1 4 4 c::bob ]
+			[ 1 3 4 c::bob ]
+			[ 0 3 3 c::bob ]
+			[ 0 4 3 c::bob ]
+			[ 2 4 3 c::bob ]
+			[ 2 3 3 c::bob ]
+		]
+		incoming [ c::g c::g c::g c::g c::g c::g c::y c::y c::y ]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x 1 y 5 z 3 }
+			{ t ls::sph a lsai::sticky x -2 y 5 z 5 }
+			{ t ls::sph a lsai::sticky x 1 y 2 z 3 }
+			{ t ls::sph a lsai::sticky x -2 y 2 z 5 }
+		]
+	}
+	//s8
+	{	z 5
+		expert 45000
+		skybox { name "savanna_main" rot [ 0 90 0 ] }
+		nodes [ sava_green sava_light2 zebrasNode walkJirafs sava_faketrees rhinoNode elephantsNode ]
+		particles [ { name Zebra/Dust parent zebras } ] // that's why particles should be part of node, not here!!!
+		sounds [
+			{ sInterval 0 n [ savanna_morning ] }
+			{ sInterval 20 sRand 0.4 c { z 12 } i 80 o 100 n [ elephantAfrican ] }
+			{ sInterval 20 sRand 0.4 c { z 12 } i 10 o 20 n [ animal_runs_by running_1 ] }
+			{ sInterval 8 sRand 0.4 c { z 12 } i 3 o 20 n [ birds_1 birds_2 birds_3 birds_11 birds_12 insect_fly_2 ] }
+			{ sInterval 8 sRand 0.4 c { x 38.6224 y 0.0123669 z -30.5661 } n [ elephant_1 elephantAfrican rhino1 rhino2 SarusCrane ] }
+		]
+		balls [
+			[ 1 4 3 c::bob ]
+			[ 1 2 3 c::bob ]
+			[ -1 2 3 c::bob ]
+			[ -2 3 3 c::bob ]
+			[ -2 5 3 c::bob ]
+			[ 0 5 3 c::bob ]
+			[ 1 2 4 c::r ]
+			[ 0 3 4 c::r ]
+			[ -1 4 4 c::r ]
+			[ -2 5 4 c::r ]
+			[ 1 3 4 c::y ]
+			[ 0 4 4 c::y ]
+			[ -1 5 4 c::y ]
+			[ 0 2 4 c::y ]
+			[ -1 3 4 c::y ]
+			[ -2 4 4 c::y ]
+			[ 1 4 4 c::g ]
+			[ 0 5 4 c::g ]
+			[ -1 2 4 c::g ]
+			[ -2 3 4 c::g ]
+			[ 1 5 4 c::r ]
+			[ -2 2 4 c::r ]
+			[ -1 3 3 c::bob ]
+			[ 0 4 3 c::bob ]
+			[ -1 4 3 c::bob ]
+			[ 0 3 3 c::bob ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x -2 y 2 z 5 }
+			{ t ls::sph a lsai::sticky x -1 y 2 z 5 }
+			{ t ls::sph a lsai::sticky x 0 y 2 z 5 }
+			{ t ls::sph a lsai::sticky x 1 y 2 z 5 }
+			{ t ls::sph a lsai::sticky x -2 y 3 z 5 }
+			{ t ls::sph a lsai::sticky x -1 y 3 z 5 }
+			{ t ls::sph a lsai::sticky x 0 y 3 z 5 }
+			{ t ls::sph a lsai::sticky x 1 y 3 z 5 }
+			{ t ls::sph a lsai::sticky x -2 y 4 z 5 }
+			{ t ls::sph a lsai::sticky x -1 y 4 z 5 }
+			{ t ls::sph a lsai::sticky x 0 y 4 z 5 }
+			{ t ls::sph a lsai::sticky x 1 y 4 z 5 }
+			{ t ls::sph a lsai::sticky x -2 y 5 z 5 }
+			{ t ls::sph a lsai::sticky x -1 y 5 z 5 }
+			{ t ls::sph a lsai::sticky x 0 y 5 z 5 }
+			{ t ls::sph a lsai::sticky x 1 y 5 z 5 }
+		]
+	}
+	//s9
+	{	z 5
+		expert 130000
+		ambient RGB::grey3
+		skybox { name "savanna_dark" rot [ 0 0 0 ] }
+		nodes [ sava_green sava_light3 sava_faketrees CondorCircle ]
+		sounds [
+			{ sInterval 0 n [ savanna_night ] }
+			{ sInterval 5 sRand 0.4 c { x 38.6224 y 0.0123669 z -30.5661 } i 0 o 20 n [ frogs_2 frogs_3 graycricket sleaprd-night ] }
+			{ sInterval 25 sRand 0.4 c { z 12 } i 10 o 25 n [ SandhillCrane2 WhoopingCrane2 WhoopingCrane1 ] }
+			{ sInterval 4 sRand 0.5 c { x 0 y 0 z -15 } i 5 o 10 n [ vulture1 vulture2 vulture3 vulture4 ] }
+		]
+		balls [
+			[ -1 5 2 c::bob ]
+			[ -1 4 1 c::bob ]
+			[ -1 5 1 c::bob ]
+			[ -1 5 3 c::bob ]
+			[ 3 5 3 c::bob ]
+			[ 3 5 2 c::bob ]
+			[ 3 4 2 c::bob ]
+			[ 3 3 2 c::bob ]
+			[ 3 2 2 c::bob ]
+			[ 3 1 2 c::bob ]
+			[ 2 1 2 c::bob ]
+			[ 1 1 2 c::bob ]
+			[ 0 1 2 c::bob ]
+			[ -1 1 2 c::bob ]
+			[ -2 1 2 c::bob ]
+			[ -2 1 3 c::bob ]
+			[ -2 1 4 c::bob ]
+			[ -2 0 4 c::bob ]
+			[ -2 0 5 c::bob ]
+			[ -1 0 5 c::bob ]
+			[ 0 0 5 c::bob ]
+			[ 1 0 5 c::bob ]
+			[ 2 0 5 c::bob ]
+			[ 3 0 5 c::g ]
+			[ 2 3 5 c::g ]
+			[ 2 3 4 c::bob ]
+			[ 2 3 3 c::bob ]
+			[ 1 3 3 c::bob ]
+			[ 0 3 3 c::bob ]
+			[ -1 3 3 c::bob ]
+			[ -2 3 3 c::bob ]
+			[ -3 3 3 c::bob ]
+			[ -4 3 3 c::bob ]
+			[ -4 4 3 c::bob ]
+			[ -4 5 3 c::bob ]
+			[ -4 6 3 c::bob ]
+			[ -4 0 3 c::bob ]
+			[ -4 0 2 c::bob ]
+			[ -4 1 2 c::bob ]
+			[ -4 2 2 c::bob ]
+			[ -3 2 2 c::bob ]
+			[ -3 2 1 c::bob ]
+			[ -3 3 1 c::bob ]
+			[ -2 3 1 c::bob ]
+			[ -2 4 1 c::bob ]
+			[ -2 5 3 c::bob ]
+			[ -2 5 4 c::bob ]
+			[ -2 5 5 c::bob ]
+			[ -2 4 5 c::bob ]
+			[ 1 7 5 c::bob ]
+			[ 0 7 5 c::bob ]
+			[ 0 6 5 c::bob ]
+			[ 0 5 5 c::bob ]
+			[ 0 4 5 c::bob ]
+			[ 0 3 5 c::bob ]
+			[ 0 2 5 c::bob ]
+			[ -1 2 5 c::bob ]
+			[ -2 2 5 c::bob ]
+			[ -3 2 5 c::g ]
+			[ 2 7 5 c::y ]
+			[ -4 0 4 c::g ]
+			[ -4 6 4 c::y ]
+			[ -3 4 5 c::y ]
+			[ 3 5 4 c::y ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x -4 y 0 z 5 }
+			{ t ls::sph a lsai::sticky x -4 y 2 z 5 }
+			{ t ls::sph a lsai::sticky x -4 y 4 z 5 }
+			{ t ls::sph a lsai::sticky x -4 y 6 z 5 }
+			{ t ls::sph a lsai::sticky x 3 y 1 z 5 }
+			{ t ls::sph a lsai::sticky x 3 y 3 z 5 }
+			{ t ls::sph a lsai::sticky x 3 y 5 z 5 }
+			{ t ls::sph a lsai::sticky x 3 y 7 z 5 }
+		]
+	}
+	//s10
+	{	z 7
+		expert 450000
+		ambient RGB::grey2
+		skybox { name "savanna_dark" rot [ 0 -45 0 ] }
+		nodes [ sava_green sava_light3 sava_faketrees lionPath lionPath2 ]
+		sounds [
+			{ sInterval 0 n [ savanna_night ] }
+			{ sInterval 5 sRand 0.4 c { x 38.6224 y 0.0123669 z -30.5661 } i 0 o 20 n [ frogs_2 frogs_3 graycricket sleaprd-night ] }
+			{ sInterval 25 sRand 0.4 c { z 12 } i 10 o 25 n [ SandhillCrane2 WhoopingCrane2 WhoopingCrane1 ] }
+			{ sInterval 10 sRand 0.4 c { z 12 } i 3 o 20 n [ lion_2 lion_1 ] }
+		]
+		balls [
+			[ 2 1 6 c::b ]
+			[ 3 1 5 c::r ]
+			[ 3 1 4 c::bob ]
+			[ 2 1 4 c::b ]
+			[ 3 1 6 c::y ]
+			[ 2 2 6 c::r ]
+			[ 3 2 6 c::bob ]
+			[ 3 2 5 c::b ]
+			[ 3 2 4 c::y ]
+			[ 2 2 4 c::r ]
+			[ 1 2 4 c::bob ]
+			[ 1 2 5 c::y ]
+			[ 1 2 6 c::b ]
+			[ 3 3 5 c::r ]
+			[ 3 3 4 c::bob ]
+			[ 2 3 4 c::b ]
+			[ 1 3 4 c::y ]
+			[ 1 3 5 c::r ]
+			[ 1 3 6 c::bob ]
+			[ 2 3 6 c::b ]
+			[ 3 3 6 c::y ]
+			[ 3 4 6 c::bob ]
+			[ 3 4 5 c::b ]
+			[ 3 4 4 c::y ]
+			[ 2 4 4 c::r ]
+			[ 1 4 4 c::bob ]
+			[ 1 4 5 c::b ]
+			[ 1 4 6 c::y ]
+			[ 3 5 5 c::r ]
+			[ 3 5 4 c::bob ]
+			[ 2 5 4 c::b ]
+			[ 2 5 6 c::b ]
+			[ 3 5 6 c::y ]
+			[ 1 5 4 c::y ]
+			[ 1 5 5 c::r ]
+			[ 1 5 6 c::bob ]
+			[ 2 6 6 c::r ]
+			[ 3 6 6 c::bob ]
+			[ 3 6 5 c::b ]
+			[ 3 6 4 c::y ]
+			[ 2 6 4 c::r ]
+			[ 1 6 4 c::bob ]
+			[ 1 6 5 c::b ]
+			[ 1 6 6 c::y ]
+			[ 2 6 5 c::y ]
+			[ 1 1 4 c::y ]
+			[ 1 1 5 c::r ]
+			[ 1 1 6 c::bob ]
+			[ 2 0 4 c::r ]
+			[ 1 0 4 c::bob ]
+			[ 1 0 5 c::b ]
+			[ 1 0 6 c::y ]
+			[ 2 0 6 c::r ]
+			[ 3 0 6 c::bob ]
+			[ 3 0 5 c::b ]
+			[ 3 0 4 c::y ]
+			[ 2 0 5 c::y ]
+			[ -2 3 5 c::r ]
+			[ -2 3 4 c::bob ]
+			[ -3 3 4 c::b ]
+			[ -4 3 4 c::y ]
+			[ -4 3 5 c::r ]
+			[ -4 3 6 c::bob ]
+			[ -2 3 6 c::y ]
+			[ -3 4 6 c::r ]
+			[ -2 4 6 c::bob ]
+			[ -2 4 5 c::b ]
+			[ -2 4 4 c::y ]
+			[ -3 4 4 c::r ]
+			[ -4 4 4 c::bob ]
+			[ -4 4 5 c::b ]
+			[ -4 4 6 c::y ]
+			[ -2 5 5 c::r ]
+			[ -2 5 4 c::bob ]
+			[ -3 5 4 c::b ]
+			[ -4 5 4 c::y ]
+			[ -4 5 5 c::r ]
+			[ -4 5 6 c::bob ]
+			[ -3 5 6 c::b ]
+			[ -2 5 6 c::y ]
+			[ -3 6 6 c::r ]
+			[ -2 6 6 c::bob ]
+			[ -2 6 5 c::b ]
+			[ -2 6 4 c::y ]
+			[ -3 6 4 c::r ]
+			[ -4 6 4 c::bob ]
+			[ -4 6 5 c::b ]
+			[ -4 6 6 c::y ]
+			[ -3 6 5 c::y ]
+			[ -3 2 4 c::r ]
+			[ -4 2 4 c::bob ]
+			[ -4 2 5 c::y ]
+			[ -4 2 6 c::b ]
+			[ -3 2 6 c::r ]
+			[ -2 2 6 c::bob ]
+			[ -2 2 5 c::y ]
+			[ -2 2 4 c::b ]
+			[ -2 1 5 c::r ]
+			[ -2 1 4 c::bob ]
+			[ -3 1 4 c::b ]
+			[ -4 1 4 c::y ]
+			[ -4 1 5 c::r ]
+			[ -4 1 6 c::bob ]
+			[ -3 1 6 c::b ]
+			[ -2 1 6 c::y ]
+			[ -2 0 6 c::bob ]
+			[ -2 0 5 c::b ]
+			[ -2 0 4 c::y ]
+			[ -3 0 4 c::r ]
+			[ -4 0 4 c::bob ]
+			[ -4 0 5 c::b ]
+			[ -4 0 6 c::y ]
+			[ -3 0 6 c::r ]
+			[ -3 0 5 c::y ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x 2 y 4 z 5 }
+			{ t ls::sph a lsai::sticky x -3 y 3 z 5 }
+		]
+	}
+	//s11
+	{	z 7
+		expert 1200000
+		ambient RGB::grey1
+		skybox { name "savanna_dark" rot [ 0 -90 0 ] }
+		nodes [ sava_green sava_light3 sava_faketrees lionPath lionPath2 ]
+		sounds [
+			{ sInterval 0 n [ savanna_night ] }
+			{ sInterval 5 sRand 0.4 c { x 38.6224 y 0.0123669 z -30.5661 } i 0 o 20 n [ frogs_2 frogs_3 graycricket sleaprd-night ] }
+			{ sInterval 25 sRand 0.4 c { z 12 } i 10 o 25 n [ SandhillCrane2 WhoopingCrane2 WhoopingCrane1 ] }
+			{ sInterval 10 sRand 0.4 c { z 12 } i 3 o 20 n [ lion_2 lion_1 ] }
+		]
+		balls [
+			[ 0 3 5 c::k ]
+			[ 3 3 5 c::g ]
+			[ 3 2 5 c::k ]
+			[ 2 4 6 c::k ]
+			[ 3 4 6 c::y ]
+			[ -2 4 6 c::k ]
+			[ -3 4 6 c::y ]
+			[ -4 4 6 c::k ]
+			[ 3 4 5 c::k ]
+			[ 2 4 5 c::g ]
+			[ -2 4 5 c::g ]
+			[ -3 4 5 c::k ]
+			[ -4 4 5 c::g ]
+			[ -4 3 7 c::k ]
+			[ -3 3 7 c::g ]
+			[ -2 3 7 c::k ]
+			[ -1 3 7 c::g ]
+			[ 0 3 7 c::k ]
+			[ 1 3 7 c::g ]
+			[ 2 3 7 c::k ]
+			[ 3 3 7 c::g ]
+			[ 3 2 7 c::k ]
+			[ 2 2 7 c::g ]
+			[ 1 2 7 c::k ]
+			[ 0 2 7 c::g ]
+			[ -1 2 7 c::k ]
+			[ -2 2 7 c::g ]
+			[ -3 2 7 c::k ]
+			[ -4 2 7 c::g ]
+			[ -4 1 7 c::k ]
+			[ -3 1 7 c::g ]
+			[ -2 1 7 c::k ]
+			[ -1 1 7 c::g ]
+			[ 0 1 7 c::k ]
+			[ 1 1 7 c::g ]
+			[ 2 1 7 c::k ]
+			[ 3 1 7 c::g ]
+			[ 3 0 7 c::k ]
+			[ 2 0 7 c::g ]
+			[ 1 0 7 c::k ]
+			[ 0 0 7 c::g ]
+			[ -1 0 7 c::k ]
+			[ -2 0 7 c::g ]
+			[ -3 0 7 c::k ]
+			[ -4 0 7 c::g ]
+			[ -4 3 6 c::y ]
+			[ -3 3 6 c::k ]
+			[ -2 3 6 c::y ]
+			[ 2 3 6 c::y ]
+			[ 3 3 6 c::k ]
+			[ 2 2 6 c::k ]
+			[ 3 2 6 c::y ]
+			[ 3 1 6 c::k ]
+			[ 3 0 6 c::y ]
+			[ 2 0 6 c::k ]
+			[ 2 1 6 c::y ]
+			[ 1 1 6 c::k ]
+			[ 1 0 6 c::y ]
+			[ 0 0 6 c::k ]
+			[ 0 1 6 c::y ]
+			[ -1 1 6 c::k ]
+			[ -1 0 6 c::y ]
+			[ -2 0 6 c::k ]
+			[ -2 1 6 c::y ]
+			[ -2 2 6 c::k ]
+			[ -3 2 6 c::y ]
+			[ -3 1 6 c::k ]
+			[ -3 0 6 c::y ]
+			[ -4 0 6 c::k ]
+			[ -4 1 6 c::y ]
+			[ -4 2 6 c::k ]
+			[ -4 3 5 c::k ]
+			[ -3 3 5 c::g ]
+			[ -2 3 5 c::k ]
+			[ -2 2 5 c::g ]
+			[ -3 2 5 c::k ]
+			[ -4 2 5 c::g ]
+			[ -4 1 5 c::k ]
+			[ -3 1 5 c::g ]
+			[ -2 1 5 c::k ]
+			[ -1 1 5 c::g ]
+			[ 0 1 5 c::k ]
+			[ 1 1 5 c::g ]
+			[ 2 1 5 c::k ]
+			[ 3 1 5 c::g ]
+			[ 3 0 5 c::k ]
+			[ 2 0 5 c::g ]
+			[ 1 0 5 c::k ]
+			[ 0 0 5 c::g ]
+			[ -1 0 5 c::k ]
+			[ -2 0 5 c::g ]
+			[ -3 0 5 c::k ]
+			[ -4 0 5 c::g ]
+			[ -4 1 4 c::y ]
+			[ -3 1 4 c::k ]
+			[ -2 1 4 c::y ]
+			[ -1 1 4 c::k ]
+			[ 0 1 4 c::y ]
+			[ 1 1 4 c::k ]
+			[ 2 1 4 c::y ]
+			[ 3 1 4 c::k ]
+			[ 3 0 4 c::y ]
+			[ 2 0 4 c::k ]
+			[ 1 0 4 c::y ]
+			[ 0 0 4 c::k ]
+			[ -1 0 4 c::y ]
+			[ -2 0 4 c::k ]
+			[ -3 0 4 c::y ]
+			[ -4 0 4 c::k ]
+			[ 1 3 5 c::g ]
+			[ 0 4 5 c::g ]
+			[ -1 3 5 c::g ]
+			[ 0 2 5 c::g ]
+			[ 1 4 6 c::y ]
+			[ -1 4 6 c::y ]
+			[ 0 3 6 c::y ]
+			[ 1 2 6 c::y ]
+			[ -1 2 6 c::y ]
+			[ -1 2 4 c::y ]
+			[ 1 2 4 c::y ]
+			[ 0 3 4 c::y ]
+			[ 1 4 4 c::y ]
+			[ -1 4 4 c::y ]
+			[ 1 4 5 c::k ]
+			[ -1 4 5 c::k ]
+			[ 0 4 6 c::k ]
+			[ 0 4 4 c::k ]
+			[ 0 2 4 c::k ]
+			[ 1 2 5 c::k ]
+			[ -1 2 5 c::k ]
+			[ -1 3 4 c::k ]
+			[ 1 3 4 c::k ]
+			[ 1 3 6 c::k ]
+			[ -1 3 6 c::k ]
+			[ -2 2 4 c::k ]
+			[ -3 2 4 c::y ]
+			[ -4 2 4 c::k ]
+			[ 2 2 4 c::k ]
+			[ 3 2 4 c::y ]
+			[ 3 3 4 c::k ]
+			[ 2 3 4 c::y ]
+			[ -2 3 4 c::y ]
+			[ -3 3 4 c::k ]
+			[ -4 3 4 c::y ]
+			[ -4 4 4 c::k ]
+			[ -3 4 4 c::y ]
+			[ -2 4 4 c::k ]
+			[ 2 4 4 c::k ]
+			[ 3 4 4 c::y ]
+			[ 0 4 7 c::g ]
+			[ 1 4 7 c::k ]
+			[ 2 4 7 c::g ]
+			[ 3 4 7 c::k ]
+			[ -1 4 7 c::k ]
+			[ -2 4 7 c::g ]
+			[ -3 4 7 c::k ]
+			[ -4 4 7 c::g ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -2 }
+			{ t ls::sph a lsai::sticky x 0 y 2 z 6 }
+		]
+	}
+]
+
+
+// REEF
+LevelStruct reefBackWall { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -3 }
+array of Level reef [
+	//r0
+	{
+		z 7
+		expert 40000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.4 b 0.55 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandBadReef waveCausticsReef ]
+		sounds [ { sInterval 0 n [ coral_reef ] } ]
+		hint r0
+		balls [
+			[ 3 6 7 c::r ]
+			[ 3 5 7 c::b ]
+			[ 2 5 7 c::g ]
+			[ 2 6 7 c::b ]
+			[ -3 0 7 c::r ]
+			[ -2 1 7 c::g ]
+			[ -2 0 7 c::b ]
+			[ -3 1 7 c::b ]
+		]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 3 y 0 z 4 w 2 h 7 d 1 }
+			{ t ls::cube a lsai::bounce l false x -2 y 0 z 4 w 2 h 7 d 1 }
+		]
+	}
+	//r1
+	{
+		z 10
+		expert 25000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.4 b 0.55 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandBadReef waveCausticsReef ]
+		sounds [ { sInterval 0 n [ coral_reef ] } ]
+		balls [
+			[ 0 6 10 c::m ]
+			[ 0 5 10 c::g ]
+			[ 0 4 10 c::m ]
+			[ 0 0 10 c::b ]
+			[ 0 1 10 c::g ]
+			[ 0 2 10 c::b ]
+			[ 0 3 10 c::g ]
+		]
+		struct [ {} reefBackWall
+			{ t ls::cyl a lsai::bounce l false x 0 y 0 z 8 w 2 h 7 }
+			{ t ls::cube a lsai::bounce l false x 3 y 0 z 4 w 2 d 1 h 7 }
+			{ t ls::cube a lsai::bounce l false x -2 y 0 z 4 w 2 d 1 h 7 }
+		]
+	}
+	//r2
+	{
+		z 5
+		expert 28000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.2 b 0.275 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF2" }
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 0 n [ unwaves_crash_56 unwaves_crash_4 unwaves_crash_3 unwaves_crash_1 ] }
+		]
+		nodes [ sandBadReef ]
+		balls [
+			[ -1 4 4 c::g ]
+			[ -1 4 5 c::m ]
+			[ 1 2 5 c::m ]
+			[ 1 2 4 c::g ]
+			[ -1 3 4 c::b ]
+			[ 1 3 4 c::b ]
+			[ 0 2 4 c::b ]
+			[ 0 4 4 c::b ]
+			[ 0 4 5 c::r ]
+			[ 1 3 5 c::r ]
+			[ -1 3 5 c::r ]
+			[ 0 2 5 c::r ]
+			[ 0 3 5 c::b ]
+			[ 0 3 4 c::g ]
+			[ 1 4 4 c::g ]
+			[ -1 2 4 c::g ]
+			[ 1 4 5 c::m ]
+			[ -1 2 5 c::m ]
+		]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 1 y 2 z 3 w 3 h 3 d 1 }
+			{ t ls::sph a lsai::bounce l false x 6 y 2 z 2 w 1 h 1 d 1 v false } // lose early, no reason not to
+		]
+	}
+	//r3
+	{
+		z 9
+		expert 70000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.2 b 0.275 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF2" }
+		nodes [ sandNewReef newPlantsReef ]
+		changes [ { pos { x 2 y 0 z 1 } scale { y 0.7 w 8 } } ]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 0 n [ unwaves_crash_56 unwaves_crash_4 unwaves_crash_3 unwaves_crash_1 ] }
+		]
+		balls [
+			[ 3 0 9 c::b ]
+			[ 3 1 9 c::b ]
+			[ 3 2 9 c::b ]
+			[ 2 2 9 c::b ]
+			[ 1 2 9 c::b ]
+			[ 1 1 9 c::b ]
+			[ 1 0 9 c::b ]
+			[ 2 0 9 c::b ]
+			[ -1 4 9 c::m ]
+			[ -1 5 9 c::m ]
+			[ -1 6 9 c::m ]
+			[ -2 6 9 c::m ]
+			[ -3 6 9 c::m ]
+			[ -3 5 9 c::m ]
+			[ -3 4 9 c::m ]
+			[ -2 4 9 c::m ]
+			[ 1 4 9 c::r ]
+			[ 0 4 9 c::r ]
+			[ 1 3 9 c::r ]
+			[ 0 2 9 c::r ]
+			[ -1 2 9 c::r ]
+			[ -1 3 9 c::r ]
+		]
+		incoming [ c::b c::r c::r c::m ]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 3 y 0 z 3 w 7 h 3 d 1 }
+			{ t ls::cube a lsai::bounce l false x 3 y 3 z 3 w 4 h 4 d 1 }
+			{ t ls::cube a lsai::bounce l false x 0 y 0 z 7 w 4 h 7 d 1 }
+			{ t ls::sph a lsai::bounce l false x 6 y 2 z 2 w 1 h 1 d 1 v false } // lose early, no reason not to
+		]
+	}
+	//r4
+	{
+		z 7
+		expert 35000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.2 b 0.275 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF2" }
+		nodes [ sandNewReef newPlantsReef unanimAllReef ]
+		changes [
+			{ pos { x -7 y 0 z -28 } scale { y 0.7 w 4 } rnd 0.5 rot [ 30 45 0 ] }
+			{ pos { x 14 y 0 z -3 } scale { y 0.7 w 6 } rnd 0.5 }
+			{ pos { x -8 y 0 z 0 } scale { y 0.7 w 6 } rnd 0.5 }
+		]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 0 n [ unwaves_crash_56 unwaves_crash_4 unwaves_crash_3 unwaves_crash_1 ] }
+		]
+		particles [
+			{ name "Reef/Bubbles" pos { x 7.1 y 0.8 z -4 } }
+			{ name "Reef/Bubbles" pos { x 7.35 y 0.7 z -3.9 } }
+			{ name "Reef/Bubbles" pos { x 12.86 y 4 z -0.78 } }
+			{ name "Reef/Bubbles" pos { x 14.3 y 4.7 z 5 } }
+			{ name "Reef/Bubbles" pos { x 9.7 y 2.2 z -9.8 } }
+			{ name "Reef/Bubbles" pos { x 2.8 y 1.35 z -20.2 } }
+			{ name "Reef/Bubbles" pos { x 2.75 y 1.35 z -20.6 } }
+			{ name "Reef/Bubbles" pos { x -8.1 y 1.78 z -3.6 } }
+			{ name "Reef/Bubbles" pos { x -9.87 y 4.9 z 5.75 } }
+		]
+		balls [
+			[ 3 0 7 c::b ]
+			[ 3 6 7 c::m ]
+			[ -3 0 7 c::b ]
+			[ -3 6 7 c::m ]
+			[ -2 6 7 c::c ]
+			[ -2 5 7 c::c ]
+			[ -3 5 7 c::c ]
+			[ -3 1 7 c::g ]
+			[ -2 1 7 c::g ]
+			[ -2 0 7 c::g ]
+			[ 1 2 7 c::w ]
+			[ -1 4 7 c::w ]
+			[ 1 4 7 c::w ]
+			[ -1 2 7 c::w ]
+			[ -2 2 7 c::b ]
+			[ -3 2 7 c::b ]
+			[ -3 3 7 c::b ]
+			[ -3 4 7 c::b ]
+			[ -2 4 7 c::b ]
+			[ 2 6 7 c::c ]
+			[ 3 5 7 c::c ]
+			[ 2 5 7 c::c ]
+			[ 0 3 7 c::w ]
+			[ 1 6 7 c::m ]
+			[ 1 5 7 c::m ]
+			[ -1 6 7 c::m ]
+			[ -1 5 7 c::m ]
+			[ 0 6 7 c::k ]
+			[ 0 5 7 c::k ]
+			[ 2 0 7 c::g ]
+			[ 2 1 7 c::g ]
+			[ 3 1 7 c::g ]
+			[ 1 1 7 c::k ]
+			[ 1 0 7 c::k ]
+			[ -1 0 7 c::k ]
+			[ -1 1 7 c::k ]
+			[ 0 1 7 c::m ]
+			[ 0 0 7 c::m ]
+			[ 3 2 7 c::b ]
+			[ 2 2 7 c::b ]
+			[ 2 3 7 c::b ]
+			[ 2 4 7 c::b ]
+			[ 3 4 7 c::b ]
+			[ 3 3 7 c::b ]
+			[ -2 3 7 c::b ]
+			[ 1 3 7 c::r ]
+			[ 0 2 7 c::r ]
+			[ -1 3 7 c::r ]
+			[ 0 4 7 c::r ]
+		]
+		struct [ {} reefBackWall
+			{ t ls::sph a lsai::bounce l false x -2 y 1 z 5 w 2 }
+			{ t ls::sph a lsai::bounce l false x 2 y 1 z 5 w 2 }
+			{ t ls::sph a lsai::bounce l false x 0 y 3 z 5 w 2 }
+			{ t ls::sph a lsai::bounce l false x -2 y 5 z 5 w 2 }
+			{ t ls::sph a lsai::bounce l false x 2 y 5 z 5 w 2 }
+		]
+	}
+	//r5
+	{
+		z 8
+		expert 180000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.2 b 0.275 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandNewReef newPlantsReef waveCausticsReef2 unanimAllReef Run1Node RunBNode ]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 10 sRand 0.5 i 3 o 10 n [ bubbles1 bubbles2 bubbles3 ] }
+		]
+		particles [
+			{ name "Reef/Bubbles" pos { x 7.1 y 0.8 z -4 } }
+			{ name "Reef/Bubbles" pos { x 7.35 y 0.7 z -3.9 } }
+			{ name "Reef/Bubbles" pos { x 12.86 y 4 z -0.78 } }
+			{ name "Reef/Bubbles" pos { x 14.3 y 4.7 z 5 } }
+			{ name "Reef/Bubbles" pos { x 9.7 y 2.2 z -9.8 } }
+			{ name "Reef/Bubbles" pos { x 2.8 y 1.35 z -20.2 } }
+			{ name "Reef/Bubbles" pos { x 2.75 y 1.35 z -20.6 } }
+			{ name "Reef/Bubbles" pos { x -8.1 y 1.78 z -3.6 } }
+			{ name "Reef/Bubbles" pos { x -9.87 y 4.9 z 5.75 } }
+		]
+		balls [
+			[ 1 1 6 c::m ]
+			[ -1 1 6 c::m ]
+			[ -2 1 6 c::b ]
+			[ -2 1 7 c::m ]
+			[ -1 1 7 c::g ] // WAS : c::y !!!
+			[ 1 0 7 c::g ]
+			[ 2 1 6 c::b ]
+			[ 1 1 7 c::b ]
+			[ 3 1 6 c::m ]
+			[ -3 1 6 c::m ]
+			[ 3 0 5 c::m ]
+			[ 2 0 5 c::b ]
+			[ 1 0 5 c::m ]
+			[ 0 0 5 c::b ]
+			[ -1 0 5 c::m ]
+			[ -2 0 5 c::b ]
+			[ -3 0 5 c::m ]
+			[ -3 1 5 c::b ]
+			[ -2 1 5 c::m ]
+			[ -1 1 5 c::b ]
+			[ 0 1 5 c::m ]
+			[ 1 1 5 c::b ]
+			[ 2 1 5 c::m ]
+			[ 3 1 5 c::b ]
+			[ 3 2 5 c::m ]
+			[ 2 2 5 c::b ]
+			[ 1 2 5 c::m ]
+			[ 0 2 5 c::b ]
+			[ -1 2 5 c::m ]
+			[ -2 2 5 c::b ]
+			[ -3 2 5 c::m ]
+			[ -3 2 8 c::b ]
+			[ -2 2 8 c::m ]
+			[ -1 2 8 c::b ]
+			[ 0 2 8 c::m ]
+			[ 1 2 8 c::b ]
+			[ 2 2 8 c::m ]
+			[ 3 2 8 c::b ]
+			[ 3 1 8 c::m ]
+			[ 2 1 8 c::b ]
+			[ 1 1 8 c::m ]
+			[ 0 1 8 c::b ]
+			[ -1 1 8 c::m ]
+			[ -2 1 8 c::b ]
+			[ -3 1 8 c::m ]
+			[ -3 0 8 c::b ]
+			[ -2 0 8 c::m ]
+			[ -1 0 8 c::b ]
+			[ 0 0 8 c::m ]
+			[ 1 0 8 c::b ]
+			[ 2 0 8 c::m ]
+			[ 3 0 8 c::b ]
+			[ -3 2 7 c::m ]
+			[ -2 2 7 c::b ]
+			[ -1 2 7 c::m ]
+			[ 0 2 7 c::b ]
+			[ 1 2 7 c::m ]
+			[ 2 2 7 c::b ]
+			[ 3 2 7 c::m ]
+			[ 3 1 7 c::b ]
+			[ 2 1 7 c::m ]
+			[ 0 1 7 c::m ]
+			[ -3 1 7 c::b ]
+			[ -3 0 7 c::m ]
+			[ -2 0 7 c::b ]
+			[ -1 0 7 c::m ]
+			[ 0 0 7 c::b ]
+			[ 2 0 7 c::b ]
+			[ 3 0 7 c::m ]
+			[ 3 0 6 c::b ]
+			[ 3 2 6 c::b ]
+			[ -3 2 6 c::b ]
+			[ -2 2 6 c::m ]
+			[ -1 2 6 c::b ]
+			[ 0 2 6 c::m ]
+			[ 1 2 6 c::b ]
+			[ 2 2 6 c::m ]
+			[ 0 1 6 c::b ]
+			[ -3 0 6 c::b ]
+			[ -2 0 6 c::m ]
+			[ -1 0 6 c::b ]
+			[ 0 0 6 c::m ]
+			[ 1 0 6 c::b ]
+			[ 2 0 6 c::m ]
+		]
+		// incoming [ c::b c::m ]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 3 y 0 z 4 w 7 h 3 d 1 }
+		]
+	}
+	//r6
+	{
+		z 6
+		expert 10000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.2 b 0.275 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandNewReef newPlantsReef waveCausticsReef2 unanimAllReef Run1Node RunCNode RunFNode RunBNode RunBNode ]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 10 sRand 0.5 i 3 o 10 n [ bubbles1 bubbles2 bubbles3 ] }
+		]
+		particles [
+			{ name "Reef/Bubbles" pos { x 7.1 y 0.8 z -4 } }
+			{ name "Reef/Bubbles" pos { x 7.35 y 0.7 z -3.9 } }
+			{ name "Reef/Bubbles" pos { x 12.86 y 4 z -0.78 } }
+			{ name "Reef/Bubbles" pos { x 14.3 y 4.7 z 5 } }
+			{ name "Reef/Bubbles" pos { x 9.7 y 2.2 z -9.8 } }
+			{ name "Reef/Bubbles" pos { x 2.8 y 1.35 z -20.2 } }
+			{ name "Reef/Bubbles" pos { x 2.75 y 1.35 z -20.6 } }
+			{ name "Reef/Bubbles" pos { x -8.1 y 1.78 z -3.6 } }
+			{ name "Reef/Bubbles" pos { x -9.87 y 4.9 z 5.75 } }
+		]
+		balls [
+			[ -2 2 6 c::m ]
+			[ -2 5 6 c::m ]
+			[ -1 2 6 c::b ]
+			[ -1 1 6 c::g ]
+			[ -1 0 6 c::r ]
+			[ -1 3 6 c::r ]
+			[ -1 4 6 c::g ]
+			[ -1 5 6 c::b ]
+			[ -1 6 6 c::r ]
+			[ -2 6 6 c::g ]
+			[ -2 4 6 c::b ]
+			[ -2 3 6 c::g ]
+			[ -2 1 6 c::b ]
+			[ -2 0 6 c::g ]
+		]
+		struct [ {} reefBackWall
+			{ t ls::cyl a lsai::bounce l false x 3 y 0 z 6 w 3 h 7 }
+			{ t ls::cube a lsai::bounce l false x 1 y 0 z 3 w 5 h 7 d 1 }
+			{ t ls::sph a lsai::bounce l false x 6 y 2 z 2 w 1 h 1 d 1 v false } // lose early, no reason not to
+		]
+	}
+	//r7
+	{
+		z 6
+		expert 90000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.2 b 0.275 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandNewReef newPlantsReef waveCausticsReef2 unanimAllReef Run1Node RunCNode RunFNode RunDNode RunENode RunGNode RunBNode RunBNode ]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 10 sRand 0.5 i 3 o 10 n [ bubbles1 bubbles2 bubbles3 ] }
+			{ sInterval 4 sRand 0.5 i 3 o 10 n [ dolphin_1 dolphin_2 whale1 whale2 whale3 ] }
+		]
+		particles [
+			{ name "Reef/Bubbles" pos { x 7.1 y 0.8 z -4 } }
+			{ name "Reef/Bubbles" pos { x 7.35 y 0.7 z -3.9 } }
+			{ name "Reef/Bubbles" pos { x 12.86 y 4 z -0.78 } }
+			{ name "Reef/Bubbles" pos { x 14.3 y 4.7 z 5 } }
+			{ name "Reef/Bubbles" pos { x 9.7 y 2.2 z -9.8 } }
+			{ name "Reef/Bubbles" pos { x 2.8 y 1.35 z -20.2 } }
+			{ name "Reef/Bubbles" pos { x 2.75 y 1.35 z -20.6 } }
+			{ name "Reef/Bubbles" pos { x -8.1 y 1.78 z -3.6 } }
+			{ name "Reef/Bubbles" pos { x -9.87 y 4.9 z 5.75 } }
+		]
+		balls [
+			[ -3 6 3 c::b ]
+			[ -3 5 3 c::b ]
+			[ -3 4 3 c::b ]
+			[ -2 4 3 c::g ]
+			[ -2 4 4 c::g ]
+			[ -2 4 5 c::g ]
+			[ -2 4 6 c::g ]
+			[ -2 5 6 c::g ]
+			[ -2 5 5 c::g ]
+			[ -2 5 4 c::g ]
+			[ -2 5 3 c::g ]
+			[ -2 6 3 c::g ]
+			[ -2 6 4 c::g ]
+			[ -2 6 5 c::g ]
+			[ -2 6 6 c::g ]
+			[ -1 6 6 c::c ]
+			[ -1 6 5 c::c ]
+			[ -1 6 4 c::c ]
+			[ -1 6 3 c::c ]
+			[ -1 5 3 c::c ]
+			[ -1 5 4 c::c ]
+			[ -1 5 5 c::c ]
+			[ -1 5 6 c::c ]
+			[ -1 4 6 c::c ]
+			[ -1 4 5 c::c ]
+			[ -1 4 4 c::c ]
+			[ -1 4 3 c::c ]
+			[ -3 5 6 c::b ]
+			[ -3 4 6 c::b ]
+			[ -3 4 5 c::b ]
+			[ -3 4 4 c::b ]
+			[ -3 5 4 c::b ]
+			[ -3 5 5 c::b ]
+			[ -3 6 6 c::b ]
+			[ -3 6 5 c::b ]
+			[ -3 6 4 c::b ]
+		]
+		incoming [ c::c c::g c::b ]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 0 y 3 z 2 w 4 h 1 d 4 }
+			{ t ls::cube a lsai::bounce l false x 0 y 4 z 2 w 4 h 3 d 1 }
+			{ t ls::cube a lsai::bounce l false x 3 y 0 z 2 w 3 h 7 d 1 }
+			{ t ls::cube a lsai::bounce l false x -1 y 0 z 6 w 3 h 4 d 1 }
+			{ t ls::cyl a lsai::bounce l false x 0 y 0 z 6 w 1 h 4 }
+		]
+	}
+	//r8
+	{
+		z 11
+		expert 600000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.2 b 0.275 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandNewReef newPlantsReef waveCausticsReef2 unanimAllReef Run1Node RunCNode RunFNode RunDNode RunENode RunGNode AllSardela RunBNode RunBNode ]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 10 sRand 0.5 i 3 o 10 n [ bubbles1 bubbles2 bubbles3 ] }
+			{ sInterval 4 sRand 0.5 i 3 o 10 n [ dolphin_1 dolphin_2 whale1 whale2 whale3 ] }
+		]
+		particles [
+			{ name "Reef/Bubbles" pos { x 7.1 y 0.8 z -4 } }
+			{ name "Reef/Bubbles" pos { x 7.35 y 0.7 z -3.9 } }
+			{ name "Reef/Bubbles" pos { x 12.86 y 4 z -0.78 } }
+			{ name "Reef/Bubbles" pos { x 14.3 y 4.7 z 5 } }
+			{ name "Reef/Bubbles" pos { x 9.7 y 2.2 z -9.8 } }
+			{ name "Reef/Bubbles" pos { x 2.8 y 1.35 z -20.2 } }
+			{ name "Reef/Bubbles" pos { x 2.75 y 1.35 z -20.6 } }
+			{ name "Reef/Bubbles" pos { x -8.1 y 1.78 z -3.6 } }
+			{ name "Reef/Bubbles" pos { x -9.87 y 4.9 z 5.75 } }
+		]
+		incoming [ c::m c::b c::y c::m c::b c::y ]
+		balls [
+			[ 3 0 4 c::m ]
+			[ 2 0 4 c::b ]
+			[ 1 0 4 c::y ]
+			[ 0 0 4 c::m ]
+			[ -1 0 4 c::b ]
+			[ -2 0 4 c::y ]
+			[ -3 0 4 c::m ]
+			[ 3 1 4 c::b ]
+			[ 2 1 4 c::y ]
+			[ 1 1 4 c::m ]
+			[ 0 1 4 c::b ]
+			[ -1 1 4 c::y ]
+			[ -2 1 4 c::m ]
+			[ -3 1 4 c::b ]
+			[ 3 2 4 c::y ]
+			[ 2 2 4 c::m ]
+			[ 1 2 4 c::b ]
+			[ 0 2 4 c::y ]
+			[ -1 2 4 c::m ]
+			[ -2 2 4 c::b ]
+			[ -3 2 4 c::y ]
+			[ 3 3 4 c::m ]
+			[ 2 3 4 c::b ]
+			[ 1 3 4 c::y ]
+			[ 0 3 4 c::m ]
+			[ -1 3 4 c::b ]
+			[ -2 3 4 c::y ]
+			[ -3 3 4 c::m ]
+			[ -3 4 4 c::b ]
+			[ -2 4 4 c::m ]
+			[ -1 4 4 c::y ]
+			[ 0 4 4 c::b ]
+			[ 1 4 4 c::m ]
+			[ 2 4 4 c::y ]
+			[ 3 4 4 c::b ]
+			[ 3 5 4 c::y ]
+			[ 2 5 4 c::m ]
+			[ 1 5 4 c::b ]
+			[ 0 5 4 c::y ]
+			[ -1 5 4 c::m ]
+			[ -2 5 4 c::b ]
+			[ -3 5 4 c::y ]
+			[ -3 6 4 c::m ]
+			[ -2 6 4 c::y ]
+			[ -1 6 4 c::b ]
+			[ 0 6 4 c::m ]
+			[ 1 6 4 c::y ]
+			[ 2 6 4 c::b ]
+			[ 3 6 4 c::m ]
+			[ -2 6 5 c::m ]
+			[ -1 6 5 c::y ]
+			[ -3 6 5 c::b ]
+			[ 0 6 5 c::b ]
+			[ 1 6 5 c::m ]
+			[ 2 6 5 c::y ]
+			[ 3 6 5 c::b ]
+			[ 3 5 5 c::m ]
+			[ 2 5 5 c::b ]
+			[ 1 5 5 c::y ]
+			[ 0 5 5 c::m ]
+			[ -1 5 5 c::b ]
+			[ -2 5 5 c::y ]
+			[ -3 5 5 c::m ]
+			[ 3 4 5 c::y ]
+			[ 2 4 5 c::m ]
+			[ 1 4 5 c::b ]
+			[ 0 4 5 c::y ]
+			[ -1 4 5 c::m ]
+			[ -2 4 5 c::b ]
+			[ -3 4 5 c::y ]
+			[ 3 3 5 c::b ]
+			[ 2 3 5 c::y ]
+			[ 1 3 5 c::m ]
+			[ 0 3 5 c::b ]
+			[ -1 3 5 c::y ]
+			[ -2 3 5 c::m ]
+			[ -3 3 5 c::b ]
+			[ -3 2 5 c::m ]
+			[ -2 2 5 c::y ]
+			[ -1 2 5 c::b ]
+			[ 0 2 5 c::m ]
+			[ 1 2 5 c::y ]
+			[ 2 2 5 c::b ]
+			[ 3 2 5 c::m ]
+			[ 3 1 5 c::y ]
+			[ 2 1 5 c::m ]
+			[ 1 1 5 c::b ]
+			[ 0 1 5 c::y ]
+			[ -1 1 5 c::m ]
+			[ -2 1 5 c::b ]
+			[ -3 1 5 c::y ]
+			[ -3 0 5 c::b ]
+			[ -2 0 5 c::m ]
+			[ -1 0 5 c::y ]
+			[ 0 0 5 c::b ]
+			[ 1 0 5 c::m ]
+			[ 2 0 5 c::y ]
+			[ 3 0 5 c::b ]
+			[ 3 0 6 c::bob ]
+			[ 3 1 6 c::bob ]
+			[ 3 2 6 c::bob ]
+			[ 3 3 6 c::bob ]
+			[ 3 4 6 c::bob ]
+			[ 3 5 6 c::bob ]
+			[ 3 6 6 c::bob ]
+			[ 3 6 7 c::r ]
+			[ 3 6 8 c::r ]
+			[ 3 6 9 c::r ]
+			[ 3 6 10 c::r ]
+			[ 3 6 11 c::r ]
+			[ 3 4 11 c::b ]
+			[ 3 4 10 c::b ]
+			[ 3 4 9 c::b ]
+			[ 3 4 8 c::b ]
+			[ 3 4 7 c::b ]
+			[ 3 2 7 c::y ]
+			[ 3 2 8 c::y ]
+			[ 3 2 9 c::y ]
+			[ 3 2 10 c::y ]
+			[ 3 2 11 c::y ]
+			[ 3 0 11 c::m ]
+			[ 3 0 10 c::m ]
+			[ 3 0 9 c::m ]
+			[ 3 0 8 c::m ]
+			[ 3 0 7 c::m ]
+			[ 1 1 11 c::r ]
+			[ 1 1 10 c::r ]
+			[ 1 1 9 c::r ]
+			[ 1 1 8 c::r ]
+			[ 1 1 7 c::r ]
+			[ 1 3 11 c::m ]
+			[ 1 3 10 c::m ]
+			[ 1 3 9 c::m ]
+			[ 1 3 8 c::m ]
+			[ 1 3 7 c::m ]
+			[ 1 5 11 c::y ]
+			[ 1 5 10 c::y ]
+			[ 1 5 9 c::y ]
+			[ 1 5 8 c::y ]
+			[ 1 5 7 c::y ]
+			[ -1 4 11 c::r ]
+			[ -1 4 10 c::r ]
+			[ -1 4 9 c::r ]
+			[ -1 4 8 c::r ]
+			[ -1 4 7 c::r ]
+			[ -1 2 11 c::b ]
+			[ -1 2 10 c::b ]
+			[ -1 2 9 c::b ]
+			[ -1 2 8 c::b ]
+			[ -1 2 7 c::b ]
+		]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 2 y 0 z 6 w 4 h 7 d 1 }
+		]
+	}
+	//r9
+	{
+		z 11
+		expert 70000
+		ambient { r 0.2 g 0.4 b 0.5 } background { r 0 g 0.2 b 0.275 } fog { set true exp 0.07 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandNewReef newPlantsReef waveCausticsReef2 unanimAllReef Run1Node RunCNode RunFNode RunDNode RunENode RunGNode AllSardela RunBNode RunBNode ]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 10 sRand 0.5 i 3 o 10 n [ bubbles1 bubbles2 bubbles3 ] }
+			{ sInterval 4 sRand 0.5 i 3 o 10 n [ dolphin_1 dolphin_2 whale1 whale2 whale3 ] }
+		]
+		particles [
+			{ name "Reef/Bubbles" pos { x 7.1 y 0.8 z -4 } }
+			{ name "Reef/Bubbles" pos { x 7.35 y 0.7 z -3.9 } }
+			{ name "Reef/Bubbles" pos { x 12.86 y 4 z -0.78 } }
+			{ name "Reef/Bubbles" pos { x 14.3 y 4.7 z 5 } }
+			{ name "Reef/Bubbles" pos { x 9.7 y 2.2 z -9.8 } }
+			{ name "Reef/Bubbles" pos { x 2.8 y 1.35 z -20.2 } }
+			{ name "Reef/Bubbles" pos { x 2.75 y 1.35 z -20.6 } }
+			{ name "Reef/Bubbles" pos { x -8.1 y 1.78 z -3.6 } }
+			{ name "Reef/Bubbles" pos { x -9.87 y 4.9 z 5.75 } }
+		]
+		balls [
+			[ 3 6 11 c::g ]
+			[ 2 5 11 c::m ]
+			[ 2 4 11 c::m ]
+			[ 2 3 11 c::g ]
+			[ 2 1 11 c::m ]
+			[ 3 1 11 c::g ]
+			[ 3 3 11 c::m ]
+			[ 3 5 11 c::g ]
+			[ 3 0 11 c::m ]
+			[ 3 4 11 c::m ]
+			[ 3 2 11 c::g ]
+			[ 2 2 11 c::g ]
+			[ 2 6 11 c::g ]
+		]
+		// SUPER-PALOUKI !!!
+		// balls [
+			// [ 2 5 11 c::m ]
+			// [ 2 4 11 c::y ]
+			// [ 2 3 11 c::c ]
+			// [ 2 1 11 c::m ]
+			// [ 3 1 11 c::g ]
+			// [ 3 3 11 c::y ]
+			// [ 3 5 11 c::g ]
+			// [ 3 0 11 c::m ]
+			// [ 3 4 11 c::m ]
+			// [ 3 6 11 c::c ]
+			// [ 3 2 11 c::c ]
+			// [ 2 2 11 c::g ]
+			// [ 2 0 11 c::y ]
+			// [ 2 6 11 c::g ]
+		// ]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 2 y 0 z 5 w 3 h 7 d 1 rot [ 0 45 0 ] }
+			{ t ls::cube a lsai::bounce l false x -2 y 0 z 3 w 2 h 7 d 1 rot [ 0 45 0 ] }
+			{ t ls::cube a lsai::bounce l false x -2 y 0 z 9 w 1 h 7 d 3 rot [ 0 45 0 ] }
+			{ t ls::cube a lsai::bounce l false x 2 y 0 z 2 w 1 h 7 d 1 rot [ 0 25 0 ] }
+		]
+	}
+	//r10
+	{
+		z 8
+		expert 15000
+		ambient { r 0.1 g 0.2 b 0.25 } background { r 0 g 0.05 b 0.07 } fog { set true exp 0.10 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandNewReef newPlantsReef waveCausticsReef unanimAllReef RunHNode RunHNode ]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 20 sRand 0.5 i 3 o 20 n [ bubbles1 bubbles2 bubbles3 ] }
+		]
+		particles [
+			{ name "Reef/Bubbles" pos { x 7.1 y 0.8 z -4 } }
+			{ name "Reef/Bubbles" pos { x 7.35 y 0.7 z -3.9 } }
+			{ name "Reef/Bubbles" pos { x 12.86 y 4 z -0.78 } }
+			{ name "Reef/Bubbles" pos { x 14.3 y 4.7 z 5 } }
+			{ name "Reef/Bubbles" pos { x 9.7 y 2.2 z -9.8 } }
+			{ name "Reef/Bubbles" pos { x 2.8 y 1.35 z -20.2 } }
+			{ name "Reef/Bubbles" pos { x 2.75 y 1.35 z -20.6 } }
+			{ name "Reef/Bubbles" pos { x -8.1 y 1.78 z -3.6 } }
+			{ name "Reef/Bubbles" pos { x -9.87 y 4.9 z 5.75 } }
+			
+			{ name "Reef/Jellys" pos {  x 2 y 0.02 z 1 } shadows false }
+		]
+		balls [
+			[ 1 3 8 c::g ]
+			[ -2 5 5 c::y ]
+			[ -2 1 5 c::y ]
+			[ -3 1 6 c::y ]
+			[ -3 5 6 c::y ]
+			[ 3 5 6 c::y ]
+			[ 3 1 6 c::y ]
+			[ 2 1 7 c::y ]
+			[ 2 5 7 c::y ]
+			[ -3 0 8 c::c ]
+			[ -3 2 8 c::m ]
+			[ -3 4 8 c::c ]
+			[ -3 6 8 c::m ]
+			[ -3 6 7 c::y ]
+			[ -3 5 7 c::g ]
+			[ -3 4 7 c::y ]
+			[ -3 3 7 c::g ]
+			[ -3 2 7 c::y ]
+			[ -3 1 7 c::g ]
+			[ -3 0 7 c::y ]
+			[ -2 6 6 c::c ]
+			[ -2 5 6 c::m ]
+			[ -2 4 6 c::c ]
+			[ -2 3 6 c::m ]
+			[ -2 2 6 c::c ]
+			[ -2 1 6 c::m ]
+			[ -2 0 6 c::c ]
+			[ -3 0 5 c::m ]
+			[ -3 1 5 c::c ]
+			[ -3 2 5 c::m ]
+			[ -3 3 5 c::c ]
+			[ -3 4 5 c::m ]
+			[ -3 5 5 c::c ]
+			[ -3 6 5 c::m ]
+			[ -1 0 5 c::y ]
+			[ -1 1 5 c::g ]
+			[ -1 2 5 c::y ]
+			[ -1 3 5 c::g ]
+			[ -1 4 5 c::y ]
+			[ -1 5 5 c::g ]
+			[ -1 6 5 c::y ]
+			[ 3 6 5 c::m ]
+			[ 3 5 5 c::c ]
+			[ 3 4 5 c::m ]
+			[ 3 3 5 c::c ]
+			[ 3 2 5 c::m ]
+			[ 3 1 5 c::c ]
+			[ 3 0 5 c::m ]
+			[ 1 1 7 c::m ]
+			[ 1 0 7 c::c ]
+			[ 1 2 7 c::c ]
+			[ 1 3 7 c::m ]
+			[ 1 4 7 c::c ]
+			[ 1 5 7 c::m ]
+			[ 1 6 7 c::c ]
+			[ 2 0 6 c::y ]
+			[ 2 1 6 c::g ]
+			[ 2 2 6 c::y ]
+			[ 2 3 6 c::g ]
+			[ 2 4 6 c::y ]
+			[ 2 5 6 c::g ]
+			[ 2 6 6 c::y ]
+		]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 1 y 0 z 5 w 5 h 7 d 1 rot [ 0 45 0 ] }
+		]
+	}
+	//r11
+	{
+		z 11
+		expert 47000
+		ambient { r 0.1 g 0.2 b 0.25 } background { r 0 g 0.05 b 0.07 } fog { set true exp 0.10 } plane { mat "SEA_SURFACE_REEF" }
+		nodes [ sandNewReef newPlantsReef waveCausticsReef unanimAllReef RunHNode RunHNode ]
+		sounds [
+			{ sInterval 0 n [ coral_reef ] }
+			{ sInterval 20 sRand 0.5 i 3 o 20 n [ bubbles1 bubbles2 bubbles3 ] }
+		]
+		particles [
+			{ name "Reef/Bubbles" pos { x 7.1 y 0.8 z -4 } }
+			{ name "Reef/Bubbles" pos { x 7.35 y 0.7 z -3.9 } }
+			{ name "Reef/Bubbles" pos { x 12.86 y 4 z -0.78 } }
+			{ name "Reef/Bubbles" pos { x 14.3 y 4.7 z 5 } }
+			{ name "Reef/Bubbles" pos { x 9.7 y 2.2 z -9.8 } }
+			{ name "Reef/Bubbles" pos { x 2.8 y 1.35 z -20.2 } }
+			{ name "Reef/Bubbles" pos { x 2.75 y 1.35 z -20.6 } }
+			{ name "Reef/Bubbles" pos { x -8.1 y 1.78 z -3.6 } }
+			{ name "Reef/Bubbles" pos { x -9.87 y 4.9 z 5.75 } }
+			
+			{ name "Reef/Jellys" pos {  x 2 y 0.02 z 1 } ff 3 }
+		]
+		balls [
+			[ 3 3 11 c::g ]
+			[ -1 3 11 c::g ]
+			[ 1 4 11 c::g ]
+			[ -3 4 11 c::g ]
+			[ 3 4 11 c::m ]
+			[ 1 5 11 c::m ]
+			[ -1 4 11 c::m ]
+			[ -3 5 11 c::m ]
+			[ 3 5 11 c::c ]
+			[ 1 6 11 c::c ]
+			[ -1 5 11 c::c ]
+			[ -3 6 11 c::c ]
+			[ -3 3 11 c::g ]
+			[ -1 6 11 c::c ]
+			[ 1 3 11 c::g ]
+			[ 3 6 11 c::c ]
+		]
+		struct [ {} reefBackWall
+			{ t ls::cube a lsai::bounce l false x 3 y 4 z 5 w 7 h 3 d 1 rot [ -45 0 0 ] }
+			{ t ls::cube a lsai::bounce l false x 3 y 0 z 3 w 7 h 2 d 1 rot [ -45 0 0 ] }
+			{ t ls::cube a lsai::bounce l false x 3 y -1 z 8 w 7 h 1 d 5 rot [ -45 0 0 ] }
+			{ t ls::cube a lsai::bounce l false x 3 y 5 z 2 w 7 h 1 d 1 rot [ -25 0 0 ] }
+		]
+	}
+]
+
+
+// BATCAVE
+array of Level batcave [
+	//b0
+	{	z 8
+		expert 130000
+		nodes [ cave_entrance cave_water ]
+		ambient { r 0.8 g 1 b 0.95 } background { r 0.7 g 1 b 0.95 } fog { set true exp 0.002 }
+		sounds [
+			{ sInterval 0 n [ cave0 ] }
+			{ sInterval 4 sRand 0.5 n [ sclolex_water_dripping_in_cave ] }
+			{ sInterval 17 sRand 0.5 i 10 o 30 n [ cave_wind_1 cave_wind_3 ] }
+		]
+		particles [
+			{ name "Ambient/Moist" pos { x -5 y 4 z 10 } ff 10 }
+			{ name "Ambient/Moist" pos { x -7.83 y 6.42 z 8.315 } ff 20 }
+			{ name "Ambient/Moist" pos { x -3.1 y 6.2 z 6.62 } ff 5 }
+			{ name "Ambient/Moist" pos { x 5 y 5.6 z 13.92 } ff 10 }
+			{ name "Ambient/Moist" pos { x 9.645 y 6.8 z 30.368 } ff 10 }
+			{ name "Ambient/Moist" pos { x -13 y 6.2 z 17.428 } ff 10 }
+		]
+		balls [
+			[ -1 2 8 c::y ]
+			[ -1 6 8 c::k ]
+			[ -1 3 8 c::k ]
+			[ -1 7 8 c::c ]
+			[ 0 5 8 c::c ]
+			[ 0 4 8 c::y ]
+			[ 0 1 8 c::c ]
+			[ -1 4 8 c::b ]
+			[ -1 5 8 c::r ]
+			[ 0 0 8 c::b ]
+			[ 0 2 8 c::r ]
+			[ 0 3 8 c::c ]
+			[ 0 6 8 c::b ]
+			[ 0 7 8 c::y ]
+			[ -4 7 7 c::c ]
+			[ -4 7 8 c::r ]
+			[ -4 6 8 c::y ]
+			[ -3 7 8 c::k ]
+			[ 2 0 8 c::c ]
+			[ 3 0 8 c::r ]
+			[ 3 1 8 c::y ]
+			[ 3 0 7 c::k ]
+			[ -1 6 5 c::bob ]
+			[ -1 1 5 c::bob ]
+			[ 0 0 6 c::bob ]
+			[ 0 1 6 c::bob ]
+			[ -1 2 6 c::bob ]
+			[ -1 5 6 c::bob ]
+			[ -1 4 6 c::bob ]
+			[ -1 3 6 c::bob ]
+			[ -1 6 6 c::bob ]
+			[ -1 1 8 c::b ]
+			[ -1 7 7 c::bob ]
+			[ -1 6 7 c::bob ]
+			[ 0 5 7 c::bob ]
+			[ 0 4 7 c::bob ]
+			[ -1 3 7 c::bob ]
+			[ -1 2 7 c::bob ]
+			[ 0 1 7 c::bob ]
+			[ -1 0 7 c::bob ]
+			[ -1 0 8 c::y ]
+			[ -1 7 6 c::bob ]
+			[ -1 7 5 c::bob ]
+			[ -1 7 4 c::bob ]
+			[ -1 7 3 c::bob ]
+			[ -1 6 4 c::bob ]
+			[ -1 5 5 c::bob ]
+			[ 0 5 5 c::bob ]
+			[ 0 5 6 c::bob ]
+			[ 0 4 6 c::bob ]
+			[ -1 0 6 c::bob ]
+			[ -1 0 5 c::bob ]
+			[ -1 0 4 c::bob ]
+			[ -1 0 3 c::bob ]
+			[ -1 1 4 c::bob ]
+			[ -1 2 5 c::bob ]
+			[ 0 2 5 c::bob ]
+			[ 0 2 6 c::bob ]
+		]
+		incoming [ c::k c::c c::k c::y ]
+		struct [ {} { t ls::plan a lsai::destroy l false m false v false x 5 y -1 w 10 h 9 z -2 }
+		]
+	}
+	//b1
+	{	z 7
+		ambient { r 0.8 g 1 b 0.95 } background { r 0.7 g 1 b 0.95 } fog { set true exp 0.002 }
+		nodes [ cave_water ]
+		particles [
+			{ name "Ambient/Moist" pos { x -5 y 4 z 10 } ff 10 }
+			{ name "Ambient/Moist" pos { x -7.83 y 6.42 z 8.315 } ff 20 }
+			{ name "Ambient/Moist" pos { x -3.1 y 6.2 z 6.62 } ff 5 }
+			{ name "Ambient/Moist" pos { x 5 y 5.6 z 13.92 } ff 10 }
+			{ name "Ambient/Moist" pos { x 9.645 y 6.8 z 30.368 } ff 10 }
+			{ name "Ambient/Moist" pos { x -13 y 6.2 z 17.428 } ff 10 }
+		]
+		sounds [
+			{ sInterval 0 n [ cave1 ] }
+			{ sInterval 4 sRand 0.5 n [ sclolex_water_dripping_in_cave ] }
+			{ sInterval 17 sRand 0.5 i 10 o 30 n [ cave_wind_1 cave_wind_3 ] }
+		]
+		balls [
+			[ 1 7 6 c::y ]
+			[ -1 3 6 c::y ]
+			[ -2 0 6 c::k ]
+			[ -4 2 6 c::b ]
+			[ 1 3 6 c::y ]
+			[ 2 2 6 c::y ]
+			[ 2 4 6 c::y ]
+			[ 3 3 6 c::y ]
+			[ -4 0 6 c::k ]
+			[ 3 5 6 c::y ]
+			[ 0 6 6 c::k ]
+			[ 0 4 6 c::k ]
+			[ 3 1 6 c::k ]
+			[ 2 0 6 c::k ]
+			[ 0 0 6 c::b ]
+			[ -3 5 6 c::b ]
+			[ -3 7 6 c::b ]
+			[ 3 0 6 c::bob ]
+			[ 1 0 6 c::bob ]
+			[ -1 0 6 c::bob ]
+			[ -3 0 6 c::bob ]
+			[ -4 1 6 c::bob ]
+			[ -2 1 6 c::bob ]
+			[ 0 1 6 c::bob ]
+			[ 2 1 6 c::bob ]
+			[ 1 2 6 c::bob ]
+			[ -1 2 6 c::bob ]
+			[ -3 2 6 c::bob ]
+			[ -4 3 6 c::bob ]
+			[ -2 3 6 c::bob ]
+			[ 0 3 6 c::bob ]
+			[ 2 3 6 c::bob ]
+			[ 1 4 6 c::bob ]
+			[ -1 4 6 c::bob ]
+			[ -1 1 6 c::b ]
+			[ 1 1 6 c::k ]
+			[ 0 2 6 c::k ]
+			[ 3 2 6 c::bob ]
+			[ -2 2 6 c::k ]
+			[ -3 1 6 c::k ]
+			[ -3 4 6 c::bob ]
+			[ -4 4 6 c::b ]
+			[ -3 3 6 c::b ]
+			[ 3 4 6 c::bob ]
+			[ 2 5 6 c::bob ]
+			[ 0 5 6 c::bob ]
+			[ -2 5 6 c::bob ]
+			[ -4 5 6 c::bob ]
+			[ -2 4 6 c::k ]
+			[ -1 5 6 c::y ]
+			[ 1 5 6 c::y ]
+			[ 3 6 6 c::bob ]
+			[ 1 6 6 c::bob ]
+			[ -1 6 6 c::bob ]
+			[ -3 6 6 c::bob ]
+			[ 2 6 6 c::y ]
+			[ 3 7 6 c::y ]
+			[ 2 7 6 c::bob ]
+			[ -2 6 6 c::b ]
+			[ -4 6 6 c::b ]
+			[ 0 7 6 c::bob ]
+			[ -2 7 6 c::bob ]
+			[ -1 7 6 c::k ]
+			[ -4 7 6 c::bob ]
+		]
+		struct [ { t ls::wall a lsai::bounce } { t ls::plan a lsai::destroy l false m false v false x 5 y -1 w 10 h 9 z -2 }
+			{ t ls::sph a lsai::sticky x 3 y 1 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 3 y 3 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 3 y 5 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 3 y 7 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 2 y 0 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 2 y 2 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 2 y 4 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 2 y 6 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 1 y 1 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 1 y 3 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 1 y 5 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 1 y 7 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 0 y 0 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 0 y 2 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 0 y 4 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x 0 y 6 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -1 y 1 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -1 y 3 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -1 y 5 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -1 y 7 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -2 y 0 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -2 y 2 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -2 y 4 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -2 y 6 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -3 y 1 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -3 y 3 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -3 y 5 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -3 y 7 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -4 y 0 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -4 y 2 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -4 y 4 z 7 w 1 }
+			{ t ls::sph a lsai::sticky x -4 y 6 z 7 w 1 }
+		]
+	}
+	//b2
+	{	z 8
+		expert 30000
+		ambient { r 0.8 g 1 b 0.95 } background { r 0.7 g 1 b 0.95 } fog { set true exp 0.002 }
+		nodes [ cave_water Steams ]
+		sounds [
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam1 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam2 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam3 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam4 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam5 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam6 ] }
+			{ sInterval 7 sRand 0.5 i 3 o 15 n [ cave_wind_1 cave_wind_3 ] }
+		]
+		particles [
+			{ name "Batcave/Steam" parent "Steam06" }
+			{ name "Batcave/Steam" parent "Steam05" }
+			{ name "Batcave/Steam" parent "Steam04" }
+			{ name "Batcave/Steam" parent "Steam03" }
+			{ name "Batcave/Steam" parent "Steam02" }
+			{ name "Batcave/Steam" parent "Steam01" }
+		]
+		balls [
+			[ 1 7 7 c::c ]
+			[ 1 7 8 c::c ]
+			[ -1 6 8 c::k ]
+			[ -1 6 7 c::k ]
+			[ -2 6 7 c::b ]
+			[ -2 6 8 c::b ]
+			[ -3 0 8 c::k ]
+			[ -3 0 7 c::k ]
+			[ -4 0 7 c::k ]
+			[ -4 1 8 c::k ]
+			[ -3 1 8 c::k ]
+			[ -3 1 7 c::k ]
+			[ -4 1 7 c::k ]
+			[ -3 4 8 c::k ]
+			[ -3 3 8 c::k ]
+			[ -4 3 8 c::k ]
+			[ -4 3 7 c::k ]
+			[ -3 3 7 c::k ]
+			[ -3 4 7 c::k ]
+			[ -4 4 7 c::k ]
+			[ -3 0 6 c::bob ]
+			[ -3 1 6 c::bob ]
+			[ -3 2 6 c::bob ]
+			[ -3 3 6 c::bob ]
+			[ -3 4 6 c::bob ]
+			[ -3 5 6 c::bob ]
+			[ -3 6 6 c::bob ]
+			[ -3 7 6 c::bob ]
+			[ -4 7 6 c::bob ]
+			[ -4 6 6 c::bob ]
+			[ -4 5 6 c::bob ]
+			[ -4 4 6 c::bob ]
+			[ -4 3 6 c::bob ]
+			[ -4 2 6 c::bob ]
+			[ -4 1 6 c::bob ]
+			[ -4 0 6 c::bob ]
+			[ 3 6 8 c::k ]
+			[ 2 6 8 c::k ]
+			[ 2 6 7 c::k ]
+			[ 3 6 7 c::k ]
+			[ 3 7 7 c::k ]
+			[ 2 7 7 c::k ]
+			[ 2 7 8 c::k ]
+			[ 2 7 6 c::bob ]
+			[ 3 7 6 c::bob ]
+			[ 3 6 6 c::bob ]
+			[ 2 6 6 c::bob ]
+			[ -2 0 8 c::b ]
+			[ -1 0 8 c::c ]
+			[ 0 0 8 c::y ]
+			[ 1 0 8 c::k ]
+			[ 1 0 7 c::k ]
+			[ 0 0 7 c::y ]
+			[ -1 0 7 c::c ]
+			[ -2 0 7 c::b ]
+			[ 1 1 7 c::c ]
+			[ 1 1 8 c::c ]
+			[ 0 1 8 c::b ]
+			[ 0 1 7 c::b ]
+			[ -1 1 7 c::k ]
+			[ -1 1 8 c::k ]
+			[ -2 1 8 c::y ]
+			[ -2 1 7 c::y ]
+			[ 1 4 7 c::b ]
+			[ 1 4 8 c::b ]
+			[ 1 3 8 c::k ]
+			[ 1 3 7 c::k ]
+			[ 0 3 7 c::c ]
+			[ 0 3 8 c::c ]
+			[ 0 4 8 c::y ]
+			[ 0 4 7 c::y ]
+			[ -1 4 7 c::k ]
+			[ -1 4 8 c::k ]
+			[ -2 4 8 c::c ]
+			[ -2 4 7 c::c ]
+			[ -2 3 7 c::y ]
+			[ -2 3 8 c::y ]
+			[ -1 3 8 c::b ]
+			[ -1 3 7 c::b ]
+			[ 1 6 7 c::b ]
+			[ 1 6 8 c::b ]
+			[ 0 6 8 c::c ]
+			[ 0 6 7 c::c ]
+			[ 0 7 8 c::k ]
+			[ 0 7 7 c::k ]
+			[ -1 7 7 c::b ]
+			[ -1 7 8 c::b ]
+			[ -2 7 8 c::c ]
+			[ -2 7 7 c::c ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 5 y -1 w 10 h 9 z -2 }
+			{ t ls::cube a lsai::bounce l false x 1 y 0 z 6 w 4 h 8 }
+			{ t ls::cube a lsai::bounce l false x 1 y 2 z 7 w 6 h 1 d 2 }
+			{ t ls::cube a lsai::bounce l false x 3 y 5 z 7 w 6 h 1 d 2 }
+			{ t ls::sph a lsai::sticky x -4 y 0 z 8 w 1 }
+			{ t ls::sph a lsai::sticky x -4 y 4 z 8 w 1 }
+			{ t ls::sph a lsai::sticky x 3 y 7 z 8 w 1 }
+		]
+	}
+	//b3
+	{	z 10
+		expert 350000
+		ambient { r 0.8 g 1 b 0.95 } background { r 0.7 g 1 b 0.95 } fog { set true exp 0.002 }
+		nodes [ cave_water CrystalsAll Steams ]
+		changes [ { pos { x -6 y -6 z 26 } scale { y 0.5 w 7 } } ]
+		sounds [
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam1 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam2 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam3 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam4 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam5 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam6 ] }
+			{ sInterval 7 sRand 0.5 i 3 o 15 n [ cave_wind_1 cave_wind_3 ] }
+		]
+		particles [
+			{ name "Batcave/Steam" parent "Steam06" ff 3 }
+			{ name "Batcave/Steam" parent "Steam05" ff 3 }
+			{ name "Batcave/Steam" parent "Steam04" ff 3 }
+			{ name "Batcave/Steam" parent "Steam03" ff 3 }
+			{ name "Batcave/Steam" parent "Steam02" ff 3 }
+			{ name "Batcave/Steam" parent "Steam01" ff 3 }
+		]
+		balls [
+			[ 0 4 3 c::k ]
+			[ -2 5 3 c::k ]
+			[ 0 3 5 c::k ]
+			[ -1 4 5 c::k ]
+			[ 0 4 7 c::k ]
+			[ -2 5 7 c::k ]
+			[ -1 5 9 c::k ]
+			[ 1 3 9 c::k ]
+			[ 2 1 10 c::c ]
+			[ 2 2 10 c::k ]
+			[ 2 3 10 c::c ]
+			[ 2 4 10 c::y ]
+			[ 2 6 10 c::y ]
+			[ 2 5 10 c::b ]
+			[ -3 1 9 c::y ]
+			[ -2 1 9 c::b ]
+			[ -1 1 9 c::c ]
+			[ 0 1 9 c::y ]
+			[ 1 1 9 c::k ]
+			[ 1 2 9 c::c ]
+			[ 0 2 9 c::k ]
+			[ -1 2 9 c::b ]
+			[ -2 2 9 c::y ]
+			[ -3 2 9 c::k ]
+			[ -3 3 9 c::k ]
+			[ -2 3 9 c::c ]
+			[ -1 3 9 c::y ]
+			[ 0 3 9 c::b ]
+			[ 1 4 9 c::k ]
+			[ 0 4 9 c::c ]
+			[ -1 4 9 c::y ]
+			[ -2 4 9 c::b ]
+			[ -3 4 9 c::c ]
+			[ -3 5 9 c::k ]
+			[ -2 5 9 c::y ]
+			[ 0 5 9 c::b ]
+			[ 1 5 9 c::c ]
+			[ -1 6 9 c::c ]
+			[ -2 6 9 c::y ]
+			[ -3 6 9 c::k ]
+			[ 1 6 9 c::y ]
+			[ 0 6 9 c::y ]
+			[ -3 6 8 c::b ]
+			[ -3 5 8 c::c ]
+			[ -3 4 8 c::y ]
+			[ -3 3 8 c::y ]
+			[ -3 2 8 c::c ]
+			[ -3 1 8 c::k ]
+			[ -3 5 7 c::y ]
+			[ -3 4 7 c::k ]
+			[ -3 6 7 c::k ]
+			[ -3 3 7 c::c ]
+			[ -3 1 7 c::c ]
+			[ -3 2 7 c::b ]
+			[ 0 1 7 c::k ]
+			[ -1 1 7 c::c ]
+			[ -2 1 7 c::y ]
+			[ -2 2 7 c::k ]
+			[ -1 2 7 c::b ]
+			[ 0 2 7 c::b ]
+			[ 1 2 7 c::c ]
+			[ 2 3 7 c::y ]
+			[ 1 3 7 c::k ]
+			[ 0 3 7 c::c ]
+			[ -1 3 7 c::y ]
+			[ -2 3 7 c::y ]
+			[ -2 4 7 c::b ]
+			[ -1 4 7 c::c ]
+			[ 0 5 7 c::y ]
+			[ -1 5 7 c::k ]
+			[ -2 6 7 c::c ]
+			[ -1 6 7 c::b ]
+			[ 0 6 7 c::c ]
+			[ 2 6 9 c::k ]
+			[ 2 5 9 c::c ]
+			[ 2 4 9 c::k ]
+			[ 2 3 9 c::y ]
+			[ 2 2 9 c::b ]
+			[ 2 1 9 c::y ]
+			[ 2 6 7 c::k ]
+			[ 2 5 7 c::c ]
+			[ 2 4 7 c::k ]
+			[ 2 2 7 c::b ]
+			[ 2 1 7 c::y ]
+			[ 1 6 7 c::b ]
+			[ 1 5 7 c::k ]
+			[ 1 4 7 c::y ]
+			[ 1 1 7 c::b ]
+			[ 2 1 6 c::c ]
+			[ 2 2 6 c::k ]
+			[ 2 3 6 c::c ]
+			[ 2 4 6 c::y ]
+			[ 2 6 6 c::y ]
+			[ 2 5 6 c::b ]
+			[ -3 1 5 c::y ]
+			[ -2 1 5 c::b ]
+			[ -1 1 5 c::c ]
+			[ 0 1 5 c::y ]
+			[ 1 1 5 c::k ]
+			[ 1 2 5 c::c ]
+			[ 0 2 5 c::k ]
+			[ -1 2 5 c::b ]
+			[ -2 2 5 c::y ]
+			[ -3 2 5 c::k ]
+			[ -3 3 5 c::k ]
+			[ -2 3 5 c::c ]
+			[ -1 3 5 c::y ]
+			[ 1 3 5 c::b ]
+			[ 1 4 5 c::k ]
+			[ 0 4 5 c::c ]
+			[ -2 4 5 c::b ]
+			[ -3 4 5 c::c ]
+			[ -3 5 5 c::k ]
+			[ -2 5 5 c::y ]
+			[ -1 5 5 c::c ]
+			[ 0 5 5 c::b ]
+			[ 1 5 5 c::c ]
+			[ -1 6 5 c::c ]
+			[ -2 6 5 c::y ]
+			[ -3 6 5 c::k ]
+			[ 1 6 5 c::y ]
+			[ 0 6 5 c::y ]
+			[ -3 6 4 c::b ]
+			[ -3 5 4 c::c ]
+			[ -3 4 4 c::y ]
+			[ -3 3 4 c::y ]
+			[ -3 2 4 c::c ]
+			[ -3 1 4 c::k ]
+			[ -3 5 3 c::y ]
+			[ -3 4 3 c::k ]
+			[ -3 6 3 c::k ]
+			[ -3 3 3 c::c ]
+			[ -3 1 3 c::c ]
+			[ -3 2 3 c::b ]
+			[ 0 1 3 c::k ]
+			[ -1 1 3 c::c ]
+			[ -2 1 3 c::y ]
+			[ -2 2 3 c::k ]
+			[ -1 2 3 c::b ]
+			[ 0 2 3 c::b ]
+			[ 1 2 3 c::c ]
+			[ 2 3 3 c::y ]
+			[ 1 3 3 c::k ]
+			[ 0 3 3 c::c ]
+			[ -1 3 3 c::y ]
+			[ -2 3 3 c::y ]
+			[ -2 4 3 c::b ]
+			[ -1 4 3 c::c ]
+			[ 0 5 3 c::y ]
+			[ -1 5 3 c::k ]
+			[ -2 6 3 c::c ]
+			[ -1 6 3 c::b ]
+			[ 0 6 3 c::c ]
+			[ 2 6 5 c::k ]
+			[ 2 5 5 c::c ]
+			[ 2 4 5 c::k ]
+			[ 2 3 5 c::y ]
+			[ 2 2 5 c::b ]
+			[ 2 1 5 c::y ]
+			[ 2 6 3 c::k ]
+			[ 2 5 3 c::c ]
+			[ 2 4 3 c::k ]
+			[ 2 2 3 c::b ]
+			[ 2 1 3 c::y ]
+			[ 1 6 3 c::b ]
+			[ 1 5 3 c::k ]
+			[ 1 4 3 c::y ]
+			[ 1 1 3 c::b ]
+		]
+	}
+	//b4
+	{	z 9
+		expert 100000
+		fog { set true exp 0.01 } background { r 0.4 g 0.3 b 0.2 } ambient { r 0.4 g 0.3 b 0.2 }
+		nodes [ lavaNode lavaLight CrystalsAll Steams ]
+		changes [ { pos { x -6 y -6 z 26 } scale { y 1.1 w 9 } } ]
+		sounds [
+			{ sInterval 0 c { x 2 y -4.4 z 24 } n [ lava ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam1 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam2 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam3 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam4 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam5 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam6 ] }
+			{ sInterval 7 sRand 0.5 i 3 o 15 n [ cave_wind_1 cave_wind_3 ] }
+		]
+		particles [
+			{ name "Batcave/Steam" parent "Steam06" ff 3 }
+			{ name "Batcave/Steam" parent "Steam05" ff 3 }
+			{ name "Batcave/Steam" parent "Steam04" ff 3 }
+			{ name "Batcave/Steam" parent "Steam03" ff 3 }
+			{ name "Batcave/Steam" parent "Steam02" ff 3 }
+			{ name "Batcave/Steam" parent "Steam01" ff 3 }
+		]
+		balls [
+			[ -1 3 9 c::b ]
+			[ 1 2 6 c::c ]
+			[ 0 2 6 c::b ]
+			[ -1 2 6 c::c ]
+			[ -2 2 6 c::b ]
+			[ -2 4 6 c::b ]
+			[ 1 4 6 c::c ]
+			[ 1 3 6 c::y ]
+			[ 1 5 6 c::y ]
+			[ 0 5 6 c::k ]
+			[ -1 5 6 c::y ]
+			[ -2 5 6 c::k ]
+			[ -2 3 6 c::k ]
+			[ -1 3 6 c::y ]
+			[ 0 3 6 c::k ]
+			[ 0 4 6 c::b ]
+			[ -1 4 6 c::c ]
+			[ 1 2 7 c::k ]
+			[ -1 2 7 c::k ]
+			[ -1 4 7 c::k ]
+			[ 1 4 7 c::k ]
+			[ 0 4 7 c::y ]
+			[ 0 2 7 c::y ]
+			[ -2 2 7 c::y ]
+			[ -2 4 7 c::y ]
+			[ -2 3 7 c::c ]
+			[ 0 3 7 c::c ]
+			[ 0 5 7 c::c ]
+			[ -2 5 7 c::c ]
+			[ -1 5 7 c::b ]
+			[ -1 3 7 c::b ]
+			[ 1 3 7 c::b ]
+			[ 1 5 7 c::b ]
+			[ 1 2 8 c::c ]
+			[ 0 2 8 c::b ]
+			[ -1 2 8 c::c ]
+			[ -2 2 8 c::b ]
+			[ -2 4 8 c::b ]
+			[ 1 4 8 c::c ]
+			[ 1 3 8 c::y ]
+			[ 1 5 8 c::y ]
+			[ 0 5 8 c::k ]
+			[ -1 5 8 c::y ]
+			[ -2 5 8 c::k ]
+			[ -2 3 8 c::k ]
+			[ -1 3 8 c::y ]
+			[ 0 3 8 c::k ]
+			[ 0 4 8 c::b ]
+			[ -1 4 8 c::c ]
+			[ 1 2 9 c::k ]
+			[ -1 2 9 c::k ]
+			[ -1 4 9 c::k ]
+			[ 1 4 9 c::k ]
+			[ 0 4 9 c::y ]
+			[ 0 2 9 c::y ]
+			[ -2 2 9 c::y ]
+			[ -2 4 9 c::y ]
+			[ -2 3 9 c::c ]
+			[ 0 3 9 c::c ]
+			[ 0 5 9 c::c ]
+			[ -2 5 9 c::c ]
+			[ -1 5 9 c::b ]
+			[ 1 3 9 c::b ]
+			[ 1 5 9 c::b ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 5 y -1 w 10 h 9 z -2 }
+			{ t ls::sph a lsai::sticky x 1 y 2 z 5 w 1 }
+			{ t ls::sph a lsai::sticky x -2 y 2 z 5 w 1 }
+			{ t ls::sph a lsai::sticky x 1 y 5 z 5 w 1 }
+			{ t ls::sph a lsai::sticky x -2 y 5 z 5 w 1 }
+			{ t ls::plan a lsai::sticky x 1 y 2 z 4 w 3 h 3 }
+			{ t ls::plan a lsai::sticky x 1 y 2 z 5 w 3 h 3 }
+			{ t ls::cyl a lsai::sticky x 1 y 3 z 5 w 1 h 2 }
+			{ t ls::cyl a lsai::sticky x -2 y 3 z 5 w 1 h 2 }
+			{ t ls::cyl a lsai::sticky x 0 y 2 z 5 w 1 h 2 rot [ 0 0 90 ] }
+			{ t ls::cyl a lsai::sticky x -1 y 5 z 5 w 1 h 2 rot [ 0 0 -90 ] }
+		]
+	}
+	//b5
+	{	z 9
+		expert 10000
+		fog { set true exp 0.01 } background { r 0.4 g 0.3 b 0.2 } ambient { r 0.4 g 0.3 b 0.2 }
+		nodes [ lavaNode lavaLight CrystalsAll Steams ]
+		sounds [
+			{ sInterval 0 c { x 2 y -4.4 z 24 } n [ lava ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam1 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam2 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam3 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam4 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam5 ] }
+			{ sInterval 4 sRand 0.5 i 2 o 10 n [ steam6 ] }
+			{ sInterval 7 sRand 0.5 i 3 o 15 n [ cave_wind_1 cave_wind_3 ] }
+		]
+		particles [
+			{ name "Batcave/Steam" parent "Steam06" ff 3 }
+			{ name "Batcave/Steam" parent "Steam05" ff 3 }
+			{ name "Batcave/Steam" parent "Steam04" ff 3 }
+			{ name "Batcave/Steam" parent "Steam03" ff 3 }
+			{ name "Batcave/Steam" parent "Steam02" ff 3 }
+			{ name "Batcave/Steam" parent "Steam01" ff 3 }
+		]
+		balls [
+			[ -1 5 6 c::w ]
+			[ -2 3 6 c::w ]
+			[ 0 2 6 c::w ]
+			[ 1 4 6 c::w ]
+			[ 0 3 5 c::k ]
+			[ 1 3 6 c::k ]
+			[ -1 2 6 c::k ]
+			[ -1 3 5 c::k ]
+			[ 0 3 7 c::w ]
+			[ -1 4 5 c::k ]
+			[ 0 4 5 c::k ]
+			[ 0 4 7 c::w ]
+			[ -1 4 7 c::w ]
+			[ -2 4 6 c::k ]
+			[ 0 5 6 c::k ]
+			[ 0 4 4 c::r ]
+			[ -1 4 4 c::r ]
+			[ -2 4 5 c::r ]
+			[ -3 4 6 c::r ]
+			[ -2 4 7 c::m ]
+			[ -1 4 8 c::m ]
+			[ 0 4 8 c::m ]
+			[ 1 4 7 c::m ]
+			[ 2 4 6 c::r ]
+			[ 1 4 5 c::r ]
+			[ 2 3 6 c::r ]
+			[ 1 3 5 c::r ]
+			[ 0 3 4 c::r ]
+			[ -1 3 4 c::r ]
+			[ -2 3 5 c::r ]
+			[ -3 3 6 c::r ]
+			[ -2 3 7 c::m ]
+			[ -1 3 8 c::m ]
+			[ 0 3 8 c::m ]
+			[ -1 3 7 c::w ]
+			[ 1 3 7 c::m ]
+			[ 0 5 5 c::r ]
+			[ -1 5 5 c::r ]
+			[ -2 5 6 c::r ]
+			[ -1 5 7 c::m ]
+			[ 0 5 7 c::m ]
+			[ 1 5 6 c::r ]
+			[ 1 2 6 c::r ]
+			[ 0 2 5 c::r ]
+			[ -1 2 5 c::r ]
+			[ -2 2 6 c::r ]
+			[ -1 2 7 c::m ]
+			[ 0 2 7 c::m ]
+			[ -2 6 6 c::g ]
+			[ -3 5 6 c::g ]
+			[ -4 4 6 c::g ]
+			[ -4 3 6 c::g ]
+			[ -3 2 6 c::g ]
+			[ -2 1 6 c::g ]
+			[ 1 1 6 c::g ]
+			[ 2 2 6 c::g ]
+			[ 3 3 6 c::g ]
+			[ 3 4 6 c::g ]
+			[ 2 5 6 c::g ]
+			[ 1 6 6 c::g ]
+			[ 0 6 6 c::r ]
+			[ -1 6 6 c::r ]
+			[ -1 7 6 c::g ]
+			[ 0 7 6 c::g ]
+			[ 0 1 6 c::r ]
+			[ -1 1 6 c::r ]
+			[ -1 0 6 c::g ]
+			[ 0 0 6 c::g ]
+			[ -1 1 5 c::g ]
+			[ -2 2 5 c::g ]
+			[ -3 3 5 c::g ]
+			[ -3 4 5 c::g ]
+			[ -2 5 5 c::g ]
+			[ -1 6 5 c::g ]
+			[ 0 6 5 c::g ]
+			[ 1 5 5 c::g ]
+			[ 2 4 5 c::g ]
+			[ 2 3 5 c::g ]
+			[ 1 2 5 c::g ]
+			[ 0 1 5 c::g ]
+			[ 0 5 4 c::g ]
+			[ -1 5 4 c::g ]
+			[ -2 4 4 c::g ]
+			[ -2 3 4 c::g ]
+			[ -1 2 4 c::g ]
+			[ 0 2 4 c::g ]
+			[ 1 3 4 c::g ]
+			[ 1 4 4 c::g ]
+			[ 0 3 3 c::g ]
+			[ -1 3 3 c::g ]
+			[ -1 4 3 c::g ]
+			[ 0 4 3 c::g ]
+			[ -3 4 7 c::c ]
+			[ -3 3 7 c::c ]
+			[ -2 2 7 c::c ]
+			[ -1 1 7 c::c ]
+			[ 0 1 7 c::c ]
+			[ 1 2 7 c::c ]
+			[ 2 3 7 c::c ]
+			[ 2 4 7 c::c ]
+			[ 1 5 7 c::c ]
+			[ 0 6 7 c::c ]
+			[ -1 6 7 c::c ]
+			[ -2 5 7 c::c ]
+			[ -2 4 8 c::c ]
+			[ -2 3 8 c::c ]
+			[ -1 2 8 c::c ]
+			[ 0 2 8 c::c ]
+			[ 1 3 8 c::c ]
+			[ 1 4 8 c::c ]
+			[ 0 5 8 c::c ]
+			[ -1 5 8 c::c ]
+			[ -1 4 9 c::c ]
+			[ 0 4 9 c::c ]
+			[ 0 3 9 c::c ]
+			[ -1 3 9 c::c ]
+		]
+		struct [ { t ls::wall a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 5 y -1 w 10 h 9 z -2 }
+			{ t ls::sph a lsai::sticky x -1 y 3 z 6 w 1 }
+			{ t ls::sph a lsai::sticky x -1 y 4 z 6 w 1 }
+			{ t ls::sph a lsai::sticky x 0 y 3 z 6 w 1 }
+			{ t ls::sph a lsai::sticky x 0 y 4 z 6 w 1 }
+		]
+	}
+	//b6
+	{	z 8
+		expert 150000
+		fog { set true exp 0.01 } background { r 0.4 g 0.3 b 0.2 } ambient { r 0.4 g 0.3 b 0.2 }
+		nodes [ lavaNode lavaLight CrystalsAll Steams LizardWalk ]
+		particles [
+			{ name "Batcave/Firesteam" parent "Steam06" }
+			{ name "Batcave/Firesteam" parent "Steam05" }
+			{ name "Batcave/Firesteam" parent "Steam04" }
+			{ name "Batcave/Firesteam" parent "Steam03" }
+			{ name "Batcave/Firesteam" parent "Steam02" }
+			{ name "Batcave/Firesteam" parent "Steam01" }
+		]
+		sounds [
+			{ sInterval 0 c { x 2 y -4.4 z 24 } n [ lava ] }
+			{ sInterval 8 sRand 0.5 c { x -12 y 0 z 18 } i 2 o 6 n [ rocks_fall_1 rocks_fall_2 ] }
+			{ sInterval 15 sRand 0.5 c { x -6 y -4.4 z 0 } i 5 o 20 n [ rats_1 rats_2 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire1 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire2 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire3 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire4 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire5 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.5 i 5 o 19 n [ fire6 ] }
+		]
+		balls [
+			[ 0 4 5 c::k ]
+			[ 0 1 5 c::k ]
+			[ -1 3 5 c::c ]
+			[ 0 3 5 c::k ]
+			[ -1 6 5 c::c ]
+			[ -1 4 5 c::c ]
+			[ -3 5 5 c::k ]
+			[ -3 6 5 c::b ]
+			[ -3 6 6 c::c ]
+			[ -2 6 6 c::y ]
+			[ -2 5 6 c::c ]
+			[ -3 5 6 c::y ]
+			[ -3 1 6 c::c ]
+			[ -3 2 6 c::y ]
+			[ -2 2 6 c::c ]
+			[ -2 1 6 c::y ]
+			[ 2 1 5 c::y ]
+			[ 2 2 5 c::c ]
+			[ 2 5 6 c::k ]
+			[ 2 6 6 c::b ]
+			[ 1 6 6 c::k ]
+			[ 1 5 6 c::b ]
+			[ 2 1 6 c::b ]
+			[ 2 2 6 c::k ]
+			[ 1 2 6 c::b ]
+			[ 1 1 6 c::k ]
+			[ 0 3 8 c::c ]
+			[ -1 3 8 c::y ]
+			[ -1 4 8 c::b ]
+			[ 0 4 8 c::k ]
+			[ 1 4 7 c::c ]
+			[ 1 2 7 c::c ]
+			[ -2 2 7 c::y ]
+			[ -2 4 7 c::y ]
+			[ -2 3 7 c::b ]
+			[ -2 5 7 c::b ]
+			[ 1 5 7 c::k ]
+			[ 1 3 7 c::k ]
+			[ 0 5 7 c::y ]
+			[ -1 5 7 c::c ]
+			[ 0 2 7 c::b ]
+			[ -1 2 7 c::k ]
+			[ 1 2 5 c::y ]
+			[ 1 1 5 c::c ]
+			[ 2 6 5 c::c ]
+			[ 2 5 5 c::y ]
+			[ 2 1 4 c::bob ]
+			[ 2 2 4 c::bob ]
+			[ 2 3 4 c::bob ]
+			[ 2 4 4 c::bob ]
+			[ 2 5 4 c::bob ]
+			[ 2 6 4 c::bob ]
+			[ 2 0 4 c::bob ]
+			[ 2 7 4 c::bob ]
+			[ 3 7 4 c::bob ]
+			[ 3 5 4 c::bob ]
+			[ 3 0 4 c::bob ]
+			[ 3 2 4 c::bob ]
+			[ 1 3 5 c::c ]
+			[ 1 4 5 c::y ]
+			[ 1 5 5 c::c ]
+			[ 1 6 5 c::y ]
+			[ -2 6 5 c::k ]
+			[ -2 5 5 c::b ]
+			[ -2 4 5 c::k ]
+			[ -2 3 5 c::b ]
+			[ -2 2 5 c::k ]
+			[ -2 1 5 c::b ]
+			[ -3 1 5 c::k ]
+			[ -3 2 5 c::b ]
+			[ -3 7 4 c::bob ]
+			[ -3 6 4 c::bob ]
+			[ -3 5 4 c::bob ]
+			[ -3 4 4 c::bob ]
+			[ -3 3 4 c::bob ]
+			[ -3 2 4 c::bob ]
+			[ -3 1 4 c::bob ]
+			[ -3 0 4 c::bob ]
+			[ -4 0 4 c::bob ]
+			[ -4 2 4 c::bob ]
+			[ -4 5 4 c::bob ]
+			[ -4 7 4 c::bob ]
+			[ 0 4 7 c::bob ]
+			[ -1 4 7 c::bob ]
+			[ -1 3 7 c::bob ]
+			[ 0 3 7 c::bob ]
+			[ 0 0 4 c::bob ]
+			[ 0 1 4 c::bob ]
+			[ 0 2 4 c::bob ]
+			[ 0 3 4 c::bob ]
+			[ 0 4 4 c::bob ]
+			[ 0 5 4 c::bob ]
+			[ 0 6 4 c::bob ]
+			[ 0 7 4 c::bob ]
+			[ -1 7 4 c::bob ]
+			[ -1 6 4 c::bob ]
+			[ -1 5 4 c::bob ]
+			[ -1 4 4 c::bob ]
+			[ -1 3 4 c::bob ]
+			[ -1 2 4 c::bob ]
+			[ -1 1 4 c::bob ]
+			[ -1 0 4 c::bob ]
+		]
+	}
+	//b7
+	{	z 9
+		expert 400000
+		fog { set true exp 0.01 } background { r 0.4 g 0.3 b 0.2 } ambient { r 0.4 g 0.3 b 0.2 }
+		nodes [ lavaNode lavaLight CrystalsAll Steams LizardWalk ]
+		particles [
+			{ name "Batcave/Firesteam" parent "Steam06" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam05" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam04" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam03" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam02" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam01" ff 3 }
+		]
+		sounds [
+			{ sInterval 0 c { x 2 y -4.4 z 24 } n [ lava ] }
+			{ sInterval 8 sRand 0.5 c { x -12 y 0 z 18 } i 2 o 6 n [ rocks_fall_1 rocks_fall_2 ] }
+			{ sInterval 15 sRand 0.5 c { x -6 y -4.4 z 0 } i 5 o 20 n [ rats_1 rats_2 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire1 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire2 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire3 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire4 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire5 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.5 i 5 o 19 n [ fire6 ] }
+		]
+		balls [
+			[ -2 5 9 c::m ]
+			[ 3 0 8 c::w ]
+			[ 2 0 8 c::r ]
+			[ 1 0 8 c::b ]
+			[ 0 0 8 c::m ]
+			[ -1 0 8 c::y ]
+			[ -2 0 8 c::m ]
+			[ -3 0 8 c::y ]
+			[ -4 0 8 c::w ]
+			[ -3 1 8 c::b ]
+			[ -4 1 8 c::m ]
+			[ -2 1 8 c::w ]
+			[ -1 1 8 c::r ]
+			[ 1 1 8 c::m ]
+			[ 2 1 8 c::w ]
+			[ 3 1 8 c::k ]
+			[ 0 1 8 c::k ]
+			[ 3 2 8 c::r ]
+			[ 2 2 8 c::y ]
+			[ 1 2 8 c::w ]
+			[ 0 2 8 c::y ]
+			[ -1 2 8 c::b ]
+			[ -2 2 8 c::k ]
+			[ -3 2 8 c::w ]
+			[ -4 2 8 c::y ]
+			[ -4 3 8 c::b ]
+			[ -3 3 8 c::r ]
+			[ -2 3 8 c::m ]
+			[ -1 3 8 c::w ]
+			[ 0 3 8 c::b ]
+			[ 1 3 8 c::r ]
+			[ 2 3 8 c::b ]
+			[ 3 3 8 c::m ]
+			[ 3 4 8 c::y ]
+			[ -1 4 8 c::r ]
+			[ 2 4 8 c::m ]
+			[ 1 4 8 c::y ]
+			[ 0 4 8 c::k ]
+			[ -3 4 8 c::w ]
+			[ -2 4 8 c::y ]
+			[ -4 4 8 c::r ]
+			[ -4 5 8 c::m ]
+			[ -3 5 8 c::k ]
+			[ -2 5 8 c::b ]
+			[ -1 5 8 c::w ]
+			[ 0 5 8 c::m ]
+			[ 1 5 8 c::r ]
+			[ 2 5 8 c::b ]
+			[ 3 5 8 c::w ]
+			[ 3 6 8 c::k ]
+			[ 1 6 8 c::w ]
+			[ 2 6 8 c::m ]
+			[ -1 6 8 c::r ]
+			[ -2 6 8 c::y ]
+			[ 0 6 8 c::b ]
+			[ -3 6 8 c::r ]
+			[ -4 6 8 c::y ]
+			[ -4 7 8 c::b ]
+			[ -3 7 8 c::w ]
+			[ -2 7 8 c::m ]
+			[ -1 7 8 c::k ]
+			[ 0 7 8 c::w ]
+			[ 3 7 8 c::y ]
+			[ 2 7 8 c::r ]
+			[ 1 7 8 c::m ]
+			[ -2 2 9 c::r ]
+			[ 0 5 9 c::y ]
+			[ 1 2 9 c::b ]
+			[ 0 3 7 c::bob ]
+			[ -1 2 7 c::bob ]
+			[ -1 4 7 c::bob ]
+			[ 0 5 7 c::bob ]
+			[ 1 2 6 c::b ]
+			[ 0 2 6 c::y ]
+			[ -1 2 6 c::k ]
+			[ -2 2 6 c::r ]
+			[ 2 2 6 c::w ]
+			[ 3 2 6 c::r ]
+			[ -3 2 6 c::w ]
+			[ -4 2 6 c::b ]
+			[ 3 1 6 c::y ]
+			[ 2 1 6 c::k ]
+			[ 1 1 6 c::r ]
+			[ 0 1 6 c::w ]
+			[ -1 1 6 c::b ]
+			[ -2 1 6 c::y ]
+			[ -3 1 6 c::k ]
+			[ -4 1 6 c::r ]
+			[ 3 3 6 c::y ]
+			[ 2 3 6 c::k ]
+			[ 1 3 6 c::w ]
+			[ 0 3 6 c::r ]
+			[ -1 3 6 c::b ]
+			[ -2 3 6 c::y ]
+			[ -3 3 6 c::k ]
+			[ -4 3 6 c::r ]
+			[ -3 4 6 c::b ]
+			[ -2 4 6 c::k ]
+			[ -1 4 6 c::y ]
+			[ 0 4 6 c::w ]
+			[ 1 4 6 c::r ]
+			[ 2 4 6 c::b ]
+			[ 3 4 6 c::k ]
+			[ 3 5 6 c::y ]
+			[ 2 5 6 c::r ]
+			[ 1 5 6 c::w ]
+			[ 0 5 6 c::b ]
+			[ -1 5 6 c::k ]
+			[ -2 5 6 c::y ]
+			[ -3 5 6 c::r ]
+			[ -4 5 6 c::w ]
+			[ -4 6 6 c::b ]
+			[ -3 6 6 c::y ]
+			[ -2 6 6 c::k ]
+			[ -1 6 6 c::r ]
+			[ 0 6 6 c::w ]
+			[ 1 6 6 c::b ]
+			[ 3 6 6 c::k ]
+			[ 2 6 6 c::y ]
+			[ 3 7 6 c::r ]
+			[ 2 7 6 c::w ]
+			[ 1 7 6 c::y ]
+			[ -1 7 6 c::b ]
+			[ 0 7 6 c::k ]
+			[ -2 7 6 c::r ]
+			[ -3 7 6 c::b ]
+			[ -4 7 6 c::w ]
+			[ -4 4 6 c::y ]
+			[ 3 0 6 c::r ]
+			[ 2 0 6 c::w ]
+			[ 1 0 6 c::b ]
+			[ 0 0 6 c::y ]
+			[ -1 0 6 c::k ]
+			[ -2 0 6 c::r ]
+			[ -3 0 6 c::b ]
+			[ -4 0 6 c::w ]
+		]
+  		struct [ {} { t ls::plan a lsai::destroy l false m false v false x 5 y -1 w 10 h 9 z -2 }
+		]
+	}
+	//b8
+	{	z 10
+		expert 14000000
+		fog { set true exp 0.01 } background { r 0.4 g 0.3 b 0.2 } ambient { r 0.4 g 0.3 b 0.2 }
+		nodes [ lavaNode lavaLight CrystalsAll Steams BatgirlNode ]
+		particles [
+			{ name "Batcave/Firesteam" parent "Steam06" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam05" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam04" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam03" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam02" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam01" ff 3 }
+		]
+		sounds [
+			{ sInterval 0 c { x 2 y -4.4 z 24 } n [ lava ] }
+			{ sInterval 8 sRand 0.5 c { x -12 y 0 z 18 } i 2 o 6 n [ rocks_fall_1 rocks_fall_2 ] }
+			{ sInterval 15 sRand 0.5 c { x -6 y -4.4 z 0 } i 5 o 20 n [ rats_1 rats_2 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire1 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire2 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire3 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire4 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire5 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.5 i 5 o 19 n [ fire6 ] }
+		]
+		balls [
+			[ 3 7 10 c::k ]
+			[ 2 7 10 c::r ]
+			[ 1 7 10 c::k ]
+			[ 0 7 10 c::r ]
+			[ -1 7 10 c::k ]
+			[ -2 7 10 c::r ]
+			[ -3 7 10 c::k ]
+			[ -4 7 10 c::r ]
+			[ -4 6 10 c::k ]
+			[ -3 6 10 c::r ]
+			[ -2 6 10 c::k ]
+			[ -1 6 10 c::r ]
+			[ 0 6 10 c::k ]
+			[ 1 6 10 c::r ]
+			[ 2 6 10 c::k ]
+			[ 3 6 10 c::r ]
+			[ 3 5 10 c::k ]
+			[ 2 5 10 c::r ]
+			[ 1 5 10 c::k ]
+			[ 0 5 10 c::r ]
+			[ -1 5 10 c::k ]
+			[ -2 5 10 c::r ]
+			// [ -3 5 10 c::k ]
+			[ -4 5 10 c::r ]
+			[ -4 4 10 c::k ]
+			[ -3 4 10 c::r ]
+			[ -2 4 10 c::k ]
+			[ -1 4 10 c::r ]
+			[ 0 4 10 c::k ]
+			[ 1 4 10 c::r ]
+			[ 2 4 10 c::k ]
+			[ 3 4 10 c::r ]
+			[ 3 3 10 c::k ]
+			[ 2 3 10 c::r ]
+			[ 1 3 10 c::k ]
+			[ 0 3 10 c::r ]
+			[ -1 3 10 c::k ]
+			[ -2 3 10 c::r ]
+			[ -3 3 10 c::k ]
+			[ -4 3 10 c::r ]
+			[ -4 2 10 c::k ]
+			[ -3 2 10 c::r ]
+			[ -2 2 10 c::k ]
+			[ -1 2 10 c::r ]
+			[ 0 2 10 c::k ]
+			[ 1 2 10 c::r ]
+			[ 2 2 10 c::k ]
+			[ 3 2 10 c::r ]
+			[ 3 1 10 c::k ]
+			[ 2 1 10 c::r ]
+			[ 1 1 10 c::k ]
+			[ 0 1 10 c::r ]
+			[ -1 1 10 c::k ]
+			[ -2 1 10 c::r ]
+			[ -3 1 10 c::k ]
+			[ -4 1 10 c::r ]
+			[ -4 0 10 c::k ]
+			[ -3 0 10 c::r ]
+			[ -2 0 10 c::k ]
+			[ -1 0 10 c::r ]
+			[ 0 0 10 c::k ]
+			[ 1 0 10 c::r ]
+			[ 2 0 10 c::k ]
+			[ 3 0 10 c::r ]
+			[ 0 0 9 c::r ]
+			[ 3 0 9 c::k ]
+			[ 2 0 9 c::r ]
+			[ 1 0 9 c::k ]
+			[ -1 0 9 c::k ]
+			[ -2 0 9 c::r ]
+			[ -3 0 9 c::k ]
+			[ -4 0 9 c::r ]
+			[ -4 1 9 c::k ]
+			[ -3 1 9 c::r ]
+			[ -2 1 9 c::k ]
+			[ -1 1 9 c::r ]
+			[ 0 1 9 c::k ]
+			[ 1 1 9 c::r ]
+			[ 2 1 9 c::k ]
+			[ 3 1 9 c::r ]
+			[ 3 2 9 c::k ]
+			[ 2 2 9 c::r ]
+			[ 1 2 9 c::k ]
+			[ 0 2 9 c::r ]
+			[ -1 2 9 c::k ]
+			[ -2 2 9 c::r ]
+			[ -3 2 9 c::k ]
+			[ -4 2 9 c::r ]
+			[ -4 3 9 c::k ]
+			[ -3 3 9 c::r ]
+			[ -2 3 9 c::k ]
+			[ -1 3 9 c::r ]
+			[ 0 3 9 c::k ]
+			[ 1 3 9 c::r ]
+			[ 2 3 9 c::k ]
+			[ 3 3 9 c::r ]
+			[ 3 4 9 c::k ]
+			[ 2 4 9 c::r ]
+			[ 1 4 9 c::k ]
+			[ 0 4 9 c::r ]
+			[ -1 4 9 c::k ]
+			[ -2 4 9 c::r ]
+			[ -3 4 9 c::k ]
+			[ -4 4 9 c::r ]
+			[ -4 5 9 c::k ]
+			[ -3 5 9 c::r ]
+			[ -2 5 9 c::k ]
+			[ -1 5 9 c::r ]
+			[ 0 5 9 c::k ]
+			[ 1 5 9 c::r ]
+			[ 2 5 9 c::k ]
+			[ 3 5 9 c::r ]
+			[ 3 6 9 c::k ]
+			[ 2 6 9 c::r ]
+			[ 1 6 9 c::k ]
+			[ 0 6 9 c::r ]
+			[ -1 6 9 c::k ]
+			[ -2 6 9 c::r ]
+			[ -3 6 9 c::k ]
+			[ -4 6 9 c::r ]
+			[ -4 7 9 c::k ]
+			[ -3 7 9 c::r ]
+			[ -2 7 9 c::k ]
+			[ -1 7 9 c::r ]
+			[ 0 7 9 c::k ]
+			[ 1 7 9 c::r ]
+			[ 2 7 9 c::k ]
+			[ 3 7 9 c::r ]
+			[ 3 7 8 c::k ]
+			[ 2 7 8 c::r ]
+			[ 1 7 8 c::k ]
+			[ 0 7 8 c::r ]
+			[ -1 7 8 c::k ]
+			[ -2 7 8 c::r ]
+			[ -3 7 8 c::k ]
+			[ -4 7 8 c::r ]
+			[ -4 6 8 c::k ]
+			[ -3 6 8 c::r ]
+			[ -2 6 8 c::k ]
+			[ -1 6 8 c::r ]
+			[ 0 6 8 c::k ]
+			[ 1 6 8 c::r ]
+			[ 2 6 8 c::k ]
+			[ 3 6 8 c::r ]
+			[ 3 5 8 c::k ]
+			[ 2 5 8 c::r ]
+			[ 1 5 8 c::k ]
+			[ 0 5 8 c::r ]
+			[ -1 5 8 c::k ]
+			[ -2 5 8 c::r ]
+			[ -3 5 8 c::k ]
+			[ -4 5 8 c::r ]
+			[ -4 4 8 c::k ]
+			[ -3 4 8 c::r ]
+			[ -2 4 8 c::k ]
+			[ -1 4 8 c::r ]
+			[ 0 4 8 c::k ]
+			[ 1 4 8 c::r ]
+			[ 2 4 8 c::k ]
+			[ 3 4 8 c::r ]
+			[ 3 3 8 c::k ]
+			[ 2 3 8 c::r ]
+			[ 1 3 8 c::k ]
+			[ 0 3 8 c::r ]
+			[ -1 3 8 c::k ]
+			[ -2 3 8 c::r ]
+			[ -3 3 8 c::k ]
+			[ -4 3 8 c::r ]
+			[ -4 2 8 c::k ]
+			[ -3 2 8 c::r ]
+			[ -2 2 8 c::k ]
+			[ -1 2 8 c::r ]
+			[ 0 2 8 c::k ]
+			[ 1 2 8 c::r ]
+			[ 2 2 8 c::k ]
+			[ 3 2 8 c::r ]
+			[ 3 1 8 c::k ]
+			[ 2 1 8 c::r ]
+			[ 1 1 8 c::k ]
+			[ 0 1 8 c::r ]
+			[ -1 1 8 c::k ]
+			[ -2 1 8 c::r ]
+			[ -3 1 8 c::k ]
+			[ -4 1 8 c::r ]
+			[ -4 0 8 c::k ]
+			[ -3 0 8 c::r ]
+			[ -2 0 8 c::k ]
+			[ -1 0 8 c::r ]
+			[ 0 0 8 c::k ]
+			[ 1 0 8 c::r ]
+			[ 2 0 8 c::k ]
+			[ 3 0 8 c::r ]
+			[ 0 0 7 c::r ]
+			[ 3 0 7 c::k ]
+			[ 2 0 7 c::r ]
+			[ 1 0 7 c::k ]
+			[ -1 0 7 c::k ]
+			[ -2 0 7 c::r ]
+			[ -3 0 7 c::k ]
+			[ -4 0 7 c::r ]
+			[ -4 1 7 c::k ]
+			[ -3 1 7 c::r ]
+			[ -2 1 7 c::k ]
+			[ -1 1 7 c::r ]
+			[ 0 1 7 c::k ]
+			[ 1 1 7 c::r ]
+			[ 2 1 7 c::k ]
+			[ 3 1 7 c::r ]
+			[ 3 2 7 c::k ]
+			[ 2 2 7 c::r ]
+			[ 1 2 7 c::k ]
+			[ 0 2 7 c::r ]
+			[ -1 2 7 c::k ]
+			[ -2 2 7 c::r ]
+			[ -3 2 7 c::k ]
+			[ -4 2 7 c::r ]
+			[ -4 3 7 c::k ]
+			[ -3 3 7 c::r ]
+			[ -2 3 7 c::k ]
+			[ -1 3 7 c::r ]
+			[ 0 3 7 c::k ]
+			[ 1 3 7 c::r ]
+			[ 2 3 7 c::k ]
+			[ 3 3 7 c::r ]
+			[ 3 4 7 c::k ]
+			[ 2 4 7 c::r ]
+			[ 1 4 7 c::k ]
+			[ 0 4 7 c::r ]
+			[ -1 4 7 c::k ]
+			[ -2 4 7 c::r ]
+			[ -3 4 7 c::k ]
+			[ -4 4 7 c::r ]
+			[ -4 5 7 c::k ]
+			[ -3 5 7 c::r ]
+			[ -2 5 7 c::k ]
+			[ -1 5 7 c::r ]
+			[ 0 5 7 c::k ]
+			[ 1 5 7 c::r ]
+			[ 2 5 7 c::k ]
+			[ 3 5 7 c::r ]
+			[ 3 6 7 c::k ]
+			[ 2 6 7 c::r ]
+			[ 1 6 7 c::k ]
+			[ 0 6 7 c::r ]
+			[ -1 6 7 c::k ]
+			[ -2 6 7 c::r ]
+			[ -3 6 7 c::k ]
+			[ -4 6 7 c::r ]
+			[ -4 7 7 c::k ]
+			[ -3 7 7 c::r ]
+			[ -2 7 7 c::k ]
+			[ -1 7 7 c::r ]
+			[ 0 7 7 c::k ]
+			[ 1 7 7 c::r ]
+			[ 2 7 7 c::k ]
+			[ 3 7 7 c::r ]
+			[ 3 7 6 c::k ]
+			[ 2 7 6 c::r ]
+			[ 1 7 6 c::k ]
+			[ 0 7 6 c::r ]
+			[ -1 7 6 c::k ]
+			[ -2 7 6 c::r ]
+			[ -3 7 6 c::k ]
+			[ -4 7 6 c::r ]
+			[ -4 6 6 c::k ]
+			[ -3 6 6 c::r ]
+			[ -2 6 6 c::k ]
+			[ -1 6 6 c::r ]
+			[ 0 6 6 c::k ]
+			[ 1 6 6 c::r ]
+			[ 2 6 6 c::k ]
+			[ 3 6 6 c::r ]
+			[ 3 5 6 c::k ]
+			[ 2 5 6 c::r ]
+			[ 1 5 6 c::k ]
+			[ 0 5 6 c::r ]
+			[ -1 5 6 c::k ]
+			[ -2 5 6 c::r ]
+			[ -3 5 6 c::k ]
+			[ -4 5 6 c::r ]
+			[ -4 4 6 c::k ]
+			[ -3 4 6 c::r ]
+			[ -2 4 6 c::k ]
+			[ -1 4 6 c::r ]
+			[ 0 4 6 c::k ]
+			[ 1 4 6 c::r ]
+			[ 2 4 6 c::k ]
+			[ 3 4 6 c::r ]
+			[ 3 3 6 c::k ]
+			[ 2 3 6 c::r ]
+			[ 1 3 6 c::k ]
+			[ 0 3 6 c::r ]
+			[ -1 3 6 c::k ]
+			[ -2 3 6 c::r ]
+			[ -3 3 6 c::k ]
+			[ -4 3 6 c::r ]
+			[ -4 2 6 c::k ]
+			[ -3 2 6 c::r ]
+			[ -2 2 6 c::k ]
+			[ -1 2 6 c::r ]
+			[ 0 2 6 c::k ]
+			[ 1 2 6 c::r ]
+			[ 2 2 6 c::k ]
+			[ 3 2 6 c::r ]
+			[ 3 1 6 c::k ]
+			[ 2 1 6 c::r ]
+			[ 1 1 6 c::k ]
+			[ 0 1 6 c::r ]
+			[ -1 1 6 c::k ]
+			[ -2 1 6 c::r ]
+			[ -3 1 6 c::k ]
+			[ -4 1 6 c::r ]
+			[ -4 0 6 c::k ]
+			[ -3 0 6 c::r ]
+			[ -2 0 6 c::k ]
+			[ -1 0 6 c::r ]
+			[ 0 0 6 c::k ]
+			[ 1 0 6 c::r ]
+			[ 2 0 6 c::k ]
+			[ 3 0 6 c::r ]
+			[ 0 0 5 c::r ]
+			[ 3 0 5 c::k ]
+			[ 2 0 5 c::r ]
+			[ 1 0 5 c::k ]
+			[ -1 0 5 c::k ]
+			[ -2 0 5 c::r ]
+			[ -3 0 5 c::k ]
+			[ -4 0 5 c::r ]
+			[ -4 1 5 c::k ]
+			[ -3 1 5 c::r ]
+			[ -2 1 5 c::k ]
+			[ -1 1 5 c::r ]
+			[ 0 1 5 c::k ]
+			[ 1 1 5 c::r ]
+			[ 2 1 5 c::k ]
+			[ 3 1 5 c::r ]
+			[ 3 2 5 c::k ]
+			[ 2 2 5 c::r ]
+			[ 1 2 5 c::k ]
+			[ 0 2 5 c::r ]
+			[ -1 2 5 c::k ]
+			[ -2 2 5 c::r ]
+			[ -3 2 5 c::k ]
+			[ -4 2 5 c::r ]
+			[ -4 3 5 c::k ]
+			[ -3 3 5 c::r ]
+			[ -2 3 5 c::k ]
+			[ -1 3 5 c::r ]
+			[ 0 3 5 c::k ]
+			[ 1 3 5 c::r ]
+			[ 2 3 5 c::k ]
+			[ 3 3 5 c::r ]
+			[ 3 4 5 c::k ]
+			[ 2 4 5 c::r ]
+			[ 1 4 5 c::k ]
+			[ 0 4 5 c::r ]
+			[ -1 4 5 c::k ]
+			[ -2 4 5 c::r ]
+			[ -3 4 5 c::k ]
+			[ -4 4 5 c::r ]
+			[ -4 5 5 c::k ]
+			[ -3 5 5 c::r ]
+			[ -2 5 5 c::k ]
+			[ -1 5 5 c::r ]
+			[ 0 5 5 c::k ]
+			[ 1 5 5 c::r ]
+			[ 2 5 5 c::k ]
+			[ 3 5 5 c::r ]
+			[ 3 6 5 c::k ]
+			[ 2 6 5 c::r ]
+			[ 1 6 5 c::k ]
+			[ 0 6 5 c::r ]
+			[ -1 6 5 c::k ]
+			[ -2 6 5 c::r ]
+			[ -3 6 5 c::k ]
+			[ -4 6 5 c::r ]
+			[ -4 7 5 c::k ]
+			[ -3 7 5 c::r ]
+			[ -2 7 5 c::k ]
+			[ -1 7 5 c::r ]
+			[ 0 7 5 c::k ]
+			[ 1 7 5 c::r ]
+			[ 2 7 5 c::k ]
+			[ 3 7 5 c::r ]
+			[ 3 7 4 c::k ]
+			[ 2 7 4 c::r ]
+			[ 1 7 4 c::k ]
+			[ 0 7 4 c::r ]
+			[ -1 7 4 c::k ]
+			[ -2 7 4 c::r ]
+			[ -3 7 4 c::k ]
+			[ -4 7 4 c::r ]
+			[ -4 6 4 c::k ]
+			[ -3 6 4 c::r ]
+			[ -2 6 4 c::k ]
+			[ -1 6 4 c::r ]
+			[ 0 6 4 c::k ]
+			[ 1 6 4 c::r ]
+			[ 2 6 4 c::k ]
+			[ 3 6 4 c::r ]
+			[ 3 5 4 c::k ]
+			[ 2 5 4 c::r ]
+			[ 1 5 4 c::k ]
+			[ 0 5 4 c::r ]
+			[ -1 5 4 c::k ]
+			[ -2 5 4 c::r ]
+			[ -3 5 4 c::k ]
+			[ -4 5 4 c::r ]
+			[ -4 4 4 c::k ]
+			[ -3 4 4 c::r ]
+			[ -2 4 4 c::k ]
+			[ -1 4 4 c::r ]
+			[ 0 4 4 c::k ]
+			[ 1 4 4 c::r ]
+			[ 2 4 4 c::k ]
+			[ 3 4 4 c::r ]
+			[ 3 3 4 c::k ]
+			[ 2 3 4 c::r ]
+			[ 1 3 4 c::k ]
+			[ 0 3 4 c::r ]
+			[ -1 3 4 c::k ]
+			[ -2 3 4 c::r ]
+			[ -3 3 4 c::k ]
+			[ -4 3 4 c::r ]
+			[ -4 2 4 c::k ]
+			[ -3 2 4 c::r ]
+			[ -2 2 4 c::k ]
+			[ -1 2 4 c::r ]
+			[ 0 2 4 c::k ]
+			[ 1 2 4 c::r ]
+			[ 2 2 4 c::k ]
+			[ 3 2 4 c::r ]
+			[ 3 1 4 c::k ]
+			[ 2 1 4 c::r ]
+			[ 1 1 4 c::k ]
+			[ 0 1 4 c::r ]
+			[ -1 1 4 c::k ]
+			[ -2 1 4 c::r ]
+			[ -3 1 4 c::k ]
+			[ -4 1 4 c::r ]
+			[ -4 0 4 c::k ]
+			[ -3 0 4 c::r ]
+			[ -2 0 4 c::k ]
+			[ -1 0 4 c::r ]
+			[ 0 0 4 c::k ]
+			[ 1 0 4 c::r ]
+			[ 2 0 4 c::k ]
+			[ 3 0 4 c::r ]
+		]
+		struct [ { a lsai::bounce l false } { t ls::plan a lsai::destroy l false m false v false x 5 y -1 w 10 h 9 z -2 }
+			{ t ls::sph a lsai::sticky x -3 y 5 z 10 }
+		]
+	}
+	//b9
+	{	z 7
+		expert 2000
+		fog { set true exp 0.01 } background { r 0.4 g 0.3 b 0.2 } ambient { r 0.4 g 0.3 b 0.2 }
+		nodes [ lavaNode lavaLight CrystalsAll Steams BatgirlNode ]
+		particles [
+			{ name "Batcave/Firesteam" parent "Steam06" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam05" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam04" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam03" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam02" ff 3 }
+			{ name "Batcave/Firesteam" parent "Steam01" ff 3 }
+		]
+		sounds [
+			{ sInterval 0 c { x 2 y -4.4 z 24 } n [ lava ] }
+			{ sInterval 8 sRand 0.5 c { x -12 y 0 z 18 } i 2 o 6 n [ rocks_fall_1 rocks_fall_2 ] }
+			{ sInterval 15 sRand 0.5 c { x -6 y -4.4 z 0 } i 5 o 20 n [ rats_1 rats_2 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire1 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire2 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire3 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire4 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.9 i 5 o 19 n [ fire5 ] }
+			{ sInterval 6 c { x -6 y -4.4 z 26 } sRand 0.5 i 5 o 19 n [ fire6 ] }
+		]
+		balls [
+			[ 3 3 7 c::y ]
+			[ 3 3 6 c::b ]
+			[ 3 5 6 c::y ]
+			[ -1 1 7 c::k ]
+			[ -1 1 6 c::bob ]
+			[ -2 0 6 c::c ]
+			[ 3 7 7 c::b ]
+			[ 2 6 6 c::b ]
+			[ 2 6 7 c::r ]
+			[ 1 7 6 c::r ]
+			[ 1 7 7 c::y ]
+			[ 0 6 7 c::k ]
+			[ 0 6 6 c::y ]
+			[ -1 7 6 c::k ]
+			[ -1 7 7 c::c ]
+			[ -2 6 6 c::c ]
+			[ -2 6 7 c::m ]
+			[ -3 7 6 c::m ]
+			[ -3 7 7 c::w ]
+			[ -4 6 6 c::w ]
+			[ -4 6 7 c::b ]
+			[ -3 5 6 c::b ]
+			[ -3 5 7 c::r ]
+			[ -2 4 6 c::r ]
+			[ -2 4 7 c::y ]
+			[ -1 5 7 c::k ]
+			[ -1 5 6 c::y ]
+			[ 0 4 7 c::c ]
+			[ 0 4 6 c::k ]
+			[ 1 5 7 c::k ]
+			[ 1 5 6 c::m ]
+			[ 2 4 7 c::m ]
+			[ 2 4 6 c::w ]
+			[ 3 5 7 c::w ]
+			[ 2 2 7 c::b ]
+			[ 2 2 6 c::r ]
+			[ 1 3 7 c::r ]
+			[ 1 3 6 c::y ]
+			[ 0 2 7 c::y ]
+			[ 0 2 6 c::k ]
+			[ -1 3 7 c::k ]
+			[ -1 3 6 c::m ]
+			[ -2 2 7 c::m ]
+			[ -2 2 6 c::w ]
+			[ -3 3 7 c::w ]
+			[ -3 3 6 c::c ]
+			[ -4 2 7 c::c ]
+			[ -4 2 6 c::b ]
+			[ -3 1 7 c::b ]
+			[ -3 1 6 c::r ]
+			[ -4 0 7 c::r ]
+			[ -4 0 6 c::y ]
+			[ -2 0 7 c::y ]
+			[ 0 0 7 c::c ]
+			[ 0 0 6 c::m ]
+			[ 1 1 7 c::m ]
+			[ 1 1 6 c::w ]
+			[ 2 0 7 c::w ]
+			[ 2 0 6 c::g ]
+			[ 3 1 7 c::g ]
+			[ 3 1 6 c::g ]
+		]
+	}
+]
+
+
+// HALLOWEEN
+LevelStruct halloBackWall { t ls::plan a lsai::destroy l false m false v false x 6 y -1 w 12 h 11 z -3 }
+array of Level halloween [
+	// h0
+	{
+		z 8
+		expert 48000
+		fog { set true exp 0.16 } background RGB::grey3
+		nodes [ LIGHT1_HAL Rats1 Rats2 Rats3 Rats4 BurtonTrees ]
+		sounds [
+			{ sInterval 10 sRand 0.4 c { x 2.5 } i 5 o 30 n [ bats_3 mouse_1 mouse_2 ] }
+			{ sInterval 10 sRand 0.6 c { x 2.5 } i 10 o 30 n [ spooky_wind_1 ] }
+		]
+		struct [ { } halloBackWall
+		]
+		hint h0
+		balls [
+			[ 0 3 8 c::c ]
+			[ 0 4 8 c::b ]
+			[ -1 4 8 c::c ]
+			[ -1 3 8 c::m ]
+			[ 0 5 7 c::b ]
+			[ -1 5 7 c::c ]
+			[ -2 5 7 c::m ]
+			[ 1 5 7 c::y ]
+			[ 1 3 7 c::b ]
+			[ 1 4 7 c::c ]
+			[ 0 4 7 c::m ]
+			[ -1 4 7 c::y ]
+			[ -2 4 7 c::b ]
+			[ -2 3 7 c::c ]
+			[ -1 3 7 c::b ]
+			[ 0 3 7 c::y ]
+			[ 1 2 7 c::m ]
+			[ 0 2 7 c::c ]
+			[ -1 2 7 c::y ]
+			[ -2 2 7 c::b ]
+			[ -2 2 6 c::bro ]
+			[ -1 2 6 c::bro ]
+			[ 0 2 6 c::bro ]
+			[ 1 2 6 c::bro ]
+			[ 1 3 6 c::bro ]
+			[ 0 3 6 c::bro ]
+			[ -2 3 6 c::bro ]
+			[ -2 4 6 c::bro ]
+			[ -1 4 6 c::bro ]
+			[ 1 4 6 c::bro ]
+			[ 1 5 6 c::bro ]
+			[ 0 5 6 c::bro ]
+			[ -1 5 6 c::bro ]
+			[ -2 5 6 c::bro ]
+		]
+	}
+	
+	// h1
+	{
+		z 6
+		expert 85000
+		fog { set true exp 0.16 } background RGB::grey3
+		struct [ { t ls::wall a lsai::bounce l false } halloBackWall
+			{ t ls::sph a lsai::sticky x 0 y 3 z 6 }
+			{ t ls::sph a lsai::sticky x -1 y 3 z 6 }
+			{ t ls::sph a lsai::sticky x 0 y 4 z 6 }
+			{ t ls::sph a lsai::sticky x -1 y 4 z 6 }
+		]
+		nodes [ LIGHT1_HAL Rats1 Rats2 Rats3 Rats4 BurtonTrees ]
+		sounds [
+			{ sInterval 10 sRand 0.4 c { x 2.5 } i 5 o 30 n [ bats_3 mouse_1 mouse_2 ] }
+			{ sInterval 10 sRand 0.6 c { x 2.5 } i 10 o 30 n [ spooky_wind_1 ] }
+		]
+		balls [
+			[ 1 3 4 c::m ]
+			[ 1 3 5 c::y ]
+			[ 1 3 6 c::m ]
+			[ 1 4 6 c::y ]
+			[ 1 4 5 c::m ]
+			[ 1 4 4 c::y ]
+			[ 1 4 3 c::m ]
+			[ 0 4 3 c::y ]
+			[ 0 4 5 c::y ]
+			[ -1 4 5 c::m ]
+			[ -1 4 4 c::y ]
+			[ -2 4 3 c::y ]
+			[ -2 4 4 c::m ]
+			[ -2 4 5 c::y ]
+			[ -2 3 5 c::m ]
+			[ -2 3 4 c::y ]
+			[ -2 3 3 c::m ]
+			[ -1 3 3 c::y ]
+			[ -1 3 5 c::y ]
+			[ -1 2 5 c::m ]
+			[ -1 2 4 c::y ]
+			[ -1 2 3 c::m ]
+			[ 0 2 3 c::y ]
+			[ 0 2 4 c::m ]
+			[ 0 2 5 c::y ]
+			[ 0 3 5 c::m ]
+			[ 0 3 4 c::y ]
+			[ 0 5 3 c::m ]
+			[ -1 5 3 c::y ]
+			[ -1 5 4 c::m ]
+			[ 0 5 4 c::y ]
+			[ 0 5 5 c::m ]
+			[ -1 5 5 c::y ]
+			[ -1 4 3 c::bro ]
+			[ 0 3 3 c::bro ]
+			[ -1 3 4 c::bro ]
+			[ 0 4 4 c::bro ]
+			[ 2 4 6 c::bro ]
+			[ 2 4 5 c::bro ]
+			[ 2 4 4 c::bro ]
+			[ 2 4 3 c::bro ]
+			[ 2 3 6 c::bro ]
+			[ 2 3 5 c::bro ]
+			[ 2 3 4 c::bro ]
+			[ 2 3 3 c::bro ]
+			[ -3 3 3 c::bro ]
+			[ -3 3 4 c::bro ]
+			[ -3 3 5 c::bro ]
+			[ -3 3 6 c::bro ]
+			[ -3 4 6 c::bro ]
+			[ -3 4 5 c::bro ]
+			[ -3 4 4 c::bro ]
+			[ -3 4 3 c::bro ]
+			[ 0 5 6 c::y ]
+			[ -1 5 6 c::m ]
+			[ -1 6 6 c::bro ]
+			[ 0 6 6 c::bro ]
+			[ 0 6 5 c::bro ]
+			[ 0 6 4 c::bro ]
+			[ 0 6 3 c::bro ]
+			[ -1 6 3 c::bro ]
+			[ -1 6 4 c::bro ]
+			[ -1 6 5 c::bro ]
+			[ 0 2 6 c::m ]
+			[ -1 2 6 c::y ]
+			[ 0 1 6 c::bro ]
+			[ 0 1 5 c::bro ]
+			[ 0 1 4 c::bro ]
+			[ 0 1 3 c::bro ]
+			[ -1 1 3 c::bro ]
+			[ -1 1 4 c::bro ]
+			[ -1 1 5 c::bro ]
+			[ -1 1 6 c::bro ]
+			[ -2 4 6 c::y ]
+			[ -2 3 6 c::m ]
+			[ -2 5 4 c::bro ]
+			[ -2 5 5 c::bro ]
+			[ -2 5 6 c::bro ]
+			[ 1 5 6 c::bro ]
+			[ 1 5 5 c::bro ]
+			[ 1 5 4 c::bro ]
+			[ 1 5 3 c::bro ]
+			[ -2 5 3 c::bro ]
+			[ -2 2 6 c::bro ]
+			[ 1 2 6 c::bro ]
+			[ 1 2 5 c::bro ]
+			[ 1 2 4 c::bro ]
+			[ 1 2 3 c::bro ]
+			[ -2 2 5 c::bro ]
+			[ -2 2 4 c::bro ]
+			[ -2 2 3 c::bro ]
+			[ 1 3 3 c::y ]
+		]
+	}
+	
+	// h2
+	{
+		z 7
+		expert 15000
+		fog { set true exp 0.08 } background RGB::grey2 ambient RGB::grey7
+		sounds [
+			{ sInterval 12 sRand 0.4 c { x 2.5 } i 5 o 30 n [ crow_1 crow_2 crow_3 crow_fly ] }
+			{ sInterval 10 sRand 0.6 c { x 2.5 } i 10 o 30 n [ spooky_wind_1 spooky_wind_2 ] }
+		]
+		struct [ { } halloBackWall ]
+		nodes [ BurtonTrees LIGHT12_HAL CrowsTrees ]
+		balls [
+			[ -2 5 7 c::c ]
+			[ -2 2 7 c::c ]
+			[ -1 2 7 c::c ]
+			[ 0 4 7 c::c ]
+			[ -1 3 7 c::c ]
+			[ 1 5 6 c::bro ]
+			[ 1 2 7 c::c ]
+			[ 1 2 6 c::bro ]
+			[ 1 3 6 c::bro ]
+			[ 1 4 6 c::bro ]
+			[ 0 2 5 c::bro ]
+			[ 0 3 5 c::bro ]
+			[ 0 4 5 c::bro ]
+			[ 0 5 5 c::bro ]
+			[ -1 5 4 c::bro ]
+			[ -1 4 4 c::bro ]
+			[ -1 3 4 c::bro ]
+			[ -1 2 4 c::bro ]
+			[ -2 2 3 c::bro ]
+			[ -2 3 3 c::bro ]
+			[ -2 4 3 c::bro ]
+			[ -2 5 3 c::bro ]
+			[ 0 5 6 c::m ]
+			[ -1 5 6 c::r ]
+			[ -2 5 6 c::y ]
+			[ -2 4 6 c::m ]
+			[ -1 4 6 c::y ]
+			[ 0 4 6 c::r ]
+			[ -1 3 6 c::m ]
+			[ -2 3 6 c::r ]
+			[ -2 2 6 c::y ]
+			[ 0 2 6 c::r ]
+			[ -1 2 5 c::c ]
+			[ -1 3 5 c::m ]
+			[ -1 4 5 c::c ]
+			[ -1 5 5 c::y ]
+			[ -2 5 5 c::r ]
+			[ -2 2 4 c::y ]
+			[ -2 3 4 c::m ]
+			[ -2 4 4 c::c ]
+			[ -2 5 4 c::y ]
+			[ -2 4 5 c::b ]
+			[ 0 3 6 c::b ]
+			[ -1 2 6 c::b ]
+			[ -2 2 5 c::r ]
+			[ -2 3 5 c::c ]
+			[ -2 3 7 c::b ]
+			[ -2 4 7 c::r ]
+			[ -1 4 7 c::b ]
+			[ 0 3 7 c::y ]
+			[ 1 4 7 c::y ]
+			[ 1 3 7 c::m ]
+			[ 1 5 7 c::b ]
+			[ 0 5 7 c::y ]
+			[ -1 5 7 c::m ]
+			[ 0 2 7 c::b ]
+		]
+	}
+	
+	// h3
+	{
+		z 7
+		expert 165000
+		fog { set true exp 0.04 } background RGB::grey1 ambient RGB::grey4
+		struct [ { } halloBackWall ]
+		nodes [ BurtonTrees LIGHT13_HAL CrowsTrees ]
+		sounds [
+			{ sInterval 12 sRand 0.4 c { x 2.5 } i 5 o 30 n [ crow_1 crow_2 crow_3 crow_fly ] }
+			{ sInterval 10 sRand 0.6 c { x 2.5 } i 10 o 30 n [ spooky_wind_1 spooky_wind_2 ] }
+		]
+		balls [
+			[ 1 2 4 c::bro ]
+			[ 1 2 5 c::bro ]
+			[ -2 4 6 c::bro ]
+			[ 1 5 6 c::bro ]
+			[ 0 5 6 c::bro ]
+			[ -1 5 6 c::bro ]
+			[ -2 5 6 c::bro ]
+			[ 1 4 6 c::bro ]
+			[ 1 3 6 c::bro ]
+			[ 1 2 6 c::bro ]
+			[ 0 2 6 c::bro ]
+			[ -1 2 6 c::bro ]
+			[ -2 2 6 c::bro ]
+			[ -2 3 6 c::bro ]
+			[ 0 3 6 c::m ]
+			[ 0 4 6 c::c ]
+			[ -1 4 6 c::m ]
+			[ -1 3 6 c::y ]
+			[ 0 3 5 c::c ]
+			[ 0 4 5 c::y ]
+			[ -1 4 5 c::c ]
+			[ -1 3 5 c::m ]
+			[ 0 3 4 c::m ]
+			[ 0 4 4 c::c ]
+			[ -1 3 4 c::y ]
+			[ -1 4 4 c::m ]
+			[ 1 5 5 c::bro ]
+			[ 1 5 4 c::bro ]
+			[ 1 5 3 c::bro ]
+			[ 1 4 3 c::bro ]
+			[ 1 3 3 c::bro ]
+			[ 1 2 3 c::bro ]
+			[ 0 2 3 c::bro ]
+			[ -1 2 3 c::bro ]
+			[ -2 2 3 c::bro ]
+			[ -2 2 4 c::bro ]
+			[ -2 2 5 c::bro ]
+			[ -2 5 5 c::bro ]
+			[ -2 5 4 c::bro ]
+			[ -2 5 3 c::bro ]
+			[ -1 5 3 c::bro ]
+			[ 0 5 3 c::bro ]
+			[ -2 4 3 c::bro ]
+			[ -2 3 3 c::bro ]
+			[ -1 3 3 c::c ]
+			[ 0 4 3 c::m ]
+			[ 0 3 3 c::y ]
+			[ -1 4 3 c::y ]
+			[ -2 4 4 c::c ]
+			[ -2 4 5 c::m ]
+			[ -2 3 5 c::y ]
+			[ -2 3 4 c::m ]
+			[ 1 3 4 c::y ]
+			[ 1 4 4 c::m ]
+			[ 1 4 5 c::y ]
+			[ 1 3 5 c::c ]
+			[ 0 3 7 c::c ]
+			[ 0 4 7 c::y ]
+			[ -1 4 7 c::c ]
+			[ -1 3 7 c::m ]
+		]
+	}
+	
+	// h4
+	{
+		z 8
+		expert 85000
+		skybox { name "nebula1" rot [ 0 -90 0 ] }
+		ambient RGB::grey4
+		nodes [ BurtonTrees LIGHT2_HAL CloudGroup_HAL CloudGroup_HAL01 CloudGroup_HAL02 CrowsTakeOff CrowsFlyNodes ]
+		struct [ { } halloBackWall ]
+		sounds [
+			{ sInterval 1.5 sRand 1 c { x 2.5 } i 5 o 15 pause true n [ crow_fly ] }
+			{ sInterval 0 sRand 1 c { x 2.5 } i 5 o 15 pause true n [ takeoff_1 ] }
+			{ sInterval 1.5 sRand 1 c { x 2.5 } i 5 o 15 pause true n [ takeoff_2 ] }
+			{ sInterval 6 sRand 0.4 c { x 2.5 } i 10 o 50 n [ crow_1 crow_2 crow_3 crow_4 crow_5 crow_6 ] }
+			{ sInterval 8 sRand 0.6 c { x 2.5 } i 10 o 30 n [ spooky_wind_1 spooky_wind_2 ] }
+		]
+		balls [
+			[ -1 1 3 c::bro ]
+			[ -1 3 3 c::bro ]
+			[ -1 5 3 c::bro ]
+			[ -1 7 3 c::bro ]
+			[ -2 1 3 c::bro ]
+			[ -2 2 3 c::bro ]
+			[ -2 4 3 c::bro ]
+			[ -2 6 3 c::bro ]
+			[ -2 7 3 c::bro ]
+			[ -3 1 3 c::bro ]
+			[ -3 3 3 c::bro ]
+			[ -3 5 3 c::bro ]
+			[ -3 7 3 c::bro ]
+			[ -4 2 3 c::bro ]
+			[ -4 3 3 c::bro ]
+			[ -4 4 3 c::bro ]
+			[ -4 5 3 c::bro ]
+			[ -4 6 3 c::bro ]
+			[ 0 1 3 c::bro ]
+			[ 0 2 3 c::bro ]
+			[ 0 4 3 c::bro ]
+			[ 0 6 3 c::bro ]
+			[ 0 7 3 c::bro ]
+			[ 1 1 3 c::bro ]
+			[ 1 3 3 c::bro ]
+			[ 1 5 3 c::bro ]
+			[ 1 7 3 c::bro ]
+			[ 2 2 3 c::bro ]
+			[ 2 3 3 c::bro ]
+			[ 2 4 3 c::bro ]
+			[ 2 5 3 c::bro ]
+			[ 2 6 3 c::bro ]
+			[ -1 1 4 c::c ]
+			[ -1 3 4 c::c ]
+			[ -1 5 4 c::c ]
+			[ -1 7 4 c::c ]
+			[ -2 2 4 c::c ]
+			[ -2 4 4 c::c ]
+			[ -2 6 4 c::c ]
+			[ -3 1 4 c::c ]
+			[ -3 3 4 c::c ]
+			[ -3 5 4 c::c ]
+			[ -3 7 4 c::c ]
+			[ -4 2 4 c::c ]
+			[ -4 4 4 c::c ]
+			[ -4 6 4 c::c ]
+			[ 0 2 4 c::c ]
+			[ 0 4 4 c::c ]
+			[ 0 6 4 c::c ]
+			[ 1 1 4 c::c ]
+			[ 1 3 4 c::c ]
+			[ 1 5 4 c::c ]
+			[ 1 7 4 c::c ]
+			[ 2 2 4 c::c ]
+			[ 2 4 4 c::c ]
+			[ 2 6 4 c::c ]
+			[ -1 1 5 c::m ]
+			[ -1 3 5 c::m ]
+			[ -1 5 5 c::m ]
+			[ -1 7 5 c::m ]
+			[ -2 2 5 c::m ]
+			[ -2 4 5 c::m ]
+			[ -2 6 5 c::m ]
+			[ -3 1 5 c::m ]
+			[ -3 3 5 c::m ]
+			[ -3 5 5 c::m ]
+			[ -3 7 5 c::m ]
+			[ -4 2 5 c::m ]
+			[ -4 4 5 c::m ]
+			[ -4 6 5 c::m ]
+			[ 0 2 5 c::m ]
+			[ 0 4 5 c::m ]
+			[ 0 6 5 c::m ]
+			[ 1 1 5 c::m ]
+			[ 1 3 5 c::m ]
+			[ 1 5 5 c::m ]
+			[ 1 7 5 c::m ]
+			[ 2 2 5 c::m ]
+			[ 2 4 5 c::m ]
+			[ 2 6 5 c::m ]
+			[ -1 1 6 c::bro ]
+			[ -1 3 6 c::bro ]
+			[ -1 5 6 c::bro ]
+			[ -1 7 6 c::bro ]
+			[ -2 1 6 c::bro ]
+			[ -2 2 6 c::bro ]
+			[ -2 4 6 c::bro ]
+			[ -2 6 6 c::bro ]
+			[ -2 7 6 c::bro ]
+			[ -3 1 6 c::bro ]
+			[ -3 3 6 c::bro ]
+			[ -3 5 6 c::bro ]
+			[ -3 7 6 c::bro ]
+			[ -4 2 6 c::bro ]
+			[ -4 3 6 c::bro ]
+			[ -4 4 6 c::bro ]
+			[ -4 5 6 c::bro ]
+			[ -4 6 6 c::bro ]
+			[ 0 1 6 c::bro ]
+			[ 0 2 6 c::bro ]
+			[ 0 4 6 c::bro ]
+			[ 0 6 6 c::bro ]
+			[ 0 7 6 c::bro ]
+			[ 1 1 6 c::bro ]
+			[ 1 3 6 c::bro ]
+			[ 1 5 6 c::bro ]
+			[ 1 7 6 c::bro ]
+			[ 2 2 6 c::bro ]
+			[ 2 4 6 c::bro ]
+			[ 2 6 6 c::bro ]
+			[ -1 1 7 c::c ]
+			[ -1 3 7 c::c ]
+			[ -1 5 7 c::c ]
+			[ -1 7 7 c::c ]
+			[ -2 2 7 c::c ]
+			[ -2 4 7 c::c ]
+			[ -2 6 7 c::c ]
+			[ -3 1 7 c::c ]
+			[ -3 3 7 c::c ]
+			[ -3 5 7 c::c ]
+			[ -3 7 7 c::c ]
+			[ -4 2 7 c::c ]
+			[ -4 4 7 c::c ]
+			[ -4 6 7 c::c ]
+			[ 0 2 7 c::c ]
+			[ 0 4 7 c::c ]
+			[ 0 6 7 c::c ]
+			[ 1 1 7 c::c ]
+			[ 1 3 7 c::c ]
+			[ 1 5 7 c::c ]
+			[ 1 7 7 c::c ]
+			[ 2 2 7 c::c ]
+			[ 2 4 7 c::c ]
+			[ 2 6 7 c::c ]
+			[ -1 1 8 c::m ]
+			[ -1 3 8 c::m ]
+			[ -1 5 8 c::m ]
+			[ -1 7 8 c::m ]
+			[ -2 2 8 c::m ]
+			[ -2 4 8 c::m ]
+			[ -2 6 8 c::m ]
+			[ -3 1 8 c::m ]
+			[ -3 3 8 c::m ]
+			[ -3 5 8 c::m ]
+			[ -3 7 8 c::m ]
+			[ -4 2 8 c::m ]
+			[ -4 4 8 c::m ]
+			[ -4 6 8 c::m ]
+			[ 0 2 8 c::m ]
+			[ 0 4 8 c::m ]
+			[ 0 6 8 c::m ]
+			[ 1 1 8 c::m ]
+			[ 1 3 8 c::m ]
+			[ 1 5 8 c::m ]
+			[ 1 7 8 c::m ]
+			[ 2 2 8 c::m ]
+			[ 2 4 8 c::m ]
+			[ 2 6 8 c::m ]
+		]
+	}
+	
+	// h5
+	{
+		z 35
+		expert 4000000
+		aimLength 20
+		skybox { name "nebula2" rot [ 0 -30 0 ] }
+		ambient RGB::grey4
+		nodes [ BurtonTrees LIGHT2_HAL CloudGroup_HAL CloudGroup_HAL01 CloudGroup_HAL02 MOON_SKY1 CrowsFlyNodes ]
+		sounds [
+			{ sInterval 6 sRand 0.4 c { x 2.5 } i 10 o 50 n [ crow_1 crow_2 crow_3 crow_4 crow_5 crow_6 ] }
+			{ sInterval 8 sRand 0.6 c { x 2.5 } i 10 o 30 n [ spooky_wind_1 spooky_wind_2 ] }
+		]
+		balls [
+			[ 3 7 35 c::r ]
+			[ 2 7 35 c::r ]
+			[ 1 7 35 c::r ]
+			[ 1 6 35 c::r ]
+			[ 2 6 35 c::r ]
+			[ 3 6 35 c::r ]
+			[ 1 5 34 c::b ]
+			[ 0 5 34 c::b ]
+			[ -1 5 34 c::b ]
+			[ -1 4 34 c::b ]
+			[ 0 4 34 c::b ]
+			[ 1 4 34 c::b ]
+			[ 1 3 34 c::b ]
+			[ 0 3 34 c::b ]
+			[ -1 3 34 c::b ]
+			[ -1 3 33 c::m ]
+			[ -2 3 33 c::m ]
+			[ -3 3 33 c::m ]
+			[ -3 2 33 c::m ]
+			[ -2 2 33 c::m ]
+			[ -1 2 33 c::m ]
+			[ -1 1 33 c::m ]
+			[ -2 1 33 c::m ]
+			[ -3 1 33 c::m ]
+			[ -2 3 32 c::y ]
+			[ -3 3 32 c::y ]
+			[ -4 3 32 c::y ]
+			[ -4 4 32 c::y ]
+			[ -4 5 32 c::y ]
+			[ -3 5 32 c::y ]
+			[ -2 5 32 c::y ]
+			[ -2 4 32 c::y ]
+			[ -3 4 32 c::y ]
+			[ -2 5 31 c::r ]
+			[ -1 5 31 c::r ]
+			[ 0 5 31 c::r ]
+			[ 0 6 31 c::r ]
+			[ 0 7 31 c::r ]
+			[ -1 7 31 c::r ]
+			[ -2 7 31 c::r ]
+			[ -2 6 31 c::r ]
+			[ -1 6 31 c::r ]
+			[ 0 5 30 c::b ]
+			[ 1 5 30 c::b ]
+			[ 2 5 30 c::b ]
+			[ 2 4 30 c::b ]
+			[ 2 3 30 c::b ]
+			[ 1 3 30 c::b ]
+			[ 0 3 30 c::b ]
+			[ 0 4 30 c::b ]
+			[ 1 4 30 c::b ]
+			[ 0 3 29 c::m ]
+			[ -1 3 29 c::m ]
+			[ -2 3 29 c::m ]
+			[ -2 2 29 c::m ]
+			[ -2 1 29 c::m ]
+			[ -1 1 29 c::m ]
+			[ 0 1 29 c::m ]
+			[ 0 2 29 c::m ]
+			[ -1 2 29 c::m ]
+			[ -2 2 28 c::y ]
+			[ -3 2 28 c::y ]
+			[ -4 2 28 c::y ]
+			[ -2 3 28 c::y ]
+			[ -3 3 28 c::y ]
+			[ -4 3 28 c::y ]
+			[ -4 4 28 c::y ]
+			[ -3 4 28 c::y ]
+			[ -2 4 28 c::y ]
+			[ -2 4 27 c::r ]
+			[ -1 4 27 c::r ]
+			[ 0 4 27 c::r ]
+			[ 0 5 27 c::r ]
+			[ -1 5 27 c::r ]
+			[ -2 5 27 c::r ]
+			[ -2 6 27 c::r ]
+			[ -1 6 27 c::r ]
+			[ 0 6 27 c::r ]
+			[ 0 5 26 c::b ]
+			[ 1 5 26 c::b ]
+			[ 2 5 26 c::b ]
+			[ 2 4 26 c::b ]
+			[ 2 3 26 c::b ]
+			[ 1 3 26 c::b ]
+			[ 0 3 26 c::b ]
+			[ 0 4 26 c::b ]
+			[ 1 4 26 c::b ]
+			[ 2 3 25 c::m ]
+			[ 3 3 25 c::m ]
+			[ 3 2 25 c::m ]
+			[ 3 1 25 c::m ]
+			[ 2 1 25 c::m ]
+			[ 1 1 25 c::m ]
+			[ 1 2 25 c::m ]
+			[ 1 3 25 c::m ]
+			[ 2 2 25 c::m ]
+			[ 1 3 24 c::y ]
+			[ 0 3 24 c::y ]
+			[ -1 3 24 c::y ]
+			[ -1 4 24 c::y ]
+			[ -1 5 24 c::y ]
+			[ 0 5 24 c::y ]
+			[ 1 5 24 c::y ]
+			[ 1 4 24 c::y ]
+			[ 0 4 24 c::y ]
+			[ -1 5 23 c::r ]
+			[ -2 5 23 c::r ]
+			[ -3 5 23 c::r ]
+			[ -3 6 23 c::r ]
+			[ -3 7 23 c::r ]
+			[ -2 7 23 c::r ]
+			[ -1 7 23 c::r ]
+			[ -1 6 23 c::r ]
+			[ -2 6 23 c::r ]
+			[ -3 5 22 c::b ]
+			[ -4 5 22 c::b ]
+			[ -4 4 22 c::b ]
+			[ -4 3 22 c::b ]
+			[ -3 3 22 c::b ]
+			[ -2 3 22 c::b ]
+			[ -2 4 22 c::b ]
+			[ -2 5 22 c::b ]
+			[ -3 4 22 c::b ]
+			[ -2 3 21 c::m ]
+			[ -2 2 21 c::m ]
+			[ -2 1 21 c::m ]
+			[ -1 1 21 c::m ]
+			[ 0 1 21 c::m ]
+			[ 0 2 21 c::m ]
+			[ 0 3 21 c::m ]
+			[ -1 3 21 c::m ]
+			[ -1 2 21 c::m ]
+			[ 0 4 20 c::y ]
+			[ 0 3 20 c::y ]
+			[ 0 2 20 c::y ]
+			[ 1 2 20 c::y ]
+			[ 2 2 20 c::y ]
+			[ 2 3 20 c::y ]
+			[ 2 4 20 c::y ]
+			[ 1 4 20 c::y ]
+			[ 1 3 20 c::y ]
+			[ 2 3 19 c::r ]
+			[ 3 3 19 c::r ]
+			[ 3 2 19 c::r ]
+			[ 3 1 19 c::r ]
+			[ 2 1 19 c::r ]
+			[ 1 1 19 c::r ]
+			[ 1 2 19 c::r ]
+			[ 1 3 19 c::r ]
+			[ 2 2 19 c::r ]
+			[ 1 3 18 c::b ]
+			[ 1 4 18 c::b ]
+			[ 1 5 18 c::b ]
+			[ 0 5 18 c::b ]
+			[ -1 5 18 c::b ]
+			[ -1 4 18 c::b ]
+			[ -1 3 18 c::b ]
+			[ 0 3 18 c::b ]
+			[ 0 4 18 c::b ]
+			[ -1 5 17 c::m ]
+			[ -2 5 17 c::m ]
+			[ -3 5 17 c::m ]
+			[ -3 6 17 c::m ]
+			[ -3 7 17 c::m ]
+			[ -2 7 17 c::m ]
+			[ -1 7 17 c::m ]
+			[ -1 6 17 c::m ]
+			[ -2 6 17 c::m ]
+			[ -3 5 16 c::y ]
+			[ -4 5 16 c::y ]
+			[ -4 4 16 c::y ]
+			[ -4 3 16 c::y ]
+			[ -3 3 16 c::y ]
+			[ -2 3 16 c::y ]
+			[ -2 4 16 c::y ]
+			[ -2 5 16 c::y ]
+			[ -3 4 16 c::y ]
+			[ -3 3 15 c::r ]
+			[ -3 2 15 c::r ]
+			[ -3 1 15 c::r ]
+			[ -2 1 15 c::r ]
+			[ -1 1 15 c::r ]
+			[ -1 2 15 c::r ]
+			[ -1 3 15 c::r ]
+			[ -2 3 15 c::r ]
+			[ -2 2 15 c::r ]
+			[ -1 2 14 c::b ]
+			[ -1 1 14 c::b ]
+			[ -1 0 14 c::b ]
+			[ 0 0 14 c::b ]
+			[ 1 0 14 c::b ]
+			[ 1 1 14 c::b ]
+			[ 1 2 14 c::b ]
+			[ 0 2 14 c::b ]
+			[ 0 1 14 c::b ]
+			[ 1 1 13 c::m ]
+			[ 2 1 13 c::m ]
+			[ 3 1 13 c::m ]
+			[ 3 2 13 c::m ]
+			[ 3 3 13 c::m ]
+			[ 2 3 13 c::m ]
+			[ 1 3 13 c::m ]
+			[ 1 2 13 c::m ]
+			[ 2 2 13 c::m ]
+			[ 1 3 12 c::y ]
+			[ 0 3 12 c::y ]
+			[ -1 3 12 c::y ]
+			[ -1 4 12 c::y ]
+			[ 1 4 12 c::y ]
+			[ 0 4 12 c::y ]
+			[ -1 2 12 c::y ]
+			[ 0 2 12 c::y ]
+			[ 1 2 12 c::y ]
+			[ 2 5 35 c::r ]
+			[ 1 5 35 c::r ]
+			[ 3 5 35 c::r ]
+		]
+	}
+	
+	// h6
+	{
+		z 35
+		expert 400000
+		aimLength 20
+		skybox { name "nebula" rot [ 0 30 0 ] }
+		ambient RGB::grey4
+		nodes [ BurtonTrees LIGHT2_HAL CloudGroup_HAL CloudGroup_HAL01 CloudGroup_HAL02 MOON_SKY2 Rats1 Rats2 Rats3 Rats4 Rats1 Rats2 Rats3 Rats4 ]
+		sounds [
+			{ sInterval 6 sRand 0.4 c { x 2.5 } i 5 o 30 n [ mouse_1 mouse_2 mouse_3 ] }
+			{ sInterval 8 sRand 0.6 c { x 2.5 } i 10 o 30 n [ spooky_wind_1 spooky_wind_2 ] }
+			{ sInterval 10 sRand 0.6 c { x 2.5 } i 15 o 40 n [ outside_wolf_howl_1 outside_wolf_howl_2 ] }
+		]
+		struct [ { } halloBackWall
+			{ t ls::cube a lsai::bounce x 3 y -1 z 15 w 8 h 1 d 20 rot [ -3.5 0 6 ] v false } // halloween ground!
+		]
+		hint h6
+		balls [
+			[ 3 2 35 c::c ]
+			[ 3 2 34 c::bro ]
+			[ 3 2 33 c::bro ]
+			[ 3 2 32 c::bro ]
+			[ 3 2 31 c::bro ]
+			[ 3 2 30 c::bro ]
+			[ 3 2 29 c::bro ]
+			[ 3 2 28 c::bro ]
+			[ 3 2 27 c::bro ]
+			[ 3 2 26 c::bro ]
+			[ 3 2 25 c::bro ]
+			[ 3 2 24 c::bro ]
+			[ 3 2 23 c::bro ]
+			[ 3 2 22 c::bro ]
+			[ 3 2 21 c::bro ]
+			[ 3 2 20 c::bro ]
+			[ 3 2 19 c::bro ]
+			[ 3 2 18 c::bro ]
+			[ 3 2 17 c::bro ]
+			[ 3 2 16 c::bro ]
+			[ 3 2 15 c::bro ]
+			[ 3 2 14 c::bro ]
+			[ 3 2 13 c::bro ]
+			[ 3 2 12 c::bro ]
+			[ 3 2 11 c::bro ]
+			[ 3 2 10 c::bro ]
+			[ 3 2 9 c::bro ]
+			[ 3 2 8 c::bro ]
+			[ 3 2 7 c::bro ]
+			[ 3 2 6 c::bro ]
+			[ 3 2 5 c::bro ]
+			[ 3 2 4 c::bro ]
+			[ 3 2 3 c::bro ]
+			[ 3 2 2 c::bro ]
+			
+			[ 3 7 35 c::m ]
+			[ 3 7 34 c::bro ]
+			[ 3 7 33 c::bro ]
+			[ 3 7 32 c::bro ]
+			[ 3 7 31 c::bro ]
+			[ 3 7 30 c::bro ]
+			[ 3 7 29 c::bro ]
+			[ 3 7 28 c::bro ]
+			[ 3 7 27 c::bro ]
+			[ 3 7 26 c::bro ]
+			[ 3 7 25 c::bro ]
+			[ 3 7 24 c::bro ]
+			[ 3 7 23 c::bro ]
+			[ 3 7 22 c::bro ]
+			[ 3 7 21 c::bro ]
+			[ 3 7 20 c::bro ]
+			[ 3 7 19 c::bro ]
+			[ 3 7 18 c::bro ]
+			[ 3 7 17 c::bro ]
+			[ 3 7 16 c::bro ]
+			[ 3 7 15 c::bro ]
+			[ 3 7 14 c::bro ]
+			[ 3 7 13 c::bro ]
+			[ 3 7 12 c::bro ]
+			[ 3 7 11 c::bro ]
+			[ 3 7 10 c::bro ]
+			[ 3 7 9 c::bro ]
+			[ 3 7 8 c::bro ]
+			[ 3 7 7 c::bro ]
+			[ 3 7 6 c::bro ]
+			[ 3 7 5 c::bro ]
+			[ 3 7 4 c::bro ]
+			[ 3 7 3 c::bro ]
+			[ 3 7 2 c::bro ]
+			
+			[ -4 7 35 c::y ]
+			[ -4 7 34 c::bro ]
+			[ -4 7 33 c::bro ]
+			[ -4 7 32 c::bro ]
+			[ -4 7 31 c::bro ]
+			[ -4 7 30 c::bro ]
+			[ -4 7 29 c::bro ]
+			[ -4 7 28 c::bro ]
+			[ -4 7 27 c::bro ]
+			[ -4 7 26 c::bro ]
+			[ -4 7 25 c::bro ]
+			[ -4 7 24 c::bro ]
+			[ -4 7 23 c::bro ]
+			[ -4 7 22 c::bro ]
+			[ -4 7 21 c::bro ]
+			[ -4 7 20 c::bro ]
+			[ -4 7 19 c::bro ]
+			[ -4 7 18 c::bro ]
+			[ -4 7 17 c::bro ]
+			[ -4 7 16 c::bro ]
+			[ -4 7 15 c::bro ]
+			[ -4 7 14 c::bro ]
+			[ -4 7 13 c::bro ]
+			[ -4 7 12 c::bro ]
+			[ -4 7 11 c::bro ]
+			[ -4 7 10 c::bro ]
+			[ -4 7 9 c::bro ]
+			[ -4 7 8 c::bro ]
+			[ -4 7 7 c::bro ]
+			[ -4 7 6 c::bro ]
+			[ -4 7 5 c::bro ]
+			[ -4 7 4 c::bro ]
+			[ -4 7 3 c::bro ]
+			[ -4 7 2 c::bro ]
+		]
+	}
+	
+	// h7
+	{
+		z 10
+		expert 70000
+		skybox { name "nebula" rot [ 0 90 0 ] }
+		ambient RGB::grey4
+		hint h7
+		nodes [ BurtonTrees LIGHT2_HAL CloudGroup_HAL CloudGroup_HAL01 CloudGroup_HAL02 MOON_SKY3 Rats1 Rats2 Rats3 Rats4 Rats1 Rats2 Rats3 Rats4 Rats1 Rats2 Rats3 Rats4 ]
+		sounds [
+			{ sInterval 6 sRand 0.4 c { x 2.5 } i 5 o 30 n [ mouse_1 mouse_2 mouse_3 ] }
+			{ sInterval 6 sRand 0.4 c { x 2.5 } i 5 o 30 n [ mouse_1 mouse_2 mouse_3 ] }
+			{ sInterval 6 sRand 0.4 c { x 2.5 } i 5 o 30 n [ mouse_1 mouse_2 mouse_3 ] }
+			{ sInterval 8 sRand 0.6 c { x 2.5 } i 10 o 30 n [ spooky_wind_1 spooky_wind_2 ] }
+			{ sInterval 10 sRand 0.6 c { x 2.5 } i 15 o 40 n [ outside_wolf_howl_1 outside_wolf_howl_2 ] }
+		]
+		struct [ halloBackWall { t ls::plan a lsai::destroy l false m true v false x 7 y -2 w 15 h 13 z 12 }
+			{ t ls::sph a lsai::sticky x -2 y 4 z 10 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x 2 y 6 z 5 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x -3 y 1 z 4 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::cube a lsai::bounce x 3 y 5 z 4 w 3 h 1 d 3 }
+			{ t ls::cube a lsai::bounce x 3 y 7 z 4 w 3 h 1 d 3 }
+			{ t ls::cube a lsai::bounce x -2 y 0 z 3 w 3 h 1 d 3 }
+			{ t ls::cube a lsai::bounce x -2 y 2 z 3 w 3 h 1 d 3 }
+		]
+		balls [
+			[ 2 6 6 c::c ]
+			[ 2 6 5 c::c ]
+			[ -3 1 5 c::m ]
+			[ -3 1 4 c::m ]
+			[ -2 4 10 c::r ]
+			[ -2 4 9 c::r ]
+			[ -1 4 9 c::bro ]
+			[ -1 5 9 c::bro ]
+			[ -2 5 9 c::bro ]
+			[ -3 5 9 c::bro ]
+			[ -3 4 9 c::bro ]
+			[ -3 3 9 c::bro ]
+			[ -2 3 9 c::bro ]
+			[ -1 3 9 c::bro ]
+		]
+		incoming [ c::r ]
+	}
+	
+	// h8
+	{
+		z 10
+		expert 150000
+		skybox { name "nebula" rot [ 0 150 0 ] }
+		ambient RGB::grey4
+		nodes [ BurtonTrees LIGHT2_HAL CloudGroup_HAL CloudGroup_HAL01 CloudGroup_HAL02 MOON_SKY4 HalWebs ]
+		sounds [
+			{ sInterval 14 sRand 0.6 c { x 2.5 } i 20 o 50 n [ outside_wolf_howl_1 outside_wolf_howl_2 ] }
+			{ sInterval 10 sRand 0.5 c { x 2.5 } i 5 o 20 n [ tree_creaking_2 tree_creaking_1 ] }
+			{ sInterval 0 n [ halloween_night ] }
+		]
+		struct [ halloBackWall { t ls::plan a lsai::destroy l false m true v false x 7 y -2 w 15 h 13 z 12 }
+			{ t ls::sph a lsai::sticky x -2 y 4 z 6 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::cyl a lsai::bounce x 2 y 0 z 12 w 4 h 8 }
+		]
+		balls [
+			[ 0 3 6 c::bro ]
+			[ 0 3 5 c::bro ]
+			[ 0 4 6 c::bro ]
+			[ 0 5 6 c::bro ]
+			[ 0 5 5 c::bro ]
+			[ 0 5 4 c::bro ]
+			[ 0 3 4 c::bro ]
+			[ -2 3 6 c::m ]
+			[ -2 5 6 c::m ]
+			[ -3 4 6 c::y ]
+			[ -1 4 6 c::y ]
+			[ -1 4 5 c::m ]
+			[ -3 4 5 c::m ]
+			[ -3 3 5 c::r ]
+			[ -1 3 5 c::r ]
+			[ -1 5 5 c::r ]
+			[ -3 5 5 c::r ]
+			[ -3 5 6 c::y ]
+			[ -3 3 6 c::y ]
+			[ -1 3 6 c::y ]
+			[ -1 5 6 c::y ]
+			[ -2 4 5 c::y ]
+			[ -2 3 5 c::y ]
+			[ -1 5 4 c::bro ]
+			[ -2 5 4 c::bro ]
+			[ -3 5 4 c::bro ]
+			[ -3 4 4 c::bro ]
+			[ -2 4 4 c::bro ]
+			[ -1 4 4 c::bro ]
+			[ -1 3 4 c::bro ]
+			[ -2 3 4 c::bro ]
+			[ -3 3 4 c::bro ]
+			[ -3 2 4 c::bro ]
+			[ -2 2 4 c::bro ]
+			[ -1 2 4 c::bro ]
+			[ -1 2 5 c::bro ]
+			[ -2 2 5 c::bro ]
+			[ -3 2 5 c::bro ]
+			[ -3 2 6 c::bro ]
+			[ -2 2 6 c::bro ]
+			[ -1 2 6 c::bro ]
+			[ -1 6 4 c::bro ]
+			[ -3 6 4 c::bro ]
+			[ -3 6 5 c::bro ]
+			[ -1 6 5 c::bro ]
+			[ -1 6 6 c::bro ]
+			[ -2 6 6 c::bro ]
+			[ -3 6 6 c::bro ]
+			[ -2 4 6 c::r ]
+		]
+	}
+	
+	// h9
+	{
+		z -1
+		skybox { name "nebula" rot [ 180 0 0 ] }
+		ambient RGB::grey4
+		nodes [ BurtonTrees LIGHT2_HAL CloudGroup_HAL CloudGroup_HAL01 CloudGroup_HAL02 MOON_SKY5 HalWebs ]
+		expert 160000
+		sounds [
+			{ sInterval 14 sRand 0.6 c { x 2.5 } i 20 o 50 n [ outside_wolf_howl_1 outside_wolf_howl_2 ] }
+			{ sInterval 10 sRand 0.5 c { x 2.5 } i 5 o 20 n [ tree_creaking_2 tree_creaking_1 ] }
+			{ sInterval 0 n [ halloween_night ] }
+		]
+		hint h9
+		struct [
+			{ t ls::cube a lsai::destroy x 12 y -1 z -2 w 26 h 20 d 31 l false m false v false }
+			
+			{ t ls::cube a lsai::bounce x 14 y 0 z 10 w 15 h 1 d 14 rot [ -13 0 15 ] l false m false v false } // halloween hill
+			{ t ls::plan a lsai::bounce x 10 y 0 z -2 w 20 h 20 rot [ 90 0 0 ] l false m false v false } // halloween ground
+			
+			{ t ls::cyl a lsai::bounce x 4 y 0 z 0 w 1 h 3 l false m false v false } // tree bottom
+			{ t ls::cyl a lsai::bounce x 4 y 0 z -1 w 1 h 6 rot [ 20 0 -6 ] l false m false v false } // tree trunk
+			{ t ls::cyl a lsai::bounce x 4 y 4 z 0 w 1 h 4 rot [ 45 0 -30 ] l false m false v false } // tree branch
+			
+			{ t ls::sph a lsai::sticky x 2 y 4 z 9 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x -5 y 2 z 4 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x -8 y 4 z 6 w 1 rot [ 1 0 1 1 ] }
+		]
+		balls [
+			[ -3 2 5 c::bro ]
+			[ -3 1 5 c::bro ]
+			[ -3 4 5 c::bro ]
+			[ -3 5 5 c::bro ]
+			[ -3 3 5 c::bro ]
+			[ -5 2 4 c::r ]
+			[ -7 4 6 c::r ]
+			[ -8 4 6 c::r ]
+			[ -4 2 3 c::r ]
+			[ -4 3 3 c::r ]
+			[ -4 4 3 c::r ]
+			[ -6 3 6 c::r ]
+			[ -6 2 6 c::r ]
+			[ -6 4 6 c::r ]
+			[ -4 3 4 c::r ]
+			[ -5 3 4 c::r ]
+			[ 2 3 8 c::r ]
+			[ -3 5 3 c::bro ]
+			[ -3 5 4 c::bro ]
+			[ -3 5 2 c::bro ]
+			[ -3 4 2 c::bro ]
+			[ -3 3 2 c::bro ]
+			[ -3 2 2 c::bro ]
+			[ -3 1 2 c::bro ]
+			[ -3 1 3 c::bro ]
+			[ -3 1 4 c::bro ]
+			[ -3 2 4 c::bro ]
+			[ -3 3 4 c::bro ]
+			[ -3 4 4 c::bro ]
+			[ -3 4 3 c::bro ]
+			[ -3 3 3 c::bro ]
+			[ -3 2 3 c::bro ]
+			[ -5 1 7 c::bro ]
+			[ -5 2 7 c::bro ]
+			[ -5 3 7 c::bro ]
+			[ -5 4 7 c::bro ]
+			[ -5 5 7 c::bro ]
+			[ -6 5 7 c::bro ]
+			[ -7 5 7 c::bro ]
+			[ -7 4 7 c::bro ]
+			[ -7 3 7 c::bro ]
+			[ -7 2 7 c::bro ]
+			[ -7 1 7 c::bro ]
+			[ -6 1 7 c::bro ]
+			[ -6 2 7 c::bro ]
+			[ -6 3 7 c::bro ]
+			[ -6 4 7 c::bro ]
+			[ 3 4 7 c::bro ]
+			[ 2 4 7 c::bro ]
+			[ 1 4 7 c::bro ]
+			[ 3 3 7 c::bro ]
+			[ 3 5 7 c::bro ]
+			[ 2 5 7 c::bro ]
+			[ 1 5 7 c::bro ]
+			[ 1 3 7 c::bro ]
+			[ 2 3 7 c::bro ]
+			[ 2 4 9 c::r ]
+			[ 3 4 9 c::r ]
+			[ 2 3 9 c::r ]
+			[ 3 3 9 c::r ]
+			[ 1 2 7 c::bro ]
+			[ 2 2 7 c::bro ]
+			[ 3 2 7 c::bro ]
+			[ 3 1 7 c::bro ]
+			[ 2 1 7 c::bro ]
+			[ 1 1 7 c::bro ]
+			[ 2 2 9 c::r ]
+			[ 3 2 9 c::r ]
+		]
+	}
+	
+	// h10
+	{
+		z -1
+		skybox { name "sunrise" rot [ 0 -90 0 ] }
+		fog { set true exp 0.02 } background { r 0.05 g 0.15 b 0.25 }
+		nodes [ BurtonTrees LIGHT3_HAL ]
+		expert 180000
+		sounds [
+			{ sInterval 14 sRand 0.6 c { x 2.5 } i 20 o 50 n [ nightingale_1 nightingale_2 ] }
+			{ sInterval 0 n [ halloween_day ] }
+		]
+		struct [
+			{ t ls::cube a lsai::destroy x 12 y -1 z -2 w 26 h 20 d 31 l false m false v false }
+			
+			{ t ls::cube a lsai::bounce x 14 y 0 z 10 w 15 h 1 d 14 rot [ -13 0 15 ] l false m false v false } // halloween hill
+			{ t ls::plan a lsai::bounce x 10 y 0 z -2 w 20 h 20 rot [ 90 0 0 ] l false m false v false } // halloween ground
+			
+			{ t ls::cyl a lsai::bounce x 4 y 0 z 0 w 1 h 3 l false m false v false } // tree bottom
+			{ t ls::cyl a lsai::bounce x 4 y 0 z -1 w 1 h 6 rot [ 20 0 -6 ] l false m false v false } // tree trunk
+			{ t ls::cyl a lsai::bounce x 4 y 4 z 0 w 1 h 4 rot [ 45 0 -30 ] l false m false v false } // tree branch
+			
+			{ t ls::sph a lsai::sticky x 5 y 3 z 8 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x 3 y 3 z 6 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x 2 y 3 z 10 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x -3 y 3 z 10 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x -4 y 3 z 6 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x -6 y 3 z 8 w 1 rot [ 1 0 1 1 ] }
+		]
+		balls [
+			[ -4 3 6 c::r ]
+			[ -4 4 6 c::r ]
+			[ -3 3 10 c::m ]
+			[ -3 4 10 c::m ]
+			[ 5 3 8 c::c ]
+			[ 5 4 8 c::c ]
+			[ -6 3 8 c::r ]
+			[ -6 4 8 c::r ]
+			[ 3 4 6 c::m ]
+			[ 3 3 6 c::m ]
+			[ 2 4 10 c::c ]
+			[ 2 3 10 c::c ]
+			[ -3 5 5 c::bro ]
+			[ -3 4 5 c::bro ]
+			[ -3 3 5 c::bro ]
+			[ -3 2 5 c::bro ]
+			[ -3 1 5 c::bro ]
+			[ -4 1 5 c::bro ]
+			[ -5 1 5 c::bro ]
+			[ -5 2 5 c::bro ]
+			[ -5 3 5 c::bro ]
+			[ -5 4 5 c::bro ]
+			[ -5 5 5 c::bro ]
+			[ -4 5 5 c::bro ]
+			[ -4 4 5 c::bro ]
+			[ -4 2 5 c::bro ]
+			[ 4 5 5 c::bro ]
+			[ 3 5 5 c::bro ]
+			[ 2 5 5 c::bro ]
+			[ 2 4 5 c::bro ]
+			[ 2 3 5 c::bro ]
+			[ 2 2 5 c::bro ]
+			[ 2 1 5 c::bro ]
+			[ 3 1 5 c::bro ]
+			[ 4 1 5 c::bro ]
+			[ 4 2 5 c::bro ]
+			[ 4 3 5 c::bro ]
+			[ 4 4 5 c::bro ]
+			[ 3 4 5 c::bro ]
+			[ 3 2 5 c::bro ]
+			[ 1 3 11 c::bro ]
+			[ 1 1 11 c::bro ]
+			[ 1 2 11 c::bro ]
+			[ 1 4 11 c::bro ]
+			[ 1 5 11 c::bro ]
+			[ 2 5 11 c::bro ]
+			[ 2 4 11 c::bro ]
+			[ 2 2 11 c::bro ]
+			[ 2 1 11 c::bro ]
+			[ -2 1 11 c::bro ]
+			[ -2 2 11 c::bro ]
+			[ -2 3 11 c::bro ]
+			[ -2 4 11 c::bro ]
+			[ -2 5 11 c::bro ]
+			[ -3 5 11 c::bro ]
+			[ -4 5 11 c::bro ]
+			[ -4 4 11 c::bro ]
+			[ -4 3 11 c::bro ]
+			[ -4 2 11 c::bro ]
+			[ -4 1 11 c::bro ]
+			[ -3 1 11 c::bro ]
+			[ -3 2 11 c::bro ]
+			[ -3 4 11 c::bro ]
+			[ 3 5 11 c::bro ]
+			[ 3 4 11 c::bro ]
+			[ 3 3 11 c::bro ]
+			[ 3 2 11 c::bro ]
+			[ 3 1 11 c::bro ]
+			[ 6 5 9 c::bro ]
+			[ 6 5 8 c::bro ]
+			[ 6 5 7 c::bro ]
+			[ 6 4 7 c::bro ]
+			[ 6 3 7 c::bro ]
+			[ 6 2 7 c::bro ]
+			[ 6 1 7 c::bro ]
+			[ 6 1 8 c::bro ]
+			[ 6 1 9 c::bro ]
+			[ 6 2 9 c::bro ]
+			[ 6 3 9 c::bro ]
+			[ 6 4 9 c::bro ]
+			[ 6 4 8 c::bro ]
+			[ 6 2 8 c::bro ]
+			[ -7 1 8 c::bro ]
+			[ -7 1 7 c::bro ]
+			[ -7 2 7 c::bro ]
+			[ -7 3 7 c::bro ]
+			[ -7 4 7 c::bro ]
+			[ -7 5 7 c::bro ]
+			[ -7 5 8 c::bro ]
+			[ -7 5 9 c::bro ]
+			[ -7 4 9 c::bro ]
+			[ -7 3 9 c::bro ]
+			[ -7 2 9 c::bro ]
+			[ -7 1 9 c::bro ]
+			[ -7 2 8 c::bro ]
+			[ -7 4 8 c::bro ]
+		]
+	}
+	
+	// h11
+	{
+		z -1
+		skybox { name "sunrise" rot [ 0 45 0 ] }
+		fog { set true exp 0.005 } background { r 0.5 g 0.3 b 0.10 }
+		nodes [ HalFinalNode LIGHT32_HAL ]
+		expert 1000000
+		sounds [
+			{ sInterval 0 n [ nightingaleXN ] }
+			{ sInterval 0 n [ halloween_day ] }
+		]
+		changes [
+			{ pos { x 2.5 } scale { y 1.5 w 6 } }
+			{ pos { x 2.5 } ttl 6 scale { y 0.5 w 10 } }
+			{ pos { x 2.5 } ttl 9 scale { y 1 w 16 } }
+		]
+		struct [
+			{ t ls::cube a lsai::destroy x 12 y -1 z -2 w 26 h 20 d 31 l false m false v false }
+			
+			{ t ls::cube a lsai::bounce x 14 y 0 z 10 w 15 h 1 d 14 rot [ -13 0 15 ] l false m false v false } // halloween hill
+			{ t ls::plan a lsai::bounce x 10 y 0 z -2 w 20 h 20 rot [ 90 0 0 ] l false m false v false } // halloween ground
+			
+			{ t ls::cyl a lsai::bounce x 4 y 0 z 0 w 1 h 3 l false m false v false } // tree bottom
+			{ t ls::cyl a lsai::bounce x 4 y 0 z -1 w 1 h 6 rot [ 20 0 -6 ] l false m false v false } // tree trunk
+			{ t ls::cyl a lsai::bounce x 4 y 4 z 0 w 1 h 4 rot [ 45 0 -30 ] l false m false v false } // tree branch
+			
+			// stickies
+			{ t ls::sph a lsai::sticky x 0 y 4 z 10 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x -2 y 7 z 13 w 1 rot [ 1 0 1 1 ] }
+			{ t ls::sph a lsai::sticky x 2 y 2 z 13 w 1 rot [ 1 0 1 1 ] }
+			
+			// side "walls"
+			{ t ls::cube a lsai::bounce x -10 y 1 z 6 w 1 h 8 d 8 l false m false v true }
+			{ t ls::cube a lsai::bounce x 9 y 1 z 6 w 1 h 8 d 8 l false m false v true }
+			{ t ls::cube a lsai::bounce x 3 y 12 z 6 w 8 h 1 d 8 l false m false v true }
+		]
+		balls [
+			[ -4 1 8 c::b ]
+			[ -4 1 9 c::r ]
+			[ -4 1 10 c::r ]
+			[ -4 1 11 c::b ]
+			[ -4 1 12 c::g ]
+			[ -4 1 13 c::g ]
+			[ -4 1 14 c::k ]
+			[ -4 2 8 c::g ]
+			[ -4 2 9 c::b ]
+			[ -4 2 10 c::k ]
+			[ -4 2 11 c::b ]
+			[ -4 2 12 c::k ]
+			[ -4 2 13 c::k ]
+			[ -4 2 14 c::b ]
+			[ -4 3 8 c::b ]
+			[ -4 3 9 c::r ]
+			[ -4 3 10 c::b ]
+			[ -4 3 11 c::b ]
+			[ -4 3 12 c::g ]
+			[ -4 3 13 c::k ]
+			[ -4 3 14 c::g ]
+			[ -4 4 8 c::k ]
+			[ -4 4 9 c::r ]
+			[ -4 4 10 c::g ]
+			[ -4 4 11 c::g ]
+			[ -4 4 12 c::k ]
+			[ -4 4 13 c::g ]
+			[ -4 4 14 c::g ]
+			[ -4 5 8 c::r ]
+			[ -4 5 9 c::k ]
+			[ -4 5 10 c::k ]
+			[ -4 5 11 c::g ]
+			[ -4 5 12 c::k ]
+			[ -4 5 13 c::b ]
+			[ -4 5 14 c::r ]
+			[ -4 6 8 c::r ]
+			[ -4 6 9 c::k ]
+			[ -4 6 10 c::b ]
+			[ -4 6 11 c::g ]
+			[ -4 6 12 c::g ]
+			[ -4 6 13 c::k ]
+			[ -4 6 14 c::k ]
+			[ -4 7 8 c::r ]
+			[ -4 7 9 c::k ]
+			[ -4 7 10 c::b ]
+			[ -4 7 11 c::g ]
+			[ -4 7 12 c::g ]
+			[ -4 7 13 c::r ]
+			[ -4 7 14 c::k ]
+			[ -4 8 8 c::k ]
+			[ -4 8 9 c::r ]
+			[ -4 8 10 c::g ]
+			[ -4 8 11 c::r ]
+			[ -4 8 12 c::r ]
+			[ -4 8 13 c::b ]
+			[ -4 8 14 c::g ]
+			[ -3 1 8 c::b ]
+			[ -3 1 9 c::g ]
+			[ -3 1 10 c::r ]
+			[ -3 1 11 c::g ]
+			[ -3 1 12 c::k ]
+			[ -3 1 13 c::k ]
+			[ -3 1 14 c::b ]
+			[ -3 2 8 c::k ]
+			[ -3 2 9 c::b ]
+			[ -3 2 10 c::g ]
+			[ -3 2 11 c::g ]
+			[ -3 2 12 c::r ]
+			[ -3 2 13 c::b ]
+			[ -3 2 14 c::r ]
+			[ -3 3 8 c::k ]
+			[ -3 3 9 c::k ]
+			[ -3 3 10 c::b ]
+			[ -3 3 11 c::r ]
+			[ -3 3 12 c::k ]
+			[ -3 3 13 c::g ]
+			[ -3 3 14 c::r ]
+			[ -3 4 8 c::k ]
+			[ -3 4 9 c::k ]
+			[ -3 4 10 c::r ]
+			[ -3 4 11 c::g ]
+			[ -3 4 12 c::g ]
+			[ -3 4 13 c::g ]
+			[ -3 4 14 c::r ]
+			[ -3 5 8 c::r ]
+			[ -3 5 9 c::b ]
+			[ -3 5 10 c::k ]
+			[ -3 5 11 c::r ]
+			[ -3 5 12 c::r ]
+			[ -3 5 13 c::g ]
+			[ -3 5 14 c::k ]
+			[ -3 6 8 c::r ]
+			[ -3 6 9 c::b ]
+			[ -3 6 10 c::g ]
+			[ -3 6 11 c::g ]
+			[ -3 6 12 c::r ]
+			[ -3 6 13 c::b ]
+			[ -3 6 14 c::b ]
+			[ -3 7 8 c::k ]
+			[ -3 7 9 c::r ]
+			[ -3 7 10 c::k ]
+			[ -3 7 11 c::b ]
+			[ -3 7 12 c::r ]
+			[ -3 7 13 c::b ]
+			[ -3 7 14 c::r ]
+			[ -3 8 8 c::k ]
+			[ -3 8 9 c::k ]
+			[ -3 8 10 c::k ]
+			[ -3 8 11 c::g ]
+			[ -3 8 12 c::r ]
+			[ -3 8 13 c::b ]
+			[ -3 8 14 c::k ]
+			[ -2 1 8 c::b ]
+			[ -2 1 9 c::b ]
+			[ -2 1 10 c::b ]
+			[ -2 1 11 c::r ]
+			[ -2 1 12 c::g ]
+			[ -2 1 13 c::k ]
+			[ -2 1 14 c::k ]
+			[ -2 2 8 c::g ]
+			[ -2 2 9 c::r ]
+			[ -2 2 10 c::r ]
+			[ -2 2 11 c::g ]
+			[ -2 2 12 c::g ]
+			[ -2 2 13 c::b ]
+			[ -2 2 14 c::r ]
+			[ -2 3 8 c::b ]
+			[ -2 3 9 c::b ]
+			[ -2 3 10 c::b ]
+			[ -2 3 11 c::g ]
+			[ -2 3 12 c::g ]
+			[ -2 3 13 c::g ]
+			[ -2 3 14 c::k ]
+			[ -2 4 8 c::k ]
+			[ -2 4 9 c::b ]
+			[ -2 4 10 c::b ]
+			[ -2 4 11 c::b ]
+			[ -2 4 12 c::b ]
+			[ -2 4 13 c::k ]
+			[ -2 4 14 c::r ]
+			[ -2 5 8 c::k ]
+			[ -2 5 9 c::k ]
+			[ -2 5 10 c::b ]
+			[ -2 5 11 c::b ]
+			[ -2 5 12 c::b ]
+			[ -2 5 13 c::g ]
+			[ -2 5 14 c::b ]
+			[ -2 6 8 c::r ]
+			[ -2 6 9 c::r ]
+			[ -2 6 10 c::k ]
+			[ -2 6 11 c::k ]
+			[ -2 6 12 c::k ]
+			[ -2 6 13 c::b ]
+			[ -2 6 14 c::k ]
+			[ -2 7 8 c::r ]
+			[ -2 7 9 c::k ]
+			[ -2 7 10 c::g ]
+			[ -2 7 11 c::b ]
+			[ -2 7 12 c::g ]
+			[ -2 7 13 c::k ]
+			[ -2 7 14 c::k ]
+			[ -2 8 8 c::r ]
+			[ -2 8 9 c::k ]
+			[ -2 8 10 c::k ]
+			[ -2 8 11 c::g ]
+			[ -2 8 12 c::b ]
+			[ -2 8 13 c::b ]
+			[ -2 8 14 c::r ]
+			[ -1 1 8 c::r ]
+			[ -1 1 9 c::b ]
+			[ -1 1 10 c::g ]
+			[ -1 1 11 c::g ]
+			[ -1 1 12 c::k ]
+			[ -1 1 13 c::g ]
+			[ -1 1 14 c::b ]
+			[ -1 2 8 c::k ]
+			[ -1 2 9 c::r ]
+			[ -1 2 10 c::k ]
+			[ -1 2 11 c::g ]
+			[ -1 2 12 c::r ]
+			[ -1 2 13 c::b ]
+			[ -1 2 14 c::k ]
+			[ -1 3 8 c::b ]
+			[ -1 3 9 c::g ]
+			[ -1 3 10 c::b ]
+			[ -1 3 11 c::k ]
+			[ -1 3 12 c::k ]
+			[ -1 3 13 c::k ]
+			[ -1 3 14 c::r ]
+			[ -1 4 8 c::k ]
+			[ -1 4 9 c::k ]
+			[ -1 4 10 c::b ]
+			[ -1 4 11 c::k ]
+			[ -1 4 12 c::r ]
+			[ -1 4 13 c::g ]
+			[ -1 4 14 c::k ]
+			[ -1 5 8 c::k ]
+			[ -1 5 9 c::r ]
+			[ -1 5 10 c::r ]
+			[ -1 5 11 c::k ]
+			[ -1 5 12 c::g ]
+			[ -1 5 13 c::b ]
+			[ -1 5 14 c::k ]
+			[ -1 6 8 c::g ]
+			[ -1 6 9 c::g ]
+			[ -1 6 10 c::r ]
+			[ -1 6 11 c::b ]
+			[ -1 6 12 c::g ]
+			[ -1 6 13 c::b ]
+			[ -1 6 14 c::r ]
+			[ -1 7 8 c::b ]
+			[ -1 7 9 c::k ]
+			[ -1 7 10 c::k ]
+			[ -1 7 11 c::g ]
+			[ -1 7 12 c::k ]
+			[ -1 7 13 c::b ]
+			[ -1 7 14 c::b ]
+			[ -1 8 8 c::g ]
+			[ -1 8 9 c::r ]
+			[ -1 8 10 c::b ]
+			[ -1 8 11 c::k ]
+			[ -1 8 12 c::r ]
+			[ -1 8 13 c::g ]
+			[ -1 8 14 c::b ]
+			[ 0 1 8 c::b ]
+			[ 0 1 9 c::b ]
+			[ 0 1 10 c::b ]
+			[ 0 1 11 c::b ]
+			[ 0 1 12 c::b ]
+			[ 0 1 13 c::k ]
+			[ 0 1 14 c::r ]
+			[ 0 2 8 c::r ]
+			[ 0 2 9 c::g ]
+			[ 0 2 10 c::b ]
+			[ 0 2 11 c::g ]
+			[ 0 2 12 c::g ]
+			[ 0 2 13 c::g ]
+			[ 0 2 14 c::g ]
+			[ 0 3 8 c::b ]
+			[ 0 3 9 c::r ]
+			[ 0 3 10 c::b ]
+			[ 0 3 11 c::g ]
+			[ 0 3 12 c::g ]
+			[ 0 3 13 c::k ]
+			[ 0 3 14 c::b ]
+			[ 0 4 8 c::r ]
+			[ 0 4 9 c::g ]
+			[ 0 4 10 c::r ]
+			[ 0 4 11 c::b ]
+			[ 0 4 12 c::k ]
+			[ 0 4 13 c::b ]
+			[ 0 4 14 c::k ]
+			[ 0 5 8 c::r ]
+			[ 0 5 9 c::r ]
+			[ 0 5 10 c::g ]
+			[ 0 5 11 c::b ]
+			[ 0 5 12 c::k ]
+			[ 0 5 13 c::b ]
+			[ 0 5 14 c::r ]
+			[ 0 6 8 c::b ]
+			[ 0 6 9 c::g ]
+			[ 0 6 10 c::r ]
+			[ 0 6 11 c::b ]
+			[ 0 6 12 c::k ]
+			[ 0 6 13 c::k ]
+			[ 0 6 14 c::r ]
+			[ 0 7 8 c::g ]
+			[ 0 7 9 c::b ]
+			[ 0 7 10 c::r ]
+			[ 0 7 11 c::g ]
+			[ 0 7 12 c::r ]
+			[ 0 7 13 c::b ]
+			[ 0 7 14 c::b ]
+			[ 0 8 8 c::g ]
+			[ 0 8 9 c::r ]
+			[ 0 8 10 c::r ]
+			[ 0 8 11 c::r ]
+			[ 0 8 12 c::g ]
+			[ 0 8 13 c::k ]
+			[ 0 8 14 c::r ]
+			[ 1 1 8 c::b ]
+			[ 1 1 9 c::r ]
+			[ 1 1 10 c::g ]
+			[ 1 1 11 c::b ]
+			[ 1 1 12 c::b ]
+			[ 1 1 13 c::r ]
+			[ 1 1 14 c::k ]
+			[ 1 2 8 c::b ]
+			[ 1 2 9 c::k ]
+			[ 1 2 10 c::k ]
+			[ 1 2 11 c::g ]
+			[ 1 2 12 c::k ]
+			[ 1 2 13 c::g ]
+			[ 1 2 14 c::g ]
+			[ 1 3 8 c::r ]
+			[ 1 3 9 c::k ]
+			[ 1 3 10 c::g ]
+			[ 1 3 11 c::r ]
+			[ 1 3 12 c::r ]
+			[ 1 3 13 c::k ]
+			[ 1 3 14 c::g ]
+			[ 1 4 8 c::k ]
+			[ 1 4 9 c::b ]
+			[ 1 4 10 c::k ]
+			[ 1 4 11 c::g ]
+			[ 1 4 12 c::b ]
+			[ 1 4 13 c::k ]
+			[ 1 4 14 c::r ]
+			[ 1 5 8 c::g ]
+			[ 1 5 9 c::k ]
+			[ 1 5 10 c::g ]
+			[ 1 5 11 c::k ]
+			[ 1 5 12 c::b ]
+			[ 1 5 13 c::r ]
+			[ 1 5 14 c::r ]
+			[ 1 6 8 c::b ]
+			[ 1 6 9 c::b ]
+			[ 1 6 10 c::k ]
+			[ 1 6 11 c::g ]
+			[ 1 6 12 c::b ]
+			[ 1 6 13 c::b ]
+			[ 1 6 14 c::b ]
+			[ 1 7 8 c::g ]
+			[ 1 7 9 c::g ]
+			[ 1 7 10 c::b ]
+			[ 1 7 11 c::k ]
+			[ 1 7 12 c::r ]
+			[ 1 7 13 c::g ]
+			[ 1 7 14 c::r ]
+			[ 1 8 8 c::k ]
+			[ 1 8 9 c::k ]
+			[ 1 8 10 c::k ]
+			[ 1 8 11 c::k ]
+			[ 1 8 12 c::g ]
+			[ 1 8 13 c::b ]
+			[ 1 8 14 c::g ]
+			[ 2 1 8 c::k ]
+			[ 2 1 9 c::r ]
+			[ 2 1 10 c::g ]
+			[ 2 1 11 c::k ]
+			[ 2 1 12 c::g ]
+			[ 2 1 13 c::g ]
+			[ 2 1 14 c::k ]
+			[ 2 2 8 c::g ]
+			[ 2 2 9 c::k ]
+			[ 2 2 10 c::r ]
+			[ 2 2 11 c::k ]
+			[ 2 2 12 c::r ]
+			[ 2 2 13 c::b ]
+			[ 2 2 14 c::k ]
+			[ 2 3 8 c::r ]
+			[ 2 3 9 c::k ]
+			[ 2 3 10 c::k ]
+			[ 2 3 11 c::r ]
+			[ 2 3 12 c::k ]
+			[ 2 3 13 c::b ]
+			[ 2 3 14 c::b ]
+			[ 2 4 8 c::g ]
+			[ 2 4 9 c::r ]
+			[ 2 4 10 c::r ]
+			[ 2 4 11 c::k ]
+			[ 2 4 12 c::g ]
+			[ 2 4 13 c::k ]
+			[ 2 4 14 c::r ]
+			[ 2 5 8 c::b ]
+			[ 2 5 9 c::b ]
+			[ 2 5 10 c::k ]
+			[ 2 5 11 c::k ]
+			[ 2 5 12 c::r ]
+			[ 2 5 13 c::g ]
+			[ 2 5 14 c::k ]
+			[ 2 6 8 c::k ]
+			[ 2 6 9 c::r ]
+			[ 2 6 10 c::k ]
+			[ 2 6 11 c::r ]
+			[ 2 6 12 c::r ]
+			[ 2 6 13 c::b ]
+			[ 2 6 14 c::b ]
+			[ 2 7 8 c::k ]
+			[ 2 7 9 c::g ]
+			[ 2 7 10 c::r ]
+			[ 2 7 11 c::b ]
+			[ 2 7 12 c::g ]
+			[ 2 7 13 c::b ]
+			[ 2 7 14 c::r ]
+			[ 2 8 8 c::b ]
+			[ 2 8 9 c::r ]
+			[ 2 8 10 c::r ]
+			[ 2 8 11 c::b ]
+			[ 2 8 12 c::g ]
+			[ 2 8 13 c::g ]
+			[ 2 8 14 c::b ]
+			[ 3 1 8 c::g ]
+			[ 3 1 9 c::k ]
+			[ 3 1 10 c::b ]
+			[ 3 1 11 c::b ]
+			[ 3 1 12 c::r ]
+			[ 3 1 13 c::r ]
+			[ 3 1 14 c::b ]
+			[ 3 2 8 c::r ]
+			[ 3 2 9 c::g ]
+			[ 3 2 10 c::g ]
+			[ 3 2 11 c::b ]
+			[ 3 2 12 c::k ]
+			[ 3 2 13 c::r ]
+			[ 3 2 14 c::k ]
+			[ 3 3 8 c::r ]
+			[ 3 3 9 c::r ]
+			[ 3 3 10 c::r ]
+			[ 3 3 11 c::g ]
+			[ 3 3 12 c::g ]
+			[ 3 3 13 c::k ]
+			[ 3 3 14 c::b ]
+			[ 3 4 8 c::b ]
+			[ 3 4 9 c::k ]
+			[ 3 4 10 c::g ]
+			[ 3 4 11 c::g ]
+			[ 3 4 12 c::g ]
+			[ 3 4 13 c::k ]
+			[ 3 4 14 c::b ]
+			[ 3 5 8 c::b ]
+			[ 3 5 9 c::g ]
+			[ 3 5 10 c::r ]
+			[ 3 5 11 c::b ]
+			[ 3 5 12 c::k ]
+			[ 3 5 13 c::r ]
+			[ 3 5 14 c::r ]
+			[ 3 6 8 c::g ]
+			[ 3 6 9 c::g ]
+			[ 3 6 10 c::g ]
+			[ 3 6 11 c::k ]
+			[ 3 6 12 c::r ]
+			[ 3 6 13 c::k ]
+			[ 3 6 14 c::k ]
+			[ 3 7 8 c::b ]
+			[ 3 7 9 c::k ]
+			[ 3 7 10 c::k ]
+			[ 3 7 11 c::b ]
+			[ 3 7 12 c::g ]
+			[ 3 7 13 c::k ]
+			[ 3 7 14 c::b ]
+			[ 3 8 8 c::k ]
+			[ 3 8 9 c::r ]
+			[ 3 8 10 c::r ]
+			[ 3 8 11 c::r ]
+			[ 3 8 12 c::r ]
+			[ 3 8 13 c::k ]
+			[ 3 8 14 c::k ]
+		]
+	}
+]
