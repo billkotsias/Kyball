@@ -33,3 +33,17 @@ if(NOT barrier_cpp MATCHES "KYBALL_BARRIER")
 		barrier_cpp "${barrier_cpp}")
 	file(WRITE OgreMain/src/Threading/OgreBarrierPThreads.cpp "${barrier_cpp}")
 endif()
+
+# DXT blocks are 4x4. Drivers reject compressed uploads when width or height
+# is not a multiple of 4 (logo.DDS is 1233x345, Cloud.DDS is 151x151), so those
+# menu images render black. Decompress them the same way Ogre already does when
+# the render system has no DXT support.
+file(READ OgreMain/src/OgreDDSCodec.cpp dds_cpp)
+if(NOT dds_cpp MATCHES "KYBALL_DXT_ALIGN")
+	string(REPLACE
+		"                && !imgData->num_mipmaps))"
+		"                && !imgData->num_mipmaps)
+                || (header.width % 4) || (header.height % 4)) /* KYBALL_DXT_ALIGN */"
+		dds_cpp "${dds_cpp}")
+	file(WRITE OgreMain/src/OgreDDSCodec.cpp "${dds_cpp}")
+endif()

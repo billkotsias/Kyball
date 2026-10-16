@@ -171,6 +171,8 @@ namespace P3D {
 		/// -> to mesh
 		Ogre::MeshPtr mesh = manual->convertToMesh(strName);
 		sceneMgr->destroyManualObject( manual );
+		if (mesh.isNull()) mesh = Ogre::MeshManager::getSingleton().getByName(strName);
+		if (mesh.isNull()) return mesh;
 		mesh->_setBounds( Ogre::AxisAlignedBox( Ogre::Vector3(-r, -r, -r), Ogre::Vector3(r, r, r) ), false );
 		mesh->_setBoundingSphereRadius(r);
 		unsigned short src, dest;

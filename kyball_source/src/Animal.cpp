@@ -129,7 +129,7 @@ namespace P3D {
 	std::map<Animal::Animation, std::string> Animal::animToString;
 	const char* const Animal::ANIM_MORPH_POSTFIX = "M";
 
-	Animal::Animal(Ogre::Entity* entity, const std::string& cosmosID, BurstBoss* burst) : isSmiling(false), isAnxious(false)
+	Animal::Animal(Ogre::Entity* entity, const std::string& cosmosID, BurstBoss* burst) : currAnimation(0), isSmiling(false), isAnxious(false)
 	{
 		animalNode = entity->getParentSceneNode();
 		/// get rest from node

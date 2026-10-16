@@ -346,11 +346,21 @@ namespace P3D {
 		}
 	}
 
+	// Scripts and call sites use Windows separators ("gameplay\\ballBounce").
+	// Both platforms open files with '/'.
+	static std::string soundPathName(const std::string& name) {
+		std::string out = name;
+		for (unsigned int i = 0; i < out.size(); ++i) {
+			if (out[i] == '\\') out[i] = '/';
+		}
+		return out;
+	}
+
 	void SoundBoss::_setSoundStreams( std::vector<FreeSL::FSLsound*>& voices, const std::vector<std::string>& streams ) {
 		for (unsigned int i = 0; i < voices.size(); ++i) {
 			/// create new streaming sound
 			freeSound(*voices.at(i), false); /// IF CRASH, RETURN THIS TO <false>
-			unsigned int voice = FreeSL::fslStreamSound( (path + streams.at(i) + MUSIC_EXT).c_str() );
+			unsigned int voice = FreeSL::fslStreamSound( (path + soundPathName(streams.at(i)) + MUSIC_EXT).c_str() );
 			validHandles[voice] = true; /// <!!!!!!!!!!!!!!!!!!!!!!!>
 			(*voices.at(i)) = voice;
 		}
@@ -506,10 +516,10 @@ namespace P3D {
 	}
 
 	unsigned int SoundBoss::loadSound(const char *strFile1, const char *strFile2) {
-		std::string filePath = path + strFile1;
+		std::string filePath = path + soundPathName(strFile1);
 
 		if (strFile2) {
-			std::string filename = strFile2 + ext;
+			std::string filename = soundPathName(strFile2) + ext;
 			return FreeSL::fslLoadBufferFromZip(filePath.c_str(), filename.c_str());
 		}
 

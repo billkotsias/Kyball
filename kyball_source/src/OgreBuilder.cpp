@@ -493,7 +493,11 @@ namespace P3D {
 
 		std::string sphereMeshName = FANLib::Utils::toString(nRings) + "x" + FANLib::Utils::toString(nSegments) + "sphereMesh";
 		Ogre::SceneManager* sceneMan = SceneBaseCreator::getSingletonPtr()->getSceneManager();
-		if (!Ogre::ResourceGroupManager::getSingletonPtr()->resourceExists(Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, sphereMeshName))
+		// resourceExists looks for a file in the group archives. This mesh is built
+		// in memory, so that check is always false and the second world entry asks
+		// MeshManager to create the same name again. The loading listener keeps the
+		// first mesh and hands back a null pointer, which then segfaults.
+		if (Ogre::MeshManager::getSingleton().getByName(sphereMeshName).isNull())
 		{
 			OgreAddOns::createSphereMesh(sceneMan, sphereMeshName, RADIUS_DEFAULT, nRings, nSegments, invertNormals);
 		}

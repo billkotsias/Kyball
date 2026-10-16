@@ -123,6 +123,12 @@ if(ANDROID)
 	FetchContent_MakeAvailable(freetype)
 endif()
 FetchContent_MakeAvailable(SDL2 openal ogre)
+# PATCH_COMMAND runs only on the first populate. Re-apply so an existing
+# checkout (and the next configure) still gets the DDS size fix.
+execute_process(
+	COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/patch-ogre-freetype.cmake
+	WORKING_DIRECTORY ${ogre_SOURCE_DIR}
+)
 if(TARGET OgreMain)
 	# Ogre writes export headers to the top-level binary dir when nested.
 	target_include_directories(OgreMain PUBLIC "${CMAKE_BINARY_DIR}/include")
